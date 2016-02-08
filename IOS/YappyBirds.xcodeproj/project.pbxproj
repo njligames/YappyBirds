@@ -447,10 +447,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOS",
 				);
-				HEADER_SEARCH_PATHS = "\"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/FMOD Programmers API/api/lowlevel/inc\"";
 				INFOPLIST_FILE = IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/fmod/ios/FMOD Programmers API/api/lowlevel/lib\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FMOD Programmers API/api/lowlevel/lib\"";
 				OTHER_LDFLAGS = "-lfmodL_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.njligames.yappybirds.IOS;
 				PRODUCT_NAME = YappyBirds;
@@ -467,10 +467,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOS",
 				);
-				HEADER_SEARCH_PATHS = "\"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/FMOD Programmers API/api/lowlevel/inc\"";
 				INFOPLIST_FILE = IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/fmod/ios/FMOD Programmers API/api/lowlevel/lib\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FMOD Programmers API/api/lowlevel/lib\"";
 				OTHER_LDFLAGS = "-lfmod_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.njligames.yappybirds.IOS;
 				PRODUCT_NAME = YappyBirds;
