@@ -10,9 +10,9 @@
 #import <GLKit/GLKit.h>
 #import <UIKit/UIKit.h>
 
-#import <NJLIGameEngine/NJLIGameEngine.h>
-#import <NJLIGameEngine/TZKeyboardPop.h>
-#import <NJLIGameEngine/UIDeviceUtil.h>
+#import <NJLIGameEngine_iOS/NJLIGameEngine.h>
+#import <NJLIGameEngine_iOS/TZKeyboardPop.h>
+#import <NJLIGameEngine_iOS/UIDeviceUtil.h>
 
 @interface GameViewController : GLKViewController <TZKeyboardPopDelegate, AVAudioSessionDelegate>
 
