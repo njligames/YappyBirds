@@ -1,0 +1,264 @@
+local drawSlider = function(self, pos, x, y, w, h)
+	local cy = y+(h*0.5)
+    local kr = (h*0.25)
+    
+    self.hud:save()
+    --	nvgClearState()
+    
+    -- Slot
+    local bg = self.hud:boxGradient(x,cy-2+1, w,4, 2,2, njli.WorldHUD.rgba(0,0,0,32), njli.WorldHUD.rgba(0,0,0,128))
+    self.hud:beginPath()
+    self.hud:roundedRect(x,cy-2, w,4, 2)
+    self.hud:fillPaint(bg)
+    self.hud:fill()
+    
+    -- Knob Shadow
+    bg = self.hud:radialGradient(x+(pos*w),cy+1, kr-3,kr+3, njli.WorldHUD.rgba(0,0,0,64), njli.WorldHUD.rgba(0,0,0,0))
+    self.hud:beginPath()
+    self.hud:rect(x+(pos*w)-kr-5,cy-kr-5,kr*2+5+5,kr*2+5+5+3)
+    self.hud:circle(x+(pos*w),cy, kr)
+    self.hud:pathWinding(njli.JLI_HUD_SOLIDITY_HOLE)
+    self.hud:fillPaint(bg)
+    self.hud:fill()
+    
+    -- Knob
+    local knob = self.hud:linearGradient(x,cy-kr,x,cy+kr, njli.WorldHUD.rgba(255,255,255,16), njli.WorldHUD.rgba(0,0,0,16))
+    self.hud:beginPath()
+    self.hud:circle(x+(pos*w),cy, kr-1)
+    self.hud:fillColor(njli.WorldHUD.rgba(40,43,48,255))
+    self.hud:fill()
+    self.hud:fillPaint(knob)
+    self.hud:fill()
+    
+    self.hud:beginPath()
+    self.hud:circle(x+(pos*w),cy, kr-0.5)
+    self.hud:strokeColor(njli.WorldHUD.rgba(0,0,0,92))
+    self.hud:stroke()
+    
+    self.hud:restore()
+
+    local dimScreen = njli.World.getInstance():getViewportDimensions()
+
+    return {position = njli.btVector2(x+(pos*w), dimScreen:y() - cy), radius = kr-1, pixelsPerPercent = (w)}
+end
+
+local checkTouch = function(self, pos)
+
+    if not self.isTouching then
+        self.startTouchPosition = pos
+
+        if self.knob then
+            local dist = pos:distance(self.knob.position)
+            self.isTouching = (dist <= self.knob.radius)
+        end
+    end
+
+    if self.isTouching then
+        if self.knob then
+            pixelsPerPercent = self.knob.pixelsPerPercent
+        end
+
+        self.currentTouchPosition = pos
+
+        local sign = 1
+        if pos:x() - self.startTouchPosition:x() < 0 then
+            sign = -1
+        end
+
+        local numberOfPixels = pos:x() - self.startTouchPosition:x()
+
+        self.value = self.value + (numberOfPixels / pixelsPerPercent)
+
+        if self.value > 1 then
+            self.value = 1
+            self.isTouching = false
+        end
+        if self.value < 0 then
+            self.value = 0
+            self.isTouching = false
+        end
+
+        self.startTouchPosition = pos
+    end
+    return self.isTouching
+end
+
+local renderHUD = function(self)
+    self.knob = self:drawSlider(self.value, self.position:x(), self.position:y(), self.dimension:x(), self.dimension:y())
+end
+
+local actionUpdate = function(self, action, timeStep)
+end
+
+local actionComplete = function(self, action)
+end
+
+local hide = function(self, camera)
+    self.node:hide(camera)
+end
+
+local enter = function(self)
+end
+
+local angle = 0
+local update = function(self, timeStep)
+    -- local quat = njli.btQuaternion()
+    -- angle = angle + (timeStep * 1)
+
+    -- quat:setEuler(angle, angle, angle)
+    -- self.string1:setRotation(quat)
+end
+
+local exit = function(self)
+end
+
+local onMessage = function(self, message)
+end
+
+local collide = function(self, otherNode, collisionPoint)
+end
+
+local near = function(self, otherNode)
+end
+
+local touchDown = function(self, rayContact)
+end
+
+local touchUp = function(self, rayContact)
+end
+
+local touchMove = function(self, rayContact)
+end
+
+local touchCancelled = function(self, rayContact)
+end
+
+local delete = function(self)
+
+    for k,v in pairs(self.nodeStates) do
+        njli.World.getInstance():getWorldFactory():destroy(self.nodeStates[k])
+        self.nodeStates[k] = nil
+    end
+    self.nodeStates = nil
+
+    njli.World.getInstance():getWorldFactory():destroy(self.node)
+    self.node = nil
+end
+
+local methods = 
+{
+	drawSlider = drawSlider,
+    checkTouch = checkTouch,
+
+	renderHUD = renderHUD,
+    actionUpdate = actionUpdate,
+    actionComplete = actionComplete,
+    hide = hide,
+    enter = enter,
+    update = update,
+    exit = exit,
+    onMessage = onMessage,
+    collide = collide,
+    near = near,
+    touchDown = touchDown,
+    touchUp = touchUp,
+    touchMove = touchMove,
+    touchCancelled = touchCancelled,
+    __gc = delete
+}
+
+local new = function(name, x, y, width, height, shader)
+    local node = njli.Node.create()
+    node:setName(name)
+
+    local names =
+    {
+        display = name,
+    }
+    local nodeStates = {}
+
+    for k,v in pairs(names) do
+        nodeStates[k] = njli.NodeState.create()
+        nodeStates[k]:setName(names[k])
+    end
+
+    node:getStateMachine():pushState(nodeStates.display)
+
+    local hud = njli.World.getInstance():getWorldHUD()
+
+    local _x = x or 60
+    local _y = y or 95
+
+    local _width = width or 300
+    local _height = height or 60
+
+    local bmf = require('bmf')
+
+    local material = njli.Material.create()
+    local geometry = njli.Sprite2D.create()
+-- print_r(bmf)
+    -- Provide the name of the font control file generated by Glyph Designer
+local bmflabel = bmf.loadFont('RetroFont.fnt')
+-- print_r(bmflabel)
+
+local cameraNode = njli.World.getInstance():getScene():getRootNode()
+
+    -- Create a new string using the font just created and setting the string
+    -- the Original Size and New Size
+-- local string1, rect = bmf.newString(bmflabel, '\t\'\"Hello\"\'\nWorld!', 64, 64, shader)
+-- local string1, rect = bmf.newString(bmflabel, "あなたが勝ちます", 64, 64, shader)
+local string1, rect = bmf.newString(bmflabel, 'ABCDEFGHIJKLMNOPRSTUVWXYZ\nabcdefghijklmnopqurstuvwxyz', material, geometry, shader)
+string1:show(cameraNode:getCamera())
+-- print_r(rect)
+
+local xx = 0
+local yy = 200
+string1:setOrigin(njli.btVector3(xx, yy, 0))
+-- string1:setScale(njli.btVector3(.5,5,.5))
+
+-- print_r(rect)
+-- xx = xx + rect.x
+-- yy = yy + rect.y
+
+local bl = njli.btVector3(xx,              yy, 0)
+local br = njli.btVector3(xx + rect.width, yy, 0)
+local tl = njli.btVector3(xx,              yy + rect.height, 0)
+local tr = njli.btVector3(xx + rect.width, yy + rect.height, 0)
+njli.World.getInstance():getDebugDrawer():drawLine(bl, br, njli.btVector4(1,0,0,1))
+njli.World.getInstance():getDebugDrawer():drawLine(br, tr, njli.btVector4(1,0,0,1))
+njli.World.getInstance():getDebugDrawer():drawLine(tr, tl, njli.btVector4(1,0,0,1))
+njli.World.getInstance():getDebugDrawer():drawLine(tl, bl, njli.btVector4(1,0,0,1))
+
+
+    -- Align the text based on the center of the string passed back
+-- string1.align = 'center'
+
+    -- Set the position you want the string drawn
+-- string1.x = 160; string1.y = 350
+
+    local properties = 
+    {
+        node = node,
+        nodeStates = nodeStates,
+        nodeStateNames = names,
+
+        hud = hud,
+        bmf = bmf,
+
+        value = .5,
+        position = njli.btVector2(_x, _y),
+        dimension = njli.btVector2(_width, _height),
+        knob = nil,
+        isTouching = false,
+        startTouchPosition = nil,
+        currentTouchPosition = nil,
+
+        string1 = string1,
+
+    }
+    return setmetatable(properties, {__index = methods})
+end
+
+return {
+  new = new,
+}
