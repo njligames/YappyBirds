@@ -37,7 +37,7 @@
 		C18F971E1C6905080061DECD /* NJLIGameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971D1C6905080061DECD /* NJLIGameEngine.framework */; };
 		C18F971F1C6908D90061DECD /* libEGL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F97191C6904830061DECD /* libEGL.dylib */; };
 		C18F97201C6908D90061DECD /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971A1C6904830061DECD /* libGLESv2.dylib */; };
-		C18F97311C6924DD0061DECD /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F97301C6924DD0061DECD /* NJLIGameEngine_iOS.framework */; };
+		C18F984C1C6962460061DECD /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,7 @@
 		C18F97191C6904830061DECD /* libEGL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.dylib; path = PVR/OSX/x86/Lib/libEGL.dylib; sourceTree = "<group>"; };
 		C18F971A1C6904830061DECD /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = PVR/OSX/x86/Lib/libGLESv2.dylib; sourceTree = "<group>"; };
 		C18F971D1C6905080061DECD /* NJLIGameEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine.framework; sourceTree = "<group>"; };
-		C18F97301C6924DD0061DECD /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
+		C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 				C16A2A1D1C683F8F00D94D4B /* GLKit.framework in Frameworks */,
 				C16A2A1B1C683F8800D94D4B /* AudioToolbox.framework in Frameworks */,
 				C16A2A191C683F8100D94D4B /* AVFoundation.framework in Frameworks */,
-				C18F97311C6924DD0061DECD /* NJLIGameEngine_iOS.framework in Frameworks */,
+				C18F984C1C6962460061DECD /* NJLIGameEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +233,7 @@
 		C16A29DD1C683E7C00D94D4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C18F97301C6924DD0061DECD /* NJLIGameEngine_iOS.framework */,
+				C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */,
 				C16A2A1C1C683F8F00D94D4B /* GLKit.framework */,
 				C16A2A1A1C683F8800D94D4B /* AudioToolbox.framework */,
 				C16A2A181C683F8000D94D4B /* AVFoundation.framework */,
