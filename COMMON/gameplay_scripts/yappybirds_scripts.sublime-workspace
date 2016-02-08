@@ -1,0 +1,4277 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"math",
+				"math.random	([m [, n]])"
+			],
+			[
+				"getPh",
+				"PhysicsBody.getPhysicsShape"
+			],
+			[
+				"table",
+				"table.insert	(table, [pos,] value)"
+			],
+			[
+				"tabl",
+				"table.remove	(table [, pos])"
+			],
+			[
+				"fo",
+				"forp	for k,v in pairs()"
+			],
+			[
+				"strin",
+				"string.length"
+			],
+			[
+				"string",
+				"string.len	(s)"
+			],
+			[
+				"getid",
+				"static btQuaternion.getIdentity"
+			],
+			[
+				"getiden",
+				"static btMatrix3x3.getIdentity"
+			],
+			[
+				"inver",
+				"btTransform.inverse"
+			],
+			[
+				"btTransform",
+				"static btTransform.getIdentity"
+			],
+			[
+				"mat",
+				"math.abs	(x)"
+			],
+			[
+				"lua",
+				"luaNodeObjectClass	luaNodeObjectClass"
+			],
+			[
+				"distanc",
+				"btVector2.distance"
+			],
+			[
+				"createPhysic",
+				"createPhysicsBody"
+			],
+			[
+				"getPhysi",
+				"Node.getPhysicsBody"
+			],
+			[
+				"setLinear",
+				"btRigidBody.setLinearVelocity"
+			],
+			[
+				"e",
+				"elseif	elseif cond then"
+			],
+			[
+				"for",
+				"forp	for k,v in pairs()"
+			],
+			[
+				"str",
+				"string.format	(formatstring, ...)"
+			],
+			[
+				"lu",
+				"luaNodeClass	luaNodeClass"
+			],
+			[
+				"getlinear",
+				"btRigidBody.getLinearVelocity"
+			],
+			[
+				"getLine",
+				"btRigidBody.getLinearVelocity"
+			],
+			[
+				"bit",
+				"bit.bor	(...)"
+			],
+			[
+				"getHalfEx",
+				"PhysicsShapeBox.getHalfExtentsWithoutMargin"
+			],
+			[
+				"normalize",
+				"btVector3.normalize"
+			],
+			[
+				"summingd",
+				"summingMethod"
+			],
+			[
+				"dWeightSe",
+				"dWeightSeparation"
+			],
+			[
+				"b",
+				"bit.bxor	(...)"
+			],
+			[
+				"length",
+				"btQuaternion.length2"
+			],
+			[
+				"els",
+				"else	else end"
+			],
+			[
+				"Node",
+				"Node:hide	void Node::hide(Camera * camera)"
+			],
+			[
+				"el",
+				"elseif	elseif cond then"
+			],
+			[
+				"getF",
+				"Camera.getFov"
+			],
+			[
+				"getDimen",
+				"Sprite2D.getDimensions"
+			],
+			[
+				"setDimen",
+				"Sprite2D.setDimensions"
+			],
+			[
+				"JLI_HUD_ALI",
+				"JLI_HUD_ALIGN_TOP"
+			],
+			[
+				"getStateM",
+				"Scene.getStateMachine"
+			],
+			[
+				"getSta",
+				"NodeStateMachine_Lua.getState"
+			],
+			[
+				"else",
+				"elseif	elseif cond then"
+			],
+			[
+				"createPush",
+				"createPushDownAction"
+			],
+			[
+				"eli",
+				"elseif	elseif cond then"
+			],
+			[
+				"backgroundN",
+				"backgroundName"
+			],
+			[
+				"tab",
+				"table.remove	(table [, pos])"
+			],
+			[
+				"m",
+				"mat4"
+			],
+			[
+				"labelH",
+				"LabelHUD.setText"
+			],
+			[
+				"func",
+				"funcl	anonymous function"
+			],
+			[
+				"function",
+				"function	function"
+			],
+			[
+				"_",
+				"_VERSION	_VERSION"
+			],
+			[
+				"fun",
+				"function	function"
+			],
+			[
+				"fu",
+				"funcl	anonymous function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "nodes/Projectile/Balloon/Balloon.lua",
+			"settings":
+			{
+				"buffer_size": 12922,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nodes/Bird/Bird.lua",
+			"settings":
+			{
+				"buffer_size": 18149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Params.lua",
+			"settings":
+			{
+				"buffer_size": 2653,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Nodes/Dog/Dog.lua",
+			"settings":
+			{
+				"buffer_size": 14069,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Nodes/Projectile/Balloon/States/Thrown.lua",
+			"settings":
+			{
+				"buffer_size": 5191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Nodes/Bird/States/Fly.lua",
+			"settings":
+			{
+				"buffer_size": 7715,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Nodes/Projectile/Balloon/States/Hit.lua",
+			"settings":
+			{
+				"buffer_size": 5015,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nodes/balloonNode.lua",
+			"settings":
+			{
+				"buffer_size": 8517,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "worlds/worldYappyGameState.lua",
+			"settings":
+			{
+				"buffer_size": 37322,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 210 files for \"projectileTypeToFilename\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/gameScene.lua:\n  224  end\n  225  \n  226: function projectileTypeToFilename(type)\n  227      return \"projectile_waterBalloon_thrown_front\"\n  228  end\n  ...\n  270  \n  271  local createProjectileNode = function(self, x, y, type)\n  272:     local fileName = projectileTypeToFilename(type)\n  273      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  274      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/testScene_ParticleEmitter.lua:\n   44  \n   45  local createProjectileNode = function(self, x, y, type)\n   46:     local fileName = projectileTypeToFilename(type)\n   47      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n   48      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/util.lua:\n  542  end\n  543  \n  544: function projectileTypeToFilename(type)\n  545      math.randomseed( os.time() )\n  546      local colorIndex = math.random(1, 5)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldGameState.lua:\n  230  \n  231  local createProjectileNode = function(self, x, y, type)\n  232:     local fileName = projectileTypeToFilename(type)\n  233      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  234      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  431  \n  432  local createProjectileNode = function(self, x, y, type)\n  433:     local fileName = projectileTypeToFilename(type)\n  434      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  435      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n6 matches across 5 files\n\n\nSearching 210 files for \"createProjectileNode\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/gameScene.lua:\n  269  end\n  270  \n  271: local createProjectileNode = function(self, x, y, type)\n  272      local fileName = projectileTypeToFilename(type)\n  273      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  ...\n  518      local projectile = nil\n  519      if njli.isIOS() then\n  520:         projectile = self:createProjectileNode(touches[1]:getPosition():x()*2, touches[1]:getPosition():y()*2, 4)\n  521      elseif njli.isANDROID() then\n  522:         projectile = self:createProjectileNode(touches[1]:getPosition():x(), touches[1]:getPosition():y(), 4)\n  523      end\n  524  \n  ...\n  595  \n  596      createBirdNode = createBirdNode,\n  597:     createProjectileNode = createProjectileNode,\n  598      createDogNode = createDogNode,\n  599  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePlayScene.lua:\n  201          local projectile = nil\n  202          if njli.isIOS() then\n  203:             projectile = self.world:createProjectileNode(touches[1]:getPosition():x()*2, touches[1]:getPosition():y()*2, 4)\n  204          elseif njli.isANDROID() then\n  205:             projectile = self.world:createProjectileNode(touches[1]:getPosition():x(), touches[1]:getPosition():y(), 4)\n  206          end\n  207  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/testScene_ParticleEmitter.lua:\n   43  end\n   44  \n   45: local createProjectileNode = function(self, x, y, type)\n   46      local fileName = projectileTypeToFilename(type)\n   47      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n   ..\n  190  \n  191      if njli.isIOS() then\n  192:         projectile = self:createProjectileNode(touches[1]:getPosition():x()*2, touches[1]:getPosition():y()*2, 4)\n  193      elseif njli.isANDROID() then\n  194:         projectile = self:createProjectileNode(touches[1]:getPosition():x(), touches[1]:getPosition():y(), 4)\n  195      end\n  196  end\n  ...\n  224  	getOriginForLayer = getOriginForLayer,\n  225  	transformCoordinate = transformCoordinate,\n  226: 	createProjectileNode = createProjectileNode,\n  227  \n  228      addUserData = addUserData,\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldGameState.lua:\n  229  end\n  230  \n  231: local createProjectileNode = function(self, x, y, type)\n  232      local fileName = projectileTypeToFilename(type)\n  233      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  ...\n  485  \n  486      destroyProjectileNode = destroyProjectileNode,\n  487:     createProjectileNode = createProjectileNode,\n  488  \n  489  --####################################################################\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  393  end\n  394  \n  395: local createProjectileNode = function(self, x, y, type)\n  396      local fileName = projectileTypeToFilename(type)\n  397      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  ...\n  790  \n  791      destroyProjectileNode = destroyProjectileNode,\n  792:     createProjectileNode = createProjectileNode,\n  793      createWaterBalloonNode = createWaterBalloonNode,\n  794  \n\n18 matches across 5 files\n\n\nSearching 210 files for \"_SOUNDPATHS\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/filePaths.lua:\n    1: _SOUNDPATHS =\n    2  {\n    3      interface =\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Nodes/_birdNodeObject.lua:\n  744      local tauntSounds = {}\n  745  \n  746:     for k,v in pairs(_SOUNDPATHS.gameplay.effects.bird[type].die) do\n  747  \n  748          local sound = njli.Sound.create()\n  ...\n  752      end\n  753  \n  754:     for k,v in pairs(_SOUNDPATHS.gameplay.effects.bird[type].taunt) do\n  755  \n  756          local sound = njli.Sound.create()\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Nodes/balloonNode.lua:\n  286  \n  287      local sound = njli.Sound.create()\n  288:     njli.World.getInstance():getWorldResourceLoader():load(_SOUNDPATHS.gameplay.effects.projectile.die, sound)\n  289  \n  290      local frameName = getFrameName(rootName, 0)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Nodes/Bird/Bird.lua:\n  661    local tauntSounds = {}\n  662  \n  663:   for k,v in pairs(_SOUNDPATHS.gameplay.effects.bird[birdType].die) do\n  664        local sound = njli.Sound.create()\n  665        njli.World.getInstance():getWorldResourceLoader():load(v, sound)\n  ...\n  667    end\n  668  \n  669:   for k,v in pairs(_SOUNDPATHS.gameplay.effects.bird[birdType].taunt) do\n  670        local sound = njli.Sound.create()\n  671        njli.World.getInstance():getWorldResourceLoader():load(v, sound)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Nodes/Projectile/Balloon/Balloon.lua:\n  483  \n  484    local sound = njli.Sound.create()\n  485:   njli.World.getInstance():getWorldResourceLoader():load(_SOUNDPATHS.gameplay.effects.projectile.die, sound)\n  486  \n  487    local properties = \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePauseScene.lua:\n   56                  end\n   57      local toggle = false\n   58:     local soundPath = _SOUNDPATHS.interface.effects.select\n   59      local theNode = pushButtonNode.new(name, root, self.menuGeometry, self.menuSpriteAtlas, menuScale, fun, toggle, soundPath)\n   60      insertNodeObject(theNode, theNode.instanceName)\n   ..\n   87                  end\n   88      local toggle = false\n   89:     local soundPath = _SOUNDPATHS.interface.effects.select\n   90      local theNode = pushButtonNode.new(name, root, self.menuGeometry, self.menuSpriteAtlas, menuScale, fun, toggle, soundPath)\n   91      insertNodeObject(theNode, theNode.instanceName)\n   ..\n  135                      end\n  136          local toggle = false\n  137:         local soundPath = _SOUNDPATHS.interface.effects.select\n  138          local theNode = pushButtonNode.new(name, root, self.menuGeometry, self.menuSpriteAtlas, menuScale, fun, toggle, soundPath)\n  139          insertNodeObject(theNode, theNode.instanceName)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/menuScene.lua:\n   40          {root = \"PLAY\", name = \"PLAY\", fun = function()\n   41              pushSceneState(_menuSceneStateNames.boardselect)\n   42:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select}, \n   43          -- {root = \"STORE\", name = \"STORE\", fun = function()\n   44          --     pushSceneState(_menuSceneStateNames.store)\n   45:         -- end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select}, \n   46          -- {root = \"HIGHSCORES\", name = \"HIGHSCORES\", fun = function()\n   47          --     pushSceneState(_menuSceneStateNames.highScores)\n   48:         -- end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select}, \n   49          -- {root = \"SETTINGS\", name = \"SETTINGS\", fun = function()\n   50          --     pushSceneState(_menuSceneStateNames.settings)\n   51:         -- end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select}, \n   52          -- {root = \"CHARACTERS\", name = \"CHARACTERS\", fun = function()\n   53          --     pushSceneState(_menuSceneStateNames.characters)\n   54:         -- end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select}\n   55      }\n   56      tbl[_menuSceneStateNames.settings] = \n   ..\n   64          {root = \"ABOUT\", name = \"ABOUT\", fun = function()\n   65              pushSceneState(_menuSceneStateNames.about)\n   66:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n   67          {root = \"LEADERBOARDS\", name = \"LEADERBOARDS\", fun = function()\n   68              pushSceneState(_menuSceneStateNames.leaderboards)\n   69:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n   70          {root = \"ACHIEVEMENTS\", name = \"ACHIEVEMENTS\", fun = function()\n   71              pushSceneState(_menuSceneStateNames.achievements)\n   72:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n   73          {root = \"BACK\", name = \"BACK\", fun = function()\n   74              pushSceneState(_menuSceneStateNames.menu)\n   75:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n   76      }\n   77      tbl[_menuSceneStateNames.store] = \n   ..\n   79          {root = \"BACK\", name = \"BACK\", fun = function()\n   80              pushSceneState(_menuSceneStateNames.menu)\n   81:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n   82      }\n   83      tbl[_menuSceneStateNames.highScores] = \n   ..\n   85          {root = \"BACK\", name = \"BACK\", fun = function()\n   86              pushSceneState(_menuSceneStateNames.menu)\n   87:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n   88      }\n   89      tbl[_menuSceneStateNames.characters] = \n   ..\n   91          {root = \"BACK\", name = \"BACK\", fun = function()\n   92              pushSceneState(_menuSceneStateNames.menu)\n   93:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n   94      }\n   95      tbl[_menuSceneStateNames.about] = \n   ..\n   97          {root = \"BACK\", name = \"BACK\", fun = function()\n   98              pushSceneState(_menuSceneStateNames.settings)\n   99:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n  100      }\n  101      tbl[_menuSceneStateNames.leaderboards] = \n  ...\n  103          {root = \"BACK\", name = \"BACK\", fun = function()\n  104              pushSceneState(_menuSceneStateNames.settings)\n  105:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n  106      }\n  107      tbl[_menuSceneStateNames.achievements] = \n  ...\n  109          {root = \"BACK\", name = \"BACK\", fun = function()\n  110              pushSceneState(_menuSceneStateNames.settings)\n  111:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n  112      }\n  113      tbl[_menuSceneStateNames.levelselect] = \n  ...\n  115          {root = \"BACK\", name = \"BACK\", fun = function()\n  116              pushSceneState(_menuSceneStateNames.menu)\n  117:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n  118          {root = \"portrait_city\", name = \"portrait_city\", fun = function()\n  119              _currentLevel.gameBoard = _gameBoards.CITY\n  120              pushSceneState(_menuSceneStateNames.boardselect)\n  121:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n  122          {root = \"portrait_country\", name = \"portrait_country\", fun = function()\n  123              _currentLevel.gameBoard = _gameBoards.COUNTRY\n  124              pushSceneState(_menuSceneStateNames.boardselect)\n  125:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n  126      }\n  127      tbl[_menuSceneStateNames.modeselect] = \n  ...\n  129          {root = \"BACK\", name = \"BACK\", fun = function()\n  130              pushSceneState(_menuSceneStateNames.menu)\n  131:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n  132          {root = \"TIME_ATTACK\", name = \"TIME_ATTACK\", fun = function()\n  133              _currentLevel.gameMode = _gameModes.TIMEATTACK,\n  134              pushSceneState(_menuSceneStateNames.boardselect)\n  135:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n  136          {root = \"ARCADE\", name = \"ARCADE\", fun = function()\n  137              _currentLevel.gameMode = _gameModes.ARCADE,\n  138              pushSceneState(_menuSceneStateNames.boardselect)\n  139:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n  140          {root = \"SURVIVAL\", name = \"SURVIVAL\", fun = function()\n  141              _currentLevel.gameMode = _gameModes.SURVIVAL,\n  142              pushSceneState(_menuSceneStateNames.boardselect)\n  143:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = false},\n  144      }\n  145      tbl[_menuSceneStateNames.boardselect] = \n  ...\n  147          {root = \"BACK\", name = \"BACK\", fun = function()\n  148              pushSceneState(_menuSceneStateNames.menu)\n  149:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.previous, disabled = false},\n  150  \n  151  \n  ...\n  155              getSceneState(_gameSceneStateNames.play).createLevel = true\n  156              pushSceneState(_gameSceneStateNames.play)\n  157:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 1)},\n  158          {root = \"stage\", name = \"stage2\", fun = function()\n  159              _currentLevel.gameLevelNumber = 2\n  ...\n  161              getSceneState(_gameSceneStateNames.play).createLevel = true\n  162              pushSceneState(_gameSceneStateNames.play)\n  163:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 2)},\n  164          {root = \"stage\", name = \"stage3\", fun = function()\n  165              _currentLevel.gameLevelNumber = 3\n  ...\n  167              getSceneState(_gameSceneStateNames.play).createLevel = true\n  168              pushSceneState(_gameSceneStateNames.play)\n  169:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 3)},\n  170          {root = \"stage\", name = \"stage4\", fun = function()\n  171              _currentLevel.gameLevelNumber = 4\n  ...\n  173              getSceneState(_gameSceneStateNames.play).createLevel = true\n  174              pushSceneState(_gameSceneStateNames.play)\n  175:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 4)},\n  176          {root = \"stage\", name = \"stage5\", fun = function()\n  177              _currentLevel.gameLevelNumber = 5\n  ...\n  179              getSceneState(_gameSceneStateNames.play).createLevel = true\n  180              pushSceneState(_gameSceneStateNames.play)\n  181:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 5)},\n  182  \n  183  \n  ...\n  202              getSceneState(_gameSceneStateNames.play).createLevel = true\n  203              pushSceneState(_gameSceneStateNames.play)\n  204:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 6)},\n  205          {root = \"stage\", name = \"stage7\", fun = function()\n  206              _currentLevel.gameLevelNumber = 7\n  ...\n  208              getSceneState(_gameSceneStateNames.play).createLevel = true\n  209              pushSceneState(_gameSceneStateNames.play)\n  210:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 7)},\n  211          {root = \"stage\", name = \"stage8\", fun = function()\n  212              _currentLevel.gameLevelNumber = 8\n  ...\n  214              getSceneState(_gameSceneStateNames.play).createLevel = true\n  215              pushSceneState(_gameSceneStateNames.play)\n  216:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 8)},\n  217          {root = \"stage\", name = \"stage9\", fun = function()\n  218              _currentLevel.gameLevelNumber = 9\n  ...\n  220              getSceneState(_gameSceneStateNames.play).createLevel = true\n  221              pushSceneState(_gameSceneStateNames.play)\n  222:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 9)},\n  223          {root = \"stage\", name = \"stage10\", fun = function()\n  224              _currentLevel.gameLevelNumber = 10\n  ...\n  226              getSceneState(_gameSceneStateNames.play).createLevel = true\n  227              pushSceneState(_gameSceneStateNames.play)\n  228:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 10)},\n  229  \n  230  \n  ...\n  248              getSceneState(_gameSceneStateNames.play).createLevel = true\n  249              pushSceneState(_gameSceneStateNames.play)\n  250:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 11)},\n  251          {root = \"stage\", name = \"stage12\", fun = function()\n  252              _currentLevel.gameLevelNumber = 12\n  ...\n  254              getSceneState(_gameSceneStateNames.play).createLevel = true\n  255              pushSceneState(_gameSceneStateNames.play)\n  256:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 12)},\n  257          {root = \"stage\", name = \"stage13\", fun = function()\n  258              _currentLevel.gameLevelNumber = 13\n  ...\n  260              getSceneState(_gameSceneStateNames.play).createLevel = true\n  261              pushSceneState(_gameSceneStateNames.play)\n  262:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 13)},\n  263          {root = \"stage\", name = \"stage14\", fun = function()\n  264              _currentLevel.gameLevelNumber = 14\n  ...\n  266              getSceneState(_gameSceneStateNames.play).createLevel = true\n  267              pushSceneState(_gameSceneStateNames.play)\n  268:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 14)},\n  269          {root = \"stage\", name = \"stage15\", fun = function()\n  270              _currentLevel.gameLevelNumber = 15\n  ...\n  272              getSceneState(_gameSceneStateNames.play).createLevel = true\n  273              pushSceneState(_gameSceneStateNames.play)\n  274:         end, toggle = false, soundPath = _SOUNDPATHS.interface.effects.select, disabled = not levelFileData:isLevelComplete(_gameModes.ARCADE, 15)},\n  275      }\n  276  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  581                  end\n  582      local toggle = false\n  583:     local soundPath = _SOUNDPATHS.interface.effects.select\n  584  \n  585  \n  ...\n  861          function(self)\n  862              self.soundMenuTheme = njli.Sound.create()\n  863:             njli.World.getInstance():getWorldResourceLoader():load(_SOUNDPATHS.interface.music.menu, self.soundMenuTheme)\n  864  \n  865              self.soundTitleTheme = njli.Sound.create()\n  866:             njli.World.getInstance():getWorldResourceLoader():load(_SOUNDPATHS.interface.music.title, self.soundTitleTheme)\n  867  \n  868              self.soundBackground = njli.Sound.create()\n  869:             njli.World.getInstance():getWorldResourceLoader():load(_SOUNDPATHS.gameplay.music.gameplay, self.soundBackground)\n  870          end,\n  871  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/yappybirds_scripts.sublime-workspace:\n  760  			\"v\",\n  761  			\"getArcadeSpawnPoint\",\n  762: 			\"_SOUNDPATHS.interface.effects.previous\",\n  763: 			\"_SOUNDPATHS.interface.effects.select\",\n  764  			\"4:3\",\n  765  			\"8:5\",\n\n54 matches across 9 files\n\n\nSearching 210 files for \"projectileTypeToFilename\"\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/gameScene.lua:\n  224  end\n  225  \n  226: function projectileTypeToFilename(type)\n  227      return \"projectile_waterBalloon_thrown_front\"\n  228  end\n  ...\n  270  \n  271  local createProjectileNode = function(self, x, y, type)\n  272:     local fileName = projectileTypeToFilename(type)\n  273      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  274      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/testScene_ParticleEmitter.lua:\n   44  \n   45  local createProjectileNode = function(self, x, y, type)\n   46:     local fileName = projectileTypeToFilename(type)\n   47      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n   48      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/util.lua:\n  542  end\n  543  \n  544: function projectileTypeToFilename(type)\n  545      math.randomseed( os.time() )\n  546      local colorIndex = math.random(1, 5)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldGameState.lua:\n  230  \n  231  local createProjectileNode = function(self, x, y, type)\n  232:     local fileName = projectileTypeToFilename(type)\n  233      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  234      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  372  \n  373  local createWaterBalloonNode = function(self, x, y)\n  374:     local fileName = projectileTypeToFilename(type)\n  375      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  376      self.projectileInstanceCount = self.projectileInstanceCount + 1\n  ...\n  394  \n  395  local createProjectileNode = function(self, x, y, type)\n  396:     local fileName = projectileTypeToFilename(type)\n  397      local instanceName = self.projectileInstanceCount .. \"/\" .. fileName\n  398      self.projectileInstanceCount = self.projectileInstanceCount + 1\n\n7 matches across 5 files\n\n\nSearching 210 files for \"_deviceNames\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/util.lua:\n    1: _deviceNames = {\"iPhone 2G\",--3:2\n    2      \"iPhone 3G\",--3:2\n    3      \"iPhone 3GS\",--3:2\n    .\n   69      end\n   70  \n   71:     local _3_2_condition = (name == _deviceNames[1] or\n   72:                             name == _deviceNames[2] or\n   73:                             name == _deviceNames[3] or\n   74:                             name == _deviceNames[4] or\n   75:                             name == _deviceNames[5] or\n   76:                             name == _deviceNames[6] or\n   77:                             name == _deviceNames[16] or\n   78:                             name == _deviceNames[17] or\n   79:                             name == _deviceNames[18] or\n   80:                             name == _deviceNames[19] or\n   81:                             name == _deviceNames[7])\n   82  \n   83:     local _16_9_condition = (name == _deviceNames[8] or\n   84:                             name == _deviceNames[9] or\n   85:                             name == _deviceNames[10] or\n   86:                             name == _deviceNames[11] or\n   87:                             name == _deviceNames[12] or\n   88:                             name == _deviceNames[13] or\n   89:                             name == _deviceNames[14] or\n   90:                             name == _deviceNames[15] or\n   91:                             name == _deviceNames[20] or\n   92:                             name == _deviceNames[47])\n   93  \n   94:     local _4_3_condition = (name == _deviceNames[21] or\n   95:                             name == _deviceNames[22] or\n   96:                             name == _deviceNames[23] or\n   97:                             name == _deviceNames[24] or\n   98:                             name == _deviceNames[25] or\n   99:                             name == _deviceNames[26] or\n  100:                             name == _deviceNames[27] or\n  101:                             name == _deviceNames[28] or\n  102:                             name == _deviceNames[29] or\n  103:                             name == _deviceNames[30] or\n  104:                             name == _deviceNames[31] or\n  105:                             name == _deviceNames[32] or\n  106:                             name == _deviceNames[33] or\n  107:                             name == _deviceNames[34] or\n  108:                             name == _deviceNames[35] or\n  109:                             name == _deviceNames[36] or\n  110:                             name == _deviceNames[37] or\n  111:                             name == _deviceNames[38] or\n  112:                             name == _deviceNames[39] or\n  113:                             name == _deviceNames[40] or\n  114:                             name == _deviceNames[41] or\n  115:                             name == _deviceNames[42] or\n  116:                             name == _deviceNames[43] or\n  117:                             name == _deviceNames[44] or\n  118:                             name == _deviceNames[45])\n  119  \n  120:     local _8_5_condition = (name == _deviceNames[46])\n  121  \n  122      if _3_2_condition then\n  ...\n  190      for kk,vv in pairs(_menuNodeNames) do\n  191          _nodePositions[v][vv] = {}\n  192:         for kkk,vvv in pairs(_deviceNames) do\n  193              _nodePositions[v][vv][vvv] = {x=10,y=100}\n  194          end\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/util.lua:\n    1: _deviceNames = {\"iPhone 2G\",--3:2\n    2      \"iPhone 3G\",--3:2\n    3      \"iPhone 3GS\",--3:2\n    .\n   69      end\n   70  \n   71:     local _3_2_condition = (name == _deviceNames[1] or\n   72:                             name == _deviceNames[2] or\n   73:                             name == _deviceNames[3] or\n   74:                             name == _deviceNames[4] or\n   75:                             name == _deviceNames[5] or\n   76:                             name == _deviceNames[6] or\n   77:                             name == _deviceNames[16] or\n   78:                             name == _deviceNames[17] or\n   79:                             name == _deviceNames[18] or\n   80:                             name == _deviceNames[19] or\n   81:                             name == _deviceNames[7])\n   82  \n   83:     local _16_9_condition = (name == _deviceNames[8] or\n   84:                             name == _deviceNames[9] or\n   85:                             name == _deviceNames[10] or\n   86:                             name == _deviceNames[11] or\n   87:                             name == _deviceNames[12] or\n   88:                             name == _deviceNames[13] or\n   89:                             name == _deviceNames[14] or\n   90:                             name == _deviceNames[15] or\n   91:                             name == _deviceNames[20] or\n   92:                             name == _deviceNames[47])\n   93  \n   94:     local _4_3_condition = (name == _deviceNames[21] or\n   95:                             name == _deviceNames[22] or\n   96:                             name == _deviceNames[23] or\n   97:                             name == _deviceNames[24] or\n   98:                             name == _deviceNames[25] or\n   99:                             name == _deviceNames[26] or\n  100:                             name == _deviceNames[27] or\n  101:                             name == _deviceNames[28] or\n  102:                             name == _deviceNames[29] or\n  103:                             name == _deviceNames[30] or\n  104:                             name == _deviceNames[31] or\n  105:                             name == _deviceNames[32] or\n  106:                             name == _deviceNames[33] or\n  107:                             name == _deviceNames[34] or\n  108:                             name == _deviceNames[35] or\n  109:                             name == _deviceNames[36] or\n  110:                             name == _deviceNames[37] or\n  111:                             name == _deviceNames[38] or\n  112:                             name == _deviceNames[39] or\n  113:                             name == _deviceNames[40] or\n  114:                             name == _deviceNames[41] or\n  115:                             name == _deviceNames[42] or\n  116:                             name == _deviceNames[43] or\n  117:                             name == _deviceNames[44] or\n  118:                             name == _deviceNames[45])\n  119  \n  120:     local _8_5_condition = (name == _deviceNames[46])\n  121  \n  122      if _3_2_condition then\n  ...\n  290      for kk,vv in pairs(_menuNodeNames) do\n  291          _menuNodePositions[v][vv] = {}\n  292:         for kkk,vvv in pairs(_deviceNames) do\n  293              _menuNodePositions[v][vv][vvv] = {x=10,y=100}\n  294          end\n  ...\n  299  for k, v in pairs(_pauseMenuNodeNames) do\n  300      _pauseMenuNodePositions[v] = {}\n  301:     for kk, vv in pairs(_deviceNames) do\n  302          _pauseMenuNodePositions[v][vv] = {x=0, y=0}\n  303      end\n\n99 matches across 2 files\n\n\nSearching 210 files for \"_menuNodePositions\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/menuNodePositions.lua:\n    8  \n    9  \n   10: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.PLAY][\"Simulator\"] = { x = 570, y = 193 }\n   11: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.STORE][\"Simulator\"] = { x = 190, y = 193 }\n   12: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.HIGHSCORES][\"Simulator\"] = { x = 145, y = 385 }\n   13: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.SETTINGS][\"Simulator\"] = { x = 1020, y = 385 }\n   14: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.CHARACTERS][\"Simulator\"] = { x = 570, y = 85 }\n   15: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.logo_yb][\"Simulator\"] = { x = 570, y = 510 }\n   16: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.SOUND_FX][\"Simulator\"] = { x = 310, y = 460 }\n   17: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.MUSIC][\"Simulator\"] = { x = 735, y = 460 }\n   18: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ABOUT][\"Simulator\"] = { x = 510, y = 310 }\n   19: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.LEADERBOARDS][\"Simulator\"] = { x = 310, y = 170 }\n   20: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ACHIEVEMENTS][\"Simulator\"] = { x = 735, y = 170 }\n   21: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   22: _menuNodePositions[_menuSceneStateNames.store][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   23: _menuNodePositions[_menuSceneStateNames.highScores][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   24: _menuNodePositions[_menuSceneStateNames.characters][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   25: _menuNodePositions[_menuSceneStateNames.about][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   26: _menuNodePositions[_menuSceneStateNames.leaderboards][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   27: _menuNodePositions[_menuSceneStateNames.achievements][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   28: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   29: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_city][\"Simulator\"] = { x = 800, y = 300 }\n   30: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_country][\"Simulator\"] = { x = 400, y = 300 }\n   31: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   32: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.TIME_ATTACK][\"Simulator\"] = { x = 284, y = 320 }\n   33: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.SURVIVAL][\"Simulator\"] = { x = 568, y = 320 }\n   34: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.ARCADE][\"Simulator\"] = { x = 852, y = 320 }\n   35: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n   36: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.ITEM1][\"Simulator\"] = { x = 600, y = 300 }\n   37: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage1][\"Simulator\"] = { x = 189.33333333333712, y = 512 }\n   38: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage2][\"Simulator\"] = { x = 378.66666666666288, y = 512 }\n   39: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage3][\"Simulator\"] = { x = 568,              y = 512 }\n   40: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage4][\"Simulator\"] = { x = 757.33333333333712, y = 512 }\n   41: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage5][\"Simulator\"] = { x = 946.66666666666288, y = 512 }\n   42: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage6][\"Simulator\"] = { x = 189.33333333333712, y = 384 }\n   43: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage7][\"Simulator\"] = { x = 378.66666666666288, y = 384 }\n   44: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage8][\"Simulator\"] = { x = 568,              y = 384 }\n   45: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage9][\"Simulator\"] = { x = 757.33333333333712, y = 384 }\n   46: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage10][\"Simulator\"] = { x = 946.66666666666288, y = 384 }\n   47: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage11][\"Simulator\"] = { x = 189.33333333333712, y = 256 }\n   48: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage12][\"Simulator\"] = { x = 378.66666666666288, y = 256 }\n   49: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage13][\"Simulator\"] = { x = 568,              y = 256 }\n   50: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage14][\"Simulator\"] = { x = 757.33333333333712, y = 256 }\n   51: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage15][\"Simulator\"] = { x = 946.66666666666288, y = 256 }\n   52  _pauseMenuNodePositions[_pauseMenuNodeNames.PLAY][\"Simulator\"] = { x = 426, y = 426.6624 }\n   53  _pauseMenuNodePositions[_pauseMenuNodeNames.QUIT][\"Simulator\"] = { x = 710, y = 426.6624 }\n   ..\n   58  \n   59  \n   60: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.PLAY][\"16:9\"] = { x = 570, y = 193 }\n   61: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.STORE][\"16:9\"] = { x = 190, y = 193 }\n   62: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.HIGHSCORES][\"16:9\"] = { x = 145, y = 385 }\n   63: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.SETTINGS][\"16:9\"] = { x = 1020, y = 385 }\n   64: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.CHARACTERS][\"16:9\"] = { x = 570, y = 85 }\n   65: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.logo_yb][\"16:9\"] = { x = 570, y = 510 }\n   66: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.SOUND_FX][\"16:9\"] = { x = 310, y = 460 }\n   67: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.MUSIC][\"16:9\"] = { x = 735, y = 460 }\n   68: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ABOUT][\"16:9\"] = { x = 510, y = 310 }\n   69: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.LEADERBOARDS][\"16:9\"] = { x = 310, y = 170 }\n   70: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ACHIEVEMENTS][\"16:9\"] = { x = 735, y = 170 }\n   71: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   72: _menuNodePositions[_menuSceneStateNames.store][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   73: _menuNodePositions[_menuSceneStateNames.highScores][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   74: _menuNodePositions[_menuSceneStateNames.characters][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   75: _menuNodePositions[_menuSceneStateNames.about][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   76: _menuNodePositions[_menuSceneStateNames.leaderboards][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   77: _menuNodePositions[_menuSceneStateNames.achievements][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   78: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   79: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_city][\"16:9\"] = { x = 800, y = 300 }\n   80: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_country][\"16:9\"] = { x = 400, y = 300 }\n   81: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   82: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.TIME_ATTACK][\"16:9\"] = { x = 284, y = 320 }\n   83: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.SURVIVAL][\"16:9\"] = { x = 568, y = 320 }\n   84: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.ARCADE][\"16:9\"] = { x = 852, y = 320 }\n   85: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.BACK][\"16:9\"] = { x = 110, y = 80 }\n   86: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.ITEM1][\"16:9\"] = { x = 600, y = 300 }\n   87  \n   88: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage1][\"16:9\"] = { x = 189.33333333333712, y = 512 }\n   89: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage2][\"16:9\"] = { x = 378.66666666666288, y = 512 }\n   90: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage3][\"16:9\"] = { x = 568, y = 512 }\n   91: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage4][\"16:9\"] = { x = 757.33333333333712, y = 512 }\n   92: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage5][\"16:9\"] = { x = 946.66666666666288, y = 512 }\n   93: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage6][\"16:9\"] = { x = 189.33333333333712, y = 384 }\n   94: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage7][\"16:9\"] = { x = 378.66666666666288, y = 384 }\n   95: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage8][\"16:9\"] = { x = 568,              y = 384 }\n   96: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage9][\"16:9\"] = { x = 757.33333333333712, y = 384 }\n   97: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage10][\"16:9\"] = { x = 946.66666666666288, y = 384 }\n   98: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage11][\"16:9\"] = { x = 189.33333333333712, y = 256 }\n   99: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage12][\"16:9\"] = { x = 378.66666666666288, y = 256 }\n  100: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage13][\"16:9\"] = { x = 568,              y = 256 }\n  101: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage14][\"16:9\"] = { x = 757.33333333333712, y = 256 }\n  102: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage15][\"16:9\"] = { x = 946.66666666666288, y = 256 }\n  103  \n  104  \n  ...\n  109  \n  110  \n  111: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.PLAY][\"iPhone 6+\"] = { x = 1836, y = 338 }\n  112: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.STORE][\"iPhone 6+\"] = { x = 340, y = 305 }\n  113: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.HIGHSCORES][\"iPhone 6+\"] = { x = 260, y = 764 }\n  114: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.SETTINGS][\"iPhone 6+\"] = { x = 1924, y = 812 }\n  115: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.CHARACTERS][\"iPhone 6+\"] = { x = 1128, y = 149 }\n  116: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.logo_yb][\"iPhone 6+\"] = { x = 1039, y = 1007 }\n  117: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.SOUND_FX][\"iPhone 6+\"] = { x = 598, y = 864 }\n  118: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.MUSIC][\"iPhone 6+\"] = { x = 1429, y = 867 }\n  119: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ABOUT][\"iPhone 6+\"] = { x = 985, y = 602 }\n  120: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.LEADERBOARDS][\"iPhone 6+\"] = { x = 577, y = 321 }\n  121: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ACHIEVEMENTS][\"iPhone 6+\"] = { x = 1458, y = 316 }\n  122: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  123: -- _menuNodePositions[_menuSceneStateNames.store][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  124: -- _menuNodePositions[_menuSceneStateNames.highScores][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  125: -- _menuNodePositions[_menuSceneStateNames.characters][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  126: -- _menuNodePositions[_menuSceneStateNames.about][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  127: -- _menuNodePositions[_menuSceneStateNames.leaderboards][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  128: -- _menuNodePositions[_menuSceneStateNames.achievements][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  129: -- _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  130: -- _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_city][\"iPhone 6+\"] = { x = 1502, y = 594 }\n  131: -- _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_country][\"iPhone 6+\"] = { x = 701, y = 603 }\n  132: --_menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n  133: -- _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.BACK][\"iPhone 6+\"] = { x = 211, y = 155 }\n  134: -- _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.ITEM1][\"iPhone 6+\"] = { x = 1105, y = 686 }\n  135  \n  136  \n  ...\n  139  \n  140  \n  141: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.PLAY][\"iPhone 6\"] = { x = 1153, y = 180 }\n  142: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.STORE][\"iPhone 6\"] = { x = 194, y = 180 }\n  143: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.HIGHSCORES][\"iPhone 6\"] = { x = 157, y = 432 }\n  144: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.SETTINGS][\"iPhone 6\"] = { x = 1205, y = 432 }\n  145: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.CHARACTERS][\"iPhone 6\"] = { x = 648, y = 88 }\n  146: -- _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.logo_yb][\"iPhone 6\"] = { x = 637, y = 592 }\n  147: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.SOUND_FX][\"iPhone 6\"] = { x = 322, y = 534 }\n  148: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.MUSIC][\"iPhone 6\"] = { x = 1012, y = 534 }\n  149: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ABOUT][\"iPhone 6\"] = { x = 644, y = 352 }\n  150: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.LEADERBOARDS][\"iPhone 6\"] = { x = 367, y = 217 }\n  151: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ACHIEVEMENTS][\"iPhone 6\"] = { x = 1017, y = 194 }\n  152: -- _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  153: -- _menuNodePositions[_menuSceneStateNames.store][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  154: -- _menuNodePositions[_menuSceneStateNames.highScores][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  155: -- _menuNodePositions[_menuSceneStateNames.characters][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  156: -- _menuNodePositions[_menuSceneStateNames.about][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  157: -- _menuNodePositions[_menuSceneStateNames.leaderboards][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  158: -- _menuNodePositions[_menuSceneStateNames.achievements][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  159: -- _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  160: -- _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_city][\"iPhone 6\"] = { x = 892, y = 403 }\n  161: -- _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_country][\"iPhone 6\"] = { x = 459, y = 403 }\n  162: --_menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.BACK][\"Simulator\"] = { x = 110, y = 80 }\n  163: -- _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.BACK][\"iPhone 6\"] = { x = 144, y = 102 }\n  164: -- _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.ITEM1][\"iPhone 6\"] = { x = 690, y = 389 }\n  165  \n  166  \n  ...\n  170  \n  171  \n  172: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.PLAY][\"8:5\"] = { x = 1656, y = 279 }\n  173: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.STORE][\"8:5\"] = { x = 263, y = 268 }\n  174: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.HIGHSCORES][\"8:5\"] = { x = 235, y = 667 }\n  175: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.SETTINGS][\"8:5\"] = { x = 1652, y = 661 }\n  176: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.CHARACTERS][\"8:5\"] = { x = 960, y = 132 }\n  177: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.logo_yb][\"8:5\"] = { x = 980, y = 878 }\n  178: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.SOUND_FX][\"8:5\"] = { x = 485, y = 783 }\n  179: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.MUSIC][\"8:5\"] = { x = 1482, y = 780 }\n  180: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ABOUT][\"8:5\"] = { x = 959, y = 492 }\n  181: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.LEADERBOARDS][\"8:5\"] = { x = 489, y = 290 }\n  182: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ACHIEVEMENTS][\"8:5\"] = { x = 1425, y = 296 }\n  183: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  184: _menuNodePositions[_menuSceneStateNames.store][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  185: _menuNodePositions[_menuSceneStateNames.highScores][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  186: _menuNodePositions[_menuSceneStateNames.characters][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  187: _menuNodePositions[_menuSceneStateNames.about][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  188: _menuNodePositions[_menuSceneStateNames.leaderboards][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  189: _menuNodePositions[_menuSceneStateNames.achievements][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  190: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  191: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_city][\"8:5\"] = { x = 1280, y = 530 }\n  192: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_country][\"8:5\"] = { x = 600, y = 530 }\n  193: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.BACK][\"8:5\"] = { x = 110, y = 80 }\n  194: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.TIME_ATTACK][\"8:5\"] = { x = 284, y = 320 }\n  195: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.SURVIVAL][\"8:5\"] = { x = 568, y = 320 }\n  196: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.ARCADE][\"8:5\"] = { x = 852, y = 320 }\n  197: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.BACK][\"8:5\"] = { x = 179, y = 125 }\n  198: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.ITEM1][\"8:5\"] = { x = 996, y = 548 }\n  199: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage1][\"8:5\"] = { x = 189.33333333333712, y = 512 }\n  200: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage2][\"8:5\"] = { x = 378.66666666666288, y = 512 }\n  201: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage3][\"8:5\"] = { x = 568, y = 512 }\n  202: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage4][\"8:5\"] = { x = 757.33333333333712, y = 512 }\n  203: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage5][\"8:5\"] = { x = 946.66666666666288, y = 512 }\n  204: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage6][\"8:5\"] = { x = 189.33333333333712, y = 384 }\n  205: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage7][\"8:5\"] = { x = 378.66666666666288, y = 384 }\n  206: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage8][\"8:5\"] = { x = 568,              y = 384 }\n  207: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage9][\"8:5\"] = { x = 757.33333333333712, y = 384 }\n  208: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage10][\"8:5\"] = { x = 946.66666666666288, y = 384 }\n  209: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage11][\"8:5\"] = { x = 189.33333333333712, y = 256 }\n  210: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage12][\"8:5\"] = { x = 378.66666666666288, y = 256 }\n  211: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage13][\"8:5\"] = { x = 568,              y = 256 }\n  212: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage14][\"8:5\"] = { x = 757.33333333333712, y = 256 }\n  213: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage15][\"8:5\"] = { x = 946.66666666666288, y = 256 }\n  214  \n  215  \n  ...\n  228  \n  229  \n  230: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.PLAY][\"4:3\"] = { x = 568, y = 192 }\n  231: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.STORE][\"4:3\"] = { x = 190, y = 193 }\n  232: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.HIGHSCORES][\"4:3\"] = { x = 145, y = 385 }\n  233: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.SETTINGS][\"4:3\"] = { x = 1020, y = 385 }\n  234: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.CHARACTERS][\"4:3\"] = { x = 570, y = 85 }\n  235: _menuNodePositions[_menuSceneStateNames.menu][_menuNodeNames.logo_yb][\"4:3\"] = { x = 568, y = 426.66624 }\n  236: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.SOUND_FX][\"4:3\"] = { x = 310, y = 460 }\n  237: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.MUSIC][\"4:3\"] = { x = 735, y = 460 }\n  238: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ABOUT][\"4:3\"] = { x = 510, y = 310 }\n  239: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.LEADERBOARDS][\"4:3\"] = { x = 310, y = 170 }\n  240: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.ACHIEVEMENTS][\"4:3\"] = { x = 735, y = 170 }\n  241: _menuNodePositions[_menuSceneStateNames.settings][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  242: _menuNodePositions[_menuSceneStateNames.store][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  243: _menuNodePositions[_menuSceneStateNames.highScores][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  244: _menuNodePositions[_menuSceneStateNames.characters][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  245: _menuNodePositions[_menuSceneStateNames.about][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  246: _menuNodePositions[_menuSceneStateNames.leaderboards][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  247: _menuNodePositions[_menuSceneStateNames.achievements][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  248: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  249: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_city][\"4:3\"] = { x = 800, y = 300 }\n  250: _menuNodePositions[_menuSceneStateNames.levelselect][_menuNodeNames.portrait_country][\"4:3\"] = { x = 400, y = 300 }\n  251  \n  252: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.BACK][\"4:3\"] = { x = 280, y = 200 }\n  253: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.TIME_ATTACK][\"4:3\"] = { x = 284, y = 320 }\n  254: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.SURVIVAL][\"4:3\"] = { x = 568, y = 320 }\n  255: _menuNodePositions[_menuSceneStateNames.modeselect][_menuNodeNames.ARCADE][\"4:3\"] = { x = 852, y = 320 }\n  256: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.BACK][\"4:3\"] = { x = 110, y = 80 }\n  257: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.ITEM1][\"4:3\"] = { x = 600, y = 300 }\n  258: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage1][\"4:3\"] = { x = 189.33333333333712, y = 512 }\n  259: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage2][\"4:3\"] = { x = 378.66666666666288, y = 512 }\n  260: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage3][\"4:3\"] = { x = 568, y = 512 }\n  261: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage4][\"4:3\"] = { x = 757.33333333333712, y = 512 }\n  262: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage5][\"4:3\"] = { x = 946.66666666666288, y = 512 }\n  263: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage6][\"4:3\"] = { x = 189.33333333333712, y = 384 }\n  264: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage7][\"4:3\"] = { x = 378.66666666666288, y = 384 }\n  265: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage8][\"4:3\"] = { x = 568,              y = 384 }\n  266: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage9][\"4:3\"] = { x = 757.33333333333712, y = 384 }\n  267: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage10][\"4:3\"] = { x = 946.66666666666288, y = 384 }\n  268: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage11][\"4:3\"] = { x = 189.33333333333712, y = 256 }\n  269: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage12][\"4:3\"] = { x = 378.66666666666288, y = 256 }\n  270: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage13][\"4:3\"] = { x = 568,              y = 256 }\n  271: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage14][\"4:3\"] = { x = 757.33333333333712, y = 256 }\n  272: _menuNodePositions[_menuSceneStateNames.boardselect][_menuNodeNames.stage15][\"4:3\"] = { x = 946.66666666666288, y = 256 }\n  273  \n  274  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/menuScene.lua:\n  297          njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)\n  298          \n  299:         -- print(deviceName,_menuNodePositions[stateName][name][deviceName], _menuNodePositions[stateName][name], _menuNodePositions[stateName])\n  300:         -- local x = _menuNodePositions[stateName][name][deviceName].x\n  301:         -- local y = _menuNodePositions[stateName][name][deviceName].y\n  302  \n  303          -- print(deviceName)\n  304          -- print(njli.World.getInstance():getViewportDimensions())\n  305:         local x, y = processDimensions(_menuNodePositions[stateName][name][deviceName].x, _menuNodePositions[stateName][name][deviceName].y)\n  306  \n  307          self.nodes[name].node:setOrigin(njli.btVector3(x, y, -1))\n  ...\n  340              njli.World.getInstance():getScene():getRootNode():addChildNode(theNode.node)\n  341  \n  342:             -- local x = _menuNodePositions[stateName][name][deviceName].x\n  343:             -- local y = _menuNodePositions[stateName][name][deviceName].y\n  344  \n  345:             local x, y = processDimensions(_menuNodePositions[stateName][name][deviceName].x, _menuNodePositions[stateName][name][deviceName].y)\n  346  \n  347              theNode.node:setOrigin(njli.btVector3(x, y, -1))\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/util.lua:\n  285  end\n  286  \n  287: _menuNodePositions = {}\n  288  for k,v in pairs(_menuSceneStateNames) do\n  289:     _menuNodePositions[v] = {}\n  290      for kk,vv in pairs(_menuNodeNames) do\n  291:         _menuNodePositions[v][vv] = {}\n  292          for kkk,vvv in pairs(_deviceNames) do\n  293:             _menuNodePositions[v][vv][vvv] = {x=10,y=100}\n  294          end\n  295      end\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/yappybirds_scripts.sublime-workspace:\n  766  			\"Simulator\",\n  767  			\"self\",\n  768: 			\"_menuNodePositions\",\n  769  			\"playButton\",\n  770  			\"_currentLevel\",\n\n232 matches across 4 files\n\n\nSearching 210 files for \"DeviceNameToResolutionDeviceName\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/_menuScene.lua:\n  171  \n  172  \n  173:     local deviceName = DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName())\n  174      -- deviceName = njli.World.getInstance():getDeviceName()\n  175  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/menuScene.lua:\n  171  \n  172  \n  173:     local deviceName = DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName())\n  174      -- deviceName = njli.World.getInstance():getDeviceName()\n  175  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/util.lua:\n   64  -- http://handsontable.com/demo/column_freeze.html\n   65  \n   66: function DeviceNameToResolutionDeviceName(name)\n   67      if name == \"Simulator\" then\n   68          return \"Simulator\"\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/main.lua:\n  411  \n  412  print(\"\\n\\n\")\n  413: print(\"getDeviceName\\t\", DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName()))\n  414  print(\"\\n\\n\\n\\n\")\n  415  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePauseScene.lua:\n   31  \n   32  \n   33:     local deviceName = DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName())\n   34      local pushButtonNode = require \"nodes.pushButtonNode\"\n   35  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/menuScene.lua:\n  288      -- self.nodes[name].node:show(getOrthoCamera())\n  289  \n  290:     local deviceName = DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName())\n  291  \n  292      if _menuSceneStateNames.menu == stateName then\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/util.lua:\n   64  -- http://handsontable.com/demo/column_freeze.html\n   65  \n   66: function DeviceNameToResolutionDeviceName(name)\n   67      if name == \"Simulator\" then\n   68          return \"Simulator\"\n\n7 matches across 7 files\n\n\nSearching 210 files for \"createWaterBalloonNode\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePlayScene.lua:\n  201          -- local projectile = nil\n  202          -- if njli.isIOS() then\n  203:         --     projectile = self.world:createWaterBalloonNode(touches[1]:getPosition():x()*2, touches[1]:getPosition():y()*2)\n  204          -- elseif njli.isANDROID() then\n  205:         --     projectile = self.world:createWaterBalloonNode(touches[1]:getPosition():x(), touches[1]:getPosition():y())\n  206          -- end\n  207  \n  208:         projectile = self.world:createWaterBalloonNode(touches[1]:getPosition():x() * touches[1]:getScale(), touches[1]:getPosition():y() * touches[1]:getScale())\n  209          projectile:start()\n  210          -- print_r(projectile)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  373  end\n  374  \n  375: local createWaterBalloonNode = function(self, x, y)\n  376      local fileName = projectileTypeToFilename(type)\n  377  \n  ...\n  794      destroyProjectileNode = destroyProjectileNode,\n  795      createProjectileNode = createProjectileNode,\n  796:     createWaterBalloonNode = createWaterBalloonNode,\n  797  \n  798      destroyAllPlayableNodes = destroyAllPlayableNodes,\n\n6 matches across 2 files\n\n\nSearching 210 files for \"LAYER_MAX\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/gameScene.lua:\n  189      end\n  190  \n  191:     local zz = self.LAYER_MAX + (0.1 - (self.LAYER_DISTANCE * (layer - 1))) + offset\n  192  \n  193      return njli.btVector3(xx, yy, zz)\n  ...\n  198      function adjustPosition(oldPosition, newDistance)\n  199          local ret = oldPosition\n  200:         local totalDistanceFromCamera = myself.LAYER_MAX - 0.1\n  201  \n  202          if newDistance ~= totalDistanceFromCamera then\n  ...\n  361  \n  362      local origin = self:getOriginForLayer(x, y, layer, sublayer)\n  363:     local scaleFactor = (origin:z() / self.LAYER_MAX)\n  364  \n  365      local width = tile.width * scaleFactor\n  ...\n  390  \n  391  --     local origin = self:getOriginForLayer(spawnPoint.x, spawnPoint.y, spawnPoint.layer)\n  392: --     local scaleFactor = origin:z() / self.LAYER_MAX\n  393  \n  394  --     origin = self:transformCoordinate(origin)\n  ...\n  639      local WORLD_XOFFSET = 0.0\n  640      local LAYER_DISTANCE = 15.24 --meters (50 feet)\n  641:     local LAYER_MAX = 60.96 --meters (200 feet)\n  642  \n  643      level:loadLevel(gameMode, gameBoard, gameLevel)\n  ...\n  685          WORLD_XOFFSET = WORLD_XOFFSET,\n  686          LAYER_DISTANCE = LAYER_DISTANCE,\n  687:         LAYER_MAX = LAYER_MAX,\n  688  \n  689          characterGeometry = nil, \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/testScene_ParticleEmitter.lua:\n   16      end\n   17  \n   18:     local zz = self.LAYER_MAX + (0.1 - (self.LAYER_DISTANCE * (layer - 1))) + offset\n   19  \n   20      return njli.btVector3(xx, yy, zz)\n   ..\n   25      function adjustPosition(oldPosition, newDistance)\n   26          local ret = oldPosition\n   27:         local totalDistanceFromCamera = myself.LAYER_MAX - 0.1\n   28  \n   29          if newDistance ~= totalDistanceFromCamera then\n   ..\n  324          WORLD_XOFFSET = 0.0,\n  325          LAYER_DISTANCE = 15.24, --meters (50 feet)\n  326:         LAYER_MAX = 60.96, --meters (200 feet)\n  327          scale = 89.0,\n  328      }\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldGameState.lua:\n   33      end\n   34  \n   35:     local zz = self.LAYER_MAX + (0.1 - (self.LAYER_DISTANCE * (layer - 1))) + offset\n   36  \n   37      return njli.btVector3(xx, yy, zz)\n   ..\n   42      function adjustPosition(oldPosition, newDistance)\n   43          local ret = oldPosition\n   44:         local totalDistanceFromCamera = myself.LAYER_MAX - 0.1\n   45  \n   46          if newDistance ~= totalDistanceFromCamera then\n   ..\n   69  \n   70      local origin = self:getOriginForLayer(x, y, layer, sublayer)\n   71:     local scaleFactor = (origin:z() / self.LAYER_MAX)\n   72  \n   73      local width = (tile.width - 2) * scaleFactor\n   ..\n  695          WORLD_XOFFSET = 0.0,\n  696          LAYER_DISTANCE = 15.24, --meters (50 feet)\n  697:         LAYER_MAX = 60.96, --meters (200 feet)\n  698          scale = 89.0,\n  699  \n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  169      end\n  170  \n  171:     local zz = self.LAYER_MAX + (0.1 - (self.LAYER_DISTANCE * (layer - 1))) + offset\n  172  \n  173      return njli.btVector3(xx, yy, zz)\n  ...\n  178      function adjustPosition(oldPosition, newDistance)\n  179          local ret = oldPosition\n  180:         local totalDistanceFromCamera = myself.LAYER_MAX\n  181  \n  182          if newDistance ~= totalDistanceFromCamera then\n  ...\n  212  \n  213      local origin = self:getOriginForLayer(x, y, layer, sublayer)\n  214:     local scaleFactor = (origin:z() / self.LAYER_MAX)\n  215  \n  216      local width = (tile.width - 2) * scaleFactor\n  ...\n 1136          WORLD_XOFFSET = 1.0,\n 1137          LAYER_DISTANCE = 15.24, --meters (50 feet)\n 1138:         LAYER_MAX = 60.96, --meters (200 feet)\n 1139          scale = 91.0,\n 1140  \n\n18 matches across 4 files\n\n\nSearching 210 files for \"createWaterBalloonNode\" (case sensitive, whole word)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePlayScene.lua:\n  201          -- local projectile = nil\n  202          -- if njli.isIOS() then\n  203:         --     projectile = self.world:createWaterBalloonNode(touches[1]:getPosition():x()*2, touches[1]:getPosition():y()*2)\n  204          -- elseif njli.isANDROID() then\n  205:         --     projectile = self.world:createWaterBalloonNode(touches[1]:getPosition():x(), touches[1]:getPosition():y())\n  206          -- end\n  207  \n  208:         projectile = self.world:createWaterBalloonNode(touches[1]:getPosition():x() * touches[1]:getScale(), touches[1]:getPosition():y() * touches[1]:getScale())\n  209          projectile:start()\n  210          -- print_r(projectile)\n\n/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua:\n  373  end\n  374  \n  375: local createWaterBalloonNode = function(self, x, y)\n  376      local fileName = projectileTypeToFilename(type)\n  377  \n  ...\n  794      destroyProjectileNode = destroyProjectileNode,\n  795      createProjectileNode = createProjectileNode,\n  796:     createWaterBalloonNode = createWaterBalloonNode,\n  797  \n  798      destroyAllPlayableNodes = destroyAllPlayableNodes,\n\n6 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 70247,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "scenes/gamePlayScene.lua",
+			"settings":
+			{
+				"buffer_size": 8312,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 9726,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scenes/menuScene.lua",
+			"settings":
+			{
+				"buffer_size": 18046,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Lua JLI/LuaJLI.sublime-build",
+	"command_palette":
+	{
+		"height": 247.0,
+		"selected_items":
+		[
+			[
+				"todo",
+				"Package Control: Discover Packages"
+			],
+			[
+				"show",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Build: JLILua"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"_",
+				"Snippet: _G"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 141.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/util.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/util.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/filePaths.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePlayScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/gameScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/Bird.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/BirdBeak/BirdBeak.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/Dog.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Nodes/Projectile/Balloon/Balloon.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/balloonNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Nodes/Projectile/Balloon/States/Thrown.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Projectile/Balloon/States/Hit.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/_dogNodeObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/birdSpawnMachine.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/levelData.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldGameState.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/main.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Hit.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/birdSpawnMachine.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Spawn.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/states/Caught.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/states/Dazed.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/states/Land.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/states/Released.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/states/Run.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Dog/states/Spawn.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/_birdMouthNodeObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/_birdNodeObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Fly.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/Params.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/menuScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/birdNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Grabbed.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/dogNodeObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/birdNodeObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/yappyBirdsWorld.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Grabbing.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Pursue.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/steering/SteeringBehaviors.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/BirdBeak/States/Idle.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/BirdBeak/States/Yap.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/BirdBeak/States/Grab.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gamePauseScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/Bird/States/Yap.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/birdMouthNodeObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/BirdBeak/States/Hit.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/BirdBeak/States/Rest.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/bird/Bird.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/bird/states/Spawn.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts/util.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts/bitmapFontLoader.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gameLoseScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/_scene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/menuNodePositions.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/bmf.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/testScene_ParticleEmitter.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/balloonNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/__gameScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/game.sublime-workspace",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/JSON.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/dogNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/hudEditBoxNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/particleEmitter.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/steering/SteeringBehaviors.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/nanovg.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/JSON.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/yappybirds_scripts.sublime-workspace",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/imageNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/obstacleNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/testScene_Basic.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/start.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/steering/MovingEntity.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/steering/Path.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/_node.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_world.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldMenuState.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldResultsState.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/worlds/_worldTestsState.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes/gameWinScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/main.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/_backgroundNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/backgroundNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/birdSpawnNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/hudSliderNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/imageNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/obstacleNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/pushButtonNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/nodes/stringNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/Params.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/_gameScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/_menuScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/levelLoader.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/menuScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/testParticleEmitterScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/scenes/testSliderScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/start.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/steering.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/steering/MovingEntity.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/cubicTexture.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testAction.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testAllFunctions.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testButtonHUD.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testCheckboxHUD.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testImageLoading.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testLabelHUD.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testNodeAndScene.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testParticleEmitter.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testSliderHUD.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testSound.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testSprites.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testSpriteTextCoords.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testTextboxHUD.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/tests/testWorldState.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/world.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/worlds/worldStateObject.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/bitmapFontLoader.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/Lua/njli.log",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/Lua/SwigLuaWrapper.log",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/render/OpenGL/SliderHUD.cpp",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/render/OpenGL/TextboxHUD.cpp",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/render/OpenGLES20/SliderHUD.cpp",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/render/OpenGLES20/TextboxHUD.cpp",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src/WorldLuaVirtualMachine.cpp",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/pushButtonNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/testNode.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/testNode_Particle.lua",
+		"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/nodes/textNode.lua"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/scenes",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts,/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/third_party/jli_game_engine/version-1.0/src",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts,-/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts/_OLD/*",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/gameplay_scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts/",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts/_OLD",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON,/Users/jamesfolk/Dropbox/NickProject/greenenergyresearch_android",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/assets/scripts",
+			"/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/ASSETS_OLD",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"createWaterBalloonNode",
+			"LAYER_MAX",
+			"transformCoordinate",
+			"createWaterBalloonNode",
+			"DeviceNameToResolutionDeviceName",
+			"deviceName",
+			"_menuNodePositions",
+			"_deviceNames",
+			"destroyProjectileNode",
+			"projectileInstanceCount",
+			"getOwner",
+			"sound",
+			"getColor",
+			"owner",
+			"getOwner",
+			"pop",
+			"enter",
+			"pop",
+			"display",
+			"setCollisionMask",
+			"display",
+			"params",
+			"getSheetInfo",
+			"push",
+			"display",
+			"movingEntity",
+			"movingEntityParams",
+			"getMovingEntityParams",
+			"getMovingEntity",
+			"movingEntity",
+			"getFrameName",
+			"pause",
+			"projectileTypeToFilename",
+			"createWaterBalloonNode",
+			"getFrameName",
+			"touches",
+			"createWaterBalloonNode",
+			"particleGeometry",
+			"getFrameName",
+			"createDogMovingEntity",
+			"movingEntity",
+			"param",
+			"_SOUNDPATHS",
+			"clock",
+			"createProjectileNode",
+			"projectileTypeToFilename",
+			"rootName",
+			"getFrameName",
+			"setupSpriteFrame",
+			"getFrameName",
+			"createStateObjects",
+			"start",
+			"incrementFrame",
+			"run",
+			"destroyBirdNode",
+			"isLevelComplete",
+			"enter",
+			"print",
+			"checking ",
+			"checking arcade",
+			"path",
+			"destroyBirdNode",
+			"removeBirdNodeFromFlock",
+			"createDogNode",
+			"createBirdNode",
+			"createBirdNode_OLD",
+			"canCreateBirdNode",
+			"destroyBirdNode",
+			"birdFlock",
+			"destroyDogNode",
+			"destroyAllPlayableNodes",
+			"action",
+			"createStateObjects",
+			"start",
+			"removeNodeObject",
+			"destroyBirdNode",
+			"delete",
+			"create",
+			"destroyBirdNode",
+			"killBird",
+			"totalBirdsKilled",
+			"killedAllBirds",
+			"pushWin",
+			"birdNode.instanceName",
+			"birdFlock",
+			"setBirdFlock",
+			"owner",
+			"getDog",
+			"owner",
+			"releaseDog",
+			"land",
+			"released",
+			"push",
+			"released",
+			"caught",
+			"tried to pursue",
+			"run",
+			"startDazedTimer",
+			"enableCanRun",
+			"isCaptured",
+			"isCaughtState",
+			"getDog().node",
+			"pushCaught",
+			"dynamic",
+			"startDazedTimer",
+			"getNodeState",
+			"startDazedTimer",
+			"getDazedTimer",
+			"\"Run\"",
+			"enableCanRun",
+			"canRun",
+			"enableCanRun",
+			"enableDazedFlagged",
+			"canRun",
+			"enableCanRun",
+			"isDazedFlagged",
+			"flagAsDazed",
+			"isDazedFlagged",
+			"getPath",
+			"canRun",
+			"enableDazedFlagged",
+			"getYapTimer",
+			"yapTimer",
+			"getDazedTimer",
+			"yapTimer",
+			"getYapTimer",
+			"birdParams",
+			"getMovingEntityParams"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"instanceName",
+			"node",
+			"getMovingEntityParams",
+			"movingEntityParams",
+			"getMovingEntityParams",
+			"dogParams",
+			"getDogParams",
+			"node",
+			"self:getNodeObject():getNode()",
+			"textNode",
+			"-- print",
+			"PursueTime",
+			"canPursue",
+			"restartPursueTimer",
+			"pursueTimer",
+			"getPursueTimer",
+			"restartAttackTimer",
+			"restartYapTimer",
+			"getBirdParams",
+			"birdParams",
+			"yapTimer",
+			"node",
+			"movingEntityParams",
+			"createBirdMovingEntity",
+			"frameSideName",
+			"frameActionName",
+			":getNode",
+			"self:getNodeObject",
+			"self:getNodeState",
+			"self:getCurrentStateName",
+			"self:getStateObject",
+			"self:getNode",
+			"birdNodeObject",
+			"getNodeState()",
+			"getNodeObject()",
+			"getNodeObject",
+			"addStateObject",
+			"getStateObject(getCurrentStateName())",
+			"self.stateObjects",
+			"getStateObjects()",
+			"stateNames",
+			"getStateObjects()",
+			"getNode()",
+			"nodeState",
+			"stateNames",
+			"getCurrentStateName",
+			"stateObjects",
+			"getStateName()",
+			"Bird",
+			"426.66624",
+			"192",
+			"213.3312",
+			"426.6624",
+			"256",
+			"384",
+			"512",
+			"320",
+			"852",
+			"284",
+			"340.8",
+			"710",
+			"426",
+			"946.66666666666288",
+			"757.33333333333712",
+			"568",
+			"378.66666666666288",
+			"189.33333333333712",
+			"213.33",
+			"426.67",
+			"512",
+			"320",
+			"340.8",
+			"710",
+			"426",
+			"852",
+			"284",
+			"946.67",
+			"757.33",
+			"568",
+			"378.67",
+			"189.33",
+			"atan",
+			"bit",
+			"(",
+			"bit32",
+			"njli",
+			"disabled = function() return false end,",
+			"stageButtonDisabled",
+			"8:5",
+			"16:9",
+			"4:3",
+			"currentTauntSound",
+			"pointsNode",
+			"POINTS",
+			"pointsNode",
+			"drawNumberBirdsLeft",
+			"drawTimeAttackTime",
+			"timerNode",
+			"survivalSpawnPoints",
+			"timeAttackSpawnPoints",
+			"survivalSpawnPoints",
+			"timeAttackSpawnPoints",
+			"v",
+			"getArcadeSpawnPoint",
+			"_SOUNDPATHS.interface.effects.previous",
+			"_SOUNDPATHS.interface.effects.select",
+			"4:3",
+			"8:5",
+			"Simulator",
+			"self",
+			"_menuNodePositions",
+			"playButton",
+			"_currentLevel",
+			"self.world",
+			"self.sceneStates[_gameSceneStateNames.play]:addUserData",
+			"self.sceneStates[_gameSceneStateNames.play]:getUserData",
+			"path",
+			"setupSpriteFrame",
+			"v",
+			"azimuth",
+			"ProcessLuaCode",
+			"%d+",
+			"\\\\",
+			"%-",
+			"%+",
+			"%.",
+			"%)",
+			"%("
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "nodes/Projectile/Balloon/Balloon.lua",
+					"settings":
+					{
+						"buffer_size": 12922,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9310,
+								9357
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5551.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "nodes/Bird/Bird.lua",
+					"settings":
+					{
+						"buffer_size": 18149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15379,
+								15399
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8822.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Params.lua",
+					"settings":
+					{
+						"buffer_size": 2653,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2628,
+								2628
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 764.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Nodes/Dog/Dog.lua",
+					"settings":
+					{
+						"buffer_size": 14069,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								188,
+								205
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 3.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Nodes/Projectile/Balloon/States/Thrown.lua",
+					"settings":
+					{
+						"buffer_size": 5191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2909,
+								2909
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 4.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Nodes/Bird/States/Fly.lua",
+					"settings":
+					{
+						"buffer_size": 7715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3923,
+								3992
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 55.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Nodes/Projectile/Balloon/States/Hit.lua",
+					"settings":
+					{
+						"buffer_size": 5015,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1758,
+								1758
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 400.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "nodes/balloonNode.lua",
+					"settings":
+					{
+						"buffer_size": 8517,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3121,
+								3218
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1763.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "worlds/worldYappyGameState.lua",
+					"settings":
+					{
+						"buffer_size": 37322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10856,
+								10878
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 5491.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"settings":
+					{
+						"buffer_size": 70247,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										243,
+										267
+									],
+									[
+										447,
+										471
+									],
+									[
+										871,
+										895
+									],
+									[
+										1203,
+										1227
+									],
+									[
+										1550,
+										1574
+									],
+									[
+										1968,
+										1992
+									],
+									[
+										2418,
+										2438
+									],
+									[
+										2712,
+										2732
+									],
+									[
+										2873,
+										2893
+									],
+									[
+										3049,
+										3069
+									],
+									[
+										3072,
+										3092
+									],
+									[
+										3388,
+										3408
+									],
+									[
+										3563,
+										3583
+									],
+									[
+										3845,
+										3865
+									],
+									[
+										4113,
+										4133
+									],
+									[
+										4274,
+										4294
+									],
+									[
+										4496,
+										4516
+									],
+									[
+										4519,
+										4539
+									],
+									[
+										4748,
+										4768
+									],
+									[
+										5020,
+										5040
+									],
+									[
+										5043,
+										5063
+									],
+									[
+										5316,
+										5336
+									],
+									[
+										5588,
+										5608
+									],
+									[
+										5611,
+										5631
+									],
+									[
+										5920,
+										5931
+									],
+									[
+										6164,
+										6175
+									],
+									[
+										6326,
+										6337
+									],
+									[
+										6676,
+										6687
+									],
+									[
+										6979,
+										6990
+									],
+									[
+										7209,
+										7220
+									],
+									[
+										7642,
+										7653
+									],
+									[
+										7947,
+										7958
+									],
+									[
+										8271,
+										8282
+									],
+									[
+										8607,
+										8618
+									],
+									[
+										9147,
+										9158
+									],
+									[
+										9371,
+										9382
+									],
+									[
+										9610,
+										9621
+									],
+									[
+										9843,
+										9854
+									],
+									[
+										10082,
+										10093
+									],
+									[
+										10363,
+										10374
+									],
+									[
+										10616,
+										10627
+									],
+									[
+										10869,
+										10880
+									],
+									[
+										11098,
+										11109
+									],
+									[
+										11394,
+										11405
+									],
+									[
+										11695,
+										11706
+									],
+									[
+										11996,
+										12007
+									],
+									[
+										12296,
+										12307
+									],
+									[
+										12603,
+										12614
+									],
+									[
+										12910,
+										12921
+									],
+									[
+										13212,
+										13223
+									],
+									[
+										13530,
+										13541
+									],
+									[
+										13855,
+										13866
+									],
+									[
+										14154,
+										14165
+									],
+									[
+										14473,
+										14484
+									],
+									[
+										14776,
+										14787
+									],
+									[
+										15085,
+										15096
+									],
+									[
+										15385,
+										15396
+									],
+									[
+										15654,
+										15665
+									],
+									[
+										16074,
+										16085
+									],
+									[
+										16494,
+										16505
+									],
+									[
+										16914,
+										16925
+									],
+									[
+										17334,
+										17345
+									],
+									[
+										17651,
+										17662
+									],
+									[
+										18071,
+										18082
+									],
+									[
+										18491,
+										18502
+									],
+									[
+										18911,
+										18922
+									],
+									[
+										19333,
+										19344
+									],
+									[
+										19651,
+										19662
+									],
+									[
+										20074,
+										20085
+									],
+									[
+										20497,
+										20508
+									],
+									[
+										20920,
+										20931
+									],
+									[
+										21343,
+										21354
+									],
+									[
+										21693,
+										21704
+									],
+									[
+										21917,
+										21928
+									],
+									[
+										22116,
+										22127
+									],
+									[
+										22317,
+										22328
+									],
+									[
+										22602,
+										22613
+									],
+									[
+										22654,
+										22665
+									],
+									[
+										22970,
+										22994
+									],
+									[
+										23174,
+										23198
+									],
+									[
+										23598,
+										23622
+									],
+									[
+										23930,
+										23954
+									],
+									[
+										24277,
+										24301
+									],
+									[
+										24691,
+										24715
+									],
+									[
+										24982,
+										25006
+									],
+									[
+										25387,
+										25399
+									],
+									[
+										25552,
+										25564
+									],
+									[
+										25614,
+										25626
+									],
+									[
+										25676,
+										25688
+									],
+									[
+										25738,
+										25750
+									],
+									[
+										25800,
+										25812
+									],
+									[
+										25862,
+										25874
+									],
+									[
+										25924,
+										25936
+									],
+									[
+										25987,
+										25999
+									],
+									[
+										26050,
+										26062
+									],
+									[
+										26113,
+										26125
+									],
+									[
+										26176,
+										26188
+									],
+									[
+										26245,
+										26257
+									],
+									[
+										26307,
+										26319
+									],
+									[
+										26369,
+										26381
+									],
+									[
+										26432,
+										26444
+									],
+									[
+										26495,
+										26507
+									],
+									[
+										26558,
+										26570
+									],
+									[
+										26621,
+										26633
+									],
+									[
+										26684,
+										26696
+									],
+									[
+										26747,
+										26759
+									],
+									[
+										26810,
+										26822
+									],
+									[
+										26879,
+										26891
+									],
+									[
+										26942,
+										26954
+									],
+									[
+										27005,
+										27017
+									],
+									[
+										27068,
+										27080
+									],
+									[
+										27131,
+										27143
+									],
+									[
+										27194,
+										27206
+									],
+									[
+										27257,
+										27269
+									],
+									[
+										27320,
+										27332
+									],
+									[
+										27383,
+										27395
+									],
+									[
+										27446,
+										27458
+									],
+									[
+										27509,
+										27521
+									],
+									[
+										27572,
+										27584
+									],
+									[
+										27635,
+										27647
+									],
+									[
+										27698,
+										27710
+									],
+									[
+										27761,
+										27773
+									],
+									[
+										27824,
+										27836
+									],
+									[
+										27887,
+										27899
+									],
+									[
+										27950,
+										27962
+									],
+									[
+										28013,
+										28025
+									],
+									[
+										28076,
+										28088
+									],
+									[
+										28139,
+										28151
+									],
+									[
+										28202,
+										28214
+									],
+									[
+										28265,
+										28277
+									],
+									[
+										28328,
+										28340
+									],
+									[
+										28391,
+										28403
+									],
+									[
+										28460,
+										28472
+									],
+									[
+										28653,
+										28665
+									],
+									[
+										28868,
+										28880
+									],
+									[
+										29033,
+										29045
+									],
+									[
+										29095,
+										29107
+									],
+									[
+										29157,
+										29169
+									],
+									[
+										29219,
+										29231
+									],
+									[
+										29281,
+										29293
+									],
+									[
+										29343,
+										29355
+									],
+									[
+										29405,
+										29417
+									],
+									[
+										29468,
+										29480
+									],
+									[
+										29531,
+										29543
+									],
+									[
+										29594,
+										29606
+									],
+									[
+										29657,
+										29669
+									],
+									[
+										29726,
+										29738
+									],
+									[
+										29788,
+										29800
+									],
+									[
+										29850,
+										29862
+									],
+									[
+										29913,
+										29925
+									],
+									[
+										29976,
+										29988
+									],
+									[
+										30039,
+										30051
+									],
+									[
+										30102,
+										30114
+									],
+									[
+										30165,
+										30177
+									],
+									[
+										30228,
+										30240
+									],
+									[
+										30291,
+										30303
+									],
+									[
+										30360,
+										30372
+									],
+									[
+										30423,
+										30435
+									],
+									[
+										30486,
+										30498
+									],
+									[
+										30549,
+										30561
+									],
+									[
+										30612,
+										30624
+									],
+									[
+										30675,
+										30687
+									],
+									[
+										30738,
+										30750
+									],
+									[
+										30801,
+										30813
+									],
+									[
+										30864,
+										30876
+									],
+									[
+										30927,
+										30939
+									],
+									[
+										30990,
+										31002
+									],
+									[
+										31053,
+										31065
+									],
+									[
+										31116,
+										31128
+									],
+									[
+										31179,
+										31191
+									],
+									[
+										31242,
+										31254
+									],
+									[
+										31305,
+										31317
+									],
+									[
+										31368,
+										31380
+									],
+									[
+										31431,
+										31443
+									],
+									[
+										31494,
+										31506
+									],
+									[
+										31557,
+										31569
+									],
+									[
+										31620,
+										31632
+									],
+									[
+										31683,
+										31695
+									],
+									[
+										31746,
+										31758
+									],
+									[
+										31809,
+										31821
+									],
+									[
+										31872,
+										31884
+									],
+									[
+										31941,
+										31953
+									],
+									[
+										32138,
+										32150
+									],
+									[
+										32368,
+										32380
+									],
+									[
+										32709,
+										32727
+									],
+									[
+										32819,
+										32837
+									],
+									[
+										32930,
+										32948
+									],
+									[
+										33046,
+										33064
+									],
+									[
+										33161,
+										33179
+									],
+									[
+										33276,
+										33294
+									],
+									[
+										33389,
+										33407
+									],
+									[
+										33507,
+										33525
+									],
+									[
+										33622,
+										33640
+									],
+									[
+										33737,
+										33755
+									],
+									[
+										33859,
+										33877
+									],
+									[
+										33981,
+										33999
+									],
+									[
+										34094,
+										34112
+									],
+									[
+										34204,
+										34222
+									],
+									[
+										34319,
+										34337
+									],
+									[
+										34434,
+										34452
+									],
+									[
+										34544,
+										34562
+									],
+									[
+										34661,
+										34679
+									],
+									[
+										34778,
+										34796
+									],
+									[
+										34894,
+										34912
+									],
+									[
+										35020,
+										35038
+									],
+									[
+										35149,
+										35167
+									],
+									[
+										35264,
+										35282
+									],
+									[
+										35387,
+										35405
+									],
+									[
+										35507,
+										35525
+									],
+									[
+										35625,
+										35643
+									],
+									[
+										35741,
+										35759
+									],
+									[
+										35859,
+										35877
+									],
+									[
+										35993,
+										36011
+									],
+									[
+										36127,
+										36145
+									],
+									[
+										36259,
+										36277
+									],
+									[
+										36393,
+										36411
+									],
+									[
+										36527,
+										36545
+									],
+									[
+										36661,
+										36679
+									],
+									[
+										36795,
+										36813
+									],
+									[
+										36927,
+										36945
+									],
+									[
+										37061,
+										37079
+									],
+									[
+										37196,
+										37214
+									],
+									[
+										37331,
+										37349
+									],
+									[
+										37466,
+										37484
+									],
+									[
+										37599,
+										37617
+									],
+									[
+										37734,
+										37752
+									],
+									[
+										38087,
+										38105
+									],
+									[
+										38192,
+										38210
+									],
+									[
+										38298,
+										38316
+									],
+									[
+										38409,
+										38427
+									],
+									[
+										38519,
+										38537
+									],
+									[
+										38629,
+										38647
+									],
+									[
+										38737,
+										38755
+									],
+									[
+										38850,
+										38868
+									],
+									[
+										38960,
+										38978
+									],
+									[
+										39070,
+										39088
+									],
+									[
+										39187,
+										39205
+									],
+									[
+										39304,
+										39322
+									],
+									[
+										39412,
+										39430
+									],
+									[
+										39517,
+										39535
+									],
+									[
+										39627,
+										39645
+									],
+									[
+										39737,
+										39755
+									],
+									[
+										39842,
+										39860
+									],
+									[
+										39954,
+										39972
+									],
+									[
+										40066,
+										40084
+									],
+									[
+										40177,
+										40195
+									],
+									[
+										40298,
+										40316
+									],
+									[
+										40422,
+										40440
+									],
+									[
+										40532,
+										40550
+									],
+									[
+										40650,
+										40668
+									],
+									[
+										40765,
+										40783
+									],
+									[
+										40878,
+										40896
+									],
+									[
+										40989,
+										41007
+									],
+									[
+										41110,
+										41128
+									],
+									[
+										41239,
+										41257
+									],
+									[
+										41368,
+										41386
+									],
+									[
+										41482,
+										41500
+									],
+									[
+										41611,
+										41629
+									],
+									[
+										41740,
+										41758
+									],
+									[
+										41869,
+										41887
+									],
+									[
+										41998,
+										42016
+									],
+									[
+										42125,
+										42143
+									],
+									[
+										42254,
+										42272
+									],
+									[
+										42384,
+										42402
+									],
+									[
+										42514,
+										42532
+									],
+									[
+										42644,
+										42662
+									],
+									[
+										42772,
+										42790
+									],
+									[
+										42902,
+										42920
+									],
+									[
+										43073,
+										43091
+									],
+									[
+										43187,
+										43205
+									],
+									[
+										43301,
+										43319
+									],
+									[
+										43420,
+										43438
+									],
+									[
+										43538,
+										43556
+									],
+									[
+										43658,
+										43676
+									],
+									[
+										43776,
+										43794
+									],
+									[
+										43897,
+										43915
+									],
+									[
+										44016,
+										44034
+									],
+									[
+										44134,
+										44152
+									],
+									[
+										44259,
+										44277
+									],
+									[
+										44385,
+										44403
+									],
+									[
+										44502,
+										44520
+									],
+									[
+										44616,
+										44634
+									],
+									[
+										44735,
+										44753
+									],
+									[
+										44854,
+										44872
+									],
+									[
+										44968,
+										44986
+									],
+									[
+										45089,
+										45107
+									],
+									[
+										45210,
+										45228
+									],
+									[
+										45330,
+										45348
+									],
+									[
+										45460,
+										45478
+									],
+									[
+										45591,
+										45609
+									],
+									[
+										45709,
+										45727
+									],
+									[
+										45829,
+										45847
+									],
+									[
+										45989,
+										46007
+									],
+									[
+										46102,
+										46120
+									],
+									[
+										46215,
+										46233
+									],
+									[
+										46333,
+										46351
+									],
+									[
+										46450,
+										46468
+									],
+									[
+										46567,
+										46585
+									],
+									[
+										46682,
+										46700
+									],
+									[
+										46802,
+										46820
+									],
+									[
+										46920,
+										46938
+									],
+									[
+										47037,
+										47055
+									],
+									[
+										47161,
+										47179
+									],
+									[
+										47286,
+										47304
+									],
+									[
+										47402,
+										47420
+									],
+									[
+										47515,
+										47533
+									],
+									[
+										47633,
+										47651
+									],
+									[
+										47751,
+										47769
+									],
+									[
+										47864,
+										47882
+									],
+									[
+										47984,
+										48002
+									],
+									[
+										48104,
+										48122
+									],
+									[
+										48223,
+										48241
+									],
+									[
+										48351,
+										48369
+									],
+									[
+										48481,
+										48499
+									],
+									[
+										48599,
+										48617
+									],
+									[
+										48718,
+										48736
+									],
+									[
+										48873,
+										48891
+									],
+									[
+										48978,
+										48996
+									],
+									[
+										49083,
+										49101
+									],
+									[
+										49193,
+										49211
+									],
+									[
+										49302,
+										49320
+									],
+									[
+										49412,
+										49430
+									],
+									[
+										49519,
+										49537
+									],
+									[
+										49631,
+										49649
+									],
+									[
+										49741,
+										49759
+									],
+									[
+										49850,
+										49868
+									],
+									[
+										49966,
+										49984
+									],
+									[
+										50083,
+										50101
+									],
+									[
+										50191,
+										50209
+									],
+									[
+										50296,
+										50314
+									],
+									[
+										50406,
+										50424
+									],
+									[
+										50516,
+										50534
+									],
+									[
+										50621,
+										50639
+									],
+									[
+										50733,
+										50751
+									],
+									[
+										50845,
+										50863
+									],
+									[
+										50956,
+										50974
+									],
+									[
+										51077,
+										51095
+									],
+									[
+										51200,
+										51218
+									],
+									[
+										51309,
+										51327
+									],
+									[
+										51426,
+										51444
+									],
+									[
+										51540,
+										51558
+									],
+									[
+										51652,
+										51670
+									],
+									[
+										51763,
+										51781
+									],
+									[
+										51875,
+										51893
+									],
+									[
+										52003,
+										52021
+									],
+									[
+										52131,
+										52149
+									],
+									[
+										52244,
+										52262
+									],
+									[
+										52372,
+										52390
+									],
+									[
+										52500,
+										52518
+									],
+									[
+										52628,
+										52646
+									],
+									[
+										52756,
+										52774
+									],
+									[
+										52882,
+										52900
+									],
+									[
+										53010,
+										53028
+									],
+									[
+										53139,
+										53157
+									],
+									[
+										53268,
+										53286
+									],
+									[
+										53397,
+										53415
+									],
+									[
+										53524,
+										53542
+									],
+									[
+										53653,
+										53671
+									],
+									[
+										53820,
+										53838
+									],
+									[
+										53924,
+										53942
+									],
+									[
+										54029,
+										54047
+									],
+									[
+										54139,
+										54157
+									],
+									[
+										54248,
+										54266
+									],
+									[
+										54357,
+										54375
+									],
+									[
+										54470,
+										54488
+									],
+									[
+										54582,
+										54600
+									],
+									[
+										54691,
+										54709
+									],
+									[
+										54800,
+										54818
+									],
+									[
+										54916,
+										54934
+									],
+									[
+										55032,
+										55050
+									],
+									[
+										55139,
+										55157
+									],
+									[
+										55243,
+										55261
+									],
+									[
+										55352,
+										55370
+									],
+									[
+										55461,
+										55479
+									],
+									[
+										55565,
+										55583
+									],
+									[
+										55676,
+										55694
+									],
+									[
+										55787,
+										55805
+									],
+									[
+										55897,
+										55915
+									],
+									[
+										56017,
+										56035
+									],
+									[
+										56148,
+										56166
+									],
+									[
+										56258,
+										56276
+									],
+									[
+										56375,
+										56393
+									],
+									[
+										56489,
+										56507
+									],
+									[
+										56601,
+										56619
+									],
+									[
+										56711,
+										56729
+									],
+									[
+										56823,
+										56841
+									],
+									[
+										56951,
+										56969
+									],
+									[
+										57079,
+										57097
+									],
+									[
+										57192,
+										57210
+									],
+									[
+										57320,
+										57338
+									],
+									[
+										57448,
+										57466
+									],
+									[
+										57576,
+										57594
+									],
+									[
+										57704,
+										57722
+									],
+									[
+										57830,
+										57848
+									],
+									[
+										57958,
+										57976
+									],
+									[
+										58087,
+										58105
+									],
+									[
+										58216,
+										58234
+									],
+									[
+										58345,
+										58363
+									],
+									[
+										58472,
+										58490
+									],
+									[
+										58601,
+										58619
+									],
+									[
+										59014,
+										59032
+									],
+									[
+										59063,
+										59081
+									],
+									[
+										59100,
+										59118
+									],
+									[
+										59159,
+										59177
+									],
+									[
+										59237,
+										59255
+									],
+									[
+										59451,
+										59469
+									],
+									[
+										59502,
+										59520
+									],
+									[
+										59776,
+										59794
+									],
+									[
+										59858,
+										59876
+									],
+									[
+										59966,
+										59984
+									],
+									[
+										60017,
+										60035
+									],
+									[
+										60281,
+										60299
+									],
+									[
+										60365,
+										60383
+									],
+									[
+										60456,
+										60474
+									],
+									[
+										60559,
+										60577
+									],
+									[
+										60830,
+										60848
+									],
+									[
+										61195,
+										61227
+									],
+									[
+										61520,
+										61552
+									],
+									[
+										61869,
+										61901
+									],
+									[
+										62153,
+										62185
+									],
+									[
+										62436,
+										62468
+									],
+									[
+										62804,
+										62836
+									],
+									[
+										63138,
+										63170
+									],
+									[
+										63609,
+										63631
+									],
+									[
+										63789,
+										63811
+									],
+									[
+										63941,
+										63963
+									],
+									[
+										64309,
+										64331
+									],
+									[
+										64553,
+										64575
+									],
+									[
+										64578,
+										64600
+									],
+									[
+										64943,
+										64952
+									],
+									[
+										65221,
+										65230
+									],
+									[
+										65443,
+										65452
+									],
+									[
+										65676,
+										65685
+									],
+									[
+										65869,
+										65878
+									],
+									[
+										66089,
+										66098
+									],
+									[
+										66101,
+										66110
+									],
+									[
+										66350,
+										66359
+									],
+									[
+										66628,
+										66637
+									],
+									[
+										66829,
+										66838
+									],
+									[
+										67089,
+										67098
+									],
+									[
+										67367,
+										67376
+									],
+									[
+										67589,
+										67598
+									],
+									[
+										67779,
+										67788
+									],
+									[
+										68038,
+										68047
+									],
+									[
+										68316,
+										68325
+									],
+									[
+										68532,
+										68541
+									],
+									[
+										68722,
+										68731
+									],
+									[
+										69158,
+										69180
+									],
+									[
+										69338,
+										69360
+									],
+									[
+										69490,
+										69512
+									],
+									[
+										69858,
+										69880
+									],
+									[
+										70102,
+										70124
+									],
+									[
+										70127,
+										70149
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								69497,
+								69497
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"detect_indentation": false,
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"output_tag": 10,
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 22605.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "scenes/gamePlayScene.lua",
+					"settings":
+					{
+						"buffer_size": 8312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5794,
+								5794
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 533.0,
+						"translation.y": 3061.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "main.lua",
+					"settings":
+					{
+						"buffer_size": 9726,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7262,
+								7274
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4463.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "scenes/menuScene.lua",
+					"settings":
+					{
+						"buffer_size": 18046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13313,
+								13345
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.306685304157,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 184.0,
+	"status_bar_visible": true
+}
