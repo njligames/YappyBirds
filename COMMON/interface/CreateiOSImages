@@ -3,9 +3,10 @@
 #SOURCE: https://github.com/danielpovlsen/ios-icons-launch-images-generator
 
 #PROJECT_PATH="../../ios/JLIGameEngineTest/JLIGameEngineTest"
-PROJECT_PATH="../../ios/YappyBirds/YappyBirds"
-MAC_PROJECT_PATH="../../macosx/YappyBirds"
-ANROID_PROJECT_PATH="../../android/app/src/main/res"
+PROJECT_PATH="../../APPLE/IOS"
+# MAC_PROJECT_PATH="../../macosx/YappyBirds"
+# ANROID_PROJECT_PATH="../../android/app/src/main/res"
+
 
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P`
@@ -165,19 +166,19 @@ sips -Z 1024 $PROJECT_PATH/Images.xcassets/LaunchImage.launchimage/Default2048x1
 sips -r 90 $PROJECT_PATH/Images.xcassets/LaunchImage.launchimage/Default1024x768.png --out $PROJECT_PATH/Images.xcassets/LaunchImage.launchimage/Default768x1024.png
 
 
-sips -Z 512 $SCRIPTPATH/Icon-Input.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-1.png
-sips -Z 256 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-1.png
-sips -Z 128 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-1.png
-sips -Z 32 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-1.png
-sips -Z 16 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon16-1.png
+# sips -Z 512 $SCRIPTPATH/Icon-Input.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-1.png
+# sips -Z 256 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-1.png
+# sips -Z 128 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-1.png
+# sips -Z 32 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-1.png
+# sips -Z 16 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-1.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon16-1.png
 
 
 
-sips -Z 512 $SCRIPTPATH/Icon-Input.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-2.png
-sips -Z 256 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-2.png
-sips -Z 128 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-2.png
-sips -Z 32 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-2.png
-sips -Z 16 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon16-2.png
+# sips -Z 512 $SCRIPTPATH/Icon-Input.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-2.png
+# sips -Z 256 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon512-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-2.png
+# sips -Z 128 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon256-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-2.png
+# sips -Z 32 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon128-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-2.png
+# sips -Z 16 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-2.png --out $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon16-2.png
 
 
 
@@ -185,7 +186,7 @@ sips -Z 16 $MAC_PROJECT_PATH/Images.xcassets/AppIcon.appiconset/Icon32-2.png --o
 
 
 
-sips -Z 72 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-hdpi/ic_launcher.png
-sips -Z 48 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-mdpi/ic_launcher.png
-sips -Z 96 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-xhdpi/ic_launcher.png
-sips -Z 144 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-xxhdpi/ic_launcher.png
+# sips -Z 72 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-hdpi/ic_launcher.png
+# sips -Z 48 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-mdpi/ic_launcher.png
+# sips -Z 96 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-xhdpi/ic_launcher.png
+# sips -Z 144 $SCRIPTPATH/Icon-Input.png --out $ANROID_PROJECT_PATH/mipmap-xxhdpi/ic_launcher.png
