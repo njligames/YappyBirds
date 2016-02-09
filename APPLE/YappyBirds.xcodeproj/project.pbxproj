@@ -11,7 +11,6 @@
 		C16A29E21C683E7C00D94D4B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C16A29E11C683E7C00D94D4B /* AppDelegate.mm */; };
 		C16A29E91C683E7C00D94D4B /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C16A29E81C683E7C00D94D4B /* GameViewController.mm */; };
 		C16A29EC1C683E7C00D94D4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C16A29EA1C683E7C00D94D4B /* Main.storyboard */; };
-		C16A29EE1C683E7C00D94D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16A29ED1C683E7C00D94D4B /* Assets.xcassets */; };
 		C16A29F11C683E7C00D94D4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C16A29EF1C683E7C00D94D4B /* LaunchScreen.storyboard */; };
 		C16A29FC1C683E7C00D94D4B /* IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A29FB1C683E7C00D94D4B /* IOSTests.m */; };
 		C16A2A071C683E7C00D94D4B /* IOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A2A061C683E7C00D94D4B /* IOSUITests.m */; };
@@ -38,6 +37,7 @@
 		C18F971F1C6908D90061DECD /* libEGL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F97191C6904830061DECD /* libEGL.dylib */; };
 		C18F97201C6908D90061DECD /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971A1C6904830061DECD /* libGLESv2.dylib */; };
 		C18F984C1C6962460061DECD /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */; };
+		C18F984E1C6967C10061DECD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F984D1C6967C10061DECD /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,6 @@
 		C16A29E71C683E7C00D94D4B /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		C16A29E81C683E7C00D94D4B /* GameViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameViewController.mm; sourceTree = "<group>"; };
 		C16A29EB1C683E7C00D94D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C16A29ED1C683E7C00D94D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C16A29F01C683E7C00D94D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C16A29F21C683E7C00D94D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C16A29F71C683E7C00D94D4B /* YappyBirds.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YappyBirds.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +126,7 @@
 		C18F971A1C6904830061DECD /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = PVR/OSX/x86/Lib/libGLESv2.dylib; sourceTree = "<group>"; };
 		C18F971D1C6905080061DECD /* NJLIGameEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine.framework; sourceTree = "<group>"; };
 		C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
+		C18F984D1C6967C10061DECD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +222,7 @@
 				C16A29E71C683E7C00D94D4B /* GameViewController.h */,
 				C16A29E81C683E7C00D94D4B /* GameViewController.mm */,
 				C16A29EA1C683E7C00D94D4B /* Main.storyboard */,
-				C16A29ED1C683E7C00D94D4B /* Assets.xcassets */,
+				C18F984D1C6967C10061DECD /* Images.xcassets */,
 				C16A29EF1C683E7C00D94D4B /* LaunchScreen.storyboard */,
 				C16A29F21C683E7C00D94D4B /* Info.plist */,
 				C16A29DD1C683E7C00D94D4B /* Supporting Files */,
@@ -427,6 +427,7 @@
 				TargetAttributes = {
 					C16A29D91C683E7C00D94D4B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SRBQ5SCF5X;
 					};
 					C16A29F61C683E7C00D94D4B = {
 						CreatedOnToolsVersion = 7.2;
@@ -478,8 +479,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C16A29EC1C683E7C00D94D4B /* Main.storyboard in Resources */,
+				C18F984E1C6967C10061DECD /* Images.xcassets in Resources */,
 				C16A2A231C6841F800D94D4B /* assets in Resources */,
-				C16A29EE1C683E7C00D94D4B /* Assets.xcassets in Resources */,
 				C16A29F11C683E7C00D94D4B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,7 +717,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -727,8 +729,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/IOS/FMOD Programmers API/api/lowlevel/lib\"";
 				OTHER_LDFLAGS = "-lfmodL_$PLATFORM_NAME";
-				PRODUCT_BUNDLE_IDENTIFIER = com.njligames.yappybirds.IOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
+				PROVISIONING_PROFILE = "10c94791-d295-45bb-9af0-949bcb369606";
 			};
 			name = Debug;
 		};
@@ -736,7 +739,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,8 +751,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/IOS/FMOD Programmers API/api/lowlevel/lib\"";
 				OTHER_LDFLAGS = "-lfmod_$PLATFORM_NAME";
-				PRODUCT_BUNDLE_IDENTIFIER = com.njligames.yappybirds.IOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
+				PROVISIONING_PROFILE = "10c94791-d295-45bb-9af0-949bcb369606";
 			};
 			name = Release;
 		};
