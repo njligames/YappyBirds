@@ -98,7 +98,7 @@ extern "C" {
     DEBUG_LOG_WRITE_E("Assert", #e); \
     __builtin_trap()
 
-void jliSleep(unsigned int _ms);
+void njliSleep(unsigned int _ms);
 
 //njli::NJLIGameEngine::PlatformID platformID();
     
