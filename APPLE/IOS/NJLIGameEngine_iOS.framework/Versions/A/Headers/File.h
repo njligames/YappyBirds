@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-FILE* jli_fopen(const char* fname, const char* mode);
+FILE* njli_fopen(const char* fname, const char* mode);
 const char* RESOURCE_PATH() SIMPLE_FUNCTION;
 const char* ASSET_PATH(const char* file) SIMPLE_FUNCTION;
 const char* BUNDLE_PATH() SIMPLE_FUNCTION;
