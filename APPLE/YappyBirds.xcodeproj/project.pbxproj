@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13E389F1C6DAEC000BFF147 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13E389E1C6DAEC000BFF147 /* main.cpp */; };
+		C13E38A71C6DB2F500BFF147 /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13E38A61C6DB2F500BFF147 /* NJLIGameEngine_iOS.framework */; };
 		C16A29DF1C683E7C00D94D4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A29DE1C683E7C00D94D4B /* main.m */; };
 		C16A29E21C683E7C00D94D4B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C16A29E11C683E7C00D94D4B /* AppDelegate.mm */; };
 		C16A29E91C683E7C00D94D4B /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C16A29E81C683E7C00D94D4B /* GameViewController.mm */; };
@@ -36,7 +38,6 @@
 		C18F971E1C6905080061DECD /* NJLIGameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971D1C6905080061DECD /* NJLIGameEngine.framework */; };
 		C18F971F1C6908D90061DECD /* libEGL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F97191C6904830061DECD /* libEGL.dylib */; };
 		C18F97201C6908D90061DECD /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971A1C6904830061DECD /* libGLESv2.dylib */; };
-		C18F984C1C6962460061DECD /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */; };
 		C18F984E1C6967C10061DECD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F984D1C6967C10061DECD /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C13E389A1C6DAEC000BFF147 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		C18F97181C69045C0061DECD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C13E389C1C6DAEC000BFF147 /* Export Assets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Export Assets"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13E389E1C6DAEC000BFF147 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C13E38A61C6DB2F500BFF147 /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 		C16A29DA1C683E7C00D94D4B /* YappyBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YappyBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16A29DE1C683E7C00D94D4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C16A29E01C683E7C00D94D4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,11 +138,17 @@
 		C18F97191C6904830061DECD /* libEGL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.dylib; path = PVR/OSX/x86/Lib/libEGL.dylib; sourceTree = "<group>"; };
 		C18F971A1C6904830061DECD /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = PVR/OSX/x86/Lib/libGLESv2.dylib; sourceTree = "<group>"; };
 		C18F971D1C6905080061DECD /* NJLIGameEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine.framework; sourceTree = "<group>"; };
-		C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 		C18F984D1C6967C10061DECD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C13E38991C6DAEC000BFF147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C16A29D71C683E7C00D94D4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +156,7 @@
 				C16A2A1D1C683F8F00D94D4B /* GLKit.framework in Frameworks */,
 				C16A2A1B1C683F8800D94D4B /* AudioToolbox.framework in Frameworks */,
 				C16A2A191C683F8100D94D4B /* AVFoundation.framework in Frameworks */,
-				C18F984C1C6962460061DECD /* NJLIGameEngine_iOS.framework in Frameworks */,
+				C13E38A71C6DB2F500BFF147 /* NJLIGameEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +206,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C13E389D1C6DAEC000BFF147 /* Export Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C13E389E1C6DAEC000BFF147 /* main.cpp */,
+			);
+			path = "Export Assets";
+			sourceTree = "<group>";
+		};
 		C16A29D11C683E7C00D94D4B = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +224,7 @@
 				C18F96D41C6901010061DECD /* MACOSX */,
 				C18F96F01C6901010061DECD /* MACOSXTests */,
 				C18F96FB1C6901010061DECD /* MACOSXUITests */,
+				C13E389D1C6DAEC000BFF147 /* Export Assets */,
 				C16A29DB1C683E7C00D94D4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -210,6 +238,7 @@
 				C18F96D31C6901010061DECD /* MACOSX.app */,
 				C18F96ED1C6901010061DECD /* MACOSXTests.xctest */,
 				C18F96F81C6901010061DECD /* MACOSXUITests.xctest */,
+				C13E389C1C6DAEC000BFF147 /* Export Assets */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,7 +262,7 @@
 		C16A29DD1C683E7C00D94D4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C18F984B1C6962460061DECD /* NJLIGameEngine_iOS.framework */,
+				C13E38A61C6DB2F500BFF147 /* NJLIGameEngine_iOS.framework */,
 				C16A2A1C1C683F8F00D94D4B /* GLKit.framework */,
 				C16A2A1A1C683F8800D94D4B /* AudioToolbox.framework */,
 				C16A2A181C683F8000D94D4B /* AVFoundation.framework */,
@@ -309,6 +338,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C13E389B1C6DAEC000BFF147 /* Export Assets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13E38A01C6DAEC000BFF147 /* Build configuration list for PBXNativeTarget "Export Assets" */;
+			buildPhases = (
+				C13E38981C6DAEC000BFF147 /* Sources */,
+				C13E38991C6DAEC000BFF147 /* Frameworks */,
+				C13E389A1C6DAEC000BFF147 /* CopyFiles */,
+				C13E38A31C6DAECC00BFF147 /* Export Assets */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Export Assets";
+			productName = "Export Assets";
+			productReference = C13E389C1C6DAEC000BFF147 /* Export Assets */;
+			productType = "com.apple.product-type.tool";
+		};
 		C16A29D91C683E7C00D94D4B /* YappyBirds */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C16A2A0B1C683E7C00D94D4B /* Build configuration list for PBXNativeTarget "YappyBirds" */;
@@ -316,6 +363,7 @@
 				C16A29D61C683E7C00D94D4B /* Sources */,
 				C16A29D71C683E7C00D94D4B /* Frameworks */,
 				C16A29D81C683E7C00D94D4B /* Resources */,
+				C13E38951C6D846100BFF147 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -425,6 +473,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "NJLIGames Ltd.";
 				TargetAttributes = {
+					C13E389B1C6DAEC000BFF147 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					C16A29D91C683E7C00D94D4B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = SRBQ5SCF5X;
@@ -469,6 +520,7 @@
 				C18F96D21C6901010061DECD /* MACOSX */,
 				C18F96EC1C6901010061DECD /* MACOSXTests */,
 				C18F96F71C6901010061DECD /* MACOSXUITests */,
+				C13E389B1C6DAEC000BFF147 /* Export Assets */,
 			);
 		};
 /* End PBXProject section */
@@ -527,7 +579,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C13E38951C6D846100BFF147 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#sh $SRCROOT/../../../../third_party/jli_game_engine/version-1.0/bin/list_lua_files $SRCROOT/../../COMMON/assets/scripts $SRCROOT/../../COMMON/gameplay_scripts $SRCROOT/../../../../third_party/jli_game_engine/version-1.0/bin/\n\n#sh $SRCROOT/../../../../third_party/jli_game_engine/version-1.0/bin/list_audio_files $SRCROOT/../../COMMON/assets/sounds $SRCROOT/../../COMMON/audio $SRCROOT/../../../../third_party/jli_game_engine/version-1.0/bin/\n";
+		};
+		C13E38A31C6DAECC00BFF147 /* Export Assets */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Export Assets";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "NJLI=\"${SRCROOT}/../../NJLIGameEngine/Source/jli_game_engine/version-1.0/\"\nCOMMON=\"${SRCROOT}/../COMMON/\"\n\n#copy working script files\nsh ${NJLI}/bin/list_lua_files ${COMMON}/assets/scripts ${COMMON}/gameplay_scripts ${NJLI}/bin/\n\n#copy working sound files\nsh ${NJLI}/bin/list_audio_files ${COMMON}/assets/sounds ${COMMON}/audio ${NJLI}/bin/\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		C13E38981C6DAEC000BFF147 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13E389F1C6DAEC000BFF147 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C16A29D61C683E7C00D94D4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,6 +721,29 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C13E38A11C6DAEC000BFF147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C13E38A21C6DAEC000BFF147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		C16A2A091C683E7C00D94D4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -944,6 +1057,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C13E38A01C6DAEC000BFF147 /* Build configuration list for PBXNativeTarget "Export Assets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13E38A11C6DAEC000BFF147 /* Debug */,
+				C13E38A21C6DAEC000BFF147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C16A29D51C683E7C00D94D4B /* Build configuration list for PBXProject "YappyBirds" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
