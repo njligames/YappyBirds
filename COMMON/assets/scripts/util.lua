@@ -480,7 +480,7 @@ function createTexturePackerSpriteAtlas(file, shader)
  local sheetInfo = (loadfile(path))()
  assert(sheetInfo ~= nil, "Unable to load the sheet info for file " .. path)
 
- local spriteAtlas = create(sheetInfo:getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
+ local spriteAtlas = njlihelper.buildType(sheetInfo:getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
  assert(spriteAtlas ~= nil, "Unable to load the spriteatlas for file " .. njli.ASSET_PATH(imagePath))
  spriteAtlas:setName(currentFile)
 
