@@ -530,7 +530,7 @@ local enter = function(self)
         path = njli.DOCUMENT_PATH("scripts/interface0.lua")
     end
     
-    self.menuSpriteAtlas = create((loadfile(path))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
+    self.menuSpriteAtlas = njlihelper.buildType((loadfile(path))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
 
     self.menuMaterial = njli.Material.create()
     local image = njli.Image.create()
