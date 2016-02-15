@@ -43,7 +43,7 @@ local function createStateObjects(self)
   local frameName = getFrameName(self:getNode():getName(), self:getFrameActionName(), self:getFrameSideName(), self:getFrameNumber(), self:getColor())
   setupSpriteFrame(frameName, self:getNode(), self:getSheetInfo(), self:getSpriteAtlas(), self:getGeometry())
 
-  njli.World.getInstance():getScene():getRootNode():addChildNode(self:getNode())
+  -- njli.World.getInstance():getScene():getRootNode():addChildNode(self:getNode())
 
   if self:hasStateObject("Thrown") then
     self:getStateObject("Thrown"):push()
