@@ -23,10 +23,32 @@ void _debug_log_e(const char* tag, const char* text, ...) PRINTF(2, 3);
 
 void LUA_WRITE(const char* c);
 
-void _debug_log_assert(const char* cond, const char* tag, const char* fmt, ...);
+void _debug_log_stderr(const char* tag, const char* fmt, ...);
 
 #ifdef __cplusplus
 }
+#endif
+
+#if defined(DEBUG) || defined(_DEBUG)
+#define CRASH() \
+    __builtin_trap()
+#else
+#define CRASH() \
+    {           \
+    }
+#endif
+
+#if defined(DEBUG) || defined(_DEBUG)
+#define DEBUG_ASSERT(cond) \
+    do {                   \
+        if (!(cond)) {     \
+            CRASH();       \
+        }                  \
+    } while (0)
+#else
+#define DEBUG_ASSERT(cond) \
+    {                      \
+    }
 #endif
 
 #define DEBUG_LOG_PRINT_V(tag, fmt, ...)                                                      \
@@ -50,11 +72,20 @@ void _debug_log_assert(const char* cond, const char* tag, const char* fmt, ...);
             _debug_log_e(tag, "%s:%d:%s(): " fmt, __FILE__, __LINE__, __func__, __VA_ARGS__); \
     } while (0)
 
-#define DEBUG_LOG_ASSERT_PRINT(cond, tag, fmt, ...)                                                       \
-    do {                                                                                                  \
-        if (LOGGING_ON)                                                                                   \
-            _debug_log_assert(#cond, tag, "%s:%d:%s(): " fmt, __FILE__, __LINE__, __func__, __VA_ARGS__); \
+#if defined(DEBUG) || defined(_DEBUG)
+#define DEBUG_ASSERT_PRINT(condition, fmt, ...)                                                   \
+    do {                                                                                          \
+        if (!(condition)) {                                                                       \
+            if (LOGGING_ON)                                                                       \
+                _debug_log_stderr("%s:%d:%s(): " fmt, __FILE__, __LINE__, __func__, __VA_ARGS__); \
+            CRASH();                                                                              \
+        }                                                                                         \
     } while (0)
+#else
+#define DEBUG_ASSERT_PRINT(condition, fmt, ...) \
+    {                                           \
+    }
+#endif
 
 #define DEBUG_LOG_V(tag, fmt, ...)               \
     do {                                         \
@@ -77,11 +108,20 @@ void _debug_log_assert(const char* cond, const char* tag, const char* fmt, ...);
             _debug_log_e(tag, fmt, __VA_ARGS__); \
     } while (0)
 
-#define DEBUG_LOG_ASSERT(cond, tag, fmt, ...)                \
-    do {                                                     \
-        if (LOGGING_ON)                                      \
-            _debug_log_assert(#cond, tag, fmt, __VA_ARGS__); \
+#if defined(DEBUG) || defined(_DEBUG)
+#define DEBUG_ASSERT_LOG(condition, fmt, ...)        \
+    do {                                             \
+        if (!(condition)) {                          \
+            if (LOGGING_ON)                          \
+                _debug_log_stderr(fmt, __VA_ARGS__); \
+            CRASH();                                 \
+        }                                            \
     } while (0)
+#else
+#define DEBUG_ASSERT_LOG(condition, fmt, ...) \
+    {                                         \
+    }
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -91,18 +131,57 @@ extern "C" {
 #define DEBUG_LOG_WRITE_D(tag, text) DEBUG_LOG_PRINT_D(tag, "%s", text)
 #define DEBUG_LOG_WRITE_W(tag, text) DEBUG_LOG_PRINT_W(tag, "%s", text)
 #define DEBUG_LOG_WRITE_E(tag, text) DEBUG_LOG_PRINT_E(tag, "%s", text)
+#define DEBUG_ASSERT_WRITE(condition, text) DEBUG_ASSERT_PRINT(condition, "%s", text)
 
-#define DEBUG_LOG_ASSERT_WRITE(cond, tag, text) DEBUG_LOG_ASSERT_PRINT(cond, tag, "%s", text)
 
-#define CRASH(e)                     \
-    DEBUG_LOG_WRITE_E("Assert", #e); \
-    __builtin_trap()
 
 void njliSleep(unsigned int _ms);
 
 //njli::NJLIGameEngine::PlatformID platformID();
-    
-    
+
+#if LOGGING_ON
+#define DEBUG_GL_ERROR_PRINT(op, fmt, ...)                                                                                                                                                                                                                                                                                                                                                               \
+    do {                                                                                                                                                                                                                                                                                                                                                                                                 \
+        for (int error = glGetError(); error; error = glGetError()) {                                                                                                                                                                                                                                                                                                                                    \
+            DEBUG_LOG_PRINT_E("glGetError", "after %s(" fmt ")", #op, __VA_ARGS__);                                                                                                                                                                                                                                                                                                                      \
+            switch (error) {                                                                                                                                                                                                                                                                                                                                                                             \
+            case GL_NO_ERROR:                                                                                                                                                                                                                                                                                                                                                                            \
+                DEBUG_LOG_WRITE_V("glGetError", "GL_NO_ERROR - No error has been recorded. The value of this symbolic constant is guaranteed to be 0.");                                                                                                                                                                                                                                                 \
+                break;                                                                                                                                                                                                                                                                                                                                                                                   \
+            case GL_INVALID_ENUM:                                                                                                                                                                                                                                                                                                                                                                        \
+                DEBUG_LOG_WRITE_V("glGetError", "GL_INVALID_ENUM - An unacceptable value is specified for an enumerated argument. The offending command is ignored and has no other side effect than to set the error flag.");                                                                                                                                                                           \
+                break;                                                                                                                                                                                                                                                                                                                                                                                   \
+            case GL_INVALID_VALUE:                                                                                                                                                                                                                                                                                                                                                                       \
+                DEBUG_LOG_WRITE_V("glGetError", "GL_INVALID_VALUE - A numeric argument is out of range. The offending command is ignored and has no other side effect than to set the error flag.");                                                                                                                                                                                                     \
+                break;                                                                                                                                                                                                                                                                                                                                                                                   \
+            case GL_INVALID_OPERATION:                                                                                                                                                                                                                                                                                                                                                                   \
+                DEBUG_LOG_WRITE_V("glGetError", "GL_INVALID_OPERATION - The specified operation is not allowed in the current state. The offending command is ignored and has no other side effect than to set the error flag.");                                                                                                                                                                        \
+                break;                                                                                                                                                                                                                                                                                                                                                                                   \
+            case GL_INVALID_FRAMEBUFFER_OPERATION:                                                                                                                                                                                                                                                                                                                                                       \
+                DEBUG_LOG_WRITE_V("glGetError", "GL_INVALID_FRAMEBUFFER_OPERATION - The command is trying to render to or read from the framebuffer while the currently bound framebuffer is not framebuffer complete (i.e. the return value from glCheckFramebufferStatus is not GL_FRAMEBUFFER_COMPLETE). The offending command is ignored and has no other side effect than to set the error flag."); \
+                break;                                                                                                                                                                                                                                                                                                                                                                                   \
+            case GL_OUT_OF_MEMORY:                                                                                                                                                                                                                                                                                                                                                                       \
+                DEBUG_LOG_WRITE_V("glGetError", "GL_OUT_OF_MEMORY - There is not enough memory left to execute the command. The state of the GL is undefined, except for the state of the error flags, after this error is recorded.");                                                                                                                                                                  \
+                break;                                                                                                                                                                                                                                                                                                                                                                                   \
+            default:                                                                                                                                                                                                                                                                                                                                                                                     \
+                DEBUG_LOG_PRINT_V("glGetError", "Unknown (%x)", error);                                                                                                                                                                                                                                                                                                                                  \
+            }                                                                                                                                                                                                                                                                                                                                                                                            \
+        }                                                                                                                                                                                                                                                                                                                                                                                                \
+    } while (0)
+#else
+#define DEBUG_GL_ERROR_PRINT(op, fmt, ...) \
+    {                                      \
+    }
+#endif
+
+#if defined(DEBUG) || defined(_DEBUG)
+#define DEBUG_GL_ERROR_WRITE(op) DEBUG_GL_ERROR_PRINT(op, "%s", "")
+#else
+#define DEBUG_GL_ERROR_WRITE(op) \
+    {                            \
+    }
+#endif
+
 #ifdef __cplusplus
 }
 #endif
