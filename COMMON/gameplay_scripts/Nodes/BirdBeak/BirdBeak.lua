@@ -26,10 +26,10 @@ local function createStateObjects(self)
   self.stateNames = {}
   self.stateObjects = {}
 
-  self:addStateObject("Grab", require "nodes.BirdBeak.States.Grab")
-  self:addStateObject("Idle", require "nodes.BirdBeak.States.Idle")
-  self:addStateObject("Hit",  require "nodes.BirdBeak.States.Hit")
-  self:addStateObject("Yap",  require "nodes.BirdBeak.States.Yap")
+  self:addStateObject("Grab", require "nodes.birdBeak.states.grab")
+  self:addStateObject("Idle", require "nodes.birdBeak.states.idle")
+  self:addStateObject("Hit",  require "nodes.birdBeak.states.hit")
+  self:addStateObject("Yap",  require "nodes.birdBeak.states.yap")
 
   local frameName = getFrameName(self:getNode():getName(), self:getFrameActionName(), self:getFrameSideName(), self:getFrameNumber())
   setupSpriteFrame(frameName, self:getNode(), self:getSheetInfo(), self:getSpriteAtlas(), self:getGeometry())
