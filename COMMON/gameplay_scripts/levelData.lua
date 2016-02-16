@@ -36,7 +36,11 @@ end
 local allLevelsComplete = function(self, mode)
 	if mode == _gameModes.ARCADE or mode == _gameModes.SURVIVAL or mode == _gameModes.TIMEATTACK then
 		for k,v in pairs(self.jsonTable[mode]) do
-			print(k,v)
+      if self.jsonTable[mode] == 0 then
+          --do
+          return false
+      end
+      
 		end
 		return true
 	end
@@ -48,7 +52,7 @@ local isLevelComplete = function(self, mode, level)
 
 	print("checking if isLevelComplete " .. mode .. " " .. level)
 
-  print_r(self.jsonTable)
+  -- print_r(self.jsonTable)
 	
 	if mode == _gameModes.ARCADE or mode == _gameModes.SURVIVAL or mode == _gameModes.TIMEATTACK then
 		if level > 0 and level < 20 then
@@ -125,7 +129,7 @@ local new = function()
     end
 
     local jsonTable = JSON:decode(jsonData)
-	print_r(jsonTable)
+	-- print_r(jsonTable)
 
 
 
