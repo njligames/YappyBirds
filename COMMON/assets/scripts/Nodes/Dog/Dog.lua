@@ -108,7 +108,7 @@ local getAnimationClock = function(self)
 end
 
 local getNode = function(self)
- assert(self.action, "self.node is nil.")
+ assert(self.node, "self.node is nil.")
  
  return self.node
 end
@@ -429,7 +429,7 @@ local delete = function(self)
  
  njli.Clock.destroy(self.animationClock)
 
- self.movingEntity = nil
+ 
 
  njli.Action.destroy(self.action)
  self.action = nil
