@@ -328,7 +328,7 @@ local enter = function(self, scene)
  local toggle = tbl[stateName][i].toggle
  local soundPath = tbl[stateName][i].soundPath
  local disabled = tbl[stateName][i].disabled
- disabled = false
+ 
 
 
  if disabled then
