@@ -206,6 +206,11 @@
     njli::NJLIGameEngine::unpauseSound();
 }
 
+/**
+ *  @author James Folk, 16-02-15 20:02:20
+ *
+ *  @brief <#Description#>
+ */
 -(void)emptySandbox
 {
     NSFileManager *fileMgr = [[NSFileManager alloc] init];
