@@ -46,7 +46,7 @@ end
 
 local isLevelComplete = function(self, mode, level)
 
-	print("checking " .. mode .. " " .. level)
+	-- print("checking " .. mode .. " " .. level)
 	
 	if mode == _gameModes.ARCADE or mode == _gameModes.SURVIVAL or mode == _gameModes.TIMEATTACK then
 		if level > 0 and level < 20 then
