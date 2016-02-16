@@ -30,10 +30,10 @@ local enter = function(self, scene)
     getNodeObject('text_YOU_WIN').node:show(getOrthoCamera())
     self.clock:reset()
 
-    self.showedThanks = false
+    -- self.showedThanks = false
 
 
-    print("bitchass")
+    -- print("bitchass")
     local lvl = tonumber(self.world.level:currentLevel()) + 1
     if lvl < 20 then
         levelFileData:completeLevel(self.world.level:currentMode(), lvl+1)
@@ -70,11 +70,11 @@ local update = function(self, scene, timeStep)
             
             
 
-            local beatAllBoards = false
+            local beatAllBoards = levelFileData:allLevelsComplete()
 
-            if math.random(1, 2) == 1 then
-                beatAllBoards = true
-            end
+            -- if math.random(1, 2) == 1 then
+            --     beatAllBoards = true
+            -- end
 
             if beatAllBoards and not self.showedThanks then
 
