@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
 #if defined(DEBUG) || defined (_DEBUG)
-    [self emptySandbox];
+//    [self emptySandbox];
     
 #endif
     
