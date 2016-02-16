@@ -36,7 +36,7 @@ local enter = function(self, scene)
  print("bitchass")
  local lvl = tonumber(self.world.level:currentLevel()) + 1
  if lvl < 20 then
- levelFileData:completeLevel(self.world.level:currentMode(), lvl)
+ levelFileData:completeLevel(self.world.level:currentMode(), lvl+1)
  end
  
 
