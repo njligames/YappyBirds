@@ -44,12 +44,12 @@ local function createStateObjects(self)
   self.stateNames = {}
   self.stateObjects = {}
 
-  self:addStateObject("Spawn",    require "nodes.Bird.States.Spawn")
-  self:addStateObject("Fly",      require "nodes.Bird.States.Fly")
-  self:addStateObject("Pursue",   require "nodes.Bird.States.Pursue")
-  self:addStateObject("Hit",      require "nodes.Bird.States.Hit")
-  self:addStateObject("Grabbing", require "nodes.Bird.States.Grabbing")
-  self:addStateObject("Grabbed",  require "nodes.Bird.States.Grabbed")
+  self:addStateObject("Spawn",    require "nodes.bird.states.spawn")
+  self:addStateObject("Fly",      require "nodes.bird.states.fly")
+  self:addStateObject("Pursue",   require "nodes.bird.states.pursue")
+  self:addStateObject("Hit",      require "nodes.bird.states.hit")
+  self:addStateObject("Grabbing", require "nodes.bird.states.grabbing")
+  self:addStateObject("Grabbed",  require "nodes.bird.states.grabbed")
 
   self:getNode():getPhysicsBody():setLinearFactor(njli.btVector3(1,1,0))
   self:getNode():getPhysicsBody():setAngularFactor(njli.btVector3(0,0,1))

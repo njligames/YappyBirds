@@ -36,7 +36,11 @@ end
 local allLevelsComplete = function(self, mode)
 	if mode == _gameModes.ARCADE or mode == _gameModes.SURVIVAL or mode == _gameModes.TIMEATTACK then
  for k,v in pairs(self.jsonTable[mode]) do
- print(k,v)
+ if self.jsonTable[mode] == 0 then
+ 
+ return false
+ end
+ 
  end
  return true
 	end
