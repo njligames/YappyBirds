@@ -28,12 +28,12 @@ local function createStateObjects(self)
   self.stateNames = {}
   self.stateObjects = {}
 
-  self:addStateObject("Caught",   require "nodes.Dog.States.Caught")
-  self:addStateObject("Dazed",    require "nodes.Dog.States.Dazed")
-  self:addStateObject("Land",     require "nodes.Dog.States.Land")
-  self:addStateObject("Released", require "nodes.Dog.States.Released")
-  self:addStateObject("Run",      require "nodes.Dog.States.Run")
-  self:addStateObject("Spawn",    require "nodes.Dog.States.Spawn")
+  self:addStateObject("Caught",   require "nodes.dog.states.caught")
+  self:addStateObject("Dazed",    require "nodes.dog.states.dazed")
+  self:addStateObject("Land",     require "nodes.dog.states.land")
+  self:addStateObject("Released", require "nodes.dog.states.released")
+  self:addStateObject("Run",      require "nodes.dog.states.run")
+  self:addStateObject("Spawn",    require "nodes.dog.states.spawn")
 
   local frameName = getFrameName(self:getNode():getName(), self:getFrameActionName(), self:getFrameSideName(), self:getFrameNumber())
   setupSpriteFrame(frameName, self:getNode(), self:getSheetInfo(), self:getSpriteAtlas(), self:getGeometry())
@@ -108,7 +108,7 @@ local getAnimationClock = function(self)
 end
 
 local getNode = function(self)
-  assert(self.action, "self.node is nil.")
+  assert(self.node, "self.node is nil.")
   
   return self.node
 end
@@ -429,7 +429,7 @@ local delete = function(self)
   
   njli.Clock.destroy(self.animationClock)
 
-  self.movingEntity = nil
+  -- self.movingEntity = nil
 
   njli.Action.destroy(self.action)
   self.action = nil
