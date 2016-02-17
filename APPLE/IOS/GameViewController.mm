@@ -24,6 +24,11 @@
 {
     [super viewDidLoad];
     
+#if defined(DEBUG) || defined (_DEBUG)
+//    [self emptySandbox];
+    
+#endif
+    
     setupFileSystem();
     
     [[AVAudioSession sharedInstance] setDelegate:self];
@@ -199,6 +204,39 @@
 - (void)endInterruption
 {
     njli::NJLIGameEngine::unpauseSound();
+}
+
+/**
+ *  @author James Folk, 16-02-15 20:02:20
+ *
+ *  @brief <#Description#>
+ */
+
+
+-(void)emptySandbox
+{
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    NSError *error = nil;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSArray *files = [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:nil];
+    
+    while (files.count > 0) {
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error];
+        if (error == nil) {
+            for (NSString *path in directoryContents) {
+                NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:path];
+                BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
+                files = [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:nil];
+                if (!removeSuccess) {
+                    // Error
+                }
+            }
+        } else {
+            // Error
+        }
+    }
 }
 
 @end

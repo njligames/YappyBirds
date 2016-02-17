@@ -21,7 +21,6 @@
 		C16A2A231C6841F800D94D4B /* assets in Resources */ = {isa = PBXBuildFile; fileRef = C16A2A221C6841F800D94D4B /* assets */; };
 		C16A2A241C6841F800D94D4B /* assets in Resources */ = {isa = PBXBuildFile; fileRef = C16A2A221C6841F800D94D4B /* assets */; };
 		C16A2A251C6841F800D94D4B /* assets in Resources */ = {isa = PBXBuildFile; fileRef = C16A2A221C6841F800D94D4B /* assets */; };
-		C186FD8D1C719880007F77A9 /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C186FD8C1C719880007F77A9 /* NJLIGameEngine_iOS.framework */; };
 		C18F96E21C6901010061DECD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F96E11C6901010061DECD /* art.scnassets */; };
 		C18F96E41C6901010061DECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F96E31C6901010061DECD /* Assets.xcassets */; };
 		C18F96E71C6901010061DECD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18F96E51C6901010061DECD /* MainMenu.xib */; };
@@ -39,6 +38,7 @@
 		C18F971F1C6908D90061DECD /* libEGL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F97191C6904830061DECD /* libEGL.dylib */; };
 		C18F97201C6908D90061DECD /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971A1C6904830061DECD /* libGLESv2.dylib */; };
 		C18F984E1C6967C10061DECD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F984D1C6967C10061DECD /* Images.xcassets */; };
+		C1DFD9FE1C72D7170028E238 /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DFD9FD1C72D7170028E238 /* NJLIGameEngine_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +117,6 @@
 		C16A2A1A1C683F8800D94D4B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C16A2A1C1C683F8F00D94D4B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		C16A2A221C6841F800D94D4B /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../COMMON/assets; sourceTree = "<group>"; };
-		C186FD8C1C719880007F77A9 /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 		C18F96D31C6901010061DECD /* MACOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MACOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F96E11C6901010061DECD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		C18F96E31C6901010061DECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +138,7 @@
 		C18F971A1C6904830061DECD /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = PVR/OSX/x86/Lib/libGLESv2.dylib; sourceTree = "<group>"; };
 		C18F971D1C6905080061DECD /* NJLIGameEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine.framework; sourceTree = "<group>"; };
 		C18F984D1C6967C10061DECD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C1DFD9FD1C72D7170028E238 /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 				C16A2A1D1C683F8F00D94D4B /* GLKit.framework in Frameworks */,
 				C16A2A1B1C683F8800D94D4B /* AudioToolbox.framework in Frameworks */,
 				C16A2A191C683F8100D94D4B /* AVFoundation.framework in Frameworks */,
-				C186FD8D1C719880007F77A9 /* NJLIGameEngine_iOS.framework in Frameworks */,
+				C1DFD9FE1C72D7170028E238 /* NJLIGameEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +262,7 @@
 		C16A29DD1C683E7C00D94D4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C186FD8C1C719880007F77A9 /* NJLIGameEngine_iOS.framework */,
+				C1DFD9FD1C72D7170028E238 /* NJLIGameEngine_iOS.framework */,
 				C16A2A1C1C683F8F00D94D4B /* GLKit.framework */,
 				C16A2A1A1C683F8800D94D4B /* AudioToolbox.framework */,
 				C16A2A181C683F8000D94D4B /* AVFoundation.framework */,
@@ -605,7 +605,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "NJLI=\"${SRCROOT}/../../NJLIGameEngine/Source/jli_game_engine/version-1.0/\"\nCOMMON=\"${SRCROOT}/../COMMON/\"\n\n#copy working script files\nsh ${NJLI}/bin/list_lua_files ${COMMON}/assets/scripts ${COMMON}/gameplay_scripts ${NJLI}/bin/\n\n#copy working sound files\nsh ${NJLI}/bin/list_audio_files ${COMMON}/assets/sounds ${COMMON}/audio ${NJLI}/bin/\n";
+			shellScript = "NJLI=\"${SRCROOT}/../../NJLIGameEngine/Source/jli_game_engine/version-1.0/\"\nCOMMON=\"${SRCROOT}/../COMMON/\"\n\n#copy working script files\nsh ${NJLI}/bin/list_lua_files ${COMMON}/assets/scripts ${COMMON}/gameplay_scripts ${NJLI}/bin/\n\n#copy working sound files\n#sh ${NJLI}/bin/list_audio_files ${COMMON}/assets/sounds ${COMMON}/audio ${NJLI}/bin/\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -726,7 +726,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/../../NJLIGameEngine/Source/jli_game_engine/version-1.0/\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -737,7 +737,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/../../NJLIGameEngine/Source/jli_game_engine/version-1.0/\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -832,6 +832,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -844,7 +845,8 @@
 				OTHER_LDFLAGS = "-lfmodL_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
-				PROVISIONING_PROFILE = "10c94791-d295-45bb-9af0-949bcb369606";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -854,6 +856,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -866,7 +869,8 @@
 				OTHER_LDFLAGS = "-lfmod_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
-				PROVISIONING_PROFILE = "10c94791-d295-45bb-9af0-949bcb369606";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
