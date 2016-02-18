@@ -979,9 +979,6 @@ local new = function(movingEntity)
     njli.World.getInstance():getWorldLuaVirtualMachine():getMinNumber()
 
     local assetPath = njli.ASSET_PATH("scripts/steering/Params.lua")
-    if njli.World.getInstance():isDebug() then
-        assetPath = njli.DOCUMENT_PATH("scripts/steering/Params.lua")
-    end
     
     local Prm = loadfile(assetPath)()
 

@@ -526,9 +526,6 @@ local enter = function(self)
 
 
     local path = njli.ASSET_PATH("scripts/interface0.lua")
-    if njli.World.getInstance():isDebug() then
-        path = njli.DOCUMENT_PATH("scripts/interface0.lua")
-    end
     
     self.menuSpriteAtlas = njlihelper.buildType((loadfile(path))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
 
@@ -835,26 +832,6 @@ local new = function(name)
 
     local loadingFunctions =
     {
-        -- function(self)
-        --     local path = njli.ASSET_PATH("scripts/interface0.lua")
-        --     if njli.World.getInstance():isDebug() then
-        --         path = njli.DOCUMENT_PATH("scripts/interface0.lua")
-        --     end
-            
-        --     self.menuSpriteAtlas = create((loadfile(path))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
-        -- end,
-        -- function(self)
-        --     self.menuMaterial = njli.Material.create()
-        --     local image = njli.Image.create()
-        --     njli.World.getInstance():getWorldResourceLoader():load("images/interface0.png", image)
-        --     self.menuMaterial:getDiffuse():loadGPU(image)
-        --     njli.Image.destroy(image)
-
-            
-        --     self.menuGeometry = njli.Sprite2D.create()
-        --     self.menuGeometry:addMaterial(self.menuMaterial)
-        --     self.menuGeometry:addShaderProgram(getShaderProgram())
-        -- end,
         function(self)
             local menuScene = require "scenes.menuScene"
             for k,v in pairs(_menuSceneStateNames) do
@@ -1004,9 +981,6 @@ local new = function(name)
         -- end,
         function(self)
             local assetPath = njli.ASSET_PATH("scripts/Params.lua")
-            if njli.World.getInstance():isDebug() then
-                assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
-            end
             
             self.Prm = loadfile(assetPath)()
         end,
