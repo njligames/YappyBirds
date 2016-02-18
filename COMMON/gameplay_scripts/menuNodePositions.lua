@@ -1,7 +1,4 @@
 local path = njli.ASSET_PATH("scripts/util.lua")
-if njli.World.getInstance():isDebug() then
-    path = njli.DOCUMENT_PATH("scripts/util.lua")
-end
 
 local util = (loadfile(path))()
 
