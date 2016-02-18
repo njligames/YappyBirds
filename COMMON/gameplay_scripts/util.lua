@@ -465,9 +465,6 @@ function createTexturePackerSpriteAtlas(file, shader)
 
 
         local path = njli.ASSET_PATH(luaPath)
-        if njli.World.getInstance():isDebug() then
-            path = njli.DOCUMENT_PATH(luaPath)
-        end
         
         if fileExists(njli.ASSET_PATH(imagePath)) and fileExists(path) then
             local image = njli.Image.create()
@@ -505,32 +502,6 @@ function createTexturePackerSpriteAtlas(file, shader)
 
         end
     end
-
-    -- local image = njli.Image.create()
-    -- local material = njli.Material.create()
-    -- local geometry = njli.Sprite2D.create()
-    -- geometry:setName(file)
-    -- material:setName(file)
-
-    -- local imagePath = "images/" .. file .. ".png"
-    -- local luaPath = "scripts/" .. file .. ".lua"
-
-    -- print("createTexturePackerSpriteAtlas", luaPath)
-    -- local sheetInfo = (loadfile(njli.DOCUMENT_PATH(luaPath)))()
-    -- assert(sheetInfo ~= nil, "Unable to load the sheet info for file " .. luaPath)
-
-    -- local spriteAtlas = create(sheetInfo:getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
-    -- assert(spriteAtlas ~= nil, "Unable to load the spriteatlas for file " .. luaPath)
-    -- spriteAtlas:setName("file")
-
-    -- njli.World.getInstance():getWorldResourceLoader():load(imagePath, image)
-
-    -- material:getDiffuse():loadGPU(image)
-    -- njli.Image.destroy(image)
-    -- image = nil
-
-    -- geometry:addMaterial(material)
-    -- geometry:addShaderProgram(shader)
 
 
     return _spriteAtlas, _sheetInfo, _geometry, _material

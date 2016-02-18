@@ -3,24 +3,15 @@
 
 
 local path = njli.ASSET_PATH("scripts/util.lua")
-if njli.World.getInstance():isDebug() then
-    path = njli.DOCUMENT_PATH("scripts/util.lua")
-end
 local util = (loadfile(path))()
 
 
 path = njli.ASSET_PATH("scripts/filePaths.lua")
-if njli.World.getInstance():isDebug() then
-    path = njli.DOCUMENT_PATH("scripts/filePaths.lua")
-end
 local filePaths = (loadfile(path))()
 
 
 
 local path = njli.ASSET_PATH("scripts/levelData.lua")
-if njli.World.getInstance():isDebug() then
-    path = njli.DOCUMENT_PATH("scripts/levelData.lua")
-end
 local levelData = (loadfile(path))()
 levelFileData = levelData.new()
 
@@ -28,9 +19,6 @@ levelFileData = levelData.new()
 
 
 path = njli.ASSET_PATH("scripts/menuNodePositions.lua")
-if njli.World.getInstance():isDebug() then
-    path = njli.DOCUMENT_PATH("scripts/menuNodePositions.lua")
-end
 local menuNodePositions = (loadfile(path))()
 
 

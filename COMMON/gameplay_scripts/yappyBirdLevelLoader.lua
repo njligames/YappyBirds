@@ -65,9 +65,6 @@ local loadLevel = function(self, gameMode, gameBoard, gameLevel)
 
     -- print(luaPath)
     local path = njli.ASSET_PATH(luaPath)
-    if njli.World.getInstance():isDebug() then
-        path = njli.DOCUMENT_PATH(luaPath)
-    end
     
     local level = loadfile(path)()
 
