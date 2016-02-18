@@ -23,7 +23,7 @@ local function createActionValues()
 end
 
 local function createBirdMovingEntity(node, type)
-    local assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
+    local assetPath = njli.ASSET_PATH("scripts/Params.lua")
 
     local movingEntityParams = loadfile(assetPath)()
     local movingEntityParams = movingEntityParams.Bird[type]

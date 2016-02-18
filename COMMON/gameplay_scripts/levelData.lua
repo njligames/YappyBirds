@@ -1,7 +1,4 @@
 local path = njli.ASSET_PATH("scripts/util.lua")
-if njli.World.getInstance():isDebug() then
-    path = njli.DOCUMENT_PATH("scripts/util.lua")
-end
 local util = (loadfile(path))()
 
 local function writeAll(file, data)
@@ -78,12 +75,12 @@ local completeLevel = function(self, mode, level)
 		end
 	end	
 
-  print('value of canAdd')
-  print(canAdd)
-  print("mode")
-  print(mode)
-  print("level")
-  print(level)
+  -- print('value of canAdd')
+  -- print(canAdd)
+  -- print("mode")
+  -- print(mode)
+  -- print("level")
+  -- print(level)
 	if canAdd then
 		self.jsonTable[mode][level] = 1
 
@@ -110,9 +107,6 @@ local new = function()
 	
 
     local path = njli.ASSET_PATH("scripts/JSON.lua")
-	if njli.World.getInstance():isDebug() then
-	    path = njli.DOCUMENT_PATH("scripts/JSON.lua")
-	end
 	local JSON = assert(loadfile(path))() -- one-time load of the routines
 
 	local f = io.open(njli.DOCUMENT_PATH("strings/levelLock.json"), "r")

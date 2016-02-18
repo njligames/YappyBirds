@@ -469,7 +469,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, particleGeometry, o
 
   local action, frameActionName, frameSideName, frameNumber, frameIncrement = createActionValues(getRootName(name))
 
-  local assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
+  local assetPath = njli.ASSET_PATH("scripts/Params.lua")
   local params = loadfile(assetPath)().Projectile.WaterBalloon
 
   local animationClock = njli.Clock.create()
