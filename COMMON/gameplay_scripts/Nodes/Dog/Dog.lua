@@ -48,7 +48,7 @@ local function createStateObjects(self)
 end
 
 local function createDogMovingEntity(node, type)
-    local assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
+    local assetPath = njli.ASSET_PATH("scripts/Params.lua")
 
     local movingEntityParams = loadfile(assetPath)()
     local movingEntityParams = movingEntityParams.Dog

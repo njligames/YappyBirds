@@ -22,9 +22,6 @@ end
 
 local function createMovingEntity(node)
     local assetPath = njli.ASSET_PATH("scripts/Params.lua")
-    if njli.World.getInstance():isDebug() then
-        assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
-    end
     
     local Prm = loadfile(assetPath)()
 
