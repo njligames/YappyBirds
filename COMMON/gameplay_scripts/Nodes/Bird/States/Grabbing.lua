@@ -1,3 +1,14 @@
+local function getRootName(name)
+  return string.sub(name, string.find(name, "/") + 1)
+end
+
+local function getFrameName(name, frameAction, frameSide, frameNumber)
+    local folderName = getRootName(name) .. "_" .. frameAction .. "_" .. frameSide
+    local fileName = folderName .. "_" .. string.format("%.5d", frameNumber)
+
+    return folderName .. "/" .. fileName
+end
+
 --##############################################################
 
 local getNodeState = function(self)
@@ -37,8 +48,8 @@ local enter = function(self)
     nodeObject:setFrameActionName("grab")
     nodeObject:setFrameIncrement(1)
 
-    nodeObject:getMovingEntity():setVelocity(njli.btVector3(0,0,0))
-    node:getPhysicsBody():setVelocity(njli.btVector3(0,0,0))
+    nodeObject:getMovingEntity():setVelocity(bullet.btVector3(0,0,0))
+    node:getPhysicsBody():setVelocity(bullet.btVector3(0,0,0))
 
     node:getPhysicsBody():setCollisionMask(CollisionMasks.birdGrabbing)
     node:getPhysicsBody():setDynamicPhysics()

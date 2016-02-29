@@ -65,8 +65,8 @@ end
 
 local pause = function(self)
  self.paused = true
- self.pausedVelocity = njli.btVector3(self.physicsBody:getVelocity())
- self.physicsBody:setVelocity(njli.btVector3(0,0,0))
+ self.pausedVelocity = bullet.btVector3(self.physicsBody:getVelocity())
+ self.physicsBody:setVelocity(bullet.btVector3(0,0,0))
 end
 
 local unPause = function(self)

@@ -38,7 +38,7 @@ local function createStateObjects(self)
   self:getNode():getPhysicsBody():setCollisionGroup(CollisionGroups.projectile)
   self:getNode():getPhysicsBody():setCollisionMask(CollisionMasks.projectile)
 
-  self.physicsShape:setHalfExtentsZ(njli.btVector3( 4.5, 3, 1 ))
+  self.physicsShape:setHalfExtentsZ(bullet.btVector3( 4.5, 3, 1 ))
   
   local frameName = getFrameName(self:getNode():getName(), self:getFrameActionName(), self:getFrameSideName(), self:getFrameNumber(), self:getColor())
   setupSpriteFrame(frameName, self:getNode(), self:getSheetInfo(), self:getSpriteAtlas(), self:getGeometry())
@@ -73,8 +73,8 @@ end
 
 local pause = function(self)
     self.paused = true
-    self.pausedVelocity = njli.btVector3(self.physicsBody:getVelocity())
-    self.physicsBody:setVelocity(njli.btVector3(0,0,0))
+    self.pausedVelocity = bullet.btVector3(self.physicsBody:getVelocity())
+    self.physicsBody:setVelocity(bullet.btVector3(0,0,0))
 end
 
 local unPause = function(self)

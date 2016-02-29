@@ -18,13 +18,13 @@ local enter = function(self)
 	local nodeStateName = self.node:getStateMachine():getState():getName()
 	self.node:getGeometry():setSpriteAtlasFrame(self.node, self.spriteAtlas, nodeStateName, true)
  self.dimSprite = self.node:getGeometry():getDimensions(self.node)
-	local d = njli.btVector2( (self.dimSprite:x() * self.menuScale), (self.dimSprite:y() * self.menuScale) )
+	local d = bullet.btVector2( (self.dimSprite:x() * self.menuScale), (self.dimSprite:y() * self.menuScale) )
 	self.node:getGeometry():setDimensions(self.node, d)
  
 end
 
 local update = function(self, timeStep)
- local d = njli.btVector2( (self.dimSprite:x() * self.menuScale), (self.dimSprite:y() * self.menuScale) )
+ local d = bullet.btVector2( (self.dimSprite:x() * self.menuScale), (self.dimSprite:y() * self.menuScale) )
  self.node:getGeometry():setDimensions(self.node, d)
 end
 

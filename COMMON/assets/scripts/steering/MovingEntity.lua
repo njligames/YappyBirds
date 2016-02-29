@@ -143,7 +143,7 @@ local update = function(self, timeStep)
  if not njli.World.getInstance():getScene():getPhysicsWorld():isPaused() then
  local oldPos = self:getPos()
 
- local steeringForce = njli.btVector3(0, 0, 0)
+ local steeringForce = bullet.btVector3(0, 0, 0)
 
  steeringForce = self:getSteeringBehaviors():calculate()
  
@@ -250,7 +250,7 @@ local new = function(node, maxSpeed, headingVector, upVector, turnRate, maxForce
  local maxForce = maxForce
 
  local headingSmoother = {}
- local smoothedHeading = njli.btVector3(0,0,0)
+ local smoothedHeading = bullet.btVector3(0,0,0)
  local smoothingOn = true
 
  local properties = 
@@ -270,7 +270,7 @@ local new = function(node, maxSpeed, headingVector, upVector, turnRate, maxForce
 
  steeringBehavior = nil,
 
- vVelocity = njli.btVector3(0, 0, 0),
+ vVelocity = bullet.btVector3(0, 0, 0),
 
  tagged = false,
  }

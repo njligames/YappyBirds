@@ -170,7 +170,7 @@ local getOriginForLayer = function(self, x, y, layer, sublayer)
 
  local zz = self.LAYER_MAX + (0.1 - (self.LAYER_DISTANCE * (layer - 1))) + offset
 
- return njli.btVector3(xx, yy, zz)
+ return bullet.btVector3(xx, yy, zz)
 end
 
 local transformCoordinate = function(self, origin)
@@ -192,7 +192,7 @@ local transformCoordinate = function(self, origin)
  local xx = adjustPosition(origin:x(), zz)
  local yy = adjustPosition(origin:y(), zz)
 
- return njli.btVector3(xx, yy, zz)
+ return bullet.btVector3(xx, yy, zz)
 end
 
 local destroyTileNode = function(self, tile)
@@ -220,8 +220,8 @@ local createTileNode = function(self, x, y, layer, opacity, tile, instanceName, 
  origin = self:transformCoordinate(origin)
  self.nodes[instanceName].node:setOrigin(origin)
 
- local d = njli.btVector2( (width / divisor) * 2, (height / divisor) * 2 )
- local pp = njli.btVector2( 0, 0 )
+ local d = bullet.btVector2( (width / divisor) * 2, (height / divisor) * 2 )
+ local pp = bullet.btVector2( 0, 0 )
 
  self.nodes[instanceName].node:getGeometry():setDimensions(self.nodes[instanceName].node, d , pp)
 
@@ -526,11 +526,8 @@ local enter = function(self)
 
 
  local path = njli.ASSET_PATH("scripts/interface0.lua")
- if njli.World.getInstance():isDebug() then
- path = njli.DOCUMENT_PATH("scripts/interface0.lua")
- end
  
- self.menuSpriteAtlas = njlihelper.buildType((loadfile(path))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
+ self.menuSpriteAtlas = njli.buildType((loadfile(path))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
 
  self.menuMaterial = njli.Material.create()
  local image = njli.Image.create()
@@ -555,7 +552,7 @@ local enter = function(self)
  njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)
 
  local dimScreen = njli.World.getInstance():getViewportDimensions()
- local origin = njli.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
+ local origin = bullet.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
 
  self.nodes[name].node:setOrigin(origin)
  local menuScale = self.nodes[name]:shouldScale()
@@ -592,7 +589,7 @@ local enter = function(self)
  njli.World.getInstance():getScene():getRootNode():addChildNode(theNode.node)
  local dimScreen = njli.World.getInstance():getViewportDimensions()
  local x, y = dimScreen:x(), dimScreen:y()
- theNode.node:setOrigin(njli.btVector3(x-(theNode:getRect():getDimension():x()*2) + 0, 0+(theNode:getRect():getDimension():y()*2) + 0, -1))
+ theNode.node:setOrigin(bullet.btVector3(x-(theNode:getRect():getDimension():x()*2) + 0, 0+(theNode:getRect():getDimension():y()*2) + 0, -1))
  self.nodes[theNode.instanceName] = theNode
  self.pauseButton = theNode
  self.pauseButton.node:hide(getOrthoCamera())
@@ -646,7 +643,7 @@ end
 local pause = function(self)
 
  njli.World.getInstance():enablePauseAnimation()
- njli.World.getInstance():getScene():getPhysicsWorld():setGravity(njli.btVector3(0,0,0))
+ njli.World.getInstance():getScene():getPhysicsWorld():setGravity(bullet.btVector3(0,0,0))
 
  for k,v in pairs(self.birdFlock) do
  v:pause()
@@ -835,26 +832,6 @@ local new = function(name)
 
  local loadingFunctions =
  {
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
  function(self)
  local menuScene = require "scenes.menuScene"
  for k,v in pairs(_menuSceneStateNames) do
@@ -933,7 +910,7 @@ local new = function(name)
  insertNodeObject(self.nodes[name], name)
  njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)
  local dimScreen = njli.World.getInstance():getViewportDimensions()
- local origin = njli.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
+ local origin = bullet.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
  self.nodes[name].node:setOrigin(origin)
 
  local menuScale = self.nodes[name]:shouldScale()
@@ -948,7 +925,7 @@ local new = function(name)
  insertNodeObject(self.nodes[name], name)
  njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)
  local dimScreen = njli.World.getInstance():getViewportDimensions()
- local origin = njli.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
+ local origin = bullet.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
  self.nodes[name].node:setOrigin(origin)
  local menuScale = self.nodes[name]:shouldScale()
  self.nodes[name]:setScale(menuScale * .25)
@@ -974,7 +951,7 @@ local new = function(name)
  local wordsX = 0
  local wordsY = 0
  wordsY = wordsY * 2
- self.textNode.node:setOrigin(njli.btVector3(wordsX, wordsY, 0))
+ self.textNode.node:setOrigin(bullet.btVector3(wordsX, wordsY, 0))
 
  self.nodes['TIMER'] = self.textNode
  insertNodeObject(self.textNode, 'TIMER')
@@ -1004,9 +981,6 @@ local new = function(name)
  
  function(self)
  local assetPath = njli.ASSET_PATH("scripts/Params.lua")
- if njli.World.getInstance():isDebug() then
- assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
- end
  
  self.Prm = loadfile(assetPath)()
  end,

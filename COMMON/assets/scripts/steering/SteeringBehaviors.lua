@@ -84,7 +84,7 @@ local arrive = function(self, targetPos, deceleration)
  return desiredVelocity - self.pVehicle:getVelocity()
 	end
 	
-	return njli.btVector3(0,0,0)
+	return bullet.btVector3(0,0,0)
 end
 
 
@@ -99,7 +99,7 @@ local pursuit = function(self, evader)
 	
 	local threatRange = 100.0
 	if toEvader:length2() > (threatRange * threatRange) then
- return njli.btVector3(0, 0, 0)
+ return bullet.btVector3(0, 0, 0)
 	end
 
 	
@@ -135,7 +135,7 @@ local offsetPursuit = function(self, leader, offset)
 	
 	local threatRange = 100.0
 	if toOffset:length2() > (threatRange * threatRange) then
- return njli.btVector3(0, 0, 0)
+ return bullet.btVector3(0, 0, 0)
 	end
 
 	local lookAheadTime = toOffset:length() / (self.pVehicle:getMaxSpeed() + leader:getSpeed())
@@ -154,7 +154,7 @@ local evade = function(self, pursuer)
 	
 	
 	if toPursuer:length2() > (self.dEvadeDistSq) then
- return njli.btVector3(0, 0, 0)
+ return bullet.btVector3(0, 0, 0)
 	end
 
 	
@@ -199,7 +199,7 @@ local followPath = function(self, pathToFollow, deceleration, pointReachedFuncti
  return self:arrive(pathToFollow:currentWaypoint(), deceleration)
 	end
 
-	return njli.btVector3(0, 0, 0)
+	return bullet.btVector3(0, 0, 0)
 end
 
 
@@ -236,7 +236,7 @@ end
  
 local separation = function(self, neighbors)
 	
-	local steeringForce = njli.btVector3(0, 0, 0)
+	local steeringForce = bullet.btVector3(0, 0, 0)
 
 	for k,v in pairs(neighbors) do
  
@@ -273,7 +273,7 @@ local alignmentPlus = function(self, movingEntities)
 end
 
 local calculateWeightedSum = function(self)
-	self.vSteeringForce = njli.btVector3(0,0,0)
+	self.vSteeringForce = bullet.btVector3(0,0,0)
 	
 
 	if self:isOn(self.BehaviorType.seek) then
@@ -396,7 +396,7 @@ end
 
 
 local calculate = function(self)
-	self.vSteeringForce = njli.btVector3(0, 0, 0)
+	self.vSteeringForce = bullet.btVector3(0, 0, 0)
 
 	if self:isSpacePartitioningOn() then
  if self:isSeparationOn() or self:isAlignmentOn() or self:isCohesionOn() then
@@ -417,7 +417,7 @@ local calculate = function(self)
 	elseif self.summingMethod == self.SummingMethod.dithered then
  self.vSteeringForce = self:calculateDithered()
 	else
- self.vSteeringForce = njli.btVector3(0, 0, 0)
+ self.vSteeringForce = bullet.btVector3(0, 0, 0)
 	end
 
 	return self.vSteeringForce
@@ -485,7 +485,7 @@ local getOffsetPursueTransform = function(self, leader, offset)
  theOffset = self.offsetPursuePosition
 	end
 
-	local offsetTransform = njli.btTransform(njli.btTransform.getIdentity())
+	local offsetTransform = bullet.btTransform(bullet.btTransform.getIdentity())
 	offsetTransform:setOrigin(theOffset)
 	offsetTransform = offsetTransform * theLeader.node:getWorldTransform()
 	return offsetTransform
@@ -503,13 +503,13 @@ local getOffsetPursueDistance = function(self, leader, offset)
  theOffset = self.offsetPursuePosition
 	end
 
-	local offsetTransform = njli.btTransform(njli.btTransform.getIdentity())
+	local offsetTransform = bullet.btTransform(bullet.btTransform.getIdentity())
 	offsetTransform:setOrigin(theOffset)
 	offsetTransform = offsetTransform * theLeader.node:getWorldTransform()
 
 	local pos1 = offsetTransform:getOrigin()
 	local pos2 = self.pVehicle.node:getOrigin()
-	return njli.btDistance(pos1, pos2)
+	return bullet.btDistance(pos1, pos2)
 end
 
 
@@ -979,9 +979,6 @@ local new = function(movingEntity)
  njli.World.getInstance():getWorldLuaVirtualMachine():getMinNumber()
 
  local assetPath = njli.ASSET_PATH("scripts/steering/Params.lua")
- if njli.World.getInstance():isDebug() then
- assetPath = njli.DOCUMENT_PATH("scripts/steering/Params.lua")
- end
  
  local Prm = loadfile(assetPath)()
 
@@ -1023,7 +1020,7 @@ local new = function(movingEntity)
 
 	
 	
-	local vSteeringForce = njli.btVector3(0, 0, 0)
+	local vSteeringForce = bullet.btVector3(0, 0, 0)
 	
 	
 	
@@ -1032,7 +1029,7 @@ local new = function(movingEntity)
 	local dWallDetectionFeelerLength = Prm.WallDetectionFeelerLength
 
 	local dWanderRadius = Prm.WanderRad
-	local vWanderTarget = njli.btVector3(0.0, 0.0, -1.0)
+	local vWanderTarget = bullet.btVector3(0.0, 0.0, -1.0)
 
 	local dWanderJitter = Prm.WanderJitterPerSec
 	
@@ -1129,7 +1126,7 @@ local new = function(movingEntity)
  hideObstacles = {},
 
  offsetPursueTarget = movingEntity,
- offsetPursuePosition = njli.btVector3(0, 0, 0),
+ offsetPursuePosition = bullet.btVector3(0, 0, 0),
  wallsToAvoid = {}
  }
  return setmetatable(properties, {__index = methods})
