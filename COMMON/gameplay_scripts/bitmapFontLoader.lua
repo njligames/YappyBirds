@@ -200,10 +200,10 @@ function mymodule.newString( font, text, material, geometry, shader)
                                                     t.raw_font.chars[ c ].width, 
                                                     t.raw_font.chars[ c ].height)
                         geometry:setDimensions(node,
-                                                njli.btVector2( t.raw_font.chars[ c ].width*2, t.raw_font.chars[ c ].height*2),
-                                                njli.btVector2( letter.anchorX, letter.anchorY ))
+                                                bullet.btVector2( t.raw_font.chars[ c ].width*2, t.raw_font.chars[ c ].height*2),
+                                                bullet.btVector2( letter.anchorX, letter.anchorY ))
 
-                        node:setOrigin(njli.btVector3(letter.x, letter.y, 0))
+                        node:setOrigin(bullet.btVector3(letter.x, letter.y, 0))
 
                         mainNode:addChildNode(node)
 
@@ -240,10 +240,10 @@ function mymodule.newString( font, text, material, geometry, shader)
                                                 t.raw_font.chars[ c ].width, 
                                                 t.raw_font.chars[ c ].height)
                     geometry:setDimensions(node,
-                                            njli.btVector2( t.raw_font.chars[ c ].width*2, t.raw_font.chars[ c ].height*2),
-                                            njli.btVector2( letter.anchorX, letter.anchorY ))
+                                            bullet.btVector2( t.raw_font.chars[ c ].width*2, t.raw_font.chars[ c ].height*2),
+                                            bullet.btVector2( letter.anchorX, letter.anchorY ))
 
-                    node:setOrigin(njli.btVector3(letter.x, letter.y, 0))
+                    node:setOrigin(bullet.btVector3(letter.x, letter.y, 0))
 
                     mainNode:addChildNode(node)
 

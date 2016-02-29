@@ -89,7 +89,7 @@ local update = function(self, scene, timeStep)
                 njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)
 
                 local dimScreen = njli.World.getInstance():getViewportDimensions()
-                local origin = njli.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
+                local origin = bullet.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
 
                 self.nodes[name].node:setOrigin(origin)
                 local menuScale = self.nodes[name]:shouldScale()

@@ -42,8 +42,8 @@ local enter = function(self)
  local node = nodeObject:getNode()
 
  node:getPhysicsBody():setDynamicPhysics()
- nodeObject:getMovingEntity():setVelocity(njli.btVector3(0,0,0))
- node:getPhysicsBody():setVelocity(njli.btVector3(0,0,0))
+ nodeObject:getMovingEntity():setVelocity(bullet.btVector3(0,0,0))
+ node:getPhysicsBody():setVelocity(bullet.btVector3(0,0,0))
 end
 
 local update = function(self, timeStep)
@@ -53,14 +53,14 @@ local update = function(self, timeStep)
 
  local point, index = nodeObject:getPath():closestWaypoint(node:getOrigin())
 
- local direction = njli.btVector3(0, -1, 0)
+ local direction = bullet.btVector3(0, -1, 0)
  local magnitude = 6
 
  node:getPhysicsBody():applyForce(direction * magnitude, true)
 
  if node:getOrigin():y() < point:y() then
- nodeObject:getMovingEntity():setVelocity(njli.btVector3(0,0,0))
- node:getPhysicsBody():setVelocity(njli.btVector3(0,0,0))
+ nodeObject:getMovingEntity():setVelocity(bullet.btVector3(0,0,0))
+ node:getPhysicsBody():setVelocity(bullet.btVector3(0,0,0))
  nodeObject:getPath():setCurrentWaypointIndex(index)
  self:getNodeObject():getStateObject("Land"):push()
  end

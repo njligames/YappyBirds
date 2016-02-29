@@ -209,7 +209,7 @@ local touchDown = function(self, touches)
  projectile:start()
  
 
- local direction = njli.btVector3(0, 0, 1)
+ local direction = bullet.btVector3(0, 0, 1)
  local magnitude = self.world.Prm.Projectile["WaterBalloon"].Magnitude
  local azimuth = self.world.Prm.Projectile["WaterBalloon"].Azimuth
 
@@ -218,9 +218,9 @@ local touchDown = function(self, touches)
  local y = projectile.node:getWorldTransform():getOrigin():y()
  local z = projectile.node:getWorldTransform():getOrigin():z()
 
- direction = direction:rotate(njli.btVector3(-1,0,0), math.atan(azimuth, z))
- direction = direction:rotate(njli.btVector3(0,1,0), math.atan(x, z))
- direction = direction:rotate(njli.btVector3(-1,0,0), math.atan(y, z))
+ direction = direction:rotate(bullet.btVector3(-1,0,0), math.atan(azimuth, z))
+ direction = direction:rotate(bullet.btVector3(0,1,0), math.atan(x, z))
+ direction = direction:rotate(bullet.btVector3(-1,0,0), math.atan(y, z))
 
  
 

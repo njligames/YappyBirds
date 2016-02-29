@@ -40,7 +40,7 @@ local enter = function(self, scene)
  insertNodeObject(self.nodes[name], name)
  njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)
  local dimScreen = njli.World.getInstance():getViewportDimensions()
- local origin = njli.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
+ local origin = bullet.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
  self.nodes[name].node:setOrigin(origin)
  local menuScale = self.nodes[name]:shouldScale()
  self.nodes[name]:setScale(menuScale)
@@ -60,7 +60,7 @@ local enter = function(self, scene)
  insertNodeObject(theNode, theNode.instanceName)
  njli.World.getInstance():getScene():getRootNode():addChildNode(theNode.node)
  local x, y = processDimensions(_pauseMenuNodePositions[name][deviceName].x, _pauseMenuNodePositions[name][deviceName].y)
- theNode.node:setOrigin(njli.btVector3(x, y, -1))
+ theNode.node:setOrigin(bullet.btVector3(x, y, -1))
  self.nodes[theNode.instanceName] = theNode
  self.playButton = theNode
  
@@ -91,7 +91,7 @@ local enter = function(self, scene)
  insertNodeObject(theNode, theNode.instanceName)
  njli.World.getInstance():getScene():getRootNode():addChildNode(theNode.node)
  local x, y = processDimensions(_pauseMenuNodePositions[name][deviceName].x, _pauseMenuNodePositions[name][deviceName].y)
- theNode.node:setOrigin(njli.btVector3(x, y, -1))
+ theNode.node:setOrigin(bullet.btVector3(x, y, -1))
  self.nodes[theNode.instanceName] = theNode
  self.quitButton = theNode
  
@@ -139,7 +139,7 @@ local enter = function(self, scene)
  insertNodeObject(theNode, theNode.instanceName)
  njli.World.getInstance():getScene():getRootNode():addChildNode(theNode.node)
  local x, y = processDimensions(_pauseMenuNodePositions[name][deviceName].x, _pauseMenuNodePositions[name][deviceName].y)
- theNode.node:setOrigin(njli.btVector3(x, y, -1))
+ theNode.node:setOrigin(bullet.btVector3(x, y, -1))
  self.nodes[theNode.instanceName] = theNode
  self.nextLevel = theNode
  

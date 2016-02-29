@@ -477,7 +477,7 @@ function createTexturePackerSpriteAtlas(file, shader)
             local sheetInfo = (loadfile(path))()
             assert(sheetInfo ~= nil, "Unable to load the sheet info for file " .. path)
 
-            local spriteAtlas = njlihelper.buildType(sheetInfo:getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
+            local spriteAtlas = njli.buildType(sheetInfo:getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
             assert(spriteAtlas ~= nil, "Unable to load the spriteatlas for file " .. njli.ASSET_PATH(imagePath))
             spriteAtlas:setName(currentFile)
 
@@ -669,7 +669,7 @@ function setupSpriteFrame(frameName, node, characterSheetInfo, spriteAtlas, geom
             local width = v:getSheet().frames[frameIndex].width - 2
             local height = v:getSheet().frames[frameIndex].height - 2
             local divisor = getGameViewDivisor()
-            local dimSprite = njli.btVector2( (width/divisor)*2, (height/divisor)*2 )
+            local dimSprite = bullet.btVector2( (width/divisor)*2, (height/divisor)*2 )
 
             node:addGeometry(geometry[k])
 

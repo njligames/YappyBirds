@@ -35,9 +35,9 @@ local enter = function(self)
     self:getNodeObject():setFrameActionName("hit")
     self:getNodeObject():setFrameIncrement(0)
 
-    self:getNodeObject():getMovingEntity():setVelocity(njli.btVector3(0,0,0))
+    self:getNodeObject():getMovingEntity():setVelocity(bullet.btVector3(0,0,0))
 
-    self:getNodeObject():getNode():getPhysicsBody():setVelocity(njli.btVector3(0,0,0))
+    self:getNodeObject():getNode():getPhysicsBody():setVelocity(bullet.btVector3(0,0,0))
     self:getNodeObject():getNode():getPhysicsBody():setDynamicPhysics()
     self:getNodeObject():getNode():getPhysicsBody():setCollisionMask(CollisionMasks.birdDead)
 
@@ -53,7 +53,7 @@ end
 local update = function(self, timeStep)
     -- print(self:getNodeState():getName() .. " update for " .. self:getNodeObject():getNode():getName())
 
-    local direction = njli.btVector3(0, -1, 0)
+    local direction = bullet.btVector3(0, -1, 0)
     local magnitude = 6
 
     self:getNodeObject():getNode():getPhysicsBody():applyForce(direction * magnitude, true)

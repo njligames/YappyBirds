@@ -23,14 +23,14 @@ local function createActionValues()
 end
 
 local function createBirdMovingEntity(node, type)
- local assetPath = njli.DOCUMENT_PATH("scripts/Params.lua")
+ local assetPath = njli.ASSET_PATH("scripts/Params.lua")
 
  local movingEntityParams = loadfile(assetPath)()
  local movingEntityParams = movingEntityParams.Bird[type]
 
  local maxSpeed = movingEntityParams.MaxSpeed
- local headingVector = njli.btVector3(0.0, 0.0, -1.0)
- local upVector = njli.btVector3(0.0, 1.0, 0.0)
+ local headingVector = bullet.btVector3(0.0, 0.0, -1.0)
+ local upVector = bullet.btVector3(0.0, 1.0, 0.0)
  local turnRate = njli.World.getInstance():getWorldLuaVirtualMachine():getMaxNumber()
  local maxForce = movingEntityParams.MaxForce
 
@@ -51,8 +51,8 @@ local function createStateObjects(self)
  self:addStateObject("Grabbing", require "nodes.bird.states.grabbing")
  self:addStateObject("Grabbed", require "nodes.bird.states.grabbed")
 
- self:getNode():getPhysicsBody():setLinearFactor(njli.btVector3(1,1,0))
- self:getNode():getPhysicsBody():setAngularFactor(njli.btVector3(0,0,1))
+ self:getNode():getPhysicsBody():setLinearFactor(bullet.btVector3(1,1,0))
+ self:getNode():getPhysicsBody():setAngularFactor(bullet.btVector3(0,0,1))
  self:getNode():getPhysicsBody():setCollisionGroup(CollisionGroups.bird)
  self:getNode():getPhysicsBody():setCollisionMask(CollisionMasks.bird)
  self:getNode():getPhysicsBody():enableHandleCollideCallback()
@@ -80,7 +80,7 @@ local createConstraint = function(self)
  local dogNode_min, dogNode_max = dogNode:getAabb()
 
  constraint:setNodes(birdNode, dogNode, 
- njli.btVector3(0,birdNode_min:y(),0), njli.btVector3(0,dogNode_max:y() - 3,1))
+ bullet.btVector3(0,birdNode_min:y(),0), bullet.btVector3(0,dogNode_max:y() - 3,1))
 
  self.constraint = constraint
 
@@ -184,8 +184,8 @@ end
 
 local pause = function(self)
  self.paused = true
- self.pausedVelocity = njli.btVector3(self.physicsBody:getVelocity())
- self.physicsBody:setVelocity(njli.btVector3(0,0,0))
+ self.pausedVelocity = bullet.btVector3(self.physicsBody:getVelocity())
+ self.physicsBody:setVelocity(bullet.btVector3(0,0,0))
 end
 
 local unPause = function(self)
@@ -676,7 +676,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, birdType, dog, owne
  beakNode = BirdBeak.new(name .. "_mouth", sheetInfo, spriteAtlas, geometry)
 
  node:addChildNode(beakNode:getNode())
- beakNode:getNode():setOrigin(njli.btVector3(0,0,-0.01))
+ beakNode:getNode():setOrigin(bullet.btVector3(0,0,-0.01))
  insertNodeObject(beakNode, beakNode:getNode():getName())
 
  

@@ -17,7 +17,7 @@ local getOriginForLayer = function(self, x, y, layer, sublayer)
 
  local zz = self.LAYER_MAX + (0.1 - (self.LAYER_DISTANCE * (layer - 1))) + offset
 
- return njli.btVector3(xx, yy, zz)
+ return bullet.btVector3(xx, yy, zz)
 end
 
 local transformCoordinate = function(self, origin)
@@ -39,7 +39,7 @@ local transformCoordinate = function(self, origin)
  local xx = adjustPosition(origin:x(), zz)
  local yy = adjustPosition(origin:y(), zz)
 
- return njli.btVector3(xx, yy, zz)
+ return bullet.btVector3(xx, yy, zz)
 end
 
 local createProjectileNode = function(self, x, y, type)
@@ -184,7 +184,7 @@ local touchDown = function(self, touches)
 
 print(self.touch_nodes[1]:getOrigin())
 
-	self.touch_nodes[1]:setOrigin(njli.btVector3(touches[1]:getPosition():x(), touches[1]:getPosition():y(), 0))
+	self.touch_nodes[1]:setOrigin(bullet.btVector3(touches[1]:getPosition():x(), touches[1]:getPosition():y(), 0))
  self.touch_nodes[1]:getParticleEmitter(0):reset()
  self.touch_nodes[1]:getParticleEmitter(0):start()
 
@@ -288,7 +288,7 @@ local new = function(name)
  self.particleEmitter:setup(njli.World.getInstance():getScene():getRootNode(), self.geometry)
  end
 
- self.node:setOrigin(njli.btVector3(0, 0, 0))
+ self.node:setOrigin(bullet.btVector3(0, 0, 0))
 
  self.nodes["pe" .. tostring(1)] = self.node
  self.touch_nodes[1] = self.node
