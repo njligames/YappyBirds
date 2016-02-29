@@ -89,7 +89,7 @@ local enter = function(self)
     local x = math.random(-5, 5)
     local y = math.random(20.0, 21.0)
     local z = math.random(-5, 5)
-    local offsetFromDog = njli.btVector3(x, y, z)
+    local offsetFromDog = bullet.btVector3(x, y, z)
     local dogMovingEntity = nodeObject:getDog().movingEntity
 
     nodeObject:getMovingEntity():getSteeringBehaviors():setOffsetPursuitOn(dogMovingEntity, offsetFromDog)
@@ -110,7 +110,7 @@ local update = function(self, timeStep)
     local x = math.random(-1, 1)
     local y = math.random(20.0, 21.0)
     local z = math.random(-1, 1)
-    local offsetFromDog = njli.btVector3(x, y, z)
+    local offsetFromDog = bullet.btVector3(x, y, z)
     local dogMovingEntity = nodeObject:getDog().movingEntity
     nodeObject:getMovingEntity():getSteeringBehaviors():setOffsetPursuitOn(dogMovingEntity, offsetFromDog)
 

@@ -38,8 +38,8 @@ end
 local pause = function(self)
     -- print("pause balloon")
     self.paused = true
-    self.pausedVelocity = njli.btVector3(self.rigidBody:getVelocity())
-    self.rigidBody:setVelocity(njli.btVector3(0,0,0))
+    self.pausedVelocity = bullet.btVector3(self.rigidBody:getVelocity())
+    self.rigidBody:setVelocity(bullet.btVector3(0,0,0))
 
     
 
@@ -253,7 +253,7 @@ local new = function(owner, name, characterSheetInfo, spriteAtlas, geometry, par
     rigidBody:setCollisionMask(CollisionMasks.projectile)
 
     local physicsShape = njli.PhysicsShapeCylinder.create()
-    physicsShape:setHalfExtentsZ(njli.btVector3( 4.5, 3, 1 ))
+    physicsShape:setHalfExtentsZ(bullet.btVector3( 4.5, 3, 1 ))
     physicsShape:setMargin(1)
 
     rigidBody:addPhysicsShape(physicsShape)
@@ -321,7 +321,7 @@ local new = function(owner, name, characterSheetInfo, spriteAtlas, geometry, par
         characterSheetInfo = characterSheetInfo,
 
         paused = false,
-        pausedVelocity = njli.btVector3(0,0,0),
+        pausedVelocity = bullet.btVector3(0,0,0),
         
     }
 

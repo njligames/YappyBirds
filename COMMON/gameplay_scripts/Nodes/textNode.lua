@@ -134,7 +134,7 @@ local new = function(name, bmflabel, material, geometry, shaderProgram)
         nodeStates[k]:setName(names[k])
     end
 
-    node:setOrigin(njli.btVector3(0,0,0))
+    node:setOrigin(bullet.btVector3(0,0,0))
 
     node:getStateMachine():pushState(nodeStates.display)
 

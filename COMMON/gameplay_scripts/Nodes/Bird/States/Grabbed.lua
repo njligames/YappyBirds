@@ -56,7 +56,7 @@ local update = function(self, timeStep)
         assert(node:getPhysicsBody():isDynamicPhysics(), "must be in dynamic physics")
         assert(nodeObject:getDog():getNode():getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
 
-        local direction = njli.btVector3(0, 1, 0)
+        local direction = bullet.btVector3(0, 1, 0)
         local StealSpeed = nodeObject:getMovingEntityParams().StealSpeed
         local magnitude = ((1 * nodeObject:getFrameNumber()) * StealSpeed)
 
