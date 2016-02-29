@@ -45,8 +45,8 @@ local createFeelers = function(self)
 end
 
 --- This behavior moves the agent towards a target position
--- @param targetPos The position to seek to of type njli.btVector3
--- @return The normalized seek vector of type: njli.btVector3
+-- @param targetPos The position to seek to of type bullet.btVector3
+-- @return The normalized seek vector of type: bullet.btVector3
 local seek = function(self, targetPos)
 	-- print("seek")
 	local desiredVelocity = (targetPos - self.pVehicle:getPos())
@@ -54,8 +54,8 @@ local seek = function(self, targetPos)
 end
 
 --- This behavior returns a vector that moves the agent away from a target position
--- @param targetPos The position to flee from of type njli.btVector3
--- @return The normalized flee vector of type: njli.btVector3
+-- @param targetPos The position to flee from of type bullet.btVector3
+-- @return The normalized flee vector of type: bullet.btVector3
 local flee = function(self, targetPos)
 	-- print("flee")
 	local desiredVelocity = (self.pVehicle:getPos() - targetPos)
@@ -64,9 +64,9 @@ end
 
 --- This behavior is similar to seek but it attempts to arrive 
 --- at the target position with a zero velocity
--- @param targetPos The position to flee from of type njli.btVector3
+-- @param targetPos The position to flee from of type bullet.btVector3
 -- @param deceleration Determine how quickly it should decelerate to it's target
--- @return The normalized arrive vector of type: njli.btVector3
+-- @return The normalized arrive vector of type: bullet.btVector3
 local arrive = function(self, targetPos, deceleration)
 	-- print("arrive")
 	local toTarget = (targetPos - self.pVehicle:getPos())
@@ -84,13 +84,13 @@ local arrive = function(self, targetPos, deceleration)
 		return desiredVelocity - self.pVehicle:getVelocity()
 	end
 	
-	return njli.btVector3(0,0,0)
+	return bullet.btVector3(0,0,0)
 end
 
 --- This behavior predicts where an agent will be in time T and seeks
 --- towards that point to intercept it.
 -- @param evader The entity to pursue of type: MovingEntity
--- @return The normalized pursuit vector of type: njli.btVector3
+-- @return The normalized pursuit vector of type: bullet.btVector3
 local pursuit = function(self, evader)
 	
 	local toEvader = evader:getPos() - self.pVehicle:getPos()
@@ -99,7 +99,7 @@ local pursuit = function(self, evader)
 	-- within a 'threat range'
 	local threatRange = 100.0
 	if toEvader:length2() > (threatRange * threatRange) then
-		return njli.btVector3(0, 0, 0)
+		return bullet.btVector3(0, 0, 0)
 	end
 
 	-- print("pursuit")
@@ -119,11 +119,11 @@ end
 --- This behavior maintains a position, in the direction of offset
 --- from the target vehicle.
 -- @param leader The entity to pursue of type: MovingEntity
--- @param offset The offset position of type: njli.btVector3
--- @return The normalized offsetPursuit vector of type: njli.btVector3
+-- @param offset The offset position of type: bullet.btVector3
+-- @return The normalized offsetPursuit vector of type: bullet.btVector3
 local offsetPursuit = function(self, leader, offset)
 
-	-- local offsetTransform = njli.btTransform(njli.btTransform.getIdentity())
+	-- local offsetTransform = bullet.btTransform(bullet.btTransform.getIdentity())
 	-- offsetTransform:setOrigin(offset)
 	-- offsetTransform = offsetTransform * leader.node:getWorldTransform()
 	local offsetTransform = self:getOffsetPursueTransform(leader, offset)
@@ -135,7 +135,7 @@ local offsetPursuit = function(self, leader, offset)
 	-- within a 'threat range'
 	local threatRange = 100.0
 	if toOffset:length2() > (threatRange * threatRange) then
-		return njli.btVector3(0, 0, 0)
+		return bullet.btVector3(0, 0, 0)
 	end
 
 	local lookAheadTime = toOffset:length() / (self.pVehicle:getMaxSpeed() + leader:getSpeed())
@@ -145,7 +145,7 @@ end
 
 --- This behavior attempts to evade a pursuer
 -- @param pursuer The entity to evade of type: MovingEntity
--- @return The normalized evade vector of type: njli.btVector3
+-- @return The normalized evade vector of type: bullet.btVector3
 local evade = function(self, pursuer)
 	
 	local toPursuer = pursuer:getPos() - self.pVehicle:getPos()
@@ -154,7 +154,7 @@ local evade = function(self, pursuer)
 	-- within a 'threat range'
 	
 	if toPursuer:length2() > (self.dEvadeDistSq) then
-		return njli.btVector3(0, 0, 0)
+		return bullet.btVector3(0, 0, 0)
 	end
 
 	-- print("evade")
@@ -168,7 +168,7 @@ local evade = function(self, pursuer)
 end
 
 --- This behavior makes the agent wander about randomly
--- @return The normalized wander vector of type: njli.btVector3
+-- @return The normalized wander vector of type: bullet.btVector3
 local wander = function(self)
 	assert(false, "not implemented...")
 end
@@ -176,14 +176,14 @@ end
 --- This returns a steering force which will attempt to keep the agent 
 --- away from any obstacles it may encounter
 -- @param nodes The nodes to avoid of type: Array of njli.Node
--- @return The normalized obstacle avoidance vector of type: njli.btVector3  
+-- @return The normalized obstacle avoidance vector of type: bullet.btVector3  
 local obstacleAvoidance = function(self, nodes)
 	assert(false, "not implemented...")
 end
 
 --- Given a series of Vector2Ds, this method produces a force that will
 --- move the agent along the waypoints in order
--- @return The normalized followPath vector of type: njli.btVector3  
+-- @return The normalized followPath vector of type: bullet.btVector3  
 local followPath = function(self, pathToFollow, deceleration, pointReachedFunction)
 	-- print("followPath")
 	if pathToFollow:currentWaypoint() ~= nil then
@@ -199,14 +199,14 @@ local followPath = function(self, pathToFollow, deceleration, pointReachedFuncti
 		return self:arrive(pathToFollow:currentWaypoint(), deceleration)
 	end
 
-	return njli.btVector3(0, 0, 0)
+	return bullet.btVector3(0, 0, 0)
 end
 
 --- This results in a steering force that attempts to steer the vehicle
 --- to the center of the vector connecting two moving agents.
 -- @param movingEntityA One of the entities to interpose between of type: MovingEntity
 -- @param movingEntityA One of the entities to interpose between of type: MovingEntity 
--- @return The normalized interpose vector of type: njli.btVector3
+-- @return The normalized interpose vector of type: bullet.btVector3
 local interpose = function(self, movingEntityA, movingEntityB)
 	assert(false, "not implemented...")
 end
@@ -215,7 +215,7 @@ end
 --- method attempts to put an obstacle between itself and its opponent
 -- @param hunter The hunter to hide from of type: MovingEntity
 -- @param obstacles The obstacles to use to hide of type: Array of njli.Node 
--- @return The normalized hide vector of type: njli.btVector3
+-- @return The normalized hide vector of type: bullet.btVector3
 local hide = function(self, hunter, obstacles)
 	assert(false, "not implemented...")
 end
@@ -223,7 +223,7 @@ end
 --- This returns a steering force that will keep the agent away from any
 --- walls it may encounter
 -- @param walls The walls to avoid: Array of njli.Node
--- @return The normalized wallAvoidance vector of type: njli.btVector3
+-- @return The normalized wallAvoidance vector of type: bullet.btVector3
 local wallAvoidance = function(self, walls)
 	assert(false, "not implemented...")
 end
@@ -235,8 +235,8 @@ local cohesion = function(self, movingEntities)
 end
   
 local separation = function(self, neighbors)
-	-- local steeringForce = njli.btVector3(math.random(), math.random(), 0):normalized()
-	local steeringForce = njli.btVector3(0, 0, 0)
+	-- local steeringForce = bullet.btVector3(math.random(), math.random(), 0):normalized()
+	local steeringForce = bullet.btVector3(0, 0, 0)
 
 	for k,v in pairs(neighbors) do
 		-- print(k,v)
@@ -273,7 +273,7 @@ local alignmentPlus = function(self, movingEntities)
 end
 
 local calculateWeightedSum = function(self)
-	self.vSteeringForce = njli.btVector3(0,0,0)
+	self.vSteeringForce = bullet.btVector3(0,0,0)
 	-- print(string.format("self.vSteeringForce\t\t%s", self.vSteeringForce))
 
 	if self:isOn(self.BehaviorType.seek) then
@@ -369,10 +369,10 @@ end
 
 --- Helper method for Hide. Returns a position located on the other
 --- side of an obstacle to the pursuer
--- @param posOb type: njli.btVector3  
+-- @param posOb type: bullet.btVector3  
 -- @param radiusOb type: number
--- @param posHunter type: njli.btVector3  
--- @return The normalized hide vector of type: njli.btVector3
+-- @param posHunter type: bullet.btVector3  
+-- @return The normalized hide vector of type: bullet.btVector3
 local getHidingPosition = function(self, posOb, radiusOb, posHunter)
 	assert(false, "not implemented...")
 end
@@ -394,9 +394,9 @@ end
 -- #####################################################################
 
 --- Calculates and sums the steering forces from any active behaviors
--- @return The calculated steering vector of type: njli.btVector3
+-- @return The calculated steering vector of type: bullet.btVector3
 local calculate = function(self)
-	self.vSteeringForce = njli.btVector3(0, 0, 0)
+	self.vSteeringForce = bullet.btVector3(0, 0, 0)
 
 	if self:isSpacePartitioningOn() then
 		if self:isSeparationOn() or self:isAlignmentOn() or self:isCohesionOn() then
@@ -417,7 +417,7 @@ local calculate = function(self)
 	elseif self.summingMethod == self.SummingMethod.dithered then
 		self.vSteeringForce = self:calculateDithered()
 	else
-		self.vSteeringForce = njli.btVector3(0, 0, 0)
+		self.vSteeringForce = bullet.btVector3(0, 0, 0)
 	end
 
 	return self.vSteeringForce
@@ -485,7 +485,7 @@ local getOffsetPursueTransform = function(self, leader, offset)
 		theOffset = self.offsetPursuePosition
 	end
 
-	local offsetTransform = njli.btTransform(njli.btTransform.getIdentity())
+	local offsetTransform = bullet.btTransform(bullet.btTransform.getIdentity())
 	offsetTransform:setOrigin(theOffset)
 	offsetTransform = offsetTransform * theLeader.node:getWorldTransform()
 	return offsetTransform
@@ -503,13 +503,13 @@ local getOffsetPursueDistance = function(self, leader, offset)
 		theOffset = self.offsetPursuePosition
 	end
 
-	local offsetTransform = njli.btTransform(njli.btTransform.getIdentity())
+	local offsetTransform = bullet.btTransform(bullet.btTransform.getIdentity())
 	offsetTransform:setOrigin(theOffset)
 	offsetTransform = offsetTransform * theLeader.node:getWorldTransform()
 
 	local pos1 = offsetTransform:getOrigin()
 	local pos2 = self.pVehicle.node:getOrigin()
-	return njli.btDistance(pos1, pos2)
+	return bullet.btDistance(pos1, pos2)
 end
 
 
@@ -1020,16 +1020,16 @@ local new = function(movingEntity)
 
 	--the steering force created by the combined effect of all
 	--the selected behaviors
-	local vSteeringForce = njli.btVector3(0, 0, 0)
+	local vSteeringForce = bullet.btVector3(0, 0, 0)
 	-- local targetAgent1 = nil
 	-- local targetAgent2 = nil
-	-- local target = njli.btVector3(0, 0, 0)
+	-- local target = bullet.btVector3(0, 0, 0)
 	local dDBoxLength = Prm.MinDetectionBoxLength
 	local feelers = {}
 	local dWallDetectionFeelerLength = Prm.WallDetectionFeelerLength
 
 	local dWanderRadius = Prm.WanderRad
-	local vWanderTarget = njli.btVector3(0.0, 0.0, -1.0)
+	local vWanderTarget = bullet.btVector3(0.0, 0.0, -1.0)
 
 	local dWanderJitter = Prm.WanderJitterPerSec
 	
@@ -1126,7 +1126,7 @@ local new = function(movingEntity)
 		hideObstacles = {},
 
 		offsetPursueTarget = movingEntity,
-		offsetPursuePosition = njli.btVector3(0, 0, 0),
+		offsetPursuePosition = bullet.btVector3(0, 0, 0),
 		wallsToAvoid = {}
     }
     return setmetatable(properties, {__index = methods})

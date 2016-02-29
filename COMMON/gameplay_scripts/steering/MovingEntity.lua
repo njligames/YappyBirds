@@ -2,7 +2,7 @@
 
 
 --- Get the velocity of this moving entity
--- @return The MovingEntity's velocity of type: njli.btVector3
+-- @return The MovingEntity's velocity of type: bullet.btVector3
 local getVelocity = function(self)
     return self.vVelocity
 end
@@ -22,19 +22,19 @@ local getMass = function(self)
 end
 
 --- Get the position of this moving entity
--- @return The origin of this entity of type: njli.btVector3
+-- @return The origin of this entity of type: bullet.btVector3
 local getPos = function(self)
     return self.node:getWorldTransform():getOrigin()
 end
 
 --- Set the position of this moving entity
--- @return The origin of this entity of type: njli.btVector3
+-- @return The origin of this entity of type: bullet.btVector3
 local setPos = function(self, pos)
     return self.node:setOrigin(pos)
 end
 
 --- Get the side vector of this moving entity
--- @return The MovingEntity's side vector of type: njli.btVector3
+-- @return The MovingEntity's side vector of type: bullet.btVector3
 local getSideVector = function(self)
     return self.sideVector
 end
@@ -83,13 +83,13 @@ local getSpeedSq = function(self)
 end
 
 --- Get the normalized heading vector of this moving entity
--- @return The MovingEntity's normalized heading vector of type: njli.btVector3
+-- @return The MovingEntity's normalized heading vector of type: bullet.btVector3
 local getHeadingVector = function(self)
     return self.headingVector
 end
 
 --- Set the heading vector of this moving entity
--- @param heading The MovingEntity's heading vector of type: njli.btVector3
+-- @param heading The MovingEntity's heading vector of type: bullet.btVector3
 local setHeadingVector = function(self, heading)
 
     assert( (heading:length2() - 1.0) < 0.00001, "")
@@ -101,7 +101,7 @@ local setHeadingVector = function(self, heading)
 end
 
 --- Rotate this MovingEntity heading to face the target.
--- @param target The position to rotate this entity to of type: njli.btVector3
+-- @param target The position to rotate this entity to of type: bullet.btVector3
 local rotateHeadingVectorToFacePosition = function(self, target)
     assert(false, "not implemented...")
 end
@@ -143,7 +143,7 @@ local update = function(self, timeStep)
     if not njli.World.getInstance():getScene():getPhysicsWorld():isPaused() then
         local oldPos = self:getPos()
 
-        local steeringForce = njli.btVector3(0, 0, 0)
+        local steeringForce = bullet.btVector3(0, 0, 0)
 
         steeringForce = self:getSteeringBehaviors():calculate()
         -- print(string.format("steeringForce %s", steeringForce))
@@ -250,7 +250,7 @@ local new = function(node, maxSpeed, headingVector, upVector, turnRate, maxForce
     local maxForce = maxForce
 
     local headingSmoother = {}
-    local smoothedHeading = njli.btVector3(0,0,0)
+    local smoothedHeading = bullet.btVector3(0,0,0)
     local smoothingOn = true
 
     local properties = 
@@ -270,7 +270,7 @@ local new = function(node, maxSpeed, headingVector, upVector, turnRate, maxForce
 
         steeringBehavior = nil,
 
-        vVelocity = njli.btVector3(0, 0, 0),
+        vVelocity = bullet.btVector3(0, 0, 0),
 
         tagged = false,
     }

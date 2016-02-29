@@ -29,7 +29,7 @@ end
 local enter = function(self, scene)
     print(getSceneStateName() .. " enter ")
 
-    njli.World.getInstance():setBackgroundColor(njli.btVector4(0,0,0,1))
+    njli.World.getInstance():setBackgroundColor(bullet.btVector4(0,0,0,1))
 
 	local stateName = scene:getStateMachine():getState():getName()
 
@@ -280,7 +280,7 @@ local enter = function(self, scene)
     njli.World.getInstance():getScene():getRootNode():addChildNode(self.nodes[name].node)
 
     local dimScreen = njli.World.getInstance():getViewportDimensions()
-    local origin = njli.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
+    local origin = bullet.btVector3(dimScreen:x()*.5, dimScreen:y()*.5, 0)
     self.nodes[name].node:setOrigin(origin)
 
     local menuScale = self.nodes[name]:shouldScale()
@@ -304,7 +304,7 @@ local enter = function(self, scene)
         -- print(njli.World.getInstance():getViewportDimensions())
         local x, y = processDimensions(_menuNodePositions[stateName][name][deviceName].x, _menuNodePositions[stateName][name][deviceName].y)
 
-        self.nodes[name].node:setOrigin(njli.btVector3(x, y, -1))
+        self.nodes[name].node:setOrigin(bullet.btVector3(x, y, -1))
         self.nodes[name]:setScale(menuScale * 0.85)
 
         -- self.nodes[name].node:show(getOrthoCamera())
@@ -344,7 +344,7 @@ local enter = function(self, scene)
 
             local x, y = processDimensions(_menuNodePositions[stateName][name][deviceName].x, _menuNodePositions[stateName][name][deviceName].y)
 
-            theNode.node:setOrigin(njli.btVector3(x, y, -1))
+            theNode.node:setOrigin(bullet.btVector3(x, y, -1))
             -- theNode.node:show(getOrthoCamera())
 
 
