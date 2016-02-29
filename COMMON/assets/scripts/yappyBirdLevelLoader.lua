@@ -65,14 +65,11 @@ local loadLevel = function(self, gameMode, gameBoard, gameLevel)
 
  
  local path = njli.ASSET_PATH(luaPath)
- if njli.World.getInstance():isDebug() then
- path = njli.DOCUMENT_PATH(luaPath)
- end
  
  local level = loadfile(path)()
 
 
- self.backgroundColor = njli.btVector4(level.backgroundcolor[1]/255,
+ self.backgroundColor = bullet.btVector4(level.backgroundcolor[1]/255,
  level.backgroundcolor[2]/255,
  level.backgroundcolor[3]/255,1.0)
 

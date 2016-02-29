@@ -54,8 +54,8 @@ local function createDogMovingEntity(node, type)
     local movingEntityParams = movingEntityParams.Dog
 
     local maxSpeed = movingEntityParams.MaxSpeed
-    local headingVector = njli.btVector3(0.0, 0.0, -1.0)
-    local upVector = njli.btVector3(0.0, 1.0, 0.0)
+    local headingVector = bullet.btVector3(0.0, 0.0, -1.0)
+    local upVector = bullet.btVector3(0.0, 1.0, 0.0)
     local turnRate = njli.World.getInstance():getWorldLuaVirtualMachine():getMaxNumber()
     local maxForce = movingEntityParams.MaxForce
 
@@ -88,8 +88,8 @@ end
 
 local pause = function(self)
     self.paused = true
-    self.pausedVelocity = njli.btVector3(self.physicsBody:getVelocity())
-    self.physicsBody:setVelocity(njli.btVector3(0,0,0))
+    self.pausedVelocity = bullet.btVector3(self.physicsBody:getVelocity())
+    self.physicsBody:setVelocity(bullet.btVector3(0,0,0))
 end
 
 local unPause = function(self)
@@ -315,13 +315,13 @@ local update = function(self, timeStep)
         self:getMovingEntity():update(timeStep)
     end
 
-    local axis = njli.btVector3(0,1,0)
-    local angle = njli.btRadians(180)
+    local axis = bullet.btVector3(0,1,0)
+    local angle = bullet.btRadians(180)
     if self:getMovingEntity():getVelocity():x() > 0 then
-        angle = njli.btRadians(0)
-        self:getNode():setRotation(njli.btQuaternion(axis, angle))
+        angle = bullet.btRadians(0)
+        self:getNode():setRotation(bullet.btQuaternion(axis, angle))
     elseif self:getMovingEntity():getVelocity():x() < 0 then
-        self:getNode():setRotation(njli.btQuaternion(axis, angle))
+        self:getNode():setRotation(bullet.btQuaternion(axis, angle))
     end
 
 

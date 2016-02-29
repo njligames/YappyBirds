@@ -85,12 +85,12 @@ local enter = function(self)
 	local nodeStateName = self.node:getStateMachine():getState():getName()
 	self.node:getGeometry():setSpriteAtlasFrame(self.node, self.spriteAtlas, nodeStateName, true)
     local dimSprite = self.node:getGeometry():getDimensions(self.node)
-	local d = njli.btVector2( (dimSprite:x() * self.menuScale), (dimSprite:y() * self.menuScale) )
+	local d = bullet.btVector2( (dimSprite:x() * self.menuScale), (dimSprite:y() * self.menuScale) )
 	self.node:getGeometry():setDimensions(self.node, d)
 
     -- self.node:show(getOrthoCamera())
 
-    self.physicsShape:setHalfExtends(njli.btVector3( (dimSprite:x() * self.menuScale) * .25, (dimSprite:y() * self.menuScale)* .25, 1 ))
+    self.physicsShape:setHalfExtends(bullet.btVector3( (dimSprite:x() * self.menuScale) * .25, (dimSprite:y() * self.menuScale)* .25, 1 ))
 
 end
 

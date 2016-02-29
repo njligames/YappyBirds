@@ -56,8 +56,8 @@ local enter = function(self)
  local nodeObject = self:getNodeObject()
  local node = nodeObject:getNode()
 
- nodeObject:getMovingEntity():setVelocity(njli.btVector3(0,0,0))
- node:getPhysicsBody():setVelocity(njli.btVector3(0,0,0))
+ nodeObject:getMovingEntity():setVelocity(bullet.btVector3(0,0,0))
+ node:getPhysicsBody():setVelocity(bullet.btVector3(0,0,0))
 
  nodeObject:setFrameActionName("idle")
 
