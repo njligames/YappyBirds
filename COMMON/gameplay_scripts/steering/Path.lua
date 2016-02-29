@@ -8,7 +8,7 @@ local closestWaypoint = function(self, point)
 
         for i=1,#self.wayPoints do
             local currentPoint = self.wayPoints[i]
-            local currentDistance = njli.btDistance(point, currentPoint)
+            local currentDistance = bullet.btDistance(point, currentPoint)
 
             if closestPointDistance > currentDistance then
                 closestPoint = currentPoint
