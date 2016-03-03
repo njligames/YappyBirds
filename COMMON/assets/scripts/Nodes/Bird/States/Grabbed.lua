@@ -36,11 +36,11 @@ local enter = function(self)
 
  
 
- if not nodeObject:getDog():getStateObject("Caught"):isIn() then
- nodeObject:getDog():getStateObject("Caught"):push()
- end
  
- nodeObject:createConstraint()
+ 
+ 
+ 
+ 
 
 end
 
@@ -50,18 +50,26 @@ local update = function(self, timeStep)
  local nodeObject = self:getNodeObject()
  local node = nodeObject:getNode()
 
- if not nodeObject:getDog():getStateObject("Caught"):isIn() then
- nodeObject:getDog():getStateObject("Caught"):push()
- else
+ 
+ 
+ 
  assert(node:getPhysicsBody():isDynamicPhysics(), "must be in dynamic physics")
  assert(nodeObject:getDog():getNode():getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
+
+ 
+
+ 
+ 
+ 
+ 
+ 
 
  local direction = bullet.btVector3(0, 1, 0)
  local StealSpeed = nodeObject:getMovingEntityParams().StealSpeed
  local magnitude = ((1 * nodeObject:getFrameNumber()) * StealSpeed)
 
  node:getPhysicsBody():applyForce(direction * magnitude, true)
- end
+ 
 end
 
 local exit = function(self)

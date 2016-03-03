@@ -239,6 +239,7 @@ local start = function(self)
 
  createStateObjects(self)
 
+ self.physicsBody:setAngularFactor(bullet.btVector3(0.0, 0.0, 0.0))
 end
 
 local getCurrentStateName = function(self)
@@ -308,6 +309,7 @@ local enter = function(self)
 end
 
 local update = function(self, timeStep)
+
  if not self:isPaused() then
 
 
@@ -320,8 +322,10 @@ local update = function(self, timeStep)
  if self:getMovingEntity():getVelocity():x() > 0 then
  angle = bullet.btRadians(0)
  self:getNode():setRotation(bullet.btQuaternion(axis, angle))
+ 
  elseif self:getMovingEntity():getVelocity():x() < 0 then
  self:getNode():setRotation(bullet.btQuaternion(axis, angle))
+ 
  end
 
 
@@ -509,6 +513,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, wayPoints)
  node:setScale(0.5)
 
  local physicsBody = njli.PhysicsBodyRigid.create()
+
  local physicsShape = njli.PhysicsShapeCylinder.create()
  physicsShape:setMargin(1)
 
