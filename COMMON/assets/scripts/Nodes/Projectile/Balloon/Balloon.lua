@@ -215,6 +215,7 @@ end
 local start = function(self)
 
  createStateObjects(self)
+ self.physicsBody:setAngularFactor(bullet.btVector3(0.0, 0.0, 0.0))
 
 end
 

@@ -65,13 +65,13 @@ end
 
 local pause = function(self)
     self.paused = true
-    self.pausedVelocity = bullet.btVector3(self.physicsBody:getVelocity())
-    self.physicsBody:setVelocity(bullet.btVector3(0,0,0))
+    -- self.pausedVelocity = bullet.btVector3(self.physicsBody:getVelocity())
+    -- self.physicsBody:setVelocity(bullet.btVector3(0,0,0))
 end
 
 local unPause = function(self)
     self.paused = false
-    self.physicsBody:applyForce(self.pausedVelocity, true)
+    -- self.physicsBody:applyForce(self.pausedVelocity, true)
 end
 
 local isPaused = function(self)
@@ -182,6 +182,7 @@ end
 
 local start = function(self)
   createStateObjects(self)
+  -- self.physicsBody:setAngularFactor(bullet.btVector3(0.0, 0.0, 0.0))
 end
 
 local getCurrentStateName = function(self)
@@ -365,8 +366,8 @@ local delete = function(self)
   njli.PhysicsShapeCylinder.destroy(self.physicsShape)
   self.physicsShape = nil
 
-  njli.PhysicsBodyRigid.destroy(self.physicsBody)
-  self.physicsBody = nil
+  -- njli.PhysicsBodyRigid.destroy(self.physicsBody)
+  -- self.physicsBody = nil
 
   njli.Node.destroy(self.node)
   self.node = nil
@@ -451,7 +452,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry)
     node = node,
     stateNames = stateNames,
     stateObjects = stateObjects,
-    physicsBody = physicsBody,
+    -- physicsBody = physicsBody,
     physicsShape = physicsShape,
     action = action,
     frameActionName = frameActionName,

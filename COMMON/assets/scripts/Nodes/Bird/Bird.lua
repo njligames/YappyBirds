@@ -71,20 +71,33 @@ local function createStateObjects(self)
 end
 
 local createConstraint = function(self)
- local constraint = njli.PhysicsConstraintPointToPoint.create()
+
+ 
+
+ 
 
  local birdNode = self:getNode()
  local dogNode = self:getDog():getNode()
 
+ 
+ 
  local birdNode_min, birdNode_max = birdNode:getAabb()
  local dogNode_min, dogNode_max = dogNode:getAabb()
 
+ assert(birdNode:getPhysicsBody():isDynamicPhysics(), "bird must be in dynamic physics")
+ assert(dogNode:getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
+
+ local constraint = njli.PhysicsConstraintPointToPoint.create()
  constraint:setNodes(birdNode, dogNode, 
  bullet.btVector3(0,birdNode_min:y(),0), bullet.btVector3(0,dogNode_max:y() - 3,1))
 
  self.constraint = constraint
 
  return constraint
+ 
+ 
+
+ 
 end
 
 local releaseDog = function(self)
@@ -349,6 +362,8 @@ local start = function(self)
 
  createStateObjects(self)
 
+ self.physicsBody:setAngularFactor(bullet.btVector3(0.0, 0.0, 0.0))
+
  self:getBeakNodeObject():setBirdNodeObject(self)
  self:getBeakNodeObject():start()
  self:getBeakNodeObject():getStateObject("Idle"):push()
@@ -551,7 +566,7 @@ local delete = function(self)
  end
  self.tauntSounds = nil
 
- self.movingEntity = nil
+ 
 
  njli.Action.destroy(self.action)
  self.action = nil
