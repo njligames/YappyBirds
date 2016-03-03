@@ -63,7 +63,14 @@ end
 local update = function(self, timeStep)
  
 
+ local nodeObject = self:getNodeObject()
+
+ if not nodeObject:getDog():getStateObject("Caught"):isIn() then
+ nodeObject:getDog():getStateObject("Caught"):push()
+ else
+ nodeObject:createConstraint()
  self:getNodeObject():getStateObject("Grabbed"):push()
+ end
 end
 
 local exit = function(self)
