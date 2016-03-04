@@ -87,13 +87,15 @@ local createConstraint = function(self)
       assert(birdNode:getPhysicsBody():isDynamicPhysics(), "bird must be in dynamic physics")
       assert(dogNode:getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
 
-      local constraint = njli.PhysicsConstraintPointToPoint.create()
-      constraint:setNodes(birdNode, dogNode, 
-      bullet.btVector3(0,birdNode_min:y(),0), bullet.btVector3(0,dogNode_max:y() - 3,1))
+      birdNode:addChildNode(dogNode)
+      dogNode:setOrigin(bullet.btVector3(0,0,0))
+      -- local constraint = njli.PhysicsConstraintPointToPoint.create()
+      -- constraint:setNodes(birdNode, dogNode, 
+      -- bullet.btVector3(0,birdNode_min:y(),0), bullet.btVector3(0,dogNode_max:y() - 3,1))
 
-      self.constraint = constraint
+      -- self.constraint = constraint
 
-      return constraint
+      -- return constraint
   --   end
   -- end
 
