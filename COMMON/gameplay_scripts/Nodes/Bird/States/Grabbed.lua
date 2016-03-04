@@ -53,8 +53,9 @@ local update = function(self, timeStep)
     -- if not nodeObject:getDog():getStateObject("Caught"):isIn() then
     --     nodeObject:getDog():getStateObject("Caught"):push()
     -- else
-        assert(node:getPhysicsBody():isDynamicPhysics(), "must be in dynamic physics")
-        assert(nodeObject:getDog():getNode():getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
+        assert(node:getPhysicsBody():isDynamicPhysics(), "bird must be in dynamic physics")
+        -- assert(node:getPhysicsBody():hasPhysicsConstraint(), "bird must have a constraint")
+        -- assert(nodeObject:getDog():getNode():getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
 
         -- local c = nodeObject:createConstraint()
 
