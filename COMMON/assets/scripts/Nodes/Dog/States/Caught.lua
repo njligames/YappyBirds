@@ -51,6 +51,9 @@ local update = function(self, timeStep)
  
  local nodeObject = self:getNodeObject()
  local node = nodeObject:getNode()
+
+ assert(node:getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
+ 
 end
 
 local exit = function(self)

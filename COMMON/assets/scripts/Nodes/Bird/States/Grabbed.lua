@@ -53,8 +53,9 @@ local update = function(self, timeStep)
  
  
  
- assert(node:getPhysicsBody():isDynamicPhysics(), "must be in dynamic physics")
- assert(nodeObject:getDog():getNode():getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
+ assert(node:getPhysicsBody():isDynamicPhysics(), "bird must be in dynamic physics")
+ 
+ 
 
  
 
