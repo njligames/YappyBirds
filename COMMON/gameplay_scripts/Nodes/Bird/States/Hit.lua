@@ -10,7 +10,7 @@ end
 
 local push = function(self)
     assert(self:getNodeObject(), "self:getNodeObject() must not be nil in " .. self:getNodeState():getName())
-
+local test = nil
     self:getNodeObject():getNode():getStateMachine():pushState(self:getNodeState())
 end
 
