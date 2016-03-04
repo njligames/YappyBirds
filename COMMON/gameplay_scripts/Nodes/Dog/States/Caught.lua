@@ -51,6 +51,9 @@ local update = function(self, timeStep)
     -- print(self:getNodeState():getName() .. " update for " .. self:getNodeObject():getNode():getName())
     local nodeObject = self:getNodeObject()
     local node = nodeObject:getNode()
+
+    assert(node:getPhysicsBody():isDynamicPhysics(), "dog must be in dynamic physics")
+    -- assert(node:getPhysicsBody():hasPhysicsConstraint(), "dog must have a constraint")
 end
 
 local exit = function(self)
