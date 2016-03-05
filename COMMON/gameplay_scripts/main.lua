@@ -5,7 +5,6 @@
 local path = njli.ASSET_PATH("scripts/util.lua")
 local util = (loadfile(path))()
 
-
 path = njli.ASSET_PATH("scripts/filePaths.lua")
 local filePaths = (loadfile(path))()
 
