@@ -71,30 +71,27 @@ end
 local enter = function(self)
     -- print(self:getNodeState():getName() .. " enter for " .. self:getNodeObject():getNode():getName())
 
-    local nodeObject = self:getNodeObject()
-    local node = nodeObject:getNode()
+    local birdNodeObject = self:getNodeObject()
+    local birdNode = birdNodeObject:getNode()
 
-    node:getPhysicsBody():setCollisionGroup(CollisionGroups.bird)
-    node:getPhysicsBody():setCollisionMask(CollisionMasks.bird)
-    node:getPhysicsBody():enableHandleCollideCallback()
-    node:getPhysicsBody():setKinematicPhysics()
+    birdNode:getPhysicsBody():setCollisionGroup(CollisionGroups.bird)
+    birdNode:getPhysicsBody():setCollisionMask(CollisionMasks.bird)
+    birdNode:getPhysicsBody():enableHandleCollideCallback()
+    birdNode:getPhysicsBody():setKinematicPhysics()
 
-    nodeObject:setFrameActionName("idle")
-    nodeObject:setFrameIncrement(1)
-    -- nodeObject:setFrameNumber(0)
-    -- self.frameAction = "idle"
-    -- self.frameIncrement = 1
+    birdNodeObject:setFrameActionName("idle")
+    birdNodeObject:setFrameIncrement(1)
 
     math.randomseed( os.time() )
     local x = math.random(-5, 5)
     local y = math.random(20.0, 21.0)
     local z = math.random(-5, 5)
     local offsetFromDog = bullet.btVector3(x, y, z)
-    local dogMovingEntity = nodeObject:getDog().movingEntity
+    local dogMovingEntity = birdNodeObject:getDog().movingEntity
 
-    nodeObject:getMovingEntity():getSteeringBehaviors():setOffsetPursuitOn(dogMovingEntity, offsetFromDog)
-    nodeObject:getMovingEntity():getSteeringBehaviors():setSeparationOn()
-    nodeObject:getMovingEntity():getSteeringBehaviors():setEvadeOn(dogMovingEntity)
+    birdNodeObject:getMovingEntity():getSteeringBehaviors():setOffsetPursuitOn(dogMovingEntity, offsetFromDog)
+    birdNodeObject:getMovingEntity():getSteeringBehaviors():setSeparationOn()
+    birdNodeObject:getMovingEntity():getSteeringBehaviors():setEvadeOn(dogMovingEntity)
 
     self:restartPursueTimer()
     self:restartYapTimer()
