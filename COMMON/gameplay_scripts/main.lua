@@ -1,7 +1,5 @@
 -- njli.World.getInstance():startSocket(192, 168, 1, 10, 2223)
 
-
-
 local path = njli.ASSET_PATH("scripts/util.lua")
 local util = (loadfile(path))()
 

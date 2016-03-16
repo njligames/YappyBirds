@@ -10,7 +10,7 @@ public:
     static bool isMACOSX();
 
     static bool create(const char* deviceName);
-    static bool create(int x, int y, int width, int height, int orientation, const char* deviceName);
+    static bool create(int x, int y, int width, int height, int orientation, const char* deviceName, bool initLua = true);
     static void resize(int x, int y, int width, int height, int orientation);
     static void update(float step);
     static void render();

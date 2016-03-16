@@ -38,7 +38,7 @@
 		C18F971F1C6908D90061DECD /* libEGL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F97191C6904830061DECD /* libEGL.dylib */; };
 		C18F97201C6908D90061DECD /* libGLESv2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C18F971A1C6904830061DECD /* libGLESv2.dylib */; };
 		C18F984E1C6967C10061DECD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F984D1C6967C10061DECD /* Images.xcassets */; };
-		C1B8390B1C89100700D8AA4D /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B8390A1C89100700D8AA4D /* NJLIGameEngine_iOS.framework */; };
+		C1D6AE6B1C99B19000C8D4E0 /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D6AE6A1C99B19000C8D4E0 /* NJLIGameEngine_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +138,7 @@
 		C18F971A1C6904830061DECD /* libGLESv2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLESv2.dylib; path = PVR/OSX/x86/Lib/libGLESv2.dylib; sourceTree = "<group>"; };
 		C18F971D1C6905080061DECD /* NJLIGameEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine.framework; sourceTree = "<group>"; };
 		C18F984D1C6967C10061DECD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C1B8390A1C89100700D8AA4D /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
+		C1D6AE6A1C99B19000C8D4E0 /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 				C16A2A1D1C683F8F00D94D4B /* GLKit.framework in Frameworks */,
 				C16A2A1B1C683F8800D94D4B /* AudioToolbox.framework in Frameworks */,
 				C16A2A191C683F8100D94D4B /* AVFoundation.framework in Frameworks */,
-				C1B8390B1C89100700D8AA4D /* NJLIGameEngine_iOS.framework in Frameworks */,
+				C1D6AE6B1C99B19000C8D4E0 /* NJLIGameEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +262,7 @@
 		C16A29DD1C683E7C00D94D4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C1B8390A1C89100700D8AA4D /* NJLIGameEngine_iOS.framework */,
+				C1D6AE6A1C99B19000C8D4E0 /* NJLIGameEngine_iOS.framework */,
 				C16A2A1C1C683F8F00D94D4B /* GLKit.framework */,
 				C16A2A1A1C683F8800D94D4B /* AudioToolbox.framework */,
 				C16A2A181C683F8000D94D4B /* AVFoundation.framework */,
@@ -478,7 +478,7 @@
 					};
 					C16A29D91C683E7C00D94D4B = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = SRBQ5SCF5X;
+						DevelopmentTeam = 6UWRM7QGYR;
 					};
 					C16A29F61C683E7C00D94D4B = {
 						CreatedOnToolsVersion = 7.2;
@@ -845,7 +845,7 @@
 				OTHER_LDFLAGS = "-lfmodL_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
-				PROVISIONING_PROFILE = "635a5ad9-e1c9-40b6-a062-d1ee153033b1";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -869,7 +869,7 @@
 				OTHER_LDFLAGS = "-lfmod_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
-				PROVISIONING_PROFILE = "635a5ad9-e1c9-40b6-a062-d1ee153033b1";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
