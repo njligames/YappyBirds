@@ -35,8 +35,6 @@ local enter = function(self)
     local node = nodeObject:getNode()
     local dogMovingEntity = nodeObject:getDog().movingEntity
 
-
-
     node:getPhysicsBody():setCollisionGroup(CollisionGroups.bird)
     node:getPhysicsBody():setCollisionMask(CollisionMasks.bird)
     node:getPhysicsBody():enableHandleCollideCallback()
@@ -57,9 +55,6 @@ local enter = function(self)
 end
 
 local update = function(self, timeStep)
-    -- print(self:getNodeState():getName() .. " update for " .. self:getNodeObject():getNode():getName())
-
-    
 end
 
 local exit = function(self)
