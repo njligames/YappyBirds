@@ -386,8 +386,7 @@ local createWaterBalloonNode = function(self, x, y)
     local origin = self:getOriginForLayer(x, y, 4)
     origin = self:transformCoordinate(origin)
 
-    self.nodes[instanceName].node:setOrigin(origin)
-
+    self.nodes[instanceName].node:setOrigin(origin )
     insertNodeObject(self.nodes[instanceName], instanceName)
     
     self.projectileNodes[instanceName] = self.nodes[instanceName]
@@ -515,7 +514,7 @@ local push = function(self)
 end
 
 local enter = function(self)
-    print(self.worldState:getName() .. ":enter()")
+    --print(self.worldState:getName() .. ":enter()")
     -- print_r(self:getUserData("userdata"))
     
     self.currentFunctionIndex = 1
@@ -607,7 +606,7 @@ end
 
 local update = function(self, timeStep)
     if self.currentFunctionIndex <= #self.loadingFunctions then
-        print(self.worldState:getName() .. ":update(" .. timeStep .. ") - " .. self.currentFunctionIndex .. " of " .. #self.loadingFunctions)
+        --print(self.worldState:getName() .. ":update(" .. timeStep .. ") - " .. self.currentFunctionIndex .. " of " .. #self.loadingFunctions)
         self.loadingFunctions[self.currentFunctionIndex](self)
         self.currentFunctionIndex = self.currentFunctionIndex + 1
 
@@ -677,7 +676,7 @@ local unPause = function(self)
 end
 
 local exit = function(self)
-    print(self.worldState:getName() .. ":exit()")
+    --print(self.worldState:getName() .. ":exit()")
 
     njli.Sound.destroy(self.soundBackground)
     njli.Sound.destroy(self.soundTitleTheme)
@@ -748,7 +747,7 @@ local touchCancelled = function(self, touches)
 end
 
 local delete = function(self)
-    print(self.worldState:getName() .. ":delete()")
+    --print(self.worldState:getName() .. ":delete()")
 
     njli.WorldState.destroy(self.worldState)
 end
@@ -816,7 +815,7 @@ local methods =
 }
 
 local new = function(name)
-    print("new(" .. name .. ")")
+    --print("new(" .. name .. ")")
 
     local worldState = njli.WorldState.create()
     worldState:setName(name)
@@ -1058,10 +1057,12 @@ local new = function(name)
 
 
 
-        -- function(self)
+        function(self)
 
-            
-        -- end,
+            local camera = getPerspectiveCamera()
+            local shader = getShaderProgram()
+            njli.World.getInstance():enableDebugDraw(camera, shader)
+        end,
 
 
 
