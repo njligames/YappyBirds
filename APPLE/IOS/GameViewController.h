@@ -10,7 +10,7 @@
 #import <GLKit/GLKit.h>
 #import <UIKit/UIKit.h>
 
-#import <NJLIGameEngine_iOS/NJLIGameEngine.h>
+#import <NJLIGameEngine_iOS/NJLIGameEngine_iOS.h>
 #import <NJLIGameEngine_iOS/TZKeyboardPop.h>
 #import <NJLIGameEngine_iOS/UIDeviceUtil.h>
 

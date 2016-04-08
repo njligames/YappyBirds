@@ -1059,9 +1059,9 @@ local new = function(name)
 
         function(self)
 
-            local camera = getPerspectiveCamera()
-            local shader = getShaderProgram()
-            njli.World.getInstance():enableDebugDraw(camera, shader)
+            --local camera = getPerspectiveCamera()
+            --local shader = getShaderProgram()
+            --njli.World.getInstance():enableDebugDraw(camera, shader)
         end,
 
 

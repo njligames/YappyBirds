@@ -12,6 +12,10 @@ local ParamInfo = {}
 
 ParamInfo =
 {
+    World =
+    {
+        Gravity = bullet.btVector3(0,-60.81,0),
+    },
 	Dog = 
 	{
 		MaxSpeed = njli.World.getInstance():getWorldLuaVirtualMachine():getMaxNumber(),
