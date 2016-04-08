@@ -334,7 +334,7 @@ function WorldCreate()
     yappyWorld = yappyBirdsWorld.new("YappyBirds")
     yappyWorld.startWorldName = theStartWorldName
 
-njli.World.getInstance():enableDebugDraw(getOrthoCamera(), getShaderProgram())
+--njli.World.getInstance():enableDebugDraw(getOrthoCamera(), getShaderProgram())
 
     worldObjectTable = yappyWorld:start()
 end
