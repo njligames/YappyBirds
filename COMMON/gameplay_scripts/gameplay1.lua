@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.codeandweb.com/texturepacker)
 --
--- $TexturePacker:SmartUpdate:7f082ce2629ae6d9f8c7d2b1bd60e105:43ea493b4f7db5c7f19948feb21ecedb:13cd505638bada6163d6cb4f823ee7f2$
+-- $TexturePacker:SmartUpdate:8c78b2fedcb796079b93f7d04385605f:4dda4497c90835484eb2266c543bfd1a:13cd505638bada6163d6cb4f823ee7f2$
 --
 -- local sheetInfo = require("mysheet")
 -- local myImageSheet = graphics.newImageSheet( "mysheet.png", sheetInfo:getSheet() )
@@ -15,218 +15,764 @@ SheetInfo.sheet =
     frames = {
     
         {
-            x=0,
-            y=0,
+            x=512,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00000",
-        },
-    
-        {
-            x=256,
-            y=0,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00001",
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00000",
         },
     
         {
             x=512,
-            y=0,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00002",
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00001",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00002",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00003",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00004",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00005",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00006",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00007",
+        },
+    
+        {
+            x=512,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_fall_side/character_dog_fall_side_00008",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00000",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00001",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00002",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00003",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00004",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00005",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00006",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00007",
+        },
+    
+        {
+            x=640,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_grabbed_side/character_dog_grabbed_side_00008",
         },
     
         {
             x=768,
-            y=0,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00003",
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00000",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00001",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00002",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00003",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00004",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00005",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00006",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00007",
+        },
+    
+        {
+            x=768,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_idle_side/character_dog_idle_side_00008",
+        },
+    
+        {
+            x=896,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_run_side/character_dog_run_side_00000",
         },
     
         {
             x=1024,
-            y=0,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00004",
+            trimmedName = "character_dog_run_side/character_dog_run_side_00001",
+        },
+    
+        {
+            x=1152,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_run_side/character_dog_run_side_00002",
         },
     
         {
             x=1280,
-            y=0,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00005",
+            trimmedName = "character_dog_run_side/character_dog_run_side_00003",
+        },
+    
+        {
+            x=1408,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_run_side/character_dog_run_side_00004",
         },
     
         {
             x=1536,
-            y=0,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00006",
+            trimmedName = "character_dog_run_side/character_dog_run_side_00005",
+        },
+    
+        {
+            x=1664,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_run_side/character_dog_run_side_00006",
         },
     
         {
             x=1792,
-            y=0,
+            y=2304,
             
-            width=256,
-            height=256,
+            width=128,
+            height=128,
 
-	        widthFile=256,
-	        heightFile=256,
+	        widthFile=128,
+	        heightFile=128,
 
-            pivotx=128,
-            pivoty=128,
+            pivotx=64,
+            pivoty=64,
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
+            sourceWidth = 128,
+            sourceHeight = 128,
 
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00007",
+            trimmedName = "character_dog_run_side/character_dog_run_side_00007",
+        },
+    
+        {
+            x=1920,
+            y=2304,
+            
+            width=128,
+            height=128,
+
+	        widthFile=128,
+	        heightFile=128,
+
+            pivotx=64,
+            pivoty=64,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 128,
+            sourceHeight = 128,
+
+            trimmedName = "character_dog_run_side/character_dog_run_side_00008",
         },
     
         {
             x=0,
-            y=256,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00008",
-        },
-    
-        {
-            x=256,
-            y=256,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00000",
-        },
-    
-        {
-            x=512,
-            y=256,
+            y=0,
             
             width=256,
             height=256,
@@ -246,6 +792,216 @@ SheetInfo.sheet =
         },
     
         {
+            x=256,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00002",
+        },
+    
+        {
+            x=512,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00003",
+        },
+    
+        {
+            x=768,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00004",
+        },
+    
+        {
+            x=1024,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00005",
+        },
+    
+        {
+            x=1280,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00006",
+        },
+    
+        {
+            x=1536,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00007",
+        },
+    
+        {
+            x=1792,
+            y=0,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00000",
+        },
+    
+        {
+            x=0,
+            y=256,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00001",
+        },
+    
+        {
+            x=256,
+            y=256,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00002",
+        },
+    
+        {
+            x=512,
+            y=256,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00003",
+        },
+    
+        {
             x=768,
             y=256,
             
@@ -263,7 +1019,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00002",
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00004",
         },
     
         {
@@ -284,7 +1040,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00003",
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00005",
         },
     
         {
@@ -305,7 +1061,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00004",
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00006",
         },
     
         {
@@ -326,7 +1082,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00005",
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00007",
         },
     
         {
@@ -347,7 +1103,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00006",
+            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00008",
         },
     
         {
@@ -368,28 +1124,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00007",
-        },
-    
-        {
-            x=256,
-            y=256,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00008",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00000",
         },
     
         {
@@ -410,7 +1145,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00000",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00001",
         },
     
         {
@@ -431,7 +1166,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00001",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00002",
         },
     
         {
@@ -452,7 +1187,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00002",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00003",
         },
     
         {
@@ -473,7 +1208,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00003",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00004",
         },
     
         {
@@ -494,7 +1229,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00004",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00005",
         },
     
         {
@@ -515,7 +1250,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00005",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00006",
         },
     
         {
@@ -536,7 +1271,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00006",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00007",
         },
     
         {
@@ -557,28 +1292,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00007",
-        },
-    
-        {
-            x=0,
-            y=256,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00008",
+            trimmedName = "character_zuruBird_grab_front/character_puffyBird_grab_front_00008",
         },
     
         {
@@ -1166,7 +1880,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00000",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00000",
         },
     
         {
@@ -1187,7 +1901,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00001",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00001",
         },
     
         {
@@ -1208,12 +1922,201 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00002",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00002",
         },
     
         {
             x=1792,
             y=1536,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00003",
+        },
+    
+        {
+            x=0,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00004",
+        },
+    
+        {
+            x=256,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00005",
+        },
+    
+        {
+            x=512,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00006",
+        },
+    
+        {
+            x=768,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00007",
+        },
+    
+        {
+            x=1024,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00008",
+        },
+    
+        {
+            x=1280,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00000",
+        },
+    
+        {
+            x=1536,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00001",
+        },
+    
+        {
+            x=1792,
+            y=1792,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00002",
+        },
+    
+        {
+            x=0,
+            y=2048,
             
             width=256,
             height=256,
@@ -1234,195 +2137,6 @@ SheetInfo.sheet =
     
         {
             x=0,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00004",
-        },
-    
-        {
-            x=256,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00005",
-        },
-    
-        {
-            x=512,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00006",
-        },
-    
-        {
-            x=768,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00007",
-        },
-    
-        {
-            x=1024,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00008",
-        },
-    
-        {
-            x=1280,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00000",
-        },
-    
-        {
-            x=1536,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00001",
-        },
-    
-        {
-            x=1792,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00002",
-        },
-    
-        {
-            x=0,
-            y=2048,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00003",
-        },
-    
-        {
-            x=0,
             y=2304,
             
             width=256,
@@ -1439,7 +2153,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00004",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00004",
         },
     
         {
@@ -1460,7 +2174,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00005",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00005",
         },
     
         {
@@ -1481,7 +2195,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00006",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00006",
         },
     
         {
@@ -1502,28 +2216,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00007",
-        },
-    
-        {
-            x=1280,
-            y=1792,
-            
-            width=256,
-            height=256,
-
-	        widthFile=256,
-	        heightFile=256,
-
-            pivotx=128,
-            pivoty=128,
-
-            sourceX = 0,
-            sourceY = 0,
-            sourceWidth = 256,
-            sourceHeight = 256,
-
-            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00008",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00007",
         },
     
         {
@@ -1544,7 +2237,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00000",
+            trimmedName = "character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00008",
         },
     
         {
@@ -1565,7 +2258,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00001",
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00000",
         },
     
         {
@@ -1586,7 +2279,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00002",
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00001",
         },
     
         {
@@ -1607,7 +2300,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00003",
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00002",
         },
     
         {
@@ -1628,7 +2321,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00004",
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00003",
         },
     
         {
@@ -1649,7 +2342,7 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00005",
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00004",
         },
     
         {
@@ -1670,12 +2363,222 @@ SheetInfo.sheet =
             sourceWidth = 256,
             sourceHeight = 256,
 
-            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00006",
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00005",
         },
     
         {
             x=1280,
             y=2048,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00006",
+        },
+    
+        {
+            x=1536,
+            y=2048,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00007",
+        },
+    
+        {
+            x=0,
+            y=3584,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00008",
+        },
+    
+        {
+            x=1792,
+            y=2048,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00000",
+        },
+    
+        {
+            x=256,
+            y=2304,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00001",
+        },
+    
+        {
+            x=256,
+            y=2560,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00002",
+        },
+    
+        {
+            x=256,
+            y=2816,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00003",
+        },
+    
+        {
+            x=256,
+            y=3072,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00004",
+        },
+    
+        {
+            x=256,
+            y=3328,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00005",
+        },
+    
+        {
+            x=256,
+            y=3584,
+            
+            width=256,
+            height=256,
+
+	        widthFile=256,
+	        heightFile=256,
+
+            pivotx=128,
+            pivoty=128,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
+
+            trimmedName = "character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00006",
+        },
+    
+        {
+            x=256,
+            y=3840,
             
             width=256,
             height=256,
@@ -1716,8 +2619,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=3200,
+            x=512,
+            y=2944,
             
             width=64,
             height=64,
@@ -1737,8 +2640,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=3264,
+            x=512,
+            y=3008,
             
             width=64,
             height=64,
@@ -1758,8 +2661,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=3328,
+            x=512,
+            y=3072,
             
             width=64,
             height=64,
@@ -1779,8 +2682,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=3392,
+            x=512,
+            y=3136,
             
             width=64,
             height=64,
@@ -1800,8 +2703,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=3456,
+            x=512,
+            y=3200,
             
             width=64,
             height=64,
@@ -1821,8 +2724,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1536,
-            y=2048,
+            x=512,
+            y=2432,
             
             width=128,
             height=128,
@@ -1842,8 +2745,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1664,
-            y=2048,
+            x=640,
+            y=2432,
             
             width=128,
             height=128,
@@ -1863,8 +2766,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1792,
-            y=2048,
+            x=768,
+            y=2432,
             
             width=128,
             height=128,
@@ -1884,8 +2787,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1920,
-            y=2048,
+            x=896,
+            y=2432,
             
             width=128,
             height=128,
@@ -1905,8 +2808,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1536,
-            y=2176,
+            x=1024,
+            y=2432,
             
             width=128,
             height=128,
@@ -1926,8 +2829,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1664,
-            y=2176,
+            x=1152,
+            y=2432,
             
             width=128,
             height=128,
@@ -1947,8 +2850,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1792,
-            y=2176,
+            x=1280,
+            y=2432,
             
             width=128,
             height=128,
@@ -1968,8 +2871,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1920,
-            y=2176,
+            x=1408,
+            y=2432,
             
             width=128,
             height=128,
@@ -1989,8 +2892,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=2304,
+            x=1536,
+            y=2432,
             
             width=128,
             height=128,
@@ -2010,7 +2913,7 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
+            x=1664,
             y=2432,
             
             width=128,
@@ -2031,8 +2934,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=2560,
+            x=1792,
+            y=2432,
             
             width=128,
             height=128,
@@ -2052,8 +2955,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=2688,
+            x=1920,
+            y=2432,
             
             width=128,
             height=128,
@@ -2073,8 +2976,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=2816,
+            x=512,
+            y=2560,
             
             width=128,
             height=128,
@@ -2094,8 +2997,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=2944,
+            x=512,
+            y=2688,
             
             width=128,
             height=128,
@@ -2115,8 +3018,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=256,
-            y=3072,
+            x=512,
+            y=2816,
             
             width=128,
             height=128,
@@ -2153,7 +3056,7 @@ SheetInfo.sheet =
 
 
 
-    -- smartUpdateKey = $TexturePacker:SmartUpdate:7f082ce2629ae6d9f8c7d2b1bd60e105:43ea493b4f7db5c7f19948feb21ecedb:13cd505638bada6163d6cb4f823ee7f2$,
+    -- smartUpdateKey = $TexturePacker:SmartUpdate:8c78b2fedcb796079b93f7d04385605f:4dda4497c90835484eb2266c543bfd1a:13cd505638bada6163d6cb4f823ee7f2$,
     -- settings_autoSDSettings = {
     -- 
     --     {
@@ -2209,107 +3112,150 @@ SheetInfo.sheet =
 SheetInfo.frameIndex =
 {
 
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00000"] = 1,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00001"] = 2,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00002"] = 3,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00003"] = 4,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00004"] = 5,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00005"] = 6,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00006"] = 7,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00007"] = 8,
-    ["character_weboBird_mouth_grab_front/character_weboBird_mouth_grab_front_00008"] = 9,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00000"] = 10,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00001"] = 11,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00002"] = 12,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00003"] = 13,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00004"] = 14,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00005"] = 15,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00006"] = 16,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00007"] = 17,
-    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00008"] = 18,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00000"] = 19,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00001"] = 20,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00002"] = 21,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00003"] = 22,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00004"] = 23,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00005"] = 24,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00006"] = 25,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00007"] = 26,
-    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00008"] = 27,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00000"] = 28,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00001"] = 29,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00002"] = 30,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00003"] = 31,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00004"] = 32,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00005"] = 33,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00006"] = 34,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00007"] = 35,
-    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00008"] = 36,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00000"] = 37,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00001"] = 38,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00002"] = 39,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00003"] = 40,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00004"] = 41,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00005"] = 42,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00006"] = 43,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00007"] = 44,
-    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00008"] = 45,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00000"] = 46,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00001"] = 47,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00002"] = 48,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00003"] = 49,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00004"] = 50,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00005"] = 51,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00006"] = 52,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00007"] = 53,
-    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00008"] = 54,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00000"] = 55,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00001"] = 56,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00002"] = 57,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00003"] = 58,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00004"] = 59,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00005"] = 60,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00006"] = 61,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00007"] = 62,
-    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00008"] = 63,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00000"] = 64,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00001"] = 65,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00002"] = 66,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00003"] = 67,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00004"] = 68,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00005"] = 69,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00006"] = 70,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00007"] = 71,
-    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00008"] = 72,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00000"] = 73,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00001"] = 74,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00002"] = 75,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00003"] = 76,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00004"] = 77,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00005"] = 78,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00006"] = 79,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00007"] = 80,
-    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00008"] = 81,
-    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00000"] = 82,
-    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00001"] = 83,
-    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00002"] = 84,
-    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00003"] = 85,
-    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00004"] = 86,
-    ["projectile_waterBalloonBlue_thrown_front/projectile_waterBalloonBlue_thrown_front_00000"] = 87,
-    ["projectile_waterBalloonBlue_thrown_front/projectile_waterBalloonBlue_thrown_front_00001"] = 88,
-    ["projectile_waterBalloonBlue_thrown_front/projectile_waterBalloonBlue_thrown_front_00002"] = 89,
-    ["projectile_waterBalloonGreen_thrown_front/projectile_waterBalloonGreen_thrown_front_00000"] = 90,
-    ["projectile_waterBalloonGreen_thrown_front/projectile_waterBalloonGreen_thrown_front_00001"] = 91,
-    ["projectile_waterBalloonGreen_thrown_front/projectile_waterBalloonGreen_thrown_front_00002"] = 92,
-    ["projectile_waterBalloonPurple_thrown_front/projectile_waterBalloonPurple_thrown_front_00000"] = 93,
-    ["projectile_waterBalloonPurple_thrown_front/projectile_waterBalloonPurple_thrown_front_00001"] = 94,
-    ["projectile_waterBalloonPurple_thrown_front/projectile_waterBalloonPurple_thrown_front_00002"] = 95,
-    ["projectile_waterBalloonRed_thrown_front/projectile_waterBalloonRed_thrown_front_00000"] = 96,
-    ["projectile_waterBalloonRed_thrown_front/projectile_waterBalloonRed_thrown_front_00001"] = 97,
-    ["projectile_waterBalloonRed_thrown_front/projectile_waterBalloonRed_thrown_front_00002"] = 98,
-    ["projectile_waterBalloonYellow_thrown_front/projectile_waterBalloonYellow_thrown_front_00000"] = 99,
-    ["projectile_waterBalloonYellow_thrown_front/projectile_waterBalloonYellow_thrown_front_00001"] = 100,
-    ["projectile_waterBalloonYellow_thrown_front/projectile_waterBalloonYellow_thrown_front_00002"] = 101,
+    ["character_dog_fall_side/character_dog_fall_side_00000"] = 1,
+    ["character_dog_fall_side/character_dog_fall_side_00001"] = 2,
+    ["character_dog_fall_side/character_dog_fall_side_00002"] = 3,
+    ["character_dog_fall_side/character_dog_fall_side_00003"] = 4,
+    ["character_dog_fall_side/character_dog_fall_side_00004"] = 5,
+    ["character_dog_fall_side/character_dog_fall_side_00005"] = 6,
+    ["character_dog_fall_side/character_dog_fall_side_00006"] = 7,
+    ["character_dog_fall_side/character_dog_fall_side_00007"] = 8,
+    ["character_dog_fall_side/character_dog_fall_side_00008"] = 9,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00000"] = 10,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00001"] = 11,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00002"] = 12,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00003"] = 13,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00004"] = 14,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00005"] = 15,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00006"] = 16,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00007"] = 17,
+    ["character_dog_grabbed_side/character_dog_grabbed_side_00008"] = 18,
+    ["character_dog_idle_side/character_dog_idle_side_00000"] = 19,
+    ["character_dog_idle_side/character_dog_idle_side_00001"] = 20,
+    ["character_dog_idle_side/character_dog_idle_side_00002"] = 21,
+    ["character_dog_idle_side/character_dog_idle_side_00003"] = 22,
+    ["character_dog_idle_side/character_dog_idle_side_00004"] = 23,
+    ["character_dog_idle_side/character_dog_idle_side_00005"] = 24,
+    ["character_dog_idle_side/character_dog_idle_side_00006"] = 25,
+    ["character_dog_idle_side/character_dog_idle_side_00007"] = 26,
+    ["character_dog_idle_side/character_dog_idle_side_00008"] = 27,
+    ["character_dog_run_side/character_dog_run_side_00000"] = 28,
+    ["character_dog_run_side/character_dog_run_side_00001"] = 29,
+    ["character_dog_run_side/character_dog_run_side_00002"] = 30,
+    ["character_dog_run_side/character_dog_run_side_00003"] = 31,
+    ["character_dog_run_side/character_dog_run_side_00004"] = 32,
+    ["character_dog_run_side/character_dog_run_side_00005"] = 33,
+    ["character_dog_run_side/character_dog_run_side_00006"] = 34,
+    ["character_dog_run_side/character_dog_run_side_00007"] = 35,
+    ["character_dog_run_side/character_dog_run_side_00008"] = 36,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00001"] = 37,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00002"] = 38,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00003"] = 39,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00004"] = 40,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00005"] = 41,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00006"] = 42,
+    ["character_weboBird_mouth_hit_front/character_weboBird_mouth_hit_front_00007"] = 43,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00000"] = 44,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00001"] = 45,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00002"] = 46,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00003"] = 47,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00004"] = 48,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00005"] = 49,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00006"] = 50,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00007"] = 51,
+    ["character_weboBird_mouth_idle_front/character_weboBird_mouth_idle_front_00008"] = 52,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00000"] = 53,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00001"] = 54,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00002"] = 55,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00003"] = 56,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00004"] = 57,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00005"] = 58,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00006"] = 59,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00007"] = 60,
+    ["character_zuruBird_grab_front/character_puffyBird_grab_front_00008"] = 61,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00000"] = 62,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00001"] = 63,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00002"] = 64,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00003"] = 65,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00004"] = 66,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00005"] = 67,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00006"] = 68,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00007"] = 69,
+    ["character_zuruBird_grab_front/character_zuruBird_grab_front_00008"] = 70,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00000"] = 71,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00001"] = 72,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00002"] = 73,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00003"] = 74,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00004"] = 75,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00005"] = 76,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00006"] = 77,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00007"] = 78,
+    ["character_zuruBird_hit_front/character_zuruBird_hit_front_00008"] = 79,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00000"] = 80,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00001"] = 81,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00002"] = 82,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00003"] = 83,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00004"] = 84,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00005"] = 85,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00006"] = 86,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00007"] = 87,
+    ["character_zuruBird_idle_front/character_zuruBird_idle_front_00008"] = 88,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00000"] = 89,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00001"] = 90,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00002"] = 91,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00003"] = 92,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00004"] = 93,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00005"] = 94,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00006"] = 95,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00007"] = 96,
+    ["character_zuruBird_mouth_grab_front/character_puffyBird_mouth_grab_front_00008"] = 97,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00000"] = 98,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00001"] = 99,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00002"] = 100,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00003"] = 101,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00004"] = 102,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00005"] = 103,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00006"] = 104,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00007"] = 105,
+    ["character_zuruBird_mouth_grab_front/character_zuruBird_mouth_grab_front_00008"] = 106,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00000"] = 107,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00001"] = 108,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00002"] = 109,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00003"] = 110,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00004"] = 111,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00005"] = 112,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00006"] = 113,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00007"] = 114,
+    ["character_zuruBird_mouth_hit_front/character_zuruBird_mouth_hit_front_00008"] = 115,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00000"] = 116,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00001"] = 117,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00002"] = 118,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00003"] = 119,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00004"] = 120,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00005"] = 121,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00006"] = 122,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00007"] = 123,
+    ["character_zuruBird_mouth_idle_front/character_zuruBird_mouth_idle_front_00008"] = 124,
+    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00000"] = 125,
+    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00001"] = 126,
+    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00002"] = 127,
+    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00003"] = 128,
+    ["pickup_doubleHit_idle_front/pickup_doubleHit_idle_00004"] = 129,
+    ["projectile_waterBalloonBlue_thrown_front/projectile_waterBalloonBlue_thrown_front_00000"] = 130,
+    ["projectile_waterBalloonBlue_thrown_front/projectile_waterBalloonBlue_thrown_front_00001"] = 131,
+    ["projectile_waterBalloonBlue_thrown_front/projectile_waterBalloonBlue_thrown_front_00002"] = 132,
+    ["projectile_waterBalloonGreen_thrown_front/projectile_waterBalloonGreen_thrown_front_00000"] = 133,
+    ["projectile_waterBalloonGreen_thrown_front/projectile_waterBalloonGreen_thrown_front_00001"] = 134,
+    ["projectile_waterBalloonGreen_thrown_front/projectile_waterBalloonGreen_thrown_front_00002"] = 135,
+    ["projectile_waterBalloonPurple_thrown_front/projectile_waterBalloonPurple_thrown_front_00000"] = 136,
+    ["projectile_waterBalloonPurple_thrown_front/projectile_waterBalloonPurple_thrown_front_00001"] = 137,
+    ["projectile_waterBalloonPurple_thrown_front/projectile_waterBalloonPurple_thrown_front_00002"] = 138,
+    ["projectile_waterBalloonRed_thrown_front/projectile_waterBalloonRed_thrown_front_00000"] = 139,
+    ["projectile_waterBalloonRed_thrown_front/projectile_waterBalloonRed_thrown_front_00001"] = 140,
+    ["projectile_waterBalloonRed_thrown_front/projectile_waterBalloonRed_thrown_front_00002"] = 141,
+    ["projectile_waterBalloonYellow_thrown_front/projectile_waterBalloonYellow_thrown_front_00000"] = 142,
+    ["projectile_waterBalloonYellow_thrown_front/projectile_waterBalloonYellow_thrown_front_00001"] = 143,
+    ["projectile_waterBalloonYellow_thrown_front/projectile_waterBalloonYellow_thrown_front_00002"] = 144,
 }
 
 function SheetInfo:getSheet()
