@@ -1,8 +1,8 @@
 //
-//  NJLIGameEngine.h
-//  NJLIGameEngine
+//  NJLIGameEngine_iOS.h
+//  NJLIGameEngine_iOS
 //
-//  Created by James Folk on 2/4/16.
+//  Created by James Folk on 3/17/16.
 //  Copyright © 2016 NJLIGames Ltd. All rights reserved.
 //
 
