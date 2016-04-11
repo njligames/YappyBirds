@@ -15,12 +15,12 @@ ParamInfo =
     World =
     {
         Gravity = bullet.btVector3(0,-60.81,0),
-
-        --Still have to make htese variables live...
         LayerDistance = 15.24, --meters (50 feet), How far each layer is from eachother
         LayerMax = 60.96, --meters (200 feet), How far the 4th (farthest) layer is from the camera
         WorldOffset = bullet.btVector2(1.0, 19.7),
         WorldScale = 91.0,
+
+        --Still have to make htese variables live...
         --Entity  darker param by distance
     },
 	Projectile = 
