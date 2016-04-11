@@ -982,53 +982,13 @@ local new = function(name)
             local assetPath = njli.ASSET_PATH("scripts/Params.lua")
             
             self.Prm = loadfile(assetPath)()
+
+            self.WORLD_YOFFSET = self.Prm.World.WorldOffset:y()
+            self.WORLD_XOFFSET = self.Prm.World.WorldOffset:x()
+            self.LAYER_DISTANCE = self.Prm.World.LayerDistance
+            self.LAYER_MAX = self.Prm.World.LayerMax
+            self.scale = self.Prm.World.WorldScale
         end,
-        -- function(self)
-        --     local yappyBirdLevelLoader = require "yappyBirdLevelLoader"
-        --     self.level = yappyBirdLevelLoader.new(self)
-
-
-        --     local gameMode = nil
-        --     local gameBoard = nil
-        --     local gameLevelNumber = nil
-
-        --     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-        --     print_r(self:getUserData("userdata"))
-        --     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
-        --     if self:getUserData("userdata") ~= nil then
-        --         print("FIRST")
-        --         gameMode = self:getUserData("userdata").gameMode
-        --         gameBoard = self:getUserData("userdata").gameBoard
-        --         gameLevelNumber = self:getUserData("userdata").gameLevelNumber
-
-        --     else
-        --         print("SECOND")
-        --         gameMode = _currentLevel.gameMode
-        --         gameBoard = _currentLevel.gameBoard
-        --         gameLevelNumber = _currentLevel.gameLevelNumber
-        --         self:addUserData("userdata", _currentLevel)
-        --     end
-
-        --     _currentLevel.gameMode = gameMode
-        --     _currentLevel.gameBoard = gameBoard
-        --     _currentLevel.gameLevelNumber = gameLevelNumber
-
-
-        --     local gameLevel = _gameLevels[gameLevelNumber]
-
-        --     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-        --     print(gameMode, gameBoard, gameLevelNumber, gameLevel)
-        --     print_r(self:getUserData("userdata"))
-        --     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
-        --     self.level:loadLevel(gameMode, gameBoard, gameLevel)
-
-        --     self.level:createNodes(self, self.tileSpriteAtlas, self.tileGeometry)
-
-        --     local points = self:translateDogWayPoints(self.level.dogWayPoints)
-        --     self.theDog = self:createDogNode(points)
-        -- end,
 
         function(self)
 
@@ -1057,30 +1017,12 @@ local new = function(name)
 
 
 
-        function(self)
-
-            --local camera = getPerspectiveCamera()
-            --local shader = getShaderProgram()
-            --njli.World.getInstance():enableDebugDraw(camera, shader)
-        end,
 
 
 
         function(self)
-            -- print(self.soundMenuTheme:getVolume())
-            -- self.soundTitleTheme:setLoopCount(-1)
-            -- self.soundTitleTheme:play()
-
-
-            -- for k,v in pairs(self.nodes) do
-            --     self.nodes[k].node:show(getPerspectiveCamera())
-            -- end
             njli.World.getInstance():setTouchCamera(getOrthoCamera())
             self.sceneStates[_menuSceneStateNames.menu]:push()
-
-
-
-            
         end,
 
     }
@@ -1094,15 +1036,6 @@ local new = function(name)
         sceneStates = {},
         userdata = {},
         nodes = {},
-
-
-
-
-
-
-
-
-
 
         gameBoard = "country",
 
