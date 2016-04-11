@@ -14,8 +14,7 @@ ParamInfo =
 {
     World =
     {
-        --Negative Y is down in the game
-        Gravity = bullet.btVector3(0.0, -60.81, 0.0), --Only effects the balloon
+        Gravity = bullet.btVector3(0,-60.81,0),
 
         --Still have to make htese variables live...
         LayerDistance = 15.24, --meters (50 feet), How far each layer is from eachother
@@ -28,24 +27,23 @@ ParamInfo =
 	{
 		WaterBalloon =
 		{
-			Azimuth = 10, --Angle from the ground, up.
+			Azimuth = 10, --Angle fro mthe ground up
 			Magnitude = 45, --How fast the balloon goes when you tap the screen.
-			DieY = -50, --Y position for then the balloon cleans up the memory.
+			DieY = -50, --Y position for when the balloon's memory gets cleaned up.
             Mass = 1, --The mass of the balloon.
 
             --Still have to make these variables live...
-            FrameRate = 0, --How fast the balloon animates
+            FrameRate = 0,
             RelativeLargerScale = 0,
             RelativeSmallerScale = 0,
             Hues = {
-                --A list of hues for the balloons. Number in the range from -180 to +180
+                0,
+                1,
             },
-            DeathVariables =
-            {
+            DeathVariables = {
                 FrameRate = 0,
-                Particles = false,
+                ShowParticles = false,
             }
-
 		},
 	},
 	Dog = 
@@ -65,13 +63,17 @@ ParamInfo =
 			StealSpeed = 1,
 			YapTime = {low=(10 * 1000), high=(30 * 1000)},
 			DieY = -50,
-            --[[
-            --DAvid add your variables here..
+            --David add your variables after here..
+            ScalarVariableExample=0,
+            ArrayVariableExample={
+                Example1 = true,
+                Example2 = "hello i'm  string",
+                Example3 = 1.0,
+                Example4 = {
+                    AnotherVariable = 0
+                },
 
-            variable1 = 0,
-            variable2 = 0,
-
-            ]]--
+            }
 		},
 		garuBird =
 		{
@@ -117,8 +119,9 @@ ParamInfo =
 			StealSpeed = 6,
 			YapTime = {low=(10 * 1000), high=(30 * 1000)},
 			DieY = -50,
-		}
-	}
+		},
+		
+	},
 }
 
 return ParamInfo
