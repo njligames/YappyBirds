@@ -33,7 +33,7 @@ ParamInfo =
             Mass = 1, --The mass of the balloon.
 
             --Still have to make these variables live...
-            FrameRate = 0,
+            FramesPerSecond = 60.0, -- must be: 1 <= fps <= 60
             RelativeLargerScale = 0,
             RelativeSmallerScale = 0,
             Hues = {
@@ -41,7 +41,7 @@ ParamInfo =
                 1,
             },
             DeathVariables = {
-                FrameRate = 0,
+                FramesPerSecond = 30, -- must be: 1 <= fps <= 60
                 ShowParticles = false,
             }
 		},
