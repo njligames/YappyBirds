@@ -3,3 +3,7 @@ COMMON/assets/sounds
 *.o
 *.swp
 
+*.psd
+*.aep
+*.ai
+
