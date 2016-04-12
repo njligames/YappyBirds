@@ -3,7 +3,10 @@ COMMON/assets/sounds
 *.o
 *.swp
 
+<<<<<<< HEAD
 *.psd
 *.aep
 *.ai
 
+=======
+>>>>>>> cfd5cdb0dc82440c04dc03e38589284172e44af2
