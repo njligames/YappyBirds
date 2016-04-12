@@ -838,10 +838,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOS",
 				);
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../GameEngine/Apple/NJLIGameEngine/../../Source/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/IOS/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
 				INFOPLIST_FILE = IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../GameEngine/Apple/NJLIGameEngine/../../Source/fmod/ios/FMOD Programmers API/api/lowlevel/lib\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/IOS/fmod/ios/FMOD Programmers API/api/lowlevel/lib\"";
 				OTHER_LDFLAGS = "-lfmodL_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
@@ -862,10 +862,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOS",
 				);
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../GameEngine/Apple/NJLIGameEngine/../../Source/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/IOS/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
 				INFOPLIST_FILE = IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../GameEngine/Apple/NJLIGameEngine/../../Source/fmod/ios/FMOD Programmers API/api/lowlevel/lib\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/IOS/fmod/ios/FMOD Programmers API/api/lowlevel/lib\"";
 				OTHER_LDFLAGS = "-lfmod_$PLATFORM_NAME";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamesfolk1.yappybirds;
 				PRODUCT_NAME = YappyBirds;
