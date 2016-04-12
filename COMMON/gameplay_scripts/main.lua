@@ -1,4 +1,3 @@
--- njli.World.getInstance():startSocket(192, 168, 1, 10, 2223)
 
 local path = njli.ASSET_PATH("scripts/util.lua")
 local util = (loadfile(path))()
@@ -6,24 +5,15 @@ local util = (loadfile(path))()
 path = njli.ASSET_PATH("scripts/filePaths.lua")
 local filePaths = (loadfile(path))()
 
-
-
 local path = njli.ASSET_PATH("scripts/levelData.lua")
 local levelData = (loadfile(path))()
 levelFileData = levelData.new()
 
-
-
-
 path = njli.ASSET_PATH("scripts/menuNodePositions.lua")
 local menuNodePositions = (loadfile(path))()
 
-
 local yappyBirdsWorld = require "worlds.yappyBirdsWorld"
 
--- local theStartWorldName = _worldStateNames.menu
--- local theStartWorldName = _worldStateNames.tests
--- local theStartWorldName = _worldStateNames.game
 local theStartWorldName = _worldStateNames.yappyGame
 
 local worldObjectTable = {}
@@ -58,7 +48,6 @@ function getSceneCurrentState(scene)
 end
 
 function getNodeObject(name)
-
     if nodeObjectTable then
         local nodeObject = nodeObjectTable[name]
         if nodeObject ~= nil then
@@ -113,14 +102,11 @@ function removeNodeObject(nodeObject)
 end
 
 function insertNodeObject(nodeObject, key)
-
-
     assert(nodeObject ~= nil, "The node object is nil")
 
     assert(nodeObjectTable[key] == nil, "There is already a node object with key " .. key)
 
     nodeObjectTable[key] = nodeObject
-
 end
 
 function WorldGamePause()
