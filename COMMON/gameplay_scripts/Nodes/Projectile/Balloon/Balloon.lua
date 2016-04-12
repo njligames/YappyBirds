@@ -52,6 +52,10 @@ local function createStateObjects(self)
   self.paused = false
 end
 
+local setFPS = function(self, fps)
+    assert(fps>=1 and fps<=60)
+    self.fps = fps
+end
 
 local getColor = function(self)
   return self.color
@@ -216,6 +220,7 @@ local start = function(self)
 
   createStateObjects(self)
   self.physicsBody:setAngularFactor(bullet.btVector3(0.0, 0.0, 0.0))
+  self:setFPS(self.params.FramesPerSecond)
 
 end
 
@@ -237,8 +242,7 @@ local actionUpdate = function(self, action, timeStep)
     local nodeName = node:getName()
     local nodeStateName = node:getStateMachine():getState():getName()
 
-    local fps = self.params.FramesPerSecond
-    if (self:getAnimationClock():getTimeMilliseconds() / 1000) > (1.0/fps) then
+    if (self:getAnimationClock():getTimeMilliseconds() / 1000) > (1.0/self.fps) then
       self:getAnimationClock():reset()
 
       self:incrementFrame()
@@ -409,6 +413,7 @@ end
 
 local methods = 
 {
+    setFPS = setFPS,
   getColor = getColor,
   getOwner = getOwner,
   getSound = getSound,
@@ -474,6 +479,8 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, particleGeometry, o
   local assetPath = njli.ASSET_PATH("scripts/Params.lua")
   local params = loadfile(assetPath)().Projectile.WaterBalloon
 
+  local fps = params.FramesPerSecond
+
   local animationClock = njli.Clock.create()
 
   local sound = njli.Sound.create()
@@ -515,6 +522,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, particleGeometry, o
     paused = false,
 
     params = params,
+    fps = fps,
 
     animationClock = animationClock,
 
