@@ -32,18 +32,18 @@ ParamInfo =
 			DieY = -50, --Y position for when the balloon's memory gets cleaned up.
             Mass = 1, --The mass of the balloon.
 
+            DeathVariables = {
+                FramesPerSecond = 30.0, -- must be: 1 <= fps <= 60
+                ShowParticles = false,
+            },
+            FramesPerSecond = 30.0, -- must be: 1 <= fps <= 60
             --Still have to make these variables live...
-            FramesPerSecond = 60.0, -- must be: 1 <= fps <= 60
             RelativeLargerScale = 0,
             RelativeSmallerScale = 0,
             Hues = {
                 0,
                 1,
             },
-            DeathVariables = {
-                FramesPerSecond = 30, -- must be: 1 <= fps <= 60
-                ShowParticles = false,
-            }
 		},
 	},
 	Dog = 

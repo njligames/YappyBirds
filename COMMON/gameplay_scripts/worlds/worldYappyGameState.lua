@@ -980,7 +980,6 @@ local new = function(name)
         -- end,
         function(self)
             local assetPath = njli.ASSET_PATH("scripts/Params.lua")
-            
             self.Prm = loadfile(assetPath)()
 
             self.WORLD_YOFFSET = self.Prm.World.WorldOffset:y()
