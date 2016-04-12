@@ -237,7 +237,8 @@ local actionUpdate = function(self, action, timeStep)
     local nodeName = node:getName()
     local nodeStateName = node:getStateMachine():getState():getName()
 
-    if (self:getAnimationClock():getTimeMilliseconds() / 1000) > (1.0/30.0) then
+    local fps = self.params.FramesPerSecond
+    if (self:getAnimationClock():getTimeMilliseconds() / 1000) > (1.0/fps) then
       self:getAnimationClock():reset()
 
       self:incrementFrame()
