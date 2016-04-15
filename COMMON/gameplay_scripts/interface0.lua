@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.codeandweb.com/texturepacker)
 --
--- $TexturePacker:SmartUpdate:144bbc6a55bc9eb4352a5b8bec124b1c:69b5ad8ac9dae60ac09bf898af42bafe:7c7b926951ecd55be01c75913320eada$
+-- $TexturePacker:SmartUpdate:06693a61f12b0f338c9d2502f40b62f0:5353b4cb97d5879e0d8b427285df1d13:f432c7b95edd736bca814e0928c4bb89$
 --
 -- local sheetInfo = require("mysheet")
 -- local myImageSheet = graphics.newImageSheet( "mysheet.png", sheetInfo:getSheet() )
@@ -15,8 +15,8 @@ SheetInfo.sheet =
     frames = {
     
         {
-            x=0,
-            y=0,
+            x=1,
+            y=1,
             
             width=568,
             height=320,
@@ -36,8 +36,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=0,
-            y=321,
+            x=571,
+            y=1,
             
             width=568,
             height=320,
@@ -57,10 +57,10 @@ SheetInfo.sheet =
         },
     
         {
-            x=1675,
-            y=570,
+            x=1915,
+            y=671,
             
-            width=57,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -69,19 +69,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 29,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 57,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_ABOUT_off",
         },
     
         {
-            x=1141,
-            y=711,
+            x=1915,
+            y=721,
             
-            width=57,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -90,19 +90,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 29,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 57,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_ABOUT_on",
         },
     
         {
-            x=1028,
-            y=963,
+            x=1915,
+            y=771,
             
-            width=112,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -113,17 +113,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 112,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_ACHIEVEMENTS_off",
         },
     
         {
-            x=1925,
-            y=0,
+            x=1915,
+            y=821,
             
-            width=112,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -134,17 +134,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 112,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_ACHIEVEMENTS_on",
         },
     
         {
-            x=1845,
-            y=321,
+            x=1915,
+            y=871,
             
-            width=74,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -153,19 +153,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 40,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 74,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_ARCADE_off",
         },
     
         {
-            x=1733,
-            y=609,
+            x=1915,
+            y=921,
             
-            width=74,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -174,19 +174,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 40,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 74,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_ARCADE_on",
         },
     
         {
-            x=1748,
-            y=511,
+            x=1915,
+            y=971,
             
-            width=64,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -197,17 +197,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 64,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_BACK_off",
         },
     
         {
-            x=1748,
-            y=560,
+            x=1399,
+            y=1019,
             
-            width=64,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -218,17 +218,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 64,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_BACK_on",
         },
     
         {
-            x=1916,
-            y=392,
+            x=1399,
+            y=1069,
             
-            width=98,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -237,19 +237,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 8,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 98,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_CHARACTERS_off",
         },
     
         {
-            x=1816,
-            y=419,
+            x=1613,
+            y=1026,
             
-            width=98,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -258,19 +258,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 8,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 98,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_CHARACTERS_on",
         },
     
         {
-            x=1141,
-            y=662,
+            x=1729,
+            y=1026,
             
-            width=90,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -279,19 +279,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 24,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 90,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_CONTINUE_off",
         },
     
         {
-            x=1584,
-            y=570,
+            x=1613,
+            y=1076,
             
-            width=90,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -300,19 +300,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 24,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 90,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_CONTINUE_on",
         },
     
         {
-            x=800,
-            y=963,
+            x=1399,
+            y=1119,
             
-            width=113,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -323,17 +323,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 113,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_HIGHSCORES_off",
         },
     
         {
-            x=914,
-            y=963,
+            x=1729,
+            y=1076,
             
-            width=113,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -344,15 +344,15 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 113,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_HIGHSCORES_on",
         },
     
         {
-            x=1914,
-            y=490,
+            x=1515,
+            y=1019,
             
             width=96,
             height=96,
@@ -372,8 +372,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1813,
-            y=517,
+            x=1515,
+            y=1117,
             
             width=96,
             height=96,
@@ -393,10 +393,10 @@ SheetInfo.sheet =
         },
     
         {
-            x=1925,
-            y=245,
+            x=1845,
+            y=1095,
             
-            width=100,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -405,19 +405,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 14,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 100,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_LEADERBOARDS_off",
         },
     
         {
-            x=1925,
-            y=294,
+            x=1613,
+            y=1126,
             
-            width=100,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -426,19 +426,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 14,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 100,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_LEADERBOARDS_on",
         },
     
         {
-            x=1925,
-            y=49,
+            x=1729,
+            y=1126,
             
-            width=111,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -449,17 +449,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 111,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_MUSIC_off",
         },
     
         {
-            x=1925,
-            y=98,
+            x=1845,
+            y=1145,
             
-            width=111,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -470,17 +470,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 111,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_MUSIC_on",
         },
     
         {
-            x=1492,
-            y=545,
+            x=1613,
+            y=1176,
             
-            width=91,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -489,19 +489,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 23,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 91,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_NEXT_LEVEL_off",
         },
     
         {
-            x=1287,
-            y=631,
+            x=1729,
+            y=1176,
             
-            width=91,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -510,19 +510,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 23,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 91,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_NEXT_LEVEL_on",
         },
     
         {
-            x=1580,
-            y=619,
+            x=1845,
+            y=1195,
             
-            width=50,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -531,19 +531,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 32,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 50,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_PLAY_2_off",
         },
     
         {
-            x=1631,
-            y=619,
+            x=571,
+            y=967,
             
-            width=50,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -552,17 +552,17 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 32,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 50,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_PLAY_2_on",
         },
     
         {
-            x=1910,
-            y=587,
+            x=1035,
+            y=967,
             
             width=96,
             height=96,
@@ -582,8 +582,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1298,
-            y=437,
+            x=465,
+            y=993,
             
             width=96,
             height=96,
@@ -603,10 +603,10 @@ SheetInfo.sheet =
         },
     
         {
-            x=1232,
-            y=662,
+            x=687,
+            y=967,
             
-            width=51,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -615,19 +615,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 63,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 51,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_QUIT_off",
         },
     
         {
-            x=1199,
-            y=711,
+            x=803,
+            y=967,
             
-            width=51,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -636,19 +636,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 63,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 51,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_QUIT_on",
         },
     
         {
-            x=1748,
-            y=413,
+            x=919,
+            y=967,
             
-            width=67,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -657,19 +657,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 24,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 67,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_RESTART_off",
         },
     
         {
-            x=1748,
-            y=462,
+            x=1,
+            y=993,
             
-            width=67,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -678,19 +678,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 24,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 67,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_RESTART_on",
         },
     
         {
-            x=1379,
-            y=642,
+            x=117,
+            y=993,
             
-            width=86,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -699,19 +699,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 28,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 86,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SETTINGS_off",
         },
     
         {
-            x=1284,
-            y=680,
+            x=233,
+            y=993,
             
-            width=86,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -720,19 +720,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 28,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 86,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SETTINGS_on",
         },
     
         {
-            x=1682,
-            y=619,
+            x=349,
+            y=993,
             
-            width=50,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -741,19 +741,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 32,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 50,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SHOP_off",
         },
     
         {
-            x=1733,
-            y=658,
+            x=1,
+            y=1043,
             
-            width=50,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -762,19 +762,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 32,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 50,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SHOP_on",
         },
     
         {
-            x=1920,
-            y=343,
+            x=117,
+            y=1043,
             
-            width=99,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -783,19 +783,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 15,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 99,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SOUND_FX_off",
         },
     
         {
-            x=1816,
-            y=370,
+            x=233,
+            y=1043,
             
-            width=99,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -804,17 +804,17 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 15,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 99,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SOUND_FX_on",
         },
     
         {
-            x=570,
-            y=963,
+            x=349,
+            y=1043,
             
             width=114,
             height=48,
@@ -834,8 +834,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=685,
-            y=963,
+            x=563,
+            y=1017,
             
             width=114,
             height=48,
@@ -855,10 +855,10 @@ SheetInfo.sheet =
         },
     
         {
-            x=1915,
-            y=441,
+            x=679,
+            y=1017,
             
-            width=97,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -867,19 +867,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 9,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 97,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_STAGE_SELECT_off",
         },
     
         {
-            x=1816,
-            y=468,
+            x=795,
+            y=1017,
             
-            width=97,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -888,17 +888,17 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 9,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 97,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_STAGE_SELECT_on",
         },
     
         {
-            x=1298,
-            y=534,
+            x=1027,
+            y=1065,
             
             width=96,
             height=96,
@@ -918,8 +918,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1395,
-            y=545,
+            x=1473,
+            y=1215,
             
             width=96,
             height=96,
@@ -939,10 +939,10 @@ SheetInfo.sheet =
         },
     
         {
-            x=1492,
-            y=594,
+            x=911,
+            y=1017,
             
-            width=87,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -951,19 +951,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 27,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 87,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SURVIVAL_off",
         },
     
         {
-            x=1808,
-            y=614,
+            x=1125,
+            y=1161,
             
-            width=87,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -972,19 +972,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 27,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 87,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_SURVIVAL_on",
         },
     
         {
-            x=1925,
-            y=147,
+            x=1241,
+            y=1161,
             
-            width=104,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -993,19 +993,19 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 10,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 104,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_TIME_ATTACK_off",
         },
     
         {
-            x=1925,
-            y=196,
+            x=1357,
+            y=1169,
             
-            width=104,
+            width=114,
             height=48,
 
 	        widthFile=114,
@@ -1014,17 +1014,17 @@ SheetInfo.sheet =
             pivotx=57,
             pivoty=24,
 
-            sourceX = 10,
+            sourceX = 0,
             sourceY = 0,
-            sourceWidth = 104,
+            sourceWidth = 114,
             sourceHeight = 48,
 
             trimmedName = "butn_TIME_ATTACK_on",
         },
     
         {
-            x=1371,
-            y=691,
+            x=1969,
+            y=571,
             
             width=48,
             height=48,
@@ -1044,8 +1044,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1251,
-            y=729,
+            x=1969,
+            y=621,
             
             width=48,
             height=48,
@@ -1065,11 +1065,11 @@ SheetInfo.sheet =
         },
     
         {
-            x=1591,
-            y=413,
+            x=1711,
+            y=397,
             
-            width=156,
-            height=156,
+            width=256,
+            height=256,
 
 	        widthFile=256,
 	        heightFile=256,
@@ -1077,20 +1077,20 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=128,
 
-            sourceX = 50,
-            sourceY = 50,
-            sourceWidth = 156,
-            sourceHeight = 156,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
 
             trimmedName = "butn_portrait_city_off",
         },
     
         {
-            x=1425,
-            y=125,
+            x=1141,
+            y=645,
             
-            width=194,
-            height=209,
+            width=256,
+            height=256,
 
 	        widthFile=256,
 	        heightFile=256,
@@ -1098,20 +1098,20 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=128,
 
-            sourceX = 31,
-            sourceY = 31,
-            sourceWidth = 194,
-            sourceHeight = 209,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
 
             trimmedName = "butn_portrait_city_on",
         },
     
         {
-            x=1141,
-            y=437,
+            x=1399,
+            y=645,
             
-            width=156,
-            height=156,
+            width=256,
+            height=256,
 
 	        widthFile=256,
 	        heightFile=256,
@@ -1119,20 +1119,20 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=128,
 
-            sourceX = 50,
-            sourceY = 50,
-            sourceWidth = 156,
-            sourceHeight = 156,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
 
             trimmedName = "butn_portrait_country_off",
         },
     
         {
-            x=1396,
-            y=335,
+            x=1657,
+            y=655,
             
-            width=194,
-            height=209,
+            width=256,
+            height=256,
 
 	        widthFile=256,
 	        heightFile=256,
@@ -1140,19 +1140,19 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=128,
 
-            sourceX = 31,
-            sourceY = 31,
-            sourceWidth = 194,
-            sourceHeight = 209,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
 
             trimmedName = "butn_portrait_country_on",
         },
     
         {
-            x=1466,
-            y=643,
+            x=1571,
+            y=1226,
             
-            width=49,
+            width=96,
             height=96,
 
 	        widthFile=96,
@@ -1163,17 +1163,17 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 49,
+            sourceWidth = 96,
             sourceHeight = 96,
 
             trimmedName = "butn_scrollbar_off",
         },
     
         {
-            x=1516,
-            y=643,
+            x=1669,
+            y=1226,
             
-            width=49,
+            width=96,
             height=96,
 
 	        widthFile=96,
@@ -1184,18 +1184,18 @@ SheetInfo.sheet =
 
             sourceX = 0,
             sourceY = 0,
-            sourceWidth = 49,
+            sourceWidth = 96,
             sourceHeight = 96,
 
             trimmedName = "butn_scrollbar_on",
         },
     
         {
-            x=414,
-            y=963,
+            x=1969,
+            y=397,
             
             width=51,
-            height=50,
+            height=56,
 
 	        widthFile=51,
 	        heightFile=56,
@@ -1204,19 +1204,19 @@ SheetInfo.sheet =
             pivoty=28,
 
             sourceX = 0,
-            sourceY = 3,
+            sourceY = 0,
             sourceWidth = 51,
-            sourceHeight = 50,
+            sourceHeight = 56,
 
             trimmedName = "butn_stage_dis",
         },
     
         {
-            x=466,
-            y=963,
+            x=1969,
+            y=455,
             
             width=51,
-            height=50,
+            height=56,
 
 	        widthFile=51,
 	        heightFile=56,
@@ -1225,19 +1225,19 @@ SheetInfo.sheet =
             pivoty=28,
 
             sourceX = 0,
-            sourceY = 3,
+            sourceY = 0,
             sourceWidth = 51,
-            sourceHeight = 50,
+            sourceHeight = 56,
 
             trimmedName = "butn_stage_off",
         },
     
         {
-            x=518,
-            y=963,
+            x=1969,
+            y=513,
             
             width=51,
-            height=50,
+            height=56,
 
 	        widthFile=51,
 	        heightFile=56,
@@ -1246,19 +1246,19 @@ SheetInfo.sheet =
             pivoty=28,
 
             sourceX = 0,
-            sourceY = 3,
+            sourceY = 0,
             sourceWidth = 51,
-            sourceHeight = 50,
+            sourceHeight = 56,
 
             trimmedName = "butn_stage_on",
         },
     
         {
-            x=1591,
-            y=368,
+            x=1625,
+            y=979,
             
             width=224,
-            height=44,
+            height=45,
 
 	        widthFile=224,
 	        heightFile=45,
@@ -1267,19 +1267,19 @@ SheetInfo.sheet =
             pivoty=22.5,
 
             sourceX = 0,
-            sourceY = 1,
+            sourceY = 0,
             sourceWidth = 224,
-            sourceHeight = 44,
+            sourceHeight = 45,
 
             trimmedName = "header_LEVEL_SELECT",
         },
     
         {
-            x=1620,
-            y=321,
+            x=1399,
+            y=969,
             
             width=224,
-            height=46,
+            height=48,
 
 	        widthFile=224,
 	        heightFile=48,
@@ -1288,19 +1288,19 @@ SheetInfo.sheet =
             pivoty=24,
 
             sourceX = 0,
-            sourceY = 2,
+            sourceY = 0,
             sourceWidth = 224,
-            sourceHeight = 46,
+            sourceHeight = 48,
 
             trimmedName = "header_STAGE_SELECT",
         },
     
         {
             x=1141,
-            y=0,
+            y=1,
             
-            width=486,
-            height=124,
+            width=568,
+            height=320,
 
 	        widthFile=568,
 	        heightFile=320,
@@ -1308,20 +1308,20 @@ SheetInfo.sheet =
             pivotx=284,
             pivoty=160,
 
-            sourceX = 41,
-            sourceY = 41,
-            sourceWidth = 486,
-            sourceHeight = 124,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 568,
+            sourceHeight = 320,
 
             trimmedName = "logo_yb",
         },
     
         {
             x=1141,
-            y=193,
+            y=903,
             
-            width=254,
-            height=243,
+            width=256,
+            height=256,
 
 	        widthFile=256,
 	        heightFile=256,
@@ -1329,20 +1329,20 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=128,
 
-            sourceX = 1,
-            sourceY = 7,
-            sourceWidth = 254,
-            sourceHeight = 243,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 256,
 
             trimmedName = "logo_yb_square",
         },
     
         {
-            x=0,
-            y=963,
+            x=1399,
+            y=903,
             
-            width=208,
-            height=56,
+            width=256,
+            height=64,
 
 	        widthFile=256,
 	        heightFile=64,
@@ -1350,20 +1350,20 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=32,
 
-            sourceX = 24,
-            sourceY = 4,
-            sourceWidth = 208,
-            sourceHeight = 56,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 64,
 
             trimmedName = "text_YOU_LOSE",
         },
     
         {
-            x=209,
-            y=963,
+            x=1657,
+            y=913,
             
-            width=204,
-            height=56,
+            width=256,
+            height=64,
 
 	        widthFile=256,
 	        heightFile=64,
@@ -1371,20 +1371,20 @@ SheetInfo.sheet =
             pivotx=128,
             pivoty=32,
 
-            sourceX = 26,
-            sourceY = 4,
-            sourceWidth = 204,
-            sourceHeight = 56,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 256,
+            sourceHeight = 64,
 
             trimmedName = "text_YOU_WIN",
         },
     
         {
-            x=1141,
-            y=594,
+            x=1851,
+            y=1021,
             
-            width=145,
-            height=67,
+            width=152,
+            height=72,
 
 	        widthFile=152,
 	        heightFile=72,
@@ -1392,20 +1392,20 @@ SheetInfo.sheet =
             pivotx=76,
             pivoty=36,
 
-            sourceX = 2,
-            sourceY = 2,
-            sourceWidth = 145,
-            sourceHeight = 67,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 152,
+            sourceHeight = 72,
 
             trimmedName = "title_CITY",
         },
     
         {
-            x=1141,
-            y=125,
+            x=1711,
+            y=323,
             
-            width=283,
-            height=67,
+            width=288,
+            height=72,
 
 	        widthFile=288,
 	        heightFile=72,
@@ -1413,17 +1413,17 @@ SheetInfo.sheet =
             pivotx=144,
             pivoty=36,
 
-            sourceX = 2,
-            sourceY = 2,
-            sourceWidth = 283,
-            sourceHeight = 67,
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 288,
+            sourceHeight = 72,
 
             trimmedName = "title_COUNTRY",
         },
     
         {
-            x=0,
-            y=642,
+            x=1,
+            y=323,
             
             width=568,
             height=320,
@@ -1443,8 +1443,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=1628,
-            y=0,
+            x=1711,
+            y=1,
             
             width=296,
             height=320,
@@ -1464,8 +1464,29 @@ SheetInfo.sheet =
         },
     
         {
-            x=569,
-            y=0,
+            x=571,
+            y=323,
+            
+            width=568,
+            height=320,
+
+	        widthFile=568,
+	        heightFile=320,
+
+            pivotx=284,
+            pivoty=160,
+
+            sourceX = 0,
+            sourceY = 0,
+            sourceWidth = 568,
+            sourceHeight = 320,
+
+            trimmedName = "ui_coin_shop",
+        },
+    
+        {
+            x=1141,
+            y=323,
             
             width=568,
             height=320,
@@ -1485,8 +1506,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=569,
-            y=321,
+            x=1,
+            y=671,
             
             width=568,
             height=320,
@@ -1506,8 +1527,8 @@ SheetInfo.sheet =
         },
     
         {
-            x=569,
-            y=642,
+            x=571,
+            y=645,
             
             width=568,
             height=320,
@@ -1527,15 +1548,15 @@ SheetInfo.sheet =
         },
     
     },
-    fileName = "images/interface0.png",
+    fileName = "images/interface0.pvr",
     sheetContentWidth = 2048,
-    sheetContentHeight = 1024,
+    sheetContentHeight = 2048,
     scale = 1,
-    shapePadding = 1,
+    shapePadding = 0,
     borderPadding = 0,
     commonDivisorX = 1,
     commonDivisorY = 1,
-    extrude = 0,
+    extrude = 1,
     baseFactor = 1,
     maxTextureSizeWidth = 4096,
     maxTextureSizeHeight = 4096,
@@ -1544,7 +1565,7 @@ SheetInfo.sheet =
 
 
 
-    -- smartUpdateKey = $TexturePacker:SmartUpdate:144bbc6a55bc9eb4352a5b8bec124b1c:69b5ad8ac9dae60ac09bf898af42bafe:7c7b926951ecd55be01c75913320eada$,
+    -- smartUpdateKey = $TexturePacker:SmartUpdate:06693a61f12b0f338c9d2502f40b62f0:5353b4cb97d5879e0d8b427285df1d13:f432c7b95edd736bca814e0928c4bb89$,
     -- settings_autoSDSettings = {
     -- 
     --     {
@@ -1558,10 +1579,10 @@ SheetInfo.sheet =
     -- 
     -- },
     -- settings_ditherType = NearestNeighbour,
-    -- settings_textureFormat = png,
-    -- settings_outputFormat = RGBA8888,
+    -- settings_textureFormat = pvr3,
+    -- settings_outputFormat = PVRTC4,
     -- settings_contentProtection_key = ,
-    -- settings_tpsName = _interface,
+    -- settings_tpsName = unsaved,
     -- settings_allowRotation = false,
     -- settings_flipPVR = false,
     -- settings_forceIdenticalLayout = false,
@@ -1570,13 +1591,13 @@ SheetInfo.sheet =
     -- settings_trimSpriteNames = false,
     -- settings_autoAliasEnabled = true,
     -- settings_premultiplyAlpha = false,
-    -- settings_reduceBorderArtifacts = true,
+    -- settings_reduceBorderArtifacts = false,
     -- settings_fixedTextureSize_width = -1,
     -- settings_fixedTextureSize_height = -1,
     -- settings_dataFormat = corona-imagesheet,
     -- settings_textureSubPath = ,
     -- settings_borderPadding = 0,
-    -- settings_shapePadding = 1,
+    -- settings_shapePadding = 0,
     -- settings_commonDivisorX = 1,
     -- settings_commonDivisorY = 1,
     -- settings_dpi = 72,
@@ -1585,11 +1606,11 @@ SheetInfo.sheet =
     -- multipackIndex = ,
 
     -- variantParams_scale = 1,
-    -- variantParams_shapePadding = 1,
+    -- variantParams_shapePadding = 0,
     -- variantParams_borderPadding = 0,
     -- variantParams_commonDivisorX = 1,
     -- variantParams_commonDivisorY = 1,
-    -- variantParams_extrude = 0,
+    -- variantParams_extrude = 1,
     -- variantParams_baseFactor = 1,
     -- variantParams_maxTextureSize_width = 4096,
     -- variantParams_maxTextureSize_height = 4096,
@@ -1669,9 +1690,10 @@ SheetInfo.frameIndex =
     ["title_COUNTRY"] = 67,
     ["ui_background"] = 68,
     ["ui_bg_scrollbar"] = 69,
-    ["ui_loading"] = 70,
-    ["ui_paused"] = 71,
-    ["ui_thanks"] = 72,
+    ["ui_coin_shop"] = 70,
+    ["ui_loading"] = 71,
+    ["ui_paused"] = 72,
+    ["ui_thanks"] = 73,
 }
 
 function SheetInfo:getSheet()

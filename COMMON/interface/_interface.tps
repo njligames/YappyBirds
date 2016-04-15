@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.0.1</string>
         <key>fileName</key>
-        <string>/Users/jamesfolk/Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/interface/_interface.tps</string>
+        <string>/Users/jamesfolk/NJLI/YappyBirds/COMMON/interface/_interface.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -38,9 +38,9 @@
         <key>dataFormat</key>
         <string>corona-imagesheet</string>
         <key>textureFileName</key>
-        <filename>../assets/images/interface{n}.png</filename>
+        <filename>../assets/images/interface{n}.pvr</filename>
         <key>flipPVR</key>
-        <false/>
+        <true/>
         <key>pvrCompressionQuality</key>
         <enum type="SettingsBase::PvrCompressionQuality">PVR_QUALITY_NORMAL</enum>
         <key>atfCompressData</key>
@@ -82,7 +82,7 @@
         <key>textureSubPath</key>
         <string></string>
         <key>textureFormat</key>
-        <enum type="SettingsBase::TextureFormat">png</enum>
+        <enum type="SettingsBase::TextureFormat">pvr3</enum>
         <key>borderPadding</key>
         <uint>0</uint>
         <key>maxTextureSize</key>
@@ -95,9 +95,9 @@
         <key>fixedTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>-1</int>
+            <int>2048</int>
             <key>height</key>
-            <int>-1</int>
+            <int>2048</int>
         </QSize>
         <key>reduceBorderArtifacts</key>
         <true/>
@@ -110,9 +110,9 @@
             <key>sizeConstraints</key>
             <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
-            <false/>
+            <true/>
             <key>forceWordAligned</key>
-            <false/>
+            <true/>
             <key>maxRects</key>
             <struct type="AlgorithmMaxRectsSettings">
                 <key>heuristic</key>
@@ -182,7 +182,7 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Trim</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -192,7 +192,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>TexturePacker</filename>
+            <filename>../../../../Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/interface/TexturePacker</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
