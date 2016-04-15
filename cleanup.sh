@@ -14,5 +14,5 @@
 #git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
 #git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch APPLE/IOS/fmod/ios/FMOD\ Programmers\ API/api/lowlevel/examples/' HEAD
 #git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
-git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch YappyBirds jamesfolk$ /Users/jamesfolk/NJLI/YappyBirds/COMMON/assets/*' HEAD
+git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch YappyBirds jamesfolk$ COMMON/assets/*' HEAD
 git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
