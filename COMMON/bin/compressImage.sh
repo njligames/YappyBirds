@@ -7,10 +7,9 @@ OUTPUT_DATA_FOLDER="/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts"
 FORMAT="corona-imagesheet"
 TEXTURE_FORMAT="pvr3"
 
-#--flip-pvr 
-TexturePacker --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode None --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.pvr --texture-format ${TEXTURE_FORMAT} ${INPUT_IMAGE_FOLDER}
+TexturePacker --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode Trim --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.pvr --texture-format ${TEXTURE_FORMAT} ${INPUT_IMAGE_FOLDER}
 
-PVRTexToolCLI -i ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr -m -f pvrtc1_4 -o ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr
+PVRTexToolCLI -i ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr -m -f PVRTC1_2_RGB, UB, sRGB -q pvrtcbest -o ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr
 
 
 : <<'END'
@@ -572,7 +571,6 @@ Example
 -Valid Formats: PVRTC1_2, PVRTC1_4, PVRTC1_2_RGB, PVRTC1_4_RGB, PVRTC2_2, PVRTC2_4, ETC1, UYVY, YUY2, 1BPP, RGBE9995, RGBG8888, GRGB8888, ETC2_RGB, ETC2_RGBA, ETC2_RGB_A1, EAC_R11, EAC_RG11, ASTC_4x4, ASTC_5x4, ASTC_5x5, ASTC_6x5, ASTC_6x6, ASTC_8x5, ASTC_8x6, ASTC_8x8, ASTC_10x5, ASTC_10x6, ASTC_10x8, ASTC_10x10, ASTC_12x10, ASTC_12x12, ASTC_3x3x3, ASTC_4x3x3, ASTC_4x4x3, ASTC_4x4x4, ASTC_5x4x4, ASTC_5x5x4, ASTC_5x5x5, ASTC_6x5x5, ASTC_6x6x5, ASTC_6x6x6
 
 -Valid Variable Types: UB, UBN, SB, SBN, US, USN, SS, SSN, UI, UIN, SI, SIN, UF, SF. 
-
  - Key: 
  - First Char- S=Signed, U=Unsigned. 
  - Second Char- B=Byte, S=Short, I=Integer, F=Float. 
