@@ -5,11 +5,13 @@ OUTPUT_SHEET_FOLDER="/Users/jamesfolk/NJLI/YappyBirds/COMMON/assets/images"
 OUTPUT_DATA_FOLDER="/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts"
 
 FORMAT="corona-imagesheet"
-TEXTURE_FORMAT="pvr3"
+#TEXTURE_FORMAT="pvr3"
+TEXTURE_FORMAT="png"
+SHEET_EXTENSION="png"
 
-TexturePacker --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode Trim --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.pvr --texture-format ${TEXTURE_FORMAT} ${INPUT_IMAGE_FOLDER}
+TexturePacker --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode Trim --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.${SHEET_EXTENSION} --texture-format ${TEXTURE_FORMAT} ${INPUT_IMAGE_FOLDER}
 
-PVRTexToolCLI -i ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr -m -f PVRTC1_2_RGB, UB, sRGB -q pvrtcbest -o ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr
+#PVRTexToolCLI -i ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr -m -f PVRTC1_2_RGB, UB, sRGB -q pvrtcbest -o ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr
 
 
 : <<'END'

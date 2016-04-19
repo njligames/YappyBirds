@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.codeandweb.com/texturepacker)
 --
--- $TexturePacker:SmartUpdate:80002a7d39167fced88159cf7ae7a3b8:5353b4cb97d5879e0d8b427285df1d13:f432c7b95edd736bca814e0928c4bb89$
+-- $TexturePacker:SmartUpdate:71d7a35ff5fdd6d5fdbb26602f5f73ad:5353b4cb97d5879e0d8b427285df1d13:7c7b926951ecd55be01c75913320eada$
 --
 -- local sheetInfo = require("mysheet")
 -- local myImageSheet = graphics.newImageSheet( "mysheet.png", sheetInfo:getSheet() )
@@ -1548,7 +1548,7 @@ SheetInfo.sheet =
         },
     
     },
-    fileName = "images/interface0.pvr",
+    fileName = "images/interface0.png",
     sheetContentWidth = 2048,
     sheetContentHeight = 2048,
     scale = 1,
@@ -1565,7 +1565,7 @@ SheetInfo.sheet =
 
 
 
-    -- smartUpdateKey = $TexturePacker:SmartUpdate:80002a7d39167fced88159cf7ae7a3b8:5353b4cb97d5879e0d8b427285df1d13:f432c7b95edd736bca814e0928c4bb89$,
+    -- smartUpdateKey = $TexturePacker:SmartUpdate:71d7a35ff5fdd6d5fdbb26602f5f73ad:5353b4cb97d5879e0d8b427285df1d13:7c7b926951ecd55be01c75913320eada$,
     -- settings_autoSDSettings = {
     -- 
     --     {
@@ -1579,7 +1579,7 @@ SheetInfo.sheet =
     -- 
     -- },
     -- settings_ditherType = NearestNeighbour,
-    -- settings_textureFormat = pvr3,
+    -- settings_textureFormat = png,
     -- settings_outputFormat = RGBA8888,
     -- settings_contentProtection_key = ,
     -- settings_tpsName = unsaved,
