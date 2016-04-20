@@ -349,44 +349,44 @@ all: /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/
 	perl ./../bin/removeComments.pl < ./yappyBirdLevelLoader.lua > ./../assets/scripts/yappyBirdLevelLoader.lua
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/levels:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/levels
+	mkdir -p  ./../assets/scripts/levels
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes
+	mkdir -p  ./../assets/scripts/nodes
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/bird:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/bird
+	mkdir -p  ./../assets/scripts/nodes/bird
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/bird/states:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/bird/states
+	mkdir -p  ./../assets/scripts/nodes/bird/states
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/birdBeak:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/birdBeak
+	mkdir -p  ./../assets/scripts/nodes/birdBeak
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/birdBeak/states:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/birdBeak/states
+	mkdir -p  ./../assets/scripts/nodes/birdBeak/states
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/dog:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/dog
+	mkdir -p  ./../assets/scripts/nodes/dog
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/dog/states:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/dog/states
+	mkdir -p  ./../assets/scripts/nodes/dog/states
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/projectile:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/projectile
+	mkdir -p  ./../assets/scripts/nodes/projectile
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/projectile/balloon:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/projectile/balloon
+	mkdir -p  ./../assets/scripts/nodes/projectile/balloon
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/projectile/balloon/states:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/nodes/projectile/balloon/states
+	mkdir -p  ./../assets/scripts/nodes/projectile/balloon/states
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/scenes:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/scenes
+	mkdir -p  ./../assets/scripts/scenes
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/steering:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/steering
+	mkdir -p  ./../assets/scripts/steering
 
 /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/worlds:
-	mkdir -p  /Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/../assets/scripts/worlds
+	mkdir -p  ./../assets/scripts/worlds
 
