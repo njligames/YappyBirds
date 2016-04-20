@@ -1,5 +1,5 @@
-COMMON/assets/scripts
-COMMON/assets/sounds
+COMMON/assets/scripts/*
+COMMON/assets/sounds/*
 *.o
 *.swp
 
