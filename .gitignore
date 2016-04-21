@@ -1,4 +1,5 @@
 COMMON/assets
+COMMON/assets/*
 
 *.o
 *.swp

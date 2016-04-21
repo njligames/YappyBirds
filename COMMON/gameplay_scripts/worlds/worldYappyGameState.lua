@@ -538,6 +538,9 @@ local enter = function(self)
     self.menuGeometry = njli.Sprite2D.create()
     self.menuGeometry:addMaterial(self.menuMaterial)
     self.menuGeometry:addShaderProgram(getShaderProgram())
+    self.menuGeometry:setName("menuGeometry")
+    self.menuGeometry:show(getOrthoCamera())
+    self.menuGeometry:hide(getPerspectiveCamera())
     
 
 
@@ -850,9 +853,19 @@ local new = function(name)
 
         function(self)
             self.characterSpriteAtlas, self.characterSheetInfo, self.characterGeometry, self.characterMaterial = createTexturePackerSpriteAtlas("gameplay", getShaderProgram())
+
+            for k,v in pairs(self.characterGeometry) do
+                v:hide(getOrthoCamera())
+                v:show(getPerspectiveCamera())
+            end
         end,
         function(self)
             local tileSpriteAtlas, tileSheetInfo, tileGeometry, tileMaterial = createTexturePackerSpriteAtlas("tilesheet_background_country", getShaderProgram())
+
+            for k,v in pairs(tileGeometry) do
+                v:hide(getOrthoCamera())
+                v:show(getPerspectiveCamera())
+            end
 
             self.tileSpriteAtlas = tileSpriteAtlas[1]
             self.tileSheetInfo   = tileSheetInfo[1]
@@ -862,45 +875,6 @@ local new = function(name)
         function(self)
             -- self.particleGeometry, self.particleMaterial = createParticleGeometryAndMaterial("particle_water_splash.png", getShaderProgram())
         end,
-        -- function(self)
-        --     local bmf = require 'bitmapFontLoader'
-        --     local pushButtonNode = require "nodes.pushButtonNode"
-        --     local textNode = require "nodes.textNode"
-
-        --     local bmflabel = bmf.loadFont('Ranchers.fnt')
-
-        --     self.fontMaterial = njli.Material.create()
-        --     self.fontGeometry = njli.Sprite2D.create()
-
-
-        --     local winNode = textNode.new("You Win", 
-        --                                     bmflabel, 
-        --                                     self.fontMaterial, 
-        --                                     self.fontGeometry, 
-        --                                     getShaderProgram())
-        --     local wordsX = (njli.World.getInstance():getViewportDimensions():x()/2) - (winNode.rect.width / 2)
-        --     local wordsY = (njli.World.getInstance():getViewportDimensions():y()/3)
-        --     wordsY = wordsY * 2
-        --     winNode.node:setOrigin(bullet.btVector3(wordsX, wordsY, 0))
-
-        --     -- winNode.node:show(getOrthoCamera())
-
-        --     local loseNode = textNode.new("You Lose", 
-        --                                     bmflabel, 
-        --                                     self.fontMaterial, 
-        --                                     self.fontGeometry, 
-        --                                     getShaderProgram())
-        --     wordsX = (njli.World.getInstance():getViewportDimensions():x()/2) - (loseNode.rect.width / 2)
-        --     wordsY = (njli.World.getInstance():getViewportDimensions():y()/3)
-        --     wordsY = wordsY * 2
-        --     loseNode.node:setOrigin(bullet.btVector3(wordsX, wordsY,0))
-
-        --     self.nodes['You Win'] = winNode
-        --     self.nodes['You Lose'] = loseNode
-
-        --     insertNodeObject(winNode, 'You Win')
-        --     insertNodeObject(loseNode, 'You Lose')
-        -- end,
         function(self)
 
             local imageNode = require "nodes.imageNode"
@@ -935,6 +909,9 @@ local new = function(name)
         function(self)
             self.fontMaterial = njli.Material.create()
             self.fontGeometry = njli.Sprite2D.create()
+
+            self.fontGeometry:show(getOrthoCamera())
+            self.fontGeometry:hide(getPerspectiveCamera())
         end,
         function(self)
             local bmf = require 'bitmapFontLoader'

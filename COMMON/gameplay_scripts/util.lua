@@ -433,6 +433,7 @@ function createPerspectiveCameraNode(name)
     local camera = njli.Camera.create()
     camera:enableOrthographic(false)
     camera:setRenderCategory(RenderCategories.perspective)
+    camera:setName("perspectiveCamera")
 
     node:addCamera(camera)
 
@@ -446,6 +447,7 @@ function createOrthoCameraNode(name)
     local camera = njli.Camera.create()
     camera:enableOrthographic()
     camera:setRenderCategory(RenderCategories.orthographic)
+    camera:setName("orthoCamera")
 
     node:addCamera(camera)
 

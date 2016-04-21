@@ -538,6 +538,9 @@ local enter = function(self)
  self.menuGeometry = njli.Sprite2D.create()
  self.menuGeometry:addMaterial(self.menuMaterial)
  self.menuGeometry:addShaderProgram(getShaderProgram())
+ self.menuGeometry:setName("menuGeometry")
+ self.menuGeometry:show(getOrthoCamera())
+ self.menuGeometry:hide(getPerspectiveCamera())
  
 
 
@@ -850,9 +853,19 @@ local new = function(name)
 
  function(self)
  self.characterSpriteAtlas, self.characterSheetInfo, self.characterGeometry, self.characterMaterial = createTexturePackerSpriteAtlas("gameplay", getShaderProgram())
+
+ for k,v in pairs(self.characterGeometry) do
+ v:hide(getOrthoCamera())
+ v:show(getPerspectiveCamera())
+ end
  end,
  function(self)
  local tileSpriteAtlas, tileSheetInfo, tileGeometry, tileMaterial = createTexturePackerSpriteAtlas("tilesheet_background_country", getShaderProgram())
+
+ for k,v in pairs(tileGeometry) do
+ v:hide(getOrthoCamera())
+ v:show(getPerspectiveCamera())
+ end
 
  self.tileSpriteAtlas = tileSpriteAtlas[1]
  self.tileSheetInfo = tileSheetInfo[1]
@@ -862,45 +875,6 @@ local new = function(name)
  function(self)
  
  end,
- 
- 
- 
- 
-
- 
-
- 
- 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
-
- 
- 
- 
  function(self)
 
  local imageNode = require "nodes.imageNode"
@@ -935,6 +909,9 @@ local new = function(name)
  function(self)
  self.fontMaterial = njli.Material.create()
  self.fontGeometry = njli.Sprite2D.create()
+
+ self.fontGeometry:show(getOrthoCamera())
+ self.fontGeometry:hide(getPerspectiveCamera())
  end,
  function(self)
  local bmf = require 'bitmapFontLoader'
