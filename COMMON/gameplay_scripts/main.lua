@@ -389,5 +389,14 @@ print("DeviceNameDownsizeAmount\t", DeviceNameDownsizeAmount(njli.World.getInsta
 
 print("\n\n\n\n")
 
+--local mtx = bullet.btTransform.getIdentity():getOpenGLMatrix()
+--print(njli.ColorUtil.createMatrixFromArray(mtx))
+--print(bullet.btScalarArray_getitem(mtx, 0))
+--print_r(bullet)--.transformValues(transform))
+--local x1, y1, z1, w1, x2, y2, z2, w2, x3, y3, z3, w3, x4, y4, z4, w4 = bullet.transformValues(transform)
+
+--local transform = njli.ColorUtil.createHueRotationMatrix(0.0)
+--print(transform)
+
 WorldCreate()
 

@@ -30,7 +30,7 @@
         <key>allowRotation</key>
         <false/>
         <key>premultiplyAlpha</key>
-        <false/>
+        <true/>
         <key>shapeDebug</key>
         <false/>
         <key>dpi</key>
@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>corona-imagesheet</string>
         <key>textureFileName</key>
-        <filename>../assets/images/interface{n}.pvr</filename>
+        <filename>../assets/images/interface{n}.png</filename>
         <key>flipPVR</key>
         <true/>
         <key>pvrCompressionQuality</key>
@@ -82,7 +82,7 @@
         <key>textureSubPath</key>
         <string></string>
         <key>textureFormat</key>
-        <enum type="SettingsBase::TextureFormat">pvr3</enum>
+        <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
         <uint>0</uint>
         <key>maxTextureSize</key>

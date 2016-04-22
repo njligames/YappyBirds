@@ -312,7 +312,14 @@ local update = function(self, timeStep)
 
   if not self:isPaused() then
 
+      if not self.n then
+          self.n = 0.0
+      end
 
+      self.n = self.n + timeStep
+    local xform = njli.ColorUtil.createHueRotationMatrix(self.n)
+    self.node:setColorTransform(xform)
+    
     if self:getNode():getPhysicsBody():isKinematicPhysics() then
         self:getMovingEntity():update(timeStep)
     end
@@ -510,7 +517,10 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, wayPoints)
   local node = njli.Node.create()
   node:setName(name)
 
-  node:setScale(0.5)
+  --node:setScale(0.5)
+    local mtx = bullet.btTransform.getIdentity():getOpenGLMatrix()
+    local colorTransform = njli.ColorUtil.createMatrixFromArray(mtx)
+
 
   local physicsBody = njli.PhysicsBodyRigid.create()
 
@@ -533,6 +543,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, wayPoints)
     node = node,
     stateNames = nil,
     stateObjects = nil,
+    colorTransform = colorTransform,
     physicsBody = physicsBody,
     physicsShape = physicsShape,
 
