@@ -35,7 +35,7 @@ vec4 transformRGB(vec4 color, mat4 matrix)
 	float tg = color.r*matrix[0][1] + color.g*matrix[1][1] + color.b*matrix[2][1] + matrix[3][1];
 	float tb = color.r*matrix[0][2] + color.g*matrix[1][2] + color.b*matrix[2][2] + matrix[3][2];
 	
-	return vec4(tr, tg, tb, color.a);
+	return clamp(vec4(tr, tg, tb, color.a), 0.0, 1.0);
 }
 
 //mat4 colorScaleMatrix(vec4 colorScale)
@@ -189,6 +189,8 @@ void main(void)
     color = (color * diffuseColor * destOpacityColor);
     
     color = transformRGB(color, destinationColorTransform);
+    
+    
     
     
     if (color.a == 0.0)

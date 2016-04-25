@@ -7,3 +7,4 @@ COMMON/assets/*
 *.psd
 *.aep
 *.ai
+.DS_Store

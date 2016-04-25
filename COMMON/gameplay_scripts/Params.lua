@@ -19,6 +19,7 @@ ParamInfo =
         LayerMax = 60.96, --meters (200 feet), How far the 4th (farthest) layer is from the camera
         WorldOffset = bullet.btVector2(1.0, 19.7),
         WorldScale = 91.0,
+        MinBrightnessForDistance = 0.1,
 
         --Still have to make htese variables live...
         --Entity  darker param by distance
@@ -31,19 +32,53 @@ ParamInfo =
 			Magnitude = 45, --How fast the balloon goes when you tap the screen.
 			DieY = -50, --Y position for when the balloon's memory gets cleaned up.
             Mass = 1, --The mass of the balloon.
-
+            FramesPerSecond = 30.0, -- must be: 1 <= fps <= 60
+            Hues = {
+                0,
+                10,
+                20,
+                30,
+                40,
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160,
+                170,
+                180,
+                -10,
+                -20,
+                -30,
+                -40,
+                -50,
+                -60,
+                -70,
+                -80,
+                -90,
+                -100,
+                -110,
+                -120,
+                -130,
+                -140,
+                -150,
+                -160,
+                -170,
+                -180,
+            },
             DeathVariables = {
                 FramesPerSecond = 30.0, -- must be: 1 <= fps <= 60
                 ShowParticles = false,
             },
-            FramesPerSecond = 30.0, -- must be: 1 <= fps <= 60
             --Still have to make these variables live...
-            RelativeLargerScale = 0,
-            RelativeSmallerScale = 0,
-            Hues = {
-                0,
-                1,
-            },
+            ScaleMin = 0.9,
+            ScaleMax = 2.0,
 		},
 	},
 	Dog = 

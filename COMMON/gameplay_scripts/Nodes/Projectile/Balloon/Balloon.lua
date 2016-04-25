@@ -481,27 +481,42 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, particleGeometry, o
 
   local fps = params.FramesPerSecond
 
+  assert(params.ScaleMin <= params.ScaleMax)
+  --local randomScale = math.random(params.ScaleMin, params.ScaleMax)
+  --local randomScale = params.ScaleMax
+  --local randomScale = params.ScaleMin
+  math.randomseed(os.time())
+  local randomScale = params.ScaleMin + math.random()  * (params.ScaleMax - params.ScaleMin)
+  print("new scale", randomScale)
+  node:setScale(randomScale)
   local animationClock = njli.Clock.create()
 
   local sound = njli.Sound.create()
   njli.World.getInstance():getWorldResourceLoader():load(_SOUNDPATHS.gameplay.effects.projectile.balloon.die, sound)
 
   math.randomseed( os.time() )
-  local colorIndex = math.random(1, 5)
+  --local colorIndex = math.random(1, 5)
 
   local color = "Red"
 
-  if colorIndex == 1 then
-      color = "Blue"
-  elseif colorIndex == 2 then
-      color = "Green"
-  elseif colorIndex == 3 then
-      color = "Purple"
-  elseif colorIndex == 4 then
-      color = "Red"
-  elseif colorIndex == 5 then
-      color = "Yellow"
-  end
+
+  math.randomseed(os.time())
+  local idx = math.random(1, #params.Hues)
+  print("rotate hue to:", params.Hues[idx])
+  local transform = njli.ColorUtil.createHueRotationMatrix(params.Hues[idx])
+  node:setColorTransform(transform)
+
+  --if colorIndex == 1 then
+  --    color = "Blue"
+  --elseif colorIndex == 2 then
+  --    color = "Green"
+  --elseif colorIndex == 3 then
+  --    color = "Purple"
+  --elseif colorIndex == 4 then
+  --    color = "Red"
+  --elseif colorIndex == 5 then
+  --    color = "Yellow"
+  --end
   
 
   local properties = 
