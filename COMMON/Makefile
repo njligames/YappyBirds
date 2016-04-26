@@ -18,6 +18,7 @@ all:
 	cd ./audio && make
 
 clean: 
+	cd ./countryLevel && make clean
 	rm -rf ./assets/cameras
 	rm -rf ./assets/curves
 	rm -rf ./assets/images
