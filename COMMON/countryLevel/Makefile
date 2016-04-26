@@ -1,13 +1,24 @@
 
-OBJECTS = ../assets/images/countryLevel*.png
+SCRIPTDIR = ../gameplay_scripts/levels/country
+SCRIPTS = $(addprefix $(SCRIPTDIR)/, $(patsubst %.tmx, %.lua, $(wildcard *.tmx)))
+IMAGE_OBJECTS = ../assets/images/countryLevel*.png
 
-all: $(OBJECTS)
+.PHONY: all clean
 
-#$(OBJECTS):./TexturePacker/*/*.png
-#	@echo target is $@, source is $^
+all: $(SCRIPTDIR) scripts $(IMAGE_OBJECTS)
 
-$(OBJECTS):./TexturePacker/*/*.png
+$(SCRIPTDIR):
+	mkdir -p $(SCRIPTDIR)
+
+$(SCRIPTDIR)/%.lua: %.tmx
+	Tiled --export-map $< $@
+
+scripts: $(SCRIPTS)
+
+$(IMAGE_OBJECTS):./TexturePacker/*/*.png
 	../bin/packImages.sh countryLevel None
 
 clean:
-	rm $(OBJECTS)
+	rm -f scripts $(wildcard *.lua)
+	rm -rf $(SCRIPTDIR)
+	rm -f $(IMAGE_OBJECTS)

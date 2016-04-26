@@ -11,5 +11,18 @@ all:
 	mkdir -p ./assets/shaders
 	mkdir -p ./assets/sounds
 	mkdir -p ./assets/strings
+	cd ./countryLevel && make
+	cd ./gameplay && make
+	cd ./interface && make
 	cd ./gameplay_scripts && make
 	cd ./audio && make
+
+clean: 
+	rm -rf ./assets/cameras
+	rm -rf ./assets/curves
+	rm -rf ./assets/images
+	rm -rf ./assets/materials
+	rm -rf ./assets/meshes
+	rm -rf ./assets/scripts
+	rm -rf ./assets/sounds
+	rm -rf ./assets/strings
