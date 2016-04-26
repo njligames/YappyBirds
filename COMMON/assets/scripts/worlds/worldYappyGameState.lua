@@ -231,6 +231,7 @@ local createTileNode = function(self, x, y, layer, opacity, tile, instanceName, 
  self.tileNodes[instanceName] = self.nodes[instanceName]
 
  insertNodeObject(self.nodes[instanceName], instanceName)
+ brightnessForNode(self.nodes[instanceName].node)
 end
 
 local destroyDogNode = function(self)
@@ -310,6 +311,8 @@ local createDogNode = function(self, points)
  self.nodes[instanceName].node:show(getPerspectiveCamera())
 
 
+ brightnessForNode(self.nodes[instanceName].node)
+
  return self.nodes[instanceName]
 end
 
@@ -359,6 +362,7 @@ local createBirdNode = function(self, spawnPoint)
 
  self.nodes[instanceName]:setBirdFlock(self.birdFlock)
 
+ brightnessForNode(self.nodes[instanceName].node)
  return self.nodes[instanceName]
 end
 
@@ -388,7 +392,8 @@ local createWaterBalloonNode = function(self, x, y)
 
  self.nodes[instanceName].node:setOrigin(origin )
  insertNodeObject(self.nodes[instanceName], instanceName)
- 
+ brightnessForNode(self.nodes[instanceName].node)
+
  self.projectileNodes[instanceName] = self.nodes[instanceName]
 
  return self.nodes[instanceName]
@@ -860,7 +865,7 @@ local new = function(name)
  end
  end,
  function(self)
- local tileSpriteAtlas, tileSheetInfo, tileGeometry, tileMaterial = createTexturePackerSpriteAtlas("tilesheet_background_country", getShaderProgram())
+ local tileSpriteAtlas, tileSheetInfo, tileGeometry, tileMaterial = createTexturePackerSpriteAtlas("countryLevel", getShaderProgram())
 
  for k,v in pairs(tileGeometry) do
  v:hide(getOrthoCamera())

@@ -706,3 +706,29 @@ function math.Clamp(val, lower, upper)
  if lower > upper then lower, upper = upper, lower end 
  return math.max(lower, math.min(upper, val))
 end
+
+function brightnessForNode(node, initialTransform)
+ function brightnessForDistance(z)
+ function getParam()
+ local assetPath = njli.ASSET_PATH("scripts/Params.lua")
+ return loadfile(assetPath)()
+ end
+ local layerMaxDistance = getParam().World.LayerMax
+ local minBrightnessForDistance = getParam().World.MinBrightnessForDistance
+ assert(minBrightnessForDistance >= 0.0 and minBrightnessForDistance <= 1)
+ local brightness = 1.0 - (z * (1.0 - minBrightnessForDistance))/layerMaxDistance
+ 
+ brightness = math.max(brightness, minBrightnessForDistance)
+ 
+ 
+ return brightness
+ end
+
+ if initialTransform == nil then
+ initialTransform = bullet.btTransform.getIdentity()
+ end
+ 
+ local transform = njli.ColorUtil.createBrightnessMatrix(brightnessForDistance(node:getOrigin():z()))
+ node:setColorTransform(transform)
+end
+

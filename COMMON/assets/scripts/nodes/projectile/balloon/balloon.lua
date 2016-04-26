@@ -286,6 +286,8 @@ end
 
 local update = function(self, timeStep)
  if not self:isPaused() then
+
+ brightnessForNode(self.node)
  
  local stateName = self:getCurrentStateName()
  if self:hasStateObject(stateName) then

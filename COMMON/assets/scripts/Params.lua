@@ -19,10 +19,7 @@ ParamInfo =
  LayerMax = 60.96, 
  WorldOffset = bullet.btVector2(1.0, 19.7),
  WorldScale = 91.0,
- MinBrightnessForDistance = 0.1,
-
- 
- 
+ MinBrightnessForDistance = 0.8, 
  },
 	Projectile = 
 	{
@@ -72,13 +69,13 @@ ParamInfo =
  -170,
  -180,
  },
+ ScaleMin = 0.9,
+ ScaleMax = 2.0,
+ 
  DeathVariables = {
  FramesPerSecond = 30.0, 
  ShowParticles = false,
  },
- 
- ScaleMin = 0.9,
- ScaleMax = 2.0,
  },
 	},
 	Dog = 

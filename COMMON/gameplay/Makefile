@@ -1,3 +1,4 @@
+
 OBJECTS = ../assets/images/gameplay*.png
 
 all: $(OBJECTS)
@@ -6,4 +7,7 @@ all: $(OBJECTS)
 #	@echo target is $@, source is $^
 
 $(OBJECTS):./TexturePacker/*/*.png
-	../bin/packImages.sh gameplay
+	../bin/packImages.sh gameplay None
+
+clean:
+	rm $(OBJECTS)

@@ -442,6 +442,8 @@ end
 local update = function(self, timeStep)
  if not self:isPaused() then
 
+ brightnessForNode(self:getNode())
+
  
 
  if self:getNode():getPhysicsBody():isKinematicPhysics() then

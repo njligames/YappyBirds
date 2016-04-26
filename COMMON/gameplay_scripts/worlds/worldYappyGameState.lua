@@ -865,7 +865,7 @@ local new = function(name)
             end
         end,
         function(self)
-            local tileSpriteAtlas, tileSheetInfo, tileGeometry, tileMaterial = createTexturePackerSpriteAtlas("tilesheet_background_country", getShaderProgram())
+            local tileSpriteAtlas, tileSheetInfo, tileGeometry, tileMaterial = createTexturePackerSpriteAtlas("countryLevel", getShaderProgram())
 
             for k,v in pairs(tileGeometry) do
                 v:hide(getOrthoCamera())

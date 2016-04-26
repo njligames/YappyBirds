@@ -316,10 +316,12 @@ local update = function(self, timeStep)
  
  
  
- print(self.node:getOrigin())
- local xform = njli.ColorUtil.createBrightnessMatrix(0.5)
- self.node:setColorTransform(xform)
  
+ 
+ 
+ 
+ brightnessForNode(self:getNode())
+
  if self:getNode():getPhysicsBody():isKinematicPhysics() then
  self:getMovingEntity():update(timeStep)
  end
