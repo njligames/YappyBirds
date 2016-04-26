@@ -19,10 +19,7 @@ ParamInfo =
         LayerMax = 60.96, --meters (200 feet), How far the 4th (farthest) layer is from the camera
         WorldOffset = bullet.btVector2(1.0, 19.7),
         WorldScale = 91.0,
-        MinBrightnessForDistance = 0.1,
-
-        --Still have to make htese variables live...
-        --Entity  darker param by distance
+        MinBrightnessForDistance = 0.8, --value from 0.0 (black) to 1.0 (the image's brightness)
     },
 	Projectile = 
 	{
@@ -72,13 +69,13 @@ ParamInfo =
                 -170,
                 -180,
             },
+            ScaleMin = 0.9,
+            ScaleMax = 2.0,
+            --Still have to make these variables live...
             DeathVariables = {
                 FramesPerSecond = 30.0, -- must be: 1 <= fps <= 60
                 ShowParticles = false,
             },
-            --Still have to make these variables live...
-            ScaleMin = 0.9,
-            ScaleMax = 2.0,
 		},
 	},
 	Dog = 

@@ -106,6 +106,7 @@ function insertNodeObject(nodeObject, key)
 
     assert(nodeObjectTable[key] == nil, "There is already a node object with key " .. key)
 
+
     nodeObjectTable[key] = nodeObject
 end
 
