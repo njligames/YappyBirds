@@ -25,4 +25,3 @@ clean:
 	rm -rf ./assets/meshes
 	rm -rf ./assets/scripts
 	rm -rf ./assets/sounds
-	rm -rf ./assets/strings
