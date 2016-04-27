@@ -19,15 +19,36 @@ TEXTURE_FORMAT="png"
 #SHEET_EXTENSION="pvr"
 SHEET_EXTENSION="png"
 
-/Applications/TexturePacker.app/Contents/MacOS/TexturePacker --opt RGBA8888 --premultiply-alpha  --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode ${TRIM} --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.${SHEET_EXTENSION} --texture-format "${TEXTURE_FORMAT}" ${INPUT_IMAGE_FOLDER}
+/Applications/TexturePacker.app/Contents/MacOS/TexturePacker --opt RGBA8888 --png-opt-level 7 --reduce-border-artifacts --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode ${TRIM} --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.${SHEET_EXTENSION} --texture-format "${TEXTURE_FORMAT}" ${INPUT_IMAGE_FOLDER}
 
-#/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86/PVRTexToolCLI -i ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr -m -f PVRTC1_2_RGB, UB, sRGB -q pvrtcbest -o ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}0.pvr
->&2 echo "list the file targets..."
+>&2 echo "Flipping the images, vertically..."
 for i in $(find $OUTPUT_SHEET_FOLDER -type f -name "${ROOT_NAME}*.png" )
 do
-    #/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86/PVRTexToolCLI -i $i -m -f PVRTC1_4_RGB,UB,lRGB -q pvrtcbest -flip x -o $i
     convert $i -flip $i
+    >&2 echo "Flipping ${i}"
 done 
+
+>&2 echo "Compressing the images..."
+for i in $(find $OUTPUT_SHEET_FOLDER -type f -name "${ROOT_NAME}*.png" )
+do
+    PNGFILE=$i
+    PVRFILE=${i/.png/.pvr}
+    >&2 echo "Compressing ${PNGFILE} to ${PVRFILE}"
+
+    #/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86/PVRTexToolCLI -i ${PNGFILE} -m -f PVRTC1_4_RGB,UB,lRGB -q pvrtcbest -o ${PVRFILE}
+done 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

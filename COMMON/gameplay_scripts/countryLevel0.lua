@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.codeandweb.com/texturepacker)
 --
--- $TexturePacker:SmartUpdate:e88b8f114b5f17ceb6174aaae134e7da:8ee25a7d5dd14f285d5459ef41f997c2:3acb4b7fc09dc54e1d46fa5999eb4f3a$
+-- $TexturePacker:SmartUpdate:7ba196ce521021b7e2626d6b96b77017:21555c5bf2b2d178c8166fbd454d81c4:3acb4b7fc09dc54e1d46fa5999eb4f3a$
 --
 -- local sheetInfo = require("mysheet")
 -- local myImageSheet = graphics.newImageSheet( "mysheet.png", sheetInfo:getSheet() )
@@ -242,7 +242,7 @@ SheetInfo.sheet =
 
 
 
-    -- smartUpdateKey = $TexturePacker:SmartUpdate:e88b8f114b5f17ceb6174aaae134e7da:8ee25a7d5dd14f285d5459ef41f997c2:3acb4b7fc09dc54e1d46fa5999eb4f3a$,
+    -- smartUpdateKey = $TexturePacker:SmartUpdate:7ba196ce521021b7e2626d6b96b77017:21555c5bf2b2d178c8166fbd454d81c4:3acb4b7fc09dc54e1d46fa5999eb4f3a$,
     -- settings_autoSDSettings = {
     -- 
     --     {
@@ -267,8 +267,8 @@ SheetInfo.sheet =
     -- settings_shapeDebug = ,
     -- settings_trimSpriteNames = false,
     -- settings_autoAliasEnabled = true,
-    -- settings_premultiplyAlpha = true,
-    -- settings_reduceBorderArtifacts = false,
+    -- settings_premultiplyAlpha = false,
+    -- settings_reduceBorderArtifacts = true,
     -- settings_fixedTextureSize_width = -1,
     -- settings_fixedTextureSize_height = -1,
     -- settings_dataFormat = corona-imagesheet,
