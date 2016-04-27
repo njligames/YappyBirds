@@ -2,11 +2,14 @@ OBJECTS = ../assets/images/interface*.png
 
 all: $(OBJECTS)
 
-#$(OBJECTS):./TexturePacker/*/*.png
-#	@echo target is $@, source is $^
+#None       
+#Trim       
+#Crop       
+#CropKeepPos
+#Polygon    
 
 $(OBJECTS):./TexturePacker/*/*.png
 	../bin/packImages.sh interface Trim
 
 clean:
-	rm $(OBJECTS)
+	rm -f $(OBJECTS)

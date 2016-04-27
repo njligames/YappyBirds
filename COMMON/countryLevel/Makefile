@@ -11,7 +11,7 @@ $(SCRIPTDIR):
 	mkdir -p $(SCRIPTDIR)
 
 $(SCRIPTDIR)/%.lua: %.tmx
-	Tiled --export-map $< $@
+	/Applications/Tiled.app/Contents/MacOS/Tiled --export-map $< $@
 
 scripts: $(SCRIPTS)
 
