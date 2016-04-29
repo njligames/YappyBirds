@@ -288,6 +288,7 @@ local update = function(self, timeStep)
  if not self:isPaused() then
 
  brightnessForNode(self.node)
+ self.node:setColorTransform(node:getColorTransform() * self.hueTransform)
  
  local stateName = self:getCurrentStateName()
  if self:hasStateObject(stateName) then
@@ -505,8 +506,8 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, particleGeometry, o
  math.randomseed(os.time())
  local idx = math.random(1, #params.Hues)
  print("rotate hue to:", params.Hues[idx])
- local transform = njli.ColorUtil.createHueRotationMatrix(params.Hues[idx])
- node:setColorTransform(transform)
+ local hueTransform = njli.ColorUtil.createHueRotationMatrix(params.Hues[idx])
+ 
 
  
  
@@ -546,7 +547,7 @@ local new = function(name, sheetInfo, spriteAtlas, geometry, particleGeometry, o
  sound = sound,
 
  color = color,
-
+ hueTransform = hueTransform,
 
  sheetInfo = sheetInfo, 
  spriteAtlas = spriteAtlas, 

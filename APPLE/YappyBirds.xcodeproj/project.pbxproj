@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C13900241CD1B2BD00D682D0 /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13900231CD1B2BD00D682D0 /* NJLIGameEngine_iOS.framework */; };
+		C13900261CD1B3C100D682D0 /* NJLIGameEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13900251CD1B3C100D682D0 /* NJLIGameEngine_iOS.framework */; };
 		C13E389F1C6DAEC000BFF147 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13E389E1C6DAEC000BFF147 /* main.cpp */; };
 		C16A29DF1C683E7C00D94D4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A29DE1C683E7C00D94D4B /* main.m */; };
 		C16A29E21C683E7C00D94D4B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C16A29E11C683E7C00D94D4B /* AppDelegate.mm */; };
@@ -96,7 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C13900231CD1B2BD00D682D0 /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
+		C13900251CD1B3C100D682D0 /* NJLIGameEngine_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NJLIGameEngine_iOS.framework; path = ../../../NJLIGameEngine_iOS.framework; sourceTree = "<group>"; };
 		C13E389C1C6DAEC000BFF147 /* Export Assets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Export Assets"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13E389E1C6DAEC000BFF147 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C16A29DA1C683E7C00D94D4B /* YappyBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YappyBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,10 +153,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13900261CD1B3C100D682D0 /* NJLIGameEngine_iOS.framework in Frameworks */,
 				C16A2A1D1C683F8F00D94D4B /* GLKit.framework in Frameworks */,
 				C16A2A1B1C683F8800D94D4B /* AudioToolbox.framework in Frameworks */,
 				C16A2A191C683F8100D94D4B /* AVFoundation.framework in Frameworks */,
-				C13900241CD1B2BD00D682D0 /* NJLIGameEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +262,7 @@
 		C16A29DD1C683E7C00D94D4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C13900231CD1B2BD00D682D0 /* NJLIGameEngine_iOS.framework */,
+				C13900251CD1B3C100D682D0 /* NJLIGameEngine_iOS.framework */,
 				C16A2A1C1C683F8F00D94D4B /* GLKit.framework */,
 				C16A2A1A1C683F8800D94D4B /* AudioToolbox.framework */,
 				C16A2A181C683F8000D94D4B /* AVFoundation.framework */,
@@ -837,6 +837,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOS",
+					"$(PROJECT_DIR)/../../",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/IOS/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
 				INFOPLIST_FILE = IOS/Info.plist;
@@ -861,6 +862,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOS",
+					"$(PROJECT_DIR)/../../",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/IOS/fmod/ios/FMOD Programmers API/api/lowlevel/inc\"";
 				INFOPLIST_FILE = IOS/Info.plist;

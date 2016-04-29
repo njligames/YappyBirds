@@ -18,8 +18,8 @@ FORMAT="corona-imagesheet"
 TEXTURE_FORMAT="png"
 #SHEET_EXTENSION="pvr"
 SHEET_EXTENSION="png"
-
-/Applications/TexturePacker.app/Contents/MacOS/TexturePacker --opt RGBA8888 --png-opt-level 7 --reduce-border-artifacts --mipmap-min-size 1 --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode ${TRIM} --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.${SHEET_EXTENSION} --texture-format "${TEXTURE_FORMAT}" ${INPUT_IMAGE_FOLDER}
+#--mipmap-min-size 1 --png-opt-level 7
+/Applications/TexturePacker.app/Contents/MacOS/TexturePacker --opt RGBA8888  --reduce-border-artifacts  --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode ${TRIM} --force-publish --data ${OUTPUT_DATA_FOLDER}/${ROOT_NAME}{n}.lua --format ${FORMAT} --sheet ${OUTPUT_SHEET_FOLDER}/${ROOT_NAME}{n}.${SHEET_EXTENSION} --texture-format "${TEXTURE_FORMAT}" ${INPUT_IMAGE_FOLDER}
 
 >&2 echo "Flipping the images, vertically..."
 for i in $(find $OUTPUT_SHEET_FOLDER -type f -name "${ROOT_NAME}*.png" )
