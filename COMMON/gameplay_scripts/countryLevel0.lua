@@ -1,7 +1,7 @@
 --
 -- created with TexturePacker (http://www.codeandweb.com/texturepacker)
 --
--- $TexturePacker:SmartUpdate:7ba196ce521021b7e2626d6b96b77017:21555c5bf2b2d178c8166fbd454d81c4:3acb4b7fc09dc54e1d46fa5999eb4f3a$
+-- $TexturePacker:SmartUpdate:e574772a19e55d13ce764426936d86b0:21555c5bf2b2d178c8166fbd454d81c4:3acb4b7fc09dc54e1d46fa5999eb4f3a$
 --
 -- local sheetInfo = require("mysheet")
 -- local myImageSheet = graphics.newImageSheet( "mysheet.png", sheetInfo:getSheet() )
@@ -242,7 +242,7 @@ SheetInfo.sheet =
 
 
 
-    -- smartUpdateKey = $TexturePacker:SmartUpdate:7ba196ce521021b7e2626d6b96b77017:21555c5bf2b2d178c8166fbd454d81c4:3acb4b7fc09dc54e1d46fa5999eb4f3a$,
+    -- smartUpdateKey = $TexturePacker:SmartUpdate:e574772a19e55d13ce764426936d86b0:21555c5bf2b2d178c8166fbd454d81c4:3acb4b7fc09dc54e1d46fa5999eb4f3a$,
     -- settings_autoSDSettings = {
     -- 
     --     {

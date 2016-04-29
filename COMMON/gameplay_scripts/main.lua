@@ -384,6 +384,13 @@ function KeyboardReturn(text)
     print(text)
 end
 
+function ReceivedMemoryWarning()
+    local bytesUsed = collectgarbage("count") * 1024
+    print("Memory in use: " .. bytesUsed .. " bytes")
+
+    collectgarbage()
+end
+
 print("\n\n")
 print("getDeviceName\t", DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName()))
 print("DeviceNameDownsizeAmount\t", DeviceNameDownsizeAmount(njli.World.getInstance():getDeviceName()))
