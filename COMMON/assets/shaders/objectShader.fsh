@@ -189,7 +189,7 @@ void main(void)
 //    color = (color * diffuseColor * destOpacityColor);
     color = (color * diffuseColor);
     
-    //color = transformRGB(color, destinationColorTransform);
+    color = transformRGB(color, destinationColorTransform);
     
     
     
