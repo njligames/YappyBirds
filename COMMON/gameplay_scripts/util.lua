@@ -15,7 +15,6 @@ _deviceNames = {"iPhone 2G",--3:2
     "iPhone 6",--16:9
     "iPod Touch (1 Gen)",--3:2
     "iPod Touch (2 Gen)",--3:2
-
     "iPod Touch (4 Gen)",--3:2
     "iPod Touch (5 Gen)",--16:9
     "iPad (WiFi)",--4:3
@@ -56,28 +55,36 @@ _resolutionDeviceNames =
     "8:5",
 }
 
-
+function DeviceDownScale(name) 
+    if name == _deviceNames[14] or
+        name == _deviceNames[35] or
+        name == _deviceNames[36] or
+        name == _deviceNames[37] then
+        return true
+    end
+    return false
+end
 -- http://www.iosres.com/index-legacy.html
 -- http://andrew.hedges.name/experiments/aspect_ratio/
 -- http://stackoverflow.com/questions/7587854/is-there-a-list-of-screen-resolutions-for-all-android-based-phones-and-tablets/23009368#23009368
 -- http://www.emirweb.com/ScreenDeviceStatistics.php#Header248
 -- http://handsontable.com/demo/column_freeze.html
 function DeviceTouchScale(name, x, y)
-    if x and y and name == _deviceNames[14] then
+    if x and y and DeviceDownScale(name) then
         return (x*2), (y*2)
     end
     return x, y
 end
 
 function DeviceNameShouldScale(name)
-    if name == _deviceNames[14] then
+    if name == DeviceDownScale(name) then
         return false
     end
     return true
 end
 
 function DeviceNameDownsizeAmount(name)
-    if name == _deviceNames[14] then
+    if name == DeviceDownScale(name) then
         return 1.15
     end
     return 1.0
