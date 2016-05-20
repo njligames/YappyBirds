@@ -392,7 +392,8 @@ function ReceivedMemoryWarning()
 end
 
 print("\n\n")
-print("getDeviceName\t", DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName()))
+print("getDeviceResolution\t", DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName()))
+print("getDeviceName\t", njli.World.getInstance():getDeviceName())
 print("DeviceNameDownsizeAmount\t", DeviceNameDownsizeAmount(njli.World.getInstance():getDeviceName()))
 
 print("\n\n\n\n")

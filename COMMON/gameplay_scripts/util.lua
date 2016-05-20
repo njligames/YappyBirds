@@ -55,36 +55,48 @@ _resolutionDeviceNames =
     "8:5",
 }
 
-function DeviceDownScale(name) 
-    if name == _deviceNames[14] or
-        name == _deviceNames[35] or
-        name == _deviceNames[36] or
-        name == _deviceNames[37] then
-        return true
-    end
-    return false
-end
+
 -- http://www.iosres.com/index-legacy.html
 -- http://andrew.hedges.name/experiments/aspect_ratio/
 -- http://stackoverflow.com/questions/7587854/is-there-a-list-of-screen-resolutions-for-all-android-based-phones-and-tablets/23009368#23009368
 -- http://www.emirweb.com/ScreenDeviceStatistics.php#Header248
 -- http://handsontable.com/demo/column_freeze.html
 function DeviceTouchScale(name, x, y)
-    if x and y and DeviceDownScale(name) then
+    local deviceTypeScale = name == _deviceNames[35] or
+                            name == _deviceNames[36] or
+                            name == _deviceNames[37] or
+                            name == _deviceNames[43] or
+                            name == _deviceNames[44] or
+                            name == _deviceNames[14]
+
+    if x and y and deviceTypeScale then
         return (x*2), (y*2)
     end
+
     return x, y
 end
 
 function DeviceNameShouldScale(name)
-    if name == DeviceDownScale(name) then
+    if name == _deviceNames[14] or
+        name == _deviceNames[43] or
+        name == _deviceNames[44] or
+        name == _deviceNames[35] or
+        name == _deviceNames[36] or
+        name == _deviceNames[37] then
         return false
     end
     return true
 end
 
 function DeviceNameDownsizeAmount(name)
-    if name == DeviceDownScale(name) then
+    if name == _deviceNames[14] then
+        return 1.15
+    elseif name == _deviceNames[35] or
+        name == _deviceNames[36] or
+        name == _deviceNames[37] then
+        return 1.15
+    elseif name == _deviceNames[43] or
+        name == _deviceNames[44] then
         return 1.15
     end
     return 1.0

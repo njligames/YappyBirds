@@ -15,7 +15,6 @@ _deviceNames = {"iPhone 2G",
  "iPhone 6",
  "iPod Touch (1 Gen)",
  "iPod Touch (2 Gen)",
-
  "iPod Touch (4 Gen)",
  "iPod Touch (5 Gen)",
  "iPad (WiFi)",
@@ -63,14 +62,27 @@ _resolutionDeviceNames =
 
 
 function DeviceTouchScale(name, x, y)
- if x and y and name == _deviceNames[14] then
+ local deviceTypeScale = name == _deviceNames[35] or
+ name == _deviceNames[36] or
+ name == _deviceNames[37] or
+ name == _deviceNames[43] or
+ name == _deviceNames[44] or
+ name == _deviceNames[14]
+
+ if x and y and deviceTypeScale then
  return (x*2), (y*2)
  end
+
  return x, y
 end
 
 function DeviceNameShouldScale(name)
- if name == _deviceNames[14] then
+ if name == _deviceNames[14] or
+ name == _deviceNames[43] or
+ name == _deviceNames[44] or
+ name == _deviceNames[35] or
+ name == _deviceNames[36] or
+ name == _deviceNames[37] then
  return false
  end
  return true
@@ -78,6 +90,13 @@ end
 
 function DeviceNameDownsizeAmount(name)
  if name == _deviceNames[14] then
+ return 1.15
+ elseif name == _deviceNames[35] or
+ name == _deviceNames[36] or
+ name == _deviceNames[37] then
+ return 1.15
+ elseif name == _deviceNames[43] or
+ name == _deviceNames[44] then
  return 1.15
  end
  return 1.0

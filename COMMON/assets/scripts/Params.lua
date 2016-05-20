@@ -21,15 +21,15 @@ ParamInfo =
  WorldScale = 91.0,
  MinBrightnessForDistance = 0.8, 
  },
-	Projectile =
+	Projectile = 
 	{
  WaterBalloon =
  {
  Azimuth = 10, 
- Magnitude = 80, 
+ Magnitude = 45, 
  DieY = -50, 
- Mass = .5, 
- FramesPerSecond = 12.0, 
+ Mass = 1, 
+ FramesPerSecond = 30.0, 
  Hues = {
  0,
  10,
@@ -78,10 +78,10 @@ ParamInfo =
  },
  },
 	},
-	Dog =
+	Dog = 
 	{
  MaxSpeed = njli.World.getInstance():getWorldLuaVirtualMachine():getMaxNumber(),
- MaxForce = njli.World.getInstance():getWorldLuaVirtualMachine():getMaxNumber(),
+ MaxForce = njli.World.getInstance():getWorldLuaVirtualMachine():getMaxNumber(), 
  DazedTime = (0.5 * 1000),
  CapturedHeight = 20,
 	},
@@ -152,7 +152,7 @@ ParamInfo =
  YapTime = {low=(10 * 1000), high=(30 * 1000)},
  DieY = -50,
  },
-
+ 
 	},
 }
 

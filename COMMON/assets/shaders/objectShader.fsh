@@ -168,7 +168,7 @@ vec4 transformRGB(vec4 color, mat4 matrix)
 
 void main(void)
 {
-	//vec4 destOpacityColor = vec4(1.0, 1.0, 1.0, destinationOpacity);
+	vec4 destOpacityColor = vec4(1.0, 1.0, 1.0, destinationOpacity);
 	
     if(destinationHidden != 0.0)
         discard;
@@ -186,8 +186,8 @@ void main(void)
                      destinationColor.a);
     }
     
-//    color = (color * diffuseColor * destOpacityColor);
-    color = (color * diffuseColor);
+    color = (color * diffuseColor * destOpacityColor);
+//    color = (color * diffuseColor);
     
     color = transformRGB(color, destinationColorTransform);
     
