@@ -1,411 +1,360 @@
+local njligame = require "njli.njligame"
+local njliGameInstance = njligame()
+local game = require "game"
 
-local path = njli.ASSET_PATH("scripts/util.lua")
-local util = (loadfile(path))()
+local yappyGame = game({"gameInstance" = njliGameInstance})
+yappyGame:start()
 
-path = njli.ASSET_PATH("scripts/filePaths.lua")
-local filePaths = (loadfile(path))()
-
-local path = njli.ASSET_PATH("scripts/levelData.lua")
-local levelData = (loadfile(path))()
-levelFileData = levelData.new()
-
-path = njli.ASSET_PATH("scripts/menuNodePositions.lua")
-local menuNodePositions = (loadfile(path))()
-
-local yappyBirdsWorld = require "worlds.yappyBirdsWorld"
-
-local theStartWorldName = _worldStateNames.yappyGame
-
-local worldObjectTable = {}
-local sceneObjectTable = {}
-local nodeObjectTable = {}
-
-function stackTrace(name)
-    print(debug.traceback(name .. " -  START Stack Trace"))
-    print(debug.getinfo(1))
-    print(name .. " -  END Stack Trace")
+function WorldKeyboardShow()
+    njliGameInstance:worldKeyboardShow()
 end
 
-function getWorldCurrentState()
-    local stateMachine = njli.World.getInstance():getStateMachine()
-
-    if stateMachine then
-        local state = stateMachine:getState()
-        if state then
-            return worldObjectTable[state:getName()]
-        end
-    end
-
-    return nil
+function WorldKeyboardCancel()
+    njliGameInstance:worldKeyboardCancel()
 end
 
-function getSceneCurrentState(scene)
-    if scene ~= nil then
-        return sceneObjectTable[scene:getStateMachine():getState():getName()]
-    end
-
-    return nil
+function WorldKeyboardReturn(text)
+    njliGameInstance:worldKeyboardReturn(text)
 end
 
-function getNodeObject(name)
-    if nodeObjectTable then
-        local nodeObject = nodeObjectTable[name]
-        if nodeObject ~= nil then
-            if nodeObject.node ~= nil then
-                if nodeObject.node:getStateMachine() ~= nil then
-                    if nodeObject.node:getStateMachine():getState() ~= nil then
-                        return nodeObject
-                    else
-                        stackTrace("Trying to get a NodeState that isn't there for name: " .. name)
-                    end
-                else
-                    stackTrace("Trying to get a NodeStateMachine that isn't there for name: " .. name)
-                end
-            else
-                stackTrace("Trying to get a Node that isn't there for name: " .. name)
-            end
-        else
-            -- stackTrace("Trying to get a NodeObject that isn't there for name: " .. name)    
-        end
-    end
-    
-    return nil
-
-end
-
-function getNodeCurrentState(node)
-    local nodeObject = nil
-    if node ~= nil then
-        nodeObject = getNodeObject(node:getName())
-    end
-
-    return nodeObject
-end
-
-function removeNodeObject(nodeObject)
-    if nodeObject ~= nil then
-
-        local key = nodeObject.instanceName
-
-        if nodeObjectTable[key] ~= nil then
-            -- nodeObjectTable[key].node:hide(getPerspectiveCamera())
-            -- nodeObjectTable[key].node:hide(getOrthoCamera())
-            nodeObjectTable[key]:__gc()
-            nodeObjectTable[key] = nil
-        -- else
-        --     stackTrace("The node object with key " .. key .. " is nil, so it cannot be removed.")
-        end
-
-    else
-        stackTrace("nodeObject is nil")
-    end
-end
-
-function insertNodeObject(nodeObject, key)
-    assert(nodeObject ~= nil, "The node object is nil")
-
-    assert(nodeObjectTable[key] == nil, "There is already a node object with key " .. key)
-
-
-    nodeObjectTable[key] = nodeObject
+function WorldReceivedMemoryWarning()
+    njliGameInstance:worldReceivedMemoryWarning()
 end
 
 function WorldGamePause()
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:pause()
-    end
+    njliGameInstance:worldGamePause()
 end
 
 function WorldGameUnPause()
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:unPause()
-    end
+    njliGameInstance:worldGameUnPause()
 end
 
 function WorldRenderHUD()
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:renderHUD()
-    end
+    njliGameInstance:worldRenderHUD()
 end
 
 function WorldEnterState()
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        sceneObjectTable = state:enter()
-    end
+    njliGameInstance:worldEnterState()
 end
 
 function WorldUpdateState(timeStep)
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        sceneObjectTable = state:update(timeStep)
-    end
+    njliGameInstance:worldUpdateState(timeStep)
 end
 
 function WorldExitState()
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        sceneObjectTable = state:exit()
-    end
+    njliGameInstance:worldExitState()
 end
 
 function WorldOnMessage(message)
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:onMessage(message)
-    end
+    njliGameInstance:worldOnMessage(message)
 end
 
 function WorldTouchDown(touches)
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:touchDown(touches)
-    end
+    njliGameInstance:worldTouchDown(touches)
 end
 
 function WorldTouchUp(touches)
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:touchUp(touches)
-    end
+    njliGameInstance:worldTouchUp(touches)
 end
 
 function WorldTouchMove(touches)
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:touchMove(touches)
-    end
+    njliGameInstance:worldTouchMove(touches)
 end
 
 function WorldTouchCancelled(touches)
-    local state = getWorldCurrentState()
-    if state ~= nil then
-        state:touchCancelled(touches)
-    end
+    njliGameInstance:worldTouchCancelled(touches)
 end
 
+-- Scene Functions...
+
 function SceneEnterState(scene)
-    local state = getSceneCurrentState(scene)
-    if state ~= nil then
-        state:enter(scene)
-    end
+    njliGameInstance:sceneEnterState(scene)
 end
 
 function SceneUpdateState(scene, timeStep)
-    local state = getSceneCurrentState(scene)
-    if state ~= nil then
-        state:update(scene, timeStep)
-    end
+    njliGameInstance:sceneUpdateState(scene, timeStep)
 end
 
 function SceneExitState(scene)
-    local state = getSceneCurrentState(scene)
-    if state ~= nil then
-        state:exit(scene)
-    end
+    njliGameInstance:sceneExitState(scene)
 end
 
 function SceneOnMessage(scene, message)
-    local state = getSceneCurrentState(scene)
-    if state ~= nil then
-        state:onMessage(scene, message)
-    end
+    njliGameInstance:sceneOnMessage(scene, message)
 end
 
+
+-- Node Functions...
+
 function NodeEnterState(node)
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:enter()
-    end
+    njliGameInstance:nodeEnterState(node)
 end
 
 function NodeUpdateState(node, timeStep)
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:update(timeStep)
-    end
+    njliGameInstance:nodeUpdateState(node, timeStep)
 end
 
 function NodeExitState(node)
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:exit()
-    end
+    njliGameInstance:nodeExitState(node)
 end
 
 function NodeOnMessage(node, message)
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:onMessage(message)
-    end
+    njliGameInstance:nodeOnMessage(node, message)
 end
 
 function NodeCollide(node, otherNode, collisionPoint)
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:collide(otherNode, collisionPoint)
-    end
+    njliGameInstance:nodeCollide(node, otherNode, collisionPoint)
 end
 
 function NodeNear(node, otherNode)
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:near(otherNode)
-    end
+    njliGameInstance:nodeNear(node, otherNode)
 end
 
 function NodeActionUpdate(action, timeStep)
-    local node = action:getParent()
-
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:actionUpdate(action, timeStep)
-    end
+    njliGameInstance:nodeActionUpdate(action, timeStep)
 end
 
 function NodeActionComplete(action)
-    local node = action:getParent()
-
-    local state = getNodeCurrentState(node)
-    if state ~= nil then
-        state:actionComplete(action)
-    end
+    njliGameInstance:nodeActionComplete(node)
 end
 
-function TouchDownRay(rayContact)
-    local state = getNodeCurrentState(rayContact:getHitNode())
-    if state ~= nil then
-        state:touchDown(rayContact)
-    end
+function NodeRayTouchDown(rayContact)
+    njliGameInstance:rayTouchDown(rayContact)
 end
 
-function TouchUpRay(rayContact)
-    local state = getNodeCurrentState(rayContact:getHitNode())
-    if state ~= nil then
-        state:touchUp(rayContact)
-    end
+function NodeRayTouchUp(rayContact)
+    njliGameInstance:rayTouchUp(rayContact)
 end
 
-function TouchMoveRay(rayContact)
-    local state = getNodeCurrentState(rayContact:getHitNode())
-    if state ~= nil then
-        state:touchMove(rayContact)
-    end
+function NodeRayTouchMove(rayContact)
+    njliGameInstance:rayTouchMove(rayContact)
 end
 
-function TouchCancelledRay(rayContact)
-    local state = getNodeCurrentState(rayContact:getHitNode())
-    if state ~= nil then
-        state:touchCancelled(rayContact)
-    end
+function NodeRayTouchCancelled(rayContact)
+    njliGameInstance:rayTouchCancelled(rayContact)
 end
 
-local yappyWorld = nil
 
-function WorldDestroy()
-    if yappyWorld then
-        yappyWorld:__gc()
-        yappyWorld = nil
-        worldObjectTable = {}
-        sceneObjectTable = {}
-        nodeObjectTable = {}
-    end
-end
 
-function WorldCreate()
-    WorldDestroy()
 
-    yappyWorld = yappyBirdsWorld.new("YappyBirds")
-    yappyWorld.startWorldName = theStartWorldName
 
---njli.World.getInstance():enableDebugDraw(getOrthoCamera(), getShaderProgram())
 
-    worldObjectTable = yappyWorld:start()
-end
 
-function pushWorldState(name, userdata)
-    if worldObjectTable[name] ~= nil then
-        worldObjectTable[name]:addUserData("userdata", userdata)
-        worldObjectTable[name]:push()
-    else
-        print("unable to push world state name = " .. name)
-        -- print_r(worldObjectTable)
-    end
-end
 
-function getSceneState(name)
-    return sceneObjectTable[name]
-end
 
-function pushSceneState(name)
-    if sceneObjectTable[name] ~= nil then
-        sceneObjectTable[name]:push()
-    else
-        print("unable to push scene state name = " .. name)
-        -- print_r(sceneObjectTable)
-    end
-end
 
-function pushNodeState(name)
-    if nodeObjectTable[name] ~= nil then
-        nodeObjectTable[name]:push()
-    else
-        print("unable to push node state name = " .. name)
-        -- print_r(nodeObjectTable)
-    end
-end
 
-function getShaderProgram()
-    return yappyWorld.shader
-end
 
-function getOrthoCamera()
-    return yappyWorld:getOrthoCamera()
-end
+-- local path = njli.ASSET_PATH("scripts/util.lua")
+-- local util = (loadfile(path))()
 
-function getPerspectiveCamera()
-    return yappyWorld:getPerspectiveCamera()
-end
+-- path = njli.ASSET_PATH("scripts/filePaths.lua")
+-- local filePaths = (loadfile(path))()
 
-function FacebookResponse(n)
-    print("FacebookLoginResponse")
-end
+-- local path = njli.ASSET_PATH("scripts/levelData.lua")
+-- local levelData = (loadfile(path))()
+-- levelFileData = levelData.new()
 
-function KeyboardShow()
-end
+-- path = njli.ASSET_PATH("scripts/menuNodePositions.lua")
+-- local menuNodePositions = (loadfile(path))()
 
-function KeyboardCancel()
-end
+-- local yappyBirdsWorld = require "worlds.yappyBirdsWorld"
 
-function KeyboardReturn(text)
-    print(text)
-end
+-- local theStartWorldName = _worldStateNames.yappyGame
 
-function ReceivedMemoryWarning()
-    local bytesUsed = collectgarbage("count") * 1024
-    print("Memory in use: " .. bytesUsed .. " bytes")
+-- local worldObjectTable = {}
+-- local sceneObjectTable = {}
+-- local nodeObjectTable = {}
 
-    collectgarbage()
-end
+-- function stackTrace(name)
+--     print(debug.traceback(name .. " -  START Stack Trace"))
+--     print(debug.getinfo(1))
+--     print(name .. " -  END Stack Trace")
+-- end
 
-print("\n\n")
-print("getDeviceResolution\t", DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName()))
-print("getDeviceName\t", njli.World.getInstance():getDeviceName())
-print("DeviceNameDownsizeAmount\t", DeviceNameDownsizeAmount(njli.World.getInstance():getDeviceName()))
+-- function getWorldCurrentState()
+--     local stateMachine = njli.World.getInstance():getStateMachine()
 
-print("\n\n\n\n")
+--     if stateMachine then
+--         local state = stateMachine:getState()
+--         if state then
+--             return worldObjectTable[state:getName()]
+--         end
+--     end
 
---local mtx = bullet.btTransform.getIdentity():getOpenGLMatrix()
---print(njli.ColorUtil.createMatrixFromArray(mtx))
---print(bullet.btScalarArray_getitem(mtx, 0))
---print_r(bullet)--.transformValues(transform))
---local x1, y1, z1, w1, x2, y2, z2, w2, x3, y3, z3, w3, x4, y4, z4, w4 = bullet.transformValues(transform)
+--     return nil
+-- end
 
---local transform = njli.ColorUtil.createHueRotationMatrix(0.0)
---print(transform)
+-- function getSceneCurrentState(scene)
+--     if scene ~= nil then
+--         return sceneObjectTable[scene:getStateMachine():getState():getName()]
+--     end
 
-WorldCreate()
+--     return nil
+-- end
+
+-- function getNodeObject(name)
+--     if nodeObjectTable then
+--         local nodeObject = nodeObjectTable[name]
+--         if nodeObject ~= nil then
+--             if nodeObject.node ~= nil then
+--                 if nodeObject.node:getStateMachine() ~= nil then
+--                     if nodeObject.node:getStateMachine():getState() ~= nil then
+--                         return nodeObject
+--                     else
+--                         stackTrace("Trying to get a NodeState that isn't there for name: " .. name)
+--                     end
+--                 else
+--                     stackTrace("Trying to get a NodeStateMachine that isn't there for name: " .. name)
+--                 end
+--             else
+--                 stackTrace("Trying to get a Node that isn't there for name: " .. name)
+--             end
+--         else
+--             -- stackTrace("Trying to get a NodeObject that isn't there for name: " .. name)    
+--         end
+--     end
+    
+--     return nil
+
+-- end
+
+-- function getNodeCurrentState(node)
+--     local nodeObject = nil
+--     if node ~= nil then
+--         nodeObject = getNodeObject(node:getName())
+--     end
+
+--     return nodeObject
+-- end
+
+-- function removeNodeObject(nodeObject)
+--     if nodeObject ~= nil then
+
+--         local key = nodeObject.instanceName
+
+--         if nodeObjectTable[key] ~= nil then
+--             -- nodeObjectTable[key].node:hide(getPerspectiveCamera())
+--             -- nodeObjectTable[key].node:hide(getOrthoCamera())
+--             nodeObjectTable[key]:__gc()
+--             nodeObjectTable[key] = nil
+--         -- else
+--         --     stackTrace("The node object with key " .. key .. " is nil, so it cannot be removed.")
+--         end
+
+--     else
+--         stackTrace("nodeObject is nil")
+--     end
+-- end
+
+-- function insertNodeObject(nodeObject, key)
+--     assert(nodeObject ~= nil, "The node object is nil")
+
+--     assert(nodeObjectTable[key] == nil, "There is already a node object with key " .. key)
+
+
+--     nodeObjectTable[key] = nodeObject
+-- end
+
+
+
+
+
+
+
+
+
+
+
+
+-- local yappyWorld = nil
+
+-- function WorldDestroy()
+--     if yappyWorld then
+--         yappyWorld:__gc()
+--         yappyWorld = nil
+--         worldObjectTable = {}
+--         sceneObjectTable = {}
+--         nodeObjectTable = {}
+--     end
+-- end
+
+-- function WorldCreate()
+--     WorldDestroy()
+
+--     yappyWorld = yappyBirdsWorld.new("YappyBirds")
+--     yappyWorld.startWorldName = theStartWorldName
+
+-- --njli.World.getInstance():enableDebugDraw(getOrthoCamera(), getShaderProgram())
+
+--     worldObjectTable = yappyWorld:start()
+-- end
+
+-- function pushWorldState(name, userdata)
+--     if worldObjectTable[name] ~= nil then
+--         worldObjectTable[name]:addUserData("userdata", userdata)
+--         worldObjectTable[name]:push()
+--     else
+--         print("unable to push world state name = " .. name)
+--         -- print_r(worldObjectTable)
+--     end
+-- end
+
+-- function getSceneState(name)
+--     return sceneObjectTable[name]
+-- end
+
+-- function pushSceneState(name)
+--     if sceneObjectTable[name] ~= nil then
+--         sceneObjectTable[name]:push()
+--     else
+--         print("unable to push scene state name = " .. name)
+--         -- print_r(sceneObjectTable)
+--     end
+-- end
+
+-- function pushNodeState(name)
+--     if nodeObjectTable[name] ~= nil then
+--         nodeObjectTable[name]:push()
+--     else
+--         print("unable to push node state name = " .. name)
+--         -- print_r(nodeObjectTable)
+--     end
+-- end
+
+-- function getShaderProgram()
+--     return yappyWorld.shader
+-- end
+
+-- function getOrthoCamera()
+--     return yappyWorld:getOrthoCamera()
+-- end
+
+-- function getPerspectiveCamera()
+--     return yappyWorld:getPerspectiveCamera()
+-- end
+
+-- function FacebookResponse(n)
+--     print("FacebookLoginResponse")
+-- end
+
+
+
+-- print("\n\n")
+-- print("getDeviceResolution\t", DeviceNameToResolutionDeviceName(njli.World.getInstance():getDeviceName()))
+-- print("getDeviceName\t", njli.World.getInstance():getDeviceName())
+-- print("DeviceNameDownsizeAmount\t", DeviceNameDownsizeAmount(njli.World.getInstance():getDeviceName()))
+
+-- print("\n\n\n\n")
+
+-- --local mtx = bullet.btTransform.getIdentity():getOpenGLMatrix()
+-- --print(njli.ColorUtil.createMatrixFromArray(mtx))
+-- --print(bullet.btScalarArray_getitem(mtx, 0))
+-- --print_r(bullet)--.transformValues(transform))
+-- --local x1, y1, z1, w1, x2, y2, z2, w2, x3, y3, z3, w3, x4, y4, z4, w4 = bullet.transformValues(transform)
+
+-- --local transform = njli.ColorUtil.createHueRotationMatrix(0.0)
+-- --print(transform)
+
+-- WorldCreate()
 
