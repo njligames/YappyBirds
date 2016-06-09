@@ -1,9 +1,9 @@
-local NJLISceneEntity = {}
-NJLISceneEntity.__index = NJLISceneEntity
+local SceneEntity = {}
+SceneEntity.__index = SceneEntity
 
 local json = require('JSON')
 
-setmetatable(NJLISceneEntity, {
+setmetatable(SceneEntity, {
   __call = function (cls, ...)
     local self = setmetatable({}, cls)
     self:create(...)
@@ -11,19 +11,19 @@ setmetatable(NJLISceneEntity, {
   end,
 })
 
-function NJLISceneEntity:className()
-  return "NJLISceneEntity"
+function SceneEntity:className()
+  return "SceneEntity"
 end
 
-function NJLISceneEntity:class()
+function SceneEntity:class()
   return self
 end
 
-function NJLISceneEntity:superClass()
+function SceneEntity:superClass()
   return nil
 end
 
-function NJLISceneEntity:isa(theClass)
+function SceneEntity:isa(theClass)
   local b_isa = false
   local cur_class = theClass:class()
   while ( nil ~= cur_class ) and ( false == b_isa ) do
@@ -37,8 +37,8 @@ function NJLISceneEntity:isa(theClass)
   return b_isa
 end
 
-function NJLISceneEntity:destroy()
-  NJLISceneEntity.__gc(self)
+function SceneEntity:destroy()
+  SceneEntity.__gc(self)
 end
 
 --[[
@@ -74,7 +74,7 @@ end
       },--end states
     }
   --]]
-function NJLISceneEntity:create(init)
+function SceneEntity:create(init)
   assert(init, "init variable is nil.")
   assert(init.name, "Init variable is expecting a name value")
   assert(init.states, "Init variable is expecting a states table")
@@ -85,17 +85,17 @@ function NJLISceneEntity:create(init)
   self:load()
 end
 
-function NJLISceneEntity:__gc()
+function SceneEntity:__gc()
   self:unLoad()
 end
 
-function NJLISceneEntity:__tostring()
+function SceneEntity:__tostring()
   --TODO: Represent the class as a string...
-  -- return "NJLISceneEntity"
+  -- return "SceneEntity"
   return json.encode(self)
 end
 
-function NJLISceneEntity:_addEntityState(stateName, entityStateModule)
+function SceneEntity:_addEntityState(stateName, entityStateModule)
   local init =
   {
     name = stateName,
@@ -104,22 +104,22 @@ function NJLISceneEntity:_addEntityState(stateName, entityStateModule)
   self._stateEntityTable[stateName] = entityStateModule(init)
 end
 
-function NJLISceneEntity:_removeEntityState(stateName)
+function SceneEntity:_removeEntityState(stateName)
   self:_getEntityState():destroy()
   self._stateEntityTable[stateName] = nil
 end
 
-function NJLISceneEntity:_getEntityState(stateName)
+function SceneEntity:_getEntityState(stateName)
   assert(self._stateEntityTable[stateName], "There must be a state with name: " .. stateName)
 
   return self._stateEntityTable[stateName]
 end
 
-function NJLISceneEntity:_hasEntityState(stateName)
+function SceneEntity:_hasEntityState(stateName)
   return (self._stateEntityTable[stateName] ~= nil)
 end
 
-function NJLISceneEntity:getCurrentEntityState()
+function SceneEntity:getCurrentEntityState()
   assert(self:getScene():getStateMachine(), "message")
   assert(self:getScene():getStateMachine():getState(), "message")
   assert(self:getScene():getStateMachine():getState():getName(), "message")
@@ -131,7 +131,7 @@ function NJLINodeEntity:getScene()
   return self._scene
 end
 
-function NJLISceneEntity:load()
+function SceneEntity:load()
   self:unLoad()
     
   self._stateEntityTable = {}
@@ -145,7 +145,7 @@ function NJLISceneEntity:load()
   self:getScene():setName(self._init.name)
 end
 
-function NJLISceneEntity:unLoad()
+function SceneEntity:unLoad()
   if self:getScene() then
     njli.Scene.destroy(self:getScene())
     self._scene = nil
@@ -159,51 +159,51 @@ function NJLISceneEntity:unLoad()
   end
 end
 
-function NJLISceneEntity:initialize()            
+function SceneEntity:initialize()            
 end
 
-function NJLISceneEntity:enter()
+function SceneEntity:enter()
   self:getCurrentEntityState():enter()
 end
 
-function NJLISceneEntity:update(timeStep)
+function SceneEntity:update(timeStep)
   self:getCurrentEntityState():update(timeStep)
 end
 
-function NJLISceneEntity:exit()
+function SceneEntity:exit()
   self:getCurrentEntityState():exit()
 end
 
-function NJLISceneEntity:onMessage(message)
+function SceneEntity:onMessage(message)
   self:getCurrentEntityState():onMessage(touches)
 end
 
-function NJLISceneEntity:touchDown(touches)
+function SceneEntity:touchDown(touches)
   self:getCurrentEntityState():touchDown(touches)
 end
 
-function NJLISceneEntity:touchUp(touches)
+function SceneEntity:touchUp(touches)
   self:getCurrentEntityState():touchUp(touches)
 end
 
-function NJLISceneEntity:touchMove(touches)
+function SceneEntity:touchMove(touches)
   self:getCurrentEntityState():touchMove(touches)
 end
 
-function NJLISceneEntity:touchCancelled(touches)
+function SceneEntity:touchCancelled(touches)
   self:getCurrentEntityState():touchCancelled(touches)
 end
 
-function NJLISceneEntity:renderHUD()
+function SceneEntity:renderHUD()
   self:getCurrentEntityState():renderHUD()
 end
 
-function NJLISceneEntity:pause()
+function SceneEntity:pause()
   self:getCurrentEntityState():pause()
 end
 
-function NJLISceneEntity:unPause()
+function SceneEntity:unPause()
   self:getCurrentEntityState():unPause()
 end
 
-return NJLISceneEntity
+return SceneEntity

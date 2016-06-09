@@ -1,8 +1,13 @@
-local njligame = require "njli.njligame"
+local njligame = require "njli.game"
 local njliGameInstance = njligame()
 local game = require "game"
 
-local yappyGame = game({"gameInstance" = njliGameInstance})
+local init = 
+{
+ gameInstance = njliGameInstance,
+}
+
+local yappyGame = game(init)
 yappyGame:start()
 
 function WorldKeyboardShow()

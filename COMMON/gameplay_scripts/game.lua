@@ -55,7 +55,38 @@ function YappyGame:create(init)
   self.gameInstance = init.gameInstance
 
   local YappyBirdWorldEntity = require "YappyBirdWorldEntity"
-  self.yappyBirdWorldEntity = YappyBirdWorldEntity()
+  local init = 
+    {
+      name = "name",
+      states =
+      {
+        -- {
+        --     name = "Spawn", 
+        --     module = "nodes.bird.states.spawn"
+        -- },
+        -- {
+        --     name = "Fly", 
+        --     module = "nodes.bird.states.fly"
+        -- },
+        -- {
+        --     name = "Pursue", 
+        --     module = "nodes.bird.states.pursue"
+        -- },
+        -- {
+        --     name = "Hit", 
+        --     module = "nodes.bird.states.hit"
+        -- },
+        -- {
+        --     name = "Grabbing", 
+        --     module = "nodes.bird.states.grabbing"
+        -- },
+        -- {
+        --     name = "Grabbed", 
+        --     module = "nodes.bird.states.grabbed"
+        -- },
+      },--end states
+    }
+  self.yappyBirdWorldEntity = YappyBirdWorldEntity(init)
 
   self.yappyBirdWorldEntity:load()
 end

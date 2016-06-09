@@ -1,9 +1,9 @@
-local NJLIWorldEntity = {}
-NJLIWorldEntity.__index = NJLIWorldEntity
+local WorldEntity = {}
+WorldEntity.__index = WorldEntity
 
 local json = require('JSON')
 
-setmetatable(NJLIWorldEntity, {
+setmetatable(WorldEntity, {
   __call = function (cls, ...)
     local self = setmetatable({}, cls)
     self:create(...)
@@ -11,19 +11,19 @@ setmetatable(NJLIWorldEntity, {
   end,
 })
 
-function NJLIWorldEntity:className()
-  return "NJLIWorldEntity"
+function WorldEntity:className()
+  return "WorldEntity"
 end
 
-function NJLIWorldEntity:class()
+function WorldEntity:class()
   return self
 end
 
-function NJLIWorldEntity:superClass()
+function WorldEntity:superClass()
   return nil
 end
 
-function NJLIWorldEntity:isa(theClass)
+function WorldEntity:isa(theClass)
   local b_isa = false
   local cur_class = theClass:class()
   while ( nil ~= cur_class ) and ( false == b_isa ) do
@@ -37,8 +37,8 @@ function NJLIWorldEntity:isa(theClass)
   return b_isa
 end
 
-function NJLIWorldEntity:destroy()
-  NJLIWorldEntity.__gc(self)
+function WorldEntity:destroy()
+  WorldEntity.__gc(self)
 end
 
 --[[
@@ -75,7 +75,7 @@ end
     }
   --]]
 
-function NJLIWorldEntity:create(init)
+function WorldEntity:create(init)
   assert(init, "init variable is nil.")
   assert(init.name, "Init variable is expecting a name value")
   assert(init.states, "Init variable is expecting a states table")
@@ -86,16 +86,16 @@ function NJLIWorldEntity:create(init)
   self:load()
 end
 
-function NJLIWorldEntity:__gc()
+function WorldEntity:__gc()
   self:unLoad()
 end
 
-function NJLIWorldEntity:__tostring()
+function WorldEntity:__tostring()
   --TODO: Represent the class as a string...
   return json.encode(self)
 end
 
-function NJLISceneEntity:_addEntityState(stateName, entityStateModule)
+function WorldEntity:_addEntityState(stateName, entityStateModule)
   local init =
   {
     name = stateName,
@@ -104,22 +104,22 @@ function NJLISceneEntity:_addEntityState(stateName, entityStateModule)
   self._stateEntityTable[stateName] = entityStateModule(init)
 end
 
-function NJLISceneEntity:_removeEntityState(stateName)
+function WorldEntity:_removeEntityState(stateName)
   self:_getEntityState():destroy()
   self._stateEntityTable[stateName] = nil
 end
 
-function NJLISceneEntity:_getEntityState(stateName)
+function WorldEntity:_getEntityState(stateName)
   assert(self._stateEntityTable[stateName], "There must be a state with name: " .. stateName)
 
   return self._stateEntityTable[stateName]
 end
 
-function NJLISceneEntity:_hasEntityState(stateName)
+function WorldEntity:_hasEntityState(stateName)
   return (self._stateEntityTable[stateName] ~= nil)
 end
 
-function NJLISceneEntity:getCurrentEntityState()
+function WorldEntity:getCurrentEntityState()
   assert(self:getWorld():getStateMachine(), "message")
   assert(self:getWorld():getStateMachine():getState(), "message")
   assert(self:getWorld():getStateMachine():getState():getName(), "message")
@@ -127,25 +127,27 @@ function NJLISceneEntity:getCurrentEntityState()
   return self:_getEntityState(self:getWorld():getStateMachine():getState():getName())
 end
 
-function NJLINodeEntity:getWorld()
+function WorldEntity:getWorld()
   return self._world
 end
 
-function NJLIWorldEntity:load()
+function WorldEntity:load()
   self:unLoad()
     
   self._stateEntityTable = {}
-  for k,v in pairs(self._init.states) do
-    local m = require v.module
+  if self._init then
+    for k,v in pairs(self._init.states) do
+      local m = require string(v.module)
 
-    self:_addEntityState(v.name, m)
+      self:_addEntityState(v.name, m)
+    end
   end
 
   self._world = njli.World.getInstance()
   self:getWorld():setName(self._init.name)
 end
 
-function NJLIWorldEntity:unLoad()
+function WorldEntity:unLoad()
   self._world = nil
 
   if self._stateEntityTable then
@@ -156,67 +158,67 @@ function NJLIWorldEntity:unLoad()
   end
 end
 
-function NJLIWorldEntity:initialize()            
+function WorldEntity:initialize()            
 end
 
-function NJLIWorldEntity:enter()
+function WorldEntity:enter()
   self:getCurrentEntityState():enter()
 end
 
-function NJLIWorldEntity:update(timeStep)
+function WorldEntity:update(timeStep)
   self:getCurrentEntityState():update(timeStep)
 end
 
-function NJLIWorldEntity:exit()
+function WorldEntity:exit()
   self:getCurrentEntityState():exit()
 end
 
-function NJLIWorldEntity:onMessage(message)
+function WorldEntity:onMessage(message)
   self:getCurrentEntityState():onMessage(message)
 end
 
-function NJLIWorldEntity:touchDown(touches)
+function WorldEntity:touchDown(touches)
   self:getCurrentEntityState():touchDown(touches)
 end
 
-function NJLIWorldEntity:touchUp(touches)
+function WorldEntity:touchUp(touches)
   self:getCurrentEntityState():touchUp(touches)
 end
 
-function NJLIWorldEntity:touchMove(touches)
+function WorldEntity:touchMove(touches)
   self:getCurrentEntityState():touchMove(touches)
 end
 
-function NJLIWorldEntity:touchCancelled(touches)
+function WorldEntity:touchCancelled(touches)
   self:getCurrentEntityState():touchCancelled(touches)
 end
 
-function NJLIWorldEntity:renderHUD()
+function WorldEntity:renderHUD()
   self:getCurrentEntityState():renderHUD()
 end
 
-function NJLIWorldEntity:keyboardShow()
+function WorldEntity:keyboardShow()
   self:getCurrentEntityState():keyboardShow()
 end
 
-function NJLIWorldEntity:keyboardCancel()
+function WorldEntity:keyboardCancel()
   self:getCurrentEntityState():keyboardCancel()
 end
 
-function NJLIWorldEntity:keyboardReturn(text)
+function WorldEntity:keyboardReturn(text)
   self:getCurrentEntityState():keyboardReturn(text)
 end
 
-function NJLIWorldEntity:receivedMemoryWarning()
+function WorldEntity:receivedMemoryWarning()
   self:getCurrentEntityState():receivedMemoryWarning()
 end
 
-function NJLIWorldEntity:pause()
+function WorldEntity:pause()
   self:getCurrentEntityState():pause()
 end
 
-function NJLIWorldEntity:unPause()
+function WorldEntity:unPause()
   self:getCurrentEntityState():unPause()
 end
 
-return NJLIWorldEntity
+return WorldEntity

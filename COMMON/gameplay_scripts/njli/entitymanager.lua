@@ -1,9 +1,9 @@
-local NJLIEntityManager = {}
-NJLIEntityManager.__index = NJLIEntityManager
+local EntityManager = {}
+EntityManager.__index = EntityManager
 
 local json = require('JSON')
 
-setmetatable(NJLIEntityManager, {
+setmetatable(EntityManager, {
   __call = function (cls, ...)
     local self = setmetatable({}, cls)
     self:create(...)
@@ -11,19 +11,19 @@ setmetatable(NJLIEntityManager, {
   end,
 })
 
-function NJLIEntityManager:className()
-  return "NJLIEntityManager"
+function EntityManager:className()
+  return "EntityManager"
 end
 
-function NJLIEntityManager:class()
+function EntityManager:class()
   return self
 end
 
-function NJLIEntityManager:superClass()
+function EntityManager:superClass()
   return nil
 end
 
-function NJLIEntityManager:isa(theClass)
+function EntityManager:isa(theClass)
   local b_isa = false
   local cur_class = theClass:class()
   while ( nil ~= cur_class ) and ( false == b_isa ) do
@@ -37,11 +37,11 @@ function NJLIEntityManager:isa(theClass)
   return b_isa
 end
 
-function NJLIEntityManager:destroy()
-  NJLIEntityManager.__gc(self)
+function EntityManager:destroy()
+  EntityManager.__gc(self)
 end
 
-function NJLIEntityManager:create(init)
+function EntityManager:create(init)
   --TODO: Create and initialize properties...
   ---[[
   --EXAMPLE:
@@ -55,7 +55,7 @@ function NJLIEntityManager:create(init)
   end
 end
 
-function NJLIEntityManager:__gc()
+function EntityManager:__gc()
   --TODO: Destroy properties
   for k,v in pairs(self._nodeEntityTable) do
     v:destroy()
@@ -70,41 +70,41 @@ function NJLIEntityManager:__gc()
   end
 end
 
-function NJLIEntityManager:__tostring()
+function EntityManager:__tostring()
   --TODO: Represent the class as a string...
-  -- return "NJLIEntityManager"
+  -- return "EntityManager"
   return json.encode(self)
 end
 
---TODO: List the Functions for NJLIEntityManager
+--TODO: List the Functions for EntityManager
   ---[[
   --EXAMPLE:
 
-function NJLIEntityManager:set_nodeEntityTable(newval)
+function EntityManager:set_nodeEntityTable(newval)
   self._nodeEntityTable = newval
 end
 
-function NJLIEntityManager:get_nodeEntityTable()
+function EntityManager:get_nodeEntityTable()
   return self._nodeEntityTable
 end
 
-function NJLIEntityManager:set_sceneEntityTable(newval)
+function EntityManager:set_sceneEntityTable(newval)
   self._sceneEntityTable = newval
 end
 
-function NJLIEntityManager:get_sceneEntityTable()
+function EntityManager:get_sceneEntityTable()
   return self._sceneEntityTable
 end
 
-function NJLIEntityManager:set_worldEntityTable(newval)
+function EntityManager:set_worldEntityTable(newval)
   self._worldEntityTable = newval
 end
 
-function NJLIEntityManager:get_worldEntityTable()
+function EntityManager:get_worldEntityTable()
   return self._worldEntityTable
 end
 
-function NJLIEntityManager:getNodeEntity(key)
+function EntityManager:getNodeEntity(key)
   assert(self:hasNodeEntity(key), "There is no NJLINodeEntity with key " .. key)
 
   local nodeEntity = self._nodeEntityTable[key]
@@ -116,7 +116,7 @@ function NJLIEntityManager:getNodeEntity(key)
   return nodeEntity
 end
 
-function NJLIEntityManager:getSceneEntity(key)
+function EntityManager:getSceneEntity(key)
   assert(self:hasSceneEntity(key), "There is no NJLISceneEntity with key " .. key)
 
   local sceneEntity = self._sceneEntityTable[key]
@@ -128,7 +128,7 @@ function NJLIEntityManager:getSceneEntity(key)
   return sceneEntity
 end
 
-function NJLIEntityManager:getWorldEntity(key)
+function EntityManager:getWorldEntity(key)
   assert(self:hasWorldEntity(key), "There is no NJLIWorldEntity with key " .. key)
   
   local worldEntity = self._worldEntityTable[key]
@@ -140,7 +140,7 @@ function NJLIEntityManager:getWorldEntity(key)
   return worldEntity
 end
 
-function NJLIEntityManager:addNodeEntity(nodeEntity)
+function EntityManager:addNodeEntity(nodeEntity)
   assert(nodeEntity, "nodeEntity is nil")
 
   local key = nodeEntity:getName()
@@ -151,7 +151,7 @@ function NJLIEntityManager:addNodeEntity(nodeEntity)
   return key
 end
 
-function NJLIEntityManager:addSceneEntity(sceneEntity)
+function EntityManager:addSceneEntity(sceneEntity)
   assert(sceneEntity, "sceneEntity is nil")
 
   local key = sceneEntity:getName()
@@ -161,7 +161,7 @@ function NJLIEntityManager:addSceneEntity(sceneEntity)
   return key
 end
 
-function NJLIEntityManager:addWorldEntity(worldEntity)
+function EntityManager:addWorldEntity(worldEntity)
   assert(worldEntity, "sceneEntity is nil")
 
   local key = worldEntity:getName()
@@ -171,37 +171,37 @@ function NJLIEntityManager:addWorldEntity(worldEntity)
   return key
 end
 
-function NJLIEntityManager:removeNodeEntity(key)
+function EntityManager:removeNodeEntity(key)
   self:getNodeEntity(key):destroy()
 
   self._nodeEntityTable[key] = nil
 end
 
-function NJLIEntityManager:removeSceneEntity(key)
+function EntityManager:removeSceneEntity(key)
   self:getSceneEntity(key):destroy()
 
   self._sceneEntityTable[key] = nil
 end
 
-function NJLIEntityManager:removeWorldEntity(key)
+function EntityManager:removeWorldEntity(key)
   self:getWorldEntity(key):destroy()
 
   self._worldEntityTable[key] = nil
 end
 
-function NJLIEntityManager:hasNodeEntity(key)
+function EntityManager:hasNodeEntity(key)
   return (self._nodeEntityTable[key] ~= nil)
 end
 
-function NJLIEntityManager:hasSceneEntity(key)
+function EntityManager:hasSceneEntity(key)
   return (self._sceneEntityTable[key] ~= nil)
 end
 
-function NJLIEntityManager:hasWorldEntity(key)
+function EntityManager:hasWorldEntity(key)
   return (self._worldEntityTable[key] ~= nil)
 end
 
   --]]
 
-return NJLIEntityManager
+return EntityManager
 

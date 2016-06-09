@@ -6,121 +6,121 @@ YappyBirdWorldEntity.__index = YappyBirdWorldEntity
 local json = require('JSON')
 
 setmetatable(YappyBirdWorldEntity, {
-  __index = WorldEntity,
-  __call = function (cls, ...)
-    local self = setmetatable({}, cls)
-    WorldEntity.create(self, ...)
-    self:create(...)
-    return self
-  end,
+ __index = WorldEntity,
+ __call = function (cls, ...)
+ local self = setmetatable({}, cls)
+ WorldEntity.create(self, ...)
+ self:create(...)
+ return self
+ end,
 })
 
 function YappyBirdWorldEntity:className()
-  return "YappyBirdWorldEntity"
+ return "YappyBirdWorldEntity"
 end
 
 function YappyBirdWorldEntity:class()
-  return self
+ return self
 end
 
 function YappyBirdWorldEntity:superClass()
-  return WorldEntity
+ return WorldEntity
 end
 
 function YappyBirdWorldEntity:destroy()
-  YappyBirdWorldEntity.__gc(self)
-  WorldEntity.destroy(self)
+ YappyBirdWorldEntity.__gc(self)
+ WorldEntity.destroy(self)
 end
 
 function YappyBirdWorldEntity:create(init)
-  --TODO: Create and initialize properties...
+ 
 
-  if init then
-    --TODO: Initialize the properties...
-  end
+ if init then
+ 
+ end
 end
 
 function YappyBirdWorldEntity:__gc()
-  --TODO: Destroy properties
+ 
 end
 
 function YappyBirdWorldEntity:__tostring()
-  --TODO: Represent the class as a string...
-  return json.encode(self)
+ 
+ return json.encode(self)
 end
 
---TODO: List the Functions for YappyBirdWorldEntity
+
 
 function YappyBirdWorldEntity:load()
-  WorldEntity.load(self)
+ WorldEntity.load(self)
 end
 
 function YappyBirdWorldEntity:unLoad()
-  WorldEntity.unLoad(self)
+ WorldEntity.unLoad(self)
 end
 
 function YappyBirdWorldEntity:initialize()
-  WorldEntity.initialize(self)
+ WorldEntity.initialize(self)
 end
 
 function YappyBirdWorldEntity:enter()
-  WorldEntity.enter(self)
+ WorldEntity.enter(self)
 end
 
 function YappyBirdWorldEntity:update(timeStep)
-  WorldEntity.update(self, timeStep)
+ WorldEntity.update(self, timeStep)
 end
 
 function YappyBirdWorldEntity:exit()
-  WorldEntity.exit(self)
+ WorldEntity.exit(self)
 end
 
 function YappyBirdWorldEntity:onMessage(message)
-  WorldEntity.onMessage(self, message)
+ WorldEntity.onMessage(self, message)
 end
 
 function YappyBirdWorldEntity:touchDown(touches)
-  WorldEntity.touchDown(self, touches)
+ WorldEntity.touchDown(self, touches)
 end
 
 function YappyBirdWorldEntity:touchUp(touches)
-  WorldEntity.touchUp(self, touches)
+ WorldEntity.touchUp(self, touches)
 end
 
 function YappyBirdWorldEntity:touchMove(touches)
-  WorldEntity.touchMove(self, touches)
+ WorldEntity.touchMove(self, touches)
 end
 
 function YappyBirdWorldEntity:touchCancelled(touches)
-  WorldEntity.touchCancelled(self, touches)
+ WorldEntity.touchCancelled(self, touches)
 end
 
 function YappyBirdWorldEntity:renderHUD()
-  WorldEntity.renderHUD(self)
+ WorldEntity.renderHUD(self)
 end
 
 function YappyBirdWorldEntity:keyboardShow()
-  WorldEntity.keyboardShow(self)
+ WorldEntity.keyboardShow(self)
 end
 
 function YappyBirdWorldEntity:keyboardCancel()
-  WorldEntity.keyboardCancel(self)
+ WorldEntity.keyboardCancel(self)
 end
 
 function YappyBirdWorldEntity:keyboardReturn(text)
-  WorldEntity.keyboardReturn(self, text)
+ WorldEntity.keyboardReturn(self, text)
 end
 
 function YappyBirdWorldEntity:receivedMemoryWarning()
-  WorldEntity.receivedMemoryWarning(self)
+ WorldEntity.receivedMemoryWarning(self)
 end
 
 function YappyBirdWorldEntity:pause()
-  WorldEntity.pause(self)
+ WorldEntity.pause(self)
 end
 
 function YappyBirdWorldEntity:unPause()
-  WorldEntity.unPause(self)
+ WorldEntity.unPause(self)
 end
 
 return YappyBirdWorldEntity

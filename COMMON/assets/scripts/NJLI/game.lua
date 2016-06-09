@@ -1,9 +1,9 @@
-local NJLIGame = {}
-NJLIGame.__index = NJLIGame
+local Game = {}
+Game.__index = Game
 
 local json = require('JSON')
 
-setmetatable(NJLIGame, {
+setmetatable(Game, {
  __call = function (cls, ...)
  local self = setmetatable({}, cls)
  self:create(...)
@@ -11,19 +11,19 @@ setmetatable(NJLIGame, {
  end,
 })
 
-function NJLIGame:className()
- return "NJLIGame"
+function Game:className()
+ return "Game"
 end
 
-function NJLIGame:class()
+function Game:class()
  return self
 end
 
-function NJLIGame:superClass()
+function Game:superClass()
  return nil
 end
 
-function NJLIGame:isa(theClass)
+function Game:isa(theClass)
  local b_isa = false
  local cur_class = theClass:class()
  while ( nil ~= cur_class ) and ( false == b_isa ) do
@@ -37,16 +37,16 @@ function NJLIGame:isa(theClass)
  return b_isa
 end
 
-function NJLIGame:destroy()
- NJLIGame.__gc(self)
+function Game:destroy()
+ Game.__gc(self)
 end
 
-function NJLIGame:create(init)
+function Game:create(init)
  
  
  
- local NJLIEntityManager = require "njli.njlientitymanager"
- self._entityManager = NJLIEntityManager()
+ local EntityManager = require "njli.entitymanager"
+ self._entityManager = EntityManager()
  
 
  if init then
@@ -54,12 +54,12 @@ function NJLIGame:create(init)
  end
 end
 
-function NJLIGame:__gc()
+function Game:__gc()
  
  self._entityManager:destroy()
 end
 
-function NJLIGame:__tostring()
+function Game:__tostring()
  
  
  return json.encode(self)
@@ -71,92 +71,92 @@ end
 
 
 
-function NJLIGame:getEntityManager()
+function Game:getEntityManager()
  return self._entityManager
 end
 
 
-function NJLIGame:worldKeyboardShow()
+function Game:worldKeyboardShow()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:keyboardShow()
 end
 
-function NJLIGame:worldKeyboardCancel()
+function Game:worldKeyboardCancel()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:keyboardCancel()
 end
 
-function NJLIGame:worldKeyboardReturn(text)
+function Game:worldKeyboardReturn(text)
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:keyboardReturn(text)
 end
 
-function NJLIGame:worldReceivedMemoryWarning()
+function Game:worldReceivedMemoryWarning()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:receivedMemoryWarning()
 end
 
-function NJLIGame:worldGamePause()
+function Game:worldGamePause()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:pause()
 end
 
-function NJLIGame:worldGameUnPause()
+function Game:worldGameUnPause()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:unPause()
 end
 
-function NJLIGame:worldRenderHUD()
+function Game:worldRenderHUD()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:renderHUD()
 end
 
-function NJLIGame:worldEnterState()
+function Game:worldEnterState()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:enter()
 end
 
-function NJLIGame:worldUpdateState(timeStep)
+function Game:worldUpdateState(timeStep)
  assert(timeStep, "The timeStep is nil")
 
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:update(timeStep)
 end
 
-function NJLIGame:worldExitState()
+function Game:worldExitState()
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:exit()
 end
 
-function NJLIGame:worldOnMessage(message)
+function Game:worldOnMessage(message)
  assert(message, "The message is nil")
  
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:onMessage()
 end
 
-function NJLIGame:worldTouchDown(touches)
+function Game:worldTouchDown(touches)
  assert(touches, "The touches is nil")
  
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:touchDown(touches)
 end
 
-function NJLIGame:worldTouchUp(touches)
+function Game:worldTouchUp(touches)
  assert(touches, "The touches is nil")
  
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:touchUp(touches)
 end
 
-function NJLIGame:worldTouchMove(touches)
+function Game:worldTouchMove(touches)
  assert(touches, "The touches is nil")
  
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
  worldEntity:touchMove(touches)
 end
 
-function NJLIGame:worldTouchCancelled(touches)
+function Game:worldTouchCancelled(touches)
  assert(touches, "The touches is nil")
  
  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
@@ -168,14 +168,14 @@ end
 
 
 
-function NJLIGame:sceneEnterState(scene)
+function Game:sceneEnterState(scene)
  assert(scene, "The scene is nil")
 
  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
  sceneEntity:enter()
 end
 
-function NJLIGame:sceneUpdateState(scene, timeStep)
+function Game:sceneUpdateState(scene, timeStep)
  assert(scene, "The scene is nil")
  assert(timeStep, "The timeStep is nil")
 
@@ -183,14 +183,14 @@ function NJLIGame:sceneUpdateState(scene, timeStep)
  sceneEntity:update(timeStep)
 end
 
-function NJLIGame:sceneExitState(scene)
+function Game:sceneExitState(scene)
  assert(scene, "The scene is nil")
 
  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
  sceneEntity:exit()
 end
 
-function NJLIGame:sceneOnMessage(scene, message)
+function Game:sceneOnMessage(scene, message)
  assert(scene, "The scene is nil")
  assert(message, "The message is nil")
 
@@ -200,14 +200,14 @@ end
 
 
 
-function NJLIGame:nodeEnterState(node)
+function Game:nodeEnterState(node)
  assert(node, "The node is nil")
 
  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
  nodeEntity:enter()
 end
 
-function NJLIGame:nodeUpdateState(node, timeStep)
+function Game:nodeUpdateState(node, timeStep)
  assert(node, "The node is nil")
  assert(timeStep, "The timeStep is nil")
 
@@ -215,14 +215,14 @@ function NJLIGame:nodeUpdateState(node, timeStep)
  nodeEntity:update()
 end
 
-function NJLIGame:nodeExitState(node)
+function Game:nodeExitState(node)
  assert(node, "The node is nil")
 
  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
  nodeEntity:exit()
 end
 
-function NJLIGame:nodeOnMessage(node, message)
+function Game:nodeOnMessage(node, message)
  assert(node, "The node is nil")
  assert(message, "The message is nil")
 
@@ -230,7 +230,7 @@ function NJLIGame:nodeOnMessage(node, message)
  nodeEntity:onMessage()
 end
 
-function NJLIGame:nodeCollide(node, otherNode, collisionPoint)
+function Game:nodeCollide(node, otherNode, collisionPoint)
  assert(node, "The node is nil")
  assert(otherNode, "The otherNode is nil")
  assert(collisionPoint, "The collisionPoint is nil")
@@ -239,7 +239,7 @@ function NJLIGame:nodeCollide(node, otherNode, collisionPoint)
  nodeEntity:collide(otherNode, collisionPoint)
 end
 
-function NJLIGame:nodeNear(node, otherNode)
+function Game:nodeNear(node, otherNode)
  assert(node, "The node is nil")
  assert(otherNode, "The otherNode is nil")
 
@@ -247,7 +247,7 @@ function NJLIGame:nodeNear(node, otherNode)
  nodeEntity:near(otherNode)
 end
 
-function NJLIGame:nodeActionUpdate(action, timeStep)
+function Game:nodeActionUpdate(action, timeStep)
  assert(action, "The action is nil")
  assert(timeStep, "The timeStep is nil")
 
@@ -258,7 +258,7 @@ function NJLIGame:nodeActionUpdate(action, timeStep)
  nodeEntity:actionUpdate(action, timeStep)
 end
 
-function NJLIGame:nodeActionComplete(action)
+function Game:nodeActionComplete(action)
  assert(action, "The action is nil")
 
  local node = action:getParent()
@@ -271,7 +271,7 @@ end
 
 
 
-function NJLIGame:rayTouchDown(rayContact)
+function Game:rayTouchDown(rayContact)
  assert(rayContact, "The rayContact is nil")
 
  local hitNode = rayContact:getHitNode()
@@ -281,7 +281,7 @@ function NJLIGame:rayTouchDown(rayContact)
  nodeEntity:touchDown(rayContact)
 end
 
-function NJLIGame:rayTouchUp(rayContact)
+function Game:rayTouchUp(rayContact)
  assert(rayContact, "The rayContact is nil")
 
  local hitNode = rayContact:getHitNode()
@@ -291,7 +291,7 @@ function NJLIGame:rayTouchUp(rayContact)
  nodeEntity:touchUp(rayContact)
 end
 
-function NJLIGame:rayTouchMove(rayContact)
+function Game:rayTouchMove(rayContact)
  assert(rayContact, "The rayContact is nil")
 
  local hitNode = rayContact:getHitNode()
@@ -301,7 +301,7 @@ function NJLIGame:rayTouchMove(rayContact)
  nodeEntity:touchMove(rayContact)
 end
 
-function NJLIGame:rayTouchCancelled(rayContact)
+function Game:rayTouchCancelled(rayContact)
  assert(rayContact, "The rayContact is nil")
 
  local hitNode = rayContact:getHitNode()
@@ -313,4 +313,4 @@ end
 
  
 
-return NJLIGame
+return Game

@@ -1,9 +1,9 @@
-local NJLINodeEntity = {}
-NJLINodeEntity.__index = NJLINodeEntity
+local NodeEntity = {}
+NodeEntity.__index = NodeEntity
 
 local json = require('JSON')
 
-setmetatable(NJLINodeEntity, {
+setmetatable(NodeEntity, {
  __call = function (cls, ...)
  local self = setmetatable({}, cls)
  self:create(...)
@@ -11,19 +11,19 @@ setmetatable(NJLINodeEntity, {
  end,
 })
 
-function NJLINodeEntity:className()
- return "NJLINodeEntity"
+function NodeEntity:className()
+ return "NodeEntity"
 end
 
-function NJLINodeEntity:class()
+function NodeEntity:class()
  return self
 end
 
-function NJLINodeEntity:superClass()
+function NodeEntity:superClass()
  return nil
 end
 
-function NJLINodeEntity:isa(theClass)
+function NodeEntity:isa(theClass)
  local b_isa = false
  local cur_class = theClass:class()
  while ( nil ~= cur_class ) and ( false == b_isa ) do
@@ -37,8 +37,8 @@ function NJLINodeEntity:isa(theClass)
  return b_isa
 end
 
-function NJLINodeEntity:destroy()
- NJLINodeEntity.__gc(self)
+function NodeEntity:destroy()
+ NodeEntity.__gc(self)
 end
 
  local init = 
@@ -76,7 +76,7 @@ end
  sharedGeometry = nil,
  }
  
-function NJLINodeEntity:create(init)
+function NodeEntity:create(init)
  
  assert(init, "init variable is nil.")
  assert(init.name, "Init variable is expecting a name value")
@@ -91,16 +91,16 @@ function NJLINodeEntity:create(init)
  self:load()
 end
 
-function NJLINodeEntity:__gc()
+function NodeEntity:__gc()
  self:unLoad()
 end
 
-function NJLINodeEntity:__tostring()
+function NodeEntity:__tostring()
  
  return json.encode(self)
 end
 
-function NJLINodeEntity:_addEntityState(stateName, entityStateModule)
+function NodeEntity:_addEntityState(stateName, entityStateModule)
  local init =
  {
  name = stateName,
@@ -109,22 +109,22 @@ function NJLINodeEntity:_addEntityState(stateName, entityStateModule)
  self._stateEntityTable[stateName] = entityStateModule(init)
 end
 
-function NJLINodeEntity:_removeEntityState(stateName)
+function NodeEntity:_removeEntityState(stateName)
  self:_getEntityState():destroy()
  self._stateEntityTable[stateName] = nil
 end
 
-function NJLINodeEntity:_getEntityState(stateName)
+function NodeEntity:_getEntityState(stateName)
  assert(self._stateEntityTable[stateName], "There must be a state with name: " .. stateName)
 
  return self._stateEntityTable[stateName]
 end
 
-function NJLINodeEntity:_hasEntityState(stateName)
+function NodeEntity:_hasEntityState(stateName)
  return (self._stateEntityTable[stateName] ~= nil)
 end
 
-function NJLINodeEntity:getCurrentEntityState()
+function NodeEntity:getCurrentEntityState()
  assert(self:getNode():getStateMachine(), "message")
  assert(self:getNode():getStateMachine():getState(), "message")
  assert(self:getNode():getStateMachine():getState():getName(), "message")
@@ -132,27 +132,27 @@ function NJLINodeEntity:getCurrentEntityState()
  return self:_getEntityState(self:getNode():getStateMachine():getState():getName())
 end
 
-function NJLINodeEntity:getNode()
+function NodeEntity:getNode()
  return self._node
 end
 
-function NJLINodeEntity:getPhysicsShape()
+function NodeEntity:getPhysicsShape()
  return self._physicsShape
 end
 
-function NJLINodeEntity:getPhysicsBody()
+function NodeEntity:getPhysicsBody()
  return self._physicsBody
 end
 
-function NJLINodeEntity:getAction()
+function NodeEntity:getAction()
  return self._action
 end
 
-function NJLINodeEntity:getClock()
+function NodeEntity:getClock()
  return self._clock
 end
 
-function NJLINodeEntity:load()
+function NodeEntity:load()
  self:unLoad()
  
  self._stateEntityTable = {}
@@ -174,7 +174,7 @@ function NJLINodeEntity:load()
  self._sharedGeometry = self._init.sharedGeometry
 end
 
-function NJLINodeEntity:unLoad()
+function NodeEntity:unLoad()
  if self:getClock() then
  njli.Clock.destroy(self:getClock())
  self._clock = nil
@@ -209,83 +209,83 @@ function NJLINodeEntity:unLoad()
 
 end
 
-function NJLINodeEntity:initialize()
+function NodeEntity:initialize()
 end
 
-function NJLINodeEntity:enter()
+function NodeEntity:enter()
  self:getCurrentEntityState():enter()
 end
 
-function NJLINodeEntity:update(timeStep)
+function NodeEntity:update(timeStep)
  self:getCurrentEntityState():update(timeStep)
 end
 
-function NJLINodeEntity:exit()
+function NodeEntity:exit()
  self:getCurrentEntityState():exit()
 end
 
-function NJLINodeEntity:onMessage(message)
+function NodeEntity:onMessage(message)
  self:getCurrentEntityState():onMessage(message)
 end
 
-function NJLINodeEntity:touchDown(touches)
+function NodeEntity:touchDown(touches)
  self:getCurrentEntityState():touchDown(touches)
 end
 
-function NJLINodeEntity:touchUp(touches)
+function NodeEntity:touchUp(touches)
  self:getCurrentEntityState():touchUp(touches)
 end
 
-function NJLINodeEntity:touchMove(touches)
+function NodeEntity:touchMove(touches)
  self:getCurrentEntityState():touchMove(touches)
 end
 
-function NJLINodeEntity:touchCancelled(touches)
+function NodeEntity:touchCancelled(touches)
  self:getCurrentEntityState():touchCancelled(touches)
 end
 
-function NJLINodeEntity:render()
+function NodeEntity:render()
  self:getCurrentEntityState():render()
 end
 
-function NJLINodeEntity:actionUpdate(action, timeStep)
+function NodeEntity:actionUpdate(action, timeStep)
  self:getCurrentEntityState():actionUpdate(action, timeStep)
 end
 
-function NJLINodeEntity:actionComplete(action)
+function NodeEntity:actionComplete(action)
  self:getCurrentEntityState():actionComplete(action)
 end
 
-function NJLINodeEntity:collide(otherNode, collisionPoint)
+function NodeEntity:collide(otherNode, collisionPoint)
  self:getCurrentEntityState():collide(otherNode, collisionPoint)
 end
 
-function NJLINodeEntity:near(otherNode)
+function NodeEntity:near(otherNode)
  self:getCurrentEntityState():near(otherNode)
 end
 
-function NJLINodeEntity:rayTouchDown(rayContact)
+function NodeEntity:rayTouchDown(rayContact)
  self:getCurrentEntityState():rayTouchDown(rayContact)
 end
 
-function NJLINodeEntity:rayTouchUp(rayContact)
+function NodeEntity:rayTouchUp(rayContact)
  self:getCurrentEntityState():rayTouchUp(rayContact)
 end
 
-function NJLINodeEntity:rayTouchMove(rayContact)
+function NodeEntity:rayTouchMove(rayContact)
  self:getCurrentEntityState():rayTouchMove(rayContact)
 end
 
-function NJLINodeEntity:rayTouchCancelled(rayContact)
+function NodeEntity:rayTouchCancelled(rayContact)
  self:getCurrentEntityState():rayTouchCancelled(rayContact)
 end
 
-function NJLINodeEntity:pause()
+function NodeEntity:pause()
  self:getCurrentEntityState():pause()
 end
 
-function NJLINodeEntity:unPause()
+function NodeEntity:unPause()
  self:getCurrentEntityState():unPause()
 end
 
-return NJLINodeEntity
+return NodeEntity
