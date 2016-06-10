@@ -56,56 +56,38 @@ function YappyGame:create(init)
 
   local YappyBirdWorldEntity = require "YappyBirdWorldEntity"
   local init = 
+  {
+    name = "name",
+    states =
     {
-      name = "name",
-      states =
       {
-        -- {
-        --     name = "Spawn", 
-        --     module = "nodes.bird.states.spawn"
-        -- },
-        -- {
-        --     name = "Fly", 
-        --     module = "nodes.bird.states.fly"
-        -- },
-        -- {
-        --     name = "Pursue", 
-        --     module = "nodes.bird.states.pursue"
-        -- },
-        -- {
-        --     name = "Hit", 
-        --     module = "nodes.bird.states.hit"
-        -- },
-        -- {
-        --     name = "Grabbing", 
-        --     module = "nodes.bird.states.grabbing"
-        -- },
-        -- {
-        --     name = "Grabbed", 
-        --     module = "nodes.bird.states.grabbed"
-        -- },
-      },--end states
-    }
-  self.yappyBirdWorldEntity = YappyBirdWorldEntity(init)
+        name = "YappyBirdWorldEntityState",
+        module = require "YappyBirdWorldEntityState"
+      }
+    },--end states
+    startStateName = "YappyBirdWorldEntityState",
+  }
 
-  self.yappyBirdWorldEntity:load()
+  self.gameInstance:getEntityManager():addWorldEntity(YappyBirdWorldEntity(init))
 end
 
 function YappyGame:__gc()
   --TODO: Destroy properties
-  self.yappyBirdWorldEntity:destroy()
 end
 
 function YappyGame:__tostring()
   --TODO: Represent the class as a string...
-  -- return "YappyGame"
   return json.encode(self)
 end
 
 --TODO: List the Functions for YappyGame
 
 function YappyGame:start()
-  self.yappyBirdWorldEntity:initialize()
+  local worldEntity = self.gameInstance:getEntityManager():getWorldEntity("name")
+  worldEntity:load()
+  worldEntity:initialize()
+
+  print("YappyGame:start")
 end
 
 return YappyGame

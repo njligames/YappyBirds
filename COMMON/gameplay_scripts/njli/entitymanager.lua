@@ -109,9 +109,9 @@ function EntityManager:getNodeEntity(key)
 
   local nodeEntity = self._nodeEntityTable[key]
   assert(nodeEntity, "The nodeEntity is nil")
-  assert(nodeEntity:getNode(), "The nodeEntity's node is nil")
-  assert(nodeEntity:getNode():getStateMachine(), "The nodeEntity's, node's statemachine is nil")
-  assert(nodeEntity:getNode():getStateMachine():getState(), "The nodeEntity's, node's statemachine's state is nil")
+  -- assert(nodeEntity:getNode(), "The nodeEntity's node is nil")
+  -- assert(nodeEntity:getNode():getStateMachine(), "The nodeEntity's, node's statemachine is nil")
+  -- assert(nodeEntity:getNode():getStateMachine():getState(), "The nodeEntity's, node's statemachine's state is nil")
 
   return nodeEntity
 end
@@ -121,9 +121,9 @@ function EntityManager:getSceneEntity(key)
 
   local sceneEntity = self._sceneEntityTable[key]
   assert(sceneEntity, "The sceneEntity is nil")
-  assert(sceneEntity:getScene(), "The sceneEntity's scene is nil")
-  assert(sceneEntity:getScene():getStateMachine(), "The sceneEntity's, scene's statemachine is nil")
-  assert(sceneEntity:getScene():getStateMachine():getState(), "The sceneEntity's, scene's statemachine's state is nil")
+  -- assert(sceneEntity:getScene(), "The sceneEntity's scene is nil")
+  -- assert(sceneEntity:getScene():getStateMachine(), "The sceneEntity's, scene's statemachine is nil")
+  -- assert(sceneEntity:getScene():getStateMachine():getState(), "The sceneEntity's, scene's statemachine's state is nil")
 
   return sceneEntity
 end
@@ -133,9 +133,9 @@ function EntityManager:getWorldEntity(key)
   
   local worldEntity = self._worldEntityTable[key]
   assert(worldEntity, "The worldEntity is nil")
-  assert(worldEntity:getWorld(), "The worldEntity's world is nil")
-  assert(worldEntity:getWorld():getStateMachine(), "The worldEntity's, world's statemachine is nil")
-  assert(worldEntity:getWorld():getStateMachine():getState(), "The worldEntity's, world's statemachine's state is nil")
+  -- assert(worldEntity:getWorld(), "The worldEntity's world is nil")
+  -- assert(worldEntity:getWorld():getStateMachine(), "The worldEntity's, world's statemachine is nil")
+  -- assert(worldEntity:getWorld():getStateMachine():getState(), "The worldEntity's, world's statemachine's state is nil")
 
   return worldEntity
 end
@@ -143,7 +143,7 @@ end
 function EntityManager:addNodeEntity(nodeEntity)
   assert(nodeEntity, "nodeEntity is nil")
 
-  local key = nodeEntity:getName()
+  local key = nodeEntity:getNode():getName()
   assert(not self:hasNodeEntity(key), "Trying to overwrite a NJLINodeEntity with key " .. key)
   
   self._nodeEntityTable[key] = nodeEntity
@@ -154,7 +154,7 @@ end
 function EntityManager:addSceneEntity(sceneEntity)
   assert(sceneEntity, "sceneEntity is nil")
 
-  local key = sceneEntity:getName()
+  local key = sceneEntity:getScene():getName()
   assert(not self:hasSceneEntity(key), "Trying to overwrite a NJLISceneEntity with key " .. key)
   self._sceneEntityTable[key] = sceneEntity
 
@@ -162,9 +162,9 @@ function EntityManager:addSceneEntity(sceneEntity)
 end
 
 function EntityManager:addWorldEntity(worldEntity)
-  assert(worldEntity, "sceneEntity is nil")
+  assert(worldEntity, "worldEntity is nil")
 
-  local key = worldEntity:getName()
+  local key = worldEntity:getWorld():getName()
   assert(not self:hasWorldEntity(key), "Trying to overwrite a NJLIWorldEntity with key " .. key)
   self._worldEntityTable[key] = worldEntity
 

@@ -60,40 +60,22 @@ function YappyGame:create(init)
  name = "name",
  states =
  {
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- },
+ {
+ name = "YappyBirdWorldEntityState",
+ module = require "YappyBirdWorldEntityState"
  }
- self.yappyBirdWorldEntity = YappyBirdWorldEntity(init)
+ },
+ startStateName = "YappyBirdWorldEntityState",
+ }
+ 
+ 
 
- self.yappyBirdWorldEntity:load()
+ self.gameInstance:getEntityManager():addWorldEntity(YappyBirdWorldEntity(init))
 end
 
 function YappyGame:__gc()
  
- self.yappyBirdWorldEntity:destroy()
+ 
 end
 
 function YappyGame:__tostring()
@@ -105,7 +87,11 @@ end
 
 
 function YappyGame:start()
- self.yappyBirdWorldEntity:initialize()
+ local worldEntity = self.gameInstance:getEntityManager():getWorldEntity("name")
+ worldEntity:load()
+ worldEntity:initialize()
+ 
+ print("YappyGame:start")
 end
 
 return YappyGame

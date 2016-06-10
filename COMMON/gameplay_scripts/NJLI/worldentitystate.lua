@@ -56,6 +56,9 @@ function WorldEntityState:create(init)
 
   self._init = init
 
+  self._worldState = nil
+  self._entityOwner = nil
+
   self:load()
 end
 
@@ -68,16 +71,18 @@ function WorldEntityState:__tostring()
   return json.encode(self)
 end
 
-function NJLISceneEntityState:getWorldState()
+function WorldEntityState:getWorldState()
   return self._worldState
 end
 
-function NJLISceneEntityState:getEntityOwner()
+function WorldEntityState:getEntityOwner()
   return self._entityOwner
 end
 
 function WorldEntityState:load()
-  self:unLoad()
+  -- self:unLoad()
+  assert(not self._worldState, "message")
+  assert(not self._entityOwner, "message")
 
   self._entityOwner = self._init.entityOwner
   self._worldState = njli.WorldState.create()
@@ -95,11 +100,11 @@ function WorldEntityState:unLoad()
 end
 
 function WorldEntityState:push()
-  self:getEntityOwner():getNode():getStateMachine():pushState(self:getWorldState())
+  self:getEntityOwner():getWorld():getStateMachine():pushState(self:getWorldState())
 end
 
 function WorldEntityState:isIn()
-  return self:getWorldState():getName() == self:getEntityOwner():getNode():getStateMachine():getState():getName()
+  return self:getWorldState():getName() == self:getEntityOwner():getWorld():getStateMachine():getState():getName()
 end
 
 function WorldEntityState:enter()                 assert(false, "overwrite: WorldEntityState:enter") end

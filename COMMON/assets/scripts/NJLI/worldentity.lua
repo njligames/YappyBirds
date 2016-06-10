@@ -72,6 +72,7 @@ end
  module = "nodes.bird.states.grabbed"
  },
  },
+ startStateName = "",
  }
  
 
@@ -80,9 +81,12 @@ function WorldEntity:create(init)
  assert(init.name, "Init variable is expecting a name value")
  assert(init.states, "Init variable is expecting a states table")
  assert(type(init.states) == "table", "Init variable is expecting a states table")
+ assert(init.startStateName, "Init variable is expecting a startStateName value")
 
- print(init)
  self._init = init
+
+ 
+ 
 
  self:load()
 end
@@ -111,7 +115,7 @@ function WorldEntity:_removeEntityState(stateName)
 end
 
 function WorldEntity:_getEntityState(stateName)
- assert(self._stateEntityTable[stateName], "There must be a state with name: " .. stateName)
+ assert(self._stateEntityTable[stateName], "There must be a state with name: \"" .. stateName .. "\"")
 
  return self._stateEntityTable[stateName]
 end
@@ -133,14 +137,17 @@ function WorldEntity:getWorld()
 end
 
 function WorldEntity:load()
- self:unLoad()
+ 
+ 
+ 
  
  self._stateEntityTable = {}
  if self._init then
  for k,v in pairs(self._init.states) do
- local m = require string(v.module)
+ 
+ 
 
- self:_addEntityState(v.name, m)
+ self:_addEntityState(v.name, v.module)
  end
  end
 
@@ -159,7 +166,12 @@ function WorldEntity:unLoad()
  end
 end
 
-function WorldEntity:initialize() 
+function WorldEntity:initialize()
+ if self:_getEntityState(self._init.startStateName) then
+ self:_getEntityState(self._init.startStateName):push()
+ else
+ print("init.startStateName is not found.")
+ end
 end
 
 function WorldEntity:enter()
