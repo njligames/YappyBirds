@@ -4,6 +4,8 @@
 
 
 
+local YappyBirdWorldEntity = require "yappybirds.worlds.YappyBirdWorldEntity"
+
 local YappyGame = {}
 YappyGame.__index = YappyGame
 
@@ -52,46 +54,55 @@ function YappyGame:create(init)
  assert(type(init) == "table", "The init parameter must be of type table.")
  assert(init.gameInstance, "There must be a game instance inside of the init table.")
 
- self.gameInstance = init.gameInstance
+ 
 
- local YappyBirdWorldEntity = require "YappyBirdWorldEntity"
- local init = 
+ self._init = 
  {
  name = "name",
  states =
  {
  {
- name = "YappyBirdWorldEntityState",
- module = require "YappyBirdWorldEntityState"
- }
+ name = "GameplayWorldEntityState",
+ module = require "yappybirds.worlds.states.GameplayWorldEntityState"
  },
- startStateName = "YappyBirdWorldEntityState",
- }
- 
- 
+ {
+ name = "MenuWorldEntityState",
+ module = require "yappybirds.worlds.states.MenuWorldEntityState"
+ },
+ {
+ name = "ResultsWorldEntityState",
+ module = require "yappybirds.worlds.states.ResultsWorldEntityState"
+ },
+ },
 
- self.gameInstance:getEntityManager():addWorldEntity(YappyBirdWorldEntity(init))
+ startStateName = "MenuWorldEntityState",
+ gameInstance = init.gameInstance
+ }
+
+ self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(self._init))
 end
 
 function YappyGame:__gc()
  
- 
 end
 
 function YappyGame:__tostring()
- 
  
  return json.encode(self)
 end
 
 
 
+function YappyGame:getGameInstance()
+ return self._init.gameInstance
+end
+
 function YappyGame:start()
- local worldEntity = self.gameInstance:getEntityManager():getWorldEntity("name")
+ local worldEntity = self:getGameInstance():getEntityManager():getWorldEntity("name")
+
  worldEntity:load()
- worldEntity:initialize()
  
- print("YappyGame:start")
+ worldEntity:initialize()
 end
 
 return YappyGame
