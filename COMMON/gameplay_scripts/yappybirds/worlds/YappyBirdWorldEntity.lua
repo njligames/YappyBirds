@@ -56,12 +56,10 @@ function YappyBirdWorldEntity:isLoaded()
 end
 
 function YappyBirdWorldEntity:load()
-  print("YappyBirdWorldEntity:load()")
   WorldEntity.load(self)
 end
 
 function YappyBirdWorldEntity:unLoad()
-  print("YappyBirdWorldEntity:unLoad()")
   WorldEntity.unLoad(self)
 end
 

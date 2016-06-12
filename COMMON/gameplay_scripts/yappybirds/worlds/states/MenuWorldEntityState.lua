@@ -73,12 +73,10 @@ function MenuWorldEntityState:isLoaded()
 end
 
 function MenuWorldEntityState:load()
-  print("MenuWorldEntityState:load()")
   WorldEntityState.load(self)
 end
 
 function MenuWorldEntityState:unLoad()
-  print("MenuWorldEntityState:unLoad()")
   WorldEntityState.unLoad(self)
 end
 
@@ -86,7 +84,6 @@ function MenuWorldEntityState:enter()
 end
 
 function MenuWorldEntityState:update(timeStep)
-  print("MenuWorldEntityState:update()")
 end
 
 function MenuWorldEntityState:exit()                  

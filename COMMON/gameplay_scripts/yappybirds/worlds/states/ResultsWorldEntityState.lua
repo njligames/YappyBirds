@@ -73,12 +73,10 @@ function ResultsWorldEntityState:isLoaded()
 end
 
 function ResultsWorldEntityState:load()
-  print("ResultsWorldEntityState:load()")
   WorldEntityState.load(self)
 end
 
 function ResultsWorldEntityState:unLoad()
-  print("ResultsWorldEntityState:unLoad()")
   WorldEntityState.unLoad(self)
 end
 
