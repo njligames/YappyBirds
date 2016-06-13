@@ -54,9 +54,9 @@ function YappyGame:create(init)
   assert(type(init) == "table", "The init parameter must be of type table.")
   assert(init.gameInstance, "There must be a game instance inside of the init table.")
 
-  -- self.gameInstance = init.gameInstance
+  self.gameInstance = init.gameInstance
 
-  self._init = 
+  local myInit = 
   {
     name = "name",
     states =
@@ -79,7 +79,7 @@ function YappyGame:create(init)
     gameInstance = init.gameInstance
   }
 
-  self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(self._init))
+  self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(myInit))
 end
 
 function YappyGame:__gc()
@@ -94,7 +94,7 @@ end
 --TODO: List the Functions for YappyGame
 
 function YappyGame:getGameInstance()
-  return self._init.gameInstance
+  return self.gameInstance
 end
 
 function YappyGame:start()

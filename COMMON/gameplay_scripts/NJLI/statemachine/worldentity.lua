@@ -73,6 +73,7 @@ end
         },
       },--end states
       startStateName = "",
+      gameInstance = nil,
     }
   --]]
 
@@ -84,8 +85,8 @@ function WorldEntity:create(init)
   assert(init.startStateName, "Init variable is expecting a startStateName value")
   assert(init.gameInstance, "Init variable is expecting a gameInstance value")
 
-  self.gameInstance = init.gameInstance
-  self.startStateName = init.startStateName
+  self._gameInstance = init.gameInstance
+  self._startStateName = init.startStateName
 
   self._world = njli.World.getInstance()
 
@@ -107,10 +108,6 @@ end
 function WorldEntity:__tostring()
   --TODO: Represent the class as a string...
   return json.encode(self)
-end
-
-function WorldEntity:getGameInstance()
-  return self.gameInstance
 end
 
 function WorldEntity:_addEntityState(stateName, entityStateModule)
@@ -145,6 +142,14 @@ function WorldEntity:getCurrentEntityState()
   return self:_getEntityState(self:getWorld():getStateMachine():getState():getName())
 end
 
+function WorldEntity:getGameInstance()
+  return self._gameInstance
+end
+
+function WorldEntity:getStartSceneName()
+  return self._startStateName
+end
+
 function WorldEntity:getWorld()
   return self._world
 end
@@ -158,9 +163,7 @@ function WorldEntity:isLoaded()
 end
 
 function WorldEntity:load()
-
   print("WorldEntity:load()")
-  
   for k,v in pairs(self._stateEntityTable) do
     v:load()
   end
@@ -168,8 +171,6 @@ function WorldEntity:load()
 end
 
 function WorldEntity:unLoad()
-  print("WorldEntity:unLoad()")
-
   self._world = nil
 
   if self._stateEntityTable then
@@ -184,10 +185,10 @@ function WorldEntity:unLoad()
 end
 
 function WorldEntity:initialize()
-  if self:_getEntityState(self.startStateName) then
-    self:_getEntityState(self.startStateName):push()
+  if self:_getEntityState(self:getStartSceneName()) then
+    self:_getEntityState(self:getStartSceneName()):push()
   else
-    print("init.startStateName is not found.")
+    print("self:getStartSceneName() is not found.")
   end
 end
 

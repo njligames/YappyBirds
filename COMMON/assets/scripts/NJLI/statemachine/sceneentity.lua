@@ -72,17 +72,29 @@ end
  module = "nodes.bird.states.grabbed"
  },
  },
+ startStateName = "",
  }
  
 function SceneEntity:create(init)
  assert(init, "init variable is nil.")
- assert(init.name, "Init variable is expecting a name value")
- assert(init.states, "Init variable is expecting a states table")
- assert(type(init.states) == "table", "Init variable is expecting a states table")
+ assert(init.name, "Init variable is expecting a name value when creating " .. self:className())
+ assert(init.states, "Init variable is expecting a states table when creating " .. self:className())
+ assert(type(init.states) == "table", "Init variable is expecting a states table when creating " .. self:className())
+ assert(init.startStateName, "Init variable is expecting a startStateName value when creating " .. self:className())
 
- self._init = init
+ self._startStateName = init.startStateName
 
- self:load()
+ self._scene = njli.Scene.create()
+
+ self:getScene():setName(init.name)
+
+ self._stateEntityTable = {}
+ if init then
+ for k,v in pairs(init.states) do
+ self:_addEntityState(v.name, v.module)
+ end
+ end
+
 end
 
 function SceneEntity:__gc()
@@ -90,7 +102,6 @@ function SceneEntity:__gc()
 end
 
 function SceneEntity:__tostring()
- 
  
  return json.encode(self)
 end
@@ -127,34 +138,34 @@ function SceneEntity:getCurrentEntityState()
  return self:_getEntityState(self:getScene():getStateMachine():getState():getName())
 end
 
-function NJLINodeEntity:getScene()
+function SceneEntity:getStartSceneName()
+ return self._startStateName
+end
+
+function SceneEntity:getScene()
  return self._scene
 end
 
-function NodeEntity:isLoaded()
- if self.loaded then
- return self.loaded
+function SceneEntity:isLoaded()
+ if self.loaded == nil then
+ self.loaded = false
  end
- return false
+
+ return self.loaded
 end
 
 function SceneEntity:load()
- self:unLoad()
- 
- self._stateEntityTable = {}
- for k,v in pairs(self._init.states) do
- local m = require v.module
+ print("SceneEntity:load()")
 
- self:_addEntityState(v.name, m)
+ for k,v in pairs(self._stateEntityTable) do
+ v:load()
  end
-
- self._scene = njli.Scene.create()
- self:getScene():setName(self._init.name)
-
  self.loaded = true
 end
 
 function SceneEntity:unLoad()
+ print("SceneEntity:unLoad()")
+ 
  if self:getScene() then
  njli.Scene.destroy(self:getScene())
  self._scene = nil
@@ -162,6 +173,7 @@ function SceneEntity:unLoad()
 
  if self._stateEntityTable then
  for k,v in pairs(self._stateEntityTable) do
+ self:_getEntityState(v.name):unLoad()
  self:_removeEntityState(k)
  end
  self._stateEntityTable = nil
@@ -170,7 +182,12 @@ function SceneEntity:unLoad()
  self.loaded = false
 end
 
-function SceneEntity:initialize() 
+function SceneEntity:initialize()
+ if self:_getEntityState(self:getStartSceneName()) then
+ self:_getEntityState(self:getStartSceneName()):push()
+ else
+ print("self:getStartSceneName() is not found.")
+ end
 end
 
 function SceneEntity:enter()

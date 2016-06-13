@@ -55,8 +55,8 @@ function WorldEntityState:create(init)
   assert(init.entityOwner, "Init variable is expecting a entityOwner value")
 
   self._entityOwner = init.entityOwner
-  self._worldState = njli.WorldState.create()
 
+  self._worldState = njli.WorldState.create()
   self:getWorldState():setName(init.name)
 end
 
@@ -87,13 +87,10 @@ end
 
 function WorldEntityState:load()
   print("WorldEntityState:load()")
-  
   self.loaded = true
 end
 
 function WorldEntityState:unLoad()
-  print("WorldEntityState:unLoad()")
-
   if self:getWorldState() then
     njli.WorldState.destroy(self:getWorldState())
   end

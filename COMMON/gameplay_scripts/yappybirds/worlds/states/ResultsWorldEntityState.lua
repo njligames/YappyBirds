@@ -9,7 +9,6 @@
    __index = WorldEntityState,
    __call = function (cls, ...)
      local self = setmetatable({}, cls)
-     WorldEntityState.create(self, ...)
      self:create(...)
      return self
    end,
@@ -28,22 +27,10 @@
  end
  
  function ResultsWorldEntityState:destroy()
+  print(" ResultsWorldEntityState:destroy()")
+
    ResultsWorldEntityState.__gc(self)
    WorldEntityState.destroy(self)
- end
- 
- function ResultsWorldEntityState:create(init)
-    WorldEntityState.create(self, init)
-   --TODO: Create and initialize properties...
- end
- 
- function ResultsWorldEntityState:__gc()
-   --TODO: Destroy properties
- end
- 
- function ResultsWorldEntityState:__tostring()
-   --TODO: Represent the class as a string...
-   return json.encode(self)
  end
  
  --TODO: List the Functions for ResultsWorldEntityState
@@ -57,6 +44,8 @@ local init =
 --]]
 function ResultsWorldEntityState:create(init)
   WorldEntityState.create(self, init)
+
+  print(" ResultsWorldEntityState:create(init)")
 end
 
 function ResultsWorldEntityState:__gc()
@@ -74,55 +63,74 @@ end
 
 function ResultsWorldEntityState:load()
   WorldEntityState.load(self)
+
+  print(" ResultsWorldEntityState:load()")
 end
 
 function ResultsWorldEntityState:unLoad()
   WorldEntityState.unLoad(self)
+
+  print(" ResultsWorldEntityState:unLoad()")
 end
 
 function ResultsWorldEntityState:enter()
+  print("	ResultsWorldEntityState:enter()")
 end
 
 function ResultsWorldEntityState:update(timeStep)
+  print("	ResultsWorldEntityState:update()")
 end
 
-function ResultsWorldEntityState:exit()                  
+function ResultsWorldEntityState:exit()
+  print("	ResultsWorldEntityState:exit()")
 end
 
-function ResultsWorldEntityState:onMessage(message)      
+function ResultsWorldEntityState:onMessage(message)
+  print("	ResultsWorldEntityState:onMessage()")
 end
 
-function ResultsWorldEntityState:touchDown(touches)      
+function ResultsWorldEntityState:touchDown(touches)
+  print("	ResultsWorldEntityState:touchDown()")
 end
 
-function ResultsWorldEntityState:touchUp(touches)        
+function ResultsWorldEntityState:touchUp(touches)
+  print("	ResultsWorldEntityState:touchUp()")
 end
 
-function ResultsWorldEntityState:touchMove(touches)      
+function ResultsWorldEntityState:touchMove(touches)
+  print("	ResultsWorldEntityState:touchMove()")
 end
 
-function ResultsWorldEntityState:touchCancelled(touches) 
+function ResultsWorldEntityState:touchCancelled(touches)
+  print("	ResultsWorldEntityState:touchCancelled()")
 end
 
-function ResultsWorldEntityState:renderHUD()             
+function ResultsWorldEntityState:renderHUD()
+  print("	ResultsWorldEntityState:renderHUD()")
 end
 
-function ResultsWorldEntityState:keyboardShow()          
+function ResultsWorldEntityState:keyboardShow()
+  print("	ResultsWorldEntityState:keyboardShow()")
 end
 
-function ResultsWorldEntityState:keyboardCancel()        
+function ResultsWorldEntityState:keyboardCancel()
+  print("	ResultsWorldEntityState:keyboardCancel()")
 end
 
-function ResultsWorldEntityState:keyboardReturn(text)    
+function ResultsWorldEntityState:keyboardReturn(text)
+  print("	ResultsWorldEntityState:keyboardReturn()")
 end
 
-function ResultsWorldEntityState:receivedMemoryWarning() 
+function ResultsWorldEntityState:receivedMemoryWarning()
+  print("	ResultsWorldEntityState:receivedMemoryWarning()")
 end
 
-function ResultsWorldEntityState:pause()                 
+function ResultsWorldEntityState:pause()
+  print("	ResultsWorldEntityState:pause()")
 end
 
-function ResultsWorldEntityState:unPause()               
+function ResultsWorldEntityState:unPause()
+  print("	ResultsWorldEntityState:unPause()")
 end
 
 return ResultsWorldEntityState

@@ -54,9 +54,10 @@ function SceneEntityState:create(init)
   assert(init.name, "Init variable is expecting a name value")
   assert(init.entityOwner, "Init variable is expecting a entityOwner value")
 
-  self._init = init
+  self._entityOwner = init.entityOwner
+  self._sceneState = njli.SceneState.create()
 
-  self:load()
+  self:getSceneState():setName(init.name)
 end
 
 function SceneEntityState:__gc()
@@ -77,25 +78,23 @@ function SceneEntityState:getEntityOwner()
   return self._entityOwner
 end
 
-function NodeEntity:isLoaded()
-  if self.loaded then
-    return self.loaded
+function SceneEntityState:isLoaded()
+  if self.loaded == nil then
+    self.loaded = false
   end
-  return false
+
+  return self.loaded
 end
 
 function SceneEntityState:load()
-  self:unLoad()
-
-  self._entityOwner = self._init.entityOwner
-  self._sceneState = njli.SceneState.create()
-
-  self:getSceneState():setName(self._init.name)
+  print("SceneEntityState:load()")
 
   self.loaded = true
 end
 
 function SceneEntityState:unLoad()
+  print("SceneEntityState:unLoad()")
+  
   if self:getSceneState() then
     njli.SceneState.destroy(self:getSceneState())
   end
@@ -107,11 +106,11 @@ function SceneEntityState:unLoad()
 end
 
 function SceneEntityState:push()
-  self:getEntityOwner():getNode():getStateMachine():pushState(self:getSceneState())
+  self:getEntityOwner():getScene():getStateMachine():pushState(self:getSceneState())
 end
 
 function SceneEntityState:isIn()
-  return self:getSceneState():getName() == self:getEntityOwner():getNode():getStateMachine():getState():getName()
+  return self:getSceneState():getName() == self:getEntityOwner():getScene():getStateMachine():getState():getName()
 end
 
 function SceneEntityState:enter()                 assert(false, "overwrite: SceneEntityState:enter") end
