@@ -141,9 +141,7 @@ function EntityManager:getWorldEntity(key)
 end
 
 function EntityManager:addNodeEntity(nodeEntity)
-  assert(nodeEntity, "nodeEntity is nil")
-
-  local key = nodeEntity:getNode():getName()
+  local key = self:getNodeEntityKey(nodeEntity)
   assert(not self:hasNodeEntity(key), "Trying to overwrite a NJLINodeEntity with key " .. key)
   
   self._nodeEntityTable[key] = nodeEntity
@@ -152,9 +150,7 @@ function EntityManager:addNodeEntity(nodeEntity)
 end
 
 function EntityManager:addSceneEntity(sceneEntity)
-  assert(sceneEntity, "sceneEntity is nil")
-
-  local key = sceneEntity:getScene():getName()
+  local key = self:getSceneEntityKey(sceneEntity)
   assert(not self:hasSceneEntity(key), "Trying to overwrite a NJLISceneEntity with key " .. key)
   self._sceneEntityTable[key] = sceneEntity
 
@@ -162,28 +158,35 @@ function EntityManager:addSceneEntity(sceneEntity)
 end
 
 function EntityManager:addWorldEntity(worldEntity)
-  assert(worldEntity, "worldEntity is nil")
-
-  local key = worldEntity:getWorld():getName()
+  local key = self:getWorldEntityKey(worldEntity)
   assert(not self:hasWorldEntity(key), "Trying to overwrite a NJLIWorldEntity with key " .. key)
   self._worldEntityTable[key] = worldEntity
 
   return key
 end
 
-function EntityManager:removeNodeEntity(key)
+function EntityManager:removeNodeEntity(nodeEntity)
+  local key = self:getNodeEntityKey(nodeEntity)
+  assert(self:hasNodeEntity(key), "Trying to remove a NJLINodeEntity with key " .. key)
+
   self:getNodeEntity(key):destroy()
 
   self._nodeEntityTable[key] = nil
 end
 
-function EntityManager:removeSceneEntity(key)
+function EntityManager:removeSceneEntity(sceneEntity)
+  local key = self:getSceneEntityKey(sceneEntity)
+  assert(self:hasSceneEntity(key), "Trying to remove a NJLISceneEntity with key " .. key)
+
   self:getSceneEntity(key):destroy()
 
   self._sceneEntityTable[key] = nil
 end
 
-function EntityManager:removeWorldEntity(key)
+function EntityManager:removeWorldEntity(worldEntity)
+  local key = self:getWorldEntityKey(worldEntity)
+  assert(self:hasWorldEntity(key), "Trying to remove a NJLIWorldEntity with key " .. key)
+
   self:getWorldEntity(key):destroy()
 
   self._worldEntityTable[key] = nil
@@ -199,6 +202,28 @@ end
 
 function EntityManager:hasWorldEntity(key)
   return (self._worldEntityTable[key] ~= nil)
+end
+
+
+function EntityManager:getNodeEntityKey(nodeEntity)
+  assert(nodeEntity, "nodeEntity is nil")
+
+  local key = nodeEntity:getNode():getName()
+  return key
+end
+
+function EntityManager:getSceneEntityKey(sceneEntity)
+  assert(sceneEntity, "sceneEntity is nil")
+
+  local key = sceneEntity:getScene():getName()
+  return key
+end
+
+function EntityManager:getWorldEntityKey(worldEntity)
+  assert(worldEntity, "worldEntity is nil")
+
+  local key = worldEntity:getWorld():getName()
+  return key
 end
 
   --]]

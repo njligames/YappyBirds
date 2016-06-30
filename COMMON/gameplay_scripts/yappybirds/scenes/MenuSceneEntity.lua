@@ -71,6 +71,8 @@ function MenuSceneEntity:initialize()
   SceneEntity.initialize(self)
 
   print(" MenuSceneEntity:initialize()")
+
+  
 end
 
 function MenuSceneEntity:enter()

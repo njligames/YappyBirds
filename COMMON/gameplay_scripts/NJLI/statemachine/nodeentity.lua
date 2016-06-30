@@ -71,6 +71,7 @@ end
             module = "nodes.bird.states.grabbed"
         },
       },--end states
+      startStateName = "name",
       physicsShape = nil, --Create the physics shape
       physicsBody = nil, --Create the physics body
       sharedGeometry = nil,
@@ -82,10 +83,13 @@ function NodeEntity:create(init)
   assert(init.name, "Init variable is expecting a name value")
   assert(init.states, "Init variable is expecting a states table")
   assert(type(init.states) == "table", "Init variable is expecting a states table")
+  assert(init.startStateName, "Init variable is expecting a startStateName value")
   assert(init.physicsShape, "Init variable is expecting a physicsShape value")
   assert(init.physicsBody, "Init variable is expecting a physicsBody value")
   assert(init.sharedGeometry, "Init variable is expecting a sharedGeometry value")
 
+  self._startStateName = init.startStateName
+  
   self._init = init
 
   self:load()
@@ -130,26 +134,6 @@ function NodeEntity:getCurrentEntityState()
   assert(self:getNode():getStateMachine():getState():getName(), "message")
 
   return self:_getEntityState(self:getNode():getStateMachine():getState():getName())
-end
-
-function NodeEntity:getNode()
-  return self._node
-end
-
-function NodeEntity:getPhysicsShape()
-  return self._physicsShape
-end
-
-function NodeEntity:getPhysicsBody()
-  return self._physicsBody
-end
-
-function NodeEntity:getAction()
-  return self._action
-end
-
-function NodeEntity:getClock()
-  return self._clock
 end
 
 function NodeEntity:isLoaded()
@@ -220,6 +204,11 @@ function NodeEntity:unLoad()
 end
 
 function NodeEntity:initialize()
+  if self:_getEntityState(self:getStartStateName()) then
+    self:_getEntityState(self:getStartStateName()):push()
+  else
+    print("self:getStartStateName() is not found.")
+  end
 end
 
 function NodeEntity:enter()
@@ -296,6 +285,30 @@ end
 
 function NodeEntity:unPause()
   self:getCurrentEntityState():unPause()
+end
+
+function SceneEntity:getStartStateName()
+  return self._startStateName
+end
+
+function NodeEntity:getNode()
+  return self._node
+end
+
+function NodeEntity:getPhysicsShape()
+  return self._physicsShape
+end
+
+function NodeEntity:getPhysicsBody()
+  return self._physicsBody
+end
+
+function NodeEntity:getAction()
+  return self._action
+end
+
+function NodeEntity:getClock()
+  return self._clock
 end
 
 return NodeEntity

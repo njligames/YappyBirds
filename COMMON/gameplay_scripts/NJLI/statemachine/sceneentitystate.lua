@@ -70,14 +70,6 @@ function SceneEntityState:__tostring()
   return json.encode(self)
 end
 
-function SceneEntityState:getSceneState()
-  return self._sceneState
-end
-
-function SceneEntityState:getEntityOwner()
-  return self._entityOwner
-end
-
 function SceneEntityState:isLoaded()
   if self.loaded == nil then
     self.loaded = false
@@ -113,7 +105,12 @@ function SceneEntityState:isIn()
   return self:getSceneState():getName() == self:getEntityOwner():getScene():getStateMachine():getState():getName()
 end
 
-function SceneEntityState:enter()                 assert(false, "overwrite: SceneEntityState:enter") end
+function SceneEntityState:enter()
+  for k,v in pairs(self:getNodeEntities()) do
+    v:initialize()
+  end
+end
+
 function SceneEntityState:update(timeStep)        assert(false, "overwrite: SceneEntityState:update") end
 function SceneEntityState:exit()                  assert(false, "overwrite: SceneEntityState:exit") end
 function SceneEntityState:onMessage(message)      assert(false, "overwrite: SceneEntityState:onMessage") end
@@ -124,5 +121,41 @@ function SceneEntityState:touchCancelled(touches) assert(false, "overwrite: Scen
 function SceneEntityState:renderHUD()             assert(false, "overwrite: SceneEntityState:renderHUD") end
 function SceneEntityState:pause()                 assert(false, "overwrite: SceneEntityState:pause") end
 function SceneEntityState:unPause()               assert(false, "overwrite: SceneEntityState:unPause") end
+
+function SceneEntityState:getSceneState()
+  return self._sceneState
+end
+
+function SceneEntityState:getEntityOwner()
+  return self._entityOwner
+end
+
+function SceneEntityState:getNodeEntities()
+  assert(self._nodeEntities, "Init variable is expecting a states table")
+  assert(type(self._nodeEntities) == "table", "Init variable is expecting a states table")
+
+  return self._nodeEntities
+end
+
+function SceneEntityState:addNodeEntity(nodeEntity)
+  local mgr = self:getEntityOwner():getGameInstance():getEntityManager()
+
+  local key = mgr:addNodeEntity(nodeEntity)
+
+  self._nodeEntities[key] = nodeEntity
+end
+
+function SceneEntityState:removeNodeEntity(nodeEntity)
+  local mgr = self:getEntityOwner():getGameInstance():getEntityManager()
+  
+  local key = mgr:getNodeEntityKey(nodeEntity)
+  mgr:removeNodeEntity(nodeEntity)
+
+  self._nodeEntities[key] = nil
+end
+
+function SceneEntityState:getNodeEntity(name)
+  return self._nodeEntities[key]
+end
 
 return SceneEntityState

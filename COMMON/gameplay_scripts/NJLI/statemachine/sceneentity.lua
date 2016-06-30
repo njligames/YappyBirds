@@ -81,8 +81,11 @@ function SceneEntity:create(init)
   assert(init.states, "Init variable is expecting a states table when creating " .. self:className())
   assert(type(init.states) == "table", "Init variable is expecting a states table when creating " .. self:className())
   assert(init.startStateName, "Init variable is expecting a startStateName value when creating " .. self:className())
+  assert(init.gameInstance, "Init variable is expecting a gameInstance value when creating " .. self:className())
 
   self._startStateName = init.startStateName
+
+  self._gameInstance = init.gameInstance
 
   self._scene = njli.Scene.create()
 
@@ -138,7 +141,11 @@ function SceneEntity:getCurrentEntityState()
   return self:_getEntityState(self:getScene():getStateMachine():getState():getName())
 end
 
-function SceneEntity:getStartSceneName()
+function SceneEntity:getGameInstance()
+  return self._gameInstance
+end
+
+function SceneEntity:getStartStateName()
   return self._startStateName
 end
 
@@ -183,10 +190,10 @@ function SceneEntity:unLoad()
 end
 
 function SceneEntity:initialize()
-  if self:_getEntityState(self:getStartSceneName()) then
-    self:_getEntityState(self:getStartSceneName()):push()
+  if self:_getEntityState(self:getStartStateName()) then
+    self:_getEntityState(self:getStartStateName()):push()
   else
-    print("self:getStartSceneName() is not found.")
+    print("self:getStartStateName() is not found.")
   end
 end
 

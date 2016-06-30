@@ -146,7 +146,7 @@ function WorldEntity:getGameInstance()
   return self._gameInstance
 end
 
-function WorldEntity:getStartSceneName()
+function WorldEntity:getStartStateName()
   return self._startStateName
 end
 
@@ -164,31 +164,31 @@ end
 
 function WorldEntity:load()
   print("WorldEntity:load()")
-  for k,v in pairs(self._stateEntityTable) do
-    v:load()
-  end
+  -- for k,v in pairs(self._stateEntityTable) do
+  --   v:load()
+  -- end
   self.loaded = true
 end
 
 function WorldEntity:unLoad()
   self._world = nil
 
-  if self._stateEntityTable then
-    for k,v in pairs(self._stateEntityTable) do
-      self:_getEntityState(v.name):unLoad()
-      self:_removeEntityState(k)
-    end
-    self._stateEntityTable = nil
-  end
+  -- if self._stateEntityTable then
+  --   for k,v in pairs(self._stateEntityTable) do
+  --     self:_getEntityState(v.name):unLoad()
+  --     self:_removeEntityState(k)
+  --   end
+  --   self._stateEntityTable = nil
+  -- end
 
   self.loaded = false
 end
 
 function WorldEntity:initialize()
-  if self:_getEntityState(self:getStartSceneName()) then
-    self:_getEntityState(self:getStartSceneName()):push()
+  if self:_getEntityState(self:getStartStateName()) then
+    self:_getEntityState(self:getStartStateName()):push()
   else
-    print("self:getStartSceneName() is not found.")
+    print("self:getStartStateName() is not found.")
   end
 end
 

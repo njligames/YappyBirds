@@ -9,7 +9,7 @@ local njliGameInstance = njligame()
 local mygame = MyGame({
     gameInstance = njliGameInstance,
 })
-mygame:start()
+mygame:startGame()
 
 function WorldKeyboardShow()
     njliGameInstance:worldKeyboardShow()

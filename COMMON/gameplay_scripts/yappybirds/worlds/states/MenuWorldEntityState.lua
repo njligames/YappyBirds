@@ -1,3 +1,5 @@
+local MenuSceneEntity = require "yappybirds.scenes.MenuSceneEntity"
+
  local WorldEntityState = require "njli.statemachine.worldentitystate"
  
  local MenuWorldEntityState = {}
@@ -98,13 +100,9 @@ function MenuWorldEntityState:create(init)
     startStateName = "LoadingMenuSceneEntityState",
     gameInstance = self:getEntityOwner():getGameInstance()
   }
-  
-  local MenuSceneEntity = require "yappybirds.scenes.MenuSceneEntity"
-  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(MenuSceneEntity(myInit))
 
-  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(myInit.name)
-  sceneEntity:load()
-  sceneEntity:initialize()
+  local sceneEntity = MenuSceneEntity(myInit)
+  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(sceneEntity)
 end
 
 function MenuWorldEntityState:__gc()
@@ -136,6 +134,9 @@ end
 
 function MenuWorldEntityState:enter()
   print("	MenuWorldEntityState:enter()")
+
+  -- local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(self:getStartStateName())
+  -- sceneEntity:initialize()
 end
 
 function MenuWorldEntityState:update(timeStep)

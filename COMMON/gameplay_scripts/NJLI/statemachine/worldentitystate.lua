@@ -54,6 +54,8 @@ function WorldEntityState:create(init)
   assert(init.name, "Init variable is expecting a name value")
   assert(init.entityOwner, "Init variable is expecting a entityOwner value")
 
+  self._sceneEntity = self:_createSceneEntity()
+
   self._entityOwner = init.entityOwner
 
   self._worldState = njli.WorldState.create()
@@ -69,12 +71,9 @@ function WorldEntityState:__tostring()
   return json.encode(self)
 end
 
-function WorldEntityState:getWorldState()
-  return self._worldState
-end
-
-function WorldEntityState:getEntityOwner()
-  return self._entityOwner
+function WorldEntityState:_createSceneEntity()
+  assert(false, "overwrite: WorldEntityState:_createSceneEntity")
+  return nil
 end
 
 function WorldEntityState:isLoaded()
@@ -109,7 +108,9 @@ function WorldEntityState:isIn()
   return self:getWorldState():getName() == self:getEntityOwner():getWorld():getStateMachine():getState():getName()
 end
 
-function WorldEntityState:enter()                 assert(false, "overwrite: WorldEntityState:enter") end
+function WorldEntityState:enter()
+  self:getSceneEntity():initialize()
+end
 function WorldEntityState:update(timeStep)        assert(false, "overwrite: WorldEntityState:update") end
 function WorldEntityState:exit()                  assert(false, "overwrite: WorldEntityState:exit") end
 function WorldEntityState:onMessage(message)      assert(false, "overwrite: WorldEntityState:onMessage") end
@@ -124,5 +125,19 @@ function WorldEntityState:keyboardReturn(text)    assert(false, "overwrite: Worl
 function WorldEntityState:receivedMemoryWarning() assert(false, "overwrite: WorldEntityState:receivedMemoryWarning") end
 function WorldEntityState:pause()                 assert(false, "overwrite: WorldEntityState:pause") end
 function WorldEntityState:unPause()               assert(false, "overwrite: WorldEntityState:unPause") end
+
+function WorldEntityState:getWorldState()
+  return self._worldState
+end
+
+function WorldEntityState:getEntityOwner()
+  return self._entityOwner
+end
+
+function WorldEntityState:getSceneEntity()
+  assert(self._sceneEntity ~= nil, "sceneEntity must not be nil")
+
+  return self._sceneEntity
+end
 
 return WorldEntityState
