@@ -27,7 +27,7 @@
  end
  
  function HighScoresSceneEntityState:destroy()
- print(" HighScoresSceneEntityState:destroy()")
+-- print(" HighScoresSceneEntityState:destroy()")
  
  HighScoresSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
  
  
- print("	HighScoresSceneEntityState:create(init)")
+-- print("	HighScoresSceneEntityState:create(init)")
  end
  
  function HighScoresSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function HighScoresSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" HighScoresSceneEntityState:load()")
+-- print(" HighScoresSceneEntityState:load()")
 end
 
 function HighScoresSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" HighScoresSceneEntityState:unLoad()")
+-- print(" HighScoresSceneEntityState:unLoad()")
 end
 
 function HighScoresSceneEntityState:enter()
- print("	HighScoresSceneEntityState:enter()")
+-- print("	HighScoresSceneEntityState:enter()")
 end
 
 function HighScoresSceneEntityState:update(timeStep)
- print("	HighScoresSceneEntityState:update("..timeStep..")")
+-- print("	HighScoresSceneEntityState:update("..timeStep..")")
 end
 
 function HighScoresSceneEntityState:exit()
- print("	HighScoresSceneEntityState:exit()")
+-- print("	HighScoresSceneEntityState:exit()")
 end
 
 function HighScoresSceneEntityState:onMessage(message)
- print("	HighScoresSceneEntityState:onMessage(message)")
+-- print("	HighScoresSceneEntityState:onMessage(message)")
 end
 
 function HighScoresSceneEntityState:touchDown(touches)
- print("	HighScoresSceneEntityState:touchDown(touches)")
+-- print("	HighScoresSceneEntityState:touchDown(touches)")
 end
 
 function HighScoresSceneEntityState:touchUp(touches)
- print("	HighScoresSceneEntityState:touchUp(touches)")
+-- print("	HighScoresSceneEntityState:touchUp(touches)")
 end
 
 function HighScoresSceneEntityState:touchMove(touches)
- print("	HighScoresSceneEntityState:touchMove(touches)")
+-- print("	HighScoresSceneEntityState:touchMove(touches)")
 end
 
 function HighScoresSceneEntityState:touchCancelled(touches)
- print("	HighScoresSceneEntityState:touchCancelled(touches)")
+-- print("	HighScoresSceneEntityState:touchCancelled(touches)")
 end
 
 function HighScoresSceneEntityState:renderHUD()
- print("	HighScoresSceneEntityState:renderHUD()")
+-- print("	HighScoresSceneEntityState:renderHUD()")
 end
 
 function HighScoresSceneEntityState:pause()
- print("	HighScoresSceneEntityState:pause()")
+-- print("	HighScoresSceneEntityState:pause()")
 end
 
 function HighScoresSceneEntityState:unPause()
- print("	HighScoresSceneEntityState:unPause()")
+-- print("	HighScoresSceneEntityState:unPause()")
 end
 
 return HighScoresSceneEntityState

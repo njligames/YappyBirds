@@ -27,7 +27,7 @@
  end
  
  function LevelselectSceneEntityState:destroy()
- print(" LevelselectSceneEntityState:destroy()")
+-- print(" LevelselectSceneEntityState:destroy()")
  
  LevelselectSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
  
  
- print("	LevelselectSceneEntityState:create(init)")
+-- print("	LevelselectSceneEntityState:create(init)")
  end
  
  function LevelselectSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function LevelselectSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" LevelselectSceneEntityState:load()")
+-- print(" LevelselectSceneEntityState:load()")
 end
 
 function LevelselectSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" LevelselectSceneEntityState:unLoad()")
+-- print(" LevelselectSceneEntityState:unLoad()")
 end
 
 function LevelselectSceneEntityState:enter()
- print("	LevelselectSceneEntityState:enter()")
+-- print("	LevelselectSceneEntityState:enter()")
 end
 
 function LevelselectSceneEntityState:update(timeStep)
- print("	LevelselectSceneEntityState:update("..timeStep..")")
+-- print("	LevelselectSceneEntityState:update("..timeStep..")")
 end
 
 function LevelselectSceneEntityState:exit()
- print("	LevelselectSceneEntityState:exit()")
+-- print("	LevelselectSceneEntityState:exit()")
 end
 
 function LevelselectSceneEntityState:onMessage(message)
- print("	LevelselectSceneEntityState:onMessage(message)")
+-- print("	LevelselectSceneEntityState:onMessage(message)")
 end
 
 function LevelselectSceneEntityState:touchDown(touches)
- print("	LevelselectSceneEntityState:touchDown(touches)")
+-- print("	LevelselectSceneEntityState:touchDown(touches)")
 end
 
 function LevelselectSceneEntityState:touchUp(touches)
- print("	LevelselectSceneEntityState:touchUp(touches)")
+-- print("	LevelselectSceneEntityState:touchUp(touches)")
 end
 
 function LevelselectSceneEntityState:touchMove(touches)
- print("	LevelselectSceneEntityState:touchMove(touches)")
+-- print("	LevelselectSceneEntityState:touchMove(touches)")
 end
 
 function LevelselectSceneEntityState:touchCancelled(touches)
- print("	LevelselectSceneEntityState:touchCancelled(touches)")
+-- print("	LevelselectSceneEntityState:touchCancelled(touches)")
 end
 
 function LevelselectSceneEntityState:renderHUD()
- print("	LevelselectSceneEntityState:renderHUD()")
+-- print("	LevelselectSceneEntityState:renderHUD()")
 end
 
 function LevelselectSceneEntityState:pause()
- print("	LevelselectSceneEntityState:pause()")
+-- print("	LevelselectSceneEntityState:pause()")
 end
 
 function LevelselectSceneEntityState:unPause()
- print("	LevelselectSceneEntityState:unPause()")
+-- print("	LevelselectSceneEntityState:unPause()")
 end
 
 return LevelselectSceneEntityState

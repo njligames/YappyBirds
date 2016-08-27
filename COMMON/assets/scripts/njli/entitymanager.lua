@@ -152,13 +152,18 @@ function EntityManager:addNodeEntity(nodeEntity)
 end
 
 function EntityManager:addSceneEntity(sceneEntity)
- assert(sceneEntity, "sceneEntity is nil")
-
- local key = sceneEntity:getScene():getName()
- assert(not self:hasSceneEntity(key), "Trying to overwrite a NJLISceneEntity with key " .. key)
- self._sceneEntityTable[key] = sceneEntity
-
- return key
+  assert(sceneEntity, "sceneEntity is nil")
+  
+  local scene = sceneEntity:getScene()
+  
+  njli.World.getInstance():addScene(scene)
+  
+  local key = scene:getName()
+  
+  assert(not self:hasSceneEntity(key), "Trying to overwrite a NJLISceneEntity with key " .. key)
+  self._sceneEntityTable[key] = sceneEntity
+  
+  return key
 end
 
 function EntityManager:addWorldEntity(worldEntity)

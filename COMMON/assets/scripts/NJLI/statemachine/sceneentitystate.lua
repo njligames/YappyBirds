@@ -87,13 +87,13 @@ function SceneEntityState:isLoaded()
 end
 
 function SceneEntityState:load()
- print("SceneEntityState:load()")
+-- print("SceneEntityState:load()")
 
  self.loaded = true
 end
 
 function SceneEntityState:unLoad()
- print("SceneEntityState:unLoad()")
+-- print("SceneEntityState:unLoad()")
  
  if self:getSceneState() then
  njli.SceneState.destroy(self:getSceneState())

@@ -86,7 +86,7 @@ function WorldEntityState:isLoaded()
 end
 
 function WorldEntityState:load()
- print("WorldEntityState:load()")
+-- print("WorldEntityState:load()")
  self.loaded = true
 end
 

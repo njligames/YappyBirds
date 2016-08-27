@@ -27,7 +27,7 @@
  end
  
  function MainMenuSceneEntityState:destroy()
- print(" MainMenuSceneEntityState:destroy()")
+-- print(" MainMenuSceneEntityState:destroy()")
  
  MainMenuSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
  
  
- print("	MainMenuSceneEntityState:create(init)")
+-- print("	MainMenuSceneEntityState:create(init)")
  end
  
  function MainMenuSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function MainMenuSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" MainMenuSceneEntityState:load()")
+-- print(" MainMenuSceneEntityState:load()")
 end
 
 function MainMenuSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" MainMenuSceneEntityState:unLoad()")
+-- print(" MainMenuSceneEntityState:unLoad()")
 end
 
 function MainMenuSceneEntityState:enter()
- print("	MainMenuSceneEntityState:enter()")
+-- print("	MainMenuSceneEntityState:enter()")
 end
 
 function MainMenuSceneEntityState:update(timeStep)
- print("	MainMenuSceneEntityState:update("..timeStep..")")
+-- print("	MainMenuSceneEntityState:update("..timeStep..")")
 end
 
 function MainMenuSceneEntityState:exit()
- print("	MainMenuSceneEntityState:exit()")
+-- print("	MainMenuSceneEntityState:exit()")
 end
 
 function MainMenuSceneEntityState:onMessage(message)
- print("	MainMenuSceneEntityState:onMessage(message)")
+-- print("	MainMenuSceneEntityState:onMessage(message)")
 end
 
 function MainMenuSceneEntityState:touchDown(touches)
- print("	MainMenuSceneEntityState:touchDown(touches)")
+-- print("	MainMenuSceneEntityState:touchDown(touches)")
 end
 
 function MainMenuSceneEntityState:touchUp(touches)
- print("	MainMenuSceneEntityState:touchUp(touches)")
+-- print("	MainMenuSceneEntityState:touchUp(touches)")
 end
 
 function MainMenuSceneEntityState:touchMove(touches)
- print("	MainMenuSceneEntityState:touchMove(touches)")
+-- print("	MainMenuSceneEntityState:touchMove(touches)")
 end
 
 function MainMenuSceneEntityState:touchCancelled(touches)
- print("	MainMenuSceneEntityState:touchCancelled(touches)")
+-- print("	MainMenuSceneEntityState:touchCancelled(touches)")
 end
 
 function MainMenuSceneEntityState:renderHUD()
- print("	MainMenuSceneEntityState:renderHUD()")
+-- print("	MainMenuSceneEntityState:renderHUD()")
 end
 
 function MainMenuSceneEntityState:pause()
- print("	MainMenuSceneEntityState:pause()")
+-- print("	MainMenuSceneEntityState:pause()")
 end
 
 function MainMenuSceneEntityState:unPause()
- print("	MainMenuSceneEntityState:unPause()")
+-- print("	MainMenuSceneEntityState:unPause()")
 end
 
 return MainMenuSceneEntityState

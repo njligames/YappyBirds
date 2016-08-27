@@ -27,7 +27,7 @@
  end
  
  function BoardselectSceneEntityState:destroy()
- print(" BoardselectSceneEntityState:destroy()")
+-- print(" BoardselectSceneEntityState:destroy()")
  
  BoardselectSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
 
  
- print("	BoardselectSceneEntityState:create(init)")
+-- print("	BoardselectSceneEntityState:create(init)")
  end
  
  function BoardselectSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function BoardselectSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" BoardselectSceneEntityState:load()")
+-- print(" BoardselectSceneEntityState:load()")
 end
 
 function BoardselectSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" BoardselectSceneEntityState:unLoad()")
+-- print(" BoardselectSceneEntityState:unLoad()")
 end
 
 function BoardselectSceneEntityState:enter()
- print("	BoardselectSceneEntityState:enter()")
+-- print("	BoardselectSceneEntityState:enter()")
 end
 
 function BoardselectSceneEntityState:update(timeStep)
- print("	BoardselectSceneEntityState:update("..timeStep..")")
+-- print("	BoardselectSceneEntityState:update("..timeStep..")")
 end
 
 function BoardselectSceneEntityState:exit()
- print("	BoardselectSceneEntityState:exit()")
+-- print("	BoardselectSceneEntityState:exit()")
 end
 
 function BoardselectSceneEntityState:onMessage(message)
- print("	BoardselectSceneEntityState:onMessage(message)")
+-- print("	BoardselectSceneEntityState:onMessage(message)")
 end
 
 function BoardselectSceneEntityState:touchDown(touches)
- print("	BoardselectSceneEntityState:touchDown(touches)")
+-- print("	BoardselectSceneEntityState:touchDown(touches)")
 end
 
 function BoardselectSceneEntityState:touchUp(touches)
- print("	BoardselectSceneEntityState:touchUp(touches)")
+-- print("	BoardselectSceneEntityState:touchUp(touches)")
 end
 
 function BoardselectSceneEntityState:touchMove(touches)
- print("	BoardselectSceneEntityState:touchMove(touches)")
+-- print("	BoardselectSceneEntityState:touchMove(touches)")
 end
 
 function BoardselectSceneEntityState:touchCancelled(touches)
- print("	BoardselectSceneEntityState:touchCancelled(touches)")
+-- print("	BoardselectSceneEntityState:touchCancelled(touches)")
 end
 
 function BoardselectSceneEntityState:renderHUD()
- print("	BoardselectSceneEntityState:renderHUD()")
+-- print("	BoardselectSceneEntityState:renderHUD()")
 end
 
 function BoardselectSceneEntityState:pause()
- print("	BoardselectSceneEntityState:pause()")
+-- print("	BoardselectSceneEntityState:pause()")
 end
 
 function BoardselectSceneEntityState:unPause()
- print("	BoardselectSceneEntityState:unPause()")
+-- print("	BoardselectSceneEntityState:unPause()")
 end
 
 return BoardselectSceneEntityState

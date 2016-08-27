@@ -163,7 +163,7 @@ function WorldEntity:isLoaded()
 end
 
 function WorldEntity:load()
- print("WorldEntity:load()")
+-- print("WorldEntity:load()")
  for k,v in pairs(self._stateEntityTable) do
  v:load()
  end

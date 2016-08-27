@@ -11,153 +11,166 @@ local mygame = MyGame({
 })
 mygame:start()
 
-function WorldKeyboardShow()
- njliGameInstance:worldKeyboardShow()
+--##############################################################################
+
+function __NJLIWorldEnterState()
+--  print("__NJLIWorldEnterState")
+  njliGameInstance:worldEnterState()
 end
 
-function WorldKeyboardCancel()
- njliGameInstance:worldKeyboardCancel()
+function __NJLIWorldUpdateState(timeStep)
+--  print("__NJLIWorldUpdateState")
+  njliGameInstance:worldUpdateState(timeStep)
 end
 
-function WorldKeyboardReturn(text)
- njliGameInstance:worldKeyboardReturn(text)
+function __NJLIWorldExitState()
+--  print("__NJLIWorldExitState")
+  njliGameInstance:worldExitState()
 end
 
-function WorldReceivedMemoryWarning()
- njliGameInstance:worldReceivedMemoryWarning()
+function __NJLIWorldOnMessage(message)
+--  print("__NJLIWorldOnMessage")
+  njliGameInstance:worldOnMessage(message)
 end
 
-function WorldGamePause()
- njliGameInstance:worldGamePause()
+function __NJLIWorldKeyboardShow()
+--  print("__NJLIWorldKeyboardShow")
+  njliGameInstance:worldKeyboardShow()
 end
 
-function WorldGameUnPause()
- njliGameInstance:worldGameUnPause()
+function __NJLIWorldKeyboardCancel()
+--  print("__NJLIWorldKeyboardCancel")
+  njliGameInstance:worldKeyboardCancel()
 end
 
-function WorldRenderHUD()
- njliGameInstance:worldRenderHUD()
+function __NJLIWorldKeyboardReturn(text)
+--  print("__NJLIWorldKeyboardReturn")
+  njliGameInstance:worldKeyboardReturn(text)
 end
 
-function WorldEnterState()
- njliGameInstance:worldEnterState()
+function __NJLIWorldReceivedMemoryWarning()
+--  print("__NJLIWorldReceivedMemoryWarning")
+  njliGameInstance:worldReceivedMemoryWarning()
 end
 
-function WorldUpdateState(timeStep)
- njliGameInstance:worldUpdateState(timeStep)
+function __NJLIWorldGamePause()
+--  print("__NJLIWorldGamePause")
+  njliGameInstance:worldGamePause()
 end
 
-function WorldExitState()
- njliGameInstance:worldExitState()
+function __NJLIWorldGameUnPause()
+--  print("__NJLIWorldGameUnPause")
+  njliGameInstance:worldGameUnPause()
 end
 
-function WorldOnMessage(message)
- njliGameInstance:worldOnMessage(message)
+function __NJLIWorldRenderHUD()
+--  print("__NJLIWorldRenderHUD")
+  njliGameInstance:worldRenderHUD()
 end
 
-function WorldTouchDown(touches)
- njliGameInstance:worldTouchDown(touches)
+function __NJLIWorldTouchDown(touches)
+--  print("__NJLIWorldTouchDown")
+  njliGameInstance:worldTouchDown(touches)
 end
 
-function WorldTouchUp(touches)
- njliGameInstance:worldTouchUp(touches)
+function __NJLIWorldTouchUp(touches)
+--  print("__NJLIWorldTouchUp")
+  njliGameInstance:worldTouchUp(touches)
 end
 
-function WorldTouchMove(touches)
- njliGameInstance:worldTouchMove(touches)
+function __NJLIWorldTouchMove(touches)
+--  print("__NJLIWorldTouchMove")
+  njliGameInstance:worldTouchMove(touches)
 end
 
-function WorldTouchCancelled(touches)
- njliGameInstance:worldTouchCancelled(touches)
+function __NJLIWorldTouchCancelled(touches)
+--  print("__NJLIWorldTouchCancelled")
+  njliGameInstance:worldTouchCancelled(touches)
 end
 
+--##############################################################################
 
-
-function SceneEnterState(scene)
- njliGameInstance:sceneEnterState(scene)
+function __NJLISceneEnterState(scene)
+--  print("__NJLISceneEnterState")
+  njliGameInstance:sceneEnterState(scene)
 end
 
-function SceneUpdateState(scene, timeStep)
- njliGameInstance:sceneUpdateState(scene, timeStep)
+function __NJLISceneUpdateState(scene, timeStep)
+--  print("__NJLISceneUpdateState")
+  njliGameInstance:sceneUpdateState(scene, timeStep)
 end
 
-function SceneExitState(scene)
- njliGameInstance:sceneExitState(scene)
+function __NJLISceneExitState(scene)
+--  print("__NJLISceneExitState")
+  njliGameInstance:sceneExitState(scene)
 end
 
-function SceneOnMessage(scene, message)
- njliGameInstance:sceneOnMessage(scene, message)
+function __NJLISceneOnMessage(scene, message)
+--  print("__NJLISceneOnMessage")
+  njliGameInstance:sceneOnMessage(scene, message)
 end
 
+--##############################################################################
 
-
-
-function NodeEnterState(node)
- njliGameInstance:nodeEnterState(node)
+function __NJLINodeEnterState(node)
+--  print("__NJLINodeEnterState")
+  njliGameInstance:nodeEnterState(node)
 end
 
-function NodeUpdateState(node, timeStep)
- njliGameInstance:nodeUpdateState(node, timeStep)
+function __NJLINodeUpdateState(node, timeStep)
+--  print("__NJLINodeUpdateState")
+  njliGameInstance:nodeUpdateState(node, timeStep)
 end
 
-function NodeExitState(node)
- njliGameInstance:nodeExitState(node)
+function __NJLINodeExitState(node)
+--  print("__NJLINodeExitState")
+  njliGameInstance:nodeExitState(node)
 end
 
-function NodeOnMessage(node, message)
- njliGameInstance:nodeOnMessage(node, message)
+function __NJLINodeOnMessage(node, message)
+--  print("__NJLINodeOnMessage")
+  njliGameInstance:nodeOnMessage(node, message)
 end
 
-function NodeCollide(node, otherNode, collisionPoint)
- njliGameInstance:nodeCollide(node, otherNode, collisionPoint)
+function __NJLINodeCollide(node, otherNode, collisionPoint)
+--  print("__NJLINodeCollide")
+  njliGameInstance:nodeCollide(node, otherNode, collisionPoint)
 end
 
-function NodeNear(node, otherNode)
- njliGameInstance:nodeNear(node, otherNode)
+function __NJLINodeNear(node, otherNode)
+--  print("__NJLINodeNear")
+  njliGameInstance:nodeNear(node, otherNode)
 end
 
-function NodeActionUpdate(action, timeStep)
- njliGameInstance:nodeActionUpdate(action, timeStep)
+function __NJLINodeActionUpdate(action, timeStep)
+--  print("__NJLINodeActionUpdate")
+  njliGameInstance:nodeActionUpdate(action, timeStep)
 end
 
-function NodeActionComplete(action)
- njliGameInstance:nodeActionComplete(node)
+function __NJLINodeActionComplete(action)
+--  print("__NJLINodeActionComplete")
+  njliGameInstance:nodeActionComplete(node)
 end
 
-function NodeRayTouchDown(rayContact)
- njliGameInstance:rayTouchDown(rayContact)
+function __NJLINodeRayTouchDown(rayContact)
+--  print("__NJLINodeRayTouchDown")
+  njliGameInstance:rayTouchDown(rayContact)
 end
 
-function NodeRayTouchUp(rayContact)
- njliGameInstance:rayTouchUp(rayContact)
+function __NJLINodeRayTouchUp(rayContact)
+--  print("__NJLINodeRayTouchUp")
+  njliGameInstance:rayTouchUp(rayContact)
 end
 
-function NodeRayTouchMove(rayContact)
- njliGameInstance:rayTouchMove(rayContact)
+function __NJLINodeRayTouchMove(rayContact)
+--  print("__NJLINodeRayTouchMove")
+  njliGameInstance:rayTouchMove(rayContact)
 end
 
-function NodeRayTouchCancelled(rayContact)
- njliGameInstance:rayTouchCancelled(rayContact)
+function __NJLINodeRayTouchCancelled(rayContact)
+--  print("__NJLINodeRayTouchCancelled")
+  njliGameInstance:rayTouchCancelled(rayContact)
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -27,7 +27,7 @@
  end
  
  function SettingsSceneEntityState:destroy()
- print(" SettingsSceneEntityState:destroy()")
+-- print(" SettingsSceneEntityState:destroy()")
  SettingsSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
  end
@@ -36,7 +36,7 @@
  SceneEntityState.create(self, init)
  
  
- print("	SettingsSceneEntityState:create(init)")
+-- print("	SettingsSceneEntityState:create(init)")
  end
  
  function SettingsSceneEntityState:__gc()
@@ -66,57 +66,57 @@ end
 function SettingsSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" SettingsSceneEntityState:load()")
+-- print(" SettingsSceneEntityState:load()")
 end
 
 function SettingsSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" SettingsSceneEntityState:unLoad()")
+-- print(" SettingsSceneEntityState:unLoad()")
 end
 
 function SettingsSceneEntityState:enter()
- print("	SettingsSceneEntityState:enter()")
+-- print("	SettingsSceneEntityState:enter()")
 end
 
 function SettingsSceneEntityState:update(timeStep)
- print("	SettingsSceneEntityState:update("..timeStep..")")
+-- print("	SettingsSceneEntityState:update("..timeStep..")")
 end
 
 function SettingsSceneEntityState:exit()
- print("	SettingsSceneEntityState:exit()")
+-- print("	SettingsSceneEntityState:exit()")
 end
 
 function SettingsSceneEntityState:onMessage(message)
- print("	SettingsSceneEntityState:onMessage(message)")
+-- print("	SettingsSceneEntityState:onMessage(message)")
 end
 
 function SettingsSceneEntityState:touchDown(touches)
- print("	SettingsSceneEntityState:touchDown(touches)")
+-- print("	SettingsSceneEntityState:touchDown(touches)")
 end
 
 function SettingsSceneEntityState:touchUp(touches)
- print("	SettingsSceneEntityState:touchUp(touches)")
+-- print("	SettingsSceneEntityState:touchUp(touches)")
 end
 
 function SettingsSceneEntityState:touchMove(touches)
- print("	SettingsSceneEntityState:touchMove(touches)")
+-- print("	SettingsSceneEntityState:touchMove(touches)")
 end
 
 function SettingsSceneEntityState:touchCancelled(touches)
- print("	SettingsSceneEntityState:touchCancelled(touches)")
+-- print("	SettingsSceneEntityState:touchCancelled(touches)")
 end
 
 function SettingsSceneEntityState:renderHUD()
- print("	SettingsSceneEntityState:renderHUD()")
+-- print("	SettingsSceneEntityState:renderHUD()")
 end
 
 function SettingsSceneEntityState:pause()
- print("	SettingsSceneEntityState:pause()")
+-- print("	SettingsSceneEntityState:pause()")
 end
 
 function SettingsSceneEntityState:unPause()
- print("	SettingsSceneEntityState:unPause()")
+-- print("	SettingsSceneEntityState:unPause()")
 end
 
 return SettingsSceneEntityState

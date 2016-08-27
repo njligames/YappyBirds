@@ -27,7 +27,7 @@
  end
  
  function AchievementsSceneEntityState:destroy()
- print(" AchievementsSceneEntityState:destroy()")
+-- print(" AchievementsSceneEntityState:destroy()")
  
  AchievementsSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
 
  
- print("	AchievementsSceneEntityState:create(init)")
+-- print("	AchievementsSceneEntityState:create(init)")
  end
  
  function AchievementsSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function AchievementsSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" AchievementsSceneEntityState:load()")
+-- print(" AchievementsSceneEntityState:load()")
 end
 
 function AchievementsSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" AchievementsSceneEntityState:unLoad()")
+-- print(" AchievementsSceneEntityState:unLoad()")
 end
 
 function AchievementsSceneEntityState:enter()
- print("	AchievementsSceneEntityState:enter()")
+-- print("	AchievementsSceneEntityState:enter()")
 end
 
 function AchievementsSceneEntityState:update(timeStep)
- print("	AchievementsSceneEntityState:update("..timeStep..")")
+-- print("	AchievementsSceneEntityState:update("..timeStep..")")
 end
 
 function AchievementsSceneEntityState:exit()
- print("	AchievementsSceneEntityState:exit()")
+-- print("	AchievementsSceneEntityState:exit()")
 end
 
 function AchievementsSceneEntityState:onMessage(message)
- print("	AchievementsSceneEntityState:onMessage(message)")
+-- print("	AchievementsSceneEntityState:onMessage(message)")
 end
 
 function AchievementsSceneEntityState:touchDown(touches)
- print("	AchievementsSceneEntityState:touchDown(touches)")
+-- print("	AchievementsSceneEntityState:touchDown(touches)")
 end
 
 function AchievementsSceneEntityState:touchUp(touches)
- print("	AchievementsSceneEntityState:touchUp(touches)")
+-- print("	AchievementsSceneEntityState:touchUp(touches)")
 end
 
 function AchievementsSceneEntityState:touchMove(touches)
- print("	AchievementsSceneEntityState:touchMove(touches)")
+-- print("	AchievementsSceneEntityState:touchMove(touches)")
 end
 
 function AchievementsSceneEntityState:touchCancelled(touches)
- print("	AchievementsSceneEntityState:touchCancelled(touches)")
+-- print("	AchievementsSceneEntityState:touchCancelled(touches)")
 end
 
 function AchievementsSceneEntityState:renderHUD()
- print("	AchievementsSceneEntityState:renderHUD()")
+-- print("	AchievementsSceneEntityState:renderHUD()")
 end
 
 function AchievementsSceneEntityState:pause()
- print("	AchievementsSceneEntityState:pause()")
+-- print("	AchievementsSceneEntityState:pause()")
 end
 
 function AchievementsSceneEntityState:unPause()
- print("	AchievementsSceneEntityState:unPause()")
+-- print("	AchievementsSceneEntityState:unPause()")
 end
 
 return AchievementsSceneEntityState

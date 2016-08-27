@@ -27,7 +27,7 @@
  end
  
  function LoadingMenuSceneEntityState:destroy()
- print(" LoadingMenuSceneEntityState:destroy()")
+-- print(" LoadingMenuSceneEntityState:destroy()")
  
  LoadingMenuSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
  
  
- print("	LoadingMenuSceneEntityState:create(init)")
+-- print("	LoadingMenuSceneEntityState:create(init)")
  end
  
  function LoadingMenuSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function LoadingMenuSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" LoadingMenuSceneEntityState:load()")
+-- print(" LoadingMenuSceneEntityState:load()")
 end
 
 function LoadingMenuSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" LoadingMenuSceneEntityState:unLoad()")
+-- print(" LoadingMenuSceneEntityState:unLoad()")
 end
 
 function LoadingMenuSceneEntityState:enter()
- print("	LoadingMenuSceneEntityState:enter()")
+-- print("	LoadingMenuSceneEntityState:enter()")
 end
 
 function LoadingMenuSceneEntityState:update(timeStep)
- print("	LoadingMenuSceneEntityState:update("..timeStep..")")
+-- print("	LoadingMenuSceneEntityState:update("..timeStep..")")
 end
 
 function LoadingMenuSceneEntityState:exit()
- print("	LoadingMenuSceneEntityState:exit()")
+-- print("	LoadingMenuSceneEntityState:exit()")
 end
 
 function LoadingMenuSceneEntityState:onMessage(message)
- print("	LoadingMenuSceneEntityState:onMessage(message)")
+-- print("	LoadingMenuSceneEntityState:onMessage(message)")
 end
 
 function LoadingMenuSceneEntityState:touchDown(touches)
- print("	LoadingMenuSceneEntityState:touchDown(touches)")
+-- print("	LoadingMenuSceneEntityState:touchDown(touches)")
 end
 
 function LoadingMenuSceneEntityState:touchUp(touches)
- print("	LoadingMenuSceneEntityState:touchUp(touches)")
+-- print("	LoadingMenuSceneEntityState:touchUp(touches)")
 end
 
 function LoadingMenuSceneEntityState:touchMove(touches)
- print("	LoadingMenuSceneEntityState:touchMove(touches)")
+-- print("	LoadingMenuSceneEntityState:touchMove(touches)")
 end
 
 function LoadingMenuSceneEntityState:touchCancelled(touches)
- print("	LoadingMenuSceneEntityState:touchCancelled(touches)")
+-- print("	LoadingMenuSceneEntityState:touchCancelled(touches)")
 end
 
 function LoadingMenuSceneEntityState:renderHUD()
- print("	LoadingMenuSceneEntityState:renderHUD()")
+-- print("	LoadingMenuSceneEntityState:renderHUD()")
 end
 
 function LoadingMenuSceneEntityState:pause()
- print("	LoadingMenuSceneEntityState:pause()")
+-- print("	LoadingMenuSceneEntityState:pause()")
 end
 
 function LoadingMenuSceneEntityState:unPause()
- print("	LoadingMenuSceneEntityState:unPause()")
+-- print("	LoadingMenuSceneEntityState:unPause()")
 end
 
 return LoadingMenuSceneEntityState

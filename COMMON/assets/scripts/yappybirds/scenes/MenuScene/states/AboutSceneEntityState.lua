@@ -27,7 +27,7 @@
  end
  
  function AboutSceneEntityState:destroy()
- print(" AboutSceneEntityState:destroy()")
+-- print(" AboutSceneEntityState:destroy()")
  
  AboutSceneEntityState.__gc(self)
  SceneEntityState.destroy(self)
@@ -37,7 +37,7 @@
  SceneEntityState.create(self, init)
  
  
- print("	AboutSceneEntityState:create(init)")
+-- print("	AboutSceneEntityState:create(init)")
  end
  
  function AboutSceneEntityState:__gc()
@@ -67,57 +67,57 @@ end
 function AboutSceneEntityState:load()
  SceneEntityState.load(self)
 
- print(" AboutSceneEntityState:load()")
+-- print(" AboutSceneEntityState:load()")
 end
 
 function AboutSceneEntityState:unLoad()
  SceneEntityState.unLoad(self)
 
- print(" AboutSceneEntityState:unLoad()")
+-- print(" AboutSceneEntityState:unLoad()")
 end
 
 function AboutSceneEntityState:enter()
- print("	AboutSceneEntityState:enter()")
+-- print("	AboutSceneEntityState:enter()")
 end
 
 function AboutSceneEntityState:update(timeStep)
- print("	AboutSceneEntityState:update("..timeStep..")")
+-- print("	AboutSceneEntityState:update("..timeStep..")")
 end
 
 function AboutSceneEntityState:exit()
- print("	AboutSceneEntityState:exit()")
+-- print("	AboutSceneEntityState:exit()")
 end
 
 function AboutSceneEntityState:onMessage(message)
- print("	AboutSceneEntityState:onMessage(message)")
+-- print("	AboutSceneEntityState:onMessage(message)")
 end
 
 function AboutSceneEntityState:touchDown(touches)
- print("	AboutSceneEntityState:touchDown(touches)")
+-- print("	AboutSceneEntityState:touchDown(touches)")
 end
 
 function AboutSceneEntityState:touchUp(touches)
- print("	AboutSceneEntityState:touchUp(touches)")
+-- print("	AboutSceneEntityState:touchUp(touches)")
 end
 
 function AboutSceneEntityState:touchMove(touches)
- print("	AboutSceneEntityState:touchMove(touches)")
+-- print("	AboutSceneEntityState:touchMove(touches)")
 end
 
 function AboutSceneEntityState:touchCancelled(touches)
- print("	AboutSceneEntityState:touchCancelled(touches)")
+-- print("	AboutSceneEntityState:touchCancelled(touches)")
 end
 
 function AboutSceneEntityState:renderHUD()
- print("	AboutSceneEntityState:renderHUD()")
+-- print("	AboutSceneEntityState:renderHUD()")
 end
 
 function AboutSceneEntityState:pause()
- print("	AboutSceneEntityState:pause()")
+-- print("	AboutSceneEntityState:pause()")
 end
 
 function AboutSceneEntityState:unPause()
- print("	AboutSceneEntityState:unPause()")
+-- print("	AboutSceneEntityState:unPause()")
 end
 
 return AboutSceneEntityState

@@ -155,7 +155,7 @@ function SceneEntity:isLoaded()
 end
 
 function SceneEntity:load()
- print("SceneEntity:load()")
+-- print("SceneEntity:load()")
 
  for k,v in pairs(self._stateEntityTable) do
  v:load()
@@ -164,7 +164,7 @@ function SceneEntity:load()
 end
 
 function SceneEntity:unLoad()
- print("SceneEntity:unLoad()")
+-- print("SceneEntity:unLoad()")
  
  if self:getScene() then
  njli.Scene.destroy(self:getScene())
@@ -183,11 +183,12 @@ function SceneEntity:unLoad()
 end
 
 function SceneEntity:initialize()
- if self:_getEntityState(self:getStartSceneName()) then
- self:_getEntityState(self:getStartSceneName()):push()
- else
- print("self:getStartSceneName() is not found.")
- end
+  if self:_getEntityState(self:getStartSceneName()) then
+    print("\n\nPushing ... " .. self:getStartSceneName() .. "\n\n\n")
+    self:_getEntityState(self:getStartSceneName()):push()
+  else
+    print("\n\n\nself:getStartSceneName() is not found.\n\n\n")
+  end
 end
 
 function SceneEntity:enter()
