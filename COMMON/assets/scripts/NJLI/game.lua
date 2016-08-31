@@ -1,7 +1,7 @@
 local Game = {}
 Game.__index = Game
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(Game, {
  __call = function (cls, ...)
@@ -62,7 +62,7 @@ end
 function Game:__tostring()
  
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 

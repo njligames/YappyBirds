@@ -103,7 +103,7 @@ end
 
 function SceneEntity:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 function SceneEntity:_addEntityState(stateName, entityStateModule)

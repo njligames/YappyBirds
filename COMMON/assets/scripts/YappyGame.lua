@@ -82,7 +82,7 @@ end
 
 function YappyGame:__tostring()
 
-  return json.encode(self)
+  return json.stringify(self)
 end
 
 function YappyGame:getGameInstance()

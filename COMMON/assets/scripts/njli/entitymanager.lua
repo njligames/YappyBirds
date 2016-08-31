@@ -73,7 +73,7 @@ end
 function EntityManager:__tostring()
  
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 

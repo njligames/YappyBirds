@@ -44,7 +44,7 @@ end
 
 function YappyBirdWorldEntity:__tostring()
 
-  return json.encode(self)
+  return json.stringify(self)
 end
 
 function YappyBirdWorldEntity:isLoaded()

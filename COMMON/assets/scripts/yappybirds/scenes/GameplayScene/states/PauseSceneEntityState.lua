@@ -47,7 +47,7 @@
  
  function PauseSceneEntityState:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
  end
  
  

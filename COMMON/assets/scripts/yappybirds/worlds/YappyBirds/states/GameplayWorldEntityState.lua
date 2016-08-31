@@ -52,7 +52,7 @@ end
 
 function GameplayWorldEntityState:__tostring()
 
-  return json.encode(self)
+  return json.stringify(self)
 end
 
 function GameplayWorldEntityState:isLoaded()

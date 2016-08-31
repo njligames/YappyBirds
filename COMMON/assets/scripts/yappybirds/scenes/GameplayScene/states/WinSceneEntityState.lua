@@ -47,7 +47,7 @@
  
  function WinSceneEntityState:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
  end
  
  

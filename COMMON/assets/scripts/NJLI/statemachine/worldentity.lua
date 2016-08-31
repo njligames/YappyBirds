@@ -107,7 +107,7 @@ end
 
 function WorldEntity:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 function WorldEntity:_addEntityState(stateName, entityStateModule)

@@ -114,7 +114,7 @@ end
 
 function MenuWorldEntityState:__tostring()
 
-  return json.encode(self)
+  return json.stringify(self)
 end
 
 function MenuWorldEntityState:isLoaded()

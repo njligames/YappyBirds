@@ -97,7 +97,7 @@ end
 
 function NodeEntity:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 function NodeEntity:_addEntityState(stateName, entityStateModule)

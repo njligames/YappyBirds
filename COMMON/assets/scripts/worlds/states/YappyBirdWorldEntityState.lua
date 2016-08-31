@@ -43,7 +43,7 @@
  
  function YappyBirdWorldEntityState:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
  end
  
  
@@ -65,7 +65,7 @@ end
 
 function YappyBirdWorldEntityState:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 function YappyBirdWorldEntityState:load()

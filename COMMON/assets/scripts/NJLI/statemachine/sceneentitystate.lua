@@ -67,7 +67,7 @@ end
 function SceneEntityState:__tostring()
  
  
- return json.encode(self)
+ return json.stringify(self)
 end
 
 function SceneEntityState:getSceneState()

@@ -47,7 +47,7 @@
  
  function CharactersSceneEntityState:__tostring()
  
- return json.encode(self)
+ return json.stringify(self)
  end
  
  
