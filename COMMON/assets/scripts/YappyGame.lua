@@ -1,5 +1,4 @@
 local YappyBirdWorldEntity = require "yappybirds.worlds.YappyBirds.YappyBirdWorldEntity"
-local EntityFactory = require "yappybirds.EntityFactory"
 
 local YappyGame = {}
 YappyGame.__index = YappyGame
@@ -51,9 +50,6 @@ function YappyGame:create(init)
 
   self._sharedGameInstance = init.gameInstance
   
-  
-  self._entityFactory = EntityFactory()
-
   local myInit =
   {
     name = "YappyBirdWorldEntity",
@@ -75,26 +71,20 @@ function YappyGame:create(init)
 
     startStateName = "MenuWorldEntityState",
     gameInstance = init.gameInstance,
-    entityFactory = self._entityFactory
   }
 
   self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(myInit))
 end
 
 function YappyGame:__gc()
-  self._entityFactory:destroy()
 end
 
 function YappyGame:__tostring()
-  return json:stringify(self)
+  return json.stringify(self)
 end
 
 function YappyGame:getGameInstance()
   return self._sharedGameInstance
-end
-
-function YappyGame:getEntityFactory()
-  return self._entityFactory
 end
 
 function YappyGame:start()
