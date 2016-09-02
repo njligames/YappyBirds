@@ -3,7 +3,7 @@ local WorldEntityState = require "njli.statemachine.worldentitystate"
 local GameplayWorldEntityState = {}
 GameplayWorldEntityState.__index = GameplayWorldEntityState
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(GameplayWorldEntityState, {
     __index = WorldEntityState,
@@ -52,7 +52,7 @@ end
 
 function GameplayWorldEntityState:__tostring()
 
-  return json.stringify(self)
+  return json:stringify(self)
 end
 
 function GameplayWorldEntityState:isLoaded()

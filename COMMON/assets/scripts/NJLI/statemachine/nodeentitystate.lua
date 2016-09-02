@@ -1,7 +1,7 @@
 local NodeEntityState = {}
 NodeEntityState.__index = NodeEntityState
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(NodeEntityState, {
  __call = function (cls, ...)
@@ -66,7 +66,7 @@ end
 
 function NodeEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 function NodeEntityState:getNodeState()

@@ -3,7 +3,7 @@
  local LoseSceneEntityState = {}
  LoseSceneEntityState.__index = LoseSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(LoseSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function LoseSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

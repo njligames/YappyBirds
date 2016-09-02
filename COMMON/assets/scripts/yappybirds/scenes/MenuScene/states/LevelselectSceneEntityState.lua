@@ -3,7 +3,7 @@
  local LevelselectSceneEntityState = {}
  LevelselectSceneEntityState.__index = LevelselectSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(LevelselectSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function LevelselectSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

@@ -62,7 +62,7 @@ end
 function Game:__tostring()
  
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 

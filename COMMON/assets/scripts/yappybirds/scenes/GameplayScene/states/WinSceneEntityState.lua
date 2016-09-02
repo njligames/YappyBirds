@@ -3,7 +3,7 @@
  local WinSceneEntityState = {}
  WinSceneEntityState.__index = WinSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(WinSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function WinSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

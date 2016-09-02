@@ -3,7 +3,7 @@
  local MainMenuSceneEntityState = {}
  MainMenuSceneEntityState.__index = MainMenuSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(MainMenuSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function MainMenuSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

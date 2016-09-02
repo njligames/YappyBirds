@@ -3,7 +3,7 @@
  local LeaderboardsSceneEntityState = {}
  LeaderboardsSceneEntityState.__index = LeaderboardsSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(LeaderboardsSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function LeaderboardsSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

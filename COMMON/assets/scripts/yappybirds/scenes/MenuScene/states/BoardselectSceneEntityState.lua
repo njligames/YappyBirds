@@ -3,7 +3,7 @@
  local BoardselectSceneEntityState = {}
  BoardselectSceneEntityState.__index = BoardselectSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(BoardselectSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function BoardselectSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

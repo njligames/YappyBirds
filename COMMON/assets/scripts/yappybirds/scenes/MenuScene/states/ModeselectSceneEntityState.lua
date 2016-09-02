@@ -3,7 +3,7 @@
  local ModeselectSceneEntityState = {}
  ModeselectSceneEntityState.__index = ModeselectSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(ModeselectSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function ModeselectSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

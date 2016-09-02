@@ -1,7 +1,7 @@
 local EntityFactory = {}
 EntityFactory.__index = EntityFactory
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(EntityFactory, {
  __call = function (cls, ...)
@@ -71,9 +71,7 @@ function EntityFactory:__gc()
 end
 
 function EntityFactory:__tostring()
- 
- 
- return json.stringify(self)
+  return json:stringify(self)
 end
 
 function EntityFactory:createMenuScene(theGameInstance)

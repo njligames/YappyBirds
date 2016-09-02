@@ -3,7 +3,7 @@
  local HighScoresSceneEntityState = {}
  HighScoresSceneEntityState.__index = HighScoresSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(HighScoresSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function HighScoresSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

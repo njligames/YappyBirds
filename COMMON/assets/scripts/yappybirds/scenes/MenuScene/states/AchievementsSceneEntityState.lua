@@ -3,7 +3,7 @@
  local AchievementsSceneEntityState = {}
  AchievementsSceneEntityState.__index = AchievementsSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(AchievementsSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function AchievementsSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

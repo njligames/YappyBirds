@@ -3,7 +3,7 @@ local WorldEntity = require "njli.ui.worldentity"
 local YappyBirdWorldEntity = {}
 YappyBirdWorldEntity.__index = YappyBirdWorldEntity
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(YappyBirdWorldEntity, {
  __index = WorldEntity,
@@ -46,7 +46,7 @@ end
 
 function YappyBirdWorldEntity:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 

@@ -3,7 +3,7 @@ local SceneEntity = require "njli.statemachine.sceneentity"
 local GameplaySceneEntity = {}
 GameplaySceneEntity.__index = GameplaySceneEntity
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(GameplaySceneEntity, {
  __index = SceneEntity,
@@ -46,7 +46,7 @@ end
 
 function GameplaySceneEntity:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 

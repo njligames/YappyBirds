@@ -1,7 +1,7 @@
 local NodeEntity = {}
 NodeEntity.__index = NodeEntity
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(NodeEntity, {
  __call = function (cls, ...)
@@ -97,7 +97,7 @@ end
 
 function NodeEntity:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 function NodeEntity:_addEntityState(stateName, entityStateModule)

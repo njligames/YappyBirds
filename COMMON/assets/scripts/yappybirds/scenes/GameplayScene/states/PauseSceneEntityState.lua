@@ -3,7 +3,7 @@
  local PauseSceneEntityState = {}
  PauseSceneEntityState.__index = PauseSceneEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(PauseSceneEntityState, {
  __index = SceneEntityState,
@@ -47,7 +47,7 @@
  
  function PauseSceneEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  

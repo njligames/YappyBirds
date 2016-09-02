@@ -3,7 +3,7 @@ local WorldEntityState = require "njli.statemachine.worldentitystate"
 local ResultsWorldEntityState = {}
 ResultsWorldEntityState.__index = ResultsWorldEntityState
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(ResultsWorldEntityState, {
     __index = WorldEntityState,
@@ -51,7 +51,7 @@ end
 
 function ResultsWorldEntityState:__tostring()
 
-  return json.stringify(self)
+  return json:stringify(self)
 end
 
 function ResultsWorldEntityState:isLoaded()

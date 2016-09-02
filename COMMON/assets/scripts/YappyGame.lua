@@ -1,9 +1,10 @@
 local YappyBirdWorldEntity = require "yappybirds.worlds.YappyBirds.YappyBirdWorldEntity"
+local EntityFactory = require "yappybirds.EntityFactory"
 
 local YappyGame = {}
 YappyGame.__index = YappyGame
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(YappyGame, {
     __call = function (cls, ...)
@@ -48,7 +49,10 @@ function YappyGame:create(init)
   assert(type(init) == "table", "The init parameter must be of type table.")
   assert(init.gameInstance, "There must be a game instance inside of the init table.")
 
-  self.gameInstance = init.gameInstance
+  self._sharedGameInstance = init.gameInstance
+  
+  
+  self._entityFactory = EntityFactory()
 
   local myInit =
   {
@@ -70,23 +74,27 @@ function YappyGame:create(init)
     },
 
     startStateName = "MenuWorldEntityState",
-    gameInstance = init.gameInstance
+    gameInstance = init.gameInstance,
+    entityFactory = self._entityFactory
   }
 
   self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(myInit))
 end
 
 function YappyGame:__gc()
-
+  self._entityFactory:destroy()
 end
 
 function YappyGame:__tostring()
-
-  return json.stringify(self)
+  return json:stringify(self)
 end
 
 function YappyGame:getGameInstance()
-  return self.gameInstance
+  return self._sharedGameInstance
+end
+
+function YappyGame:getEntityFactory()
+  return self._entityFactory
 end
 
 function YappyGame:start()

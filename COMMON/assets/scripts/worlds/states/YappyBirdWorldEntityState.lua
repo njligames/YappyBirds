@@ -3,7 +3,7 @@
  local YappyBirdWorldEntityState = {}
  YappyBirdWorldEntityState.__index = YappyBirdWorldEntityState
  
- local json = require('JSON')
+ local json = require('json')
  
  setmetatable(YappyBirdWorldEntityState, {
  __index = WorldEntityState,
@@ -43,7 +43,7 @@
  
  function YappyBirdWorldEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
  end
  
  
@@ -65,7 +65,7 @@ end
 
 function YappyBirdWorldEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 function YappyBirdWorldEntityState:load()

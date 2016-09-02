@@ -1,7 +1,7 @@
 local WorldEntityState = {}
 WorldEntityState.__index = WorldEntityState
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(WorldEntityState, {
  __call = function (cls, ...)
@@ -66,7 +66,7 @@ end
 
 function WorldEntityState:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 function WorldEntityState:getWorldState()

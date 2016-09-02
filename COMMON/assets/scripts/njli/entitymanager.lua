@@ -1,7 +1,7 @@
 local EntityManager = {}
 EntityManager.__index = EntityManager
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(EntityManager, {
  __call = function (cls, ...)
@@ -73,7 +73,7 @@ end
 function EntityManager:__tostring()
  
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 

@@ -1,7 +1,7 @@
 local SceneEntity = {}
 SceneEntity.__index = SceneEntity
 
-local json = require('JSON')
+local json = require('json')
 
 setmetatable(SceneEntity, {
  __call = function (cls, ...)
@@ -103,7 +103,7 @@ end
 
 function SceneEntity:__tostring()
  
- return json.stringify(self)
+ return json:stringify(self)
 end
 
 function SceneEntity:_addEntityState(stateName, entityStateModule)
