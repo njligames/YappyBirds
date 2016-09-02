@@ -50,30 +50,13 @@ function YappyGame:create(init)
 
   self._sharedGameInstance = init.gameInstance
   
-  local myInit =
+  local yappyBirdWorldEntityInit =
   {
     name = "YappyBirdWorldEntity",
-    states =
-    {
-      {
-        name = "GameplayWorldEntityState",
-        module = require "yappybirds.worlds.YappyBirds.states.GameplayWorldEntityState"
-      },
-      {
-        name = "MenuWorldEntityState",
-        module = require "yappybirds.worlds.YappyBirds.states.MenuWorldEntityState"
-      },
-      {
-        name = "ResultsWorldEntityState",
-        module = require "yappybirds.worlds.YappyBirds.states.ResultsWorldEntityState"
-      },
-    },
-
-    startStateName = "MenuWorldEntityState",
     gameInstance = init.gameInstance,
   }
 
-  self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(myInit))
+  self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(yappyBirdWorldEntityInit))
 end
 
 function YappyGame:__gc()
@@ -87,12 +70,13 @@ function YappyGame:getGameInstance()
   return self._sharedGameInstance
 end
 
-function YappyGame:start()
+function YappyGame:startStateMachine()
+  print("YappyGame:startStateMachine()")
+  
   local worldEntity = self:getGameInstance():getEntityManager():getWorldEntity("YappyBirdWorldEntity")
 
   worldEntity:load()
-
-  worldEntity:initialize()
+  worldEntity:startStateMachine()
 end
 
 return YappyGame

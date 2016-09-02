@@ -27,10 +27,10 @@ function MenuWorldEntityState:superClass()
 end
 
 function MenuWorldEntityState:destroy()
-  -- print(" MenuWorldEntityState:destroy()")
-
   MenuWorldEntityState.__gc(self)
   WorldEntityState.destroy(self)
+
+  print(" MenuWorldEntityState:destroy()")
 end
 
 local init =
@@ -40,22 +40,24 @@ local init =
 }
 
 function MenuWorldEntityState:create(init)
+  print("MenuWorldEntityState:create(init)")
+
   WorldEntityState.create(self, init)
-  
-  local init =
+
+  local sceneInit =
   {
     name = "MenuScene",
     gameInstance = self:getEntityOwner():getGameInstance()
   }
 
   local MenuSceneEntity = require "yappybirds.scenes.MenuScene.MenuSceneEntity"
-  assert(MenuSceneEntity, "SceneEntity class is nil")
-  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(MenuSceneEntity(init))
+  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(MenuSceneEntity(sceneInit))
 
-  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(init.name)
-  assert(sceneEntity, "SceneEntity is nil")
+  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(sceneInit.name)
   sceneEntity:load()
-  sceneEntity:initialize()
+  
+--  sceneEntity:startStateMachine()
+
 end
 
 function MenuWorldEntityState:__gc()
@@ -74,21 +76,26 @@ end
 function MenuWorldEntityState:load()
   WorldEntityState.load(self)
 
-  -- print(" MenuWorldEntityState:load()")
+   print(" MenuWorldEntityState:load()")
 end
 
 function MenuWorldEntityState:unLoad()
   WorldEntityState.unLoad(self)
 
-  -- print(" MenuWorldEntityState:unLoad()")
+   print(" MenuWorldEntityState:unLoad()")
 end
 
 function MenuWorldEntityState:enter()
   print(" MenuWorldEntityState:enter()")
+  
+--  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity("MenuScene")
+--  sceneEntity:startStateMachine()
 end
 
 function MenuWorldEntityState:update(timeStep)
-  -- print(" MenuWorldEntityState:update("..timeStep..")")
+  print(" MenuWorldEntityState:update("..timeStep..")")
+
+  -- self:push()
 end
 
 function MenuWorldEntityState:exit()
@@ -96,51 +103,51 @@ function MenuWorldEntityState:exit()
 end
 
 function MenuWorldEntityState:onMessage(message)
-  -- print(" MenuWorldEntityState:onMessage()")
+   print(" MenuWorldEntityState:onMessage()")
 end
 
 function MenuWorldEntityState:touchDown(touches)
-  -- print(" MenuWorldEntityState:touchDown()")
+   print(" MenuWorldEntityState:touchDown()")
 end
 
 function MenuWorldEntityState:touchUp(touches)
-  -- print(" MenuWorldEntityState:touchUp()")
+   print(" MenuWorldEntityState:touchUp()")
 end
 
 function MenuWorldEntityState:touchMove(touches)
-  -- print(" MenuWorldEntityState:touchMove()")
+   print(" MenuWorldEntityState:touchMove()")
 end
 
 function MenuWorldEntityState:touchCancelled(touches)
-  -- print(" MenuWorldEntityState:touchCancelled()")
+   print(" MenuWorldEntityState:touchCancelled()")
 end
 
 function MenuWorldEntityState:renderHUD()
-  -- print(" MenuWorldEntityState:renderHUD()")
+   print(" MenuWorldEntityState:renderHUD()")
 end
 
 function MenuWorldEntityState:keyboardShow()
-  -- print(" MenuWorldEntityState:keyboardShow()")
+   print(" MenuWorldEntityState:keyboardShow()")
 end
 
 function MenuWorldEntityState:keyboardCancel()
-  -- print(" MenuWorldEntityState:keyboardCancel()")
+   print(" MenuWorldEntityState:keyboardCancel()")
 end
 
 function MenuWorldEntityState:keyboardReturn(text)
-  -- print(" MenuWorldEntityState:keyboardReturn()")
+   print(" MenuWorldEntityState:keyboardReturn()")
 end
 
 function MenuWorldEntityState:receivedMemoryWarning()
-  -- print(" MenuWorldEntityState:receivedMemoryWarning()")
+   print(" MenuWorldEntityState:receivedMemoryWarning()")
 end
 
 function MenuWorldEntityState:pause()
-  -- print(" MenuWorldEntityState:pause()")
+   print(" MenuWorldEntityState:pause()")
 end
 
 function MenuWorldEntityState:unPause()
-  -- print(" MenuWorldEntityState:unPause()")
+   print(" MenuWorldEntityState:unPause()")
 end
 
 return MenuWorldEntityState

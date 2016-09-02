@@ -27,22 +27,29 @@ function GameplayWorldEntityState:superClass()
 end
 
 function GameplayWorldEntityState:destroy()
---  print(" GameplayWorldEntityState:destroy()")
+  print(" GameplayWorldEntityState:destroy()")
 
   GameplayWorldEntityState.__gc(self)
   WorldEntityState.destroy(self)
 end
 
-local init =
-{
-  name = "name",
-  entityOwner = nil
-}
-
 function GameplayWorldEntityState:create(init)
+  print(" GameplayWorldEntityState:create(init)")
+
   WorldEntityState.create(self, init)
 
---  print(" GameplayWorldEntityState:create(init)")
+  local sceneInit =
+  {
+    name = "GameplayScene",
+    gameInstance = self:getEntityOwner():getGameInstance()
+  }
+
+  local GameplaySceneEntity = require "yappybirds.scenes.GameplayScene.GameplaySceneEntity"
+  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(GameplaySceneEntity(sceneInit))
+
+  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(sceneInit.name)
+  sceneEntity:load()
+--  sceneEntity:startStateMachine()
 end
 
 function GameplayWorldEntityState:__gc()
@@ -62,73 +69,73 @@ end
 function GameplayWorldEntityState:load()
   WorldEntityState.load(self)
 
---  print(" GameplayWorldEntityState:load()")
+  print(" GameplayWorldEntityState:load()")
 end
 
 function GameplayWorldEntityState:unLoad()
   WorldEntityState.unLoad(self)
 
---  print(" GameplayWorldEntityState:unLoad()")
+  print(" GameplayWorldEntityState:unLoad()")
 end
 
 function GameplayWorldEntityState:enter()
---  print(" GameplayWorldEntityState:enter()")
+  print(" GameplayWorldEntityState:enter()")
 end
 
 function GameplayWorldEntityState:update(timeStep)
---  print(" GameplayWorldEntityState:update()")
+  print(" GameplayWorldEntityState:update(" .. timeStep .. ")")
 end
 
 function GameplayWorldEntityState:exit()
---  print(" GameplayWorldEntityState:exit()")
+  print(" GameplayWorldEntityState:exit()")
 end
 
 function GameplayWorldEntityState:onMessage(message)
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:onMessage()")
 end
 
 function GameplayWorldEntityState:touchDown(touches)
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:touchDown()")
 end
 
 function GameplayWorldEntityState:touchUp(touches)
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:touchUp()")
 end
 
 function GameplayWorldEntityState:touchMove(touches)
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:touchMove()")
 end
 
 function GameplayWorldEntityState:touchCancelled(touches)
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:touchCancelled()")
 end
 
 function GameplayWorldEntityState:renderHUD()
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:renderHUD()")
 end
 
 function GameplayWorldEntityState:keyboardShow()
---  print(" GameplayWorldEntityState:unLoad()")
+  -- print(" GameplayWorldEntityState:keyboardShow()")
 end
 
 function GameplayWorldEntityState:keyboardCancel()
---  print(" GameplayWorldEntityState:keyboardCancel()")
+  -- print(" GameplayWorldEntityState:keyboardCancel()")
 end
 
 function GameplayWorldEntityState:keyboardReturn(text)
---  print(" GameplayWorldEntityState:keyboardReturn(text)")
+  -- print(" GameplayWorldEntityState:keyboardReturn(text)")
 end
 
 function GameplayWorldEntityState:receivedMemoryWarning()
---  print(" GameplayWorldEntityState:receivedMemoryWarning()")
+  -- print(" GameplayWorldEntityState:receivedMemoryWarning()")
 end
 
 function GameplayWorldEntityState:pause()
---  print(" GameplayWorldEntityState:pause()")
+  -- print(" GameplayWorldEntityState:pause()")
 end
 
 function GameplayWorldEntityState:unPause()
---  print(" GameplayWorldEntityState:unPause()")
+  -- print(" GameplayWorldEntityState:unPause()")
 end
 
 return GameplayWorldEntityState

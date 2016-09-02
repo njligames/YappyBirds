@@ -27,13 +27,15 @@ function MenuSceneEntity:superClass()
 end
 
 function MenuSceneEntity:destroy()
-  -- print(" MenuSceneEntity:destroy()")
-
   MenuSceneEntity.__gc(self)
   SceneEntity.destroy(self)
+  
+  print(" MenuSceneEntity:destroy()")
 end
 
 function MenuSceneEntity:create(init)
+  
+  print(" MenuSceneEntity:create(init)")
 
   local sceneEntityInit =
   {
@@ -92,7 +94,7 @@ function MenuSceneEntity:create(init)
 
   SceneEntity.create(self, sceneEntityInit)
 
-  -- print(" MenuSceneEntity:create(init)")
+   
 end
 
 function MenuSceneEntity:__gc()
@@ -117,79 +119,79 @@ end
 function MenuSceneEntity:unLoad()
   SceneEntity.unLoad(self)
 
-  -- print(" MenuSceneEntity:unLoad()")
+   print(" MenuSceneEntity:unLoad()")
 end
 
-function MenuSceneEntity:initialize()
-  SceneEntity.initialize(self)
+function MenuSceneEntity:startStateMachine()
+  SceneEntity.startStateMachine(self)
 
-  print("MenuSceneEntity:initialize()")
+  print("MenuSceneEntity:startStateMachine()")
 end
 
 function MenuSceneEntity:enter()
   SceneEntity.enter(self)
 
-  -- print(" MenuSceneEntity:enter()")
+   print(" MenuSceneEntity:enter()")
 end
 
 function MenuSceneEntity:update(timeStep)
   SceneEntity.update(self, timeStep)
 
-  -- print(" MenuSceneEntity:update("..timeStep..")")
+   print(" MenuSceneEntity:update("..timeStep..")")
 end
 
 function MenuSceneEntity:exit()
   SceneEntity.exit(self)
 
-  -- print(" MenuSceneEntity:exit()")
+   print(" MenuSceneEntity:exit()")
 end
 
 function MenuSceneEntity:onMessage(message)
   SceneEntity.onMessage(self, message)
 
-  -- print(" MenuSceneEntity:onMessage()")
+   print(" MenuSceneEntity:onMessage()")
 end
 
 function MenuSceneEntity:touchDown(touches)
   SceneEntity.touchDown(self, touches)
 
-  -- print(" MenuSceneEntity:touchDown()")
+   print(" MenuSceneEntity:touchDown()")
 end
 
 function MenuSceneEntity:touchUp(touches)
   SceneEntity.touchUp(self, touches)
 
-  -- print(" MenuSceneEntity:touchUp()")
+   print(" MenuSceneEntity:touchUp()")
 end
 
 function MenuSceneEntity:touchMove(touches)
   SceneEntity.touchMove(self, touches)
 
-  -- print(" MenuSceneEntity:touchMove()")
+   print(" MenuSceneEntity:touchMove()")
 end
 
 function MenuSceneEntity:touchCancelled(touches)
   SceneEntity.touchCancelled(self, touches)
 
-  -- print(" MenuSceneEntity:touchCancelled()")
+   print(" MenuSceneEntity:touchCancelled()")
 end
 
 function MenuSceneEntity:renderHUD()
   SceneEntity.renderHUD(self)
 
-  -- print(" MenuSceneEntity:renderHUD()")
+   print(" MenuSceneEntity:renderHUD()")
 end
 
 function MenuSceneEntity:pause()
   SceneEntity.pause(self)
 
-  -- print(" MenuSceneEntity:pause()")
+   print(" MenuSceneEntity:pause()")
 end
 
 function MenuSceneEntity:unPause()
   SceneEntity.unPause(self)
 
-  -- print(" MenuSceneEntity:unPause()")
+   print(" MenuSceneEntity:unPause()")
 end
 
 return MenuSceneEntity

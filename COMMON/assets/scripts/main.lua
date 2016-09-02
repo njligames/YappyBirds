@@ -1,12 +1,12 @@
 local MyGame = require "YappyGame"
 
 local njligame = require "njli.game"
-local njliGameInstance = njligame()
+njliGameInstance = njligame()
 
 mygame = MyGame({
  gameInstance = njliGameInstance,
 })
-mygame:start()
+mygame:startStateMachine()
 
 --##############################################################################
 

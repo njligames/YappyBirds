@@ -33,9 +33,33 @@ function YappyBirdWorldEntity:destroy()
 end
 
 function YappyBirdWorldEntity:create(init)
-  WorldEntity.create(self, init)
 
---  print(" YappyBirdWorldEntity:create(init)")
+  print(" YappyBirdWorldEntity:create(init)")
+
+  local worldEntityInit =
+  {
+    name = init.name,
+    states =
+    {
+      {
+        name = "GameplayWorldEntityState",
+        module = require "yappybirds.worlds.YappyBirds.states.GameplayWorldEntityState"
+      },
+      {
+        name = "MenuWorldEntityState",
+        module = require "yappybirds.worlds.YappyBirds.states.MenuWorldEntityState"
+      },
+      {
+        name = "ResultsWorldEntityState",
+        module = require "yappybirds.worlds.YappyBirds.states.ResultsWorldEntityState"
+      },
+    },
+
+    startStateName = "MenuWorldEntityState",
+    gameInstance = init.gameInstance,
+  }
+
+  WorldEntity.create(self, worldEntityInit)
 
 end
 
@@ -55,109 +79,109 @@ end
 function YappyBirdWorldEntity:load()
   WorldEntity.load(self)
 
---  print(" YappyBirdWorldEntity:load()")
+   print(" YappyBirdWorldEntity:load()")
 end
 
 function YappyBirdWorldEntity:unLoad()
   WorldEntity.unLoad(self)
 
---  print(" YappyBirdWorldEntity:unLoad()")
+   print(" YappyBirdWorldEntity:unLoad()")
 end
 
-function YappyBirdWorldEntity:initialize()
-  WorldEntity.initialize(self)
+function YappyBirdWorldEntity:startStateMachine()
+  WorldEntity.startStateMachine(self)
 
---  print(" YappyBirdWorldEntity:initialize()")
+   print(" YappyBirdWorldEntity:startStateMachine()")
 end
 
 function YappyBirdWorldEntity:enter()
   WorldEntity.enter(self)
 
---  print(" YappyBirdWorldEntity:enter()")
+   print(" YappyBirdWorldEntity:enter()")
 end
 
 function YappyBirdWorldEntity:update(timeStep)
   WorldEntity.update(self, timeStep)
 
---   print(" YappyBirdWorldEntity:update("..timeStep..")")
+   print(" YappyBirdWorldEntity:update("..timeStep..")")
 end
 
 function YappyBirdWorldEntity:exit()
   WorldEntity.exit(self)
 
---  print(" YappyBirdWorldEntity:exit()")
+   print(" YappyBirdWorldEntity:exit()")
 end
 
 function YappyBirdWorldEntity:onMessage(message)
   WorldEntity.onMessage(self, message)
 
---  print(" YappyBirdWorldEntity:onMessage(message)")
+   print(" YappyBirdWorldEntity:onMessage(message)")
 end
 
 function YappyBirdWorldEntity:touchDown(touches)
   WorldEntity.touchDown(self, touches)
 
---  print(" YappyBirdWorldEntity:touchDown(touches)")
+   print(" YappyBirdWorldEntity:touchDown(touches)")
 end
 
 function YappyBirdWorldEntity:touchUp(touches)
   WorldEntity.touchUp(self, touches)
 
---  print(" YappyBirdWorldEntity:touchUp(touches)")
+   print(" YappyBirdWorldEntity:touchUp(touches)")
 end
 
 function YappyBirdWorldEntity:touchMove(touches)
   WorldEntity.touchMove(self, touches)
 
---  print(" YappyBirdWorldEntity:touchMove(touches)")
+   print(" YappyBirdWorldEntity:touchMove(touches)")
 end
 
 function YappyBirdWorldEntity:touchCancelled(touches)
   WorldEntity.touchCancelled(self, touches)
 
---  print(" YappyBirdWorldEntity:touchCancelled(touches)")
+   print(" YappyBirdWorldEntity:touchCancelled(touches)")
 end
 
 function YappyBirdWorldEntity:renderHUD()
   WorldEntity.renderHUD(self)
 
---  print(" YappyBirdWorldEntity:renderHUD()")
+   print(" YappyBirdWorldEntity:renderHUD()")
 end
 
 function YappyBirdWorldEntity:keyboardShow()
   WorldEntity.keyboardShow(self)
 
---  print(" YappyBirdWorldEntity:keyboardShow()")
+   print(" YappyBirdWorldEntity:keyboardShow()")
 end
 
 function YappyBirdWorldEntity:keyboardCancel()
   WorldEntity.keyboardCancel(self)
 
---  print(" YappyBirdWorldEntity:keyboardCancel()")
+   print(" YappyBirdWorldEntity:keyboardCancel()")
 end
 
 function YappyBirdWorldEntity:keyboardReturn(text)
   WorldEntity.keyboardReturn(self, text)
 
---  print(" YappyBirdWorldEntity:keyboardReturn(text)")
+   print(" YappyBirdWorldEntity:keyboardReturn(text)")
 end
 
 function YappyBirdWorldEntity:receivedMemoryWarning()
   WorldEntity.receivedMemoryWarning(self)
 
---  print(" YappyBirdWorldEntity:receivedMemoryWarning()")
+   print(" YappyBirdWorldEntity:receivedMemoryWarning()")
 end
 
 function YappyBirdWorldEntity:pause()
   WorldEntity.pause(self)
 
---  print(" YappyBirdWorldEntity:pause()")
+   print(" YappyBirdWorldEntity:pause()")
 end
 
 function YappyBirdWorldEntity:unPause()
   WorldEntity.unPause(self)
 
---  print(" YappyBirdWorldEntity:unPause()")
+   print(" YappyBirdWorldEntity:unPause()")
 end
 
 return YappyBirdWorldEntity

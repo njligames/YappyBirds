@@ -59,8 +59,8 @@ function YappyBirdWorldEntity:unLoad()
  WorldEntity.unLoad(self)
 end
 
-function YappyBirdWorldEntity:initialize()
- WorldEntity.initialize(self)
+function YappyBirdWorldEntity:startStateMachine()
+ WorldEntity.startStateMachine(self)
 end
 
 function YappyBirdWorldEntity:enter()

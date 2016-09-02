@@ -67,10 +67,10 @@ function ResultsSceneEntity:unLoad()
  print(" ResultsSceneEntity:unLoad()")
 end
 
-function ResultsSceneEntity:initialize()
- SceneEntity.initialize(self)
+function ResultsSceneEntity:startStateMachine()
+ SceneEntity.startStateMachine(self)
 
- print(" ResultsSceneEntity:initialize()")
+ print(" ResultsSceneEntity:startStateMachine()")
 end
 
 function ResultsSceneEntity:enter()

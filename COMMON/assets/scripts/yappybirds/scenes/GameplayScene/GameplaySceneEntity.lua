@@ -6,137 +6,166 @@ GameplaySceneEntity.__index = GameplaySceneEntity
 local json = require('json')
 
 setmetatable(GameplaySceneEntity, {
- __index = SceneEntity,
- __call = function (cls, ...)
- local self = setmetatable({}, cls)
- self:create(...)
- return self
- end,
-})
+    __index = SceneEntity,
+    __call = function (cls, ...)
+      local self = setmetatable({}, cls)
+      self:create(...)
+      return self
+    end,
+  })
 
 function GameplaySceneEntity:className()
- return "GameplaySceneEntity"
+  return "GameplaySceneEntity"
 end
 
 function GameplaySceneEntity:class()
- return self
+  return self
 end
 
 function GameplaySceneEntity:superClass()
- return SceneEntity
+  return SceneEntity
 end
 
 function GameplaySceneEntity:destroy()
- print(" GameplaySceneEntity:destroy()")
- 
- GameplaySceneEntity.__gc(self)
- SceneEntity.destroy(self)
+  print(" GameplaySceneEntity:destroy()")
+
+  GameplaySceneEntity.__gc(self)
+  SceneEntity.destroy(self)
 end
 
 function GameplaySceneEntity:create(init)
- SceneEntity.create(self, init)
+  
+  local sceneEntityInit =
+  {
+    name = init.name,
+    states =
+    {
+      {
+        name = "LoadingGameplaySceneEntityState",
+        module = require "yappybirds.scenes.GameplayScene.states.LoadingGameplaySceneEntityState"
+      },
+      {
+        name = "AchievementsSceneEntityState",
+        module = require "yappybirds.scenes.GameplayScene.states.LoseSceneEntityState"
+      },
+      {
+        name = "BoardselectSceneEntityState",
+        module = require "yappybirds.scenes.GameplayScene.states.PauseSceneEntityState"
+      },
+      {
+        name = "CharactersSceneEntityState",
+        module = require "yappybirds.scenes.GameplayScene.states.PlayingSceneEntityState"
+      },
+      {
+        name = "HighScoresSceneEntityState",
+        module = require "yappybirds.scenes.GameplayScene.states.WinSceneEntityState"
+      },
+    },
 
- 
- print(" GameplaySceneEntity:create(init)")
+    startStateName = "LoadingGameplaySceneEntityState",
+    gameInstance = init.gameInstance
+  }
+  
+  SceneEntity.create(self, sceneEntityInit)
+
+  print(" GameplaySceneEntity:create(init)")
 end
 
 function GameplaySceneEntity:__gc()
- 
+
 end
 
 function GameplaySceneEntity:__tostring()
- 
- return json:stringify(self)
+
+  return json:stringify(self)
 end
 
-
-
 function GameplaySceneEntity:isLoaded()
- return SceneEntity.isLoaded(self)
+  return SceneEntity.isLoaded(self)
 end
 
 function GameplaySceneEntity:load()
- SceneEntity.load(self)
+  SceneEntity.load(self)
 
- print(" GameplaySceneEntity:load()")
+  print(" GameplaySceneEntity:load()")
 end
 
 function GameplaySceneEntity:unLoad()
- SceneEntity.unLoad(self)
+  SceneEntity.unLoad(self)
 
- print(" GameplaySceneEntity:unLoad()")
+  print(" GameplaySceneEntity:unLoad()")
 end
 
-function GameplaySceneEntity:initialize()
- SceneEntity.initialize(self)
+function GameplaySceneEntity:startStateMachine()
+  SceneEntity.startStateMachine(self)
 
- print(" GameplaySceneEntity:initialize()")
+  print(" GameplaySceneEntity:startStateMachine()")
 end
 
 function GameplaySceneEntity:enter()
- SceneEntity.enter(self)
+  SceneEntity.enter(self)
 
- print(" GameplaySceneEntity:enter()")
+  print(" GameplaySceneEntity:enter()")
 end
 
 function GameplaySceneEntity:update(timeStep)
- SceneEntity.update(self, timeStep)
+  SceneEntity.update(self, timeStep)
 
- print(" GameplaySceneEntity:update()")
+  print(" GameplaySceneEntity:update(" .. timeStep .. ")")
 end
 
 function GameplaySceneEntity:exit()
- SceneEntity.exit(self)
+  SceneEntity.exit(self)
 
- print(" GameplaySceneEntity:exit()")
+  print(" GameplaySceneEntity:exit()")
 end
 
 function GameplaySceneEntity:onMessage(message)
- SceneEntity.onMessage(self, message)
+  SceneEntity.onMessage(self, message)
 
- print(" GameplaySceneEntity:onMessage()")
+  print(" GameplaySceneEntity:onMessage()")
 end
 
 function GameplaySceneEntity:touchDown(touches)
- SceneEntity.touchDown(self, touches)
+  SceneEntity.touchDown(self, touches)
 
- print(" GameplaySceneEntity:touchDown()")
+  print(" GameplaySceneEntity:touchDown()")
 end
 
 function GameplaySceneEntity:touchUp(touches)
- SceneEntity.touchUp(self, touches)
+  SceneEntity.touchUp(self, touches)
 
- print(" GameplaySceneEntity:touchUp()")
+  print(" GameplaySceneEntity:touchUp()")
 end
 
 function GameplaySceneEntity:touchMove(touches)
- SceneEntity.touchMove(self, touches)
+  SceneEntity.touchMove(self, touches)
 
- print(" GameplaySceneEntity:touchMove()")
+  print(" GameplaySceneEntity:touchMove()")
 end
 
 function GameplaySceneEntity:touchCancelled(touches)
- SceneEntity.touchCancelled(self, touches)
+  SceneEntity.touchCancelled(self, touches)
 
- print(" GameplaySceneEntity:touchCancelled()")
+  print(" GameplaySceneEntity:touchCancelled()")
 end
 
 function GameplaySceneEntity:renderHUD()
- SceneEntity.renderHUD(self)
+  SceneEntity.renderHUD(self)
 
- print(" GameplaySceneEntity:renderHUD()")
+  print(" GameplaySceneEntity:renderHUD()")
 end
 
 function GameplaySceneEntity:pause()
- SceneEntity.pause(self)
+  SceneEntity.pause(self)
 
- print(" GameplaySceneEntity:pause()")
+  print(" GameplaySceneEntity:pause()")
 end
 
 function GameplaySceneEntity:unPause()
- SceneEntity.unPause(self)
+  SceneEntity.unPause(self)
 
- print(" GameplaySceneEntity:unPause()")
+  print(" GameplaySceneEntity:unPause()")
 end
 
 return GameplaySceneEntity
