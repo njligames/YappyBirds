@@ -49,7 +49,7 @@ function GameplayWorldEntityState:create(init)
 
   local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(sceneInit.name)
   sceneEntity:load()
---  sceneEntity:startStateMachine()
+
 end
 
 function GameplayWorldEntityState:__gc()
@@ -91,51 +91,51 @@ function GameplayWorldEntityState:exit()
 end
 
 function GameplayWorldEntityState:onMessage(message)
-  -- print(" GameplayWorldEntityState:onMessage()")
+   print(" GameplayWorldEntityState:onMessage()")
 end
 
 function GameplayWorldEntityState:touchDown(touches)
-  -- print(" GameplayWorldEntityState:touchDown()")
+   print(" GameplayWorldEntityState:touchDown()")
 end
 
 function GameplayWorldEntityState:touchUp(touches)
-  -- print(" GameplayWorldEntityState:touchUp()")
+   print(" GameplayWorldEntityState:touchUp()")
 end
 
 function GameplayWorldEntityState:touchMove(touches)
-  -- print(" GameplayWorldEntityState:touchMove()")
+   print(" GameplayWorldEntityState:touchMove()")
 end
 
 function GameplayWorldEntityState:touchCancelled(touches)
-  -- print(" GameplayWorldEntityState:touchCancelled()")
+   print(" GameplayWorldEntityState:touchCancelled()")
 end
 
 function GameplayWorldEntityState:renderHUD()
-  -- print(" GameplayWorldEntityState:renderHUD()")
+   print(" GameplayWorldEntityState:renderHUD()")
 end
 
 function GameplayWorldEntityState:keyboardShow()
-  -- print(" GameplayWorldEntityState:keyboardShow()")
+   print(" GameplayWorldEntityState:keyboardShow()")
 end
 
 function GameplayWorldEntityState:keyboardCancel()
-  -- print(" GameplayWorldEntityState:keyboardCancel()")
+   print(" GameplayWorldEntityState:keyboardCancel()")
 end
 
 function GameplayWorldEntityState:keyboardReturn(text)
-  -- print(" GameplayWorldEntityState:keyboardReturn(text)")
+   print(" GameplayWorldEntityState:keyboardReturn(text)")
 end
 
 function GameplayWorldEntityState:receivedMemoryWarning()
-  -- print(" GameplayWorldEntityState:receivedMemoryWarning()")
+   print(" GameplayWorldEntityState:receivedMemoryWarning()")
 end
 
 function GameplayWorldEntityState:pause()
-  -- print(" GameplayWorldEntityState:pause()")
+   print(" GameplayWorldEntityState:pause()")
 end
 
 function GameplayWorldEntityState:unPause()
-  -- print(" GameplayWorldEntityState:unPause()")
+   print(" GameplayWorldEntityState:unPause()")
 end
 
 return GameplayWorldEntityState

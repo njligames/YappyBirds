@@ -187,17 +187,16 @@ end
 
 function SceneEntity:startStateMachine()
   if self:_getEntityState(self:getStartSceneName()) then
-    print("\n\nPushing ... " .. self:getStartSceneName() .. "\n\n\n")
-
+    
+    --njli.World.getInstance():addScene(self:getScene())
     self:_getEntityState(self:getStartSceneName()):push()
+    
   else
     print("\n\n\nself:getStartSceneName() is not found.\n\n\n")
   end
 end
 
 function SceneEntity:enter()
-  njli.World.getInstance():addScene(self:getScene())
-
   self:getCurrentEntityState():enter()
 end
 

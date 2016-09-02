@@ -56,8 +56,6 @@ function MenuWorldEntityState:create(init)
   local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(sceneInit.name)
   sceneEntity:load()
   
---  sceneEntity:startStateMachine()
-
 end
 
 function MenuWorldEntityState:__gc()
@@ -87,9 +85,6 @@ end
 
 function MenuWorldEntityState:enter()
   print(" MenuWorldEntityState:enter()")
-  
---  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity("MenuScene")
---  sceneEntity:startStateMachine()
 end
 
 function MenuWorldEntityState:update(timeStep)

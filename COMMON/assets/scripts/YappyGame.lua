@@ -57,6 +57,10 @@ function YappyGame:create(init)
   }
 
   self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(yappyBirdWorldEntityInit))
+  
+  local worldEntity = self:getGameInstance():getEntityManager():getWorldEntity("YappyBirdWorldEntity")
+
+  worldEntity:load()
 end
 
 function YappyGame:__gc()
@@ -74,8 +78,7 @@ function YappyGame:startStateMachine()
   print("YappyGame:startStateMachine()")
   
   local worldEntity = self:getGameInstance():getEntityManager():getWorldEntity("YappyBirdWorldEntity")
-
-  worldEntity:load()
+  
   worldEntity:startStateMachine()
 end
 

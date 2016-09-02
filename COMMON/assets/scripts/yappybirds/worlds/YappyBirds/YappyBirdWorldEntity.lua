@@ -55,7 +55,7 @@ function YappyBirdWorldEntity:create(init)
       },
     },
 
-    startStateName = "MenuWorldEntityState",
+    startStateName = "GameplayWorldEntityState",
     gameInstance = init.gameInstance,
   }
 
