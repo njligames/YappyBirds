@@ -47,13 +47,14 @@ function MenuWorldEntityState:create(init)
   local sceneInit =
   {
     name = "MenuScene",
+    module = require "yappybirds.scenes.MenuScene.MenuSceneEntity",
     gameInstance = self:getEntityOwner():getGameInstance()
   }
-
-  local MenuSceneEntity = require "yappybirds.scenes.MenuScene.MenuSceneEntity"
-  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(MenuSceneEntity(sceneInit))
-
-  local sceneEntity = self:getEntityOwner():getGameInstance():getEntityManager():getSceneEntity(sceneInit.name)
+  
+  local sceneEntity = sceneInit.module(sceneInit)
+  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(sceneEntity)
+  self:setSceneEntity(sceneEntity)
+  
   sceneEntity:load()
   
 end
@@ -90,7 +91,7 @@ end
 function MenuWorldEntityState:update(timeStep)
   print(" MenuWorldEntityState:update("..timeStep..")")
 
-  -- self:push()
+--   self:push()
 end
 
 function MenuWorldEntityState:exit()

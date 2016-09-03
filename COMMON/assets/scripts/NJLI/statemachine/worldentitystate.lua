@@ -109,6 +109,14 @@ function WorldEntityState:isIn()
  return self:getWorldState():getName() == self:getEntityOwner():getWorld():getStateMachine():getState():getName()
 end
 
+function WorldEntityState:getSceneEntity()
+  return self._sceneEntity
+end
+
+function WorldEntityState:setSceneEntity(sceneEntity)
+  self._sceneEntity = sceneEntity
+end
+
 function WorldEntityState:enter() assert(false, "overwrite: WorldEntityState:enter") end
 function WorldEntityState:update(timeStep) assert(false, "overwrite: WorldEntityState:update") end
 function WorldEntityState:exit() assert(false, "overwrite: WorldEntityState:exit") end

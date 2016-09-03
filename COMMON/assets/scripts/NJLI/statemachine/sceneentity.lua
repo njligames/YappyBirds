@@ -141,6 +141,10 @@ function SceneEntity:getCurrentEntityState()
   return self:_getEntityState(self:getScene():getStateMachine():getState():getName())
 end
 
+function SceneEntity:pushState(stateName)
+  self:_getEntityState(stateName):push()
+end
+
 function SceneEntity:getStartSceneName()
   return self._startStateName
 end
@@ -188,7 +192,7 @@ end
 function SceneEntity:startStateMachine()
   if self:_getEntityState(self:getStartSceneName()) then
     
-    --njli.World.getInstance():addScene(self:getScene())
+    njli.World.getInstance():addScene(self:getScene())
     self:_getEntityState(self:getStartSceneName()):push()
     
   else

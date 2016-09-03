@@ -136,6 +136,10 @@ function NodeEntity:getCurrentEntityState()
   return self:_getEntityState(self:getNode():getStateMachine():getState():getName())
 end
 
+function SceneEntity:pushState(stateName)
+  self:_getEntityState(stateName):push()
+end
+
 function NodeEntity:getNode()
   return self._node
 end

@@ -144,8 +144,8 @@ function WorldEntity:getCurrentEntityState()
   return self:_getEntityState(self:getWorld():getStateMachine():getState():getName())
 end
 
-function WorldEntity:getGameInstance()
-  return self._gameInstance
+function WorldEntity:pushState(stateName)
+  self:_getEntityState(stateName):push()
 end
 
 function WorldEntity:getStartSceneName()
@@ -154,6 +154,10 @@ end
 
 function WorldEntity:getWorld()
   return self._world
+end
+
+function WorldEntity:getGameInstance()
+  return self._gameInstance
 end
 
 function WorldEntity:isLoaded()
@@ -199,6 +203,11 @@ function WorldEntity:enter()
 end
 
 function WorldEntity:update(timeStep)
+  if self:hasState() then
+    if not self:getCurrentEntityState():getSceneEntity():hasState() then
+      self:getCurrentEntityState():getSceneEntity():startStateMachine()
+    end
+  end
   self:getCurrentEntityState():update(timeStep)
 end
 

@@ -27,22 +27,29 @@ function ResultsWorldEntityState:superClass()
 end
 
 function ResultsWorldEntityState:destroy()
---  print(" ResultsWorldEntityState:destroy()")
+   print(" ResultsWorldEntityState:destroy()")
 
   ResultsWorldEntityState.__gc(self)
   WorldEntityState.destroy(self)
 end
 
-local init =
-{
-  name = "name",
-  entityOwner = nil
-}
-
 function ResultsWorldEntityState:create(init)
+   print(" ResultsWorldEntityState:create(init)")
+
   WorldEntityState.create(self, init)
 
---  print(" ResultsWorldEntityState:create(init)")
+  local sceneInit =
+  {
+    name = "ResultsScene",
+    module = require "yappybirds.scenes.ResultsScene.ResultsSceneEntity",
+    gameInstance = self:getEntityOwner():getGameInstance()
+  }
+
+  local sceneEntity = sceneInit.module(sceneInit)
+  self:getEntityOwner():getGameInstance():getEntityManager():addSceneEntity(sceneEntity)
+  self:setSceneEntity(sceneEntity)
+
+  sceneEntity:load()
 end
 
 function ResultsWorldEntityState:__gc()
@@ -61,73 +68,73 @@ end
 function ResultsWorldEntityState:load()
   WorldEntityState.load(self)
 
---  print(" ResultsWorldEntityState:load()")
+   print(" ResultsWorldEntityState:load()")
 end
 
 function ResultsWorldEntityState:unLoad()
   WorldEntityState.unLoad(self)
 
---  print(" ResultsWorldEntityState:unLoad()")
+   print(" ResultsWorldEntityState:unLoad()")
 end
 
 function ResultsWorldEntityState:enter()
---  print(" ResultsWorldEntityState:enter()")
+   print(" ResultsWorldEntityState:enter()")
 end
 
 function ResultsWorldEntityState:update(timeStep)
---  print(" ResultsWorldEntityState:update("..timeStep..")")
+   print(" ResultsWorldEntityState:update("..timeStep..")")
 end
 
 function ResultsWorldEntityState:exit()
---  print(" ResultsWorldEntityState:exit()")
+   print(" ResultsWorldEntityState:exit()")
 end
 
 function ResultsWorldEntityState:onMessage(message)
---  print(" ResultsWorldEntityState:onMessage()")
+   print(" ResultsWorldEntityState:onMessage()")
 end
 
 function ResultsWorldEntityState:touchDown(touches)
---  print(" ResultsWorldEntityState:touchDown()")
+   print(" ResultsWorldEntityState:touchDown()")
 end
 
 function ResultsWorldEntityState:touchUp(touches)
---  print(" ResultsWorldEntityState:touchUp()")
+   print(" ResultsWorldEntityState:touchUp()")
 end
 
 function ResultsWorldEntityState:touchMove(touches)
---  print(" ResultsWorldEntityState:touchMove()")
+   print(" ResultsWorldEntityState:touchMove()")
 end
 
 function ResultsWorldEntityState:touchCancelled(touches)
---  print(" ResultsWorldEntityState:touchCancelled()")
+   print(" ResultsWorldEntityState:touchCancelled()")
 end
 
 function ResultsWorldEntityState:renderHUD()
---  print(" ResultsWorldEntityState:renderHUD()")
+   print(" ResultsWorldEntityState:renderHUD()")
 end
 
 function ResultsWorldEntityState:keyboardShow()
---  print(" ResultsWorldEntityState:keyboardShow()")
+   print(" ResultsWorldEntityState:keyboardShow()")
 end
 
 function ResultsWorldEntityState:keyboardCancel()
---  print(" ResultsWorldEntityState:keyboardCancel()")
+   print(" ResultsWorldEntityState:keyboardCancel()")
 end
 
 function ResultsWorldEntityState:keyboardReturn(text)
---  print(" ResultsWorldEntityState:keyboardReturn()")
+   print(" ResultsWorldEntityState:keyboardReturn()")
 end
 
 function ResultsWorldEntityState:receivedMemoryWarning()
---  print(" ResultsWorldEntityState:receivedMemoryWarning()")
+   print(" ResultsWorldEntityState:receivedMemoryWarning()")
 end
 
 function ResultsWorldEntityState:pause()
---  print(" ResultsWorldEntityState:pause()")
+   print(" ResultsWorldEntityState:pause()")
 end
 
 function ResultsWorldEntityState:unPause()
---  print(" ResultsWorldEntityState:unPause()")
+   print(" ResultsWorldEntityState:unPause()")
 end
 
 return ResultsWorldEntityState

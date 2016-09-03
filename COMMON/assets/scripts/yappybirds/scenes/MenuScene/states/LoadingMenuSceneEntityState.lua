@@ -77,6 +77,7 @@ end
 
 function LoadingMenuSceneEntityState:update(timeStep)
    print(" LoadingMenuSceneEntityState:update("..timeStep..")")
+--  self:push()
 end
 
 function LoadingMenuSceneEntityState:exit()
