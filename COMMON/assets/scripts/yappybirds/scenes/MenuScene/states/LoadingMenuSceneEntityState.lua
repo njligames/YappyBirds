@@ -1,11 +1,11 @@
 local SceneEntityState = require "njli.statemachine.sceneentitystate"
 
-local LoadingMenuSceneEntityState = {}
-LoadingMenuSceneEntityState.__index = LoadingMenuSceneEntityState
+local SettingsSceneEntityState = {}
+SettingsSceneEntityState.__index = SettingsSceneEntityState
 
 local json = require('json')
 
-setmetatable(LoadingMenuSceneEntityState, {
+setmetatable(SettingsSceneEntityState, {
     __index = SceneEntityState,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -14,106 +14,127 @@ setmetatable(LoadingMenuSceneEntityState, {
     end,
   })
 
-function LoadingMenuSceneEntityState:className()
-  return "LoadingMenuSceneEntityState"
+function SettingsSceneEntityState:className()
+  return "SettingsSceneEntityState"
 end
 
-function LoadingMenuSceneEntityState:class()
+function SettingsSceneEntityState:class()
   return self
 end
 
-function LoadingMenuSceneEntityState:superClass()
+function SettingsSceneEntityState:superClass()
   return SceneEntityState
 end
 
-function LoadingMenuSceneEntityState:destroy()
-   print(" LoadingMenuSceneEntityState:destroy()")
+function SettingsSceneEntityState:isa(theClass)
+  local b_isa = false
+  local cur_class = theClass:class()
+  while ( nil ~= cur_class ) and ( false == b_isa ) do
+    if cur_class == theClass then
+      b_isa = true
+    else
+      cur_class = cur_class:superClass()
+    end
+  end
 
-  LoadingMenuSceneEntityState.__gc(self)
+  return b_isa
+end
+
+function SettingsSceneEntityState:destroy()
+  print("SettingsSceneEntityState:load()")
+
+  SettingsSceneEntityState.__gc(self)
   SceneEntityState.destroy(self)
 end
 
-function LoadingMenuSceneEntityState:create(init)
+function SettingsSceneEntityState:create(init)
   SceneEntityState.create(self, init)
 
-   print(" LoadingMenuSceneEntityState:create(init)")
+  print("SettingsSceneEntityState:load()")
 end
 
-function LoadingMenuSceneEntityState:__gc()
-  self:unLoad()
-
+function SettingsSceneEntityState:__gc()
 end
 
-function LoadingMenuSceneEntityState:__tostring()
-
+function SettingsSceneEntityState:__tostring()
   return json:stringify(self)
 end
 
-local init =
-{
-  name = "name",
-  entityOwner = nil
-}
+function SettingsSceneEntityState:getSceneState()
+  return SceneEntityState.getSceneState(self)
+end
 
-function LoadingMenuSceneEntityState:isLoaded()
+function SettingsSceneEntityState:getEntityOwner()
+  return SceneEntityState.getEntityOwner(self)
+end
+
+function SettingsSceneEntityState:isLoaded()
   return SceneEntityState.isLoaded(self)
 end
 
-function LoadingMenuSceneEntityState:load()
+function SettingsSceneEntityState:load()
   SceneEntityState.load(self)
 
-   print(" LoadingMenuSceneEntityState:load()")
+  print("SettingsSceneEntityState:load()")
 end
 
-function LoadingMenuSceneEntityState:unLoad()
+function SettingsSceneEntityState:unLoad()
   SceneEntityState.unLoad(self)
 
-   print(" LoadingMenuSceneEntityState:unLoad()")
+  print("SettingsSceneEntityState:load()")
 end
 
-function LoadingMenuSceneEntityState:enter()
-   print(" LoadingMenuSceneEntityState:enter()")
+function SettingsSceneEntityState:push()
+  SceneEntityState.push(self)
 end
 
-function LoadingMenuSceneEntityState:update(timeStep)
-   print(" LoadingMenuSceneEntityState:update("..timeStep..")")
---  self:push()
+function SettingsSceneEntityState:isIn()
+  return SceneEntityState.isIn(self)
 end
 
-function LoadingMenuSceneEntityState:exit()
-   print(" LoadingMenuSceneEntityState:exit()")
+function SettingsSceneEntityState:enter()
+  print("SettingsSceneEntityState:enter()")
 end
 
-function LoadingMenuSceneEntityState:onMessage(message)
-  -- print(" LoadingMenuSceneEntityState:onMessage(message)")
+function SettingsSceneEntityState:update(timeStep)
+  print("SettingsSceneEntityState:update("..timeStep..")")
 end
 
-function LoadingMenuSceneEntityState:touchDown(touches)
-  -- print(" LoadingMenuSceneEntityState:touchDown(touches)")
+function SettingsSceneEntityState:exit()
+  print("SettingsSceneEntityState:exit()")
 end
 
-function LoadingMenuSceneEntityState:touchUp(touches)
-  -- print(" LoadingMenuSceneEntityState:touchUp(touches)")
+function SettingsSceneEntityState:onMessage(message)
+  print("SettingsSceneEntityState:onMessage("..tostring(message)..")")
 end
 
-function LoadingMenuSceneEntityState:touchMove(touches)
-  -- print(" LoadingMenuSceneEntityState:touchMove(touches)")
+function SettingsSceneEntityState:touchDown(touches)
+  print("SettingsSceneEntityState:touchDown("..tostring(touches)..")")
 end
 
-function LoadingMenuSceneEntityState:touchCancelled(touches)
-  -- print(" LoadingMenuSceneEntityState:touchCancelled(touches)")
+function SettingsSceneEntityState:touchUp(touches)
+  print("SettingsSceneEntityState:touchUp("..tostring(touches)..")")
 end
 
-function LoadingMenuSceneEntityState:renderHUD()
-  -- print(" LoadingMenuSceneEntityState:renderHUD()")
+function SettingsSceneEntityState:touchMove(touches)
+  print("SettingsSceneEntityState:touchMove("..tostring(touches)..")")
 end
 
-function LoadingMenuSceneEntityState:pause()
-  -- print(" LoadingMenuSceneEntityState:pause()")
+function SettingsSceneEntityState:touchCancelled(touches)
+  print("SettingsSceneEntityState:touchCancelled("..tostring(touches)..")")
 end
 
-function LoadingMenuSceneEntityState:unPause()
-  -- print(" LoadingMenuSceneEntityState:unPause()")
+function SettingsSceneEntityState:renderHUD()
+  print("SettingsSceneEntityState:renderHUD()")
 end
 
-return LoadingMenuSceneEntityState
+function SettingsSceneEntityState:pause()
+  print("SettingsSceneEntityState:pause()")
+end
+
+function SettingsSceneEntityState:unPause()
+  print("SettingsSceneEntityState:unPause()")
+end
+
+return SettingsSceneEntityState
+

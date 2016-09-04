@@ -258,6 +258,134 @@ function Game:sceneOnMessage(scene, message)
   end
 end
 
+function Game:sceneTouchDown(scene, touches)
+  assert(scene, "The scene is nil")
+  assert(touches, "The touches is nil")
+
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:touchDown(touches)
+  end
+end
+
+function Game:sceneTouchUp(scene, touches)
+  assert(scene, "The scene is nil")
+  assert(touches, "The touches is nil")
+
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:touchUp(touches)
+  end
+end
+
+function Game:sceneTouchMove(scene, touches)
+  assert(scene, "The scene is nil")
+  assert(touches, "The touches is nil")
+
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:touchMove(touches)
+  end
+end
+
+function Game:sceneTouchCancelled(scene, touches)
+  assert(scene, "The scene is nil")
+  assert(touches, "The touches is nil")
+
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:touchCancelled(touches)
+  end
+end
+
+
+function Game:sceneKeyboardShow(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:keyboardShow()
+  end
+end
+
+function Game:sceneKeyboardCancel(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:keyboardCancel()
+  end
+end
+
+function Game:sceneKeyboardReturn(scene, text)
+  assert(scene, "The scene is nil")
+  assert(text, "The text is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:keyboardReturn(text)
+  end
+end
+
+function Game:sceneRenderHUD(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:renderHUD()
+  end
+end
+
+function Game:sceneGamePause(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:pause()
+  end
+end
+
+function Game:sceneGameUnPause(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:unPause()
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Game:nodeEnterState(node)
   assert(node, "The node is nil")
 

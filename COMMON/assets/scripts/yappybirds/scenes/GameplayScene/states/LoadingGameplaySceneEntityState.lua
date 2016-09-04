@@ -26,6 +26,20 @@ function LoadingGameplaySceneEntityState:superClass()
   return SceneEntityState
 end
 
+function LoadingGameplaySceneEntityState:isa(theClass)
+  local b_isa = false
+  local cur_class = theClass:class()
+  while ( nil ~= cur_class ) and ( false == b_isa ) do
+    if cur_class == theClass then
+      b_isa = true
+    else
+      cur_class = cur_class:superClass()
+    end
+  end
+
+  return b_isa
+end
+
 function LoadingGameplaySceneEntityState:destroy()
   print(" LoadingGameplaySceneEntityState:destroy()")
 
@@ -40,13 +54,18 @@ function LoadingGameplaySceneEntityState:create(init)
 end
 
 function LoadingGameplaySceneEntityState:__gc()
-  self:unLoad()
-
 end
 
 function LoadingGameplaySceneEntityState:__tostring()
-
   return json:stringify(self)
+end
+
+function LoadingGameplaySceneEntityState:getSceneState()
+  return SceneEntityState.getSceneState(self)
+end
+
+function LoadingGameplaySceneEntityState:getEntityOwner()
+  return SceneEntityState.getEntityOwner(self)
 end
 
 function LoadingGameplaySceneEntityState:isLoaded()
@@ -56,57 +75,66 @@ end
 function LoadingGameplaySceneEntityState:load()
   SceneEntityState.load(self)
 
-  print(" LoadingGameplaySceneEntityState:load()")
+  print("LoadingGameplaySceneEntityState:load()")
 end
 
 function LoadingGameplaySceneEntityState:unLoad()
   SceneEntityState.unLoad(self)
 
-  print(" LoadingGameplaySceneEntityState:unLoad()")
+  print("LoadingGameplaySceneEntityState:load()")
+end
+
+function LoadingGameplaySceneEntityState:push()
+  SceneEntityState.push(self)
+end
+
+function LoadingGameplaySceneEntityState:isIn()
+  return SceneEntityState.isIn(self)
 end
 
 function LoadingGameplaySceneEntityState:enter()
-  print(" LoadingGameplaySceneEntityState:enter()")
+  print("LoadingGameplaySceneEntityState:enter()")
 end
 
 function LoadingGameplaySceneEntityState:update(timeStep)
-  print(" LoadingGameplaySceneEntityState:update("..timeStep..")")
+--  print("LoadingGameplaySceneEntityState:update("..timeStep..")")
 end
 
 function LoadingGameplaySceneEntityState:exit()
-  print(" LoadingGameplaySceneEntityState:exit()")
+  print("LoadingGameplaySceneEntityState:exit()")
 end
 
 function LoadingGameplaySceneEntityState:onMessage(message)
-  print(" LoadingGameplaySceneEntityState:onMessage(message)")
+  print("LoadingGameplaySceneEntityState:onMessage("..tostring(message)..")")
 end
 
 function LoadingGameplaySceneEntityState:touchDown(touches)
-  print(" LoadingGameplaySceneEntityState:touchDown(touches)")
+  print("LoadingGameplaySceneEntityState:touchDown("..tostring(touches)..")")
 end
 
 function LoadingGameplaySceneEntityState:touchUp(touches)
-  print(" LoadingGameplaySceneEntityState:touchUp(touches)")
+  print("LoadingGameplaySceneEntityState:touchUp("..tostring(touches)..")")
 end
 
 function LoadingGameplaySceneEntityState:touchMove(touches)
-  print(" LoadingGameplaySceneEntityState:touchMove(touches)")
+  print("LoadingGameplaySceneEntityState:touchMove("..tostring(touches)..")")
 end
 
 function LoadingGameplaySceneEntityState:touchCancelled(touches)
-  print(" LoadingGameplaySceneEntityState:touchCancelled(touches)")
+  print("LoadingGameplaySceneEntityState:touchCancelled("..tostring(touches)..")")
 end
 
 function LoadingGameplaySceneEntityState:renderHUD()
-  print(" LoadingGameplaySceneEntityState:renderHUD()")
+--  print("LoadingGameplaySceneEntityState:renderHUD()")
 end
 
 function LoadingGameplaySceneEntityState:pause()
-  print(" LoadingGameplaySceneEntityState:pause()")
+  print("LoadingGameplaySceneEntityState:pause()")
 end
 
 function LoadingGameplaySceneEntityState:unPause()
-  print(" LoadingGameplaySceneEntityState:unPause()")
+  print("LoadingGameplaySceneEntityState:unPause()")
 end
 
 return LoadingGameplaySceneEntityState
+

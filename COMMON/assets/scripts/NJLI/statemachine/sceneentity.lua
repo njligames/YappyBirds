@@ -41,38 +41,38 @@ function SceneEntity:destroy()
   SceneEntity.__gc(self)
 end
 
-local init =
-{
-  name = "name",
-  states =
-  {
-    {
-      name = "Spawn",
-      module = "nodes.bird.states.spawn"
-    },
-    {
-      name = "Fly",
-      module = "nodes.bird.states.fly"
-    },
-    {
-      name = "Pursue",
-      module = "nodes.bird.states.pursue"
-    },
-    {
-      name = "Hit",
-      module = "nodes.bird.states.hit"
-    },
-    {
-      name = "Grabbing",
-      module = "nodes.bird.states.grabbing"
-    },
-    {
-      name = "Grabbed",
-      module = "nodes.bird.states.grabbed"
-    },
-  },
-  startStateName = "",
-}
+--local init =
+--{
+--  name = "name",
+--  states =
+--  {
+--    {
+--      name = "Spawn",
+--      module = "nodes.bird.states.spawn"
+--    },
+--    {
+--      name = "Fly",
+--      module = "nodes.bird.states.fly"
+--    },
+--    {
+--      name = "Pursue",
+--      module = "nodes.bird.states.pursue"
+--    },
+--    {
+--      name = "Hit",
+--      module = "nodes.bird.states.hit"
+--    },
+--    {
+--      name = "Grabbing",
+--      module = "nodes.bird.states.grabbing"
+--    },
+--    {
+--      name = "Grabbed",
+--      module = "nodes.bird.states.grabbed"
+--    },
+--  },
+--  startStateName = "",
+--}
 
 function SceneEntity:create(init)
   assert(init, "init variable is nil.")
@@ -186,6 +186,7 @@ function SceneEntity:unLoad()
   end
 
   self.loaded = false
+  
   print("SceneEntity:unLoad()")
 end
 
@@ -198,7 +199,7 @@ function SceneEntity:startStateMachine()
     self:_getEntityState(self:getStartSceneName()):push()
 
   else
-    print("\n\n\nself:getStartSceneName() is not found.\n\n\n")
+    error("\n\n\nself:getStartSceneName() is not found.\n\n\n")
   end
 end
 
@@ -209,7 +210,7 @@ function SceneEntity:enter()
 end
 
 function SceneEntity:update(timeStep)
-  print("SceneEntity:update("..timeStep..")")
+--  print("SceneEntity:update("..timeStep..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():update(timeStep)
 end
@@ -221,37 +222,37 @@ function SceneEntity:exit()
 end
 
 function SceneEntity:onMessage(message)
-  print("SceneEntity:onMessage()")
+  print("SceneEntity:onMessage("..tostring(message)")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():onMessage(touches)
 end
 
 function SceneEntity:touchDown(touches)
-  print("SceneEntity:touchDown()")
+--  print("SceneEntity:touchDown("..tostring(touches) .. ")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchDown(touches)
 end
 
 function SceneEntity:touchUp(touches)
-  print("SceneEntity:touchUp()")
+--  print("SceneEntity:touchUp("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchUp(touches)
 end
 
 function SceneEntity:touchMove(touches)
-  print("SceneEntity:touchMove()")
+--  print("SceneEntity:touchMove("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchMove(touches)
 end
 
 function SceneEntity:touchCancelled(touches)
-  print("SceneEntity:touchCancelled()")
+--  print("SceneEntity:touchCancelled("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchCancelled(touches)
 end
 
 function SceneEntity:renderHUD()
-  print("SceneEntity:renderHUD()")
+--  print("SceneEntity:renderHUD()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():renderHUD()
 end

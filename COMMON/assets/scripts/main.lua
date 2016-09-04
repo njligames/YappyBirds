@@ -115,6 +115,56 @@ function __NJLISceneOnMessage(scene, message)
   njliGameInstance:sceneOnMessage(scene, message)
 end
 
+function __NJLISceneKeyboardShow(scene)
+--  print("__NJLISceneKeyboardShow")
+  njliGameInstance:sceneKeyboardShow(scene)
+end
+
+function __NJLISceneKeyboardCancel(scene)
+--  print("__NJLISceneKeyboardCancel")
+  njliGameInstance:sceneKeyboardCancel(scene)
+end
+
+function __NJLISceneKeyboardReturn(scene, text)
+--  print("__NJLISceneKeyboardReturn")
+  njliGameInstance:sceneKeyboardReturn(scene, text)
+end
+
+function __NJLISceneRenderHUD(scene)
+--  print("__NJLISceneRenderHUD")
+  njliGameInstance:sceneRenderHUD(scene)
+end
+
+function __NJLISceneGamePause(scene)
+--  print("__NJLISceneGamePause")
+  njliGameInstance:sceneGamePause(scene)
+end
+
+function __NJLISceneGameUnPause(scene)
+--  print("__NJLISceneGameUnPause")
+  njliGameInstance:sceneGameUnPause(scene)
+end
+
+function __NJLISceneTouchDown(scene, touches)
+--  print("__NJLISceneTouchDown")
+  njliGameInstance:sceneTouchDown(scene, touches)
+end
+
+function __NJLISceneTouchUp(scene, touches)
+--  print("__NJLIWorldTouchUp")
+  njliGameInstance:sceneTouchUp(scene, touches)
+end
+
+function __NJLISceneTouchMove(scene, touches)
+--  print("__NJLISceneTouchMove")
+  njliGameInstance:sceneTouchMove(scene, touches)
+end
+
+function __NJLISceneTouchCancelled(scene, touches)
+--  print("__NJLISceneTouchCancelled")
+  njliGameInstance:sceneTouchCancelled(scene, touches)
+end
+
 --##############################################################################
 
 function __NJLINodeEnterState(node)

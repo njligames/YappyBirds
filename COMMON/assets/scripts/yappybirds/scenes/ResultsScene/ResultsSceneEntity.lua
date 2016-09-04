@@ -26,6 +26,20 @@ function ResultsSceneEntity:superClass()
   return SceneEntity
 end
 
+function ResultsSceneEntity:isa(theClass)
+  local b_isa = false
+  local cur_class = theClass:class()
+  while ( nil ~= cur_class ) and ( false == b_isa ) do
+    if cur_class == theClass then
+      b_isa = true
+    else
+      cur_class = cur_class:superClass()
+    end
+  end
+
+  return b_isa
+end
+
 function ResultsSceneEntity:destroy()
   print(" ResultsSceneEntity:destroy()")
 
@@ -65,12 +79,30 @@ function ResultsSceneEntity:create(init)
 end
 
 function ResultsSceneEntity:__gc()
-
 end
 
 function ResultsSceneEntity:__tostring()
-
   return json:stringify(self)
+end
+
+function ResultsSceneEntity:hasState()
+  return SceneEntity.hasState(self)
+end
+
+function ResultsSceneEntity:getCurrentEntityState()
+  return SceneEntity.getCurrentEntityState(self)
+end
+
+function ResultsSceneEntity:pushState(stateName)
+  SceneEntity.pushState(self, stateName)
+end
+
+function ResultsSceneEntity:getStartSceneName()
+  return SceneEntity.getStartSceneName(self)
+end
+
+function ResultsSceneEntity:getScene()
+  return SceneEntity.getScene(self)
 end
 
 function ResultsSceneEntity:isLoaded()
@@ -79,86 +111,86 @@ end
 
 function ResultsSceneEntity:load()
   SceneEntity.load(self)
-
-  print(" ResultsSceneEntity:load()")
+  
+  print("ResultsSceneEntity:load()")
 end
 
 function ResultsSceneEntity:unLoad()
   SceneEntity.unLoad(self)
-
-  print(" ResultsSceneEntity:unLoad()")
+  
+  print("ResultsSceneEntity:unLoad()")
 end
 
 function ResultsSceneEntity:startStateMachine()
   SceneEntity.startStateMachine(self)
-
-  print(" ResultsSceneEntity:startStateMachine()")
+  
+  print("ResultsSceneEntity:startStateMachine()")
 end
 
 function ResultsSceneEntity:enter()
   SceneEntity.enter(self)
-
-  print(" ResultsSceneEntity:enter()")
+  
+  print("ResultsSceneEntity:enter()")
 end
 
 function ResultsSceneEntity:update(timeStep)
   SceneEntity.update(self, timeStep)
-
-  print(" ResultsSceneEntity:update()")
+  
+  print("ResultsSceneEntity:update("..timeStep..")")
 end
 
 function ResultsSceneEntity:exit()
   SceneEntity.exit(self)
-
-  print(" ResultsSceneEntity:exit()")
+  
+  print("ResultsSceneEntity:exit()")
 end
 
 function ResultsSceneEntity:onMessage(message)
   SceneEntity.onMessage(self, message)
-
-  print(" ResultsSceneEntity:onMessage()")
+  
+  print("ResultsSceneEntity:message("..tostring(message)..")")
 end
 
 function ResultsSceneEntity:touchDown(touches)
   SceneEntity.touchDown(self, touches)
-
-  print(" ResultsSceneEntity:touchDown()")
+  
+  print("ResultsSceneEntity:touchDown("..tostring(touches)..")")
 end
 
 function ResultsSceneEntity:touchUp(touches)
   SceneEntity.touchUp(self, touches)
-
-  print(" ResultsSceneEntity:touchUp()")
+  
+  print("ResultsSceneEntity:touchUp("..tostring(touches)..")")
 end
 
 function ResultsSceneEntity:touchMove(touches)
   SceneEntity.touchMove(self, touches)
-
-  print(" ResultsSceneEntity:touchMove()")
+  
+  print("ResultsSceneEntity:touchMove("..tostring(touches)..")")
 end
 
 function ResultsSceneEntity:touchCancelled(touches)
   SceneEntity.touchCancelled(self, touches)
-
-  print(" ResultsSceneEntity:touchCancelled()")
+  
+  print("ResultsSceneEntity:touchCancelled("..tostring(touches)..")")
 end
 
 function ResultsSceneEntity:renderHUD()
   SceneEntity.renderHUD(self)
-
-  print(" ResultsSceneEntity:renderHUD()")
+  
+  print("ResultsSceneEntity:renderHUD()")
 end
 
 function ResultsSceneEntity:pause()
   SceneEntity.pause(self)
-
-  print(" ResultsSceneEntity:pause()")
+  
+  print("ResultsSceneEntity:pause()")
 end
 
 function ResultsSceneEntity:unPause()
   SceneEntity.unPause(self)
-
-  print(" ResultsSceneEntity:unPause()")
+  
+  print("ResultsSceneEntity:unPause()")
 end
 
 return ResultsSceneEntity

@@ -26,18 +26,24 @@ function MenuWorldEntityState:superClass()
   return WorldEntityState
 end
 
+function MenuWorldEntityState:isa(theClass)
+  local b_isa = false
+  local cur_class = theClass:class()
+  while ( nil ~= cur_class ) and ( false == b_isa ) do
+    if cur_class == theClass then
+      b_isa = true
+    else
+      cur_class = cur_class:superClass()
+    end
+  end
+
+  return b_isa
+end
+
 function MenuWorldEntityState:destroy()
   MenuWorldEntityState.__gc(self)
   WorldEntityState.destroy(self)
-
-  print(" MenuWorldEntityState:destroy()")
 end
-
-local init =
-{
-  name = "name",
-  entityOwner = nil
-}
 
 function MenuWorldEntityState:create(init)
   print("MenuWorldEntityState:create(init)")
@@ -68,6 +74,14 @@ function MenuWorldEntityState:__tostring()
   return json:stringify(self)
 end
 
+function MenuWorldEntityState:getWorldState()
+  return WorldEntityState.getWorldState(self)
+end
+
+function MenuWorldEntityState:getEntityOwner()
+  return WorldEntityState.getEntityOwner(self)
+end
+
 function MenuWorldEntityState:isLoaded()
   return WorldEntityState.isLoaded(self)
 end
@@ -75,75 +89,93 @@ end
 function MenuWorldEntityState:load()
   WorldEntityState.load(self)
 
-   print(" MenuWorldEntityState:load()")
+  print("MenuWorldEntityState:load()")
 end
 
 function MenuWorldEntityState:unLoad()
   WorldEntityState.unLoad(self)
 
-   print(" MenuWorldEntityState:unLoad()")
+  print("MenuWorldEntityState:unLoad()")
+end
+
+function MenuWorldEntityState:push()
+  WorldEntityState.push(self)
+end
+
+function MenuWorldEntityState:isIn()
+  return WorldEntityState.isIn(self)
+end
+
+function MenuWorldEntityState:getSceneEntity()
+  return WorldEntityState.getSceneEntity(self)
+end
+
+function MenuWorldEntityState:setSceneEntity(sceneEntity)
+  WorldEntityState.getSceneEntity(self, sceneEntity)
 end
 
 function MenuWorldEntityState:enter()
-  print(" MenuWorldEntityState:enter()")
+
+  print("MenuWorldEntityState:enter()")
 end
 
 function MenuWorldEntityState:update(timeStep)
-  print(" MenuWorldEntityState:update("..timeStep..")")
 
---   self:push()
+  print("MenuWorldEntityState:update("..timeStep..")")
 end
 
 function MenuWorldEntityState:exit()
-  print(" MenuWorldEntityState:exit()")
+
+  print("MenuWorldEntityState:exit()")
 end
 
 function MenuWorldEntityState:onMessage(message)
-   print(" MenuWorldEntityState:onMessage()")
+  print("MenuWorldEntityState:onMessage("..tostring(message)..")")
 end
 
 function MenuWorldEntityState:touchDown(touches)
-   print(" MenuWorldEntityState:touchDown()")
+  print("MenuWorldEntityState:touchDown("..tostring(touches)..")")
 end
 
 function MenuWorldEntityState:touchUp(touches)
-   print(" MenuWorldEntityState:touchUp()")
+  print("MenuWorldEntityState:touchUp("..tostring(touches)..")")
 end
 
 function MenuWorldEntityState:touchMove(touches)
-   print(" MenuWorldEntityState:touchMove()")
+  print("MenuWorldEntityState:touchMove("..tostring(touches)..")")
 end
 
 function MenuWorldEntityState:touchCancelled(touches)
-   print(" MenuWorldEntityState:touchCancelled()")
+  print("MenuWorldEntityState:touchCancelled("..tostring(touches)..")")
 end
 
 function MenuWorldEntityState:renderHUD()
-   print(" MenuWorldEntityState:renderHUD()")
+  print("MenuWorldEntityState:renderHUD()")
 end
 
 function MenuWorldEntityState:keyboardShow()
-   print(" MenuWorldEntityState:keyboardShow()")
+  print("MenuWorldEntityState:keyboardShow()")
 end
 
 function MenuWorldEntityState:keyboardCancel()
-   print(" MenuWorldEntityState:keyboardCancel()")
+  print("MenuWorldEntityState:keyboardCancel()")
 end
 
 function MenuWorldEntityState:keyboardReturn(text)
-   print(" MenuWorldEntityState:keyboardReturn()")
+  print("MenuWorldEntityState:keyboardReturn("..tostring(text)..")")
 end
 
 function MenuWorldEntityState:receivedMemoryWarning()
-   print(" MenuWorldEntityState:receivedMemoryWarning()")
+  print("MenuWorldEntityState:receivedMemoryWarning()")
 end
 
 function MenuWorldEntityState:pause()
-   print(" MenuWorldEntityState:pause()")
+  print("MenuWorldEntityState:pause()")
 end
 
 function MenuWorldEntityState:unPause()
-   print(" MenuWorldEntityState:unPause()")
+  print("MenuWorldEntityState:unPause()")
 end
 
 return MenuWorldEntityState
+
