@@ -79,14 +79,12 @@ function SceneEntityState:isLoaded()
 end
 
 function SceneEntityState:load()
-  -- print("SceneEntityState:load()")
+   print("SceneEntityState:load()")
 
   self.loaded = true
 end
 
 function SceneEntityState:unLoad()
-  -- print("SceneEntityState:unLoad()")
-
   if self:getSceneState() then
     njli.SceneState.destroy(self:getSceneState())
   end
@@ -95,6 +93,12 @@ function SceneEntityState:unLoad()
   self._entityOwner = nil
 
   self.loaded = false
+  
+  print("SceneEntityState:unLoad()")
+end
+
+function SceneEntityState:pushState(stateName)
+  self:getEntityOwner():pushState(stateName)
 end
 
 function SceneEntityState:push()

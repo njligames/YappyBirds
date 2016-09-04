@@ -106,6 +106,10 @@ function NodeEntityState:unLoad()
  self.loaded = false
 end
 
+function NodeEntityState:pushState(stateName)
+  self:getEntityOwner():pushState(stateName)
+end
+
 function NodeEntityState:push() 
  self:getEntityOwner():getNode():getStateMachine():pushState(self:getNodeState()) 
 end

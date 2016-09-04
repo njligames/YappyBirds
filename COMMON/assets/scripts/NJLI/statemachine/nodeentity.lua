@@ -133,30 +133,54 @@ function NodeEntity:isLoaded()
 end
 
 function NodeEntity:load()
-  self:unLoad()
+  print("SceneEntity:load()")
 
-  self._stateEntityTable = {}
-  for k,v in pairs(self._init.states) do
-    local m = require v.module
-
-    self:_addEntityState(v.name, m)
+  for k,v in pairs(self._stateEntityTable) do
+    v:load()
   end
-
-  self._node = njli.Node.create()
-  self:getNode():setName(self._init.name)
-
-  self._physicsShape = self._init.physicsShape
-  self._physicsBody = self._init.physicsBody
-
-  self._action = njli.Action.create()
-  self._clock = njli.Clock.create()
-
-  self._sharedGeometry = self._init.sharedGeometry
-
   self.loaded = true
+  
+  
+  
+
+--  self._stateEntityTable = {}
+--  for k,v in pairs(self._init.states) do
+--    local m = require v.module
+
+--    self:_addEntityState(v.name, m)
+--  end
+
+--  self._node = njli.Node.create()
+--  self:getNode():setName(self._init.name)
+
+--  self._physicsShape = self._init.physicsShape
+--  self._physicsBody = self._init.physicsBody
+
+--  self._action = njli.Action.create()
+--  self._clock = njli.Clock.create()
+
+--  self._sharedGeometry = self._init.sharedGeometry
+
+--  self.loaded = true
 end
 
 function NodeEntity:unLoad()
+
+  if self._stateEntityTable then
+    for k,v in pairs(self._stateEntityTable) do
+      self:_getEntityState(v.name):unLoad()
+      self:_removeEntityState(k)
+    end
+    self._stateEntityTable = nil
+  end
+
+  self.loaded = false
+  
+  print("SceneEntity:unLoad()")
+  
+  
+  
+  
   if self:getClock() then
     njli.Clock.destroy(self:getClock())
     self._clock = nil

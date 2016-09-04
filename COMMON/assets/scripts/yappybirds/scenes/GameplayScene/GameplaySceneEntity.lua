@@ -59,19 +59,19 @@ function GameplaySceneEntity:create(init)
         module = require "yappybirds.scenes.GameplayScene.states.LoadingGameplaySceneEntityState"
       },
       {
-        name = "AchievementsSceneEntityState",
+        name = "LoseSceneEntityState",
         module = require "yappybirds.scenes.GameplayScene.states.LoseSceneEntityState"
       },
       {
-        name = "BoardselectSceneEntityState",
+        name = "PauseSceneEntityState",
         module = require "yappybirds.scenes.GameplayScene.states.PauseSceneEntityState"
       },
       {
-        name = "CharactersSceneEntityState",
+        name = "PlayingSceneEntityState",
         module = require "yappybirds.scenes.GameplayScene.states.PlayingSceneEntityState"
       },
       {
-        name = "HighScoresSceneEntityState",
+        name = "WinSceneEntityState",
         module = require "yappybirds.scenes.GameplayScene.states.WinSceneEntityState"
       },
     },

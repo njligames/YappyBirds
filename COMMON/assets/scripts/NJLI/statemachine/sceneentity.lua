@@ -64,12 +64,16 @@ function SceneEntity:create(init)
 end
 
 function SceneEntity:__gc()
-  self:unLoad()
+  if self:getScene() then
+    njli.Scene.destroy(self:getScene())
+    self._scene = nil
+  end
 end
 
 function SceneEntity:__tostring()
 
   return json:stringify(self)
+  
 end
 
 function SceneEntity:_addEntityState(stateName, entityStateModule)
@@ -139,10 +143,7 @@ end
 
 function SceneEntity:unLoad()
 
-  if self:getScene() then
-    njli.Scene.destroy(self:getScene())
-    self._scene = nil
-  end
+  
 
   if self._stateEntityTable then
     for k,v in pairs(self._stateEntityTable) do
@@ -166,12 +167,12 @@ function SceneEntity:startStateMachine()
     self:_getEntityState(self:getStartSceneName()):push()
 
   else
-    error("\n\n\nself:getStartSceneName() is not found.\n\n\n")
+    error(self:getStartSceneName() .. " is not found.")
   end
 end
 
 function SceneEntity:enter()
-  print("SceneEntity:enter()")
+--  print("SceneEntity:enter()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
@@ -183,13 +184,13 @@ function SceneEntity:update(timeStep)
 end
 
 function SceneEntity:exit()
-  print("SceneEntity:exit()")
+--  print("SceneEntity:exit()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function SceneEntity:onMessage(message)
-  print("SceneEntity:onMessage("..tostring(message)")")
+--  print("SceneEntity:onMessage("..tostring(message)")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():onMessage(touches)
 end
@@ -225,13 +226,13 @@ function SceneEntity:renderHUD()
 end
 
 function SceneEntity:pause()
-  print("SceneEntity:pause()")
+--  print("SceneEntity:pause()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():pause()
 end
 
 function SceneEntity:unPause()
-  print("SceneEntity:unPause()")
+--  print("SceneEntity:unPause()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():unPause()
 end

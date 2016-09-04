@@ -79,7 +79,8 @@ function WorldEntityState:isLoaded()
 end
 
 function WorldEntityState:load()
-  -- print("WorldEntityState:load()")
+   print("WorldEntityState:load()")
+   
   self.loaded = true
 end
 
@@ -92,6 +93,12 @@ function WorldEntityState:unLoad()
   self._entityOwner = nil
 
   self.loaded = false
+  
+  print("WorldEntityState:unLoad()")
+end
+
+function WorldEntityState:pushState(stateName)
+  self:getEntityOwner():pushState(stateName)
 end
 
 function WorldEntityState:push()

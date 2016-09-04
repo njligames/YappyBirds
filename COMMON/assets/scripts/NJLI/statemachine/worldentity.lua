@@ -136,6 +136,7 @@ end
 
 function WorldEntity:load()
   print("WorldEntity:load()")
+  
   for k,v in pairs(self._stateEntityTable) do
     v:load()
   end
@@ -159,16 +160,16 @@ function WorldEntity:unLoad()
 end
 
 function WorldEntity:startStateMachine()
-  print("WorldEntity:startStateMachine()")
+--  print("WorldEntity:startStateMachine()")
   if self:_getEntityState(self:getStartSceneName()) then
     self:_getEntityState(self:getStartSceneName()):push()
   else
-    print("self:getStartSceneName() is not found.")
+    error("self:getStartSceneName() is not found.")
   end
 end
 
 function WorldEntity:enter()
-  print("WorldEntity:enter()")
+--  print("WorldEntity:enter()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
@@ -185,13 +186,13 @@ function WorldEntity:update(timeStep)
 end
 
 function WorldEntity:exit()
-  print("WorldEntity:exit()")
+--  print("WorldEntity:exit()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function WorldEntity:onMessage(message)
-  print("WorldEntity:onMessage("..tostring(message)..")")
+--  print("WorldEntity:onMessage("..tostring(message)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():onMessage(message)
 end
@@ -215,7 +216,7 @@ function WorldEntity:touchMove(touches)
 end
 
 function WorldEntity:touchCancelled(touches)
-  print("WorldEntity:touchCancelled("..tostring(touches)..")")
+--  print("WorldEntity:touchCancelled("..tostring(touches)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():touchCancelled(touches)
 end
@@ -227,37 +228,37 @@ function WorldEntity:renderHUD()
 end
 
 function WorldEntity:keyboardShow()
-  print("WorldEntity:keyboardShow()")
+--  print("WorldEntity:keyboardShow()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():keyboardShow()
 end
 
 function WorldEntity:keyboardCancel()
-  print("WorldEntity:keyboardCancel()")
+--  print("WorldEntity:keyboardCancel()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():keyboardCancel()
 end
 
 function WorldEntity:keyboardReturn(text)
-  print("WorldEntity:keyboardReturn("..tostring(text)..")")
+--  print("WorldEntity:keyboardReturn("..tostring(text)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():keyboardReturn(text)
 end
 
 function WorldEntity:receivedMemoryWarning()
-  print("WorldEntity:receivedMemoryWarning()")
+--  print("WorldEntity:receivedMemoryWarning()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():receivedMemoryWarning()
 end
 
 function WorldEntity:pause()
-  print("WorldEntity:pause()")
+--  print("WorldEntity:pause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():pause()
 end
 
 function WorldEntity:unPause()
-  print("WorldEntity:unPause()")
+--  print("WorldEntity:unPause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():unPause()
 end
