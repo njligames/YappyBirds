@@ -41,40 +41,6 @@ function WorldEntity:destroy()
   WorldEntity.__gc(self)
 end
 
---local init =
---{
--- name = "name",
--- states =
--- {
--- {
--- name = "Spawn",
--- module = "nodes.bird.states.spawn"
--- },
--- {
--- name = "Fly",
--- module = "nodes.bird.states.fly"
--- },
--- {
--- name = "Pursue",
--- module = "nodes.bird.states.pursue"
--- },
--- {
--- name = "Hit",
--- module = "nodes.bird.states.hit"
--- },
--- {
--- name = "Grabbing",
--- module = "nodes.bird.states.grabbing"
--- },
--- {
--- name = "Grabbed",
--- module = "nodes.bird.states.grabbed"
--- },
--- },
--- startStateName = "",
--- gameInstance = nil,
---}
-
 function WorldEntity:create(init)
   assert(init, "init variable is nil.")
   assert(init.name, "Init variable is expecting a name value")

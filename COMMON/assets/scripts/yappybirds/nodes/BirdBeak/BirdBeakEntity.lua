@@ -1,11 +1,11 @@
 local NodeEntity = require "njli.statemachine.nodeentity"
 
-local BirdEntity = {}
-BirdEntity.__index = BirdEntity
+local BirdBeakEntity = {}
+BirdBeakEntity.__index = BirdBeakEntity
 
 local json = require('json')
 
-setmetatable(BirdEntity, {
+setmetatable(BirdBeakEntity, {
     __index = NodeEntity,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -14,19 +14,19 @@ setmetatable(BirdEntity, {
     end,
   })
 
-function BirdEntity:className()
-  return "BirdEntity"
+function BirdBeakEntity:className()
+  return "BirdBeakEntity"
 end
 
-function BirdEntity:class()
+function BirdBeakEntity:class()
   return self
 end
 
-function BirdEntity:superClass()
+function BirdBeakEntity:superClass()
   return NodeEntity
 end
 
-function BirdEntity:isa(theClass)
+function BirdBeakEntity:isa(theClass)
   local b_isa = false
   local cur_class = theClass:class()
   while ( nil ~= cur_class ) and ( false == b_isa ) do
@@ -40,43 +40,35 @@ function BirdEntity:isa(theClass)
   return b_isa
 end
 
-function BirdEntity:destroy()
-  BirdEntity.__gc(self)
+function BirdBeakEntity:destroy()
+  BirdBeakEntity.__gc(self)
 end
 
-function BirdEntity:create(init)
+function BirdBeakEntity:create(init)
 
   local nodeEntityInit =
   {
-    name = init.name,
+    name = "name",
     states =
     {
       {
-        name = "Fly",
-        module = "yappybirds.nodes.Bird.states.Fly"
-      },
-      {
-        name = "Grabbed",
-        module = "yappybirds.nodes.Bird.states.Grabbed"
-      },
-      {
-        name = "Grabbing",
-        module = "yappybirds.nodes.Bird.states.Grabbing"
+        name = "Grab",
+        module = "yappybirds.nodes.BirdBeak.states.Grab"
       },
       {
         name = "Hit",
-        module = "yappybirds.nodes.Bird.states.Hit"
+        module = "yappybirds.nodes.BirdBeak.states.Hit"
       },
       {
-        name = "Pursue",
-        module = "yappybirds.nodes.Bird.states.Pursue"
+        name = "Idle",
+        module = "yappybirds.nodes.BirdBeak.states.Idle"
       },
       {
-        name = "Spawn",
-        module = "yappybirds.nodes.Bird.states.Spawn"
+        name = "Yap",
+        module = "yappybirds.nodes.BirdBeak.states.Yap"
       },
-
     },
+    startStateName = "Idle",
     physicsShape = nil,
     physicsBody = nil,
     sharedGeometry = nil,
@@ -86,135 +78,135 @@ function BirdEntity:create(init)
 
 end
 
-function BirdEntity:__gc()
+function BirdBeakEntity:__gc()
 end
 
-function BirdEntity:__tostring()
+function BirdBeakEntity:__tostring()
   return json:stringify(self)
 end
 
-function BirdEntity:hasState()
+function BirdBeakEntity:hasState()
   return NodeEntity.hasState(self)
 end
 
-function BirdEntity:getCurrentEntityState()
+function BirdBeakEntity:getCurrentEntityState()
   return NodeEntity.getCurrentEntityState(self)
 end
 
-function BirdEntity:pushState(stateName)
+function BirdBeakEntity:pushState(stateName)
   NodeEntity.pushState(self, stateName)
 end
 
-function BirdEntity:getNode()
+function BirdBeakEntity:getNode()
   return NodeEntity.getNode(self)
 end
 
-function BirdEntity:getPhysicsShape()
+function BirdBeakEntity:getPhysicsShape()
   return NodeEntity.getPhysicsShape(self)
 end
 
-function BirdEntity:getPhysicsBody()
+function BirdBeakEntity:getPhysicsBody()
   return NodeEntity.getPhysicsBody(self)
 end
 
-function BirdEntity:getAction()
+function BirdBeakEntity:getAction()
   return NodeEntity.getAction(self)
 end
 
-function BirdEntity:getClock()
+function BirdBeakEntity:getClock()
   return NodeEntity.getClock(self)
 end
 
-function BirdEntity:isLoaded()
+function BirdBeakEntity:isLoaded()
   return NodeEntity.isLoaded(self)
 end
 
-function BirdEntity:load()
+function BirdBeakEntity:load()
   NodeEntity.load(self)
 end
 
-function BirdEntity:unLoad()
+function BirdBeakEntity:unLoad()
   NodeEntity.unLoad(self)
 end
 
-function BirdEntity:startStateMachine()
+function BirdBeakEntity:startStateMachine()
   NodeEntity.startStateMachine(self)
 end
 
-function BirdEntity:enter()
+function BirdBeakEntity:enter()
   NodeEntity.enter(self)
 end
 
-function BirdEntity:update(timeStep)
+function BirdBeakEntity:update(timeStep)
   NodeEntity.update(self, timeStep)
 end
 
-function BirdEntity:exit()
+function BirdBeakEntity:exit()
   NodeEntity.exit(self)
 end
 
-function BirdEntity:onMessage(message)
+function BirdBeakEntity:onMessage(message)
   NodeEntity.onMessage(self, message)
 end
 
-function BirdEntity:touchDown(touches)
+function BirdBeakEntity:touchDown(touches)
   NodeEntity.touchDown(self, touches)
 end
 
-function BirdEntity:touchUp(touches)
+function BirdBeakEntity:touchUp(touches)
   NodeEntity.touchUp(self, touches)
 end
 
-function BirdEntity:touchMove(touches)
+function BirdBeakEntity:touchMove(touches)
   NodeEntity.touchMove(self, touches)
 end
 
-function BirdEntity:touchCancelled(touches)
+function BirdBeakEntity:touchCancelled(touches)
   NodeEntity.touchCancelled(self, touches)
 end
 
-function BirdEntity:render()
+function BirdBeakEntity:render()
   NodeEntity.render(self)
 end
 
-function BirdEntity:actionUpdate(action, timeStep)
+function BirdBeakEntity:actionUpdate(action, timeStep)
   NodeEntity.actionUpdate(self, action, timeStep)
 end
 
-function BirdEntity:actionComplete(action)
+function BirdBeakEntity:actionComplete(action)
   NodeEntity.actionComplete(self, action)
 end
 
-function BirdEntity:collide(otherNode, collisionPoint)
+function BirdBeakEntity:collide(otherNode, collisionPoint)
   NodeEntity.collide(self, otherNode, collisionPoint)
 end
 
-function BirdEntity:near(otherNode)
+function BirdBeakEntity:near(otherNode)
   NodeEntity.near(self, otherNode)
 end
 
-function BirdEntity:rayTouchDown(rayContact)
+function BirdBeakEntity:rayTouchDown(rayContact)
   NodeEntity.rayTouchDown(self, rayContact)
 end
 
-function BirdEntity:rayTouchUp(rayContact)
+function BirdBeakEntity:rayTouchUp(rayContact)
   NodeEntity.rayTouchUp(self, rayContact)
 end
 
-function BirdEntity:rayTouchMove(rayContact)
+function BirdBeakEntity:rayTouchMove(rayContact)
   NodeEntity.rayTouchMove(self, rayContact)
 end
 
-function BirdEntity:rayTouchCancelled(rayContact)
+function BirdBeakEntity:rayTouchCancelled(rayContact)
   NodeEntity.rayTouchCancelled(self, rayContact)
 end
 
-function BirdEntity:pause()
+function BirdBeakEntity:pause()
   NodeEntity.pause(self)
 end
 
-function BirdEntity:unPause()
+function BirdBeakEntity:unPause()
   NodeEntity.unPause(self)
 end
 
-return BirdEntity
+return BirdBeakEntity

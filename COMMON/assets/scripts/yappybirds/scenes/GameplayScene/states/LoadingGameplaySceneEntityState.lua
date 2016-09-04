@@ -50,7 +50,7 @@ end
 function LoadingGameplaySceneEntityState:create(init)
   SceneEntityState.create(self, init)
 
-  print(" LoadingGameplaySceneEntityState:create(init)")
+  print("LoadingGameplaySceneEntityState:create(init)")
 end
 
 function LoadingGameplaySceneEntityState:__gc()
