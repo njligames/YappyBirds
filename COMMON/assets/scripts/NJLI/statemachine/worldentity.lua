@@ -199,10 +199,12 @@ function WorldEntity:startStateMachine()
 end
 
 function WorldEntity:enter()
+  assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
 
 function WorldEntity:update(timeStep)
+  assert(self:hasState(), "WorldEntity must be in a state")
   if self:hasState() then
     if not self:getCurrentEntityState():getSceneEntity():hasState() then
       self:getCurrentEntityState():getSceneEntity():startStateMachine()
@@ -212,77 +214,68 @@ function WorldEntity:update(timeStep)
 end
 
 function WorldEntity:exit()
+  assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function WorldEntity:onMessage(message)
+  assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():onMessage(message)
 end
 
 function WorldEntity:touchDown(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchDown(touches)
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():touchDown(touches)
 end
 
 function WorldEntity:touchUp(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchUp(touches)
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():touchUp(touches)
 end
 
 function WorldEntity:touchMove(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchMove(touches)
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():touchMove(touches)
 end
 
 function WorldEntity:touchCancelled(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchCancelled(touches)
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():touchCancelled(touches)
 end
 
 function WorldEntity:renderHUD()
-  if self:hasState() then
-    self:getCurrentEntityState():renderHUD()
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():renderHUD()
 end
 
 function WorldEntity:keyboardShow()
-  if self:hasState() then
-    self:getCurrentEntityState():keyboardShow()
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():keyboardShow()
 end
 
 function WorldEntity:keyboardCancel()
-  if self:hasState() then
-    self:getCurrentEntityState():keyboardCancel()
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():keyboardCancel()
 end
 
 function WorldEntity:keyboardReturn(text)
-  if self:hasState() then
-    self:getCurrentEntityState():keyboardReturn(text)
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():keyboardReturn(text)
 end
 
 function WorldEntity:receivedMemoryWarning()
-  if self:hasState() then
-    self:getCurrentEntityState():receivedMemoryWarning()
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():receivedMemoryWarning()
 end
 
 function WorldEntity:pause()
-  if self:hasState() then
-    self:getCurrentEntityState():pause()
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():pause()
 end
 
 function WorldEntity:unPause()
-  if self:hasState() then
-    self:getCurrentEntityState():unPause()
-  end
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():unPause()
 end
 
 return WorldEntity

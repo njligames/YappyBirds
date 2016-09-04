@@ -162,7 +162,7 @@ function SceneEntity:isLoaded()
 end
 
 function SceneEntity:load()
-  -- print("SceneEntity:load()")
+  print("SceneEntity:load()")
 
   for k,v in pairs(self._stateEntityTable) do
     v:load()
@@ -171,7 +171,6 @@ function SceneEntity:load()
 end
 
 function SceneEntity:unLoad()
-  -- print("SceneEntity:unLoad()")
 
   if self:getScene() then
     njli.Scene.destroy(self:getScene())
@@ -187,75 +186,86 @@ function SceneEntity:unLoad()
   end
 
   self.loaded = false
+  print("SceneEntity:unLoad()")
 end
 
 function SceneEntity:startStateMachine()
+  print("SceneEntity:startStateMachine()")
+
   if self:_getEntityState(self:getStartSceneName()) then
-    
+
     njli.World.getInstance():addScene(self:getScene())
     self:_getEntityState(self:getStartSceneName()):push()
-    
+
   else
     print("\n\n\nself:getStartSceneName() is not found.\n\n\n")
   end
 end
 
 function SceneEntity:enter()
+  print("SceneEntity:enter()")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
 
 function SceneEntity:update(timeStep)
+  print("SceneEntity:update("..timeStep..")")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():update(timeStep)
 end
 
 function SceneEntity:exit()
+  print("SceneEntity:exit()")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function SceneEntity:onMessage(message)
+  print("SceneEntity:onMessage()")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():onMessage(touches)
 end
 
 function SceneEntity:touchDown(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchDown(touches)
-  end
+  print("SceneEntity:touchDown()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():touchDown(touches)
 end
 
 function SceneEntity:touchUp(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchUp(touches)
-  end
+  print("SceneEntity:touchUp()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():touchUp(touches)
 end
 
 function SceneEntity:touchMove(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchMove(touches)
-  end
+  print("SceneEntity:touchMove()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():touchMove(touches)
 end
 
 function SceneEntity:touchCancelled(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchCancelled(touches)
-  end
+  print("SceneEntity:touchCancelled()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():touchCancelled(touches)
 end
 
 function SceneEntity:renderHUD()
-  if self:hasState() then
-    self:getCurrentEntityState():renderHUD()
-  end
+  print("SceneEntity:renderHUD()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():renderHUD()
 end
 
 function SceneEntity:pause()
-  if self:hasState() then
-    self:getCurrentEntityState():pause()
-  end
+  print("SceneEntity:pause()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():pause()
 end
 
 function SceneEntity:unPause()
-  if self:hasState() then
-    self:getCurrentEntityState():unPause()
-  end
+  print("SceneEntity:unPause()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():unPause()
 end
 
 return SceneEntity

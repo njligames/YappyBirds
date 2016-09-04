@@ -136,7 +136,7 @@ function NodeEntity:getCurrentEntityState()
   return self:_getEntityState(self:getNode():getStateMachine():getState():getName())
 end
 
-function SceneEntity:pushState(stateName)
+function NodeEntity:pushState(stateName)
   self:_getEntityState(stateName):push()
 end
 
@@ -231,109 +231,98 @@ function NodeEntity:startStateMachine()
 end
 
 function NodeEntity:enter()
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
 
 function NodeEntity:update(timeStep)
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:getCurrentEntityState():update(timeStep)
 end
 
 function NodeEntity:exit()
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function NodeEntity:onMessage(message)
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:getCurrentEntityState():onMessage(message)
 end
 
 function NodeEntity:touchDown(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchDown(touches)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():touchDown(touches)
 end
 
 function NodeEntity:touchUp(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchUp(touches)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():touchUp(touches)
 end
 
 function NodeEntity:touchMove(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchMove(touches)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():touchMove(touches)
 end
 
 function NodeEntity:touchCancelled(touches)
-  if self:hasState() then
-    self:getCurrentEntityState():touchCancelled(touches)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():touchCancelled(touches)
 end
 
 function NodeEntity:render()
-  if self:hasState() then
-    self:getCurrentEntityState():render()
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():render()
 end
 
 function NodeEntity:actionUpdate(action, timeStep)
-  if self:hasState() then
-    self:getCurrentEntityState():actionUpdate(action, timeStep)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():actionUpdate(action, timeStep)
 end
 
 function NodeEntity:actionComplete(action)
-  if self:hasState() then
-    self:getCurrentEntityState():actionComplete(action)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():actionComplete(action)
 end
 
 function NodeEntity:collide(otherNode, collisionPoint)
-  if self:hasState() then
-    self:getCurrentEntityState():collide(otherNode, collisionPoint)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():collide(otherNode, collisionPoint)
 end
 
 function NodeEntity:near(otherNode)
-  if self:hasState() then
-    self:getCurrentEntityState():near(otherNode)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():near(otherNode)
 end
 
 function NodeEntity:rayTouchDown(rayContact)
-  if self:hasState() then
-    self:getCurrentEntityState():rayTouchDown(rayContact)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():rayTouchDown(rayContact)
 end
 
 function NodeEntity:rayTouchUp(rayContact)
-  if self:hasState() then
-    self:getCurrentEntityState():rayTouchUp(rayContact)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():rayTouchUp(rayContact)
 end
 
 function NodeEntity:rayTouchMove(rayContact)
-  if self:hasState() then
-    self:getCurrentEntityState():rayTouchMove(rayContact)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():rayTouchMove(rayContact)
 end
 
 function NodeEntity:rayTouchCancelled(rayContact)
-  if self:hasState() then
-    self:getCurrentEntityState():rayTouchCancelled(rayContact)
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():rayTouchCancelled(rayContact)
 end
 
 function NodeEntity:pause()
-  if self:hasState() then
-    self:getCurrentEntityState():pause()
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():pause()
 end
 
 function NodeEntity:unPause()
-  if self:hasState() then
-    self:getCurrentEntityState():unPause()
-  end
+  assert(self:hasState(), "NodeEntity must be in a state")
+  self:getCurrentEntityState():unPause()
 end
 
 return NodeEntity

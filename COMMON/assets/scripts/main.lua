@@ -1,3 +1,11 @@
+local origAssert = assert
+assert = function(b, message) 
+  if not b then
+    print(debug.traceback())
+  end
+  origAssert (b, message)
+end
+
 local MyGame = require "YappyGame"
 
 local njligame = require "njli.game"

@@ -4,313 +4,414 @@ Game.__index = Game
 local json = require('json')
 
 setmetatable(Game, {
- __call = function (cls, ...)
- local self = setmetatable({}, cls)
- self:create(...)
- return self
- end,
-})
+    __call = function (cls, ...)
+      local self = setmetatable({}, cls)
+      self:create(...)
+      return self
+    end,
+  })
 
 function Game:className()
- return "Game"
+  return "Game"
 end
 
 function Game:class()
- return self
+  return self
 end
 
 function Game:superClass()
- return nil
+  return nil
 end
 
 function Game:isa(theClass)
- local b_isa = false
- local cur_class = theClass:class()
- while ( nil ~= cur_class ) and ( false == b_isa ) do
- if cur_class == theClass then
- b_isa = true
- else
- cur_class = cur_class:superClass()
- end
- end
+  local b_isa = false
+  local cur_class = theClass:class()
+  while ( nil ~= cur_class ) and ( false == b_isa ) do
+    if cur_class == theClass then
+      b_isa = true
+    else
+      cur_class = cur_class:superClass()
+    end
+  end
 
- return b_isa
+  return b_isa
 end
 
 function Game:destroy()
- Game.__gc(self)
+  Game.__gc(self)
 end
 
 function Game:create(init)
- 
- 
- 
- local EntityManager = require "njli.entitymanager"
- self._entityManager = EntityManager()
- 
 
- if init then
- 
- end
+  local EntityManager = require "njli.entitymanager"
+  self._entityManager = EntityManager()
+
+  if init then
+
+  end
 end
 
 function Game:__gc()
- 
- self._entityManager:destroy()
+
+  self._entityManager:destroy()
 end
 
 function Game:__tostring()
- 
- 
- return json:stringify(self)
+
+  return json:stringify(self)
 end
-
-
- 
- 
-
-
 
 function Game:getEntityManager()
- return self._entityManager
+  return self._entityManager
 end
 
-
 function Game:worldKeyboardShow()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:keyboardShow()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:keyboardShow()
+  end
 end
 
 function Game:worldKeyboardCancel()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:keyboardCancel()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:keyboardCancel()
+  end
 end
 
 function Game:worldKeyboardReturn(text)
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:keyboardReturn(text)
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:keyboardReturn(text)
+  end
 end
 
 function Game:worldReceivedMemoryWarning()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:receivedMemoryWarning()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:receivedMemoryWarning()
+  end
 end
 
 function Game:worldGamePause()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:pause()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:pause()
+  end
 end
 
 function Game:worldGameUnPause()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:unPause()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:unPause()
+  end
 end
 
 function Game:worldRenderHUD()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:renderHUD()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:renderHUD()
+  end
 end
 
 function Game:worldEnterState()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:enter()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:enter()
+  end
 end
 
 function Game:worldUpdateState(timeStep)
- assert(timeStep, "The timeStep is nil")
+  assert(timeStep, "The timeStep is nil")
 
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:update(timeStep)
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:update(timeStep)
+  end
 end
 
 function Game:worldExitState()
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:exit()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:exit()
+  end
 end
 
 function Game:worldOnMessage(message)
- assert(message, "The message is nil")
- 
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:onMessage()
+  assert(message, "The message is nil")
+
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:onMessage()
+  end
 end
 
 function Game:worldTouchDown(touches)
- assert(touches, "The touches is nil")
- 
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:touchDown(touches)
+  assert(touches, "The touches is nil")
+
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:touchDown(touches)
+  end
 end
 
 function Game:worldTouchUp(touches)
- assert(touches, "The touches is nil")
- 
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:touchUp(touches)
+  assert(touches, "The touches is nil")
+
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:touchUp(touches)
+  end
 end
 
 function Game:worldTouchMove(touches)
- assert(touches, "The touches is nil")
- 
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:touchMove(touches)
+  assert(touches, "The touches is nil")
+
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:touchMove(touches)
+  end
 end
 
 function Game:worldTouchCancelled(touches)
- assert(touches, "The touches is nil")
- 
- local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
- worldEntity:touchCancelled(touches)
+  assert(touches, "The touches is nil")
+
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:touchCancelled(touches)
+  end
 end
 
-
-
-
-
-
 function Game:sceneEnterState(scene)
- assert(scene, "The scene is nil")
+  assert(scene, "The scene is nil")
 
- local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
- sceneEntity:enter()
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:enter()
+  end
 end
 
 function Game:sceneUpdateState(scene, timeStep)
- assert(scene, "The scene is nil")
- assert(timeStep, "The timeStep is nil")
+  assert(scene, "The scene is nil")
+  assert(timeStep, "The timeStep is nil")
 
- local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
- sceneEntity:update(timeStep)
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:update(timeStep)
+  end
 end
 
 function Game:sceneExitState(scene)
- assert(scene, "The scene is nil")
+  assert(scene, "The scene is nil")
 
- local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
- sceneEntity:exit()
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:exit()
+  end
 end
 
 function Game:sceneOnMessage(scene, message)
- assert(scene, "The scene is nil")
- assert(message, "The message is nil")
+  assert(scene, "The scene is nil")
+  assert(message, "The message is nil")
 
- local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
- sceneEntity:onMessage(message)
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:onMessage(message)
+  end
 end
 
-
-
 function Game:nodeEnterState(node)
- assert(node, "The node is nil")
+  assert(node, "The node is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:enter()
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:enter()
+  end
 end
 
 function Game:nodeUpdateState(node, timeStep)
- assert(node, "The node is nil")
- assert(timeStep, "The timeStep is nil")
+  assert(node, "The node is nil")
+  assert(timeStep, "The timeStep is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:update()
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:update()
+  end
 end
 
 function Game:nodeExitState(node)
- assert(node, "The node is nil")
+  assert(node, "The node is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:exit()
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:exit()
+  end
 end
 
 function Game:nodeOnMessage(node, message)
- assert(node, "The node is nil")
- assert(message, "The message is nil")
+  assert(node, "The node is nil")
+  assert(message, "The message is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:onMessage()
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:onMessage()
+  end
 end
 
 function Game:nodeCollide(node, otherNode, collisionPoint)
- assert(node, "The node is nil")
- assert(otherNode, "The otherNode is nil")
- assert(collisionPoint, "The collisionPoint is nil")
+  assert(node, "The node is nil")
+  assert(otherNode, "The otherNode is nil")
+  assert(collisionPoint, "The collisionPoint is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:collide(otherNode, collisionPoint)
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:collide(otherNode, collisionPoint)
+  end
 end
 
 function Game:nodeNear(node, otherNode)
- assert(node, "The node is nil")
- assert(otherNode, "The otherNode is nil")
+  assert(node, "The node is nil")
+  assert(otherNode, "The otherNode is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:near(otherNode)
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:near(otherNode)
+  end
 end
 
 function Game:nodeActionUpdate(action, timeStep)
- assert(action, "The action is nil")
- assert(timeStep, "The timeStep is nil")
+  assert(action, "The action is nil")
+  assert(timeStep, "The timeStep is nil")
 
- local node = action:getParent()
- assert(node, "The node is nil")
+  local node = action:getParent()
+  assert(node, "The node is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:actionUpdate(action, timeStep)
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:actionUpdate(action, timeStep)
+  end
 end
 
 function Game:nodeActionComplete(action)
- assert(action, "The action is nil")
+  assert(action, "The action is nil")
 
- local node = action:getParent()
- assert(node, "The node is nil")
+  local node = action:getParent()
+  assert(node, "The node is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
- nodeEntity:actionComplete(action)
+  local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:actionComplete(action)
+  end
 end
 
-
-
-
 function Game:rayTouchDown(rayContact)
- assert(rayContact, "The rayContact is nil")
+  assert(rayContact, "The rayContact is nil")
 
- local hitNode = rayContact:getHitNode()
- assert(hitNode, "The hitNode is nil")
+  local hitNode = rayContact:getHitNode()
+  assert(hitNode, "The hitNode is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
- nodeEntity:touchDown(rayContact)
+  local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:touchDown(rayContact)
+  end
 end
 
 function Game:rayTouchUp(rayContact)
- assert(rayContact, "The rayContact is nil")
+  assert(rayContact, "The rayContact is nil")
 
- local hitNode = rayContact:getHitNode()
- assert(hitNode, "The hitNode is nil")
+  local hitNode = rayContact:getHitNode()
+  assert(hitNode, "The hitNode is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
- nodeEntity:touchUp(rayContact)
+  local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:touchUp(rayContact)
+  end
 end
 
 function Game:rayTouchMove(rayContact)
- assert(rayContact, "The rayContact is nil")
+  assert(rayContact, "The rayContact is nil")
 
- local hitNode = rayContact:getHitNode()
- assert(hitNode, "The hitNode is nil")
+  local hitNode = rayContact:getHitNode()
+  assert(hitNode, "The hitNode is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
- nodeEntity:touchMove(rayContact)
+  local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:touchMove(rayContact)
+  end
 end
 
 function Game:rayTouchCancelled(rayContact)
- assert(rayContact, "The rayContact is nil")
+  assert(rayContact, "The rayContact is nil")
 
- local hitNode = rayContact:getHitNode()
- assert(hitNode, "The hitNode is nil")
+  local hitNode = rayContact:getHitNode()
+  assert(hitNode, "The hitNode is nil")
 
- local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
- nodeEntity:touchCancelled(rayContact)
+  local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
+  assert(nodeEntity, "The nodeEntity is nil")
+
+  if nodeEntity:hasState() then
+    nodeEntity:touchCancelled(rayContact)
+  end
 end
-
- 
 
 return Game
