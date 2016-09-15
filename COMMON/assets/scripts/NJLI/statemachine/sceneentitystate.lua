@@ -109,16 +109,24 @@ function SceneEntityState:isIn()
   return self:getSceneState():getName() == self:getEntityOwner():getScene():getStateMachine():getState():getName()
 end
 
-function SceneEntityState:enter() assert(false, "overwrite: SceneEntityState:enter") end
-function SceneEntityState:update(timeStep) assert(false, "overwrite: SceneEntityState:update") end
-function SceneEntityState:exit() assert(false, "overwrite: SceneEntityState:exit") end
-function SceneEntityState:onMessage(message) assert(false, "overwrite: SceneEntityState:onMessage") end
-function SceneEntityState:touchDown(touches) assert(false, "overwrite: SceneEntityState:touchDown") end
-function SceneEntityState:touchUp(touches) assert(false, "overwrite: SceneEntityState:touchUp") end
-function SceneEntityState:touchMove(touches) assert(false, "overwrite: SceneEntityState:touchMove") end
-function SceneEntityState:touchCancelled(touches) assert(false, "overwrite: SceneEntityState:touchCancelled") end
-function SceneEntityState:renderHUD() assert(false, "overwrite: SceneEntityState:renderHUD") end
-function SceneEntityState:pause() assert(false, "overwrite: SceneEntityState:pause") end
-function SceneEntityState:unPause() assert(false, "overwrite: SceneEntityState:unPause") end
+function SceneEntityState:enter() print("SceneEntityState:enter") end
+function SceneEntityState:update(timeStep) print("SceneEntityState:update") end
+function SceneEntityState:exit() print("SceneEntityState:exit") end
+function SceneEntityState:onMessage(message) print("SceneEntityState:onMessage") end
+function SceneEntityState:touchDown(touches) print("SceneEntityState:touchDown") end
+function SceneEntityState:touchUp(touches) print("SceneEntityState:touchUp") end
+function SceneEntityState:touchMove(touches) print("SceneEntityState:touchMove") end
+function SceneEntityState:touchCancelled(touches) print("SceneEntityState:touchCancelled") end
+function SceneEntityState:renderHUD() print("SceneEntityState:renderHUD") end
+function SceneEntityState:pause() print("SceneEntityState:pause") end
+function SceneEntityState:unPause() print("SceneEntityState:unPause") end
+function SceneEntityState:willResignActive() print("SceneEntityState:willResignActive") end
+function SceneEntityState:didBecomeActive() print("SceneEntityState:didBecomeActive") end
+function SceneEntityState:didEnterBackground() print("SceneEntityState:didEnterBackground") end
+function SceneEntityState:willEnterForeground() print("SceneEntityState:willEnterForeground") end
+function SceneEntityState:willTerminate() print("SceneEntityState:willTerminate") end
+function SceneEntityState:interrupt() print("SceneEntityState:interrupt") end
+function SceneEntityState:resumeInterrupt() print("SceneEntityState:resumeInterrupt") end
+function SceneEntityState:receivedMemoryWarning() print("SceneEntityState:receivedMemoryWarning") end
 
 return SceneEntityState

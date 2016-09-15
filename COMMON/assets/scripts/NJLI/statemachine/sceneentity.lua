@@ -172,7 +172,7 @@ function SceneEntity:startStateMachine()
 end
 
 function SceneEntity:enter()
---  print("SceneEntity:enter()")
+  print("SceneEntity:enter()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
@@ -184,37 +184,37 @@ function SceneEntity:update(timeStep)
 end
 
 function SceneEntity:exit()
---  print("SceneEntity:exit()")
+  print("SceneEntity:exit()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function SceneEntity:onMessage(message)
---  print("SceneEntity:onMessage("..tostring(message)")")
+  print("SceneEntity:onMessage("..tostring(message)")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():onMessage(touches)
 end
 
 function SceneEntity:touchDown(touches)
---  print("SceneEntity:touchDown("..tostring(touches) .. ")")
+  print("SceneEntity:touchDown("..tostring(touches) .. ")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchDown(touches)
 end
 
 function SceneEntity:touchUp(touches)
---  print("SceneEntity:touchUp("..tostring(touches) ..")")
+  print("SceneEntity:touchUp("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchUp(touches)
 end
 
 function SceneEntity:touchMove(touches)
---  print("SceneEntity:touchMove("..tostring(touches) ..")")
+  print("SceneEntity:touchMove("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchMove(touches)
 end
 
 function SceneEntity:touchCancelled(touches)
---  print("SceneEntity:touchCancelled("..tostring(touches) ..")")
+  print("SceneEntity:touchCancelled("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():touchCancelled(touches)
 end
@@ -226,15 +226,63 @@ function SceneEntity:renderHUD()
 end
 
 function SceneEntity:pause()
---  print("SceneEntity:pause()")
+  print("SceneEntity:pause()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():pause()
 end
 
 function SceneEntity:unPause()
---  print("SceneEntity:unPause()")
+  print("SceneEntity:unPause()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:getCurrentEntityState():unPause()
+end
+
+function SceneEntity:willResignActive()
+  print("SceneEntity:willResignActive()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():willResignActive()
+end
+
+function SceneEntity:didBecomeActive()
+  print("SceneEntity:didBecomeActive()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():didBecomeActive()
+end
+
+function SceneEntity:didEnterBackground()
+  print("SceneEntity:didEnterBackground()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():didEnterBackground()
+end
+
+function SceneEntity:willEnterForeground()
+  print("SceneEntity:willEnterForeground()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():willEnterForeground()
+end
+
+function SceneEntity:willTerminate()
+  print("SceneEntity:willTerminate()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():willTerminate()
+end
+
+function SceneEntity:interrupt()
+  print("SceneEntity:interrupt()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():interrupt()
+end
+
+function SceneEntity:resumeInterrupt()
+  print("SceneEntity:resumeInterrupt()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():resumeInterrupt()
+end
+
+function SceneEntity:receivedMemoryWarning()
+  print("SceneEntity:receivedMemoryWarning()")
+  assert(self:hasState(), "SceneEntity must be in a state")
+  self:getCurrentEntityState():receivedMemoryWarning()
 end
 
 return SceneEntity

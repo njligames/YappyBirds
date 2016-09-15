@@ -101,7 +101,7 @@ end
 function LoadingGameplaySceneEntityState:update(timeStep)
 --  print("LoadingGameplaySceneEntityState:update("..timeStep..")")
 
-  self._countdown = self._countdown - timeStep
+  --self._countdown = self._countdown - timeStep
   
   if self._countdown <= 0 then
     self:pushState("PlayingSceneEntityState")

@@ -118,24 +118,24 @@ function NodeEntityState:isIn()
  return self:getNodeState():getName() == self:getEntityOwner():getNode():getStateMachine():getState():getName()
 end
 
-function NodeEntityState:enter() assert(false, "overwrite: NodeEntityState:enter") end
-function NodeEntityState:update(timeStep) assert(false, "overwrite: NodeEntityState:update") end
-function NodeEntityState:exit() assert(false, "overwrite: NodeEntityState:exit") end
-function NodeEntityState:onMessage(message) assert(false, "overwrite: NodeEntityState:onMessage") end
-function NodeEntityState:touchDown(touches) assert(false, "overwrite: NodeEntityState:touchDown") end
-function NodeEntityState:touchUp(touches) assert(false, "overwrite: NodeEntityState:touchUp") end
-function NodeEntityState:touchMove(touches) assert(false, "overwrite: NodeEntityState:touchMove") end
-function NodeEntityState:touchCancelled(touches) assert(false, "overwrite: NodeEntityState:touchCancelled") end
-function NodeEntityState:render() assert(false, "overwrite: NodeEntityState:render") end
-function NodeEntityState:actionUpdate(action, timeStep) assert(false, "overwrite: NodeEntityState:actionUpdate") end
-function NodeEntityState:actionComplete(action) assert(false, "overwrite: NodeEntityState:actionComplete") end
-function NodeEntityState:collide(otherNode, collisionPoint) assert(false, "overwrite: NodeEntityState:collide") end
-function NodeEntityState:near(otherNode) assert(false, "overwrite: NodeEntityState:near") end
-function NodeEntityState:rayTouchDown(rayContact) assert(false, "overwrite: NodeEntityState:rayTouchDown") end
-function NodeEntityState:rayTouchUp(rayContact) assert(false, "overwrite: NodeEntityState:rayTouchUp") end
-function NodeEntityState:rayTouchMove(rayContact) assert(false, "overwrite: NodeEntityState:rayTouchMove") end
-function NodeEntityState:rayTouchCancelled(rayContact) assert(false, "overwrite: NodeEntityState:rayTouchCancelled") end
-function NodeEntityState:pause() assert(false, "overwrite: NodeEntityState:pause") end
-function NodeEntityState:unPause() assert(false, "overwrite: NodeEntityState:unPause") end
+function NodeEntityState:enter() print("NodeEntityState:enter") end
+function NodeEntityState:update(timeStep) print("NodeEntityState:update") end
+function NodeEntityState:exit() print("NodeEntityState:exit") end
+function NodeEntityState:onMessage(message) print("NodeEntityState:onMessage") end
+function NodeEntityState:touchDown(touches) print("NodeEntityState:touchDown") end
+function NodeEntityState:touchUp(touches) print("NodeEntityState:touchUp") end
+function NodeEntityState:touchMove(touches) print("NodeEntityState:touchMove") end
+function NodeEntityState:touchCancelled(touches) print("NodeEntityState:touchCancelled") end
+function NodeEntityState:render() print("NodeEntityState:render") end
+function NodeEntityState:actionUpdate(action, timeStep) print("NodeEntityState:actionUpdate") end
+function NodeEntityState:actionComplete(action) print("NodeEntityState:actionComplete") end
+function NodeEntityState:collide(otherNode, collisionPoint) print("NodeEntityState:collide") end
+function NodeEntityState:near(otherNode) print("NodeEntityState:near") end
+function NodeEntityState:rayTouchDown(rayContact) print("NodeEntityState:rayTouchDown") end
+function NodeEntityState:rayTouchUp(rayContact) print("NodeEntityState:rayTouchUp") end
+function NodeEntityState:rayTouchMove(rayContact) print("NodeEntityState:rayTouchMove") end
+function NodeEntityState:rayTouchCancelled(rayContact) print("NodeEntityState:rayTouchCancelled") end
+function NodeEntityState:pause() print("NodeEntityState:pause") end
+function NodeEntityState:unPause() print("NodeEntityState:unPause") end
 
 return NodeEntityState

@@ -82,32 +82,4 @@ function YappyGame:startStateMachine()
   worldEntity:startStateMachine()
 end
 
-function YappyGame:gameWillResignActive()
-  print("YappyGame:gameWillResignActive()")
-end
-
-function YappyGame:gameDidBecomeActive()
-  print("YappyGame:gameDidBecomeActive()")
-end
-
-function YappyGame:gameDidEnterBackground()
-  print("YappyGame:gameDidEnterBackground()")
-end
-
-function YappyGame:gameWillEnterForeground()
-  print("YappyGame:gameWillEnterForeground()")
-end
-
-function YappyGame:gameWillTerminate()
-  print("YappyGame:gameWillTerminate()")
-end
-
-function YappyGame:gameInterrupt()
-  print("YappyGame:gameInterrupt()")
-end
-
-function YappyGame:gameResumeInterrupt()
-  print("YappyGame:gameResumeInterrupt()")
-end
-
 return YappyGame

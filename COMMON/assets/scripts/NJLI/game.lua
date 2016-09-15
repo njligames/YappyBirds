@@ -212,6 +212,78 @@ function Game:worldTouchCancelled(touches)
   end
 end
 
+function Game:worldWillResignActive()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:willResignActive()
+  end
+end
+
+function Game:worldDidBecomeActive()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:didBecomeActive()
+  end
+end
+
+function Game:worldDidEnterBackground()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:didEnterBackground()
+  end
+end
+
+function Game:worldWillEnterForeground()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:willEnterForeground()
+  end
+end
+
+function Game:worldWillTerminate()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:willTerminate()
+  end
+end
+
+function Game:worldInterrupt()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:interrupt()
+  end
+end
+
+function Game:worldResumeInterrupt()
+  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  assert(worldEntity, "The worldEntity is nil")
+
+  if worldEntity:hasState() then
+    worldEntity:resumeInterrupt()
+  end
+end
+
+
+
+
+
+
+
+
+
+
 function Game:sceneEnterState(scene)
   assert(scene, "The scene is nil")
 
@@ -374,17 +446,93 @@ function Game:sceneGameUnPause(scene)
   end
 end
 
+function Game:sceneReceivedMemoryWarning(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
 
+  if sceneEntity:hasState() then
+    sceneEntity:receivedMemoryWarning()
+  end
+end
 
+function Game:sceneWillResignActive(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
 
+  if sceneEntity:hasState() then
+    sceneEntity:willResignActive()
+  end
+end
 
+function Game:sceneDidBecomeActive(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
 
+  if sceneEntity:hasState() then
+    sceneEntity:didBecomeActive()
+  end
+end
 
+function Game:sceneDidEnterBackground(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
 
+  if sceneEntity:hasState() then
+    sceneEntity:didEnterBackground()
+  end
+end
 
+function Game:sceneWillEnterForeground(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
 
+  if sceneEntity:hasState() then
+    sceneEntity:willEnterForeground()
+  end
+end
 
+function Game:sceneWillTerminate(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
 
+  if sceneEntity:hasState() then
+    sceneEntity:willTerminate()
+  end
+end
+
+function Game:sceneInterrupt(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:interrupt()
+  end
+end
+
+function Game:sceneResumeInterrupt(scene)
+  assert(scene, "The scene is nil")
+  
+  local sceneEntity = self:getEntityManager():getSceneEntity(scene:getName())
+  assert(sceneEntity, "The sceneEntity is nil")
+
+  if sceneEntity:hasState() then
+    sceneEntity:resumeInterrupt()
+  end
+end
 
 function Game:nodeEnterState(node)
   assert(node, "The node is nil")
@@ -540,6 +688,34 @@ function Game:rayTouchCancelled(rayContact)
   if nodeEntity:hasState() then
     nodeEntity:touchCancelled(rayContact)
   end
+end
+
+function Game:update(timeStep)
+  print("Game:update("..tostring(timeStep)..")")
+end
+
+function Game:render()
+  print("Game:render()")
+end
+
+function Game:resize(width, height, orientation)
+  print("Game:resize(" .. tostring(width) .. ", " .. tostring(height) .. ", " .. tostring(orientation) .. ")")
+end
+
+function Game:touchDown(touches)
+  print("Game:touchDown("..tostring(touches)..")")
+end
+
+function Game:touchUp(touches)
+  print("Game:touchUp("..tostring(touches)..")")
+end
+
+function Game:touchMove(touches)
+  print("Game:touchMove("..tostring(touches)..")")
+end
+
+function Game:touchCancelled(touches)
+  print("Game:touchCancelled("..tostring(touches)..")")
 end
 
 return Game

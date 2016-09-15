@@ -88,6 +88,8 @@ function TestBaseClass:__tostring()
 end
 
 function TestBaseClass:_destroy()
+  assert(not self.__TestBaseClassCalledLoad, "Must unload before you destroy")
+  
   __dtor(self)
 end
 

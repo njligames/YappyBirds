@@ -117,20 +117,28 @@ function WorldEntityState:setSceneEntity(sceneEntity)
   self._sceneEntity = sceneEntity
 end
 
-function WorldEntityState:enter() assert(false, "overwrite: WorldEntityState:enter") end
-function WorldEntityState:update(timeStep) assert(false, "overwrite: WorldEntityState:update") end
-function WorldEntityState:exit() assert(false, "overwrite: WorldEntityState:exit") end
-function WorldEntityState:onMessage(message) assert(false, "overwrite: WorldEntityState:onMessage") end
-function WorldEntityState:touchDown(touches) assert(false, "overwrite: WorldEntityState:touchDown") end
-function WorldEntityState:touchUp(touches) assert(false, "overwrite: WorldEntityState:touchUp") end
-function WorldEntityState:touchMove(touches) assert(false, "overwrite: WorldEntityState:touchMove") end
-function WorldEntityState:touchCancelled(touches) assert(false, "overwrite: WorldEntityState:touchCancelled") end
-function WorldEntityState:renderHUD() assert(false, "overwrite: WorldEntityState:renderHUD") end
-function WorldEntityState:keyboardShow() assert(false, "overwrite: WorldEntityState:keyboardShow") end
-function WorldEntityState:keyboardCancel() assert(false, "overwrite: WorldEntityState:keyboardCancel") end
-function WorldEntityState:keyboardReturn(text) assert(false, "overwrite: WorldEntityState:keyboardReturn") end
-function WorldEntityState:receivedMemoryWarning() assert(false, "overwrite: WorldEntityState:receivedMemoryWarning") end
-function WorldEntityState:pause() assert(false, "overwrite: WorldEntityState:pause") end
-function WorldEntityState:unPause() assert(false, "overwrite: WorldEntityState:unPause") end
+function WorldEntityState:enter() print("WorldEntityState:enter") end
+function WorldEntityState:update(timeStep) print("WorldEntityState:update") end
+function WorldEntityState:exit() print("WorldEntityState:exit") end
+function WorldEntityState:onMessage(message) print("WorldEntityState:onMessage") end
+function WorldEntityState:touchDown(touches) print("WorldEntityState:touchDown") end
+function WorldEntityState:touchUp(touches) print("WorldEntityState:touchUp") end
+function WorldEntityState:touchMove(touches) print("WorldEntityState:touchMove") end
+function WorldEntityState:touchCancelled(touches) print("WorldEntityState:touchCancelled") end
+function WorldEntityState:renderHUD() print("WorldEntityState:renderHUD") end
+function WorldEntityState:keyboardShow() print("WorldEntityState:keyboardShow") end
+function WorldEntityState:keyboardCancel() print("WorldEntityState:keyboardCancel") end
+function WorldEntityState:keyboardReturn(text) print("WorldEntityState:keyboardReturn") end
+function WorldEntityState:receivedMemoryWarning() print("WorldEntityState:receivedMemoryWarning") end
+function WorldEntityState:pause() print("WorldEntityState:pause") end
+function WorldEntityState:unPause() print("WorldEntityState:unPause") end
+
+function WorldEntityState:willResignActive() print("WorldEntityState:willResignActive") end
+function WorldEntityState:didBecomeActive() print("WorldEntityState:didBecomeActive") end
+function WorldEntityState:didEnterBackground() print("WorldEntityState:didEnterBackground") end
+function WorldEntityState:willEnterForeground() print("WorldEntityState:willEnterForeground") end
+function WorldEntityState:willTerminate() print("WorldEntityState:willTerminate") end
+function WorldEntityState:interrupt() print("WorldEntityState:interrupt") end
+function WorldEntityState:resumeInterrupt() print("WorldEntityState:resumeInterrupt") end
 
 return WorldEntityState

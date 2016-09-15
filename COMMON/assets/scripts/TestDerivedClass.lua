@@ -82,6 +82,7 @@ function TestDerivedClass:__tostring()
 end
 
 function TestDerivedClass:_destroy()
+  assert(not self.__TestDerivedClassCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 

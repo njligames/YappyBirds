@@ -160,7 +160,7 @@ function WorldEntity:unLoad()
 end
 
 function WorldEntity:startStateMachine()
---  print("WorldEntity:startStateMachine()")
+  print("WorldEntity:startStateMachine()")
   if self:_getEntityState(self:getStartSceneName()) then
     self:_getEntityState(self:getStartSceneName()):push()
   else
@@ -169,7 +169,7 @@ function WorldEntity:startStateMachine()
 end
 
 function WorldEntity:enter()
---  print("WorldEntity:enter()")
+  print("WorldEntity:enter()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():enter()
 end
@@ -186,37 +186,37 @@ function WorldEntity:update(timeStep)
 end
 
 function WorldEntity:exit()
---  print("WorldEntity:exit()")
+  print("WorldEntity:exit()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():exit()
 end
 
 function WorldEntity:onMessage(message)
---  print("WorldEntity:onMessage("..tostring(message)..")")
+  print("WorldEntity:onMessage("..tostring(message)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():onMessage(message)
 end
 
 function WorldEntity:touchDown(touches)
---  print("WorldEntity:touchDown("..tostring(touches)..")")
+  print("WorldEntity:touchDown("..tostring(touches)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():touchDown(touches)
 end
 
 function WorldEntity:touchUp(touches)
---  print("WorldEntity:touchUp("..tostring(touches)..")")
+  print("WorldEntity:touchUp("..tostring(touches)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():touchUp(touches)
 end
 
 function WorldEntity:touchMove(touches)
---  print("WorldEntity:touchMove("..tostring(touches)..")")
+  print("WorldEntity:touchMove("..tostring(touches)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():touchMove(touches)
 end
 
 function WorldEntity:touchCancelled(touches)
---  print("WorldEntity:touchCancelled("..tostring(touches)..")")
+  print("WorldEntity:touchCancelled("..tostring(touches)..")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():touchCancelled(touches)
 end
@@ -234,7 +234,7 @@ function WorldEntity:keyboardShow()
 end
 
 function WorldEntity:keyboardCancel()
---  print("WorldEntity:keyboardCancel()")
+  print("WorldEntity:keyboardCancel()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():keyboardCancel()
 end
@@ -246,21 +246,63 @@ function WorldEntity:keyboardReturn(text)
 end
 
 function WorldEntity:receivedMemoryWarning()
---  print("WorldEntity:receivedMemoryWarning()")
+  print("WorldEntity:receivedMemoryWarning()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():receivedMemoryWarning()
 end
 
 function WorldEntity:pause()
---  print("WorldEntity:pause()")
+  print("WorldEntity:pause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():pause()
 end
 
 function WorldEntity:unPause()
---  print("WorldEntity:unPause()")
+  print("WorldEntity:unPause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:getCurrentEntityState():unPause()
+end
+
+function WorldEntity:willResignActive()
+  print("WorldEntity:willResignActive()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():willResignActive()
+end
+
+function WorldEntity:didBecomeActive()
+  print("WorldEntity:didBecomeActive()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():didBecomeActive()
+end
+
+function WorldEntity:didEnterBackground()
+  print("WorldEntity:didEnterBackground()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():didEnterBackground()
+end
+
+function WorldEntity:willEnterForeground()
+  print("WorldEntity:willEnterForeground()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():willEnterForeground()
+end
+
+function WorldEntity:willTerminate()
+  print("WorldEntity:willTerminate()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():willTerminate()
+end
+
+function WorldEntity:interrupt()
+  print("WorldEntity:interrupt()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():interrupt()
+end
+
+function WorldEntity:resumeInterrupt()
+  print("WorldEntity:resumeInterrupt()")
+  assert(self:hasState(), "WorldEntity must be in a state")
+  self:getCurrentEntityState():resumeInterrupt()
 end
 
 return WorldEntity
