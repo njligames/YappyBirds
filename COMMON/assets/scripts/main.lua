@@ -75,57 +75,57 @@ function __NJLIWorldRenderHUD()
 end
 
 function __NJLIWorldTouchDown(touches)
-  print("__NJLIWorldTouchDown")
+--  print("__NJLIWorldTouchDown")
   njliGameInstance:worldTouchDown(touches)
 end
 
 function __NJLIWorldTouchUp(touches)
-  print("__NJLIWorldTouchUp")
+--  print("__NJLIWorldTouchUp")
   njliGameInstance:worldTouchUp(touches)
 end
 
 function __NJLIWorldTouchMove(touches)
-  print("__NJLIWorldTouchMove")
+--  print("__NJLIWorldTouchMove")
   njliGameInstance:worldTouchMove(touches)
 end
 
 function __NJLIWorldTouchCancelled(touches)
-  print("__NJLIWorldTouchCancelled")
+--  print("__NJLIWorldTouchCancelled")
   njliGameInstance:worldTouchCancelled(touches)
 end
 
 function __NJLIWorldWillResignActive()
-  print("__NJLIGameWillResignActive")
+--  print("__NJLIGameWillResignActive")
   njliGameInstance:worldWillResignActive()
 end
 
 function __NJLIWorldDidBecomeActive()
-  print("__NJLIGameDidBecomeActive")
+--  print("__NJLIGameDidBecomeActive")
   njliGameInstance:worldDidBecomeActive()
 end
 
 function __NJLIWorldDidEnterBackground()
-  print("__NJLIGameDidEnterBackground")
+--  print("__NJLIGameDidEnterBackground")
   njliGameInstance:worldDidEnterBackground()
 end
 
 function __NJLIWorldWillEnterForeground()
-  print("__NJLIGameWillEnterForeground")
+--  print("__NJLIGameWillEnterForeground")
   njliGameInstance:worldWillEnterForeground()
 end
 
 function __NJLIWorldWillTerminate()
-  print("__NJLIGameWillTerminate")
+--  print("__NJLIGameWillTerminate")
   njliGameInstance:worldWillTerminate()
 end
 
 function __NJLIWorldInterrupt()
-  print("__NJLIGameInterrupt")
+--  print("__NJLIGameInterrupt")
   njliGameInstance:worldInterrupt()
 end
 
 function __NJLIWorldResumeInterrupt()
-  print("__NJLIGameResumeInterrupt")
+--  print("__NJLIGameResumeInterrupt")
   njliGameInstance:worldResumeInterrupt()
 end
 
@@ -187,57 +187,57 @@ function __NJLISceneReceivedMemoryWarning(scene)
 end
 
 function __NJLISceneTouchDown(scene, touches)
-  print("__NJLISceneTouchDown")
+--  print("__NJLISceneTouchDown")
   njliGameInstance:sceneTouchDown(scene, touches)
 end
 
 function __NJLISceneTouchUp(scene, touches)
-  print("__NJLIWorldTouchUp")
+--  print("__NJLISceneTouchUp")
   njliGameInstance:sceneTouchUp(scene, touches)
 end
 
 function __NJLISceneTouchMove(scene, touches)
-  print("__NJLISceneTouchMove")
+--  print("__NJLISceneTouchMove")
   njliGameInstance:sceneTouchMove(scene, touches)
 end
 
 function __NJLISceneTouchCancelled(scene, touches)
-  print("__NJLISceneTouchCancelled")
+--  print("__NJLISceneTouchCancelled")
   njliGameInstance:sceneTouchCancelled(scene, touches)
 end
 
 function __NJLISceneWillResignActive(scene)
-  print("__NJLISceneWillResignActive")
+--  print("__NJLISceneWillResignActive")
   njliGameInstance:sceneWillResignActive(scene)
 end
 
 function __NJLISceneDidBecomeActive(scene)
-  print("__NJLISceneDidBecomeActive")
+--  print("__NJLISceneDidBecomeActive")
   njliGameInstance:sceneDidBecomeActive(scene)
 end
 
 function __NJLISceneDidEnterBackground(scene)
-  print("__NJLISceneDidEnterBackground")
+--  print("__NJLISceneDidEnterBackground")
   njliGameInstance:sceneDidEnterBackground(scene)
 end
 
 function __NJLISceneWillEnterForeground(scene)
-  print("__NJLISceneWillEnterForeground")
+--  print("__NJLISceneWillEnterForeground")
   njliGameInstance:sceneWillEnterForeground(scene)
 end
 
 function __NJLISceneWillTerminate(scene)
-  print("__NJLISceneWillTerminate")
+--  print("__NJLISceneWillTerminate")
   njliGameInstance:sceneWillTerminate(scene)
 end
 
 function __NJLISceneInterrupt(scene)
-  print("__NJLISceneInterrupt")
+--  print("__NJLISceneInterrupt")
   njliGameInstance:sceneInterrupt(scene)
 end
 
 function __NJLISceneResumeInterrupt(scene)
-  print("__NJLISceneResumeInterrupt")
+--  print("__NJLISceneResumeInterrupt")
   njliGameInstance:sceneResumeInterrupt(scene)
 end
 
