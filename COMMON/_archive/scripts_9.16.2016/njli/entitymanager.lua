@@ -39,25 +39,19 @@ end
 --#############################################################################
 
 function EntityManager:getNodeEntity(key)
-  if not self:hasNodeEntity(key) then
-    print("There is no NodeEntity with key " .. key)
-  end
+  assert(self:hasNodeEntity(key), "There is no NJLINodeEntity with key " .. key)
 
   return self._nodeEntityTable[key]
 end
 
 function EntityManager:getSceneEntity(key)
-  if not self:hasSceneEntity(key) then
-    print("There is no SceneEntity with key " .. key)
-  end
+  assert(self:hasSceneEntity(key), "There is no NJLISceneEntity with key " .. key)
 
   return self._sceneEntityTable[key]
 end
 
 function EntityManager:getWorldEntity(key)
-  if not self:hasWorldEntity(key) then
-    print("There is no WorldEntity with key " .. key)
-  end
+  assert(self:hasWorldEntity(key), "There is no NJLIWorldEntity with key " .. key)
 
   return self._worldEntityTable[key]
 end
@@ -68,48 +62,33 @@ function EntityManager:addNodeEntity(nodeEntity)
   assert(nodeEntity, "nodeEntity is nil")
 
   local key = nodeEntity:getNode():getName()
-  local ret = false
 
-  if self:hasNodeEntity(key) then
-    print("Cannot overwrite a NodeEntity with key " .. key .. ".")
-  else
-    self._nodeEntityTable[key] = nodeEntity
-    ret = true
-  end
+  assert(not self:hasNodeEntity(key), "Trying to overwrite a NJLINodeEntity with key " .. key)
+  self._nodeEntityTable[key] = nodeEntity
 
-  return key, ret
+  return key
 end
 
 function EntityManager:addSceneEntity(sceneEntity)
-  assert(sceneEntity, "nodeEntity is nil")
+  assert(sceneEntity, "sceneEntity is nil")
 
   local key = sceneEntity:getScene():getName()
-  local ret = false
 
-  if self:hasSceneEntity(key) then
-    print("Cannot overwrite a SceneEntity with key " .. key .. ".")
-  else
-    self._sceneEntityTable[key] = sceneEntity
-    ret = true
-  end
+  assert(not self:hasSceneEntity(key), "Trying to overwrite a NJLISceneEntity with key " .. key)
+  self._sceneEntityTable[key] = sceneEntity
 
-  return key, ret
+  return key
 end
 
 function EntityManager:addWorldEntity(worldEntity)
   assert(worldEntity, "worldEntity is nil")
 
   local key = worldEntity:getWorld():getName()
-  local ret = false
 
-  if self:hasWorldEntity(key) then
-    print("Cannot overwrite a WorldEntity with key " .. key .. ".")
-  else
-    self._worldEntityTable[key] = worldEntity
-    ret = true
-  end
+  assert(not self:hasWorldEntity(key), "Trying to overwrite a NJLIWorldEntity with key " .. key)
+  self._worldEntityTable[key] = worldEntity
 
-  return key, ret
+  return key
 end
 
 --#############################################################################
