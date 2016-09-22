@@ -32,32 +32,32 @@ end
 
 --#############################################################################
 
-function Game:update(timeStep)
---  print("Game:update("..tostring(timeStep)..")")
+function Device:update(timeStep)
+    print("Device:update("..tostring(timeStep)..")")
 end
 
-function Game:render()
---  print("Game:render()")
+function Device:render()
+    print("Device:render()")
 end
 
-function Game:resize(width, height, orientation)
-  -- print("Game:resize(" .. tostring(width) .. ", " .. tostring(height) .. ", " .. tostring(orientation) .. ")")
+function Device:resize(width, height, orientation)
+    print("Device:resize(" .. tostring(width) .. ", " .. tostring(height) .. ", " .. tostring(orientation) .. ")")
 end
 
-function Game:touchDown(touches)
---  print("Game:touchDown("..tostring(touches)..")")
+function Device:touchDown(touches)
+    print("Device:touchDown("..tostring(touches)..")")
 end
 
-function Game:touchUp(touches)
---  print("Game:touchUp("..tostring(touches)..")")
+function Device:touchUp(touches)
+    print("Device:touchUp("..tostring(touches)..")")
 end
 
-function Game:touchMove(touches)
---  print("Game:touchMove("..tostring(touches)..")")
+function Device:touchMove(touches)
+    print("Device:touchMove("..tostring(touches)..")")
 end
 
-function Game:touchCancelled(touches)
---  print("Game:touchCancelled("..tostring(touches)..")")
+function Device:touchCancelled(touches)
+    print("Device:touchCancelled("..tostring(touches)..")")
 end
 
 --#############################################################################
