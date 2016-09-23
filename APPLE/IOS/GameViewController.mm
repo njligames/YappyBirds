@@ -91,15 +91,29 @@
 }
 
 - (void)setupGL
-{
+{//[UIDevice currentDevice].model
+    NSLog(@"%@", [UIDevice currentDevice].model);
     [EAGLContext setCurrentContext:self.context];
     
-    GLKView* view = (GLKView*)self.view;
-    njli::NJLIGameEngine::create(0, 0,
+    GLKView *view = (GLKView *)self.view;
+    
+    //    struct utsname systemInfo;
+    //    uname(&systemInfo);
+    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    
+    
+    njli::NJLIGameEngine::create([[UIDeviceUtil hardwareDescription] UTF8String]);
+    
+    njli::NJLIGameEngine::resize(0,
+                                 0,
                                  view.frame.size.width * view.contentScaleFactor,
                                  view.frame.size.height * view.contentScaleFactor,
-                                 [[UIApplication sharedApplication] statusBarOrientation],
-                                 [[UIDeviceUtil hardwareDescription] UTF8String]);
+                                 orientation);
+    
+    
+    //    njli::NJLIGameEngine::create(0, 0, view.frame.size.width * view.contentScaleFactor, view.frame.size.height * view.contentScaleFactor, orientation, [[UIDeviceUtil hardwareDescription] UTF8String]);
 }
 
 - (void)tearDownGL
@@ -200,13 +214,41 @@
 
 - (void)beginInterruption
 {
-    njli::NJLIGameEngine::pauseSound();
-    njli::NJLIGameEngine::pauseGame();
+    BOOL success = NO;
+    NSError *error = nil;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    
+    
+    
+    //    jli::World::getInstance()->getWorldSound()->enableSuspend();
+    
+    //    success = [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    //    DEBUG_ASSERT_PRINT(success, "%s", [[error localizedDescription] UTF8String]);
+    
+    success = [session setActive:NO error:&error];
+    //    DEBUG_ASSERT_PRINT(success, "%s", [[error localizedDescription] UTF8String]);
+    
+    //    jli::World::getInstance()->enablePauseGame();
+    //    njli::NJLIGameEngine::pauseGame();
+    njli::NJLIGameEngine::interrupt();
 }
 
 - (void)endInterruption
 {
-    njli::NJLIGameEngine::unpauseSound();
+    BOOL success = NO;
+    NSError *error = nil;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    
+    //    jli::World::getInstance()->getWorldSound()->enableSuspend(false);
+    
+    
+    success = [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    //    DEBUG_ASSERT_PRINT(success, "%s", [[error localizedDescription] UTF8String]);
+    
+    success = [session setActive:YES error:&error];
+    //    DEBUG_ASSERT_PRINT(success, "%s", [[error localizedDescription] UTF8String]);
+    
+    njli::NJLIGameEngine::resumeInterrupt();
 }
 
 /**
