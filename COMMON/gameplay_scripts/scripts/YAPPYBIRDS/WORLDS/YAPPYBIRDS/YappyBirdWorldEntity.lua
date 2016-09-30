@@ -1,213 +1,227 @@
-local WorldEntity = require "njli.statemachine.worldentity"
+local BaseClass = require "NJLI.STATEMACHINE.WorldEntity"
 
 local YappyBirdWorldEntity = {}
 YappyBirdWorldEntity.__index = YappyBirdWorldEntity
 
-local json = require('json')
+--#############################################################################
+--DO NOT EDIT ABOVE
+--#############################################################################
 
-setmetatable(YappyBirdWorldEntity, {
- __index = WorldEntity,
- __call = function (cls, ...)
- local self = setmetatable({}, cls)
- self:create(...)
- return self
- end,
- })
+--#############################################################################
+--Begin Custom Code
+--Required local functions:
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
+--#############################################################################
 
-function YappyBirdWorldEntity:className()
- return "YappyBirdWorldEntity"
+local __ctor = function(self, init)
+  --TODO: construct this Entity
 end
 
-function YappyBirdWorldEntity:class()
- return self
+local __dtor = function(self)
+  --TODO: destruct this Entity
 end
 
-function YappyBirdWorldEntity:superClass()
- return WorldEntity
+local __load = function(self)
+  --TODO: load this Entity
 end
 
-function YappyBirdWorldEntity:isa(theClass)
- local b_isa = false
- local cur_class = theClass:class()
- while ( nil ~= cur_class ) and ( false == b_isa ) do
- if cur_class == theClass then
- b_isa = true
- else
- cur_class = cur_class:superClass()
- end
- end
-
- return b_isa
+local __unLoad = function(self)
+  --TODO: unload this Entity
 end
 
-function YappyBirdWorldEntity:destroy()
- YappyBirdWorldEntity.__gc(self)
- WorldEntity.destroy(self)
- 
- print("YappyBirdWorldEntity:destroy()")
-end
-
-function YappyBirdWorldEntity:create(init)
- print("YappyBirdWorldEntity:create(init)")
-
- local worldEntityInit =
- {
- name = init.name,
- states =
- {
- {
- name = "GameplayWorldEntityState",
- module = require "yappybirds.worlds.YappyBirds.states.GameplayWorldEntityState"
- },
- {
- name = "MenuWorldEntityState",
- module = require "yappybirds.worlds.YappyBirds.states.MenuWorldEntityState"
- },
- {
- name = "ResultsWorldEntityState",
- module = require "yappybirds.worlds.YappyBirds.states.ResultsWorldEntityState"
- },
- },
-
- startStateName = "GameplayWorldEntityState",
- gameInstance = init.gameInstance,
- }
-
- WorldEntity.create(self, worldEntityInit)
-
-end
-
-function YappyBirdWorldEntity:__gc()
- self:unLoad()
-end
-
-function YappyBirdWorldEntity:__tostring()
-
- return json:stringify(self)
-end
-
-function YappyBirdWorldEntity:hasState()
- return WorldEntity.hasState(self)
-end
-
-function YappyBirdWorldEntity:getCurrentEntityState()
- return WorldEntity.getCurrentEntityState(self)
-end
-
-function YappyBirdWorldEntity:pushState(stateName)
- WorldEntity.pushState(self, stateName)
-end
-
-function YappyBirdWorldEntity:getStartSceneName()
- return WorldEntity.getStartSceneName(self)
-end
-
-function YappyBirdWorldEntity:getWorld()
- return WorldEntity.getWorld(self)
-end
-
-function YappyBirdWorldEntity:getGameInstance()
- return WorldEntity.getGameInstance(self)
-end
-
-function YappyBirdWorldEntity:isLoaded()
- return WorldEntity.isLoaded(self)
-end
-
-function YappyBirdWorldEntity:load()
- WorldEntity.load(self)
- 
- print("YappyBirdWorldEntity:load()")
-end
-
-function YappyBirdWorldEntity:unLoad()
- WorldEntity.unLoad(self)
- 
- print("YappyBirdWorldEntity:unLoad()")
-end
-
-function YappyBirdWorldEntity:startStateMachine()
- WorldEntity.startStateMachine(self)
- 
- print("YappyBirdWorldEntity:startStateMachine()")
-end
+--#############################################################################
 
 function YappyBirdWorldEntity:enter()
- WorldEntity.enter(self)
- 
- print("YappyBirdWorldEntity:enter()")
+  BaseClass.enter(self)
+  print("YappyBirdWorldEntity:enter()")
 end
 
 function YappyBirdWorldEntity:update(timeStep)
- WorldEntity.update(self, timeStep)
- 
-
+  BaseClass.update(self, timeStep)
+  print("YappyBirdWorldEntity:update(timeStep)")
 end
 
 function YappyBirdWorldEntity:exit()
- WorldEntity.exit(self)
- 
- print("YappyBirdWorldEntity:exit()")
+  BaseClass.exit(self)
+  print("YappyBirdWorldEntity:exit()")
 end
 
-function YappyBirdWorldEntity:onMessage(message)
- WorldEntity.onMessage(self, message)
- 
- print("YappyBirdWorldEntity:onMessage("..tostring(message)..")")
-end
-
-function YappyBirdWorldEntity:touchDown(touches)
- WorldEntity.touchDown(self, touches)
- 
- print("YappyBirdWorldEntity:touchDown("..tostring(touches)..")")
-end
-
-function YappyBirdWorldEntity:touchUp(touches)
- WorldEntity.touchUp(self, touches)
- 
- print("YappyBirdWorldEntity:touchUp("..tostring(touches)..")")
-end
-
-function YappyBirdWorldEntity:touchMove(touches)
- WorldEntity.touchMove(self, touches)
- 
- print("YappyBirdWorldEntity:touchMove("..tostring(touches)..")")
-end
-
-function YappyBirdWorldEntity:touchCancelled(touches)
- WorldEntity.touchCancelled(self, touches)
- 
- print("YappyBirdWorldEntity:touchCancelled()")
+function YappyBirdWorldEntity:onMessage()
+  BaseClass.onMessage(self)
+  print("YappyBirdWorldEntity:onMessage()")
 end
 
 function YappyBirdWorldEntity:renderHUD()
- WorldEntity.renderHUD(self)
- 
-
+  BaseClass.renderHUD(self)
+  print("YappyBirdWorldEntity:renderHUD()")
 end
 
-function YappyBirdWorldEntity:keyboardShow()
- WorldEntity.keyboardShow(self)
+function YappyBirdWorldEntity:touchDown(touches)
+  BaseClass.touchDown(self, touches)
+  print("YappyBirdWorldEntity:touchDown(touches)")
 end
 
-function YappyBirdWorldEntity:keyboardCancel()
- WorldEntity.keyboardCancel(self)
+function YappyBirdWorldEntity:touchUp(touches)
+  BaseClass.touchUp(self, touches)
+  print("YappyBirdWorldEntity:touchUp(touches)")
 end
 
-function YappyBirdWorldEntity:keyboardReturn(text)
- WorldEntity.keyboardCancel(self, text)
+function YappyBirdWorldEntity:touchMove(touches)
+  BaseClass.touchMove(self, touches)
+  print("YappyBirdWorldEntity:touchMove(touches)")
 end
 
-function YappyBirdWorldEntity:receivedMemoryWarning()
- WorldEntity.receivedMemoryWarning(self)
+function YappyBirdWorldEntity:touchCancelled(touches)
+  BaseClass.touchCancelled(self, touches)
+  print("YappyBirdWorldEntity:touchCancelled(touches)")
 end
 
 function YappyBirdWorldEntity:pause()
- WorldEntity.pause(self)
+  BaseClass.pause(self)
+  print("YappyBirdWorldEntity:pause()")
 end
 
 function YappyBirdWorldEntity:unPause()
- WorldEntity.unPause(self)
+  BaseClass.unPause(self)
+  print("YappyBirdWorldEntity:unPause()")
+end
+
+function YappyBirdWorldEntity:keyboardShow()
+  BaseClass.keyboardShow(self)
+  print("YappyBirdWorldEntity:keyboardShow()")
+end
+
+function YappyBirdWorldEntity:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+  print("YappyBirdWorldEntity:keyboardCancel()")
+end
+
+function YappyBirdWorldEntity:keyboardReturn(text)
+  BaseClass.keyboardReturn(self, text)
+  print("YappyBirdWorldEntity:keyboardReturn(text)")
+end
+
+function YappyBirdWorldEntity:willResignActive()
+  BaseClass.willResignActive(self)
+  print("YappyBirdWorldEntity:willResignActive()")
+end
+
+function YappyBirdWorldEntity:didBecomeActive()
+  BaseClass.didBecomeActive(self)
+  print("YappyBirdWorldEntity:didBecomeActive()")
+end
+
+function YappyBirdWorldEntity:didEnterBackground()
+  BaseClass.didEnterBackground(self)
+  print("YappyBirdWorldEntity:didEnterBackground()")
+end
+
+function YappyBirdWorldEntity:willEnterForeground()
+  BaseClass.willEnterForeground(self)
+  print("YappyBirdWorldEntity:willEnterForeground()")
+end
+
+function YappyBirdWorldEntity:willTerminate()
+  BaseClass.willTerminate(self)
+  print("YappyBirdWorldEntity:willTerminate()")
+end
+
+function YappyBirdWorldEntity:interrupt()
+  BaseClass.interrupt(self)
+  print("YappyBirdWorldEntity:interrupt()")
+end
+
+function YappyBirdWorldEntity:resumeInterrupt()
+  BaseClass.resumeInterrupt(self)
+  print("YappyBirdWorldEntity:resumeInterrupt()")
+end
+
+function YappyBirdWorldEntity:receivedMemoryWarning()
+  BaseClass.receivedMemoryWarning(self)
+  print("YappyBirdWorldEntity:receivedMemoryWarning()")
+end
+
+--#############################################################################
+--End Custom Code
+--#############################################################################
+
+--#############################################################################
+--DO NOT EDIT BELOW
+--#############################################################################
+
+setmetatable(YappyBirdWorldEntity, {
+    __index = BaseClass,
+    __call = function (cls, ...)
+      local self = setmetatable({}, cls)
+      --Create the base first
+      BaseClass._create(self, ...)
+      self:_create(...)
+      return self
+    end,
+  })
+
+function YappyBirdWorldEntity:className()
+  return "YappyBirdWorldEntity"
+end
+
+function YappyBirdWorldEntity:class()
+  return self
+end
+
+function YappyBirdWorldEntity:superClass()
+  return BaseClass
+end
+
+function YappyBirdWorldEntity:__gc()
+  --Destroy derived class first
+  YappyBirdWorldEntity._destroy(self)
+  --Destroy base class after derived class
+  BaseClass._destroy(self)
+end
+
+function YappyBirdWorldEntity:__tostring()
+  local ret = self:className() .. " =\n{\n"
+
+  for pos,val in pairs(self) do
+    ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
+  end
+
+  ret = ret .. "\n\t" .. tostring_r(BaseClass) .. "\n}"
+  return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
+end
+
+function YappyBirdWorldEntity:_destroy()
+  assert(not self.__YappyBirdWorldEntityCalledLoad, "Must unload before you destroy")
+  __dtor(self)
+end
+
+function YappyBirdWorldEntity:_create(init)
+  self.__YappyBirdWorldEntityCalledLoad = false
+  __ctor(self, init)
+end
+
+function YappyBirdWorldEntity:load()
+  --load base first
+  BaseClass.load(self)
+
+  --load derived last...
+  __load(self)
+
+  self.__YappyBirdWorldEntityCalledLoad = true
+end
+
+function YappyBirdWorldEntity:unLoad()
+  assert(self.__YappyBirdWorldEntityCalledLoad, "Must load before unloading")
+
+  --unload derived first...
+  __unLoad(self)
+  self.__YappyBirdWorldEntityCalledLoad = false
+
+  --unload base last...
+  BaseClass.unLoad(self)
 end
 
 return YappyBirdWorldEntity

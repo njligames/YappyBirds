@@ -22,7 +22,7 @@ local __ctor = function(self, init)
   self._entityOwner = init.entityOwner
   self._nodeState = njli.NodeState.create()
 
-  self:getNodeState():setName(init.name)
+  self:getNodeState():setName(self:className())
 end
 
 local __dtor = function(self)

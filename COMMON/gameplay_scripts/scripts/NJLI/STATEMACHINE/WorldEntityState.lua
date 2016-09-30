@@ -16,18 +16,35 @@ WorldEntityState.__index = WorldEntityState
 
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
-  assert(init.name, "Init variable is expecting a name value")
   assert(init.entityOwner, "Init variable is expecting a entityOwner value")
+  assert(init.class, "Init variable is expecting a entityOwner value")
+  assert(init.states, "Init variable is expecting a entityOwner value")
+  assert(type(init.states) == "table", "not a table")
+  assert(init.nodes, "Init variable is expecting a entityOwner value")
+  assert(type(init.nodes) == "table", "not a table")
 
   self._entityOwner = init.entityOwner
 
   self._worldState = njli.WorldState.create()
-  self:getWorldState():setName(init.name)
+  self:getWorldState():setName(self:className())
+
+  --Create the Entity
+  self._sceneEntity = init.class({
+    states = init.states,
+    nodes = init.nodes,
+    entityOwner = self,
+  })
+
+  Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
 end
 
 local __dtor = function(self)
+  self._sceneEntity = nil
+
   njli.WorldState.destroy(self:getWorldState())
   self._worldState = nil
+
+  self._entityOwner = nil
 end
 
 local __load = function(self)
@@ -46,6 +63,10 @@ end
 
 function WorldEntityState:getWorldEntity()
   return self._entityOwner
+end
+
+function WorldEntityState:getSceneEntity()
+  return self._sceneEntity
 end
 
 --############################################################################# 

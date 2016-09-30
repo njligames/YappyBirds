@@ -8,28 +8,30 @@ YappyGame.__index = YappyGame
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
-local __ctor = function(self, interface)
+-- local YappyBirdWorldEntity = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity"
 
-	local yappyBirdWorldEntityInit =
-	{
-		name = "YappyBirdWorldEntity",
-		interface = interface,
-	}
+local __ctor = function(self, init)
+  assert(init, "init variable is nil.")
+  assert(init.class, "Init variable is expecting a class")
+  assert(init.states, "Init variable is expecting a states table")
+  assert(type(init.states) == "table", "Init variable is expecting a states table")
 
-    --self:getGameInstance():getEntityManager():addWorldEntity(YappyBirdWorldEntity(yappyBirdWorldEntityInit))
+  self._worldEntity = init.class(init.states)
 
-    --self._worldEntity = self:getGameInstance():getEntityManager():getWorldEntity("YappyBirdWorldEntity")
+  Interface:getStateMachine():getEntityManager():addWorldEntity(self:getWorldEntity())
+
+  -- self._worldEntity:load()
 
 end
 
 local __dtor = function(self)
-  --TODO: destruct this Entity
+  self._worldEntity = nil
 end
 
 local __load = function(self)
@@ -40,16 +42,21 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
-
-function YappyGame:startStateMachine()
-	print("YappyGame:startStateMachine()")
-end
-
---############################################################################# 
---End Custom Code
 --#############################################################################
 
+function YappyGame:startStateMachine()
+  print("YappyGame:startStateMachine()")
+
+  self:getWorldEntity():startStateMachine()
+end
+
+function YappyGame:getWorldEntity()
+  return self._worldEntity
+end
+
+--#############################################################################
+--End Custom Code
+--#############################################################################
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -95,8 +102,8 @@ end
 
 function YappyGame:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -105,25 +112,25 @@ end
 
 function YappyGame:_destroy()
   assert(not self.__YappyGameCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
 end
 
 function YappyGame:_create(init)
   self.__YappyGameCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function YappyGame:load()
   __load(self)
-  
+
   self.__YappyGameCalledLoad = true
 end
 
 function YappyGame:unLoad()
   assert(self.__YappyGameCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__YappyGameCalledLoad = false
 end

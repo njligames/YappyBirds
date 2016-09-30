@@ -6,3 +6,5 @@
 *.aep
 *.ai
 .DS_Store
+
+COMMON/assets/scripts/*

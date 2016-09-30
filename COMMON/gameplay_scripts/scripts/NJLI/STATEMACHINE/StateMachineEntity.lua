@@ -44,7 +44,7 @@ end
 --############################################################################# 
 
 function StateMachineEntity:getEntityManager()
- return self._entityManager
+    return self._entityManager
 end
 
 function StateMachineEntity:_worldEnterState()

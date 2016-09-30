@@ -41,11 +41,11 @@ end
 --Private
 --#############################################################################
 
-function Interface:_getStateMachine()
+function Interface:getStateMachine()
   return self._stateMachineEntity
 end
 
-function Interface:_getDeviceEntity()
+function Interface:getDeviceEntity()
     return self._deviceEntity
 end
 

@@ -15,24 +15,50 @@ SceneEntity.__index = SceneEntity
 --#############################################################################
 
 local __ctor = function(self, init)
-  assert(init, "init variable is nil.")
-  assert(init.name, "Init variable is expecting a name value when creating " .. self:className())
-  assert(init.states, "Init variable is expecting a states table when creating " .. self:className())
-  assert(type(init.states) == "table", "Init variable is expecting a states table when creating " .. self:className())
-  assert(init.startStateName, "Init variable is expecting a startStateName value when creating " .. self:className())
-
-  self._startStateName = init.startStateName
+  assert(nil == init, "init variable is nil.")
+  assert(type(init) == "table", "not a table")
+  assert(nil == init.states, "init variable is nil.")
+  assert(type(init.states) == "table", "not a table")
+  -- assert(nil == init.nodes, "init variable is nil.")
+  -- assert(type(init.nodes) == "table", "not a table")
+  assert(nil == entityOwner, "init variable is nil.")
 
   self._scene = njli.Scene.create()
+  self:getScene():setName(self:className())
 
-  self:getScene():setName(init.name)
+  self._entityOwner = init.entityOwner
 
-  self._stateEntityTable = {}
-  if init then
-    for k,v in pairs(init.states) do
-      self:_addEntityState(v.name, v.module)
+  self._nodeEntityTable {}
+  if init.nodes then
+    for k,v in pairs(init.nodes) do
+      --Create a NodeEntity
+      local nodeEntity = v.class(v.states)
+      self:_addNodeEntity(nodeEntity)
     end
   end
+  
+  local startState = nil
+  local startStateName = ""
+  self._stateEntityTable = {}
+  for k,v in pairs(init.states) do
+
+    --create a SceneEntityState
+    local stateEntity = v({
+      entityOwner = self,
+      nodes = self._nodeEntityTable
+    })
+
+    if startState == nil then
+      startState = stateEntity
+      startStateName = stateEntity:className()
+    end
+
+    self:_addEntityState(sceneStateEntity)
+  end
+
+  assert(startState, "No start state was defined for " .. self:className())
+  
+  self._startStateName = startStateName
 end
 
 local __dtor = function(self)
@@ -59,17 +85,20 @@ end
 --Private
 --#############################################################################
 
-function SceneEntity:_addEntityState(stateName, entityStateModule)
-  local init =
-  {
-    name = stateName,
-    entityOwner = self
-  }
-  self._stateEntityTable[stateName] = entityStateModule(init)
+-- function SceneEntity:_addEntityState(stateName, entityStateModule)
+--   local init =
+--   {
+--     name = stateName,
+--     entityOwner = self
+--   }
+--   self._stateEntityTable[stateName] = entityStateModule(init)
+-- end
+function SceneEntity:_addEntityState(entityState)
+  local stateName = entityState:className()
+  self._stateEntityTable[stateName] = entityState
 end
 
 function SceneEntity:_removeEntityState(stateName)
-  self:_getEntityState():destroy()
   self._stateEntityTable[stateName] = nil
 end
 
@@ -77,14 +106,6 @@ function SceneEntity:_getEntityState(stateName)
   assert(self._stateEntityTable[stateName], "There must be a state with name: " .. stateName)
 
   return self._stateEntityTable[stateName]
-end
-
-function SceneEntity:_hasEntityState(stateName)
-  return (self._stateEntityTable[stateName] ~= nil)
-end
-
-function SceneEntity:_hasState()
-  return self:getScene():getStateMachine():getState() ~= nil
 end
 
 function SceneEntity:_getCurrentEntityState()
@@ -95,12 +116,48 @@ function SceneEntity:_getCurrentEntityState()
   return self:_getEntityState(self:getScene():getStateMachine():getState():getName())
 end
 
+
+
+
+
+
+
+
+function SceneEntity:_addNodeEntity(node)
+  local stateName = node:className()
+  self._nodeEntityTable[stateName] = entityState
+end
+
+function SceneEntity:_removeNodeEntity(stateName)
+  self._nodeEntityTable[stateName] = nil
+end
+
+function SceneEntity:_getNodeEntity(nodeName)
+  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
+
+  return self._nodeEntityTable[nodeName]
+end
+
+
+
+
+
+
+
 --############################################################################# 
 --General
 --#############################################################################
 
 function SceneEntity:getScene()
   return self._scene
+end
+
+function SceneEntity:hasEntityState(stateName)
+  return (self._stateEntityTable[stateName] ~= nil)
+end
+
+function SceneEntity:hasState()
+  return self:getScene():getStateMachine():getState() ~= nil
 end
 
 --############################################################################# 
@@ -111,127 +168,129 @@ function SceneEntity:pushState(stateName)
   self:_getEntityState(stateName):push()
 end
 
-function SceneEntity:startStateMachine()
-  return self._startStateName
+function SceneEntity:getStartStateEntity()
+  return self:_getEntityState(self._startStateName)
 end
 
 function SceneEntity:startStateMachine()
   print("SceneEntity:startStateMachine()")
+
   njli.World.getInstance():addScene(self:getScene())
-  self:pushState(self:getStartStateName())
+
+  self:pushState(self._startStateName)
 end
 
 function SceneEntity:enter()
   print("SceneEntity:enter()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function SceneEntity:update(timeStep)
  print("SceneEntity:update("..timeStep..")")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
 
 function SceneEntity:exit()
   print("SceneEntity:exit()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():exit()
 end
 
 function SceneEntity:onMessage(message)
   print("SceneEntity:onMessage("..tostring(message)")")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():onMessage(touches)
 end
 
 function SceneEntity:touchDown(touches)
  print("SceneEntity:touchDown("..tostring(touches) .. ")")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchDown(touches)
 end
 
 function SceneEntity:touchUp(touches)
  print("SceneEntity:touchUp("..tostring(touches) ..")")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchUp(touches)
 end
 
 function SceneEntity:touchMove(touches)
  print("SceneEntity:touchMove("..tostring(touches) ..")")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchMove(touches)
 end
 
 function SceneEntity:touchCancelled(touches)
  print("SceneEntity:touchCancelled("..tostring(touches) ..")")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchCancelled(touches)
 end
 
 function SceneEntity:renderHUD()
  print("SceneEntity:renderHUD()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():renderHUD()
 end
 
 function SceneEntity:pause()
   print("SceneEntity:pause()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():pause()
 end
 
 function SceneEntity:unPause()
   print("SceneEntity:unPause()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():unPause()
 end
 
 function SceneEntity:willResignActive()
  print("SceneEntity:willResignActive()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():willResignActive()
 end
 
 function SceneEntity:didBecomeActive()
  print("SceneEntity:didBecomeActive()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():didBecomeActive()
 end
 
 function SceneEntity:didEnterBackground()
  print("SceneEntity:didEnterBackground()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():didEnterBackground()
 end
 
 function SceneEntity:willEnterForeground()
  print("SceneEntity:willEnterForeground()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():willEnterForeground()
 end
 
 function SceneEntity:willTerminate()
  print("SceneEntity:willTerminate()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():willTerminate()
 end
 
 function SceneEntity:interrupt()
  print("SceneEntity:interrupt()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():interrupt()
 end
 
 function SceneEntity:resumeInterrupt()
  print("SceneEntity:resumeInterrupt()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():resumeInterrupt()
 end
 
 function SceneEntity:receivedMemoryWarning()
  print("SceneEntity:receivedMemoryWarning()")
-  assert(self:_hasState(), "SceneEntity must be in a state")
+  assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():receivedMemoryWarning()
 end
 

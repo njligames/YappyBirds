@@ -16,27 +16,60 @@ NodeEntity.__index = NodeEntity
 
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
-  assert(init.name, "Init variable is expecting a name value")
-  assert(init.states, "Init variable is expecting a states table")
-  assert(type(init.states) == "table", "Init variable is expecting a states table")
-  assert(init.startStateName, "Init variable is expecting a startStateName value when creating " .. self:className())
-
-  self._startStateName = init.startStateName
+  assert(type(init) == "table", "Init variable is expecting a states table")
 
   self._node = njli.Node.create()
-  self:getNode():setName(init.name)
+  self:getNode():setName(self:className())
 
+  local startState = nil
+  local startStateName = ""
   self._stateEntityTable = {}
-  if init then
-    for k,v in pairs(init.states) do
-      self:_addEntityState(v.name, v.module)
+  for k,v in pairs(init) do
+
+    --create a NodeEntityState
+    local stateEntity = v({entityOwner = self})
+
+    if startState == nil then
+      startState = stateEntity
+      startStateName = stateEntity:className()
     end
+
+    self:_addEntityState(stateEntity)
   end
+
+  assert(startState, "No start state was defined for " .. self:className())
+  
+  self._startStateName = startStateName
+
+
+
+  -- assert(init, "init variable is nil.")
+  -- assert(init.name, "Init variable is expecting a name value")
+  -- assert(init.states, "Init variable is expecting a states table")
+  -- assert(type(init.states) == "table", "Init variable is expecting a states table")
+  -- assert(init.startStateName, "Init variable is expecting a startStateName value when creating " .. self:className())
+
+  -- self._startStateName = init.startStateName
+
+  -- self._node = njli.Node.create()
+  -- self:getNode():setName(init.name)
+
+  -- self._stateEntityTable = {}
+  -- if init then
+  --   for k,v in pairs(init.states) do
+  --     self:_addEntityState(v.name, v.module)
+  --   end
+  -- end
 end
 
 local __dtor = function(self)
+
+  self._stateEntityTable = nil
+  
   njli.Node.destroy(self:getNode())
   self._node = nil
+
+  
 end
 
 local __load = function(self)
@@ -58,13 +91,18 @@ end
 --Private
 --#############################################################################
 
-function NodeEntity:_addEntityState(stateName, entityStateModule)
-  local init =
-  {
-    name = stateName,
-    entityOwner = self
-  }
-  self._stateEntityTable[stateName] = entityStateModule(init)
+-- function NodeEntity:_addEntityState(stateName, entityStateModule)
+--   local init =
+--   {
+--     name = stateName,
+--     entityOwner = self
+--   }
+--   self._stateEntityTable[stateName] = entityStateModule(init)
+-- end
+
+function NodeEntity:_addEntityState(entityState)
+  local stateName = entityState:className()
+  self._stateEntityTable[stateName] = entityState
 end
 
 function NodeEntity:_removeEntityState(stateName)
@@ -76,14 +114,6 @@ function NodeEntity:_getEntityState(stateName)
   assert(self._stateEntityTable[stateName], "There must be a state with name: " .. stateName)
 
   return self._stateEntityTable[stateName]
-end
-
-function NodeEntity:_hasEntityState(stateName)
-  return (self._stateEntityTable[stateName] ~= nil)
-end
-
-function NodeEntity:_hasState()
-  return self:getNode():getStateMachine():getState() ~= nil
 end
 
 function NodeEntity:_getCurrentEntityState()
@@ -102,6 +132,14 @@ function NodeEntity:getNode()
   return self._node
 end
 
+function NodeEntity:hasEntityState(stateName)
+  return (self._stateEntityTable[stateName] ~= nil)
+end
+
+function NodeEntity:hasState()
+  return self:getNode():getStateMachine():getState() ~= nil
+end
+
 --############################################################################# 
 --Statemachine code...
 --#############################################################################
@@ -110,84 +148,85 @@ function NodeEntity:pushState(stateName)
   self:_getEntityState(stateName):push()
 end
 
-function NodeEntity:getStartStateName()
-  return self._startStateName
+function NodeEntity:getStartStateEntity()
+  return self:_getEntityState(self._startStateName)
 end
 
 function NodeEntity:startStateMachine()
   print("NodeEntity:startStateMachine()")
-  self:pushState(self:getStartStateName())
+
+  self:pushState(self._startStateName)
 end
 
 function NodeEntity:enter()
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:update(timeStep)
   print("NodeEntity:update()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
 
 function NodeEntity:exit()
   print("NodeEntity:exit()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():exit()
 end
 
 function NodeEntity:onMessage()
   print("NodeEntity:onMessage()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():onMessage()
 end
 
 function NodeEntity:rayTouchDown(rayContact)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchUp(rayContact)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchMove(rayContact)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchCancelled(rayContact)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:collide(otherNode, collisionPoint)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:near(otherNode)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:actionUpdate(action, timeStep)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:actionComplete(action)
   print("NodeEntity:enter()")
-  assert(self:_hasState(), "NodeEntity must be in a state")
+  assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 

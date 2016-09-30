@@ -259,13 +259,77 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "scripts/njli/Interface.lua",
+			"settings":
+			{
+				"buffer_size": 3121,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/njli/DeviceEntity.lua",
+			"settings":
+			{
+				"buffer_size": 3385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/njli/statemachine/entitymanager.lua",
+			"settings":
+			{
+				"buffer_size": 3966,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/njli/statemachine/StateMachineEntity.lua",
+			"settings":
+			{
+				"buffer_size": 19957,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/njli/statemachine/WorldEntity.lua",
+			"settings":
+			{
+				"buffer_size": 9613,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/njli/statemachine/WorldEntityState.lua",
+			"settings":
+			{
+				"buffer_size": 5879,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/sublluanjligameengine/LuaNJLI.sublime-build",
 	"command_palette":
 	{
-		"height": 247.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"vinta",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
 			[
 				"ldoc",
 				"Build: ldoc: Project"
@@ -291,20 +355,12 @@
 				"Package Control: Create Package File"
 			],
 			[
-				"packa",
-				"Package Control: Install Package"
-			],
-			[
 				"todo",
 				"Package Control: Discover Packages"
 			],
 			[
 				"show",
 				"SublimeLinter: Show Error List"
-			],
-			[
-				"package",
-				"Package Control: Install Package"
 			],
 			[
 				"pack",
@@ -347,7 +403,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 593.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -364,6 +420,23 @@
 	},
 	"file_history":
 	[
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/sceneentitystate.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/yappybirds/YappyGame.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/sceneentity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/statemachine.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/worldentitystate.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/nodeentitystate.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/nodeentity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/worldentity.lua",
+		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/entitymanager.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/main.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/util.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/yappybirds/util.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/device.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/main.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/entitymanager.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/game.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/Makefile",
 		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/assets/scripts/njli/statemachine/sceneentity.lua",
 		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/assets/scripts/njli/statemachine/nodeentitystate.lua",
@@ -474,24 +547,7 @@
 		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLIWorldEntityState.lua",
 		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/worlds/worldYappyGameState.lua",
 		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/game.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLISceneEntity.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLISceneEntityState.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLIWorldEntity.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLINodeEntity.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/nodeentity.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/nodeentitystate.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/sceneentity.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/sceneentitystate.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLINodeEntityState.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/nodes/bird/states/fly.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/nodes/bird/bird.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/worlds/yappyBirdsWorld.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/scenes/gamePlayScene.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/util.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLIGame.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLIEntityManager.lua",
-		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/JSON.lua",
-		"/Users/jamesfolk/Dropbox/GameDevelopment/NJLIGames/YappyBirds/COMMON/gameplay_scripts/scenes/menuScene.lua"
+		"/Users/jamesfolk/NJLI/YappyBirds/COMMON/gameplay_scripts/NJLI/NJLISceneEntity.lua"
 	],
 	"find":
 	{
@@ -542,9 +598,34 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"NJLIInterface",
+			"NJLI",
+			"device",
+			"Device",
+			"device",
+			"statemachine",
+			"getEntityOwner",
+			"_getEntityOwner",
+			"getEntityOwner",
+			"getStartSceneName",
+			"start",
+			"Scene",
+			"getScene",
+			"SceneEntity",
+			"_addEntityState",
+			"_scene",
+			"_getEntityState",
+			"getWorld",
+			"_startStateName",
+			"timeStep",
+			"hasState",
+			"getCurrentEntityState",
+			"__load",
+			"There is no WorldEntity with key",
+			"game",
 			"love",
 			"LuaLove",
 			"love",
@@ -647,32 +728,7 @@
 			"getName",
 			"_gameInstance",
 			"getStartStateName",
-			"getGameInstance",
-			"_startStateName",
-			"getStartStateName",
-			"_startStateName",
-			"getStartStateName",
-			"_startStateName",
-			"getStartStateName",
-			"initialize",
-			"getStartStateName",
-			"_startStateName",
-			"startStateName",
-			"initialize",
-			"push",
-			"getStartSceneName",
-			"_startStateName",
-			"startStateName",
-			"getStartSceneName",
-			"_startStateName",
-			"initialize",
-			"load",
-			"initialize",
-			"getStartSceneName",
-			"_startStateName",
-			"getStartSceneName",
-			"initialize",
-			"print(\""
+			"getGameInstance"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -680,6 +736,20 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Interface",
+			"NJLIInterface",
+			"DeviceEntity",
+			"StateMachineEntity",
+			"statemachineentity",
+			"getWorldEntity",
+			"getNodeEntity",
+			"getSceneEntity",
+			"startStateMachine",
+			"getNode",
+			"NodeEntity",
+			"",
+			"_hasState",
+			"_getCurrentEntityState",
 			"NJLI.statemachine",
 			"StateMachine",
 			"and",
@@ -793,33 +863,186 @@
 			"SteeringBehaviorSeekBuilder",
 			"SteeringBehaviorSeek",
 			"_OGG",
-			"_WAV",
-			"SCRIPTS",
-			"SCRIPTS_ABSOLUTEPATH",
-			"GAMEPLAYSCRIPTS_ABSOLUTEPATH",
-			"_PROJECT",
-			"_PROJECT_PATH",
-			"timerCallback_njli",
-			"o \\",
-			"/Users/jamesfolk/Dropbox/GameDevelopment/NJLIGames/NJLIGameEngine/Source/bullet/bullet-2.82-r2704/src",
-			"/Users/jamesfolk/Dropbox/GameDevelopment/NJLIGames/NJLIGameEngine/Source/bullet/bullet-2.82-r2704/src/",
-			"o",
-			"CXX",
-			"cpp",
-			"mac",
-			"MY_NJLI_PATH"
+			"_WAV"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "scripts/njli/Interface.lua",
+					"settings":
+					{
+						"buffer_size": 3121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 197.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scripts/njli/DeviceEntity.lua",
+					"settings":
+					{
+						"buffer_size": 3385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scripts/njli/statemachine/entitymanager.lua",
+					"settings":
+					{
+						"buffer_size": 3966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scripts/njli/statemachine/StateMachineEntity.lua",
+					"settings":
+					{
+						"buffer_size": 19957,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scripts/njli/statemachine/WorldEntity.lua",
+					"settings":
+					{
+						"buffer_size": 9613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2036,
+								1836
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 831.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scripts/njli/statemachine/WorldEntityState.lua",
+					"settings":
+					{
+						"buffer_size": 5879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1353,
+								1353
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 22.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
