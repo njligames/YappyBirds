@@ -29,13 +29,13 @@ local __ctor = function(self, init)
   self:getWorldState():setName(self:className())
 
   --Create the Entity
-  self._sceneEntity = init.class({
-    states = init.states,
-    nodes = init.nodes,
-    entityOwner = self,
-  })
+  -- self._sceneEntity = init.class({
+  --   states = init.states,
+  --   nodes = init.nodes,
+  --   entityOwner = self,
+  -- })
 
-  Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
+  -- Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
 end
 
 local __dtor = function(self)

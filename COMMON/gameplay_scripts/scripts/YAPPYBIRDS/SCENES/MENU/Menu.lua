@@ -211,6 +211,3 @@ function Menu:unLoad()
 end
 
 return Menu
-
-
-Hello, Menu is a snippet.

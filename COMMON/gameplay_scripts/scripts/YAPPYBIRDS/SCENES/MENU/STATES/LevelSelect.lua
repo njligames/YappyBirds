@@ -34,158 +34,114 @@ end
 
 --############################################################################# 
 
-function LevelSelect
-:enter()
+function LevelSelect:enter()
     BaseClass.enter(self)
-    print("LevelSelect
-    :enter()")
+    print("LevelSelect:enter()")
 end
 
-function LevelSelect
-:update(timeStep)
+function LevelSelect:update(timeStep)
     BaseClass.update(self, timeStep)
-    print("LevelSelect
-    :update(timeStep)")
+    print("LevelSelect:update(timeStep)")
 end
 
-function LevelSelect
-:exit()
+function LevelSelect:exit()
     BaseClass.exit(self)
-    print("LevelSelect
-    :exit()")
+    print("LevelSelect:exit()")
 end
 
-function LevelSelect
-:onMessage(message)
+function LevelSelect:onMessage(message)
     BaseClass.onMessage(self, message)
-    print("LevelSelect
-    :onMessage(message)")
+    print("LevelSelect:onMessage(message)")
 end
 
-function LevelSelect
-:renderHUD()
+function LevelSelect:renderHUD()
     BaseClass.renderHUD(self)
-    print("LevelSelect
-    :renderHUD()")
+    print("LevelSelect:renderHUD()")
 end
 
-function LevelSelect
-:touchDown(touches)
+function LevelSelect:touchDown(touches)
     BaseClass.touchDown(self, touches)
-    print("LevelSelect
-    :touchDown(touches)")
+    print("LevelSelect:touchDown(touches)")
 end
 
-function LevelSelect
-:touchUp(touches)
+function LevelSelect:touchUp(touches)
     BaseClass.touchUp(self, touches)
-    print("LevelSelect
-    :touchUp(touches)")
+    print("LevelSelect:touchUp(touches)")
 end
 
-function LevelSelect
-:touchMove(touches)
+function LevelSelect:touchMove(touches)
     BaseClass.touchMove(self, touches)
-    print("LevelSelect
-    :touchMove(touches)")
+    print("LevelSelect:touchMove(touches)")
 end
 
-function LevelSelect
-:touchCancelled(touches)
+function LevelSelect:touchCancelled(touches)
     BaseClass.touchCancelled(self, touches)
-    print("LevelSelect
-    :touchCancelled(touches)")
+    print("LevelSelect:touchCancelled(touches)")
 end
 
-function LevelSelect
-:pause()
+function LevelSelect:pause()
     BaseClass.pause(self)
-    print("LevelSelect
-    :pause()")
+    print("LevelSelect:pause()")
 end
 
-function LevelSelect
-:unPause()
+function LevelSelect:unPause()
     BaseClass.unPause(self)
-    print("LevelSelect
-    :unPause()")
+    print("LevelSelect:unPause()")
 end
 
-function LevelSelect
-:keyboardShow()
+function LevelSelect:keyboardShow()
     BaseClass.keyboardShow(self)
-    print("LevelSelect
-    :keyboardShow()")
+    print("LevelSelect:keyboardShow()")
 end
 
-function LevelSelect
-:keyboardCancel()
+function LevelSelect:keyboardCancel()
     BaseClass.keyboardCancel(self)
-    print("LevelSelect
-    :keyboardCancel()")
+    print("LevelSelect:keyboardCancel()")
 end
 
-function LevelSelect
-:keyboardReturn(text)
+function LevelSelect:keyboardReturn(text)
     BaseClass.keyboardReturn(self, text)
-    print("LevelSelect
-    :keyboardReturn(text)")
+    print("LevelSelect:keyboardReturn(text)")
 end
 
-function LevelSelect
-:willResignActive()
+function LevelSelect:willResignActive()
     BaseClass.willResignActive(self)
-    print("LevelSelect
-    :willResignActive()")
+    print("LevelSelect:willResignActive()")
 end
 
-function LevelSelect
-:didBecomeActive()
+function LevelSelect:didBecomeActive()
     BaseClass.didBecomeActive(self)
-    print("LevelSelect
-    :didBecomeActive()")
+    print("LevelSelect:didBecomeActive()")
 end
 
-function LevelSelect
-:didEnterBackground()
+function LevelSelect:didEnterBackground()
     BaseClass.didEnterBackground(self)
-    print("LevelSelect
-    :didEnterBackground()")
+    print("LevelSelect:didEnterBackground()")
 end
 
-function LevelSelect
-:willEnterForeground()
+function LevelSelect:willEnterForeground()
     BaseClass.willEnterForeground(self)
-    print("LevelSelect
-    :willEnterForeground()")
+    print("LevelSelect:willEnterForeground()")
 end
 
-function LevelSelect
-:willTerminate()
+function LevelSelect:willTerminate()
     BaseClass.willTerminate(self)
-    print("LevelSelect
-    :willTerminate()")
+    print("LevelSelect:willTerminate()")
 end
 
-function LevelSelect
-:interrupt()
+function LevelSelect:interrupt()
     BaseClass.interrupt(self)
-    print("LevelSelect
-    :interrupt()")
+    print("LevelSelect:interrupt()")
 end
 
-function LevelSelect
-:resumeInterrupt()
+function LevelSelect:resumeInterrupt()
     BaseClass.resumeInterrupt(self)
-    print("LevelSelect
-    :resumeInterrupt()")
+    print("LevelSelect:resumeInterrupt()")
 end
 
-function LevelSelect
-:receivedMemoryWarning()
+function LevelSelect:receivedMemoryWarning()
     BaseClass.receivedMemoryWarning(self)
-    print("LevelSelect
-    :receivedMemoryWarning()")
+    print("LevelSelect:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -196,8 +152,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(LevelSelect
-, {
+setmetatable(LevelSelect, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -208,33 +163,26 @@ setmetatable(LevelSelect
     end,
   })
 
-function LevelSelect
-:className()
-  return "LevelSelect
- "
+function LevelSelect:className()
+  return "LevelSelect"
 end
 
-function LevelSelect
-:class()
+function LevelSelect:class()
   return self
 end
 
-function LevelSelect
-:superClass()
+function LevelSelect:superClass()
   return BaseClass
 end
 
-function LevelSelect
-:__gc()
+function LevelSelect:__gc()
   --Destroy derived class first
-  LevelSelect
- ._destroy(self)
+  LevelSelect._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function LevelSelect
-:__tostring()
+function LevelSelect:__tostring()
   local ret = self:className() .. " =\n{\n"
   
   for pos,val in pairs(self) do 
@@ -245,42 +193,32 @@ function LevelSelect
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function LevelSelect
-:_destroy()
-  assert(not self.__LevelSelect
-  CalledLoad, "Must unload before you destroy")
+function LevelSelect:_destroy()
+  assert(not self.__LevelSelectCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function LevelSelect
-:_create(init)
-  self.__LevelSelect
- CalledLoad = false
+function LevelSelect:_create(init)
+  self.__LevelSelectCalledLoad = false
   __ctor(self, init)
 end
 
-function LevelSelect
-:load()
+function LevelSelect:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__LevelSelect
- CalledLoad = true
+  self.__LevelSelectCalledLoad = true
 end
 
-function LevelSelect
-:unLoad()
-  assert(self.__LevelSelect
-  CalledLoad, "Must load before unLevelSelect
- ")
+function LevelSelect:unLoad()
+  assert(self.__LevelSelectCalledLoad, "Must load before unLevelSelect")
 
   --unload derived first...
   __unLoad(self)
-  self.__LevelSelect
- CalledLoad = false
+  self.__LevelSelectCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)

@@ -211,6 +211,3 @@ function Results:unLoad()
 end
 
 return Results
-
-
-Hello, Results is a snippet.

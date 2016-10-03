@@ -15,13 +15,13 @@ SceneEntity.__index = SceneEntity
 --#############################################################################
 
 local __ctor = function(self, init)
-  assert(nil == init, "init variable is nil.")
+  assert(nil ~= init, "init variable is nil.")
   assert(type(init) == "table", "not a table")
-  assert(nil == init.states, "init variable is nil.")
+  assert(nil ~= init.states, "init variable is nil.")
   assert(type(init.states) == "table", "not a table")
   -- assert(nil == init.nodes, "init variable is nil.")
   -- assert(type(init.nodes) == "table", "not a table")
-  assert(nil == entityOwner, "init variable is nil.")
+  assert(nil ~= entityOwner, "entityOwner variable is nil.")
 
   self._scene = njli.Scene.create()
   self:getScene():setName(self:className())

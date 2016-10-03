@@ -59,10 +59,16 @@ local MenuScene =
   states =
   {
     require "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Lose",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Pause",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Playing",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Win",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.About",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
+    require "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
   },
   nodes = MenuNodes
 }
@@ -75,10 +81,10 @@ local GameplayScene =
   states =
   {
     require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
-    -- require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
-    -- require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause",
-    -- require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing",
-    -- require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win",
+    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
+    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause",
+    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing",
+    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win",
   },
   nodes = nil--GameplayNodes
 }
@@ -113,18 +119,18 @@ local Worlds =
     states =
     {
       --The first state is the start state.
-      -- {
-      --   class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
-      --   scene = MenuScene,
-      -- },
+      {
+        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
+        scene = MenuScene,
+      },
       {
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         scene = GameplayScene,
       },
-      -- {
-      --   class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
-      --   scene = ResultsScene,
-      -- },
+      {
+        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
+        scene = ResultsScene,
+      },
     }
   }
 }

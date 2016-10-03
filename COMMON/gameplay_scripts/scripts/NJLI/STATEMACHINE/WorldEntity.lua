@@ -15,7 +15,7 @@ WorldEntity.__index = WorldEntity
 --#############################################################################
 
 local __ctor = function(self, init)
-  assert(nil == init, "init variable is nil.")
+  assert(nil ~= init, "init variable is nil.")
   assert(type(init) == "table", "not a table")
 
   local startState = nil
@@ -30,16 +30,18 @@ local __ctor = function(self, init)
     assert(v.scene ~= nil, "is nil")
     assert(type(v.scene) == "table", "not a table")
 
-    v.scene.entityOwner = self
+    --Create an WorldEntityState...
+    local worldEntityState = v.class({
+      entityOwner = self,
+      scene = v.scene
+    })
 
-    --Create the WorldEntityStates...
-    local state = v.class(v.scene)
     if startState == nil then
-      startState = state
-      startStateName = state:className()
+      startState = worldEntityState
+      startStateName = worldEntityState:className()
     end
 
-    self:_addEntityState(state)
+    self:_addEntityState(worldEntityState)
   end
 
   assert(startState, "No start state was defined for " .. self:className())

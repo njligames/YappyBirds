@@ -22,6 +22,7 @@ local __ctor = function(self, init)
   assert(init.states, "Init variable is expecting a states table")
   assert(type(init.states) == "table", "Init variable is expecting a states table")
 
+  --Create the WorldEntity
   self._worldEntity = init.class(init.states)
 
   Interface:getStateMachine():getEntityManager():addWorldEntity(self:getWorldEntity())
