@@ -17,36 +17,49 @@ WorldEntity.__index = WorldEntity
 local __ctor = function(self, init)
   assert(nil ~= init, "init variable is nil.")
   assert(type(init) == "table", "not a table")
+  assert(nil ~= init.states, "init.states variable is nil.")
+  assert(type(init.states) == "table", "not a table")
+  assert(nil ~= init.nodes, "init.nodes variable is nil.")
+  assert(type(init.nodes) == "table", "not a table")
+
+  --Create the NodeEntities for this WorldEntity
+  self._nodeEntityTable = {}
+  for k,v in pairs(init.nodes) do
+    --Create a NodeEntity
+    -- local nodeEntity = v.class(v.states)
+    -- self:_addNodeEntity(nodeEntity)
+  end
 
   local startState = nil
-  local startStateName = ""
 
   self._stateEntityTable = {}
   self._world = njli.World.getInstance()
   self:getWorld():setName(self:className())
 
-  for k,v in pairs(init) do
+  for k,v in pairs(init.states) do
     assert(v.class ~= nil, "")
     assert(v.scene ~= nil, "is nil")
     assert(type(v.scene) == "table", "not a table")
+    assert(v.nodes ~= nil, "is nil")
+    assert(type(v.nodes) == "table", "not a table")
 
-    --Create an WorldEntityState...
-    local worldEntityState = v.class({
+    --Create a WorldEntityState...
+    local stateEntity = v.class({
       entityOwner = self,
-      scene = v.scene
+      scene = v.scene,
+      nodes = v.nodes
     })
 
     if startState == nil then
-      startState = worldEntityState
-      startStateName = worldEntityState:className()
+      startState = stateEntity
     end
 
-    self:_addEntityState(worldEntityState)
+    self:_addEntityState(stateEntity)
   end
 
   assert(startState, "No start state was defined for " .. self:className())
   
-  self._startStateName = startStateName
+  self._startStateName = startState:className()
 end
 
 local __dtor = function(self)
@@ -142,7 +155,7 @@ function WorldEntity:enter()
 end
 
 function WorldEntity:update(timeStep)
-  print("WorldEntity:update()")
+  --print("WorldEntity:update()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
@@ -160,7 +173,7 @@ function WorldEntity:onMessage()
 end
 
 function WorldEntity:renderHUD()
-  print("WorldEntity:renderHUD()")
+  --print("WorldEntity:renderHUD()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():renderHUD()
 end

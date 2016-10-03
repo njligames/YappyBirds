@@ -41,7 +41,7 @@ end
 
 function Menu:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Menu:update(timeStep)")
+  --print("Menu:update(timeStep)")
 end
 
 function Menu:exit()
@@ -56,7 +56,7 @@ end
 
 function Menu:renderHUD()
   BaseClass.renderHUD(self)
-  print("Menu:renderHUD()")
+  --print("Menu:renderHUD()")
 end
 
 function Menu:touchDown(touches)

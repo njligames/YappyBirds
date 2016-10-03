@@ -18,12 +18,20 @@ YappyGame.__index = YappyGame
 
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
-  assert(init.class, "Init variable is expecting a class")
-  assert(init.states, "Init variable is expecting a states table")
-  assert(type(init.states) == "table", "Init variable is expecting a states table")
+  assert(init.class, "init.class variable is expecting a class")
+  assert(init.states, "init.states variable is expecting a states table")
+  assert(type(init.states) == "table", "init.states variable is expecting a states table")
+  assert(init.nodes, "init.nodes variable is expecting a nodes table")
+  assert(type(init.nodes) == "table", "init.nodes variable is expecting a nodes table")
 
   --Create the WorldEntity
-  self._worldEntity = init.class(init.states)
+  self._worldEntity = init.class(
+  {
+    --Set WorldEntityStates
+    states = init.states,
+    --Set the nodes for this WorldEntity
+    nodes = init.nodes
+  })
 
   Interface:getStateMachine():getEntityManager():addWorldEntity(self:getWorldEntity())
 

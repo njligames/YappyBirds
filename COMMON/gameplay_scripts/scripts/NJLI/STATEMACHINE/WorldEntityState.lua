@@ -16,26 +16,42 @@ WorldEntityState.__index = WorldEntityState
 
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
-  assert(init.entityOwner, "Init variable is expecting a entityOwner value")
-  assert(init.class, "Init variable is expecting a entityOwner value")
-  assert(init.states, "Init variable is expecting a entityOwner value")
-  assert(type(init.states) == "table", "not a table")
-  assert(init.nodes, "Init variable is expecting a entityOwner value")
-  assert(type(init.nodes) == "table", "not a table")
+  assert(type(init) == "table", "init variable is expecting a table")
+  assert(init.entityOwner ~= nil, "The init.entityOwner is nil for " .. self:className())
+  assert(init.scene, "init.scene variable is nil.")
+  assert(type(init.scene) == "table", "init.scene variable is expecting a table")
+  assert(init.nodes, "init.nodes variable is nil.")
+  assert(type(init.nodes) == "table", "init.nodes variable is expecting a table")
+
+  --Create the NodeEntities for this WorldEntityState
+  self._nodeEntityTable = {}
+  for k,v in pairs(init.nodes) do
+    --Create a NodeEntity
+    -- local nodeEntity = v.class(v.states)
+    -- self:_addNodeEntity(nodeEntity)
+  end
 
   self._entityOwner = init.entityOwner
 
   self._worldState = njli.WorldState.create()
   self:getWorldState():setName(self:className())
 
-  --Create the Entity
-  -- self._sceneEntity = init.class({
-  --   states = init.states,
-  --   nodes = init.nodes,
-  --   entityOwner = self,
-  -- })
+  assert(init.scene.class ~= nil, "The init.scene.class is nil for the world entity state: " .. self:className())
 
-  -- Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
+  assert(init.scene.states ~= nil, "The init.scene.states is nil for the world entity state: " .. self:className())
+  assert(type(init.scene.states) == "table", "init.scene.states variable is expecting a states table")
+
+  assert(init.scene.nodes ~= nil, "The init.scene.nodes is nil for the world entity state: " .. self:className())
+  assert(type(init.scene.nodes) == "table", "init.scene.nodes variable is expecting a states table")
+
+  -- Create the Entity
+  self._sceneEntity = init.scene.class({
+    states = init.scene.states,
+    entityOwner = self,
+    nodes = init.scene.nodes,
+  })
+
+  Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
 end
 
 local __dtor = function(self)
@@ -87,14 +103,18 @@ end
 
 function WorldEntityState:enter()
     print("WorldEntityState:enter()")
+
+    self:getSceneEntity():startStateMachine()
 end
 
 function WorldEntityState:update(timeStep)
-    print("WorldEntityState:update(timeStep)")
+    --print("WorldEntityState:update(timeStep)")
 end
 
 function WorldEntityState:exit()
     print("WorldEntityState:exit()")
+
+    self:getSceneEntity():stopStateMachine()
 end
 
 function WorldEntityState:onMessage(message)
@@ -102,7 +122,7 @@ function WorldEntityState:onMessage(message)
 end
 
 function WorldEntityState:renderHUD()
-    print("WorldEntityState:renderHUD()")
+    --print("WorldEntityState:renderHUD()")
 end
 
 function WorldEntityState:touchDown(touches)

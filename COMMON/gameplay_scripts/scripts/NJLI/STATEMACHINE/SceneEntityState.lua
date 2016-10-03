@@ -16,13 +16,22 @@ SceneEntityState.__index = SceneEntityState
 
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
-  assert(init.name, "Init variable is expecting a name value")
   assert(init.entityOwner, "Init variable is expecting a entityOwner value")
+  assert(init.nodes, "init.nodes variable is nil.")
+  assert(type(init.nodes) == "table", "init.nodes variable is expecting a table")
+
+  --Create the NodeEntities for this SceneEntityState
+  self._nodeEntityTable = {}
+  for k,v in pairs(init.nodes) do
+    --Create a NodeEntity
+    -- local nodeEntity = v.class(v.states)
+    -- self:_addNodeEntity(nodeEntity)
+  end
 
   self._entityOwner = init.entityOwner
-  self._sceneState = njli.SceneState.create()
 
-  self:getSceneState():setName(init.name)
+  self._sceneState = njli.SceneState.create()
+  self:getSceneState():setName(self:className())
 end
 
 local __dtor = function(self)
@@ -71,7 +80,7 @@ function SceneEntityState:enter()
 end
 
 function SceneEntityState:update(timeStep)
-    print("SceneEntityState:update(timeStep)")
+    --print("SceneEntityState:update(timeStep)")
 end
 
 function SceneEntityState:exit()
@@ -83,7 +92,7 @@ function SceneEntityState:onMessage(message)
 end
 
 function SceneEntityState:renderHUD()
-    print("SceneEntityState:renderHUD()")
+    --print("SceneEntityState:renderHUD()")
 end
 
 function SceneEntityState:touchDown(touches)

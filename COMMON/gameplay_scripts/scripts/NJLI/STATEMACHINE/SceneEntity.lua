@@ -19,46 +19,47 @@ local __ctor = function(self, init)
   assert(type(init) == "table", "not a table")
   assert(nil ~= init.states, "init variable is nil.")
   assert(type(init.states) == "table", "not a table")
-  -- assert(nil == init.nodes, "init variable is nil.")
-  -- assert(type(init.nodes) == "table", "not a table")
-  assert(nil ~= entityOwner, "entityOwner variable is nil.")
+  assert(nil ~= init.entityOwner, "entityOwner variable is nil.")
+  assert(nil ~= init.nodes, "init variable is nil.")
+  assert(type(init.nodes) == "table", "not a table")
+
+  --Create the NodeEntities for this SceneEntity
+  self._nodeEntityTable = {}
+  for k,v in pairs(init.nodes) do
+    --Create a NodeEntity
+    -- local nodeEntity = v.class(v.states)
+    -- self:_addNodeEntity(nodeEntity)
+  end
+
+  self._entityOwner = init.entityOwner
 
   self._scene = njli.Scene.create()
   self:getScene():setName(self:className())
 
-  self._entityOwner = init.entityOwner
-
-  self._nodeEntityTable {}
-  if init.nodes then
-    for k,v in pairs(init.nodes) do
-      --Create a NodeEntity
-      local nodeEntity = v.class(v.states)
-      self:_addNodeEntity(nodeEntity)
-    end
-  end
-  
   local startState = nil
-  local startStateName = ""
+
   self._stateEntityTable = {}
   for k,v in pairs(init.states) do
+    assert(v.class ~= nil, "")
+    assert(v.nodes ~= nil, "is nil")
+    assert(type(v.nodes) == "table", "not a table")
 
     --create a SceneEntityState
-    local stateEntity = v({
+    local stateEntity = v.class({
       entityOwner = self,
-      nodes = self._nodeEntityTable
+      nodes = v.nodes
     })
 
     if startState == nil then
       startState = stateEntity
-      startStateName = stateEntity:className()
     end
 
-    self:_addEntityState(sceneStateEntity)
+    self:_addEntityState(stateEntity)
   end
 
   assert(startState, "No start state was defined for " .. self:className())
   
-  self._startStateName = startStateName
+  self._startStateName = startState:className()
 end
 
 local __dtor = function(self)
@@ -180,6 +181,12 @@ function SceneEntity:startStateMachine()
   self:pushState(self._startStateName)
 end
 
+function SceneEntity:stopStateMachine()
+  print("SceneEntity:stopStateMachine()")
+
+  njli.World.getInstance():addScene(self:getScene())
+end
+
 function SceneEntity:enter()
   print("SceneEntity:enter()")
   assert(self:hasState(), "SceneEntity must be in a state")
@@ -187,7 +194,7 @@ function SceneEntity:enter()
 end
 
 function SceneEntity:update(timeStep)
- print("SceneEntity:update("..timeStep..")")
+ --print("SceneEntity:update("..timeStep..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
@@ -229,7 +236,7 @@ function SceneEntity:touchCancelled(touches)
 end
 
 function SceneEntity:renderHUD()
- print("SceneEntity:renderHUD()")
+ --print("SceneEntity:renderHUD()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():renderHUD()
 end

@@ -2,15 +2,8 @@ Interface = require "NJLI.InterfaceFunctions"
 
 local MyGame = require "YAPPYBIRDS.YappyGame"
 
-local MenuNodes =
+local BalloonNodeEntity = 
 {
-  entityOwner = nil,
-}
-
-local GameplayNodes =
-{
-  entityOwner = nil,
-  {
     class = require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.Balloon",
     --The first state is the start state.
     states =
@@ -18,9 +11,26 @@ local GameplayNodes =
       require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Spawn",
       require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Lob",
       require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Hit",
-    }
-  },
+    },
+    nodes = {} --The childe Nodes for the Node.
+}
+
+local BirdBeakNodeEntity =
+{
+  class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.BirdBeak",
+  --The first state is the start state.
+  states =
   {
+    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Idle",
+    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Grab",
+    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Hit",
+    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Yap",
+  },
+  nodes = {} --The childe Nodes for the Node.
+}
+
+local BirdNodeEntity = 
+{
     class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.Bird",
     --The first state is the start state.
     states =
@@ -31,24 +41,38 @@ local GameplayNodes =
       require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Grabbing",
       require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Hit",
       require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Pursue",
-    }
-  },
-  {
-    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.BirdBeak",
-    --The first state is the start state.
-    states =
-    {
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Idle",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Grab",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Hit",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Yap",
-    }
-  },
-}
+    },
+    nodes = {
+      BirdBeakNodeEntity,
+    } --The childe Nodes for the Node.
+  }
 
-local ResultsNodes =
+local MenuNodeEntityTable =
 {
   entityOwner = nil,
+  nodes = 
+  {
+    --TODO: Add NodeEntities
+  }
+}
+
+local GameplayNodeEntityTable =
+{
+  entityOwner = nil,
+  nodes = 
+  {
+    BalloonNodeEntity,
+    BirdNodeEntity,
+  }
+}
+
+local ResultNodeEntityTable =
+{
+  entityOwner = nil,
+  nodes =
+  {
+    
+  }
 }
 
 local MenuScene =
@@ -58,19 +82,52 @@ local MenuScene =
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.About",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.About",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
+      nodes = {}, --The nodes for the SceneState.
+    }
   },
-  nodes = MenuNodes
+  nodes = MenuNodeEntityTable --The nodes for the Scene.
 }
 
 local GameplayScene =
@@ -80,13 +137,28 @@ local GameplayScene =
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
-    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
-    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause",
-    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing",
-    require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win",
+    {
+      class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win",
+      nodes = {}, --The nodes for the SceneState.
+    },
   },
-  nodes = nil--GameplayNodes
+  nodes = GameplayNodeEntityTable --The nodes for the Scene.
 }
 
 local ResultsScene =
@@ -96,19 +168,52 @@ local ResultsScene =
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.About",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
-    require "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.About",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
+      nodes = {}, --The nodes for the SceneState.
+    },
+    {
+      class = require "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
+      nodes = {}, --The nodes for the SceneState.
+    },
   },
-  nodes = ResultsNodes
+  nodes = ResultNodeEntityTable  --The nodes for the Scene.
 }
 
 local Worlds =
@@ -122,91 +227,23 @@ local Worlds =
       {
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
         scene = MenuScene,
+        nodes = {}, --The nodes for the worldstate.
       },
       {
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         scene = GameplayScene,
+        nodes = {}, --The nodes for the worldstate.
       },
       {
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
         scene = ResultsScene,
+        nodes = {}, --The nodes for the worldstate.
       },
-    }
+    },
+    nodes = {}, --The nodes for the world.
   }
 }
 
 mygame = MyGame(Worlds.yappygame)
 mygame:startStateMachine()
-
--- local GameplayWorldEntity =
--- {
--- class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity",
--- states =
--- {
--- {
--- class =
--- }
--- }
--- }
--- mygame = MyGame({
-
--- world =
--- {
--- --set the world Entity
--- class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity",
--- states =
--- {
--- --List the worldEntityStates
--- --The first state is the start state.
--- {
--- class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
--- scene =
--- {
--- class = requre "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay",
--- states =
--- {
--- --List the sceneEntityStates
--- --The first state is the start state.
--- {
--- class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
--- scene =
--- {
--- class = requre "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay",
--- states =
--- {
--- --List the sceneEntityStates
--- --The first state is the start state.
--- {
-
--- },
--- }
--- }
--- }
--- }
--- },
--- },
-
--- sceneEntities =
--- {
--- class = require "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay",
--- states =
--- {
--- --The first state is the start state.
--- require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
--- },
--- nodeEntities =
--- {
--- {
--- class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.Bird",
--- states =
--- {
--- --The first state is the start state.
--- require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Fly",
--- }
--- },
--- }
-
--- }
--- }
--- })
 

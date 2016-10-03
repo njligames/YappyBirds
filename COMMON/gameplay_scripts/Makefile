@@ -1,7 +1,7 @@
 CP=cp
 BIN2=./../bin/luaBeautifier
-OBJDIR=./../assets/scripts/
-SRCDIR=./scripts/
+OBJDIR=./../assets/scripts
+SRCDIR=./scripts
 LUACFLAGS=""
 
 STRUCTURE := $(shell find $(SRCDIR) -type d)
@@ -33,7 +33,7 @@ compile_release:
 	mv luac.out $(OBJDIR)
 
 clean:
-	-rm -r $(OBJFILES)
+	rm -r $(OBJFILES)
 	rm -r $(OBJDIR)/luac.out
 	rm -r $(OBJDIR)/luac.log
 

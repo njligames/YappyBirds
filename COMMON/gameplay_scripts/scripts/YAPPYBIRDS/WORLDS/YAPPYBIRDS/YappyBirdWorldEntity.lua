@@ -41,7 +41,7 @@ end
 
 function YappyBirdWorldEntity:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("YappyBirdWorldEntity:update(timeStep)")
+  --print("YappyBirdWorldEntity:update(timeStep)")
 end
 
 function YappyBirdWorldEntity:exit()
@@ -56,7 +56,7 @@ end
 
 function YappyBirdWorldEntity:renderHUD()
   BaseClass.renderHUD(self)
-  print("YappyBirdWorldEntity:renderHUD()")
+  --print("YappyBirdWorldEntity:renderHUD()")
 end
 
 function YappyBirdWorldEntity:touchDown(touches)
