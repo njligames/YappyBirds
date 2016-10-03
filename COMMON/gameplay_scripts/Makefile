@@ -16,26 +16,25 @@ all: debug
 
 debug: compile_debug export
 
-release: clean compile_release export
+release: compile_release export
 
 export: $(OBJFILES)
 
 $(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
-	$(CP) $^ $@
+	@$(CP) $^ $@
 
 compile_debug:
 	luac -l $(SRCFILES) > luac.log
 	mv luac.out $(OBJDIR)
-	mv luac.log $(OBJDIR)
 
 compile_release:
 	luac -s $(SRCFILES)
 	mv luac.out $(OBJDIR)
 
 clean:
-	rm -r $(OBJFILES)
-	rm -r $(OBJDIR)/luac.out
-	rm -r $(OBJDIR)/luac.log
+	@rm -r $(OBJFILES)
+	@rm -r $(OBJDIR)/luac.out
+	@rm -r luac.log
 
 
 
