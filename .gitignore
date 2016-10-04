@@ -8,3 +8,4 @@
 .DS_Store
 
 COMMON/assets/scripts/*
+COMMON/gameplay_scripts/luac.log

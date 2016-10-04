@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Leaderboards:enter()
-    BaseClass.enter(self)
-    print("Leaderboards:enter()")
+  BaseClass.enter(self)
+  print("Leaderboards:enter()")
 end
 
 function Leaderboards:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("Leaderboards:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Leaderboards:update(timeStep)")
 end
 
 function Leaderboards:exit()
-    BaseClass.exit(self)
-    print("Leaderboards:exit()")
+  BaseClass.exit(self)
+  print("Leaderboards:exit()")
 end
 
 function Leaderboards:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("Leaderboards:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("Leaderboards:onMessage(message)")
 end
 
 function Leaderboards:renderHUD()
-    BaseClass.renderHUD(self)
-    print("Leaderboards:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("Leaderboards:renderHUD()")
 end
 
 function Leaderboards:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("Leaderboards:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("Leaderboards:touchDown(touches)")
 end
 
 function Leaderboards:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("Leaderboards:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("Leaderboards:touchUp(touches)")
 end
 
 function Leaderboards:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("Leaderboards:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("Leaderboards:touchMove(touches)")
 end
 
 function Leaderboards:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("Leaderboards:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("Leaderboards:touchCancelled(touches)")
 end
 
 function Leaderboards:pause()
-    BaseClass.pause(self)
-    print("Leaderboards:pause()")
+  BaseClass.pause(self)
+  print("Leaderboards:pause()")
 end
 
 function Leaderboards:unPause()
-    BaseClass.unPause(self)
-    print("Leaderboards:unPause()")
+  BaseClass.unPause(self)
+  print("Leaderboards:unPause()")
 end
 
 function Leaderboards:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("Leaderboards:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("Leaderboards:keyboardShow()")
 end
 
 function Leaderboards:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("Leaderboards:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("Leaderboards:keyboardCancel()")
 end
 
 function Leaderboards:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("Leaderboards:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("Leaderboards:keyboardReturn(text)")
 end
 
 function Leaderboards:willResignActive()
-    BaseClass.willResignActive(self)
-    print("Leaderboards:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("Leaderboards:willResignActive()")
 end
 
 function Leaderboards:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("Leaderboards:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("Leaderboards:didBecomeActive()")
 end
 
 function Leaderboards:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("Leaderboards:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("Leaderboards:didEnterBackground()")
 end
 
 function Leaderboards:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("Leaderboards:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("Leaderboards:willEnterForeground()")
 end
 
 function Leaderboards:willTerminate()
-    BaseClass.willTerminate(self)
-    print("Leaderboards:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("Leaderboards:willTerminate()")
 end
 
 function Leaderboards:interrupt()
-    BaseClass.interrupt(self)
-    print("Leaderboards:interrupt()")
+  BaseClass.interrupt(self)
+  print("Leaderboards:interrupt()")
 end
 
 function Leaderboards:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("Leaderboards:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("Leaderboards:resumeInterrupt()")
 end
 
 function Leaderboards:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("Leaderboards:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("Leaderboards:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function Leaderboards:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

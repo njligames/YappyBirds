@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Balloon",
+				"BalloonNode"
+			],
+			[
 				"node",
 				"nodeEntityState	nodeEntityState"
 			],
@@ -416,10 +420,17 @@
 	},
 	"file_history":
 	[
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/NodeEntityState.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/WorldEntityState.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/NodeEntity.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/WorldEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/util.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/YappyGame.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntityState.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/Loading.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/Menu.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/main.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntity.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRDBEAK/STATES/Yap.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRDBEAK/STATES/Idle.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRDBEAK/STATES/Hit.lua",
@@ -435,8 +446,6 @@
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRD/STATES/Grabbed.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRD/STATES/Fly.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRD/STATES/Spawn.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/NodeEntityState.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/NodeEntity.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/Gameplay/BIRD/Bird.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/RESULTS/STATES/Win.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/RESULTS/STATES/Lose.lua",
@@ -445,7 +454,6 @@
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/Settings.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/ModeSelect.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/MainMenu.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/Loading.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/LevelSelect.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/Leaderboards.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/HighScores.lua",
@@ -453,24 +461,20 @@
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/BoardSelect.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/Achievements.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/About.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/Menu.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Win.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Playing.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Pause.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/Gameplay.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Lose.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Loading.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/main.lua",
 		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine/Njli/worldEntityState.sublime-snippet",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/StateMachineEntity.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntityState.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/STATES/Gameplay.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/STATES/Menu.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/STATES/Results.lua",
 		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine/Njli/sceneEntity.sublime-snippet",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/YappyBirdWorldEntity.lua",
 		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine/Njli/worldEntity.sublime-snippet",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/util.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/InterfaceFunctions.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/WorldEntityState.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/WorldEntity.lua",
@@ -597,6 +601,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"stopStateMachine",
+			"pushState",
+			"stopStateMachine",
+			"MenuScene",
+			"ResultNodeTable",
+			"GameplayNodeTable",
+			"MenuNodeTable",
+			"ResultsNodes",
+			"GameplayNodes",
+			"MenuNodes",
+			"MenuScene",
+			"GameplayNodes",
+			"_addEntityState",
+			"for",
+			"MenuScene",
 			"NodeEntityState",
 			"NodeEntity",
 			"YappyBirdWorldEntity",
@@ -709,22 +728,7 @@
 			"GetSceneStateByName",
 			"worldObjectTable",
 			"GetNodeObjectByName",
-			"pushWorldState",
-			"pushSceneState",
-			"pushNodeState",
-			"worldObjectTable",
-			"sceneObject",
-			"sceneObjectTable",
-			"nodeObject",
-			"nodeObjectTable",
-			"getSceneState",
-			"GetNodeObjectFromName",
-			"pushWorldState",
-			"getSceneState",
-			"pushNodeState",
-			"GetNodeObject",
-			"getNodeCurrentState",
-			"_GetNodeObject"
+			"pushWorldState"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -732,6 +736,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"ResultNodeEntityTable",
+			"GameplayNodeEntityTable",
+			"MenuNodeEntityTable",
+			"ResultNodeTable",
+			"GameplayNodeTable",
+			"MenuNodeTable",
 			"Spawn",
 			"Bird",
 			"${1:WorldEntity}",
@@ -853,22 +863,26 @@
 			"Derived",
 			"Base",
 			"variable2",
-			"${9:variable7}",
-			"${8:variable6}",
-			"${7:variable5}",
-			"${6:variable4}",
-			"${5:variable3}",
-			"${4:variable4}",
-			"${3:variable1}"
+			"${9:variable7}"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": false
+		"wrap": true
 	},
 	"groups":
 	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
 		{
 			"sheets":
 			[
@@ -903,17 +917,30 @@
 				0,
 				2,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.369472287736,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.446877963021,
 			1.0
 		]
 	},

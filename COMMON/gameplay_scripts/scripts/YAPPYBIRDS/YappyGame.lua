@@ -14,8 +14,6 @@ YappyGame.__index = YappyGame
 -- __unLoad()
 --#############################################################################
 
--- local YappyBirdWorldEntity = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity"
-
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
   assert(init.class, "init.class variable is expecting a class")
@@ -24,14 +22,19 @@ local __ctor = function(self, init)
   assert(init.nodes, "init.nodes variable is expecting a nodes table")
   assert(type(init.nodes) == "table", "init.nodes variable is expecting a nodes table")
 
+  --Create the NodeEntities for this SceneEntity
+  self._nodeEntityTable = {}
+  AddNodesToEntity(self, init.nodes)
+
   --Create the WorldEntity
   self._worldEntity = init.class(
-  {
-    --Set WorldEntityStates
-    states = init.states,
-    --Set the nodes for this WorldEntity
-    nodes = init.nodes
-  })
+    {
+      --Set WorldEntityStates
+      states = init.states,
+      --Set the nodes for this WorldEntity
+      nodes = init.nodes,
+      entityOwner = self,
+    })
 
   Interface:getStateMachine():getEntityManager():addWorldEntity(self:getWorldEntity())
 
@@ -41,6 +44,8 @@ end
 
 local __dtor = function(self)
   self._worldEntity = nil
+
+  self._nodeEntityTable = nil
 end
 
 local __load = function(self)
@@ -57,10 +62,34 @@ function YappyGame:startStateMachine()
   print("YappyGame:startStateMachine()")
 
   self:getWorldEntity():startStateMachine()
+
+  for k,v in pairs(self._nodeEntityTable) do
+    v:startStateMachine()
+  end
+
 end
 
 function YappyGame:getWorldEntity()
   return self._worldEntity
+end
+
+--#############################################################################
+--Add/Remove NodeEntities
+--#############################################################################
+
+function YappyGame:_addNodeEntity(node)
+  local stateName = node:className()
+  self._nodeEntityTable[stateName] = entityState
+end
+
+function YappyGame:_removeNodeEntity(stateName)
+  self._nodeEntityTable[stateName] = nil
+end
+
+function YappyGame:_getNodeEntity(nodeName)
+  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
+
+  return self._nodeEntityTable[nodeName]
 end
 
 --#############################################################################
@@ -123,6 +152,8 @@ function YappyGame:_destroy()
   assert(not self.__YappyGameCalledLoad, "Must unload before you destroy")
 
   __dtor(self)
+
+  self._nodeEntityTable = nil
 end
 
 function YappyGame:_create(init)

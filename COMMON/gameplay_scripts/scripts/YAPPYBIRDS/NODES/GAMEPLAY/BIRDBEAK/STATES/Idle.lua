@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Idle:enter()
-	BaseClass.enter(self)
-    print("Idle:enter()")
+  BaseClass.enter(self)
+  print("Idle:enter()")
 end
 
 function Idle:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Idle:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Idle:update(timeStep)")
 end
 
 function Idle:exit()
-	BaseClass.exit(self)
-    print("Idle:exit()")
+  BaseClass.exit(self)
+  print("Idle:exit()")
 end
 
 function Idle:onMessage()
-	BaseClass.onMessage(self)
-    print("Idle:onMessage()")
+  BaseClass.onMessage(self)
+  print("Idle:onMessage()")
 end
 
 function Idle:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Idle:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Idle:touchDown(rayContact)")
 end
 
 function Idle:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Idle:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Idle:touchUp(rayContact)")
 end
 
 function Idle:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Idle:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Idle:touchMove(rayContact)")
 end
 
 function Idle:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Idle:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Idle:touchCancelled(rayContact)")
 end
 
 function Idle:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Idle:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Idle:collide(otherNode, collisionPoint)")
 end
 
 function Idle:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Idle:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Idle:near(otherNode)")
 end
 
 function Idle:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Idle:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Idle:actionUpdate(action, timeStep)")
 end
 
 function Idle:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Idle:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Idle:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Idle:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

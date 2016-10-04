@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Playing:enter()
-    BaseClass.enter(self)
-    print("Playing:enter()")
+  BaseClass.enter(self)
+  print("Playing:enter()")
 end
 
 function Playing:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("Playing:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Playing:update(timeStep)")
 end
 
 function Playing:exit()
-    BaseClass.exit(self)
-    print("Playing:exit()")
+  BaseClass.exit(self)
+  print("Playing:exit()")
 end
 
 function Playing:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("Playing:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("Playing:onMessage(message)")
 end
 
 function Playing:renderHUD()
-    BaseClass.renderHUD(self)
-    print("Playing:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("Playing:renderHUD()")
 end
 
 function Playing:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("Playing:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("Playing:touchDown(touches)")
 end
 
 function Playing:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("Playing:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("Playing:touchUp(touches)")
 end
 
 function Playing:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("Playing:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("Playing:touchMove(touches)")
 end
 
 function Playing:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("Playing:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("Playing:touchCancelled(touches)")
 end
 
 function Playing:pause()
-    BaseClass.pause(self)
-    print("Playing:pause()")
+  BaseClass.pause(self)
+  print("Playing:pause()")
 end
 
 function Playing:unPause()
-    BaseClass.unPause(self)
-    print("Playing:unPause()")
+  BaseClass.unPause(self)
+  print("Playing:unPause()")
 end
 
 function Playing:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("Playing:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("Playing:keyboardShow()")
 end
 
 function Playing:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("Playing:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("Playing:keyboardCancel()")
 end
 
 function Playing:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("Playing:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("Playing:keyboardReturn(text)")
 end
 
 function Playing:willResignActive()
-    BaseClass.willResignActive(self)
-    print("Playing:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("Playing:willResignActive()")
 end
 
 function Playing:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("Playing:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("Playing:didBecomeActive()")
 end
 
 function Playing:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("Playing:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("Playing:didEnterBackground()")
 end
 
 function Playing:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("Playing:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("Playing:willEnterForeground()")
 end
 
 function Playing:willTerminate()
-    BaseClass.willTerminate(self)
-    print("Playing:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("Playing:willTerminate()")
 end
 
 function Playing:interrupt()
-    BaseClass.interrupt(self)
-    print("Playing:interrupt()")
+  BaseClass.interrupt(self)
+  print("Playing:interrupt()")
 end
 
 function Playing:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("Playing:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("Playing:resumeInterrupt()")
 end
 
 function Playing:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("Playing:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("Playing:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function Playing:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

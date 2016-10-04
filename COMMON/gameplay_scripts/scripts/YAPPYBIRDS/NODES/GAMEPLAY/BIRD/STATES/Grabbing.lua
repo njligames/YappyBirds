@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Grabbing:enter()
-	BaseClass.enter(self)
-    print("Grabbing:enter()")
+  BaseClass.enter(self)
+  print("Grabbing:enter()")
 end
 
 function Grabbing:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Grabbing:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Grabbing:update(timeStep)")
 end
 
 function Grabbing:exit()
-	BaseClass.exit(self)
-    print("Grabbing:exit()")
+  BaseClass.exit(self)
+  print("Grabbing:exit()")
 end
 
 function Grabbing:onMessage()
-	BaseClass.onMessage(self)
-    print("Grabbing:onMessage()")
+  BaseClass.onMessage(self)
+  print("Grabbing:onMessage()")
 end
 
 function Grabbing:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Grabbing:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Grabbing:touchDown(rayContact)")
 end
 
 function Grabbing:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Grabbing:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Grabbing:touchUp(rayContact)")
 end
 
 function Grabbing:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Grabbing:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Grabbing:touchMove(rayContact)")
 end
 
 function Grabbing:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Grabbing:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Grabbing:touchCancelled(rayContact)")
 end
 
 function Grabbing:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Grabbing:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Grabbing:collide(otherNode, collisionPoint)")
 end
 
 function Grabbing:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Grabbing:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Grabbing:near(otherNode)")
 end
 
 function Grabbing:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Grabbing:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Grabbing:actionUpdate(action, timeStep)")
 end
 
 function Grabbing:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Grabbing:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Grabbing:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Grabbing:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

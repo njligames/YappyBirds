@@ -8,10 +8,10 @@ WorldEntityState.__index = WorldEntityState
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 local __ctor = function(self, init)
@@ -25,11 +25,7 @@ local __ctor = function(self, init)
 
   --Create the NodeEntities for this WorldEntityState
   self._nodeEntityTable = {}
-  for k,v in pairs(init.nodes) do
-    --Create a NodeEntity
-    -- local nodeEntity = v.class(v.states)
-    -- self:_addNodeEntity(nodeEntity)
-  end
+  AddNodesToEntity(self, init.nodes)
 
   self._entityOwner = init.entityOwner
 
@@ -46,10 +42,10 @@ local __ctor = function(self, init)
 
   -- Create the Entity
   self._sceneEntity = init.scene.class({
-    states = init.scene.states,
-    entityOwner = self,
-    nodes = init.scene.nodes,
-  })
+      states = init.scene.states,
+      entityOwner = self,
+      nodes = init.scene.nodes,
+    })
 
   Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
 end
@@ -71,7 +67,7 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function WorldEntityState:getWorldState()
   return self._worldState
@@ -85,7 +81,7 @@ function WorldEntityState:getSceneEntity()
   return self._sceneEntity
 end
 
---############################################################################# 
+--#############################################################################
 --Statemachine code...
 --#############################################################################
 
@@ -102,101 +98,119 @@ function WorldEntityState:isIn()
 end
 
 function WorldEntityState:enter()
-    print("WorldEntityState:enter()")
+  print("WorldEntityState:enter()")
 
-    self:getSceneEntity():startStateMachine()
+  self:getSceneEntity():startStateMachine()
 end
 
 function WorldEntityState:update(timeStep)
-    --print("WorldEntityState:update(timeStep)")
+  --print("WorldEntityState:update(timeStep)")
 end
 
 function WorldEntityState:exit()
-    print("WorldEntityState:exit()")
+  print("WorldEntityState:exit()")
 
-    self:getSceneEntity():stopStateMachine()
+  self:getSceneEntity():stopStateMachine()
 end
 
 function WorldEntityState:onMessage(message)
-    print("WorldEntityState:onMessage(message)")
+  print("WorldEntityState:onMessage(message)")
 end
 
 function WorldEntityState:renderHUD()
-    --print("WorldEntityState:renderHUD()")
+  --print("WorldEntityState:renderHUD()")
 end
 
 function WorldEntityState:touchDown(touches)
-    print("WorldEntityState:touchDown(touches)")
+  print("WorldEntityState:touchDown(touches)")
 end
 
 function WorldEntityState:touchUp(touches)
-    print("WorldEntityState:touchUp(touches)")
+  print("WorldEntityState:touchUp(touches)")
 end
 
 function WorldEntityState:touchMove(touches)
-    print("WorldEntityState:touchMove(touches)")
+  print("WorldEntityState:touchMove(touches)")
 end
 
 function WorldEntityState:touchCancelled(touches)
-    print("WorldEntityState:touchCancelled(touches)")
+  print("WorldEntityState:touchCancelled(touches)")
 end
 
 function WorldEntityState:pause()
-    print("WorldEntityState:pause()")
+  print("WorldEntityState:pause()")
 end
 
 function WorldEntityState:unPause()
-    print("WorldEntityState:unPause()")
+  print("WorldEntityState:unPause()")
 end
 
 function WorldEntityState:keyboardShow()
-    print("WorldEntityState:keyboardShow()")
+  print("WorldEntityState:keyboardShow()")
 end
 
 function WorldEntityState:keyboardCancel()
-    print("WorldEntityState:keyboardCancel()")
+  print("WorldEntityState:keyboardCancel()")
 end
 
 function WorldEntityState:keyboardReturn(text)
-    print("WorldEntityState:keyboardReturn(text)")
+  print("WorldEntityState:keyboardReturn(text)")
 end
 
 function WorldEntityState:willResignActive()
-    print("WorldEntityState:willResignActive()")
+  print("WorldEntityState:willResignActive()")
 end
 
 function WorldEntityState:didBecomeActive()
-    print("WorldEntityState:didBecomeActive()")
+  print("WorldEntityState:didBecomeActive()")
 end
 
 function WorldEntityState:didEnterBackground()
-    print("WorldEntityState:didEnterBackground()")
+  print("WorldEntityState:didEnterBackground()")
 end
 
 function WorldEntityState:willEnterForeground()
-    print("WorldEntityState:willEnterForeground()")
+  print("WorldEntityState:willEnterForeground()")
 end
 
 function WorldEntityState:willTerminate()
-    print("WorldEntityState:willTerminate()")
+  print("WorldEntityState:willTerminate()")
 end
 
 function WorldEntityState:interrupt()
-    print("WorldEntityState:interrupt()")
+  print("WorldEntityState:interrupt()")
 end
 
 function WorldEntityState:resumeInterrupt()
-    print("WorldEntityState:resumeInterrupt()")
+  print("WorldEntityState:resumeInterrupt()")
 end
 
 function WorldEntityState:receivedMemoryWarning()
-    print("WorldEntityState:receivedMemoryWarning()")
+  print("WorldEntityState:receivedMemoryWarning()")
 end
 
---############################################################################# 
---End Custom Code
+--#############################################################################
+--Add/Remove NodeEntities
 --#############################################################################
 
+function WorldEntityState:_addNodeEntity(node)
+  local stateName = node:className()
+  self._nodeEntityTable[stateName] = entityState
+end
+
+function WorldEntityState:_removeNodeEntity(stateName)
+  self._nodeEntityTable[stateName] = nil
+end
+
+function WorldEntityState:_getNodeEntity(nodeName)
+  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
+
+  return self._nodeEntityTable[nodeName]
+end
+
+--#############################################################################
+--End Custom Code
+--#############################################################################
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -242,8 +256,8 @@ end
 
 function WorldEntityState:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -252,25 +266,27 @@ end
 
 function WorldEntityState:_destroy()
   assert(not self.__WorldEntityStateCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
+
+  self._nodeEntityTable = nil
 end
 
 function WorldEntityState:_create(init)
   self.__WorldEntityStateCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function WorldEntityState:load()
   __load(self)
-  
+
   self.__WorldEntityStateCalledLoad = true
 end
 
 function WorldEntityState:unLoad()
   assert(self.__WorldEntityStateCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__WorldEntityStateCalledLoad = false
 end

@@ -8,10 +8,10 @@ SceneEntity.__index = SceneEntity
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 local __ctor = function(self, init)
@@ -25,11 +25,7 @@ local __ctor = function(self, init)
 
   --Create the NodeEntities for this SceneEntity
   self._nodeEntityTable = {}
-  for k,v in pairs(init.nodes) do
-    --Create a NodeEntity
-    -- local nodeEntity = v.class(v.states)
-    -- self:_addNodeEntity(nodeEntity)
-  end
+  AddNodesToEntity(self, init.nodes)
 
   self._entityOwner = init.entityOwner
 
@@ -46,9 +42,9 @@ local __ctor = function(self, init)
 
     --create a SceneEntityState
     local stateEntity = v.class({
-      entityOwner = self,
-      nodes = v.nodes
-    })
+        entityOwner = self,
+        nodes = v.nodes
+      })
 
     if startState == nil then
       startState = stateEntity
@@ -58,13 +54,17 @@ local __ctor = function(self, init)
   end
 
   assert(startState, "No start state was defined for " .. self:className())
-  
+
   self._startStateName = startState:className()
 end
 
 local __dtor = function(self)
+  self._stateEntityTable = nil
+
   njli.Scene.destroy(self:getScene())
   self._scene = nil
+
+  self._nodeEntityTable = nil
 end
 
 local __load = function(self)
@@ -82,17 +82,17 @@ local __unLoad = function(self)
   end
 end
 
---############################################################################# 
+--#############################################################################
 --Private
 --#############################################################################
 
 -- function SceneEntity:_addEntityState(stateName, entityStateModule)
---   local init =
---   {
---     name = stateName,
---     entityOwner = self
---   }
---   self._stateEntityTable[stateName] = entityStateModule(init)
+-- local init =
+-- {
+-- name = stateName,
+-- entityOwner = self
+-- }
+-- self._stateEntityTable[stateName] = entityStateModule(init)
 -- end
 function SceneEntity:_addEntityState(entityState)
   local stateName = entityState:className()
@@ -117,12 +117,9 @@ function SceneEntity:_getCurrentEntityState()
   return self:_getEntityState(self:getScene():getStateMachine():getState():getName())
 end
 
-
-
-
-
-
-
+--#############################################################################
+--Add/Remove NodeEntities
+--#############################################################################
 
 function SceneEntity:_addNodeEntity(node)
   local stateName = node:className()
@@ -139,13 +136,7 @@ function SceneEntity:_getNodeEntity(nodeName)
   return self._nodeEntityTable[nodeName]
 end
 
-
-
-
-
-
-
---############################################################################# 
+--#############################################################################
 --General
 --#############################################################################
 
@@ -161,7 +152,11 @@ function SceneEntity:hasState()
   return self:getScene():getStateMachine():getState() ~= nil
 end
 
---############################################################################# 
+function SceneEntity:getWorldEntityState()
+  return self._entityOwner
+end
+
+--#############################################################################
 --Statemachine code...
 --#############################################################################
 
@@ -184,7 +179,7 @@ end
 function SceneEntity:stopStateMachine()
   print("SceneEntity:stopStateMachine()")
 
-  njli.World.getInstance():addScene(self:getScene())
+  njli.World.getInstance():addScene(nil)
 end
 
 function SceneEntity:enter()
@@ -194,7 +189,7 @@ function SceneEntity:enter()
 end
 
 function SceneEntity:update(timeStep)
- --print("SceneEntity:update("..timeStep..")")
+  --print("SceneEntity:update("..timeStep..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
@@ -212,31 +207,31 @@ function SceneEntity:onMessage(message)
 end
 
 function SceneEntity:touchDown(touches)
- print("SceneEntity:touchDown("..tostring(touches) .. ")")
+  print("SceneEntity:touchDown("..tostring(touches) .. ")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchDown(touches)
 end
 
 function SceneEntity:touchUp(touches)
- print("SceneEntity:touchUp("..tostring(touches) ..")")
+  print("SceneEntity:touchUp("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchUp(touches)
 end
 
 function SceneEntity:touchMove(touches)
- print("SceneEntity:touchMove("..tostring(touches) ..")")
+  print("SceneEntity:touchMove("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchMove(touches)
 end
 
 function SceneEntity:touchCancelled(touches)
- print("SceneEntity:touchCancelled("..tostring(touches) ..")")
+  print("SceneEntity:touchCancelled("..tostring(touches) ..")")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():touchCancelled(touches)
 end
 
 function SceneEntity:renderHUD()
- --print("SceneEntity:renderHUD()")
+  --print("SceneEntity:renderHUD()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():renderHUD()
 end
@@ -254,57 +249,56 @@ function SceneEntity:unPause()
 end
 
 function SceneEntity:willResignActive()
- print("SceneEntity:willResignActive()")
+  print("SceneEntity:willResignActive()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():willResignActive()
 end
 
 function SceneEntity:didBecomeActive()
- print("SceneEntity:didBecomeActive()")
+  print("SceneEntity:didBecomeActive()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():didBecomeActive()
 end
 
 function SceneEntity:didEnterBackground()
- print("SceneEntity:didEnterBackground()")
+  print("SceneEntity:didEnterBackground()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():didEnterBackground()
 end
 
 function SceneEntity:willEnterForeground()
- print("SceneEntity:willEnterForeground()")
+  print("SceneEntity:willEnterForeground()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():willEnterForeground()
 end
 
 function SceneEntity:willTerminate()
- print("SceneEntity:willTerminate()")
+  print("SceneEntity:willTerminate()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():willTerminate()
 end
 
 function SceneEntity:interrupt()
- print("SceneEntity:interrupt()")
+  print("SceneEntity:interrupt()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():interrupt()
 end
 
 function SceneEntity:resumeInterrupt()
- print("SceneEntity:resumeInterrupt()")
+  print("SceneEntity:resumeInterrupt()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():resumeInterrupt()
 end
 
 function SceneEntity:receivedMemoryWarning()
- print("SceneEntity:receivedMemoryWarning()")
+  print("SceneEntity:receivedMemoryWarning()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():receivedMemoryWarning()
 end
-
---############################################################################# 
+--
+--#############################################################################
 --End Custom Code
 --#############################################################################
-
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -350,8 +344,8 @@ end
 
 function SceneEntity:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -360,25 +354,25 @@ end
 
 function SceneEntity:_destroy()
   assert(not self.__SceneEntityCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
 end
 
 function SceneEntity:_create(init)
   self.__SceneEntityCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function SceneEntity:load()
   __load(self)
-  
+
   self.__SceneEntityCalledLoad = true
 end
 
 function SceneEntity:unLoad()
   assert(self.__SceneEntityCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__SceneEntityCalledLoad = false
 end

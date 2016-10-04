@@ -1,4 +1,4 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
 local Hit = {}
 Hit.__index = Hit
@@ -41,7 +41,7 @@ end
 
 function Hit:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Hit:update()")
+  print("Hit:update(timeStep)")
 end
 
 function Hit:exit()
@@ -54,44 +54,44 @@ function Hit:onMessage()
   print("Hit:onMessage()")
 end
 
-function Hit:rayTouchDown(rayContact)
-  BaseClass.rayTouchDown(self, rayContact)
-  print("Hit:enter()")
+function Hit:touchDown(rayContact)
+  BaseClass.touchDown(self, rayContact)
+  print("Hit:touchDown(rayContact)")
 end
 
-function Hit:rayTouchUp(rayContact)
-  BaseClass.rayTouchUp(self, rayContact)
-  print("Hit:enter()")
+function Hit:touchUp(rayContact)
+  BaseClass.touchUp(self, rayContact)
+  print("Hit:touchUp(rayContact)")
 end
 
-function Hit:rayTouchMove(rayContact)
-  BaseClass.rayTouchMove(self, rayContact)
-  print("Hit:enter()")
+function Hit:touchMove(rayContact)
+  BaseClass.touchMove(self, rayContact)
+  print("Hit:touchMove(rayContact)")
 end
 
-function Hit:rayTouchCancelled(rayContact)
-  BaseClass.rayTouchCancelled(self, rayContact)
-  print("Hit:enter()")
+function Hit:touchCancelled(rayContact)
+  BaseClass.touchCancelled(self, rayContact)
+  print("Hit:touchCancelled(rayContact)")
 end
 
 function Hit:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, otherNode, collisionPoint)
-  print("Hit:enter()")
+  BaseClass.collide(self, collisionPoint)
+  print("Hit:collide(otherNode, collisionPoint)")
 end
 
 function Hit:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Hit:enter()")
+  print("Hit:near(otherNode)")
 end
 
 function Hit:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, action, timeStep)
-  print("Hit:enter()")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Hit:actionUpdate(action, timeStep)")
 end
 
 function Hit:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Hit:enter()")
+  print("Hit:actionComplete(action)")
 end
 
 --#############################################################################

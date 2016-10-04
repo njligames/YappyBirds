@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function About:enter()
-    BaseClass.enter(self)
-    print("About:enter()")
+  BaseClass.enter(self)
+  print("About:enter()")
 end
 
 function About:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("About:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("About:update(timeStep)")
 end
 
 function About:exit()
-    BaseClass.exit(self)
-    print("About:exit()")
+  BaseClass.exit(self)
+  print("About:exit()")
 end
 
 function About:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("About:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("About:onMessage(message)")
 end
 
 function About:renderHUD()
-    BaseClass.renderHUD(self)
-    print("About:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("About:renderHUD()")
 end
 
 function About:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("About:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("About:touchDown(touches)")
 end
 
 function About:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("About:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("About:touchUp(touches)")
 end
 
 function About:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("About:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("About:touchMove(touches)")
 end
 
 function About:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("About:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("About:touchCancelled(touches)")
 end
 
 function About:pause()
-    BaseClass.pause(self)
-    print("About:pause()")
+  BaseClass.pause(self)
+  print("About:pause()")
 end
 
 function About:unPause()
-    BaseClass.unPause(self)
-    print("About:unPause()")
+  BaseClass.unPause(self)
+  print("About:unPause()")
 end
 
 function About:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("About:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("About:keyboardShow()")
 end
 
 function About:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("About:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("About:keyboardCancel()")
 end
 
 function About:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("About:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("About:keyboardReturn(text)")
 end
 
 function About:willResignActive()
-    BaseClass.willResignActive(self)
-    print("About:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("About:willResignActive()")
 end
 
 function About:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("About:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("About:didBecomeActive()")
 end
 
 function About:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("About:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("About:didEnterBackground()")
 end
 
 function About:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("About:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("About:willEnterForeground()")
 end
 
 function About:willTerminate()
-    BaseClass.willTerminate(self)
-    print("About:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("About:willTerminate()")
 end
 
 function About:interrupt()
-    BaseClass.interrupt(self)
-    print("About:interrupt()")
+  BaseClass.interrupt(self)
+  print("About:interrupt()")
 end
 
 function About:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("About:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("About:resumeInterrupt()")
 end
 
 function About:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("About:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("About:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function About:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

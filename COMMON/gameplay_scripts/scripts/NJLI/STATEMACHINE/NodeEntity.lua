@@ -8,68 +8,51 @@ NodeEntity.__index = NodeEntity
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 local __ctor = function(self, init)
   assert(init, "init variable is nil.")
   assert(type(init) == "table", "Init variable is expecting a states table")
+  assert(init.entityOwner ~= nil, "init.entityOwner is nil")
+  assert(init.states ~= nil, "init.states variable is nil")
+  assert(type(init.states) == "table", "init.states variable is expecting a states table")
 
   self._node = njli.Node.create()
   self:getNode():setName(self:className())
 
   local startState = nil
-  local startStateName = ""
+
   self._stateEntityTable = {}
-  for k,v in pairs(init) do
+  for k,v in pairs(init.states) do
 
     --create a NodeEntityState
     local stateEntity = v({entityOwner = self})
 
-    if startState == nil then
+    if nil == startState then
       startState = stateEntity
-      startStateName = stateEntity:className()
     end
 
     self:_addEntityState(stateEntity)
   end
 
+  self._entityOwner = init.entityOwner
+
   assert(startState, "No start state was defined for " .. self:className())
-  
-  self._startStateName = startStateName
 
-
-
-  -- assert(init, "init variable is nil.")
-  -- assert(init.name, "Init variable is expecting a name value")
-  -- assert(init.states, "Init variable is expecting a states table")
-  -- assert(type(init.states) == "table", "Init variable is expecting a states table")
-  -- assert(init.startStateName, "Init variable is expecting a startStateName value when creating " .. self:className())
-
-  -- self._startStateName = init.startStateName
-
-  -- self._node = njli.Node.create()
-  -- self:getNode():setName(init.name)
-
-  -- self._stateEntityTable = {}
-  -- if init then
-  --   for k,v in pairs(init.states) do
-  --     self:_addEntityState(v.name, v.module)
-  --   end
-  -- end
+  self._startStateName = startState:className()
 end
 
 local __dtor = function(self)
 
   self._stateEntityTable = nil
-  
+
   njli.Node.destroy(self:getNode())
   self._node = nil
 
-  
 end
 
 local __load = function(self)
@@ -87,18 +70,9 @@ local __unLoad = function(self)
   end
 end
 
---############################################################################# 
+--#############################################################################
 --Private
 --#############################################################################
-
--- function NodeEntity:_addEntityState(stateName, entityStateModule)
---   local init =
---   {
---     name = stateName,
---     entityOwner = self
---   }
---   self._stateEntityTable[stateName] = entityStateModule(init)
--- end
 
 function NodeEntity:_addEntityState(entityState)
   local stateName = entityState:className()
@@ -124,7 +98,7 @@ function NodeEntity:_getCurrentEntityState()
   return self:_getEntityState(self:getNode():getStateMachine():getState():getName())
 end
 
---############################################################################# 
+--#############################################################################
 --General
 --#############################################################################
 
@@ -140,7 +114,11 @@ function NodeEntity:hasState()
   return self:getNode():getStateMachine():getState() ~= nil
 end
 
---############################################################################# 
+function NodeEntity:getOwner()
+  return self._entityOwner
+end
+
+--#############################################################################
 --Statemachine code...
 --#############################################################################
 
@@ -230,10 +208,9 @@ function NodeEntity:actionComplete(action)
   self:_getCurrentEntityState():enter()
 end
 
---############################################################################# 
+--#############################################################################
 --End Custom Code
 --#############################################################################
-
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -279,8 +256,8 @@ end
 
 function NodeEntity:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -289,25 +266,25 @@ end
 
 function NodeEntity:_destroy()
   assert(not self.__NodeEntityCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
 end
 
 function NodeEntity:_create(init)
   self.__NodeEntityCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function NodeEntity:load()
   __load(self)
-  
+
   self.__NodeEntityCalledLoad = true
 end
 
 function NodeEntity:unLoad()
   assert(self.__NodeEntityCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__NodeEntityCalledLoad = false
 end

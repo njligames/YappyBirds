@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function MainMenu:enter()
-    BaseClass.enter(self)
-    print("MainMenu:enter()")
+  BaseClass.enter(self)
+  print("MainMenu:enter()")
 end
 
 function MainMenu:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("MainMenu:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("MainMenu:update(timeStep)")
 end
 
 function MainMenu:exit()
-    BaseClass.exit(self)
-    print("MainMenu:exit()")
+  BaseClass.exit(self)
+  print("MainMenu:exit()")
 end
 
 function MainMenu:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("MainMenu:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("MainMenu:onMessage(message)")
 end
 
 function MainMenu:renderHUD()
-    BaseClass.renderHUD(self)
-    print("MainMenu:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("MainMenu:renderHUD()")
 end
 
 function MainMenu:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("MainMenu:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("MainMenu:touchDown(touches)")
 end
 
 function MainMenu:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("MainMenu:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("MainMenu:touchUp(touches)")
 end
 
 function MainMenu:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("MainMenu:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("MainMenu:touchMove(touches)")
 end
 
 function MainMenu:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("MainMenu:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("MainMenu:touchCancelled(touches)")
 end
 
 function MainMenu:pause()
-    BaseClass.pause(self)
-    print("MainMenu:pause()")
+  BaseClass.pause(self)
+  print("MainMenu:pause()")
 end
 
 function MainMenu:unPause()
-    BaseClass.unPause(self)
-    print("MainMenu:unPause()")
+  BaseClass.unPause(self)
+  print("MainMenu:unPause()")
 end
 
 function MainMenu:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("MainMenu:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("MainMenu:keyboardShow()")
 end
 
 function MainMenu:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("MainMenu:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("MainMenu:keyboardCancel()")
 end
 
 function MainMenu:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("MainMenu:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("MainMenu:keyboardReturn(text)")
 end
 
 function MainMenu:willResignActive()
-    BaseClass.willResignActive(self)
-    print("MainMenu:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("MainMenu:willResignActive()")
 end
 
 function MainMenu:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("MainMenu:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("MainMenu:didBecomeActive()")
 end
 
 function MainMenu:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("MainMenu:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("MainMenu:didEnterBackground()")
 end
 
 function MainMenu:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("MainMenu:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("MainMenu:willEnterForeground()")
 end
 
 function MainMenu:willTerminate()
-    BaseClass.willTerminate(self)
-    print("MainMenu:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("MainMenu:willTerminate()")
 end
 
 function MainMenu:interrupt()
-    BaseClass.interrupt(self)
-    print("MainMenu:interrupt()")
+  BaseClass.interrupt(self)
+  print("MainMenu:interrupt()")
 end
 
 function MainMenu:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("MainMenu:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("MainMenu:resumeInterrupt()")
 end
 
 function MainMenu:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("MainMenu:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("MainMenu:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function MainMenu:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

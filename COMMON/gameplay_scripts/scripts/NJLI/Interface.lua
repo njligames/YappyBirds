@@ -8,10 +8,10 @@ Interface.__index = Interface
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 require "NJLI.util"
@@ -20,13 +20,13 @@ local StateMachineEntity = require "NJLI.STATEMACHINE.StateMachineEntity"
 local DeviceEntity = require "NJLI.DeviceEntity"
 
 local __ctor = function(self, init)
-	self._stateMachineEntity = StateMachineEntity()
-	self._deviceEntity = DeviceEntity()
+  self._stateMachineEntity = StateMachineEntity()
+  self._deviceEntity = DeviceEntity()
 end
 
 local __dtor = function(self)
-	self._stateMachineEntity = nil
-	self._deviceEntity = nil
+  self._stateMachineEntity = nil
+  self._deviceEntity = nil
 end
 
 local __load = function(self)
@@ -37,7 +37,7 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 --Private
 --#############################################################################
 
@@ -46,15 +46,12 @@ function Interface:getStateMachine()
 end
 
 function Interface:getDeviceEntity()
-    return self._deviceEntity
+  return self._deviceEntity
 end
 
-
-
---############################################################################# 
+--#############################################################################
 --End Custom Code
 --#############################################################################
-
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -100,8 +97,8 @@ end
 
 function Interface:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -110,25 +107,25 @@ end
 
 function Interface:_destroy()
   assert(not self.__NJLIInterfaceCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
 end
 
 function Interface:_create(init)
   self.__NJLIInterfaceCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function Interface:load()
   __load(self)
-  
+
   self.__NJLIInterfaceCalledLoad = true
 end
 
 function Interface:unLoad()
   assert(self.__NJLIInterfaceCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__NJLIInterfaceCalledLoad = false
 end

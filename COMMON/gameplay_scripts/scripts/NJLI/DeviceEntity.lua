@@ -8,10 +8,10 @@ DeviceEntity.__index = DeviceEntity
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 local __ctor = function(self, init)
@@ -30,40 +30,39 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function DeviceEntity:update(timeStep)
-    --print("DeviceEntity:update("..timeStep..")")
+  --print("DeviceEntity:update("..timeStep..")")
 end
 
 function DeviceEntity:render()
-    --print("DeviceEntity:render()")
+  --print("DeviceEntity:render()")
 end
 
 function DeviceEntity:resize(width, height, orientation)
-    --print("DeviceEntity:resize("..width..", "..height..", "..orientation..")")
+  --print("DeviceEntity:resize("..width..", "..height..", "..orientation..")")
 end
 
 function DeviceEntity:touchDown(touches)
-    --print("DeviceEntity:touchDown("..#touches..")")
+  --print("DeviceEntity:touchDown("..#touches..")")
 end
 
 function DeviceEntity:touchUp(touches)
-    --print("DeviceEntity:touchUp("..#touches..")")
+  --print("DeviceEntity:touchUp("..#touches..")")
 end
 
 function DeviceEntity:touchMove(touches)
-    --print("DeviceEntity:touchMove("..#touches..")")
+  --print("DeviceEntity:touchMove("..#touches..")")
 end
 
 function DeviceEntity:touchCancelled(touches)
-    --print("DeviceEntity:touchCancelled("..#touches..")")
+  --print("DeviceEntity:touchCancelled("..#touches..")")
 end
 
---############################################################################# 
+--#############################################################################
 --End Custom Code
 --#############################################################################
-
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -109,8 +108,8 @@ end
 
 function DeviceEntity:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -119,25 +118,25 @@ end
 
 function DeviceEntity:_destroy()
   assert(not self.__DeviceCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
 end
 
 function DeviceEntity:_create(init)
   self.__DeviceCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function DeviceEntity:load()
   __load(self)
-  
+
   self.__DeviceCalledLoad = true
 end
 
 function DeviceEntity:unLoad()
   assert(self.__DeviceCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__DeviceCalledLoad = false
 end

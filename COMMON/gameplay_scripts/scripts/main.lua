@@ -2,17 +2,17 @@ Interface = require "NJLI.InterfaceFunctions"
 
 local MyGame = require "YAPPYBIRDS.YappyGame"
 
-local BalloonNodeEntity = 
+local BalloonNodeEntity =
 {
-    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.Balloon",
-    --The first state is the start state.
-    states =
-    {
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Spawn",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Lob",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Hit",
-    },
-    nodes = {} --The childe Nodes for the Node.
+  class = require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.Balloon",
+  --The first state is the start state.
+  states =
+  {
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Spawn",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Lob",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BALLOON.STATES.Hit",
+  },
+  nodes = {} --The childe Nodes for the Node.
 }
 
 local BirdBeakNodeEntity =
@@ -21,58 +21,44 @@ local BirdBeakNodeEntity =
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Idle",
-    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Grab",
-    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Hit",
-    require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Yap",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Idle",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Grab",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Hit",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRDBEAK.STATES.Yap",
   },
   nodes = {} --The childe Nodes for the Node.
 }
 
-local BirdNodeEntity = 
+local BirdNodeEntity =
 {
-    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.Bird",
-    --The first state is the start state.
-    states =
-    {
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Spawn",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Fly",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Grabbed",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Grabbing",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Hit",
-      require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Pursue",
-    },
-    nodes = {
-      BirdBeakNodeEntity,
-    } --The childe Nodes for the Node.
-  }
+  class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.Bird",
+  --The first state is the start state.
+  states =
+  {
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Spawn",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Fly",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Grabbed",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Grabbing",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Hit",
+    class = require "YAPPYBIRDS.NODES.GAMEPLAY.BIRD.STATES.Pursue",
+  },
+  nodes = {
+    -- BirdBeakNodeEntity,
+  } --The childe Nodes for the Node.
+}
 
 local MenuNodeEntityTable =
 {
-  entityOwner = nil,
-  nodes = 
-  {
-    --TODO: Add NodeEntities
-  }
 }
 
 local GameplayNodeEntityTable =
 {
-  entityOwner = nil,
-  nodes = 
-  {
-    BalloonNodeEntity,
-    BirdNodeEntity,
-  }
+  BalloonNodeEntity,
+  BirdNodeEntity,
 }
 
 local ResultNodeEntityTable =
 {
-  entityOwner = nil,
-  nodes =
-  {
-    
-  }
 }
 
 local MenuScene =
@@ -158,7 +144,7 @@ local GameplayScene =
       nodes = {}, --The nodes for the SceneState.
     },
   },
-  nodes = GameplayNodeEntityTable --The nodes for the Scene.
+  nodes = {} --The nodes for the Scene.
 }
 
 local ResultsScene =
@@ -213,7 +199,7 @@ local ResultsScene =
       nodes = {}, --The nodes for the SceneState.
     },
   },
-  nodes = ResultNodeEntityTable  --The nodes for the Scene.
+  nodes = ResultNodeEntityTable --The nodes for the Scene.
 }
 
 local Worlds =
@@ -240,7 +226,7 @@ local Worlds =
         nodes = {}, --The nodes for the worldstate.
       },
     },
-    nodes = {}, --The nodes for the world.
+    nodes = GameplayNodeEntityTable, --The nodes for the world.
   }
 }
 

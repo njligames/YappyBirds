@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Settings:enter()
-    BaseClass.enter(self)
-    print("Settings:enter()")
+  BaseClass.enter(self)
+  print("Settings:enter()")
 end
 
 function Settings:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("Settings:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Settings:update(timeStep)")
 end
 
 function Settings:exit()
-    BaseClass.exit(self)
-    print("Settings:exit()")
+  BaseClass.exit(self)
+  print("Settings:exit()")
 end
 
 function Settings:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("Settings:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("Settings:onMessage(message)")
 end
 
 function Settings:renderHUD()
-    BaseClass.renderHUD(self)
-    print("Settings:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("Settings:renderHUD()")
 end
 
 function Settings:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("Settings:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("Settings:touchDown(touches)")
 end
 
 function Settings:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("Settings:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("Settings:touchUp(touches)")
 end
 
 function Settings:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("Settings:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("Settings:touchMove(touches)")
 end
 
 function Settings:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("Settings:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("Settings:touchCancelled(touches)")
 end
 
 function Settings:pause()
-    BaseClass.pause(self)
-    print("Settings:pause()")
+  BaseClass.pause(self)
+  print("Settings:pause()")
 end
 
 function Settings:unPause()
-    BaseClass.unPause(self)
-    print("Settings:unPause()")
+  BaseClass.unPause(self)
+  print("Settings:unPause()")
 end
 
 function Settings:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("Settings:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("Settings:keyboardShow()")
 end
 
 function Settings:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("Settings:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("Settings:keyboardCancel()")
 end
 
 function Settings:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("Settings:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("Settings:keyboardReturn(text)")
 end
 
 function Settings:willResignActive()
-    BaseClass.willResignActive(self)
-    print("Settings:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("Settings:willResignActive()")
 end
 
 function Settings:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("Settings:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("Settings:didBecomeActive()")
 end
 
 function Settings:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("Settings:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("Settings:didEnterBackground()")
 end
 
 function Settings:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("Settings:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("Settings:willEnterForeground()")
 end
 
 function Settings:willTerminate()
-    BaseClass.willTerminate(self)
-    print("Settings:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("Settings:willTerminate()")
 end
 
 function Settings:interrupt()
-    BaseClass.interrupt(self)
-    print("Settings:interrupt()")
+  BaseClass.interrupt(self)
+  print("Settings:interrupt()")
 end
 
 function Settings:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("Settings:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("Settings:resumeInterrupt()")
 end
 
 function Settings:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("Settings:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("Settings:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function Settings:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

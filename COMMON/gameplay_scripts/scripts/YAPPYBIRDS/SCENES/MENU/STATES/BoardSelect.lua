@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function BoardSelect:enter()
-    BaseClass.enter(self)
-    print("BoardSelect:enter()")
+  BaseClass.enter(self)
+  print("BoardSelect:enter()")
 end
 
 function BoardSelect:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("BoardSelect:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("BoardSelect:update(timeStep)")
 end
 
 function BoardSelect:exit()
-    BaseClass.exit(self)
-    print("BoardSelect:exit()")
+  BaseClass.exit(self)
+  print("BoardSelect:exit()")
 end
 
 function BoardSelect:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("BoardSelect:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("BoardSelect:onMessage(message)")
 end
 
 function BoardSelect:renderHUD()
-    BaseClass.renderHUD(self)
-    print("BoardSelect:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("BoardSelect:renderHUD()")
 end
 
 function BoardSelect:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("BoardSelect:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("BoardSelect:touchDown(touches)")
 end
 
 function BoardSelect:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("BoardSelect:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("BoardSelect:touchUp(touches)")
 end
 
 function BoardSelect:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("BoardSelect:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("BoardSelect:touchMove(touches)")
 end
 
 function BoardSelect:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("BoardSelect:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("BoardSelect:touchCancelled(touches)")
 end
 
 function BoardSelect:pause()
-    BaseClass.pause(self)
-    print("BoardSelect:pause()")
+  BaseClass.pause(self)
+  print("BoardSelect:pause()")
 end
 
 function BoardSelect:unPause()
-    BaseClass.unPause(self)
-    print("BoardSelect:unPause()")
+  BaseClass.unPause(self)
+  print("BoardSelect:unPause()")
 end
 
 function BoardSelect:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("BoardSelect:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("BoardSelect:keyboardShow()")
 end
 
 function BoardSelect:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("BoardSelect:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("BoardSelect:keyboardCancel()")
 end
 
 function BoardSelect:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("BoardSelect:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("BoardSelect:keyboardReturn(text)")
 end
 
 function BoardSelect:willResignActive()
-    BaseClass.willResignActive(self)
-    print("BoardSelect:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("BoardSelect:willResignActive()")
 end
 
 function BoardSelect:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("BoardSelect:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("BoardSelect:didBecomeActive()")
 end
 
 function BoardSelect:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("BoardSelect:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("BoardSelect:didEnterBackground()")
 end
 
 function BoardSelect:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("BoardSelect:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("BoardSelect:willEnterForeground()")
 end
 
 function BoardSelect:willTerminate()
-    BaseClass.willTerminate(self)
-    print("BoardSelect:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("BoardSelect:willTerminate()")
 end
 
 function BoardSelect:interrupt()
-    BaseClass.interrupt(self)
-    print("BoardSelect:interrupt()")
+  BaseClass.interrupt(self)
+  print("BoardSelect:interrupt()")
 end
 
 function BoardSelect:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("BoardSelect:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("BoardSelect:resumeInterrupt()")
 end
 
 function BoardSelect:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("BoardSelect:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("BoardSelect:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function BoardSelect:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

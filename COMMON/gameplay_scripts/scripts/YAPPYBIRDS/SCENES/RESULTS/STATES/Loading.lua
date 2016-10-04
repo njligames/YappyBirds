@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Loading:enter()
-    BaseClass.enter(self)
-    print("Loading:enter()")
+  BaseClass.enter(self)
+  print("Loading:enter()")
 end
 
 function Loading:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("Loading:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Loading:update(timeStep)")
 end
 
 function Loading:exit()
-    BaseClass.exit(self)
-    print("Loading:exit()")
+  BaseClass.exit(self)
+  print("Loading:exit()")
 end
 
 function Loading:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("Loading:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("Loading:onMessage(message)")
 end
 
 function Loading:renderHUD()
-    BaseClass.renderHUD(self)
-    print("Loading:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("Loading:renderHUD()")
 end
 
 function Loading:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("Loading:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("Loading:touchDown(touches)")
 end
 
 function Loading:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("Loading:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("Loading:touchUp(touches)")
 end
 
 function Loading:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("Loading:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("Loading:touchMove(touches)")
 end
 
 function Loading:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("Loading:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("Loading:touchCancelled(touches)")
 end
 
 function Loading:pause()
-    BaseClass.pause(self)
-    print("Loading:pause()")
+  BaseClass.pause(self)
+  print("Loading:pause()")
 end
 
 function Loading:unPause()
-    BaseClass.unPause(self)
-    print("Loading:unPause()")
+  BaseClass.unPause(self)
+  print("Loading:unPause()")
 end
 
 function Loading:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("Loading:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("Loading:keyboardShow()")
 end
 
 function Loading:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("Loading:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("Loading:keyboardCancel()")
 end
 
 function Loading:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("Loading:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("Loading:keyboardReturn(text)")
 end
 
 function Loading:willResignActive()
-    BaseClass.willResignActive(self)
-    print("Loading:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("Loading:willResignActive()")
 end
 
 function Loading:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("Loading:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("Loading:didBecomeActive()")
 end
 
 function Loading:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("Loading:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("Loading:didEnterBackground()")
 end
 
 function Loading:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("Loading:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("Loading:willEnterForeground()")
 end
 
 function Loading:willTerminate()
-    BaseClass.willTerminate(self)
-    print("Loading:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("Loading:willTerminate()")
 end
 
 function Loading:interrupt()
-    BaseClass.interrupt(self)
-    print("Loading:interrupt()")
+  BaseClass.interrupt(self)
+  print("Loading:interrupt()")
 end
 
 function Loading:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("Loading:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("Loading:resumeInterrupt()")
 end
 
 function Loading:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("Loading:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("Loading:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function Loading:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

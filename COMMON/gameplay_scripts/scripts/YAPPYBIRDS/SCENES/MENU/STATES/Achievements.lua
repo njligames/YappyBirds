@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Achievements:enter()
-    BaseClass.enter(self)
-    print("Achievements:enter()")
+  BaseClass.enter(self)
+  print("Achievements:enter()")
 end
 
 function Achievements:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("Achievements:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Achievements:update(timeStep)")
 end
 
 function Achievements:exit()
-    BaseClass.exit(self)
-    print("Achievements:exit()")
+  BaseClass.exit(self)
+  print("Achievements:exit()")
 end
 
 function Achievements:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("Achievements:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("Achievements:onMessage(message)")
 end
 
 function Achievements:renderHUD()
-    BaseClass.renderHUD(self)
-    print("Achievements:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("Achievements:renderHUD()")
 end
 
 function Achievements:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("Achievements:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("Achievements:touchDown(touches)")
 end
 
 function Achievements:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("Achievements:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("Achievements:touchUp(touches)")
 end
 
 function Achievements:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("Achievements:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("Achievements:touchMove(touches)")
 end
 
 function Achievements:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("Achievements:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("Achievements:touchCancelled(touches)")
 end
 
 function Achievements:pause()
-    BaseClass.pause(self)
-    print("Achievements:pause()")
+  BaseClass.pause(self)
+  print("Achievements:pause()")
 end
 
 function Achievements:unPause()
-    BaseClass.unPause(self)
-    print("Achievements:unPause()")
+  BaseClass.unPause(self)
+  print("Achievements:unPause()")
 end
 
 function Achievements:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("Achievements:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("Achievements:keyboardShow()")
 end
 
 function Achievements:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("Achievements:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("Achievements:keyboardCancel()")
 end
 
 function Achievements:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("Achievements:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("Achievements:keyboardReturn(text)")
 end
 
 function Achievements:willResignActive()
-    BaseClass.willResignActive(self)
-    print("Achievements:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("Achievements:willResignActive()")
 end
 
 function Achievements:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("Achievements:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("Achievements:didBecomeActive()")
 end
 
 function Achievements:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("Achievements:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("Achievements:didEnterBackground()")
 end
 
 function Achievements:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("Achievements:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("Achievements:willEnterForeground()")
 end
 
 function Achievements:willTerminate()
-    BaseClass.willTerminate(self)
-    print("Achievements:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("Achievements:willTerminate()")
 end
 
 function Achievements:interrupt()
-    BaseClass.interrupt(self)
-    print("Achievements:interrupt()")
+  BaseClass.interrupt(self)
+  print("Achievements:interrupt()")
 end
 
 function Achievements:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("Achievements:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("Achievements:resumeInterrupt()")
 end
 
 function Achievements:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("Achievements:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("Achievements:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function Achievements:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

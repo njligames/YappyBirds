@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Yap:enter()
-	BaseClass.enter(self)
-    print("Yap:enter()")
+  BaseClass.enter(self)
+  print("Yap:enter()")
 end
 
 function Yap:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Yap:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Yap:update(timeStep)")
 end
 
 function Yap:exit()
-	BaseClass.exit(self)
-    print("Yap:exit()")
+  BaseClass.exit(self)
+  print("Yap:exit()")
 end
 
 function Yap:onMessage()
-	BaseClass.onMessage(self)
-    print("Yap:onMessage()")
+  BaseClass.onMessage(self)
+  print("Yap:onMessage()")
 end
 
 function Yap:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Yap:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Yap:touchDown(rayContact)")
 end
 
 function Yap:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Yap:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Yap:touchUp(rayContact)")
 end
 
 function Yap:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Yap:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Yap:touchMove(rayContact)")
 end
 
 function Yap:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Yap:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Yap:touchCancelled(rayContact)")
 end
 
 function Yap:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Yap:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Yap:collide(otherNode, collisionPoint)")
 end
 
 function Yap:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Yap:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Yap:near(otherNode)")
 end
 
 function Yap:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Yap:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Yap:actionUpdate(action, timeStep)")
 end
 
 function Yap:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Yap:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Yap:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Yap:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

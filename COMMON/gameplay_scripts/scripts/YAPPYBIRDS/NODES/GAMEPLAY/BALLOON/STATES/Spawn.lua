@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Spawn:enter()
-	BaseClass.enter(self)
-    print("Spawn:enter()")
+  BaseClass.enter(self)
+  print("Spawn:enter()")
 end
 
 function Spawn:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Spawn:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Spawn:update(timeStep)")
 end
 
 function Spawn:exit()
-	BaseClass.exit(self)
-    print("Spawn:exit()")
+  BaseClass.exit(self)
+  print("Spawn:exit()")
 end
 
 function Spawn:onMessage()
-	BaseClass.onMessage(self)
-    print("Spawn:onMessage()")
+  BaseClass.onMessage(self)
+  print("Spawn:onMessage()")
 end
 
 function Spawn:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Spawn:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Spawn:touchDown(rayContact)")
 end
 
 function Spawn:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Spawn:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Spawn:touchUp(rayContact)")
 end
 
 function Spawn:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Spawn:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Spawn:touchMove(rayContact)")
 end
 
 function Spawn:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Spawn:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Spawn:touchCancelled(rayContact)")
 end
 
 function Spawn:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Spawn:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Spawn:collide(otherNode, collisionPoint)")
 end
 
 function Spawn:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Spawn:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Spawn:near(otherNode)")
 end
 
 function Spawn:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Spawn:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Spawn:actionUpdate(action, timeStep)")
 end
 
 function Spawn:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Spawn:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Spawn:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Spawn:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

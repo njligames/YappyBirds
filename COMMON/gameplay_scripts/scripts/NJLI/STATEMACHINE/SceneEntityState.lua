@@ -8,10 +8,10 @@ SceneEntityState.__index = SceneEntityState
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 local __ctor = function(self, init)
@@ -22,11 +22,7 @@ local __ctor = function(self, init)
 
   --Create the NodeEntities for this SceneEntityState
   self._nodeEntityTable = {}
-  for k,v in pairs(init.nodes) do
-    --Create a NodeEntity
-    -- local nodeEntity = v.class(v.states)
-    -- self:_addNodeEntity(nodeEntity)
-  end
+  AddNodesToEntity(self, init.nodes)
 
   self._entityOwner = init.entityOwner
 
@@ -37,6 +33,8 @@ end
 local __dtor = function(self)
   njli.SceneState.destroy(self:getSceneState())
   self._sceneState = nil
+
+  self._nodeEntityTable = nil
 end
 
 local __load = function(self)
@@ -47,7 +45,25 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
+--Add/Remove NodeEntities
+--#############################################################################
+
+function SceneEntityState:_addNodeEntity(node)
+  local stateName = node:className()
+  self._nodeEntityTable[stateName] = entityState
+end
+
+function SceneEntityState:_removeNodeEntity(stateName)
+  self._nodeEntityTable[stateName] = nil
+end
+
+function SceneEntityState:_getNodeEntity(nodeName)
+  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
+
+  return self._nodeEntityTable[nodeName]
+end
+--#############################################################################
 --General
 --#############################################################################
 
@@ -59,7 +75,7 @@ function SceneEntityState:getSceneEntity()
   return self._entityOwner
 end
 
---############################################################################# 
+--#############################################################################
 --Statemachine code...
 --#############################################################################
 
@@ -76,97 +92,96 @@ function SceneEntityState:isIn()
 end
 
 function SceneEntityState:enter()
-    print("SceneEntityState:enter()")
+  print("SceneEntityState:enter()")
 end
 
 function SceneEntityState:update(timeStep)
-    --print("SceneEntityState:update(timeStep)")
+  --print("SceneEntityState:update(timeStep)")
 end
 
 function SceneEntityState:exit()
-    print("SceneEntityState:exit()")
+  print("SceneEntityState:exit()")
 end
 
 function SceneEntityState:onMessage(message)
-    print("SceneEntityState:onMessage(message)")
+  print("SceneEntityState:onMessage(message)")
 end
 
 function SceneEntityState:renderHUD()
-    --print("SceneEntityState:renderHUD()")
+  --print("SceneEntityState:renderHUD()")
 end
 
 function SceneEntityState:touchDown(touches)
-    print("SceneEntityState:touchDown(touches)")
+  print("SceneEntityState:touchDown(touches)")
 end
 
 function SceneEntityState:touchUp(touches)
-    print("SceneEntityState:touchUp(touches)")
+  print("SceneEntityState:touchUp(touches)")
 end
 
 function SceneEntityState:touchMove(touches)
-    print("SceneEntityState:touchMove(touches)")
+  print("SceneEntityState:touchMove(touches)")
 end
 
 function SceneEntityState:touchCancelled(touches)
-    print("SceneEntityState:touchCancelled(touches)")
+  print("SceneEntityState:touchCancelled(touches)")
 end
 
 function SceneEntityState:pause()
-    print("SceneEntityState:pause()")
+  print("SceneEntityState:pause()")
 end
 
 function SceneEntityState:unPause()
-    print("SceneEntityState:unPause()")
+  print("SceneEntityState:unPause()")
 end
 
 function SceneEntityState:keyboardShow()
-    print("SceneEntityState:keyboardShow()")
+  print("SceneEntityState:keyboardShow()")
 end
 
 function SceneEntityState:keyboardCancel()
-    print("SceneEntityState:keyboardCancel()")
+  print("SceneEntityState:keyboardCancel()")
 end
 
 function SceneEntityState:keyboardReturn(text)
-    print("SceneEntityState:keyboardReturn(text)")
+  print("SceneEntityState:keyboardReturn(text)")
 end
 
 function SceneEntityState:willResignActive()
-    print("SceneEntityState:willResignActive()")
+  print("SceneEntityState:willResignActive()")
 end
 
 function SceneEntityState:didBecomeActive()
-    print("SceneEntityState:didBecomeActive()")
+  print("SceneEntityState:didBecomeActive()")
 end
 
 function SceneEntityState:didEnterBackground()
-    print("SceneEntityState:didEnterBackground()")
+  print("SceneEntityState:didEnterBackground()")
 end
 
 function SceneEntityState:willEnterForeground()
-    print("SceneEntityState:willEnterForeground()")
+  print("SceneEntityState:willEnterForeground()")
 end
 
 function SceneEntityState:willTerminate()
-    print("SceneEntityState:willTerminate()")
+  print("SceneEntityState:willTerminate()")
 end
 
 function SceneEntityState:interrupt()
-    print("SceneEntityState:interrupt()")
+  print("SceneEntityState:interrupt()")
 end
 
 function SceneEntityState:resumeInterrupt()
-    print("SceneEntityState:resumeInterrupt()")
+  print("SceneEntityState:resumeInterrupt()")
 end
 
 function SceneEntityState:receivedMemoryWarning()
-    print("SceneEntityState:receivedMemoryWarning()")
+  print("SceneEntityState:receivedMemoryWarning()")
 end
 
---############################################################################# 
+--#############################################################################
 --End Custom Code
 --#############################################################################
-
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -212,8 +227,8 @@ end
 
 function SceneEntityState:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -222,25 +237,25 @@ end
 
 function SceneEntityState:_destroy()
   assert(not self.__SceneEntityStateCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
 end
 
 function SceneEntityState:_create(init)
   self.__SceneEntityStateCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function SceneEntityState:load()
   __load(self)
-  
+
   self.__SceneEntityStateCalledLoad = true
 end
 
 function SceneEntityState:unLoad()
   assert(self.__SceneEntityStateCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__SceneEntityStateCalledLoad = false
 end

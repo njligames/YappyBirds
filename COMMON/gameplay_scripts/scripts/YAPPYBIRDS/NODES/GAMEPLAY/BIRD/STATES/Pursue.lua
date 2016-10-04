@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Pursue:enter()
-	BaseClass.enter(self)
-    print("Pursue:enter()")
+  BaseClass.enter(self)
+  print("Pursue:enter()")
 end
 
 function Pursue:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Pursue:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Pursue:update(timeStep)")
 end
 
 function Pursue:exit()
-	BaseClass.exit(self)
-    print("Pursue:exit()")
+  BaseClass.exit(self)
+  print("Pursue:exit()")
 end
 
 function Pursue:onMessage()
-	BaseClass.onMessage(self)
-    print("Pursue:onMessage()")
+  BaseClass.onMessage(self)
+  print("Pursue:onMessage()")
 end
 
 function Pursue:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Pursue:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Pursue:touchDown(rayContact)")
 end
 
 function Pursue:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Pursue:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Pursue:touchUp(rayContact)")
 end
 
 function Pursue:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Pursue:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Pursue:touchMove(rayContact)")
 end
 
 function Pursue:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Pursue:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Pursue:touchCancelled(rayContact)")
 end
 
 function Pursue:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Pursue:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Pursue:collide(otherNode, collisionPoint)")
 end
 
 function Pursue:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Pursue:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Pursue:near(otherNode)")
 end
 
 function Pursue:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Pursue:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Pursue:actionUpdate(action, timeStep)")
 end
 
 function Pursue:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Pursue:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Pursue:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Pursue:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

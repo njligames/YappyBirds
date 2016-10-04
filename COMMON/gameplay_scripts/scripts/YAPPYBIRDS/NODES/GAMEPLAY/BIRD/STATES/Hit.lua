@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Hit:enter()
-	BaseClass.enter(self)
-    print("Hit:enter()")
+  BaseClass.enter(self)
+  print("Hit:enter()")
 end
 
 function Hit:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Hit:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Hit:update(timeStep)")
 end
 
 function Hit:exit()
-	BaseClass.exit(self)
-    print("Hit:exit()")
+  BaseClass.exit(self)
+  print("Hit:exit()")
 end
 
 function Hit:onMessage()
-	BaseClass.onMessage(self)
-    print("Hit:onMessage()")
+  BaseClass.onMessage(self)
+  print("Hit:onMessage()")
 end
 
 function Hit:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Hit:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Hit:touchDown(rayContact)")
 end
 
 function Hit:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Hit:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Hit:touchUp(rayContact)")
 end
 
 function Hit:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Hit:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Hit:touchMove(rayContact)")
 end
 
 function Hit:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Hit:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Hit:touchCancelled(rayContact)")
 end
 
 function Hit:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Hit:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Hit:collide(otherNode, collisionPoint)")
 end
 
 function Hit:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Hit:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Hit:near(otherNode)")
 end
 
 function Hit:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Hit:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Hit:actionUpdate(action, timeStep)")
 end
 
 function Hit:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Hit:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Hit:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Hit:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

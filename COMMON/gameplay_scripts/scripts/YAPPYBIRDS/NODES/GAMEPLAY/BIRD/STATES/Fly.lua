@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Fly:enter()
-	BaseClass.enter(self)
-    print("Fly:enter()")
+  BaseClass.enter(self)
+  print("Fly:enter()")
 end
 
 function Fly:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Fly:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Fly:update(timeStep)")
 end
 
 function Fly:exit()
-	BaseClass.exit(self)
-    print("Fly:exit()")
+  BaseClass.exit(self)
+  print("Fly:exit()")
 end
 
 function Fly:onMessage()
-	BaseClass.onMessage(self)
-    print("Fly:onMessage()")
+  BaseClass.onMessage(self)
+  print("Fly:onMessage()")
 end
 
 function Fly:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Fly:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Fly:touchDown(rayContact)")
 end
 
 function Fly:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Fly:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Fly:touchUp(rayContact)")
 end
 
 function Fly:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Fly:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Fly:touchMove(rayContact)")
 end
 
 function Fly:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Fly:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Fly:touchCancelled(rayContact)")
 end
 
 function Fly:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Fly:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Fly:collide(otherNode, collisionPoint)")
 end
 
 function Fly:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Fly:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Fly:near(otherNode)")
 end
 
 function Fly:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Fly:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Fly:actionUpdate(action, timeStep)")
 end
 
 function Fly:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Fly:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Fly:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Fly:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

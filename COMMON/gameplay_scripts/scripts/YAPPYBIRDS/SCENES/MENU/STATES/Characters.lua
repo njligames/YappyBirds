@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Characters:enter()
-    BaseClass.enter(self)
-    print("Characters:enter()")
+  BaseClass.enter(self)
+  print("Characters:enter()")
 end
 
 function Characters:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("Characters:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Characters:update(timeStep)")
 end
 
 function Characters:exit()
-    BaseClass.exit(self)
-    print("Characters:exit()")
+  BaseClass.exit(self)
+  print("Characters:exit()")
 end
 
 function Characters:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("Characters:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("Characters:onMessage(message)")
 end
 
 function Characters:renderHUD()
-    BaseClass.renderHUD(self)
-    print("Characters:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("Characters:renderHUD()")
 end
 
 function Characters:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("Characters:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("Characters:touchDown(touches)")
 end
 
 function Characters:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("Characters:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("Characters:touchUp(touches)")
 end
 
 function Characters:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("Characters:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("Characters:touchMove(touches)")
 end
 
 function Characters:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("Characters:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("Characters:touchCancelled(touches)")
 end
 
 function Characters:pause()
-    BaseClass.pause(self)
-    print("Characters:pause()")
+  BaseClass.pause(self)
+  print("Characters:pause()")
 end
 
 function Characters:unPause()
-    BaseClass.unPause(self)
-    print("Characters:unPause()")
+  BaseClass.unPause(self)
+  print("Characters:unPause()")
 end
 
 function Characters:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("Characters:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("Characters:keyboardShow()")
 end
 
 function Characters:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("Characters:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("Characters:keyboardCancel()")
 end
 
 function Characters:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("Characters:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("Characters:keyboardReturn(text)")
 end
 
 function Characters:willResignActive()
-    BaseClass.willResignActive(self)
-    print("Characters:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("Characters:willResignActive()")
 end
 
 function Characters:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("Characters:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("Characters:didBecomeActive()")
 end
 
 function Characters:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("Characters:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("Characters:didEnterBackground()")
 end
 
 function Characters:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("Characters:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("Characters:willEnterForeground()")
 end
 
 function Characters:willTerminate()
-    BaseClass.willTerminate(self)
-    print("Characters:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("Characters:willTerminate()")
 end
 
 function Characters:interrupt()
-    BaseClass.interrupt(self)
-    print("Characters:interrupt()")
+  BaseClass.interrupt(self)
+  print("Characters:interrupt()")
 end
 
 function Characters:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("Characters:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("Characters:resumeInterrupt()")
 end
 
 function Characters:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("Characters:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("Characters:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function Characters:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

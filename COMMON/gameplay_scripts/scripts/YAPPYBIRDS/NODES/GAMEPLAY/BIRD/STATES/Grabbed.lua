@@ -32,66 +32,66 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function Grabbed:enter()
-	BaseClass.enter(self)
-    print("Grabbed:enter()")
+  BaseClass.enter(self)
+  print("Grabbed:enter()")
 end
 
 function Grabbed:update(timeStep)
-	BaseClass.update(self, timeStep)
-    print("Grabbed:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("Grabbed:update(timeStep)")
 end
 
 function Grabbed:exit()
-	BaseClass.exit(self)
-    print("Grabbed:exit()")
+  BaseClass.exit(self)
+  print("Grabbed:exit()")
 end
 
 function Grabbed:onMessage()
-	BaseClass.onMessage(self)
-    print("Grabbed:onMessage()")
+  BaseClass.onMessage(self)
+  print("Grabbed:onMessage()")
 end
 
 function Grabbed:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
-    print("Grabbed:touchDown(rayContact)")
+  BaseClass.touchDown(self, rayContact)
+  print("Grabbed:touchDown(rayContact)")
 end
 
 function Grabbed:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
-    print("Grabbed:touchUp(rayContact)")
+  BaseClass.touchUp(self, rayContact)
+  print("Grabbed:touchUp(rayContact)")
 end
 
 function Grabbed:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
-    print("Grabbed:touchMove(rayContact)")
+  BaseClass.touchMove(self, rayContact)
+  print("Grabbed:touchMove(rayContact)")
 end
 
 function Grabbed:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
-    print("Grabbed:touchCancelled(rayContact)")
+  BaseClass.touchCancelled(self, rayContact)
+  print("Grabbed:touchCancelled(rayContact)")
 end
 
 function Grabbed:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
-    print("Grabbed:collide(otherNode, collisionPoint)")
+  BaseClass.collide(self, collisionPoint)
+  print("Grabbed:collide(otherNode, collisionPoint)")
 end
 
 function Grabbed:near(otherNode)
-	BaseClass.near(self, otherNode)
-    print("Grabbed:near(otherNode)")
+  BaseClass.near(self, otherNode)
+  print("Grabbed:near(otherNode)")
 end
 
 function Grabbed:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
-    print("Grabbed:actionUpdate(action, timeStep)")
+  BaseClass.actionUpdate(self, timeStep)
+  print("Grabbed:actionUpdate(action, timeStep)")
 end
 
 function Grabbed:actionComplete(action)
-	BaseClass.actionComplete(self, action)
-    print("Grabbed:actionComplete(action)")
+  BaseClass.actionComplete(self, action)
+  print("Grabbed:actionComplete(action)")
 end
 
 --#############################################################################
@@ -134,8 +134,8 @@ end
 
 function Grabbed:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

@@ -1,5 +1,5 @@
 CP=cp
-BIN2=./../bin/luaBeautifier
+BIN2 := ./../bin/luaBeautifier
 OBJDIR=./../assets/scripts
 SRCDIR=./scripts
 LUACFLAGS=""
@@ -21,6 +21,7 @@ release: compile_release export
 export: $(OBJFILES)
 
 $(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
+	@$(BIN2) $^
 	@$(CP) $^ $@
 
 compile_debug:

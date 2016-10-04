@@ -32,116 +32,116 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
 
 function ModeSelect:enter()
-    BaseClass.enter(self)
-    print("ModeSelect:enter()")
+  BaseClass.enter(self)
+  print("ModeSelect:enter()")
 end
 
 function ModeSelect:update(timeStep)
-    BaseClass.update(self, timeStep)
-    print("ModeSelect:update(timeStep)")
+  BaseClass.update(self, timeStep)
+  print("ModeSelect:update(timeStep)")
 end
 
 function ModeSelect:exit()
-    BaseClass.exit(self)
-    print("ModeSelect:exit()")
+  BaseClass.exit(self)
+  print("ModeSelect:exit()")
 end
 
 function ModeSelect:onMessage(message)
-    BaseClass.onMessage(self, message)
-    print("ModeSelect:onMessage(message)")
+  BaseClass.onMessage(self, message)
+  print("ModeSelect:onMessage(message)")
 end
 
 function ModeSelect:renderHUD()
-    BaseClass.renderHUD(self)
-    print("ModeSelect:renderHUD()")
+  BaseClass.renderHUD(self)
+  print("ModeSelect:renderHUD()")
 end
 
 function ModeSelect:touchDown(touches)
-    BaseClass.touchDown(self, touches)
-    print("ModeSelect:touchDown(touches)")
+  BaseClass.touchDown(self, touches)
+  print("ModeSelect:touchDown(touches)")
 end
 
 function ModeSelect:touchUp(touches)
-    BaseClass.touchUp(self, touches)
-    print("ModeSelect:touchUp(touches)")
+  BaseClass.touchUp(self, touches)
+  print("ModeSelect:touchUp(touches)")
 end
 
 function ModeSelect:touchMove(touches)
-    BaseClass.touchMove(self, touches)
-    print("ModeSelect:touchMove(touches)")
+  BaseClass.touchMove(self, touches)
+  print("ModeSelect:touchMove(touches)")
 end
 
 function ModeSelect:touchCancelled(touches)
-    BaseClass.touchCancelled(self, touches)
-    print("ModeSelect:touchCancelled(touches)")
+  BaseClass.touchCancelled(self, touches)
+  print("ModeSelect:touchCancelled(touches)")
 end
 
 function ModeSelect:pause()
-    BaseClass.pause(self)
-    print("ModeSelect:pause()")
+  BaseClass.pause(self)
+  print("ModeSelect:pause()")
 end
 
 function ModeSelect:unPause()
-    BaseClass.unPause(self)
-    print("ModeSelect:unPause()")
+  BaseClass.unPause(self)
+  print("ModeSelect:unPause()")
 end
 
 function ModeSelect:keyboardShow()
-    BaseClass.keyboardShow(self)
-    print("ModeSelect:keyboardShow()")
+  BaseClass.keyboardShow(self)
+  print("ModeSelect:keyboardShow()")
 end
 
 function ModeSelect:keyboardCancel()
-    BaseClass.keyboardCancel(self)
-    print("ModeSelect:keyboardCancel()")
+  BaseClass.keyboardCancel(self)
+  print("ModeSelect:keyboardCancel()")
 end
 
 function ModeSelect:keyboardReturn(text)
-    BaseClass.keyboardReturn(self, text)
-    print("ModeSelect:keyboardReturn(text)")
+  BaseClass.keyboardReturn(self, text)
+  print("ModeSelect:keyboardReturn(text)")
 end
 
 function ModeSelect:willResignActive()
-    BaseClass.willResignActive(self)
-    print("ModeSelect:willResignActive()")
+  BaseClass.willResignActive(self)
+  print("ModeSelect:willResignActive()")
 end
 
 function ModeSelect:didBecomeActive()
-    BaseClass.didBecomeActive(self)
-    print("ModeSelect:didBecomeActive()")
+  BaseClass.didBecomeActive(self)
+  print("ModeSelect:didBecomeActive()")
 end
 
 function ModeSelect:didEnterBackground()
-    BaseClass.didEnterBackground(self)
-    print("ModeSelect:didEnterBackground()")
+  BaseClass.didEnterBackground(self)
+  print("ModeSelect:didEnterBackground()")
 end
 
 function ModeSelect:willEnterForeground()
-    BaseClass.willEnterForeground(self)
-    print("ModeSelect:willEnterForeground()")
+  BaseClass.willEnterForeground(self)
+  print("ModeSelect:willEnterForeground()")
 end
 
 function ModeSelect:willTerminate()
-    BaseClass.willTerminate(self)
-    print("ModeSelect:willTerminate()")
+  BaseClass.willTerminate(self)
+  print("ModeSelect:willTerminate()")
 end
 
 function ModeSelect:interrupt()
-    BaseClass.interrupt(self)
-    print("ModeSelect:interrupt()")
+  BaseClass.interrupt(self)
+  print("ModeSelect:interrupt()")
 end
 
 function ModeSelect:resumeInterrupt()
-    BaseClass.resumeInterrupt(self)
-    print("ModeSelect:resumeInterrupt()")
+  BaseClass.resumeInterrupt(self)
+  print("ModeSelect:resumeInterrupt()")
 end
 
 function ModeSelect:receivedMemoryWarning()
-    BaseClass.receivedMemoryWarning(self)
-    print("ModeSelect:receivedMemoryWarning()")
+  BaseClass.receivedMemoryWarning(self)
+  print("ModeSelect:receivedMemoryWarning()")
 end
 
 --#############################################################################
@@ -184,8 +184,8 @@ end
 
 function ModeSelect:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 

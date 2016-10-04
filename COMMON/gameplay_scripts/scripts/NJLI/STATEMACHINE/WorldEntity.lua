@@ -8,10 +8,10 @@ WorldEntity.__index = WorldEntity
 --#############################################################################
 --Begin Custom Code
 --Required local functions:
---  __ctor()
---  __dtor()
---  __load()
---  __unLoad()
+-- __ctor()
+-- __dtor()
+-- __load()
+-- __unLoad()
 --#############################################################################
 
 local __ctor = function(self, init)
@@ -19,23 +19,22 @@ local __ctor = function(self, init)
   assert(type(init) == "table", "not a table")
   assert(nil ~= init.states, "init.states variable is nil.")
   assert(type(init.states) == "table", "not a table")
+  assert(nil ~= init.entityOwner, "entityOwner variable is nil.")
   assert(nil ~= init.nodes, "init.nodes variable is nil.")
   assert(type(init.nodes) == "table", "not a table")
 
   --Create the NodeEntities for this WorldEntity
   self._nodeEntityTable = {}
-  for k,v in pairs(init.nodes) do
-    --Create a NodeEntity
-    -- local nodeEntity = v.class(v.states)
-    -- self:_addNodeEntity(nodeEntity)
-  end
+  AddNodesToEntity(self, init.nodes)
+
+  self._entityOwner = init.entityOwner
+
+  self._world = njli.World.getInstance()
+  self:getWorld():setName(self:className())
 
   local startState = nil
 
   self._stateEntityTable = {}
-  self._world = njli.World.getInstance()
-  self:getWorld():setName(self:className())
-
   for k,v in pairs(init.states) do
     assert(v.class ~= nil, "")
     assert(v.scene ~= nil, "is nil")
@@ -45,10 +44,10 @@ local __ctor = function(self, init)
 
     --Create a WorldEntityState...
     local stateEntity = v.class({
-      entityOwner = self,
-      scene = v.scene,
-      nodes = v.nodes
-    })
+        entityOwner = self,
+        scene = v.scene,
+        nodes = v.nodes
+      })
 
     if startState == nil then
       startState = stateEntity
@@ -58,12 +57,16 @@ local __ctor = function(self, init)
   end
 
   assert(startState, "No start state was defined for " .. self:className())
-  
+
   self._startStateName = startState:className()
 end
 
 local __dtor = function(self)
+  self._stateEntityTable = nil
+
   self._world = nil
+
+  self._nodeEntityTable = nil
 end
 
 local __load = function(self)
@@ -81,16 +84,10 @@ local __unLoad = function(self)
   end
 end
 
---############################################################################# 
+--#############################################################################
 --Private
 --#############################################################################
 
--- function WorldEntity:_addEntityState(stateName, entityStateModule)
---   local init =
---   {
---     name = stateName,
---     entityOwner = self
---   }
 function WorldEntity:_addEntityState(entityState)
   local stateName = entityState:className()
   self._stateEntityTable[stateName] = entityState
@@ -114,7 +111,7 @@ function WorldEntity:_getCurrentEntityState()
   return self:_getEntityState(self:getWorld():getStateMachine():getState():getName())
 end
 
---############################################################################# 
+--#############################################################################
 --General
 --#############################################################################
 
@@ -130,7 +127,11 @@ function WorldEntity:hasState()
   return self:getWorld():getStateMachine():getState() ~= nil
 end
 
---############################################################################# 
+function WorldEntity:getGameEntity()
+  return self._entityOwner
+end
+
+--#############################################################################
 --Statemachine code...
 --#############################################################################
 
@@ -280,10 +281,28 @@ function WorldEntity:receivedMemoryWarning()
   self:_getCurrentEntityState():receivedMemoryWarning()
 end
 
---############################################################################# 
---End Custom Code
+--#############################################################################
+--Add/Remove NodeEntities
 --#############################################################################
 
+function WorldEntity:_addNodeEntity(node)
+  local stateName = node:className()
+  self._nodeEntityTable[stateName] = entityState
+end
+
+function WorldEntity:_removeNodeEntity(stateName)
+  self._nodeEntityTable[stateName] = nil
+end
+
+function WorldEntity:_getNodeEntity(nodeName)
+  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
+
+  return self._nodeEntityTable[nodeName]
+end
+
+--#############################################################################
+--End Custom Code
+--#############################################################################
 
 --#############################################################################
 --DO NOT EDIT BELOW
@@ -329,8 +348,8 @@ end
 
 function WorldEntity:__tostring()
   local ret = self:className() .. " =\n{\n"
-  
-  for pos,val in pairs(self) do 
+
+  for pos,val in pairs(self) do
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -339,25 +358,27 @@ end
 
 function WorldEntity:_destroy()
   assert(not self.__WorldEntityCalledLoad, "Must unload before you destroy")
-  
+
   __dtor(self)
+
+  self._nodeEntityTable = nil
 end
 
 function WorldEntity:_create(init)
   self.__WorldEntityCalledLoad = false
-  
+
   __ctor(self, init)
 end
 
 function WorldEntity:load()
   __load(self)
-  
+
   self.__WorldEntityCalledLoad = true
 end
 
 function WorldEntity:unLoad()
   assert(self.__WorldEntityCalledLoad, "Must load before unloading")
-  
+
   __unLoad(self)
   self.__WorldEntityCalledLoad = false
 end
