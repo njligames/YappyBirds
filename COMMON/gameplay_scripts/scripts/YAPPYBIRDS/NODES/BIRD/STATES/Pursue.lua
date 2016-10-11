@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Idle = {}
-Idle.__index = Idle
+local Pursue = {}
+Pursue.__index = Pursue
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Idle:enter()
+function Pursue:enter()
   BaseClass.enter(self)
-  print("Idle:enter()")
+  print("Pursue:enter()")
 end
 
-function Idle:update(timeStep)
+function Pursue:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Idle:update(timeStep)")
+  print("Pursue:update(timeStep)")
 end
 
-function Idle:exit()
+function Pursue:exit()
   BaseClass.exit(self)
-  print("Idle:exit()")
+  print("Pursue:exit()")
 end
 
-function Idle:onMessage()
+function Pursue:onMessage()
   BaseClass.onMessage(self)
-  print("Idle:onMessage()")
+  print("Pursue:onMessage()")
 end
 
-function Idle:touchDown(rayContact)
+function Pursue:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Idle:touchDown(rayContact)")
+  print("Pursue:touchDown(rayContact)")
 end
 
-function Idle:touchUp(rayContact)
+function Pursue:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Idle:touchUp(rayContact)")
+  print("Pursue:touchUp(rayContact)")
 end
 
-function Idle:touchMove(rayContact)
+function Pursue:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Idle:touchMove(rayContact)")
+  print("Pursue:touchMove(rayContact)")
 end
 
-function Idle:touchCancelled(rayContact)
+function Pursue:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Idle:touchCancelled(rayContact)")
+  print("Pursue:touchCancelled(rayContact)")
 end
 
-function Idle:collide(otherNode, collisionPoint)
+function Pursue:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Idle:collide(otherNode, collisionPoint)")
+  print("Pursue:collide(otherNode, collisionPoint)")
 end
 
-function Idle:near(otherNode)
+function Pursue:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Idle:near(otherNode)")
+  print("Pursue:near(otherNode)")
 end
 
-function Idle:actionUpdate(action, timeStep)
+function Pursue:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Idle:actionUpdate(action, timeStep)")
+  print("Pursue:actionUpdate(action, timeStep)")
 end
 
-function Idle:actionComplete(action)
+function Pursue:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Idle:actionComplete(action)")
+  print("Pursue:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Idle, {
+setmetatable(Pursue, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Idle, {
     end,
   })
 
-function Idle:className()
-  return "Idle"
+function Pursue:hash()
+    return "YAPPYBIRDS.NODES.BIRD.STATES.Pursue"
 end
 
-function Idle:class()
+function Pursue:className()
+  return "Pursue"
+end
+
+function Pursue:class()
   return self
 end
 
-function Idle:superClass()
+function Pursue:superClass()
   return BaseClass
 end
 
-function Idle:__gc()
+function Pursue:__gc()
   --Destroy derived class first
-  Idle._destroy(self)
+  Pursue._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Idle:__tostring()
+function Pursue:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Idle:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Idle:_destroy()
-  assert(not self.__IdleCalledLoad, "Must unload before you destroy")
+function Pursue:_destroy()
+  assert(not self.__PursueCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Idle:_create(init)
-  self.__IdleCalledLoad = false
+function Pursue:_create(init)
+  self.__PursueCalledLoad = false
   __ctor(self, init)
 end
 
-function Idle:load()
+function Pursue:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__IdleCalledLoad = true
+  self.__PursueCalledLoad = true
 end
 
-function Idle:unLoad()
-  assert(self.__IdleCalledLoad, "Must load before unloading")
+function Pursue:unLoad()
+  assert(self.__PursueCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__IdleCalledLoad = false
+  self.__PursueCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Idle
+return Pursue

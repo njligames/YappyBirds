@@ -163,6 +163,10 @@ setmetatable(HighScores, {
     end,
   })
 
+function HighScores:hash()
+    return "YAPPYBIRDS.SCENES.MENU.STATES.HighScores"
+end
+
 function HighScores:className()
   return "HighScores"
 end

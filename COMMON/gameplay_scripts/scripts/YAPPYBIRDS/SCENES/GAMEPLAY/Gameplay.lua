@@ -41,7 +41,7 @@ end
 
 function Gameplay:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Gameplay:update("..timeStep..")")
+  --print("Gameplay:update("..timeStep..")")
 end
 
 function Gameplay:exit()
@@ -76,7 +76,7 @@ end
 
 function Gameplay:renderHUD()
   BaseClass.renderHUD(self)
-  print("Gameplay:renderHUD()")
+  --print("Gameplay:renderHUD()")
 end
 
 function Gameplay:pause()
@@ -147,6 +147,10 @@ setmetatable(Gameplay, {
       return self
     end,
   })
+
+function Gameplay:hash()
+    return "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay"
+end
 
 function Gameplay:className()
   return "Gameplay"

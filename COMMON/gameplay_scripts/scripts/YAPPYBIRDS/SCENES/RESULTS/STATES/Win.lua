@@ -163,6 +163,10 @@ setmetatable(Win, {
     end,
   })
 
+function Win:hash()
+    return "YAPPYBIRDS.SCENES.RESULTS.Win"
+end
+
 function Win:className()
   return "Win"
 end

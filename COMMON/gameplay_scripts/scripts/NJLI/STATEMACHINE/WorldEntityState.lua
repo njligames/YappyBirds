@@ -20,17 +20,11 @@ local __ctor = function(self, init)
   assert(init.entityOwner ~= nil, "The init.entityOwner is nil for " .. self:className())
   assert(init.scene, "init.scene variable is nil.")
   assert(type(init.scene) == "table", "init.scene variable is expecting a table")
-  assert(init.nodes, "init.nodes variable is nil.")
-  assert(type(init.nodes) == "table", "init.nodes variable is expecting a table")
-
-  --Create the NodeEntities for this WorldEntityState
-  self._nodeEntityTable = {}
-  AddNodesToEntity(self, init.nodes)
 
   self._entityOwner = init.entityOwner
 
   self._worldState = njli.WorldState.create()
-  self:getWorldState():setName(self:className())
+  self:getWorldState():setName(self:hash())
 
   assert(init.scene.class ~= nil, "The init.scene.class is nil for the world entity state: " .. self:className())
 
@@ -190,25 +184,6 @@ function WorldEntityState:receivedMemoryWarning()
 end
 
 --#############################################################################
---Add/Remove NodeEntities
---#############################################################################
-
-function WorldEntityState:_addNodeEntity(node)
-  local stateName = node:className()
-  self._nodeEntityTable[stateName] = entityState
-end
-
-function WorldEntityState:_removeNodeEntity(stateName)
-  self._nodeEntityTable[stateName] = nil
-end
-
-function WorldEntityState:_getNodeEntity(nodeName)
-  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
-
-  return self._nodeEntityTable[nodeName]
-end
-
---#############################################################################
 --End Custom Code
 --#############################################################################
 
@@ -223,6 +198,10 @@ setmetatable(WorldEntityState, {
       return self
     end,
   })
+
+function WorldEntityState:hash()
+    return "NJLI.STATEMACHINE.WorldEntityState"
+end
 
 function WorldEntityState:className()
   return "WorldEntityState"
@@ -268,8 +247,6 @@ function WorldEntityState:_destroy()
   assert(not self.__WorldEntityStateCalledLoad, "Must unload before you destroy")
 
   __dtor(self)
-
-  self._nodeEntityTable = nil
 end
 
 function WorldEntityState:_create(init)

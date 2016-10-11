@@ -21,7 +21,7 @@ local __ctor = function(self, init)
   self._entityOwner = init.entityOwner
   self._nodeState = njli.NodeState.create()
 
-  self:getNodeState():setName(self:className())
+  self:getNodeState():setName(self:hash())
 end
 
 local __dtor = function(self)
@@ -56,11 +56,12 @@ end
 --Statemachine code...
 --#############################################################################
 
-function NodeEntityState:pushState(stateName)
-  self:getNodeEntity():pushState(stateName)
-end
+--function NodeEntityState:pushState(stateName)
+  --self:getNodeEntity():pushState(stateName)
+--end
 
 function NodeEntityState:push()
+    print("calling push")
   self:getNodeEntity():getNode():getStateMachine():pushState(self:getNodeState())
 end
 
@@ -131,6 +132,10 @@ setmetatable(NodeEntityState, {
       return self
     end,
   })
+
+function NodeEntityState:hash()
+    return "NJLI.STATEMACHINE.NodeEntityState"
+end
 
 function NodeEntityState:className()
   return "NodeEntityState"

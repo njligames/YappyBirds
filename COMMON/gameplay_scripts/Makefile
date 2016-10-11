@@ -21,7 +21,6 @@ release: compile_release export
 export: $(OBJFILES)
 
 $(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
-	@$(BIN2) $^
 	@$(CP) $^ $@
 
 compile_debug:

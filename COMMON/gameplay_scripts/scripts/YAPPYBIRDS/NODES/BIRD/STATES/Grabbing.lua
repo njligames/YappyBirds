@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Yap = {}
-Yap.__index = Yap
+local Grabbing = {}
+Grabbing.__index = Grabbing
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Yap:enter()
+function Grabbing:enter()
   BaseClass.enter(self)
-  print("Yap:enter()")
+  print("Grabbing:enter()")
 end
 
-function Yap:update(timeStep)
+function Grabbing:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Yap:update(timeStep)")
+  print("Grabbing:update(timeStep)")
 end
 
-function Yap:exit()
+function Grabbing:exit()
   BaseClass.exit(self)
-  print("Yap:exit()")
+  print("Grabbing:exit()")
 end
 
-function Yap:onMessage()
+function Grabbing:onMessage()
   BaseClass.onMessage(self)
-  print("Yap:onMessage()")
+  print("Grabbing:onMessage()")
 end
 
-function Yap:touchDown(rayContact)
+function Grabbing:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Yap:touchDown(rayContact)")
+  print("Grabbing:touchDown(rayContact)")
 end
 
-function Yap:touchUp(rayContact)
+function Grabbing:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Yap:touchUp(rayContact)")
+  print("Grabbing:touchUp(rayContact)")
 end
 
-function Yap:touchMove(rayContact)
+function Grabbing:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Yap:touchMove(rayContact)")
+  print("Grabbing:touchMove(rayContact)")
 end
 
-function Yap:touchCancelled(rayContact)
+function Grabbing:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Yap:touchCancelled(rayContact)")
+  print("Grabbing:touchCancelled(rayContact)")
 end
 
-function Yap:collide(otherNode, collisionPoint)
+function Grabbing:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Yap:collide(otherNode, collisionPoint)")
+  print("Grabbing:collide(otherNode, collisionPoint)")
 end
 
-function Yap:near(otherNode)
+function Grabbing:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Yap:near(otherNode)")
+  print("Grabbing:near(otherNode)")
 end
 
-function Yap:actionUpdate(action, timeStep)
+function Grabbing:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Yap:actionUpdate(action, timeStep)")
+  print("Grabbing:actionUpdate(action, timeStep)")
 end
 
-function Yap:actionComplete(action)
+function Grabbing:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Yap:actionComplete(action)")
+  print("Grabbing:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Yap, {
+setmetatable(Grabbing, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Yap, {
     end,
   })
 
-function Yap:className()
-  return "Yap"
+function Grabbing:hash()
+    return "YAPPYBIRDS.NODES.BIRD.STATES.Grabbing"
 end
 
-function Yap:class()
+function Grabbing:className()
+  return "Grabbing"
+end
+
+function Grabbing:class()
   return self
 end
 
-function Yap:superClass()
+function Grabbing:superClass()
   return BaseClass
 end
 
-function Yap:__gc()
+function Grabbing:__gc()
   --Destroy derived class first
-  Yap._destroy(self)
+  Grabbing._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Yap:__tostring()
+function Grabbing:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Yap:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Yap:_destroy()
-  assert(not self.__YapCalledLoad, "Must unload before you destroy")
+function Grabbing:_destroy()
+  assert(not self.__GrabbingCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Yap:_create(init)
-  self.__YapCalledLoad = false
+function Grabbing:_create(init)
+  self.__GrabbingCalledLoad = false
   __ctor(self, init)
 end
 
-function Yap:load()
+function Grabbing:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__YapCalledLoad = true
+  self.__GrabbingCalledLoad = true
 end
 
-function Yap:unLoad()
-  assert(self.__YapCalledLoad, "Must load before unloading")
+function Grabbing:unLoad()
+  assert(self.__GrabbingCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__YapCalledLoad = false
+  self.__GrabbingCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Yap
+return Grabbing

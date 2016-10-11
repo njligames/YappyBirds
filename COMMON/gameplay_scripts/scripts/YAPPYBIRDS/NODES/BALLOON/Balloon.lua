@@ -1,7 +1,7 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
 
-local Hit = {}
-Hit.__index = Hit
+local Balloon = {}
+Balloon.__index = Balloon
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Hit:enter()
+function Balloon:enter()
   BaseClass.enter(self)
-  print("Hit:enter()")
+  print("Balloon:enter()")
 end
 
-function Hit:update(timeStep)
+function Balloon:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Hit:update(timeStep)")
+  --print("Balloon:update()")
 end
 
-function Hit:exit()
+function Balloon:exit()
   BaseClass.exit(self)
-  print("Hit:exit()")
+  print("Balloon:exit()")
 end
 
-function Hit:onMessage()
+function Balloon:onMessage()
   BaseClass.onMessage(self)
-  print("Hit:onMessage()")
+  print("Balloon:onMessage()")
 end
 
-function Hit:touchDown(rayContact)
-  BaseClass.touchDown(self, rayContact)
-  print("Hit:touchDown(rayContact)")
+function Balloon:rayTouchDown(rayContact)
+  BaseClass.rayTouchDown(self, rayContact)
+  print("Balloon:enter()")
 end
 
-function Hit:touchUp(rayContact)
-  BaseClass.touchUp(self, rayContact)
-  print("Hit:touchUp(rayContact)")
+function Balloon:rayTouchUp(rayContact)
+  BaseClass.rayTouchUp(self, rayContact)
+  print("Balloon:enter()")
 end
 
-function Hit:touchMove(rayContact)
-  BaseClass.touchMove(self, rayContact)
-  print("Hit:touchMove(rayContact)")
+function Balloon:rayTouchMove(rayContact)
+  BaseClass.rayTouchMove(self, rayContact)
+  print("Balloon:enter()")
 end
 
-function Hit:touchCancelled(rayContact)
-  BaseClass.touchCancelled(self, rayContact)
-  print("Hit:touchCancelled(rayContact)")
+function Balloon:rayTouchCancelled(rayContact)
+  BaseClass.rayTouchCancelled(self, rayContact)
+  print("Balloon:enter()")
 end
 
-function Hit:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, collisionPoint)
-  print("Hit:collide(otherNode, collisionPoint)")
+function Balloon:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, otherNode, collisionPoint)
+  print("Balloon:enter()")
 end
 
-function Hit:near(otherNode)
+function Balloon:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Hit:near(otherNode)")
+  print("Balloon:enter()")
 end
 
-function Hit:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, timeStep)
-  print("Hit:actionUpdate(action, timeStep)")
+function Balloon:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, action, timeStep)
+  print("Balloon:enter()")
 end
 
-function Hit:actionComplete(action)
+function Balloon:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Hit:actionComplete(action)")
+  print("Balloon:enter()")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Hit, {
+setmetatable(Balloon, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Hit, {
     end,
   })
 
-function Hit:className()
-  return "Hit"
+function Balloon:hash()
+    return "YAPPYBIRDS.NODES.BALLOON.Balloon"
 end
 
-function Hit:class()
+function Balloon:className()
+  return "Balloon"
+end
+
+function Balloon:class()
   return self
 end
 
-function Hit:superClass()
+function Balloon:superClass()
   return BaseClass
 end
 
-function Hit:__gc()
+function Balloon:__gc()
   --Destroy derived class first
-  Hit._destroy(self)
+  Balloon._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Hit:__tostring()
+function Balloon:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Hit:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Hit:_destroy()
-  assert(not self.__HitCalledLoad, "Must unload before you destroy")
+function Balloon:_destroy()
+  assert(not self.__BalloonCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Hit:_create(init)
-  self.__HitCalledLoad = false
+function Balloon:_create(init)
+  self.__BalloonCalledLoad = false
   __ctor(self, init)
 end
 
-function Hit:load()
+function Balloon:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__HitCalledLoad = true
+  self.__BalloonCalledLoad = true
 end
 
-function Hit:unLoad()
-  assert(self.__HitCalledLoad, "Must load before unloading")
+function Balloon:unLoad()
+  assert(self.__BalloonCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__HitCalledLoad = false
+  self.__BalloonCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Hit
+return Balloon

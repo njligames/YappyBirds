@@ -163,6 +163,10 @@ setmetatable(Menu, {
     end,
   })
 
+function Menu:hash()
+    return "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu"
+end
+
 function Menu:className()
   return "Menu"
 end

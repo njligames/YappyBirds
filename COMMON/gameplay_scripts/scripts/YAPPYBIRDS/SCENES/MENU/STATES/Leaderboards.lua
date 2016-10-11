@@ -163,6 +163,10 @@ setmetatable(Leaderboards, {
     end,
   })
 
+function Leaderboards:hash()
+    return "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards"
+end
+
 function Leaderboards:className()
   return "Leaderboards"
 end

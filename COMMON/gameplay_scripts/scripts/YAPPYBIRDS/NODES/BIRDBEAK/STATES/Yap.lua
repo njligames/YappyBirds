@@ -1,7 +1,7 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Balloon = {}
-Balloon.__index = Balloon
+local Yap = {}
+Yap.__index = Yap
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Balloon:enter()
+function Yap:enter()
   BaseClass.enter(self)
-  print("Balloon:enter()")
+  print("Yap:enter()")
 end
 
-function Balloon:update(timeStep)
+function Yap:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Balloon:update()")
+  print("Yap:update(timeStep)")
 end
 
-function Balloon:exit()
+function Yap:exit()
   BaseClass.exit(self)
-  print("Balloon:exit()")
+  print("Yap:exit()")
 end
 
-function Balloon:onMessage()
+function Yap:onMessage()
   BaseClass.onMessage(self)
-  print("Balloon:onMessage()")
+  print("Yap:onMessage()")
 end
 
-function Balloon:rayTouchDown(rayContact)
-  BaseClass.rayTouchDown(self, rayContact)
-  print("Balloon:enter()")
+function Yap:touchDown(rayContact)
+  BaseClass.touchDown(self, rayContact)
+  print("Yap:touchDown(rayContact)")
 end
 
-function Balloon:rayTouchUp(rayContact)
-  BaseClass.rayTouchUp(self, rayContact)
-  print("Balloon:enter()")
+function Yap:touchUp(rayContact)
+  BaseClass.touchUp(self, rayContact)
+  print("Yap:touchUp(rayContact)")
 end
 
-function Balloon:rayTouchMove(rayContact)
-  BaseClass.rayTouchMove(self, rayContact)
-  print("Balloon:enter()")
+function Yap:touchMove(rayContact)
+  BaseClass.touchMove(self, rayContact)
+  print("Yap:touchMove(rayContact)")
 end
 
-function Balloon:rayTouchCancelled(rayContact)
-  BaseClass.rayTouchCancelled(self, rayContact)
-  print("Balloon:enter()")
+function Yap:touchCancelled(rayContact)
+  BaseClass.touchCancelled(self, rayContact)
+  print("Yap:touchCancelled(rayContact)")
 end
 
-function Balloon:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, otherNode, collisionPoint)
-  print("Balloon:enter()")
+function Yap:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, collisionPoint)
+  print("Yap:collide(otherNode, collisionPoint)")
 end
 
-function Balloon:near(otherNode)
+function Yap:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Balloon:enter()")
+  print("Yap:near(otherNode)")
 end
 
-function Balloon:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, action, timeStep)
-  print("Balloon:enter()")
+function Yap:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, timeStep)
+  print("Yap:actionUpdate(action, timeStep)")
 end
 
-function Balloon:actionComplete(action)
+function Yap:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Balloon:enter()")
+  print("Yap:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Balloon, {
+setmetatable(Yap, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Balloon, {
     end,
   })
 
-function Balloon:className()
-  return "Balloon"
+function Yap:hash()
+    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Yap"
 end
 
-function Balloon:class()
+function Yap:className()
+  return "Yap"
+end
+
+function Yap:class()
   return self
 end
 
-function Balloon:superClass()
+function Yap:superClass()
   return BaseClass
 end
 
-function Balloon:__gc()
+function Yap:__gc()
   --Destroy derived class first
-  Balloon._destroy(self)
+  Yap._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Balloon:__tostring()
+function Yap:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Balloon:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Balloon:_destroy()
-  assert(not self.__BalloonCalledLoad, "Must unload before you destroy")
+function Yap:_destroy()
+  assert(not self.__YapCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Balloon:_create(init)
-  self.__BalloonCalledLoad = false
+function Yap:_create(init)
+  self.__YapCalledLoad = false
   __ctor(self, init)
 end
 
-function Balloon:load()
+function Yap:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__BalloonCalledLoad = true
+  self.__YapCalledLoad = true
 end
 
-function Balloon:unLoad()
-  assert(self.__BalloonCalledLoad, "Must load before unloading")
+function Yap:unLoad()
+  assert(self.__YapCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__BalloonCalledLoad = false
+  self.__YapCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Balloon
+return Yap

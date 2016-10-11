@@ -1,7 +1,7 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local BirdBeak = {}
-BirdBeak.__index = BirdBeak
+local Grab = {}
+Grab.__index = Grab
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function BirdBeak:enter()
+function Grab:enter()
   BaseClass.enter(self)
-  print("BirdBeak:enter()")
+  print("Grab:enter()")
 end
 
-function BirdBeak:update(timeStep)
+function Grab:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("BirdBeak:update()")
+  print("Grab:update(timeStep)")
 end
 
-function BirdBeak:exit()
+function Grab:exit()
   BaseClass.exit(self)
-  print("BirdBeak:exit()")
+  print("Grab:exit()")
 end
 
-function BirdBeak:onMessage()
+function Grab:onMessage()
   BaseClass.onMessage(self)
-  print("BirdBeak:onMessage()")
+  print("Grab:onMessage()")
 end
 
-function BirdBeak:rayTouchDown(rayContact)
-  BaseClass.rayTouchDown(self, rayContact)
-  print("BirdBeak:enter()")
+function Grab:touchDown(rayContact)
+  BaseClass.touchDown(self, rayContact)
+  print("Grab:touchDown(rayContact)")
 end
 
-function BirdBeak:rayTouchUp(rayContact)
-  BaseClass.rayTouchUp(self, rayContact)
-  print("BirdBeak:enter()")
+function Grab:touchUp(rayContact)
+  BaseClass.touchUp(self, rayContact)
+  print("Grab:touchUp(rayContact)")
 end
 
-function BirdBeak:rayTouchMove(rayContact)
-  BaseClass.rayTouchMove(self, rayContact)
-  print("BirdBeak:enter()")
+function Grab:touchMove(rayContact)
+  BaseClass.touchMove(self, rayContact)
+  print("Grab:touchMove(rayContact)")
 end
 
-function BirdBeak:rayTouchCancelled(rayContact)
-  BaseClass.rayTouchCancelled(self, rayContact)
-  print("BirdBeak:enter()")
+function Grab:touchCancelled(rayContact)
+  BaseClass.touchCancelled(self, rayContact)
+  print("Grab:touchCancelled(rayContact)")
 end
 
-function BirdBeak:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, otherNode, collisionPoint)
-  print("BirdBeak:enter()")
+function Grab:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, collisionPoint)
+  print("Grab:collide(otherNode, collisionPoint)")
 end
 
-function BirdBeak:near(otherNode)
+function Grab:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("BirdBeak:enter()")
+  print("Grab:near(otherNode)")
 end
 
-function BirdBeak:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, action, timeStep)
-  print("BirdBeak:enter()")
+function Grab:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, timeStep)
+  print("Grab:actionUpdate(action, timeStep)")
 end
 
-function BirdBeak:actionComplete(action)
+function Grab:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("BirdBeak:enter()")
+  print("Grab:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(BirdBeak, {
+setmetatable(Grab, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(BirdBeak, {
     end,
   })
 
-function BirdBeak:className()
-  return "BirdBeak"
+function Grab:hash()
+    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Grab"
 end
 
-function BirdBeak:class()
+function Grab:className()
+  return "Grab"
+end
+
+function Grab:class()
   return self
 end
 
-function BirdBeak:superClass()
+function Grab:superClass()
   return BaseClass
 end
 
-function BirdBeak:__gc()
+function Grab:__gc()
   --Destroy derived class first
-  BirdBeak._destroy(self)
+  Grab._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function BirdBeak:__tostring()
+function Grab:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function BirdBeak:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function BirdBeak:_destroy()
-  assert(not self.__BirdBeakCalledLoad, "Must unload before you destroy")
+function Grab:_destroy()
+  assert(not self.__GrabCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function BirdBeak:_create(init)
-  self.__BirdBeakCalledLoad = false
+function Grab:_create(init)
+  self.__GrabCalledLoad = false
   __ctor(self, init)
 end
 
-function BirdBeak:load()
+function Grab:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__BirdBeakCalledLoad = true
+  self.__GrabCalledLoad = true
 end
 
-function BirdBeak:unLoad()
-  assert(self.__BirdBeakCalledLoad, "Must load before unloading")
+function Grab:unLoad()
+  assert(self.__GrabCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__BirdBeakCalledLoad = false
+  self.__GrabCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return BirdBeak
+return Grab

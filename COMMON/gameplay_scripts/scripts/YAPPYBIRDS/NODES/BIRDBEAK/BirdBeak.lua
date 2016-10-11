@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
 
-local Bird = {}
-Bird.__index = Bird
+local BirdBeak = {}
+BirdBeak.__index = BirdBeak
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Bird:enter()
+function BirdBeak:enter()
   BaseClass.enter(self)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:update(timeStep)
+function BirdBeak:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Bird:update()")
+  print("BirdBeak:update()")
 end
 
-function Bird:exit()
+function BirdBeak:exit()
   BaseClass.exit(self)
-  print("Bird:exit()")
+  print("BirdBeak:exit()")
 end
 
-function Bird:onMessage()
+function BirdBeak:onMessage()
   BaseClass.onMessage(self)
-  print("Bird:onMessage()")
+  print("BirdBeak:onMessage()")
 end
 
-function Bird:rayTouchDown(rayContact)
+function BirdBeak:rayTouchDown(rayContact)
   BaseClass.rayTouchDown(self, rayContact)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:rayTouchUp(rayContact)
+function BirdBeak:rayTouchUp(rayContact)
   BaseClass.rayTouchUp(self, rayContact)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:rayTouchMove(rayContact)
+function BirdBeak:rayTouchMove(rayContact)
   BaseClass.rayTouchMove(self, rayContact)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:rayTouchCancelled(rayContact)
+function BirdBeak:rayTouchCancelled(rayContact)
   BaseClass.rayTouchCancelled(self, rayContact)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:collide(otherNode, collisionPoint)
+function BirdBeak:collide(otherNode, collisionPoint)
   BaseClass.collide(self, otherNode, collisionPoint)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:near(otherNode)
+function BirdBeak:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:actionUpdate(action, timeStep)
+function BirdBeak:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, action, timeStep)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
-function Bird:actionComplete(action)
+function BirdBeak:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Bird:enter()")
+  print("BirdBeak:enter()")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Bird, {
+setmetatable(BirdBeak, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Bird, {
     end,
   })
 
-function Bird:className()
-  return "Bird"
+function BirdBeak:hash()
+    return "YAPPYBIRDS.NODES.BIRDBEAK.BirdBeak"
 end
 
-function Bird:class()
+function BirdBeak:className()
+  return "BirdBeak"
+end
+
+function BirdBeak:class()
   return self
 end
 
-function Bird:superClass()
+function BirdBeak:superClass()
   return BaseClass
 end
 
-function Bird:__gc()
+function BirdBeak:__gc()
   --Destroy derived class first
-  Bird._destroy(self)
+  BirdBeak._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Bird:__tostring()
+function BirdBeak:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Bird:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Bird:_destroy()
-  assert(not self.__BirdCalledLoad, "Must unload before you destroy")
+function BirdBeak:_destroy()
+  assert(not self.__BirdBeakCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Bird:_create(init)
-  self.__BirdCalledLoad = false
+function BirdBeak:_create(init)
+  self.__BirdBeakCalledLoad = false
   __ctor(self, init)
 end
 
-function Bird:load()
+function BirdBeak:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__BirdCalledLoad = true
+  self.__BirdBeakCalledLoad = true
 end
 
-function Bird:unLoad()
-  assert(self.__BirdCalledLoad, "Must load before unloading")
+function BirdBeak:unLoad()
+  assert(self.__BirdBeakCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__BirdCalledLoad = false
+  self.__BirdBeakCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Bird
+return BirdBeak

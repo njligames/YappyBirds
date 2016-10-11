@@ -163,6 +163,10 @@ setmetatable(Settings, {
     end,
   })
 
+function Settings:hash()
+    return "YAPPYBIRDS.SCENES.MENU.STATES.Settings"
+end
+
 function Settings:className()
   return "Settings"
 end

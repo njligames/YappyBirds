@@ -163,6 +163,10 @@ setmetatable(Loading, {
     end,
   })
 
+function Loading:hash()
+    return "YAPPYBIRDS.SCENES.RESULTS.Loading"
+end
+
 function Loading:className()
   return "Loading"
 end

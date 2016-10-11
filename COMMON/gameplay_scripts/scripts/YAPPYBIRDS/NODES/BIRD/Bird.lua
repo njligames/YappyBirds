@@ -1,7 +1,7 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
 
-local Hit = {}
-Hit.__index = Hit
+local Bird = {}
+Bird.__index = Bird
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Hit:enter()
+function Bird:enter()
   BaseClass.enter(self)
-  print("Hit:enter()")
+  print("Bird:enter()")
 end
 
-function Hit:update(timeStep)
+function Bird:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Hit:update(timeStep)")
+  print("Bird:update()")
 end
 
-function Hit:exit()
+function Bird:exit()
   BaseClass.exit(self)
-  print("Hit:exit()")
+  print("Bird:exit()")
 end
 
-function Hit:onMessage()
+function Bird:onMessage()
   BaseClass.onMessage(self)
-  print("Hit:onMessage()")
+  print("Bird:onMessage()")
 end
 
-function Hit:touchDown(rayContact)
-  BaseClass.touchDown(self, rayContact)
-  print("Hit:touchDown(rayContact)")
+function Bird:rayTouchDown(rayContact)
+  BaseClass.rayTouchDown(self, rayContact)
+  print("Bird:enter()")
 end
 
-function Hit:touchUp(rayContact)
-  BaseClass.touchUp(self, rayContact)
-  print("Hit:touchUp(rayContact)")
+function Bird:rayTouchUp(rayContact)
+  BaseClass.rayTouchUp(self, rayContact)
+  print("Bird:enter()")
 end
 
-function Hit:touchMove(rayContact)
-  BaseClass.touchMove(self, rayContact)
-  print("Hit:touchMove(rayContact)")
+function Bird:rayTouchMove(rayContact)
+  BaseClass.rayTouchMove(self, rayContact)
+  print("Bird:enter()")
 end
 
-function Hit:touchCancelled(rayContact)
-  BaseClass.touchCancelled(self, rayContact)
-  print("Hit:touchCancelled(rayContact)")
+function Bird:rayTouchCancelled(rayContact)
+  BaseClass.rayTouchCancelled(self, rayContact)
+  print("Bird:enter()")
 end
 
-function Hit:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, collisionPoint)
-  print("Hit:collide(otherNode, collisionPoint)")
+function Bird:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, otherNode, collisionPoint)
+  print("Bird:enter()")
 end
 
-function Hit:near(otherNode)
+function Bird:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Hit:near(otherNode)")
+  print("Bird:enter()")
 end
 
-function Hit:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, timeStep)
-  print("Hit:actionUpdate(action, timeStep)")
+function Bird:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, action, timeStep)
+  print("Bird:enter()")
 end
 
-function Hit:actionComplete(action)
+function Bird:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Hit:actionComplete(action)")
+  print("Bird:enter()")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Hit, {
+setmetatable(Bird, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Hit, {
     end,
   })
 
-function Hit:className()
-  return "Hit"
+function Bird:hash()
+    return "YAPPYBIRDS.NODES.BIRD.Bird"
 end
 
-function Hit:class()
+function Bird:className()
+  return "Bird"
+end
+
+function Bird:class()
   return self
 end
 
-function Hit:superClass()
+function Bird:superClass()
   return BaseClass
 end
 
-function Hit:__gc()
+function Bird:__gc()
   --Destroy derived class first
-  Hit._destroy(self)
+  Bird._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Hit:__tostring()
+function Bird:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Hit:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Hit:_destroy()
-  assert(not self.__HitCalledLoad, "Must unload before you destroy")
+function Bird:_destroy()
+  assert(not self.__BirdCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Hit:_create(init)
-  self.__HitCalledLoad = false
+function Bird:_create(init)
+  self.__BirdCalledLoad = false
   __ctor(self, init)
 end
 
-function Hit:load()
+function Bird:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__HitCalledLoad = true
+  self.__BirdCalledLoad = true
 end
 
-function Hit:unLoad()
-  assert(self.__HitCalledLoad, "Must load before unloading")
+function Bird:unLoad()
+  assert(self.__BirdCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__HitCalledLoad = false
+  self.__BirdCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Hit
+return Bird

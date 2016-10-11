@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Spawn = {}
-Spawn.__index = Spawn
+local Hit = {}
+Hit.__index = Hit
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Spawn:enter()
+function Hit:enter()
   BaseClass.enter(self)
-  print("Spawn:enter()")
+  print("Hit:enter()")
 end
 
-function Spawn:update(timeStep)
+function Hit:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Spawn:update(timeStep)")
+  print("Hit:update(timeStep)")
 end
 
-function Spawn:exit()
+function Hit:exit()
   BaseClass.exit(self)
-  print("Spawn:exit()")
+  print("Hit:exit()")
 end
 
-function Spawn:onMessage()
+function Hit:onMessage()
   BaseClass.onMessage(self)
-  print("Spawn:onMessage()")
+  print("Hit:onMessage()")
 end
 
-function Spawn:touchDown(rayContact)
+function Hit:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Spawn:touchDown(rayContact)")
+  print("Hit:touchDown(rayContact)")
 end
 
-function Spawn:touchUp(rayContact)
+function Hit:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Spawn:touchUp(rayContact)")
+  print("Hit:touchUp(rayContact)")
 end
 
-function Spawn:touchMove(rayContact)
+function Hit:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Spawn:touchMove(rayContact)")
+  print("Hit:touchMove(rayContact)")
 end
 
-function Spawn:touchCancelled(rayContact)
+function Hit:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Spawn:touchCancelled(rayContact)")
+  print("Hit:touchCancelled(rayContact)")
 end
 
-function Spawn:collide(otherNode, collisionPoint)
+function Hit:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Spawn:collide(otherNode, collisionPoint)")
+  print("Hit:collide(otherNode, collisionPoint)")
 end
 
-function Spawn:near(otherNode)
+function Hit:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Spawn:near(otherNode)")
+  print("Hit:near(otherNode)")
 end
 
-function Spawn:actionUpdate(action, timeStep)
+function Hit:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Spawn:actionUpdate(action, timeStep)")
+  print("Hit:actionUpdate(action, timeStep)")
 end
 
-function Spawn:actionComplete(action)
+function Hit:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Spawn:actionComplete(action)")
+  print("Hit:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Spawn, {
+setmetatable(Hit, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Spawn, {
     end,
   })
 
-function Spawn:className()
-  return "Spawn"
+function Hit:hash()
+    return "YAPPYBIRDS.NODES.BIRD.STATES.Hit"
 end
 
-function Spawn:class()
+function Hit:className()
+  return "Hit"
+end
+
+function Hit:class()
   return self
 end
 
-function Spawn:superClass()
+function Hit:superClass()
   return BaseClass
 end
 
-function Spawn:__gc()
+function Hit:__gc()
   --Destroy derived class first
-  Spawn._destroy(self)
+  Hit._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Spawn:__tostring()
+function Hit:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Spawn:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Spawn:_destroy()
-  assert(not self.__SpawnCalledLoad, "Must unload before you destroy")
+function Hit:_destroy()
+  assert(not self.__HitCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Spawn:_create(init)
-  self.__SpawnCalledLoad = false
+function Hit:_create(init)
+  self.__HitCalledLoad = false
   __ctor(self, init)
 end
 
-function Spawn:load()
+function Hit:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__SpawnCalledLoad = true
+  self.__HitCalledLoad = true
 end
 
-function Spawn:unLoad()
-  assert(self.__SpawnCalledLoad, "Must load before unloading")
+function Hit:unLoad()
+  assert(self.__HitCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__SpawnCalledLoad = false
+  self.__HitCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Spawn
+return Hit

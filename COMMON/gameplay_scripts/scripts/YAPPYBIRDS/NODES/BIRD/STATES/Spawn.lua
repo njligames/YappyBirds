@@ -113,6 +113,10 @@ setmetatable(Spawn, {
     end,
   })
 
+function Spawn:hash()
+    return "YAPPYBIRDS.NODES.BIRD.STATES.Spawn"
+end
+
 function Spawn:className()
   return "Spawn"
 end

@@ -20,17 +20,11 @@ local __ctor = function(self, init)
   assert(nil ~= init.states, "init.states variable is nil.")
   assert(type(init.states) == "table", "not a table")
   assert(nil ~= init.entityOwner, "entityOwner variable is nil.")
-  assert(nil ~= init.nodes, "init.nodes variable is nil.")
-  assert(type(init.nodes) == "table", "not a table")
-
-  --Create the NodeEntities for this WorldEntity
-  self._nodeEntityTable = {}
-  AddNodesToEntity(self, init.nodes)
 
   self._entityOwner = init.entityOwner
 
   self._world = njli.World.getInstance()
-  self:getWorld():setName(self:className())
+  self:getWorld():setName(self:hash())
 
   local startState = nil
 
@@ -39,14 +33,11 @@ local __ctor = function(self, init)
     assert(v.class ~= nil, "")
     assert(v.scene ~= nil, "is nil")
     assert(type(v.scene) == "table", "not a table")
-    assert(v.nodes ~= nil, "is nil")
-    assert(type(v.nodes) == "table", "not a table")
 
     --Create a WorldEntityState...
     local stateEntity = v.class({
         entityOwner = self,
-        scene = v.scene,
-        nodes = v.nodes
+        scene = v.scene
       })
 
     if startState == nil then
@@ -56,17 +47,15 @@ local __ctor = function(self, init)
     self:_addEntityState(stateEntity)
   end
 
-  assert(startState, "No start state was defined for " .. self:className())
+  assert(startState, "No start state was defined for " .. self:hash())
 
-  self._startStateName = startState:className()
+  self._startStateName = startState:hash()
 end
 
 local __dtor = function(self)
   self._stateEntityTable = nil
 
   self._world = nil
-
-  self._nodeEntityTable = nil
 end
 
 local __load = function(self)
@@ -89,7 +78,7 @@ end
 --#############################################################################
 
 function WorldEntity:_addEntityState(entityState)
-  local stateName = entityState:className()
+  local stateName = entityState:hash()
   self._stateEntityTable[stateName] = entityState
 end
 
@@ -282,25 +271,6 @@ function WorldEntity:receivedMemoryWarning()
 end
 
 --#############################################################################
---Add/Remove NodeEntities
---#############################################################################
-
-function WorldEntity:_addNodeEntity(node)
-  local stateName = node:className()
-  self._nodeEntityTable[stateName] = entityState
-end
-
-function WorldEntity:_removeNodeEntity(stateName)
-  self._nodeEntityTable[stateName] = nil
-end
-
-function WorldEntity:_getNodeEntity(nodeName)
-  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
-
-  return self._nodeEntityTable[nodeName]
-end
-
---#############################################################################
 --End Custom Code
 --#############################################################################
 
@@ -315,6 +285,10 @@ setmetatable(WorldEntity, {
       return self
     end,
   })
+
+function WorldEntity:hash()
+    return "NJLI.STATEMACHINE.WorldEntity"
+end
 
 function WorldEntity:className()
   return "WorldEntity"
@@ -360,8 +334,6 @@ function WorldEntity:_destroy()
   assert(not self.__WorldEntityCalledLoad, "Must unload before you destroy")
 
   __dtor(self)
-
-  self._nodeEntityTable = nil
 end
 
 function WorldEntity:_create(init)

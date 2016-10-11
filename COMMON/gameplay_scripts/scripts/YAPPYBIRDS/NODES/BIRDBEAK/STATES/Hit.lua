@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Fly = {}
-Fly.__index = Fly
+local Hit = {}
+Hit.__index = Hit
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Fly:enter()
+function Hit:enter()
   BaseClass.enter(self)
-  print("Fly:enter()")
+  print("Hit:enter()")
 end
 
-function Fly:update(timeStep)
+function Hit:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Fly:update(timeStep)")
+  print("Hit:update(timeStep)")
 end
 
-function Fly:exit()
+function Hit:exit()
   BaseClass.exit(self)
-  print("Fly:exit()")
+  print("Hit:exit()")
 end
 
-function Fly:onMessage()
+function Hit:onMessage()
   BaseClass.onMessage(self)
-  print("Fly:onMessage()")
+  print("Hit:onMessage()")
 end
 
-function Fly:touchDown(rayContact)
+function Hit:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Fly:touchDown(rayContact)")
+  print("Hit:touchDown(rayContact)")
 end
 
-function Fly:touchUp(rayContact)
+function Hit:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Fly:touchUp(rayContact)")
+  print("Hit:touchUp(rayContact)")
 end
 
-function Fly:touchMove(rayContact)
+function Hit:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Fly:touchMove(rayContact)")
+  print("Hit:touchMove(rayContact)")
 end
 
-function Fly:touchCancelled(rayContact)
+function Hit:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Fly:touchCancelled(rayContact)")
+  print("Hit:touchCancelled(rayContact)")
 end
 
-function Fly:collide(otherNode, collisionPoint)
+function Hit:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Fly:collide(otherNode, collisionPoint)")
+  print("Hit:collide(otherNode, collisionPoint)")
 end
 
-function Fly:near(otherNode)
+function Hit:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Fly:near(otherNode)")
+  print("Hit:near(otherNode)")
 end
 
-function Fly:actionUpdate(action, timeStep)
+function Hit:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Fly:actionUpdate(action, timeStep)")
+  print("Hit:actionUpdate(action, timeStep)")
 end
 
-function Fly:actionComplete(action)
+function Hit:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Fly:actionComplete(action)")
+  print("Hit:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Fly, {
+setmetatable(Hit, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Fly, {
     end,
   })
 
-function Fly:className()
-  return "Fly"
+function Hit:hash()
+    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Hit"
 end
 
-function Fly:class()
+function Hit:className()
+  return "Hit"
+end
+
+function Hit:class()
   return self
 end
 
-function Fly:superClass()
+function Hit:superClass()
   return BaseClass
 end
 
-function Fly:__gc()
+function Hit:__gc()
   --Destroy derived class first
-  Fly._destroy(self)
+  Hit._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Fly:__tostring()
+function Hit:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Fly:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Fly:_destroy()
-  assert(not self.__FlyCalledLoad, "Must unload before you destroy")
+function Hit:_destroy()
+  assert(not self.__HitCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Fly:_create(init)
-  self.__FlyCalledLoad = false
+function Hit:_create(init)
+  self.__HitCalledLoad = false
   __ctor(self, init)
 end
 
-function Fly:load()
+function Hit:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__FlyCalledLoad = true
+  self.__HitCalledLoad = true
 end
 
-function Fly:unLoad()
-  assert(self.__FlyCalledLoad, "Must load before unloading")
+function Hit:unLoad()
+  assert(self.__HitCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__FlyCalledLoad = false
+  self.__HitCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Fly
+return Hit

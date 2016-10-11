@@ -235,7 +235,7 @@ end
 --#############################################################################
 
 function __NJLINodeEnterState(node)
-  --print("__NJLINodeEnterState")
+  print("__NJLINodeEnterState")
   interface:getStateMachine():_nodeEnterState(node)
 end
 

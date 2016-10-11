@@ -42,7 +42,7 @@ end
 
 function Menu:update(timeStep)
   BaseClass.update(self, timeStep)
-  --print("Menu:update("..timeStep..")")
+  print("Menu:update("..timeStep..")")
 end
 
 function Menu:exit()
@@ -148,6 +148,10 @@ setmetatable(Menu, {
       return self
     end,
   })
+
+function Menu:hash()
+    return "YAPPYBIRDS.SCENES.MENU.Menu"
+end
 
 function Menu:className()
   return "Menu"

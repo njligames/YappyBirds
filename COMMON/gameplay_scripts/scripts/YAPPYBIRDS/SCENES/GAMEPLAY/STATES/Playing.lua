@@ -163,6 +163,10 @@ setmetatable(Playing, {
     end,
   })
 
+function Playing:hash()
+    return "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing"
+end
+
 function Playing:className()
   return "Playing"
 end

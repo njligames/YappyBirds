@@ -15,26 +15,28 @@ SceneEntityState.__index = SceneEntityState
 --#############################################################################
 
 local __ctor = function(self, init)
-  assert(init, "init variable is nil.")
-  assert(init.entityOwner, "Init variable is expecting a entityOwner value")
-  assert(init.nodes, "init.nodes variable is nil.")
-  assert(type(init.nodes) == "table", "init.nodes variable is expecting a table")
+    assert(init, "init variable is nil.")
+    assert(init.entityOwner, "Init variable is expecting a entityOwner value")
+    assert(init.nodes, "init.nodes variable is nil.")
+    assert(type(init.nodes) == "table", "init.nodes variable is expecting a table")
 
-  --Create the NodeEntities for this SceneEntityState
-  self._nodeEntityTable = {}
-  AddNodesToEntity(self, init.nodes)
+    self._entityOwner = init.entityOwner
 
-  self._entityOwner = init.entityOwner
+    self._sceneState = njli.SceneState.create()
+    self:getSceneState():setName(self:hash())
 
-  self._sceneState = njli.SceneState.create()
-  self:getSceneState():setName(self:className())
+    --Create the NodeEntities for this SceneEntityState
+    --self:getSceneEntity():addNodeEntities(init.nodes, self)
+
+    self._nodes = init.nodes
 end
 
 local __dtor = function(self)
-  njli.SceneState.destroy(self:getSceneState())
-  self._sceneState = nil
 
-  self._nodeEntityTable = nil
+    --self:getSceneState():removeNodeEntities()
+
+    njli.SceneState.destroy(self:getSceneState())
+    self._sceneState = nil
 end
 
 local __load = function(self)
@@ -45,24 +47,7 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---#############################################################################
---Add/Remove NodeEntities
---#############################################################################
 
-function SceneEntityState:_addNodeEntity(node)
-  local stateName = node:className()
-  self._nodeEntityTable[stateName] = entityState
-end
-
-function SceneEntityState:_removeNodeEntity(stateName)
-  self._nodeEntityTable[stateName] = nil
-end
-
-function SceneEntityState:_getNodeEntity(nodeName)
-  assert(self._nodeEntityTable[nodeName], "There must be a node entity with name: " .. stateName)
-
-  return self._nodeEntityTable[nodeName]
-end
 --#############################################################################
 --General
 --#############################################################################
@@ -194,6 +179,10 @@ setmetatable(SceneEntityState, {
       return self
     end,
   })
+
+function SceneEntityState:hash()
+    return "NJLI.STATEMACHINE.SceneEntityState"
+end
 
 function SceneEntityState:className()
   return "SceneEntityState"

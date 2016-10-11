@@ -163,6 +163,10 @@ setmetatable(Results, {
     end,
   })
 
+function Results:hash()
+    return "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results"
+end
+
 function Results:className()
   return "Results"
 end

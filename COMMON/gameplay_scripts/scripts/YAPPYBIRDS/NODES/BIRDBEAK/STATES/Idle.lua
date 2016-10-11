@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Grab = {}
-Grab.__index = Grab
+local Idle = {}
+Idle.__index = Idle
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Grab:enter()
+function Idle:enter()
   BaseClass.enter(self)
-  print("Grab:enter()")
+  print("Idle:enter()")
 end
 
-function Grab:update(timeStep)
+function Idle:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Grab:update(timeStep)")
+  print("Idle:update(timeStep)")
 end
 
-function Grab:exit()
+function Idle:exit()
   BaseClass.exit(self)
-  print("Grab:exit()")
+  print("Idle:exit()")
 end
 
-function Grab:onMessage()
+function Idle:onMessage()
   BaseClass.onMessage(self)
-  print("Grab:onMessage()")
+  print("Idle:onMessage()")
 end
 
-function Grab:touchDown(rayContact)
+function Idle:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Grab:touchDown(rayContact)")
+  print("Idle:touchDown(rayContact)")
 end
 
-function Grab:touchUp(rayContact)
+function Idle:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Grab:touchUp(rayContact)")
+  print("Idle:touchUp(rayContact)")
 end
 
-function Grab:touchMove(rayContact)
+function Idle:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Grab:touchMove(rayContact)")
+  print("Idle:touchMove(rayContact)")
 end
 
-function Grab:touchCancelled(rayContact)
+function Idle:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Grab:touchCancelled(rayContact)")
+  print("Idle:touchCancelled(rayContact)")
 end
 
-function Grab:collide(otherNode, collisionPoint)
+function Idle:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Grab:collide(otherNode, collisionPoint)")
+  print("Idle:collide(otherNode, collisionPoint)")
 end
 
-function Grab:near(otherNode)
+function Idle:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Grab:near(otherNode)")
+  print("Idle:near(otherNode)")
 end
 
-function Grab:actionUpdate(action, timeStep)
+function Idle:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Grab:actionUpdate(action, timeStep)")
+  print("Idle:actionUpdate(action, timeStep)")
 end
 
-function Grab:actionComplete(action)
+function Idle:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Grab:actionComplete(action)")
+  print("Idle:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Grab, {
+setmetatable(Idle, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Grab, {
     end,
   })
 
-function Grab:className()
-  return "Grab"
+function Idle:hash()
+    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Idle"
 end
 
-function Grab:class()
+function Idle:className()
+  return "Idle"
+end
+
+function Idle:class()
   return self
 end
 
-function Grab:superClass()
+function Idle:superClass()
   return BaseClass
 end
 
-function Grab:__gc()
+function Idle:__gc()
   --Destroy derived class first
-  Grab._destroy(self)
+  Idle._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Grab:__tostring()
+function Idle:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Grab:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Grab:_destroy()
-  assert(not self.__GrabCalledLoad, "Must unload before you destroy")
+function Idle:_destroy()
+  assert(not self.__IdleCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Grab:_create(init)
-  self.__GrabCalledLoad = false
+function Idle:_create(init)
+  self.__IdleCalledLoad = false
   __ctor(self, init)
 end
 
-function Grab:load()
+function Idle:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__GrabCalledLoad = true
+  self.__IdleCalledLoad = true
 end
 
-function Grab:unLoad()
-  assert(self.__GrabCalledLoad, "Must load before unloading")
+function Idle:unLoad()
+  assert(self.__IdleCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__GrabCalledLoad = false
+  self.__IdleCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Grab
+return Idle

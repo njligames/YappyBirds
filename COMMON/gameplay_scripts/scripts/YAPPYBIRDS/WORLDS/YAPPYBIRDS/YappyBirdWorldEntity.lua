@@ -163,6 +163,10 @@ setmetatable(YappyBirdWorldEntity, {
     end,
   })
 
+function YappyBirdWorldEntity:hash()
+    return "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity"
+end
+
 function YappyBirdWorldEntity:className()
   return "YappyBirdWorldEntity"
 end

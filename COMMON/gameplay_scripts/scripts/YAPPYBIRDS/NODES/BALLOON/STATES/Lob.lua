@@ -113,6 +113,10 @@ setmetatable(Lob, {
     end,
   })
 
+function Lob:hash()
+    return "YAPPYBIRDS.NODES.BALLOON.STATES.Lob"
+end
+
 function Lob:className()
   return "Lob"
 end

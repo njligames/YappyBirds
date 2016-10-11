@@ -22,7 +22,7 @@ local __ctor = function(self, init)
   assert(type(init.states) == "table", "init.states variable is expecting a states table")
 
   self._node = njli.Node.create()
-  self:getNode():setName(self:className())
+  self:getNode():setName(self:hash())
 
   local startState = nil
 
@@ -31,6 +31,7 @@ local __ctor = function(self, init)
 
     --create a NodeEntityState
     local stateEntity = v({entityOwner = self})
+    print("created... " .. stateEntity:getNodeState():getName())
 
     if nil == startState then
       startState = stateEntity
@@ -41,9 +42,9 @@ local __ctor = function(self, init)
 
   self._entityOwner = init.entityOwner
 
-  assert(startState, "No start state was defined for " .. self:className())
+  assert(startState, "No start state was defined for " .. self:hash())
 
-  self._startStateName = startState:className()
+  self._startStateName = startState:hash()
 end
 
 local __dtor = function(self)
@@ -75,7 +76,7 @@ end
 --#############################################################################
 
 function NodeEntity:_addEntityState(entityState)
-  local stateName = entityState:className()
+  local stateName = entityState:hash()
   self._stateEntityTable[stateName] = entityState
 end
 
@@ -223,6 +224,10 @@ setmetatable(NodeEntity, {
       return self
     end,
   })
+
+function NodeEntity:hash()
+    return "NJLI.STATEMACHINE.NodeEntity"
+end
 
 function NodeEntity:className()
   return "NodeEntity"

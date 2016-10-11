@@ -41,7 +41,7 @@ end
 
 function Loading:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Loading:update(timeStep)")
+  --print("Loading:update(timeStep)")
 end
 
 function Loading:exit()
@@ -56,7 +56,7 @@ end
 
 function Loading:renderHUD()
   BaseClass.renderHUD(self)
-  print("Loading:renderHUD()")
+  --print("Loading:renderHUD()")
 end
 
 function Loading:touchDown(touches)
@@ -162,6 +162,10 @@ setmetatable(Loading, {
       return self
     end,
   })
+
+function Loading:hash()
+    return "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading"
+end
 
 function Loading:className()
   return "Loading"

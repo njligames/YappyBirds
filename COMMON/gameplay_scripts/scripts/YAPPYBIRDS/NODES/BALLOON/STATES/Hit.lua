@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Pursue = {}
-Pursue.__index = Pursue
+local Hit = {}
+Hit.__index = Hit
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -34,64 +34,64 @@ end
 
 --#############################################################################
 
-function Pursue:enter()
+function Hit:enter()
   BaseClass.enter(self)
-  print("Pursue:enter()")
+  print("Hit:enter()")
 end
 
-function Pursue:update(timeStep)
+function Hit:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Pursue:update(timeStep)")
+  print("Hit:update(timeStep)")
 end
 
-function Pursue:exit()
+function Hit:exit()
   BaseClass.exit(self)
-  print("Pursue:exit()")
+  print("Hit:exit()")
 end
 
-function Pursue:onMessage()
+function Hit:onMessage()
   BaseClass.onMessage(self)
-  print("Pursue:onMessage()")
+  print("Hit:onMessage()")
 end
 
-function Pursue:touchDown(rayContact)
+function Hit:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Pursue:touchDown(rayContact)")
+  print("Hit:touchDown(rayContact)")
 end
 
-function Pursue:touchUp(rayContact)
+function Hit:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Pursue:touchUp(rayContact)")
+  print("Hit:touchUp(rayContact)")
 end
 
-function Pursue:touchMove(rayContact)
+function Hit:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Pursue:touchMove(rayContact)")
+  print("Hit:touchMove(rayContact)")
 end
 
-function Pursue:touchCancelled(rayContact)
+function Hit:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Pursue:touchCancelled(rayContact)")
+  print("Hit:touchCancelled(rayContact)")
 end
 
-function Pursue:collide(otherNode, collisionPoint)
+function Hit:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Pursue:collide(otherNode, collisionPoint)")
+  print("Hit:collide(otherNode, collisionPoint)")
 end
 
-function Pursue:near(otherNode)
+function Hit:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Pursue:near(otherNode)")
+  print("Hit:near(otherNode)")
 end
 
-function Pursue:actionUpdate(action, timeStep)
+function Hit:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Pursue:actionUpdate(action, timeStep)")
+  print("Hit:actionUpdate(action, timeStep)")
 end
 
-function Pursue:actionComplete(action)
+function Hit:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Pursue:actionComplete(action)")
+  print("Hit:actionComplete(action)")
 end
 
 --#############################################################################
@@ -102,7 +102,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Pursue, {
+setmetatable(Hit, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -113,26 +113,30 @@ setmetatable(Pursue, {
     end,
   })
 
-function Pursue:className()
-  return "Pursue"
+function Hit:hash()
+    return "YAPPYBIRDS.NODES.BALLOON.STATES.Hit"
 end
 
-function Pursue:class()
+function Hit:className()
+  return "Hit"
+end
+
+function Hit:class()
   return self
 end
 
-function Pursue:superClass()
+function Hit:superClass()
   return BaseClass
 end
 
-function Pursue:__gc()
+function Hit:__gc()
   --Destroy derived class first
-  Pursue._destroy(self)
+  Hit._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Pursue:__tostring()
+function Hit:__tostring()
   local ret = self:className() .. " =\n{\n"
 
   for pos,val in pairs(self) do
@@ -143,35 +147,35 @@ function Pursue:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Pursue:_destroy()
-  assert(not self.__PursueCalledLoad, "Must unload before you destroy")
+function Hit:_destroy()
+  assert(not self.__HitCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Pursue:_create(init)
-  self.__PursueCalledLoad = false
+function Hit:_create(init)
+  self.__HitCalledLoad = false
   __ctor(self, init)
 end
 
-function Pursue:load()
+function Hit:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__PursueCalledLoad = true
+  self.__HitCalledLoad = true
 end
 
-function Pursue:unLoad()
-  assert(self.__PursueCalledLoad, "Must load before unloading")
+function Hit:unLoad()
+  assert(self.__HitCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__PursueCalledLoad = false
+  self.__HitCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Pursue
+return Hit

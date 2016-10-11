@@ -163,6 +163,10 @@ setmetatable(Characters, {
     end,
   })
 
+function Characters:hash()
+    return "YAPPYBIRDS.SCENES.MENU.STATES.Characters"
+end
+
 function Characters:className()
   return "Characters"
 end

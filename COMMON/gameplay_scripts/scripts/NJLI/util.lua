@@ -748,24 +748,3 @@ function DeviceNameDownsizeAmount(name)
       -- print()
     end
 
-    function AddNodesToEntity(owner, nodes)
-
-      for k,v in pairs(nodes) do
-        --Create a NodeEntity
-        assert(v.class ~= nil, "init.class variable is expecting a class")
-        assert(v.states ~= nil, "init.states variable is expecting a states table")
-        assert(type(v.states) == "table", "init.states variable is expecting a states table")
-        assert(v.nodes ~= nil, "init.nodes variable is expecting a nodes table")
-        assert(type(v.nodes) == "table", "init.nodes variable is expecting a nodes table")
-
-        local nodeEntity = v.class({
-            states = v.states,
-            entityOwner = owner
-          })
-
-        owner:_addNodeEntity(nodeEntity)
-
-        AddNodesToEntity(nodeEntity, v.nodes)
-      end
-
-    end
