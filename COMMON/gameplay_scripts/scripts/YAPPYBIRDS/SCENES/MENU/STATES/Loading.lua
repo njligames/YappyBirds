@@ -36,112 +36,112 @@ end
 
 function Loading:enter()
   BaseClass.enter(self)
-  print("Loading:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Loading:update(timeStep)
   BaseClass.update(self, timeStep)
-  --print("Loading:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Loading:exit()
   BaseClass.exit(self)
-  print("Loading:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Loading:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Loading:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function Loading:renderHUD()
   BaseClass.renderHUD(self)
-  --print("Loading:renderHUD()")
+  --print(self:hash() .. " :renderHUD()")
 end
 
 function Loading:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Loading:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function Loading:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Loading:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function Loading:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Loading:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function Loading:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Loading:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function Loading:pause()
   BaseClass.pause(self)
-  print("Loading:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function Loading:unPause()
   BaseClass.unPause(self)
-  print("Loading:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function Loading:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Loading:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function Loading:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Loading:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function Loading:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Loading:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function Loading:willResignActive()
   BaseClass.willResignActive(self)
-  print("Loading:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function Loading:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Loading:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function Loading:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Loading:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function Loading:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Loading:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function Loading:willTerminate()
   BaseClass.willTerminate(self)
-  print("Loading:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function Loading:interrupt()
   BaseClass.interrupt(self)
-  print("Loading:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function Loading:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Loading:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function Loading:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Loading:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

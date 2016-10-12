@@ -36,62 +36,62 @@ end
 
 function Bird:enter()
   BaseClass.enter(self)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Bird:update()")
+  print(self:hash() .. " :update()")
 end
 
 function Bird:exit()
   BaseClass.exit(self)
-  print("Bird:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Bird:onMessage()
   BaseClass.onMessage(self)
-  print("Bird:onMessage()")
+  print(self:hash() .. " :onMessage()")
 end
 
 function Bird:rayTouchDown(rayContact)
   BaseClass.rayTouchDown(self, rayContact)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:rayTouchUp(rayContact)
   BaseClass.rayTouchUp(self, rayContact)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:rayTouchMove(rayContact)
   BaseClass.rayTouchMove(self, rayContact)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:rayTouchCancelled(rayContact)
   BaseClass.rayTouchCancelled(self, rayContact)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:collide(otherNode, collisionPoint)
   BaseClass.collide(self, otherNode, collisionPoint)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, action, timeStep)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Bird:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Bird:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 --#############################################################################

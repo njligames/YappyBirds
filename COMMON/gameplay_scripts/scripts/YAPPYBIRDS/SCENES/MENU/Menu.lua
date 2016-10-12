@@ -37,97 +37,97 @@ end
 
 function Menu:enter()
   BaseClass.enter(self)
-  print("Menu:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Menu:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Menu:update("..timeStep..")")
+  print(self:hash() .. " :update("..timeStep..")")
 end
 
 function Menu:exit()
   BaseClass.exit(self)
-  print("Menu:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Menu:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Menu:onMessage("..tostring(message)")")
+  print(self:hash() .. " :onMessage("..tostring(message)")")
 end
 
 function Menu:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Menu:touchDown("..tostring(touches) .. ")")
+  print(self:hash() .. " :touchDown("..tostring(touches) .. ")")
 end
 
 function Menu:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Menu:touchUp("..tostring(touches) ..")")
+  print(self:hash() .. " :touchUp("..tostring(touches) ..")")
 end
 
 function Menu:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Menu:touchMove("..tostring(touches) ..")")
+  print(self:hash() .. " :touchMove("..tostring(touches) ..")")
 end
 
 function Menu:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Menu:touchCancelled("..tostring(touches) ..")")
+  print(self:hash() .. " :touchCancelled("..tostring(touches) ..")")
 end
 
 function Menu:renderHUD()
   BaseClass.renderHUD(self)
-  --print("Menu:renderHUD()")
+  --print(self:hash() .. " :renderHUD()")
 end
 
 function Menu:pause()
   BaseClass.pause(self)
-  print("Menu:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function Menu:unPause()
   BaseClass.unPause(self)
-  print("Menu:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function Menu:willResignActive()
   BaseClass.willResignActive(self)
-  print("Menu:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function Menu:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Menu:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function Menu:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Menu:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function Menu:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Menu:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function Menu:willTerminate()
   BaseClass.willTerminate(self)
-  print("Menu:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function Menu:interrupt()
   BaseClass.interrupt(self)
-  print("Menu:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function Menu:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Menu:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function Menu:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Menu:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

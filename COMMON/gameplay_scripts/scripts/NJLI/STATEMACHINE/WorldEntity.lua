@@ -133,139 +133,139 @@ function WorldEntity:getStartStateEntity()
 end
 
 function WorldEntity:startStateMachine()
-  print("WorldEntity:startStateMachine()")
+  print(self:hash() .. " :startStateMachine()")
 
   self:pushState(self._startStateName)
 end
 
 function WorldEntity:enter()
-  print("WorldEntity:enter()")
+  print(self:hash() .. " :enter()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function WorldEntity:update(timeStep)
-  --print("WorldEntity:update()")
+  --print(self:hash() .. " :update()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
 
 function WorldEntity:exit()
-  print("WorldEntity:exit()")
+  print(self:hash() .. " :exit()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():exit()
 end
 
 function WorldEntity:onMessage()
-  print("WorldEntity:onMessage()")
+  print(self:hash() .. " :onMessage()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():onMessage()
 end
 
 function WorldEntity:renderHUD()
-  --print("WorldEntity:renderHUD()")
+  --print(self:hash() .. " :renderHUD()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():renderHUD()
 end
 
 function WorldEntity:touchDown(touches)
-  print("WorldEntity:touchDown()")
+  print(self:hash() .. " :touchDown()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():touchDown()
 end
 
 function WorldEntity:touchUp(touches)
-  print("WorldEntity:touchUp()")
+  print(self:hash() .. " :touchUp()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():touchUp()
 end
 
 function WorldEntity:touchMove(touches)
-  print("WorldEntity:touchMove()")
+  print(self:hash() .. " :touchMove()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():touchMove()
 end
 
 function WorldEntity:touchCancelled(touches)
-  print("WorldEntity:touchCancelled()")
+  print(self:hash() .. " :touchCancelled()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():touchCancelled()
 end
 
 function WorldEntity:pause()
-  print("WorldEntity:pause()")
+  print(self:hash() .. " :pause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():pause()
 end
 
 function WorldEntity:unPause()
-  print("WorldEntity:unPause()")
+  print(self:hash() .. " :unPause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():unPause()
 end
 
 function WorldEntity:keyboardShow()
-  print("WorldEntity:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():keyboardShow()
 end
 
 function WorldEntity:keyboardCancel()
-  print("WorldEntity:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():keyboardCancel()
 end
 
 function WorldEntity:keyboardReturn(text)
-  print("WorldEntity:keyboardReturn()")
+  print(self:hash() .. " :keyboardReturn()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():keyboardReturn(text)
 end
 
 function WorldEntity:willResignActive()
-  print("WorldEntity:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():willResignActive()
 end
 
 function WorldEntity:didBecomeActive()
-  print("WorldEntity:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():didBecomeActive()
 end
 
 function WorldEntity:didEnterBackground()
-  print("WorldEntity:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():didEnterBackground()
 end
 
 function WorldEntity:willEnterForeground()
-  print("WorldEntity:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():willEnterForeground()
 end
 
 function WorldEntity:willTerminate()
-  print("WorldEntity:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():willTerminate()
 end
 
 function WorldEntity:interrupt()
-  print("WorldEntity:interrupt()")
+  print(self:hash() .. " :interrupt()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():interrupt()
 end
 
 function WorldEntity:resumeInterrupt()
-  print("WorldEntity:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():resumeInterrupt()
 end
 
 function WorldEntity:receivedMemoryWarning()
-  print("WorldEntity:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():receivedMemoryWarning()
 end

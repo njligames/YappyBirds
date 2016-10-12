@@ -36,112 +36,112 @@ end
 
 function MainMenu:enter()
   BaseClass.enter(self)
-  print("MainMenu:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function MainMenu:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("MainMenu:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function MainMenu:exit()
   BaseClass.exit(self)
-  print("MainMenu:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function MainMenu:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("MainMenu:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function MainMenu:renderHUD()
   BaseClass.renderHUD(self)
-  print("MainMenu:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function MainMenu:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("MainMenu:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function MainMenu:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("MainMenu:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function MainMenu:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("MainMenu:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function MainMenu:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("MainMenu:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function MainMenu:pause()
   BaseClass.pause(self)
-  print("MainMenu:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function MainMenu:unPause()
   BaseClass.unPause(self)
-  print("MainMenu:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function MainMenu:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("MainMenu:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function MainMenu:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("MainMenu:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function MainMenu:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("MainMenu:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function MainMenu:willResignActive()
   BaseClass.willResignActive(self)
-  print("MainMenu:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function MainMenu:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("MainMenu:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function MainMenu:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("MainMenu:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function MainMenu:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("MainMenu:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function MainMenu:willTerminate()
   BaseClass.willTerminate(self)
-  print("MainMenu:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function MainMenu:interrupt()
   BaseClass.interrupt(self)
-  print("MainMenu:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function MainMenu:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("MainMenu:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function MainMenu:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("MainMenu:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

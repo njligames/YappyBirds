@@ -36,112 +36,112 @@ end
 
 function BoardSelect:enter()
   BaseClass.enter(self)
-  print("BoardSelect:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BoardSelect:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("BoardSelect:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function BoardSelect:exit()
   BaseClass.exit(self)
-  print("BoardSelect:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function BoardSelect:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("BoardSelect:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function BoardSelect:renderHUD()
   BaseClass.renderHUD(self)
-  print("BoardSelect:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function BoardSelect:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("BoardSelect:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function BoardSelect:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("BoardSelect:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function BoardSelect:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("BoardSelect:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function BoardSelect:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("BoardSelect:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function BoardSelect:pause()
   BaseClass.pause(self)
-  print("BoardSelect:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function BoardSelect:unPause()
   BaseClass.unPause(self)
-  print("BoardSelect:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function BoardSelect:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("BoardSelect:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function BoardSelect:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("BoardSelect:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function BoardSelect:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("BoardSelect:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function BoardSelect:willResignActive()
   BaseClass.willResignActive(self)
-  print("BoardSelect:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function BoardSelect:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("BoardSelect:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function BoardSelect:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("BoardSelect:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function BoardSelect:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("BoardSelect:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function BoardSelect:willTerminate()
   BaseClass.willTerminate(self)
-  print("BoardSelect:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function BoardSelect:interrupt()
   BaseClass.interrupt(self)
-  print("BoardSelect:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function BoardSelect:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("BoardSelect:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function BoardSelect:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("BoardSelect:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

@@ -36,112 +36,112 @@ end
 
 function Leaderboards:enter()
   BaseClass.enter(self)
-  print("Leaderboards:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Leaderboards:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Leaderboards:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Leaderboards:exit()
   BaseClass.exit(self)
-  print("Leaderboards:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Leaderboards:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Leaderboards:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function Leaderboards:renderHUD()
   BaseClass.renderHUD(self)
-  print("Leaderboards:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function Leaderboards:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Leaderboards:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function Leaderboards:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Leaderboards:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function Leaderboards:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Leaderboards:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function Leaderboards:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Leaderboards:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function Leaderboards:pause()
   BaseClass.pause(self)
-  print("Leaderboards:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function Leaderboards:unPause()
   BaseClass.unPause(self)
-  print("Leaderboards:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function Leaderboards:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Leaderboards:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function Leaderboards:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Leaderboards:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function Leaderboards:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Leaderboards:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function Leaderboards:willResignActive()
   BaseClass.willResignActive(self)
-  print("Leaderboards:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function Leaderboards:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Leaderboards:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function Leaderboards:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Leaderboards:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function Leaderboards:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Leaderboards:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function Leaderboards:willTerminate()
   BaseClass.willTerminate(self)
-  print("Leaderboards:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function Leaderboards:interrupt()
   BaseClass.interrupt(self)
-  print("Leaderboards:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function Leaderboards:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Leaderboards:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function Leaderboards:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Leaderboards:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

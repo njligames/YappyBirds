@@ -36,112 +36,112 @@ end
 
 function Achievements:enter()
   BaseClass.enter(self)
-  print("Achievements:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Achievements:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Achievements:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Achievements:exit()
   BaseClass.exit(self)
-  print("Achievements:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Achievements:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Achievements:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function Achievements:renderHUD()
   BaseClass.renderHUD(self)
-  print("Achievements:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function Achievements:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Achievements:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function Achievements:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Achievements:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function Achievements:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Achievements:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function Achievements:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Achievements:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function Achievements:pause()
   BaseClass.pause(self)
-  print("Achievements:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function Achievements:unPause()
   BaseClass.unPause(self)
-  print("Achievements:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function Achievements:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Achievements:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function Achievements:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Achievements:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function Achievements:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Achievements:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function Achievements:willResignActive()
   BaseClass.willResignActive(self)
-  print("Achievements:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function Achievements:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Achievements:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function Achievements:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Achievements:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function Achievements:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Achievements:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function Achievements:willTerminate()
   BaseClass.willTerminate(self)
-  print("Achievements:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function Achievements:interrupt()
   BaseClass.interrupt(self)
-  print("Achievements:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function Achievements:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Achievements:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function Achievements:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Achievements:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

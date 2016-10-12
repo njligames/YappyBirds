@@ -77,91 +77,91 @@ function SceneEntityState:isIn()
 end
 
 function SceneEntityState:enter()
-  print("SceneEntityState:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function SceneEntityState:update(timeStep)
-  --print("SceneEntityState:update(timeStep)")
+  --print(self:hash() .. " :update(timeStep)")
 end
 
 function SceneEntityState:exit()
-  print("SceneEntityState:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function SceneEntityState:onMessage(message)
-  print("SceneEntityState:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function SceneEntityState:renderHUD()
-  --print("SceneEntityState:renderHUD()")
+  --print(self:hash() .. " :renderHUD()")
 end
 
 function SceneEntityState:touchDown(touches)
-  print("SceneEntityState:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function SceneEntityState:touchUp(touches)
-  print("SceneEntityState:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function SceneEntityState:touchMove(touches)
-  print("SceneEntityState:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function SceneEntityState:touchCancelled(touches)
-  print("SceneEntityState:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function SceneEntityState:pause()
-  print("SceneEntityState:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function SceneEntityState:unPause()
-  print("SceneEntityState:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function SceneEntityState:keyboardShow()
-  print("SceneEntityState:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function SceneEntityState:keyboardCancel()
-  print("SceneEntityState:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function SceneEntityState:keyboardReturn(text)
-  print("SceneEntityState:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function SceneEntityState:willResignActive()
-  print("SceneEntityState:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function SceneEntityState:didBecomeActive()
-  print("SceneEntityState:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function SceneEntityState:didEnterBackground()
-  print("SceneEntityState:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function SceneEntityState:willEnterForeground()
-  print("SceneEntityState:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function SceneEntityState:willTerminate()
-  print("SceneEntityState:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function SceneEntityState:interrupt()
-  print("SceneEntityState:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function SceneEntityState:resumeInterrupt()
-  print("SceneEntityState:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function SceneEntityState:receivedMemoryWarning()
-  print("SceneEntityState:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

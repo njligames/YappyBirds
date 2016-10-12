@@ -47,20 +47,6 @@ local BirdNodeEntity =
   } --The childe Nodes for the Node.
 }
 
-local MenuNodeEntityTable =
-{
-}
-
-local GameplayNodeEntityTable =
-{
-  BalloonNodeEntity,
-  --BirdNodeEntity,
-}
-
-local ResultNodeEntityTable =
-{
-}
-
 local MenuScene =
 {
   entityOwner = nil,
@@ -113,7 +99,7 @@ local MenuScene =
       nodes = {}, --The nodes for the SceneState.
     }
   },
-  nodes = MenuNodeEntityTable --The nodes for the Scene.
+  nodes = {} --The nodes for the Scene.
 }
 
 local GameplayScene =
@@ -144,7 +130,11 @@ local GameplayScene =
       nodes = {}, --The nodes for the SceneState.
     },
   },
-  nodes = GameplayNodeEntityTable --The nodes for the Scene.
+  nodes = {
+      BalloonNodeEntity,
+      BirdNodeEntity,
+    }
+ --The nodes for the Scene.
 }
 
 local ResultsScene =
@@ -156,7 +146,7 @@ local ResultsScene =
   {
     {
       class = require "YAPPYBIRDS.SCENES.RESULTS.STATES.Loading",
-      nodes = ResultNodeEntityTable, --The nodes for the SceneState.
+      nodes = {}, --The nodes for the SceneState.
     },
     {
       class = require "YAPPYBIRDS.SCENES.RESULTS.STATES.Lose",
@@ -178,18 +168,18 @@ local Worlds =
     states =
     {
       --The first state is the start state.
-      -- {
-      --   class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
-      --   scene = MenuScene
-      -- },
+--      {
+--        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
+--        scene = MenuScene
+--      },
       {
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         scene = GameplayScene
       },
-      -- {
-      --   class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
-      --   scene = ResultsScene
-      -- },
+      {
+        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
+        scene = ResultsScene
+      },
     }
   }
 }

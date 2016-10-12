@@ -36,112 +36,112 @@ end
 
 function Characters:enter()
   BaseClass.enter(self)
-  print("Characters:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Characters:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Characters:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Characters:exit()
   BaseClass.exit(self)
-  print("Characters:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Characters:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Characters:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function Characters:renderHUD()
   BaseClass.renderHUD(self)
-  print("Characters:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function Characters:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Characters:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function Characters:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Characters:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function Characters:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Characters:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function Characters:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Characters:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function Characters:pause()
   BaseClass.pause(self)
-  print("Characters:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function Characters:unPause()
   BaseClass.unPause(self)
-  print("Characters:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function Characters:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Characters:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function Characters:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Characters:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function Characters:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Characters:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function Characters:willResignActive()
   BaseClass.willResignActive(self)
-  print("Characters:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function Characters:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Characters:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function Characters:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Characters:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function Characters:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Characters:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function Characters:willTerminate()
   BaseClass.willTerminate(self)
-  print("Characters:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function Characters:interrupt()
   BaseClass.interrupt(self)
-  print("Characters:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function Characters:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Characters:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function Characters:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Characters:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

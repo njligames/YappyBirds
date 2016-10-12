@@ -36,62 +36,62 @@ end
 
 function Grabbed:enter()
   BaseClass.enter(self)
-  print("Grabbed:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Grabbed:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Grabbed:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Grabbed:exit()
   BaseClass.exit(self)
-  print("Grabbed:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Grabbed:onMessage()
   BaseClass.onMessage(self)
-  print("Grabbed:onMessage()")
+  print(self:hash() .. " :onMessage()")
 end
 
 function Grabbed:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Grabbed:touchDown(rayContact)")
+  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Grabbed:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Grabbed:touchUp(rayContact)")
+  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Grabbed:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Grabbed:touchMove(rayContact)")
+  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Grabbed:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Grabbed:touchCancelled(rayContact)")
+  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Grabbed:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Grabbed:collide(otherNode, collisionPoint)")
+  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Grabbed:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Grabbed:near(otherNode)")
+  print(self:hash() .. " :near(otherNode)")
 end
 
 function Grabbed:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Grabbed:actionUpdate(action, timeStep)")
+  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Grabbed:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Grabbed:actionComplete(action)")
+  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

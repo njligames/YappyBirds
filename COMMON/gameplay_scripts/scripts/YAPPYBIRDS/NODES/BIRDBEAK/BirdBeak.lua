@@ -36,62 +36,62 @@ end
 
 function BirdBeak:enter()
   BaseClass.enter(self)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("BirdBeak:update()")
+  print(self:hash() .. " :update()")
 end
 
 function BirdBeak:exit()
   BaseClass.exit(self)
-  print("BirdBeak:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function BirdBeak:onMessage()
   BaseClass.onMessage(self)
-  print("BirdBeak:onMessage()")
+  print(self:hash() .. " :onMessage()")
 end
 
 function BirdBeak:rayTouchDown(rayContact)
   BaseClass.rayTouchDown(self, rayContact)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:rayTouchUp(rayContact)
   BaseClass.rayTouchUp(self, rayContact)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:rayTouchMove(rayContact)
   BaseClass.rayTouchMove(self, rayContact)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:rayTouchCancelled(rayContact)
   BaseClass.rayTouchCancelled(self, rayContact)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:collide(otherNode, collisionPoint)
   BaseClass.collide(self, otherNode, collisionPoint)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, action, timeStep)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function BirdBeak:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("BirdBeak:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 --#############################################################################

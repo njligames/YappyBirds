@@ -36,112 +36,112 @@ end
 
 function HighScores:enter()
   BaseClass.enter(self)
-  print("HighScores:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function HighScores:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("HighScores:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function HighScores:exit()
   BaseClass.exit(self)
-  print("HighScores:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function HighScores:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("HighScores:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function HighScores:renderHUD()
   BaseClass.renderHUD(self)
-  print("HighScores:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function HighScores:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("HighScores:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function HighScores:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("HighScores:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function HighScores:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("HighScores:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function HighScores:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("HighScores:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function HighScores:pause()
   BaseClass.pause(self)
-  print("HighScores:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function HighScores:unPause()
   BaseClass.unPause(self)
-  print("HighScores:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function HighScores:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("HighScores:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function HighScores:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("HighScores:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function HighScores:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("HighScores:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function HighScores:willResignActive()
   BaseClass.willResignActive(self)
-  print("HighScores:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function HighScores:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("HighScores:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function HighScores:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("HighScores:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function HighScores:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("HighScores:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function HighScores:willTerminate()
   BaseClass.willTerminate(self)
-  print("HighScores:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function HighScores:interrupt()
   BaseClass.interrupt(self)
-  print("HighScores:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function HighScores:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("HighScores:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function HighScores:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("HighScores:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

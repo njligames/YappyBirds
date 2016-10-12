@@ -61,7 +61,6 @@ end
 --end
 
 function NodeEntityState:push()
-    print("calling push")
   self:getNodeEntity():getNode():getStateMachine():pushState(self:getNodeState())
 end
 
@@ -70,51 +69,51 @@ function NodeEntityState:isIn()
 end
 
 function NodeEntityState:enter()
-  print("NodeEntityState:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function NodeEntityState:update(timeStep)
-  print("NodeEntityState:update(timeStep)")
+  --print(self:hash() .. " :update(timeStep)")
 end
 
 function NodeEntityState:exit()
-  print("NodeEntityState:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function NodeEntityState:onMessage()
-  print("NodeEntityState:onMessage()")
+  print(self:hash() .. " :onMessage()")
 end
 
 function NodeEntityState:touchDown(rayContact)
-  print("NodeEntityState:touchDown(rayContact)")
+  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function NodeEntityState:touchUp(rayContact)
-  print("NodeEntityState:touchUp(rayContact)")
+  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function NodeEntityState:touchMove(rayContact)
-  print("NodeEntityState:touchMove(rayContact)")
+  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function NodeEntityState:touchCancelled(rayContact)
-  print("NodeEntityState:touchCancelled(rayContact)")
+  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function NodeEntityState:collide(otherNode, collisionPoint)
-  print("NodeEntityState:collide(otherNode, collisionPoint)")
+  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function NodeEntityState:near(otherNode)
-  print("NodeEntityState:near(otherNode)")
+  print(self:hash() .. " :near(otherNode)")
 end
 
 function NodeEntityState:actionUpdate(action, timeStep)
-  print("NodeEntityState:actionUpdate(action, timeStep)")
+  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function NodeEntityState:actionComplete(action)
-  print("NodeEntityState:actionComplete(action)")
+  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

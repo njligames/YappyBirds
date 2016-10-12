@@ -36,62 +36,62 @@ end
 
 function Grab:enter()
   BaseClass.enter(self)
-  print("Grab:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Grab:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Grab:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Grab:exit()
   BaseClass.exit(self)
-  print("Grab:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Grab:onMessage()
   BaseClass.onMessage(self)
-  print("Grab:onMessage()")
+  print(self:hash() .. " :onMessage()")
 end
 
 function Grab:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print("Grab:touchDown(rayContact)")
+  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Grab:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print("Grab:touchUp(rayContact)")
+  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Grab:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print("Grab:touchMove(rayContact)")
+  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Grab:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print("Grab:touchCancelled(rayContact)")
+  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Grab:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print("Grab:collide(otherNode, collisionPoint)")
+  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Grab:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Grab:near(otherNode)")
+  print(self:hash() .. " :near(otherNode)")
 end
 
 function Grab:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print("Grab:actionUpdate(action, timeStep)")
+  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Grab:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Grab:actionComplete(action)")
+  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

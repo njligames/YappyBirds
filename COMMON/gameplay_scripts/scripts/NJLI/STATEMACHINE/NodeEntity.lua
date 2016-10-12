@@ -31,7 +31,6 @@ local __ctor = function(self, init)
 
     --create a NodeEntityState
     local stateEntity = v({entityOwner = self})
-    print("created... " .. stateEntity:getNodeState():getName())
 
     if nil == startState then
       startState = stateEntity
@@ -132,79 +131,79 @@ function NodeEntity:getStartStateEntity()
 end
 
 function NodeEntity:startStateMachine()
-  print("NodeEntity:startStateMachine()")
+  print(self:hash() .. " :startStateMachine()")
 
   self:pushState(self._startStateName)
 end
 
 function NodeEntity:enter()
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :enter()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:update(timeStep)
-  print("NodeEntity:update()")
+  --print(self:hash() .. " :update(" .. timeStep .. ")")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
 
 function NodeEntity:exit()
-  print("NodeEntity:exit()")
+  print(self:hash() .. " :exit()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():exit()
 end
 
 function NodeEntity:onMessage()
-  print("NodeEntity:onMessage()")
+  print(self:hash() .. " :onMessage()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():onMessage()
 end
 
 function NodeEntity:rayTouchDown(rayContact)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :rayTouchDown()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchUp(rayContact)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :rayTouchUp()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchMove(rayContact)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :rayTouchMove()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchCancelled(rayContact)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :rayTouchCancelled()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:collide(otherNode, collisionPoint)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :collide()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:near(otherNode)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :near()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:actionUpdate(action, timeStep)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :actionUpdate()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:actionComplete(action)
-  print("NodeEntity:enter()")
+  print(self:hash() .. " :actionComplete()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end

@@ -36,112 +36,112 @@ end
 
 function Settings:enter()
   BaseClass.enter(self)
-  print("Settings:enter()")
+  print(self:hash() .. " :enter()")
 end
 
 function Settings:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Settings:update(timeStep)")
+  print(self:hash() .. " :update(timeStep)")
 end
 
 function Settings:exit()
   BaseClass.exit(self)
-  print("Settings:exit()")
+  print(self:hash() .. " :exit()")
 end
 
 function Settings:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Settings:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function Settings:renderHUD()
   BaseClass.renderHUD(self)
-  print("Settings:renderHUD()")
+  print(self:hash() .. " :renderHUD()")
 end
 
 function Settings:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Settings:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function Settings:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Settings:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function Settings:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Settings:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function Settings:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Settings:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function Settings:pause()
   BaseClass.pause(self)
-  print("Settings:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function Settings:unPause()
   BaseClass.unPause(self)
-  print("Settings:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function Settings:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Settings:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function Settings:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Settings:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function Settings:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Settings:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function Settings:willResignActive()
   BaseClass.willResignActive(self)
-  print("Settings:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function Settings:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Settings:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function Settings:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Settings:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function Settings:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Settings:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function Settings:willTerminate()
   BaseClass.willTerminate(self)
-  print("Settings:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function Settings:interrupt()
   BaseClass.interrupt(self)
-  print("Settings:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function Settings:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Settings:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function Settings:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Settings:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

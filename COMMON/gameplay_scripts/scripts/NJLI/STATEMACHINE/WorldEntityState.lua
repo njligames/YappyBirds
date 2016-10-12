@@ -92,95 +92,95 @@ function WorldEntityState:isIn()
 end
 
 function WorldEntityState:enter()
-  print("WorldEntityState:enter()")
+  print(self:hash() .. " :enter()")
 
   self:getSceneEntity():startStateMachine()
 end
 
 function WorldEntityState:update(timeStep)
-  --print("WorldEntityState:update(timeStep)")
+  --print(self:hash() .. " :update(timeStep)")
 end
 
 function WorldEntityState:exit()
-  print("WorldEntityState:exit()")
+  print(self:hash() .. " :exit()")
 
   self:getSceneEntity():stopStateMachine()
 end
 
 function WorldEntityState:onMessage(message)
-  print("WorldEntityState:onMessage(message)")
+  print(self:hash() .. " :onMessage(message)")
 end
 
 function WorldEntityState:renderHUD()
-  --print("WorldEntityState:renderHUD()")
+  --print(self:hash() .. " :renderHUD()")
 end
 
 function WorldEntityState:touchDown(touches)
-  print("WorldEntityState:touchDown(touches)")
+  print(self:hash() .. " :touchDown(touches)")
 end
 
 function WorldEntityState:touchUp(touches)
-  print("WorldEntityState:touchUp(touches)")
+  print(self:hash() .. " :touchUp(touches)")
 end
 
 function WorldEntityState:touchMove(touches)
-  print("WorldEntityState:touchMove(touches)")
+  print(self:hash() .. " :touchMove(touches)")
 end
 
 function WorldEntityState:touchCancelled(touches)
-  print("WorldEntityState:touchCancelled(touches)")
+  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function WorldEntityState:pause()
-  print("WorldEntityState:pause()")
+  print(self:hash() .. " :pause()")
 end
 
 function WorldEntityState:unPause()
-  print("WorldEntityState:unPause()")
+  print(self:hash() .. " :unPause()")
 end
 
 function WorldEntityState:keyboardShow()
-  print("WorldEntityState:keyboardShow()")
+  print(self:hash() .. " :keyboardShow()")
 end
 
 function WorldEntityState:keyboardCancel()
-  print("WorldEntityState:keyboardCancel()")
+  print(self:hash() .. " :keyboardCancel()")
 end
 
 function WorldEntityState:keyboardReturn(text)
-  print("WorldEntityState:keyboardReturn(text)")
+  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function WorldEntityState:willResignActive()
-  print("WorldEntityState:willResignActive()")
+  print(self:hash() .. " :willResignActive()")
 end
 
 function WorldEntityState:didBecomeActive()
-  print("WorldEntityState:didBecomeActive()")
+  print(self:hash() .. " :didBecomeActive()")
 end
 
 function WorldEntityState:didEnterBackground()
-  print("WorldEntityState:didEnterBackground()")
+  print(self:hash() .. " :didEnterBackground()")
 end
 
 function WorldEntityState:willEnterForeground()
-  print("WorldEntityState:willEnterForeground()")
+  print(self:hash() .. " :willEnterForeground()")
 end
 
 function WorldEntityState:willTerminate()
-  print("WorldEntityState:willTerminate()")
+  print(self:hash() .. " :willTerminate()")
 end
 
 function WorldEntityState:interrupt()
-  print("WorldEntityState:interrupt()")
+  print(self:hash() .. " :interrupt()")
 end
 
 function WorldEntityState:resumeInterrupt()
-  print("WorldEntityState:resumeInterrupt()")
+  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function WorldEntityState:receivedMemoryWarning()
-  print("WorldEntityState:receivedMemoryWarning()")
+  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################
