@@ -42,8 +42,7 @@ end
 function Lob:update(timeStep)
   BaseClass.update(self, timeStep)
   print(self:hash() .. " :update(" .. timeStep .. ")")
-  print(__FILE__())
-  print(__LINE__())
+  
 end
 
 function Lob:exit()
