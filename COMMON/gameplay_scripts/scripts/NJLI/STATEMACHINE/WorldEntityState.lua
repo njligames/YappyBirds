@@ -104,7 +104,6 @@ end
 function WorldEntityState:exit()
   print(self:hash() .. " :exit()")
 
-  self:getSceneEntity():stopStateMachine()
 end
 
 function WorldEntityState:onMessage(message)

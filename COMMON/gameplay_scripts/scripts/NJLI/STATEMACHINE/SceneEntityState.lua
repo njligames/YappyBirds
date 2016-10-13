@@ -69,7 +69,9 @@ function SceneEntityState:pushState(stateName)
 end
 
 function SceneEntityState:push()
+    njli.World.getInstance():addScene(self:getSceneEntity():getScene())
   self:getSceneEntity():getScene():getStateMachine():pushState(self:getSceneState())
+  self:getSceneEntity():startNodeEntities()
 end
 
 function SceneEntityState:isIn()

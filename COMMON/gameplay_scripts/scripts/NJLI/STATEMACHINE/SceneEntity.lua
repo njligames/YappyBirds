@@ -56,35 +56,9 @@ local __ctor = function(self, init)
 
     self._startStateName = startState:hash()
 
-    local function _addNodeEntities(sceneEntity, nodes, nodeEntitiyOwner)
-      for k,v in pairs(nodes) do
-        --Create a NodeEntity
-        assert(v.class ~= nil, "init.class variable is expecting a class")
-        assert(v.states ~= nil, "init.states variable is expecting a states table")
-        assert(type(v.states) == "table", "init.states variable is expecting a states table")
-        assert(v.nodes ~= nil, "init.nodes variable is expecting a nodes table")
-        assert(type(v.nodes) == "table", "init.nodes variable is expecting a nodes table")
-
-        local nodeEntity = v.class({
-            states = v.states,
-            entityOwner = nodeEntitiyOwner,
-          })
-
-        sceneEntity:addNodeEntity(nodeEntity)
-        
-        if nodeEntitiyOwner:superClass():className() == SceneEntity.className() then
-            sceneEntity:getScene():getRootNode():addChildNode(nodeEntity:getNode())
-        else
-              nodeEntitiyOwner:getNode():addChildNode(nodeEntity:getNode())
-        end
-
-        _addNodeEntities(sceneEntity, v.nodes, nodeEntity)
-      end
-    end
-
     --Create the NodeEntities for this SceneEntity
     self.__nodeEntities = {}
-    _addNodeEntities(self, init.nodes, self)
+    self:addNodeEntities(init.nodes, self)
 end
 
 local __dtor = function(self)
@@ -144,36 +118,30 @@ end
 --Add/Remove NodeEntities
 --#############################################################################
 
--- function SceneEntity:addNodeEntities(nodes, owner)
+function SceneEntity:addNodeEntities(nodes, nodeEntitiyOwner)
+  for k,v in pairs(nodes) do
+    --Create a NodeEntity
+    assert(v.class ~= nil, "init.class variable is expecting a class")
+    assert(v.states ~= nil, "init.states variable is expecting a states table")
+    assert(type(v.states) == "table", "init.states variable is expecting a states table")
+    assert(v.nodes ~= nil, "init.nodes variable is expecting a nodes table")
+    assert(type(v.nodes) == "table", "init.nodes variable is expecting a nodes table")
 
---   for k,v in pairs(nodes) do
---     --Create a NodeEntity
---     assert(v.class ~= nil, "init.class variable is expecting a class")
---     assert(v.states ~= nil, "init.states variable is expecting a states table")
---     assert(type(v.states) == "table", "init.states variable is expecting a states table")
---     assert(v.nodes ~= nil, "init.nodes variable is expecting a nodes table")
---     assert(type(v.nodes) == "table", "init.nodes variable is expecting a nodes table")
+    local nodeEntity = v.class({
+        states = v.states,
+        entityOwner = nodeEntitiyOwner,
+      })
 
---     local nodeEntity = v.class({
---         states = v.states,
---         entityOwner = owner,
---       })
+    self:addNodeEntity(nodeEntity)
 
-
---     self:addNodeEntity(nodeEntity)
-
--- --    if nodeEntity:getOwner():superClass():className() == SceneEntity.className() then
--- --        self:getScene():getRootNode():addChildNode(nodeEntity:getNode())
--- --    else
--- --        owner:getNode():addChildNode(nodeEntity:getNode())
--- --    end
-
---     self:addNodeEntities(v.nodes, nodeEntity)
---   end
-
--- end
+    self:addNodeEntities(v.nodes, nodeEntity)
+  end
+end
 
 function SceneEntity:removeNodeEntities()
+    for k, v in pairs(self.__nodeEntities) do
+        self:removeNodeEntity(k)
+    end
 end
 
 function SceneEntity:addNodeEntity(nodeEntity)
@@ -185,6 +153,15 @@ function SceneEntity:addNodeEntity(nodeEntity)
     assert(name ~= nil)
 
     self.__nodeEntities[name]  = nodeEntity
+
+    local nodeEntitiyOwner = nodeEntity:getOwner()
+
+    if nodeEntitiyOwner:superClass():className() == SceneEntity.className() then
+        self:getScene():getRootNode():addChildNode(nodeEntity:getNode())
+    else
+        nodeEntitiyOwner:getNode():addChildNode(nodeEntity:getNode())
+    end
+
     Interface:getStateMachine():getEntityManager():addNodeEntity(nodeEntity)
 end
 
@@ -192,15 +169,21 @@ function SceneEntity:removeNodeEntity(name)
     assert(name ~= nil)
     assert(self.__nodeEntities ~= nil)
 
+    Interface:getStateMachine():getEntityManager():removeNodeEntity(name)
+
     self.__nodeEntities[name] = nil
 end
 
 function SceneEntity:getNodeEntity(name)
-    --assert(self._nodeEntityTable[name], "There must be a node entity with name: " .. name)
+    assert(self._nodeEntityTable[name], "There must be a node entity with name: " .. name)
 
+    return self._nodeEntityTable[name]
+end
 
-    --return self._nodeEntityTable[name]
-    return nil
+function SceneEntity:startNodeEntities()
+   for k, v in pairs(self.__nodeEntities) do
+       v:startStateMachine()
+   end
 end
 
 --#############################################################################
@@ -238,19 +221,14 @@ end
 function SceneEntity:startStateMachine()
     print(self:hash() .. " :startStateMachine()")
 
-    njli.World.getInstance():addScene(self:getScene())
+    --njli.World.getInstance():addScene(self:getScene())
 
     self:pushState(self._startStateName)
 
-   for k, v in pairs(self.__nodeEntities) do
-       v:startStateMachine()
-   end
-end
-
-function SceneEntity:stopStateMachine()
-  print(self:hash() .. " :stopStateMachine()")
-
-  njli.World.getInstance():addScene(nil)
+    --self:startNodeEntities()
+--   for k, v in pairs(self.__nodeEntities) do
+--       v:startStateMachine()
+--   end
 end
 
 function SceneEntity:enter()
