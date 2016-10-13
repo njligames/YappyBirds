@@ -1,8 +1,7 @@
 CP=cp
-BIN2 := ./../bin/luaBeautifier
-OBJDIR=./../assets/scripts
-SRCDIR=./scripts
-LUACFLAGS=""
+
+OBJDIR=../assets/scripts
+SRCDIR=scripts
 
 STRUCTURE := $(shell find $(SRCDIR) -type d)
 CODEFILES := $(addsuffix /*, $(STRUCTURE))
@@ -11,17 +10,23 @@ CODEFILES := $(wildcard $(CODEFILES))
 SRCFILES := $(filter %.lua, $(CODEFILES))
 OBJFILES := $(subst $(SRCDIR), $(OBJDIR), $(SRCFILES:%.lua=%.lua))
 
+OUTDIRS := $(addprefix $(OBJDIR)/../, $(STRUCTURE))
 
 all: debug
 
-debug: compile_debug export
+debug: dirs compile_debug export
 
-release: compile_release export
-
-export: $(OBJFILES)
+release: dirs compile_release export
 
 $(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
 	@$(CP) $^ $@
+
+$(OUTDIRS):
+	@mkdir -p $@
+
+export: $(OBJFILES)
+
+dirs: $(OUTDIRS)
 
 compile_debug:
 	luac -l $(SRCFILES) > luac.log
@@ -32,8 +37,7 @@ compile_release:
 	mv luac.out $(OBJDIR)
 
 clean:
-	@rm -r $(OBJFILES)
-	@rm -r $(OBJDIR)/luac.out
+	@rm -rf $(OBJDIR)/*
 	@rm -r luac.log
 
 
