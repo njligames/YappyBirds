@@ -141,10 +141,6 @@ setmetatable(Pause, {
     end,
   })
 
-function Pause:hash()
-    return "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause"
-end
-
 function Pause:className()
   return "Pause"
 end

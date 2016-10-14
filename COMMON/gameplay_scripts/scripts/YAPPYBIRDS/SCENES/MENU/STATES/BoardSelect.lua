@@ -141,10 +141,6 @@ setmetatable(BoardSelect, {
     end,
   })
 
-function BoardSelect:hash()
-    return "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect"
-end
-
 function BoardSelect:className()
   return "BoardSelect"
 end

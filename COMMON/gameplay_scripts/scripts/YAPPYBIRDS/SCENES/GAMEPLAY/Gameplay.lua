@@ -129,10 +129,6 @@ setmetatable(Gameplay, {
     end,
   })
 
-function Gameplay:hash()
-    return "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay"
-end
-
 function Gameplay:className()
   return "Gameplay"
 end

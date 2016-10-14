@@ -130,10 +130,6 @@ setmetatable(Results, {
     end,
   })
 
-function Results:hash()
-    return "YAPPYBIRDS.SCENES.RESULTS.Results"
-end
-
 function Results:className()
   return "Results"
 end

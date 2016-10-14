@@ -101,10 +101,6 @@ setmetatable(Bird, {
     end,
   })
 
-function Bird:hash()
-    return "YAPPYBIRDS.NODES.BIRD.Bird"
-end
-
 function Bird:className()
   return "Bird"
 end

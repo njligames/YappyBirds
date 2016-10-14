@@ -36,62 +36,50 @@ end
 
 function Pursue:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function Pursue:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function Pursue:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function Pursue:onMessage()
   BaseClass.onMessage(self)
-  print(self:hash() .. " :onMessage()")
 end
 
 function Pursue:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Pursue:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Pursue:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Pursue:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Pursue:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Pursue:near(otherNode)
   BaseClass.near(self, otherNode)
-  print(self:hash() .. " :near(otherNode)")
 end
 
 function Pursue:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Pursue:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################
@@ -112,10 +100,6 @@ setmetatable(Pursue, {
       return self
     end,
   })
-
-function Pursue:hash()
-    return "YAPPYBIRDS.NODES.BIRD.STATES.Pursue"
-end
 
 function Pursue:className()
   return "Pursue"

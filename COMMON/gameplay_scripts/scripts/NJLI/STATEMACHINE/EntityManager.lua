@@ -89,7 +89,6 @@ function EntityManager:__generateUniqueName(object, tbl)
             instance = instance + 1
         until(tbl[name] == nil)
     end
-    print("The generated name for  is " .. name)
     object:setName(name)
 
     assert(nil == tbl[name], "__generateUniqueName didn't function correctly")

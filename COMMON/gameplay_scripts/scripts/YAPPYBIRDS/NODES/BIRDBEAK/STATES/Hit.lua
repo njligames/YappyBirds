@@ -101,10 +101,6 @@ setmetatable(Hit, {
     end,
   })
 
-function Hit:hash()
-    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Hit"
-end
-
 function Hit:className()
   return "Hit"
 end

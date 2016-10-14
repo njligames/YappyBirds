@@ -101,10 +101,6 @@ setmetatable(Balloon, {
     end,
   })
 
-function Balloon:hash()
-    return "YAPPYBIRDS.NODES.BALLOON.Balloon"
-end
-
 function Balloon:className()
   return "Balloon"
 end

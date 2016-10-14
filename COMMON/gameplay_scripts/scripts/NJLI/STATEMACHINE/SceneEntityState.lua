@@ -193,10 +193,6 @@ setmetatable(SceneEntityState, {
     end,
   })
 
-function SceneEntityState:hash()
-    return "NJLI.STATEMACHINE.SceneEntityState"
-end
-
 function SceneEntityState:className()
   return "SceneEntityState"
 end

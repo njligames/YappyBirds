@@ -141,10 +141,6 @@ setmetatable(Lose, {
     end,
   })
 
-function Lose:hash()
-    return "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose"
-end
-
 function Lose:className()
   return "Lose"
 end

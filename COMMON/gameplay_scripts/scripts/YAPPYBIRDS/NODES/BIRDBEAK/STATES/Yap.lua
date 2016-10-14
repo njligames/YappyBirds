@@ -101,10 +101,6 @@ setmetatable(Yap, {
     end,
   })
 
-function Yap:hash()
-    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Yap"
-end
-
 function Yap:className()
   return "Yap"
 end

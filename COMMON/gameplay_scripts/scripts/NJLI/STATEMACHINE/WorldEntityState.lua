@@ -205,10 +205,6 @@ setmetatable(WorldEntityState, {
     end,
   })
 
-function WorldEntityState:hash()
-    return "NJLI.STATEMACHINE.WorldEntityState"
-end
-
 function WorldEntityState:className()
   return "WorldEntityState"
 end

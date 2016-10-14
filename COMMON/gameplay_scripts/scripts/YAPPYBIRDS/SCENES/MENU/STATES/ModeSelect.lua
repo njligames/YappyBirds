@@ -141,10 +141,6 @@ setmetatable(ModeSelect, {
     end,
   })
 
-function ModeSelect:hash()
-    return "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect"
-end
-
 function ModeSelect:className()
   return "ModeSelect"
 end

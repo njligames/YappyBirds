@@ -36,62 +36,50 @@ end
 
 function Grabbing:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function Grabbing:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function Grabbing:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function Grabbing:onMessage()
   BaseClass.onMessage(self)
-  print(self:hash() .. " :onMessage()")
 end
 
 function Grabbing:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Grabbing:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Grabbing:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Grabbing:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Grabbing:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Grabbing:near(otherNode)
   BaseClass.near(self, otherNode)
-  print(self:hash() .. " :near(otherNode)")
 end
 
 function Grabbing:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Grabbing:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################
@@ -112,10 +100,6 @@ setmetatable(Grabbing, {
       return self
     end,
   })
-
-function Grabbing:hash()
-    return "YAPPYBIRDS.NODES.BIRD.STATES.Grabbing"
-end
 
 function Grabbing:className()
   return "Grabbing"

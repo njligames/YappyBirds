@@ -47,6 +47,7 @@ local __ctor = function(self, init)
 
         --create a SceneEntityState
         local stateEntity = v.class({
+            name = v.name,
             entityOwner = self,
             nodes = v.nodes
           })
@@ -365,10 +366,6 @@ setmetatable(SceneEntity, {
       return self
     end,
   })
-
-function SceneEntity:hash()
-    return "NJLI.STATEMACHINE.SceneEntity"
-end
 
 function SceneEntity:className()
   return "SceneEntity"

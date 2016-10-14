@@ -141,10 +141,6 @@ setmetatable(Win, {
     end,
   })
 
-function Win:hash()
-    return "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win"
-end
-
 function Win:className()
   return "Win"
 end

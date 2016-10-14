@@ -297,10 +297,6 @@ setmetatable(WorldEntity, {
     end,
   })
 
-function WorldEntity:hash()
-    return "NJLI.STATEMACHINE.WorldEntity"
-end
-
 function WorldEntity:className()
   return "WorldEntity"
 end

@@ -236,10 +236,6 @@ setmetatable(NodeEntity, {
     end,
   })
 
-function NodeEntity:hash()
-    return "NJLI.STATEMACHINE.NodeEntity"
-end
-
 function NodeEntity:className()
   return "NodeEntity"
 end

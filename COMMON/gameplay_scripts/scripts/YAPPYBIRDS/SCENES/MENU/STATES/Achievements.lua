@@ -141,10 +141,6 @@ setmetatable(Achievements, {
     end,
   })
 
-function Achievements:hash()
-    return "YAPPYBIRDS.SCENES.MENU.STATES.Achievements"
-end
-
 function Achievements:className()
   return "Achievements"
 end

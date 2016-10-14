@@ -101,10 +101,6 @@ setmetatable(Grab, {
     end,
   })
 
-function Grab:hash()
-    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Grab"
-end
-
 function Grab:className()
   return "Grab"
 end

@@ -141,10 +141,6 @@ setmetatable(LevelSelect, {
     end,
   })
 
-function LevelSelect:hash()
-    return "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect"
-end
-
 function LevelSelect:className()
   return "LevelSelect"
 end

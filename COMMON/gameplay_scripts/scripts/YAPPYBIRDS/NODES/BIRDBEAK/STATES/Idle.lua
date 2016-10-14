@@ -101,10 +101,6 @@ setmetatable(Idle, {
     end,
   })
 
-function Idle:hash()
-    return "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Idle"
-end
-
 function Idle:className()
   return "Idle"
 end

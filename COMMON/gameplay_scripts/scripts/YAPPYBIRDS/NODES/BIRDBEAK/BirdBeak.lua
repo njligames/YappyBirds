@@ -101,10 +101,6 @@ setmetatable(BirdBeak, {
     end,
   })
 
-function BirdBeak:hash()
-    return "YAPPYBIRDS.NODES.BIRDBEAK.BirdBeak"
-end
-
 function BirdBeak:className()
   return "BirdBeak"
 end
