@@ -35,7 +35,10 @@ local __ctor = function(self, init)
   for k,v in pairs(init.states) do
 
     --create a NodeEntityState
-    local stateEntity = v({entityOwner = self})
+    local stateEntity = v.class({
+        name = v.name,
+        entityOwner = self
+    })
 
     if nil == startState then
       startState = stateEntity

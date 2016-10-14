@@ -23,7 +23,11 @@ local __ctor = function(self, init)
     self._entityOwner = init.entityOwner
 
     self._sceneState = njli.SceneState.create()
-    self:getSceneState():setName("NJLI.STATEMACHINE.SceneEntityState")
+    if init.name ~= nil then
+        self:getSceneState():setName(init.name)
+    else
+        self:getSceneState():setName("NJLI.STATEMACHINE.SceneEntityState")
+    end
 
     --Create the NodeEntities for this SceneEntityState
     self:getSceneEntity():addNodeEntities(init.nodes, self)

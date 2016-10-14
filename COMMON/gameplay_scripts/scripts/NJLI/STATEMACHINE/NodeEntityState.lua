@@ -21,7 +21,11 @@ local __ctor = function(self, init)
   self._entityOwner = init.entityOwner
   self._nodeState = njli.NodeState.create()
 
-  self:getNodeState():setName("NJLI.STATEMACHINE.NodeEntityState")
+  if init.name ~= nil then
+      self:getNodeState():setName(init.name)
+  else
+      self:getNodeState():setName("NJLI.STATEMACHINE.NodeEntityState")
+  end
 
   Interface:getStateMachine():getEntityManager():addNodeEntityState(self)
 end

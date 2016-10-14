@@ -40,6 +40,7 @@ local __ctor = function(self, init)
 
     --Create a WorldEntityState...
     local stateEntity = v.class({
+        name = v.name,
         entityOwner = self,
         scene = v.scene
       })

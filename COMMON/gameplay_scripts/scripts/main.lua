@@ -4,43 +4,85 @@ local MyGame = require "YAPPYBIRDS.YappyGame"
 
 local BalloonNodeEntity =
 {
+    name = "Balloon",
   class = require "YAPPYBIRDS.NODES.BALLOON.Balloon",
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.NODES.BALLOON.STATES.Spawn",
-    require "YAPPYBIRDS.NODES.BALLOON.STATES.Lob",
-    require "YAPPYBIRDS.NODES.BALLOON.STATES.Hit",
+      {
+          class = require "YAPPYBIRDS.NODES.BALLOON.STATES.Spawn",
+          name = "BalloonSpawn"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BALLOON.STATES.Lob",
+          name = "BalloonLob"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BALLOON.STATES.Hit",
+          name = "BalloonHit"
+      },
   },
-  nodes = {} --The childe Nodes for the Node.
+  nodes = {} --The childen Nodes for the Node.
 }
 
 local BirdBeakNodeEntity =
 {
+    name = "BirdBeak",
   class = require "YAPPYBIRDS.NODES.BIRDBEAK.BirdBeak",
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Idle",
-    require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Grab",
-    require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Hit",
-    require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Yap",
+      {
+          class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Idle",
+          name = "BirdBeakIdle"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Grab",
+          name = "BirdBeakGrab"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Hit",
+          name = "BirdBeakHit"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Yap",
+          name = "BirdBeakYap"
+      },
   },
-  nodes = {} --The childe Nodes for the Node.
+  nodes = {} --The childen Nodes for the Node.
 }
 
 local BirdNodeEntity =
 {
+    name = "Bird",
   class = require "YAPPYBIRDS.NODES.BIRD.Bird",
   --The first state is the start state.
   states =
   {
-    require "YAPPYBIRDS.NODES.BIRD.STATES.Spawn",
-    require "YAPPYBIRDS.NODES.BIRD.STATES.Fly",
-    require "YAPPYBIRDS.NODES.BIRD.STATES.Grabbed",
-    require "YAPPYBIRDS.NODES.BIRD.STATES.Grabbing",
-    require "YAPPYBIRDS.NODES.BIRD.STATES.Hit",
-    require "YAPPYBIRDS.NODES.BIRD.STATES.Pursue",
+      {
+          class = require "YAPPYBIRDS.NODES.BIRD.STATES.Spawn",
+          name = "BirdSpawn"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRD.STATES.Fly",
+          name = "BirdFly",
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRD.STATES.Grabbed",
+          name = "BirdGrabbed"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRD.STATES.Grabbing",
+          name = "BirdGrabbing"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRD.STATES.Hit",
+          name = "BirdHit"
+      },
+      {
+          class = require "YAPPYBIRDS.NODES.BIRD.STATES.Pursue",
+          name = "BirdPursue"
+      }
   },
   nodes = {
     BirdBeakNodeEntity,
@@ -104,6 +146,7 @@ local MenuScene =
 
 local GameplayScene =
 {
+    name = "GameplayScene",
   entityOwner = nil,
   class = require "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay",
   --The first state is the start state.
@@ -167,19 +210,23 @@ local Worlds =
 {
   yappygame =
   {
+      name = "YappyBirds",
     class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity",
     states =
     {
       --The first state is the start state.
 --      {
+--      name = "WorldMenu",
 --        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
 --        scene = MenuScene
 --      },
       {
+          name = "WorldGameplay",
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         scene = GameplayScene
       },
       {
+          name = "WorldResults",
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
         scene = ResultsScene
       },

@@ -134,6 +134,7 @@ function SceneEntity:addNodeEntities(nodes, nodeEntitiyOwner)
     assert(type(v.nodes) == "table", "init.nodes variable is expecting a nodes table")
 
     local nodeEntity = v.class({
+        name = v.name,
         states = v.states,
         entityOwner = nodeEntitiyOwner,
       })

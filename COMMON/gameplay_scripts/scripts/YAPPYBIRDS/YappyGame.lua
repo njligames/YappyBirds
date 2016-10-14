@@ -23,6 +23,7 @@ local __ctor = function(self, init)
   --Create the WorldEntity
   self._worldEntity = init.class(
     {
+        name = init.name,
       --Set WorldEntityStates
       states = init.states,
       --Set the nodes for this WorldEntity

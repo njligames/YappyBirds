@@ -24,7 +24,11 @@ local __ctor = function(self, init)
   self._entityOwner = init.entityOwner
 
   self._worldState = njli.WorldState.create()
-  self:getWorldState():setName("NJLI.STATEMACHINE.WorldEntityState")
+  if init.name ~= nil then
+      self:getWorldState():setName(init.name)
+  else
+      self:getWorldState():setName("NJLI.STATEMACHINE.WorldEntityState")
+  end
 
   assert(init.scene.class ~= nil, "The init.scene.class is nil for the world entity state: " .. self:className())
 
@@ -36,6 +40,7 @@ local __ctor = function(self, init)
 
   -- Create the Entity
   self._sceneEntity = init.scene.class({
+      name = init.scene.name,
       states = init.scene.states,
       entityOwner = self,
       nodes = init.scene.nodes,
