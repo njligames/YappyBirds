@@ -36,112 +36,90 @@ end
 
 function Pause:enter()
   BaseClass.enter(self)
-  print("Pause:enter()")
 end
 
 function Pause:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Pause:update(timeStep)")
 end
 
 function Pause:exit()
   BaseClass.exit(self)
-  print("Pause:exit()")
 end
 
 function Pause:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Pause:onMessage(message)")
 end
 
 function Pause:renderHUD()
   BaseClass.renderHUD(self)
-  print("Pause:renderHUD()")
 end
 
 function Pause:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Pause:touchDown(touches)")
 end
 
 function Pause:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Pause:touchUp(touches)")
 end
 
 function Pause:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Pause:touchMove(touches)")
 end
 
 function Pause:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Pause:touchCancelled(touches)")
 end
 
 function Pause:pause()
   BaseClass.pause(self)
-  print("Pause:pause()")
 end
 
 function Pause:unPause()
   BaseClass.unPause(self)
-  print("Pause:unPause()")
 end
 
 function Pause:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Pause:keyboardShow()")
 end
 
 function Pause:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Pause:keyboardCancel()")
 end
 
 function Pause:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Pause:keyboardReturn(text)")
 end
 
 function Pause:willResignActive()
   BaseClass.willResignActive(self)
-  print("Pause:willResignActive()")
 end
 
 function Pause:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Pause:didBecomeActive()")
 end
 
 function Pause:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Pause:didEnterBackground()")
 end
 
 function Pause:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Pause:willEnterForeground()")
 end
 
 function Pause:willTerminate()
   BaseClass.willTerminate(self)
-  print("Pause:willTerminate()")
 end
 
 function Pause:interrupt()
   BaseClass.interrupt(self)
-  print("Pause:interrupt()")
 end
 
 function Pause:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Pause:resumeInterrupt()")
 end
 
 function Pause:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Pause:receivedMemoryWarning()")
 end
 
 --#############################################################################

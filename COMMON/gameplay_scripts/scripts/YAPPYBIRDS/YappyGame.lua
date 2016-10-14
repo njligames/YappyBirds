@@ -30,8 +30,6 @@ local __ctor = function(self, init)
       entityOwner = self,
     })
 
-  Interface:getStateMachine():getEntityManager():addWorldEntity(self:getWorldEntity())
-
   -- self._worldEntity:load()
 
 end

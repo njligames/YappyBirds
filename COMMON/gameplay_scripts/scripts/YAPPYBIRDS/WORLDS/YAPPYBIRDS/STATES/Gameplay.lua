@@ -36,112 +36,90 @@ end
 
 function Gameplay:enter()
   BaseClass.enter(self)
-  print("Gameplay:enter()")
 end
 
 function Gameplay:update(timeStep)
   BaseClass.update(self, timeStep)
-  --print("Gameplay:update(timeStep)")
 end
 
 function Gameplay:exit()
   BaseClass.exit(self)
-  print("Gameplay:exit()")
 end
 
 function Gameplay:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Gameplay:onMessage(message)")
 end
 
 function Gameplay:renderHUD()
   BaseClass.renderHUD(self)
-  --print("Gameplay:renderHUD()")
 end
 
 function Gameplay:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Gameplay:touchDown(touches)")
 end
 
 function Gameplay:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Gameplay:touchUp(touches)")
 end
 
 function Gameplay:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Gameplay:touchMove(touches)")
 end
 
 function Gameplay:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Gameplay:touchCancelled(touches)")
 end
 
 function Gameplay:pause()
   BaseClass.pause(self)
-  print("Gameplay:pause()")
 end
 
 function Gameplay:unPause()
   BaseClass.unPause(self)
-  print("Gameplay:unPause()")
 end
 
 function Gameplay:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Gameplay:keyboardShow()")
 end
 
 function Gameplay:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Gameplay:keyboardCancel()")
 end
 
 function Gameplay:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Gameplay:keyboardReturn(text)")
 end
 
 function Gameplay:willResignActive()
   BaseClass.willResignActive(self)
-  print("Gameplay:willResignActive()")
 end
 
 function Gameplay:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Gameplay:didBecomeActive()")
 end
 
 function Gameplay:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Gameplay:didEnterBackground()")
 end
 
 function Gameplay:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Gameplay:willEnterForeground()")
 end
 
 function Gameplay:willTerminate()
   BaseClass.willTerminate(self)
-  print("Gameplay:willTerminate()")
 end
 
 function Gameplay:interrupt()
   BaseClass.interrupt(self)
-  print("Gameplay:interrupt()")
 end
 
 function Gameplay:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Gameplay:resumeInterrupt()")
 end
 
 function Gameplay:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Gameplay:receivedMemoryWarning()")
 end
 
 --#############################################################################

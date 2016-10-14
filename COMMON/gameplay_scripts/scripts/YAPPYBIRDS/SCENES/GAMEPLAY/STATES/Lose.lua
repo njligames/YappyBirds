@@ -36,112 +36,90 @@ end
 
 function Lose:enter()
   BaseClass.enter(self)
-  print("Lose:enter()")
 end
 
 function Lose:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Lose:update(timeStep)")
 end
 
 function Lose:exit()
   BaseClass.exit(self)
-  print("Lose:exit()")
 end
 
 function Lose:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Lose:onMessage(message)")
 end
 
 function Lose:renderHUD()
   BaseClass.renderHUD(self)
-  print("Lose:renderHUD()")
 end
 
 function Lose:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Lose:touchDown(touches)")
 end
 
 function Lose:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Lose:touchUp(touches)")
 end
 
 function Lose:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Lose:touchMove(touches)")
 end
 
 function Lose:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Lose:touchCancelled(touches)")
 end
 
 function Lose:pause()
   BaseClass.pause(self)
-  print("Lose:pause()")
 end
 
 function Lose:unPause()
   BaseClass.unPause(self)
-  print("Lose:unPause()")
 end
 
 function Lose:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Lose:keyboardShow()")
 end
 
 function Lose:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Lose:keyboardCancel()")
 end
 
 function Lose:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Lose:keyboardReturn(text)")
 end
 
 function Lose:willResignActive()
   BaseClass.willResignActive(self)
-  print("Lose:willResignActive()")
 end
 
 function Lose:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Lose:didBecomeActive()")
 end
 
 function Lose:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Lose:didEnterBackground()")
 end
 
 function Lose:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Lose:willEnterForeground()")
 end
 
 function Lose:willTerminate()
   BaseClass.willTerminate(self)
-  print("Lose:willTerminate()")
 end
 
 function Lose:interrupt()
   BaseClass.interrupt(self)
-  print("Lose:interrupt()")
 end
 
 function Lose:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Lose:resumeInterrupt()")
 end
 
 function Lose:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Lose:receivedMemoryWarning()")
 end
 
 --#############################################################################

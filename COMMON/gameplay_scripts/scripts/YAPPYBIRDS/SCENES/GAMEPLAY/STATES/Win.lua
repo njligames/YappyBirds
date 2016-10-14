@@ -36,112 +36,90 @@ end
 
 function Win:enter()
   BaseClass.enter(self)
-  print("Win:enter()")
 end
 
 function Win:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Win:update(timeStep)")
 end
 
 function Win:exit()
   BaseClass.exit(self)
-  print("Win:exit()")
 end
 
 function Win:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Win:onMessage(message)")
 end
 
 function Win:renderHUD()
   BaseClass.renderHUD(self)
-  print("Win:renderHUD()")
 end
 
 function Win:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Win:touchDown(touches)")
 end
 
 function Win:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Win:touchUp(touches)")
 end
 
 function Win:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Win:touchMove(touches)")
 end
 
 function Win:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Win:touchCancelled(touches)")
 end
 
 function Win:pause()
   BaseClass.pause(self)
-  print("Win:pause()")
 end
 
 function Win:unPause()
   BaseClass.unPause(self)
-  print("Win:unPause()")
 end
 
 function Win:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Win:keyboardShow()")
 end
 
 function Win:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Win:keyboardCancel()")
 end
 
 function Win:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Win:keyboardReturn(text)")
 end
 
 function Win:willResignActive()
   BaseClass.willResignActive(self)
-  print("Win:willResignActive()")
 end
 
 function Win:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Win:didBecomeActive()")
 end
 
 function Win:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Win:didEnterBackground()")
 end
 
 function Win:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Win:willEnterForeground()")
 end
 
 function Win:willTerminate()
   BaseClass.willTerminate(self)
-  print("Win:willTerminate()")
 end
 
 function Win:interrupt()
   BaseClass.interrupt(self)
-  print("Win:interrupt()")
 end
 
 function Win:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Win:resumeInterrupt()")
 end
 
 function Win:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Win:receivedMemoryWarning()")
 end
 
 --#############################################################################

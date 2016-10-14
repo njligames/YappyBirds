@@ -36,112 +36,90 @@ end
 
 function LevelSelect:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function LevelSelect:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function LevelSelect:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function LevelSelect:onMessage(message)
   BaseClass.onMessage(self, message)
-  print(self:hash() .. " :onMessage(message)")
 end
 
 function LevelSelect:renderHUD()
   BaseClass.renderHUD(self)
-  print(self:hash() .. " :renderHUD()")
 end
 
 function LevelSelect:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print(self:hash() .. " :touchDown(touches)")
 end
 
 function LevelSelect:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print(self:hash() .. " :touchUp(touches)")
 end
 
 function LevelSelect:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print(self:hash() .. " :touchMove(touches)")
 end
 
 function LevelSelect:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function LevelSelect:pause()
   BaseClass.pause(self)
-  print(self:hash() .. " :pause()")
 end
 
 function LevelSelect:unPause()
   BaseClass.unPause(self)
-  print(self:hash() .. " :unPause()")
 end
 
 function LevelSelect:keyboardShow()
   BaseClass.keyboardShow(self)
-  print(self:hash() .. " :keyboardShow()")
 end
 
 function LevelSelect:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print(self:hash() .. " :keyboardCancel()")
 end
 
 function LevelSelect:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function LevelSelect:willResignActive()
   BaseClass.willResignActive(self)
-  print(self:hash() .. " :willResignActive()")
 end
 
 function LevelSelect:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print(self:hash() .. " :didBecomeActive()")
 end
 
 function LevelSelect:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print(self:hash() .. " :didEnterBackground()")
 end
 
 function LevelSelect:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print(self:hash() .. " :willEnterForeground()")
 end
 
 function LevelSelect:willTerminate()
   BaseClass.willTerminate(self)
-  print(self:hash() .. " :willTerminate()")
 end
 
 function LevelSelect:interrupt()
   BaseClass.interrupt(self)
-  print(self:hash() .. " :interrupt()")
 end
 
 function LevelSelect:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function LevelSelect:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

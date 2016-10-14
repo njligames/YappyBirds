@@ -36,63 +36,51 @@ end
 
 function Lob:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function Lob:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(" .. timeStep .. ")")
   
 end
 
 function Lob:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function Lob:onMessage()
   BaseClass.onMessage(self)
-  print(self:hash() .. " :onMessage()")
 end
 
 function Lob:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Lob:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Lob:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Lob:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Lob:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Lob:near(otherNode)
   BaseClass.near(self, otherNode)
-  print(self:hash() .. " :near(otherNode)")
 end
 
 function Lob:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Lob:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

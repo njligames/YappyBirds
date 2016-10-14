@@ -36,112 +36,90 @@ end
 
 function Menu:enter()
   BaseClass.enter(self)
-  print("Menu:enter()")
 end
 
 function Menu:update(timeStep)
   BaseClass.update(self, timeStep)
-  --print("Menu:update(timeStep)")
 end
 
 function Menu:exit()
   BaseClass.exit(self)
-  print("Menu:exit()")
 end
 
 function Menu:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Menu:onMessage(message)")
 end
 
 function Menu:renderHUD()
   BaseClass.renderHUD(self)
-  --print("Menu:renderHUD()")
 end
 
 function Menu:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Menu:touchDown(touches)")
 end
 
 function Menu:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Menu:touchUp(touches)")
 end
 
 function Menu:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Menu:touchMove(touches)")
 end
 
 function Menu:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Menu:touchCancelled(touches)")
 end
 
 function Menu:pause()
   BaseClass.pause(self)
-  print("Menu:pause()")
 end
 
 function Menu:unPause()
   BaseClass.unPause(self)
-  print("Menu:unPause()")
 end
 
 function Menu:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Menu:keyboardShow()")
 end
 
 function Menu:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Menu:keyboardCancel()")
 end
 
 function Menu:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Menu:keyboardReturn(text)")
 end
 
 function Menu:willResignActive()
   BaseClass.willResignActive(self)
-  print("Menu:willResignActive()")
 end
 
 function Menu:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Menu:didBecomeActive()")
 end
 
 function Menu:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Menu:didEnterBackground()")
 end
 
 function Menu:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Menu:willEnterForeground()")
 end
 
 function Menu:willTerminate()
   BaseClass.willTerminate(self)
-  print("Menu:willTerminate()")
 end
 
 function Menu:interrupt()
   BaseClass.interrupt(self)
-  print("Menu:interrupt()")
 end
 
 function Menu:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Menu:resumeInterrupt()")
 end
 
 function Menu:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Menu:receivedMemoryWarning()")
 end
 
 --#############################################################################

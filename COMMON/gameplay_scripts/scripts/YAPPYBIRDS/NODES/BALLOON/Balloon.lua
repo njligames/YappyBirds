@@ -36,62 +36,50 @@ end
 
 function Balloon:enter()
   BaseClass.enter(self)
-  print("Balloon:enter()")
 end
 
 function Balloon:update(timeStep)
   BaseClass.update(self, timeStep)
-  --print("Balloon:update()")
 end
 
 function Balloon:exit()
   BaseClass.exit(self)
-  print("Balloon:exit()")
 end
 
 function Balloon:onMessage()
   BaseClass.onMessage(self)
-  print("Balloon:onMessage()")
 end
 
 function Balloon:rayTouchDown(rayContact)
   BaseClass.rayTouchDown(self, rayContact)
-  print("Balloon:enter()")
 end
 
 function Balloon:rayTouchUp(rayContact)
   BaseClass.rayTouchUp(self, rayContact)
-  print("Balloon:enter()")
 end
 
 function Balloon:rayTouchMove(rayContact)
   BaseClass.rayTouchMove(self, rayContact)
-  print("Balloon:enter()")
 end
 
 function Balloon:rayTouchCancelled(rayContact)
   BaseClass.rayTouchCancelled(self, rayContact)
-  print("Balloon:enter()")
 end
 
 function Balloon:collide(otherNode, collisionPoint)
   BaseClass.collide(self, otherNode, collisionPoint)
-  print("Balloon:enter()")
 end
 
 function Balloon:near(otherNode)
   BaseClass.near(self, otherNode)
-  print("Balloon:enter()")
 end
 
 function Balloon:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, action, timeStep)
-  print("Balloon:enter()")
 end
 
 function Balloon:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print("Balloon:enter()")
 end
 
 --#############################################################################

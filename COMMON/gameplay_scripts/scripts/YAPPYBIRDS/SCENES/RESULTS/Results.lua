@@ -37,97 +37,78 @@ end
 
 function Results:enter()
   BaseClass.enter(self)
-  print("Results:enter()")
 end
 
 function Results:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Results:update("..timeStep..")")
 end
 
 function Results:exit()
   BaseClass.exit(self)
-  print("Results:exit()")
 end
 
 function Results:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Results:onMessage("..tostring(message)")")
 end
 
 function Results:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Results:touchDown("..tostring(touches) .. ")")
 end
 
 function Results:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Results:touchUp("..tostring(touches) ..")")
 end
 
 function Results:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Results:touchMove("..tostring(touches) ..")")
 end
 
 function Results:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Results:touchCancelled("..tostring(touches) ..")")
 end
 
 function Results:renderHUD()
   BaseClass.renderHUD(self)
-  print("Results:renderHUD()")
 end
 
 function Results:pause()
   BaseClass.pause(self)
-  print("Results:pause()")
 end
 
 function Results:unPause()
   BaseClass.unPause(self)
-  print("Results:unPause()")
 end
 
 function Results:willResignActive()
   BaseClass.willResignActive(self)
-  print("Results:willResignActive()")
 end
 
 function Results:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Results:didBecomeActive()")
 end
 
 function Results:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Results:didEnterBackground()")
 end
 
 function Results:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Results:willEnterForeground()")
 end
 
 function Results:willTerminate()
   BaseClass.willTerminate(self)
-  print("Results:willTerminate()")
 end
 
 function Results:interrupt()
   BaseClass.interrupt(self)
-  print("Results:interrupt()")
 end
 
 function Results:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Results:resumeInterrupt()")
 end
 
 function Results:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Results:receivedMemoryWarning()")
 end
 
 --#############################################################################

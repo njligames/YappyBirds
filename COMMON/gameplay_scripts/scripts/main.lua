@@ -111,7 +111,10 @@ local GameplayScene =
   {
     {
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
-      nodes = {}, --The nodes for the SceneState.
+      nodes = {
+          BalloonNodeEntity,
+          BirdNodeEntity,
+        } --The nodes for the SceneState.
     },
     {
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",

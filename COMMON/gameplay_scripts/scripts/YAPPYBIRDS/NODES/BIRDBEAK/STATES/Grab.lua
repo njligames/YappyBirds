@@ -36,62 +36,50 @@ end
 
 function Grab:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function Grab:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function Grab:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function Grab:onMessage()
   BaseClass.onMessage(self)
-  print(self:hash() .. " :onMessage()")
 end
 
 function Grab:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Grab:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Grab:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Grab:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Grab:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Grab:near(otherNode)
   BaseClass.near(self, otherNode)
-  print(self:hash() .. " :near(otherNode)")
 end
 
 function Grab:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Grab:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

@@ -36,62 +36,50 @@ end
 
 function Hit:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function Hit:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function Hit:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function Hit:onMessage()
   BaseClass.onMessage(self)
-  print(self:hash() .. " :onMessage()")
 end
 
 function Hit:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Hit:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Hit:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Hit:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Hit:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Hit:near(otherNode)
   BaseClass.near(self, otherNode)
-  print(self:hash() .. " :near(otherNode)")
 end
 
 function Hit:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Hit:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

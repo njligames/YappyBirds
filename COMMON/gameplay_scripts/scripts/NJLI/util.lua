@@ -690,13 +690,13 @@ function DeviceNameDownsizeAmount(name)
       node:setColorTransform(transform)
     end
 
-    --local origAssert = assert
-    --assert = function(b, message)
-    --if not b then
-    --print(debug.traceback())
-    --end
-    --origAssert (b, message)
-    --end
+    local origAssert = assert
+    assert = function(b, message)
+    if not b then
+    print(debug.traceback())
+    end
+    origAssert (b, message)
+    end
 
     function tostring_r ( t )
       local print_r_cache={}
@@ -750,3 +750,4 @@ function DeviceNameDownsizeAmount(name)
 
     function __FILE__() return debug.getinfo(2,'S').source end
     function __LINE__() return debug.getinfo(2, 'l').currentline end
+

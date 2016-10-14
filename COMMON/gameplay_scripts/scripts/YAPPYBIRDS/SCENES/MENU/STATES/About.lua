@@ -36,112 +36,90 @@ end
 
 function About:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function About:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function About:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function About:onMessage(message)
   BaseClass.onMessage(self, message)
-  print(self:hash() .. " :onMessage(message)")
 end
 
 function About:renderHUD()
   BaseClass.renderHUD(self)
-  print(self:hash() .. " :renderHUD()")
 end
 
 function About:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print(self:hash() .. " :touchDown(touches)")
 end
 
 function About:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print(self:hash() .. " :touchUp(touches)")
 end
 
 function About:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print(self:hash() .. " :touchMove(touches)")
 end
 
 function About:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function About:pause()
   BaseClass.pause(self)
-  print(self:hash() .. " :pause()")
 end
 
 function About:unPause()
   BaseClass.unPause(self)
-  print(self:hash() .. " :unPause()")
 end
 
 function About:keyboardShow()
   BaseClass.keyboardShow(self)
-  print(self:hash() .. " :keyboardShow()")
 end
 
 function About:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print(self:hash() .. " :keyboardCancel()")
 end
 
 function About:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function About:willResignActive()
   BaseClass.willResignActive(self)
-  print(self:hash() .. " :willResignActive()")
 end
 
 function About:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print(self:hash() .. " :didBecomeActive()")
 end
 
 function About:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print(self:hash() .. " :didEnterBackground()")
 end
 
 function About:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print(self:hash() .. " :willEnterForeground()")
 end
 
 function About:willTerminate()
   BaseClass.willTerminate(self)
-  print(self:hash() .. " :willTerminate()")
 end
 
 function About:interrupt()
   BaseClass.interrupt(self)
-  print(self:hash() .. " :interrupt()")
 end
 
 function About:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function About:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

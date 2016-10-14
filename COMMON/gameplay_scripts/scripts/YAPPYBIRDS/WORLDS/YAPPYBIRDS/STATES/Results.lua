@@ -36,112 +36,90 @@ end
 
 function Results:enter()
   BaseClass.enter(self)
-  print("Results:enter()")
 end
 
 function Results:update(timeStep)
   BaseClass.update(self, timeStep)
-  print("Results:update(timeStep)")
 end
 
 function Results:exit()
   BaseClass.exit(self)
-  print("Results:exit()")
 end
 
 function Results:onMessage(message)
   BaseClass.onMessage(self, message)
-  print("Results:onMessage(message)")
 end
 
 function Results:renderHUD()
   BaseClass.renderHUD(self)
-  print("Results:renderHUD()")
 end
 
 function Results:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print("Results:touchDown(touches)")
 end
 
 function Results:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print("Results:touchUp(touches)")
 end
 
 function Results:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print("Results:touchMove(touches)")
 end
 
 function Results:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print("Results:touchCancelled(touches)")
 end
 
 function Results:pause()
   BaseClass.pause(self)
-  print("Results:pause()")
 end
 
 function Results:unPause()
   BaseClass.unPause(self)
-  print("Results:unPause()")
 end
 
 function Results:keyboardShow()
   BaseClass.keyboardShow(self)
-  print("Results:keyboardShow()")
 end
 
 function Results:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print("Results:keyboardCancel()")
 end
 
 function Results:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print("Results:keyboardReturn(text)")
 end
 
 function Results:willResignActive()
   BaseClass.willResignActive(self)
-  print("Results:willResignActive()")
 end
 
 function Results:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print("Results:didBecomeActive()")
 end
 
 function Results:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print("Results:didEnterBackground()")
 end
 
 function Results:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print("Results:willEnterForeground()")
 end
 
 function Results:willTerminate()
   BaseClass.willTerminate(self)
-  print("Results:willTerminate()")
 end
 
 function Results:interrupt()
   BaseClass.interrupt(self)
-  print("Results:interrupt()")
 end
 
 function Results:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print("Results:resumeInterrupt()")
 end
 
 function Results:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print("Results:receivedMemoryWarning()")
 end
 
 --#############################################################################

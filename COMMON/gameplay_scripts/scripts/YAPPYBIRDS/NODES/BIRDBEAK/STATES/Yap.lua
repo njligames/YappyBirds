@@ -36,62 +36,50 @@ end
 
 function Yap:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function Yap:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function Yap:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function Yap:onMessage()
   BaseClass.onMessage(self)
-  print(self:hash() .. " :onMessage()")
 end
 
 function Yap:touchDown(rayContact)
   BaseClass.touchDown(self, rayContact)
-  print(self:hash() .. " :touchDown(rayContact)")
 end
 
 function Yap:touchUp(rayContact)
   BaseClass.touchUp(self, rayContact)
-  print(self:hash() .. " :touchUp(rayContact)")
 end
 
 function Yap:touchMove(rayContact)
   BaseClass.touchMove(self, rayContact)
-  print(self:hash() .. " :touchMove(rayContact)")
 end
 
 function Yap:touchCancelled(rayContact)
   BaseClass.touchCancelled(self, rayContact)
-  print(self:hash() .. " :touchCancelled(rayContact)")
 end
 
 function Yap:collide(otherNode, collisionPoint)
   BaseClass.collide(self, collisionPoint)
-  print(self:hash() .. " :collide(otherNode, collisionPoint)")
 end
 
 function Yap:near(otherNode)
   BaseClass.near(self, otherNode)
-  print(self:hash() .. " :near(otherNode)")
 end
 
 function Yap:actionUpdate(action, timeStep)
   BaseClass.actionUpdate(self, timeStep)
-  print(self:hash() .. " :actionUpdate(action, timeStep)")
 end
 
 function Yap:actionComplete(action)
   BaseClass.actionComplete(self, action)
-  print(self:hash() .. " :actionComplete(action)")
 end
 
 --#############################################################################

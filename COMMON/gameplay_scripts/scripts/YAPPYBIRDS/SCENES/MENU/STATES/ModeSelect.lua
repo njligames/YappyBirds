@@ -36,112 +36,90 @@ end
 
 function ModeSelect:enter()
   BaseClass.enter(self)
-  print(self:hash() .. " :enter()")
 end
 
 function ModeSelect:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self:hash() .. " :update(timeStep)")
 end
 
 function ModeSelect:exit()
   BaseClass.exit(self)
-  print(self:hash() .. " :exit()")
 end
 
 function ModeSelect:onMessage(message)
   BaseClass.onMessage(self, message)
-  print(self:hash() .. " :onMessage(message)")
 end
 
 function ModeSelect:renderHUD()
   BaseClass.renderHUD(self)
-  print(self:hash() .. " :renderHUD()")
 end
 
 function ModeSelect:touchDown(touches)
   BaseClass.touchDown(self, touches)
-  print(self:hash() .. " :touchDown(touches)")
 end
 
 function ModeSelect:touchUp(touches)
   BaseClass.touchUp(self, touches)
-  print(self:hash() .. " :touchUp(touches)")
 end
 
 function ModeSelect:touchMove(touches)
   BaseClass.touchMove(self, touches)
-  print(self:hash() .. " :touchMove(touches)")
 end
 
 function ModeSelect:touchCancelled(touches)
   BaseClass.touchCancelled(self, touches)
-  print(self:hash() .. " :touchCancelled(touches)")
 end
 
 function ModeSelect:pause()
   BaseClass.pause(self)
-  print(self:hash() .. " :pause()")
 end
 
 function ModeSelect:unPause()
   BaseClass.unPause(self)
-  print(self:hash() .. " :unPause()")
 end
 
 function ModeSelect:keyboardShow()
   BaseClass.keyboardShow(self)
-  print(self:hash() .. " :keyboardShow()")
 end
 
 function ModeSelect:keyboardCancel()
   BaseClass.keyboardCancel(self)
-  print(self:hash() .. " :keyboardCancel()")
 end
 
 function ModeSelect:keyboardReturn(text)
   BaseClass.keyboardReturn(self, text)
-  print(self:hash() .. " :keyboardReturn(text)")
 end
 
 function ModeSelect:willResignActive()
   BaseClass.willResignActive(self)
-  print(self:hash() .. " :willResignActive()")
 end
 
 function ModeSelect:didBecomeActive()
   BaseClass.didBecomeActive(self)
-  print(self:hash() .. " :didBecomeActive()")
 end
 
 function ModeSelect:didEnterBackground()
   BaseClass.didEnterBackground(self)
-  print(self:hash() .. " :didEnterBackground()")
 end
 
 function ModeSelect:willEnterForeground()
   BaseClass.willEnterForeground(self)
-  print(self:hash() .. " :willEnterForeground()")
 end
 
 function ModeSelect:willTerminate()
   BaseClass.willTerminate(self)
-  print(self:hash() .. " :willTerminate()")
 end
 
 function ModeSelect:interrupt()
   BaseClass.interrupt(self)
-  print(self:hash() .. " :interrupt()")
 end
 
 function ModeSelect:resumeInterrupt()
   BaseClass.resumeInterrupt(self)
-  print(self:hash() .. " :resumeInterrupt()")
 end
 
 function ModeSelect:receivedMemoryWarning()
   BaseClass.receivedMemoryWarning(self)
-  print(self:hash() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

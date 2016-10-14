@@ -24,7 +24,11 @@ local __ctor = function(self, init)
   self._entityOwner = init.entityOwner
 
   self._world = njli.World.getInstance()
-  self:getWorld():setName(self:hash())
+  if init.name ~= nil then
+      self:getWorld():setName(init.name)
+  else
+      self:getWorld():setName("NJLI.STATEMACHINE.WorldEntity")
+  end
 
   local startState = nil
 
@@ -44,52 +48,53 @@ local __ctor = function(self, init)
       startState = stateEntity
     end
 
-    self:_addEntityState(stateEntity)
+    self:__addEntityState(stateEntity)
   end
 
-  assert(startState, "No start state was defined for " .. self:hash())
+  assert(startState, "No start state was defined for " .. self:getWorld():getName())
 
-  self._startStateName = startState:hash()
+  Interface:getStateMachine():getEntityManager():addWorldEntity(self)
+
+  self._startStateName = startState:getWorldState():getName()
 end
 
 local __dtor = function(self)
+  Interface:getStateMachine():getEntityManager():removeWorldEntity(self)
+
   self._stateEntityTable = nil
 
   self._world = nil
 end
 
 local __load = function(self)
-  for k,v in pairs(self._stateEntityTable) do
-    v:load()
-  end
+    for index,value in ipairs(self._stateEntityTable) do 
+        self:__getEntityState(value:getWorldState():getName()):load()
+    end
 end
 
 local __unLoad = function(self)
-  if self._stateEntityTable then
-    for k,v in pairs(self._stateEntityTable) do
-      self:_getEntityState(v.name):unLoad()
+    for index,value in ipairs(self._stateEntityTable) do 
+        self:__getEntityState(value:getWorldState():getName()):unLoad()
     end
-    self._stateEntityTable = nil
-  end
 end
 
 --#############################################################################
 --Private
 --#############################################################################
 
-function WorldEntity:_addEntityState(entityState)
-  local stateName = entityState:hash()
-  self._stateEntityTable[stateName] = entityState
+function WorldEntity:__addEntityState(entityState)
+    table.insert(self._stateEntityTable, entityState)
 end
 
-function WorldEntity:_removeEntityState(stateName)
-  self._stateEntityTable[stateName] = nil
+function WorldEntity:__removeEntityState(stateName)
+    local has, index = self:hasEntityState(stateName)
+    if has then
+        table.remove(self._stateEntityTable, index)
+    end
 end
 
-function WorldEntity:_getEntityState(stateName)
-  assert(self._stateEntityTable[stateName], "There must be a state with name: \"" .. stateName .. "\"")
-
-  return self._stateEntityTable[stateName]
+function WorldEntity:__getEntityState(stateName)
+  return Interface:getStateMachine():getEntityManager():getWorldEntityState(stateName)
 end
 
 function WorldEntity:_getCurrentEntityState()
@@ -97,7 +102,7 @@ function WorldEntity:_getCurrentEntityState()
   assert(self:getWorld():getStateMachine():getState(), "There is no current World State")
   assert(self:getWorld():getStateMachine():getState():getName(), "message")
 
-  return self:_getEntityState(self:getWorld():getStateMachine():getState():getName())
+  return self:__getEntityState(self:getWorld():getStateMachine():getState():getName())
 end
 
 --#############################################################################
@@ -109,7 +114,12 @@ function WorldEntity:getWorld()
 end
 
 function WorldEntity:hasEntityState(stateName)
-  return (self._stateEntityTable[stateName] ~= nil)
+    for index,value in ipairs(self._stateEntityTable) do 
+        if stateName == value:getWorldState():getName() then
+            return true, index
+        end
+    end
+    return false
 end
 
 function WorldEntity:hasState()
@@ -125,147 +135,147 @@ end
 --#############################################################################
 
 function WorldEntity:pushState(stateName)
-  self:_getEntityState(stateName):push()
+  self:__getEntityState(stateName):push()
 end
 
 function WorldEntity:getStartStateEntity()
-  return self:_getEntityState(self._startStateName)
+  return self:__getEntityState(self._startStateName)
 end
 
 function WorldEntity:startStateMachine()
-  print(self:hash() .. " :startStateMachine()")
+  print(self:getWorld():getName() .. " :startStateMachine()")
 
   self:pushState(self._startStateName)
 end
 
 function WorldEntity:enter()
-  print(self:hash() .. " :enter()")
+  print(self:getWorld():getName() .. " :enter()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function WorldEntity:update(timeStep)
-  --print(self:hash() .. " :update()")
+  --print(self:getWorld():getName() .. " :update(" .. timeStep .. ")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():update(timeStep)
 end
 
 function WorldEntity:exit()
-  print(self:hash() .. " :exit()")
+  print(self:getWorld():getName() .. " :exit()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():exit()
 end
 
 function WorldEntity:onMessage()
-  print(self:hash() .. " :onMessage()")
+  print(self:getWorld():getName() .. " :onMessage()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():onMessage()
 end
 
 function WorldEntity:renderHUD()
-  --print(self:hash() .. " :renderHUD()")
+  --print(self:getWorld():getName() .. " :renderHUD()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():renderHUD()
 end
 
 function WorldEntity:touchDown(touches)
-  print(self:hash() .. " :touchDown()")
+  print(self:getWorld():getName() .. " :touchDown(" .. #touches .. ")")
   assert(self:hasState(), "WorldEntity must be in a state")
-  self:_getCurrentEntityState():touchDown()
+  self:_getCurrentEntityState():touchDown(touches)
 end
 
 function WorldEntity:touchUp(touches)
-  print(self:hash() .. " :touchUp()")
+  print(self:getWorld():getName() .. " :touchUp(" .. #touches .. ")")
   assert(self:hasState(), "WorldEntity must be in a state")
-  self:_getCurrentEntityState():touchUp()
+  self:_getCurrentEntityState():touchUp(touches)
 end
 
 function WorldEntity:touchMove(touches)
-  print(self:hash() .. " :touchMove()")
+  print(self:getWorld():getName() .. " :touchMove(" .. #touches .. ")")
   assert(self:hasState(), "WorldEntity must be in a state")
-  self:_getCurrentEntityState():touchMove()
+  self:_getCurrentEntityState():touchMove(touches)
 end
 
 function WorldEntity:touchCancelled(touches)
-  print(self:hash() .. " :touchCancelled()")
+  print(self:getWorld():getName() .. " :touchCancelled(" .. #touches .. ")")
   assert(self:hasState(), "WorldEntity must be in a state")
-  self:_getCurrentEntityState():touchCancelled()
+  self:_getCurrentEntityState():touchCancelled(touches)
 end
 
 function WorldEntity:pause()
-  print(self:hash() .. " :pause()")
+  print(self:getWorld():getName() .. " :pause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():pause()
 end
 
 function WorldEntity:unPause()
-  print(self:hash() .. " :unPause()")
+  print(self:getWorld():getName() .. " :unPause()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():unPause()
 end
 
 function WorldEntity:keyboardShow()
-  print(self:hash() .. " :keyboardShow()")
+  print(self:getWorld():getName() .. " :keyboardShow()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():keyboardShow()
 end
 
 function WorldEntity:keyboardCancel()
-  print(self:hash() .. " :keyboardCancel()")
+  print(self:getWorld():getName() .. " :keyboardCancel()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():keyboardCancel()
 end
 
 function WorldEntity:keyboardReturn(text)
-  print(self:hash() .. " :keyboardReturn()")
+  print(self:getWorld():getName() .. " :keyboardReturn(" .. text .. ")")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():keyboardReturn(text)
 end
 
 function WorldEntity:willResignActive()
-  print(self:hash() .. " :willResignActive()")
+  print(self:getWorld():getName() .. " :willResignActive()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():willResignActive()
 end
 
 function WorldEntity:didBecomeActive()
-  print(self:hash() .. " :didBecomeActive()")
+  print(self:getWorld():getName() .. " :didBecomeActive()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():didBecomeActive()
 end
 
 function WorldEntity:didEnterBackground()
-  print(self:hash() .. " :didEnterBackground()")
+  print(self:getWorld():getName() .. " :didEnterBackground()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():didEnterBackground()
 end
 
 function WorldEntity:willEnterForeground()
-  print(self:hash() .. " :willEnterForeground()")
+  print(self:getWorld():getName() .. " :willEnterForeground()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():willEnterForeground()
 end
 
 function WorldEntity:willTerminate()
-  print(self:hash() .. " :willTerminate()")
+  print(self:getWorld():getName() .. " :willTerminate()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():willTerminate()
 end
 
 function WorldEntity:interrupt()
-  print(self:hash() .. " :interrupt()")
+  print(self:getWorld():getName() .. " :interrupt()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():interrupt()
 end
 
 function WorldEntity:resumeInterrupt()
-  print(self:hash() .. " :resumeInterrupt()")
+  print(self:getWorld():getName() .. " :resumeInterrupt()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():resumeInterrupt()
 end
 
 function WorldEntity:receivedMemoryWarning()
-  print(self:hash() .. " :receivedMemoryWarning()")
+  print(self:getWorld():getName() .. " :receivedMemoryWarning()")
   assert(self:hasState(), "WorldEntity must be in a state")
   self:_getCurrentEntityState():receivedMemoryWarning()
 end

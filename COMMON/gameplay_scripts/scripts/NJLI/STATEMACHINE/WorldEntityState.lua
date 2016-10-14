@@ -24,7 +24,7 @@ local __ctor = function(self, init)
   self._entityOwner = init.entityOwner
 
   self._worldState = njli.WorldState.create()
-  self:getWorldState():setName(self:hash())
+  self:getWorldState():setName("NJLI.STATEMACHINE.WorldEntityState")
 
   assert(init.scene.class ~= nil, "The init.scene.class is nil for the world entity state: " .. self:className())
 
@@ -41,10 +41,12 @@ local __ctor = function(self, init)
       nodes = init.scene.nodes,
     })
 
-  Interface:getStateMachine():getEntityManager():addSceneEntity(self:getSceneEntity())
+  Interface:getStateMachine():getEntityManager():addWorldEntityState(self)
 end
 
 local __dtor = function(self)
+  Interface:getStateMachine():getEntityManager():removeWorldEntityState(self)
+
   self._sceneEntity = nil
 
   njli.WorldState.destroy(self:getWorldState())
@@ -92,94 +94,94 @@ function WorldEntityState:isIn()
 end
 
 function WorldEntityState:enter()
-  print(self:hash() .. " :enter()")
+  print(self:getWorldState():getName() .. " :enter()")
 
   self:getSceneEntity():startStateMachine()
 end
 
 function WorldEntityState:update(timeStep)
-  --print(self:hash() .. " :update(timeStep)")
+  --print(self:getWorldState():getName() .. " :update(" .. timeStep .. ")")
 end
 
 function WorldEntityState:exit()
-  print(self:hash() .. " :exit()")
+  print(self:getWorldState():getName() .. " :exit()")
 
 end
 
 function WorldEntityState:onMessage(message)
-  print(self:hash() .. " :onMessage(message)")
+  print(self:getWorldState():getName() .. " :onMessage(message)")
 end
 
 function WorldEntityState:renderHUD()
-  --print(self:hash() .. " :renderHUD()")
+  --print(self:getWorldState():getName() .. " :renderHUD()")
 end
 
 function WorldEntityState:touchDown(touches)
-  print(self:hash() .. " :touchDown(touches)")
+  print(self:getWorldState():getName() .. " :touchDown(" .. #touches .. ")")
 end
 
 function WorldEntityState:touchUp(touches)
-  print(self:hash() .. " :touchUp(touches)")
+  print(self:getWorldState():getName() .. " :touchUp(" .. #touches .. ")")
 end
 
 function WorldEntityState:touchMove(touches)
-  print(self:hash() .. " :touchMove(touches)")
+  print(self:getWorldState():getName() .. " :touchMove(" .. #touches .. ")")
 end
 
 function WorldEntityState:touchCancelled(touches)
-  print(self:hash() .. " :touchCancelled(touches)")
+  print(self:getWorldState():getName() .. " :touchCancelled(" .. #touches .. ")")
 end
 
 function WorldEntityState:pause()
-  print(self:hash() .. " :pause()")
+  print(self:getWorldState():getName() .. " :pause()")
 end
 
 function WorldEntityState:unPause()
-  print(self:hash() .. " :unPause()")
+  print(self:getWorldState():getName() .. " :unPause()")
 end
 
 function WorldEntityState:keyboardShow()
-  print(self:hash() .. " :keyboardShow()")
+  print(self:getWorldState():getName() .. " :keyboardShow()")
 end
 
 function WorldEntityState:keyboardCancel()
-  print(self:hash() .. " :keyboardCancel()")
+  print(self:getWorldState():getName() .. " :keyboardCancel()")
 end
 
 function WorldEntityState:keyboardReturn(text)
-  print(self:hash() .. " :keyboardReturn(text)")
+  print(self:getWorldState():getName() .. " :keyboardReturn(" .. text .. ")")
 end
 
 function WorldEntityState:willResignActive()
-  print(self:hash() .. " :willResignActive()")
+  print(self:getWorldState():getName() .. " :willResignActive()")
 end
 
 function WorldEntityState:didBecomeActive()
-  print(self:hash() .. " :didBecomeActive()")
+  print(self:getWorldState():getName() .. " :didBecomeActive()")
 end
 
 function WorldEntityState:didEnterBackground()
-  print(self:hash() .. " :didEnterBackground()")
+  print(self:getWorldState():getName() .. " :didEnterBackground()")
 end
 
 function WorldEntityState:willEnterForeground()
-  print(self:hash() .. " :willEnterForeground()")
+  print(self:getWorldState():getName() .. " :willEnterForeground()")
 end
 
 function WorldEntityState:willTerminate()
-  print(self:hash() .. " :willTerminate()")
+  print(self:getWorldState():getName() .. " :willTerminate()")
 end
 
 function WorldEntityState:interrupt()
-  print(self:hash() .. " :interrupt()")
+  print(self:getWorldState():getName() .. " :interrupt()")
 end
 
 function WorldEntityState:resumeInterrupt()
-  print(self:hash() .. " :resumeInterrupt()")
+  print(self:getWorldState():getName() .. " :resumeInterrupt()")
 end
 
 function WorldEntityState:receivedMemoryWarning()
-  print(self:hash() .. " :receivedMemoryWarning()")
+  print(self:getWorldState():getName() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

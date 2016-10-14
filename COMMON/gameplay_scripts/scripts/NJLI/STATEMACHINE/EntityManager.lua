@@ -3,16 +3,24 @@ EntityManager.__index = EntityManager
 
 local __ctor = function(self, init)
 
-  self._nodeEntityTable = {}
-  self._sceneEntityTable = {}
-  self._worldEntityTable = {}
+  self.__nodeEntityTable = {}
+  self.__sceneEntityTable = {}
+  self.__worldEntityTable = {}
+
+  self.__nodeEntityStateTable = {}
+  self.__sceneEntityStateTable = {}
+  self.__worldEntityStateTable = {}
 end
 
 local __dtor = function(self)
 
-  self._nodeEntityTable = nil
-  self._sceneEntityTable = nil
-  self._worldEntityTable = nil
+  self.__nodeEntityTable = nil
+  self.__sceneEntityTable = nil
+  self.__worldEntityTable = nil
+
+  self.__nodeEntityStateTable = nil
+  self.__sceneEntityStateTable = nil
+  self.__worldEntityStateTable = nil
 end
 
 local __load = function(self)
@@ -25,98 +33,174 @@ end
 
 function EntityManager:getNodeEntity(key)
   if not self:hasNodeEntity(key) then
-    --print("There is no NodeEntity with key " .. key)
+    error("There is no NodeEntity with key " .. key, 2)
   end
 
-  return self._nodeEntityTable[key]
+  return self.__nodeEntityTable[key]
 end
 
 function EntityManager:getSceneEntity(key)
   if not self:hasSceneEntity(key) then
-    --print("There is no SceneEntity with key " .. key)
+    error("There is no SceneEntity with key " .. key, 2)
   end
 
-  return self._sceneEntityTable[key]
+  return self.__sceneEntityTable[key]
 end
 
 function EntityManager:getWorldEntity(key)
   if not self:hasWorldEntity(key) then
-    --error("There is no WorldEntity with key " .. key, 2)
+    error("There is no WorldEntity with key " .. key, 2)
   end
 
-  return self._worldEntityTable[key]
+  return self.__worldEntityTable[key]
 end
 
-function EntityManager:addNodeEntity(nodeEntity)
-  assert(nodeEntity, "nodeEntity is nil")
-
-  local key = nodeEntity:getNode():getName()
-  local ret = false
-
-  if self:hasNodeEntity(key) then
-    print("Cannot overwrite a NodeEntity with key " .. key .. ".")
-  else
-    self._nodeEntityTable[key] = nodeEntity
-    ret = true
+function EntityManager:getNodeEntityState(key)
+  if not self:hasNodeEntityState(key) then
+    error("There is no NodeEntityState with key " .. key, 2)
   end
 
-  return key, ret
+  return self.__nodeEntityStateTable[key]
 end
 
-function EntityManager:addSceneEntity(sceneEntity)
-  assert(sceneEntity, "nodeEntity is nil")
-
-  local key = sceneEntity:getScene():getName()
-  local ret = false
-
-  if self:hasSceneEntity(key) then
-    print("Cannot overwrite a SceneEntity with key " .. key .. ".")
-  else
-    self._sceneEntityTable[key] = sceneEntity
-    ret = true
+function EntityManager:getSceneEntityState(key)
+  if not self:hasSceneEntityState(key) then
+    error("There is no SceneEntityState with key " .. key, 2)
   end
 
-  return key, ret
+  return self.__sceneEntityStateTable[key]
 end
 
-function EntityManager:addWorldEntity(worldEntity)
-  assert(worldEntity, "worldEntity is nil")
-
-  local key = worldEntity:getWorld():getName()
-  local ret = false
-
-  if self:hasWorldEntity(key) then
-    print("Cannot overwrite a WorldEntity with key " .. key .. ".")
-  else
-    self._worldEntityTable[key] = worldEntity
-    ret = true
+function EntityManager:getWorldEntityState(key)
+  if not self:hasWorldEntityState(key) then
+    error("There is no WorldEntityState with key " .. key)
   end
 
-  return key, ret
+  return self.__worldEntityStateTable[key]
 end
 
-function EntityManager:removeNodeEntity(key)
-  self._nodeEntityTable[key] = nil
+function EntityManager:__generateUniqueName(object, tbl)
+    local baseName = object:getName()
+    local name = baseName
+    local instance = 1
+    if tbl[name] ~= nil then
+        repeat
+            name = baseName .. "." .. tostring(instance)
+            instance = instance + 1
+        until(tbl[name] == nil)
+    end
+    print("The generated name for  is " .. name)
+    object:setName(name)
+
+    assert(nil == tbl[name], "__generateUniqueName didn't function correctly")
 end
 
-function EntityManager:removeSceneEntity(key)
-  self._sceneEntityTable[key] = nil
+function EntityManager:addNodeEntity(entity)
+    assert(entity, "nodeEntity is nil")
+
+    self:__generateUniqueName(entity:getNode(), self.__nodeEntityTable)
+    self.__nodeEntityTable[entity:getNode():getName()] = entity
 end
 
-function EntityManager:removeWorldEntity(key)
-  self._worldEntityTable[key] = nil
+function EntityManager:addSceneEntity(entity)
+    assert(entity, "sceneEntity is nil")
+
+    self:__generateUniqueName(entity:getScene(), self.__sceneEntityTable)
+    self.__sceneEntityTable[entity:getScene():getName()] = entity
+end
+
+function EntityManager:addWorldEntity(entity)
+    assert(entity, "worldEntity is nil")
+
+    self:__generateUniqueName(entity:getWorld(), self.__worldEntityTable)
+    self.__worldEntityTable[entity:getWorld():getName()] = entity
+end
+
+function EntityManager:addNodeEntityState(entity)
+    assert(entity, "nodeEntityState is nil")
+
+    self:__generateUniqueName(entity:getNodeState(), self.__nodeEntityStateTable)
+    self.__nodeEntityStateTable[entity:getNodeState():getName()] = entity
+end
+
+function EntityManager:addSceneEntityState(entity)
+    assert(entity, "sceneEntityState is nil")
+
+    self:__generateUniqueName(entity:getSceneState(), self.__sceneEntityStateTable)
+    self.__sceneEntityStateTable[entity:getSceneState():getName()] = entity
+end
+
+function EntityManager:addWorldEntityState(entity)
+    assert(entity, "worldEntityState is nil")
+
+    self:__generateUniqueName(entity:getWorldState(), self.__worldEntityStateTable)
+    self.__worldEntityStateTable[entity:getWorldState():getName()] = entity
+end
+
+function EntityManager:removeNodeEntity(entity)
+    local key = entity:getNode():getName()
+    assert(hasNodeEntity(key), "trying to remove a nodeEntity that isn't there")
+
+    self.__nodeEntityTable[key] = nil
+end
+
+function EntityManager:removeSceneEntity(entity)
+    local key = entity:getScene():getName()
+    assert(hasSceneEntity(key), "trying to remove a sceneEntity that isn't there")
+
+    self.__sceneEntityTable[key] = nil
+end
+
+function EntityManager:removeWorldEntity(entity)
+    local key = entity:getWorld():getName()
+    assert(hasWorldEntity(key), "trying to remove a worldEntity that isn't there")
+
+    self.__worldEntityTable[key] = nil
+end
+
+function EntityManager:removeNodeEntityState(entity)
+    local key = entity:getNodeState():getName()
+    assert(hasNodeEntityState(key), "trying to remove a nodeEntityState that isn't there")
+
+    self.__nodeEntityStateTable[key] = nil
+end
+
+function EntityManager:removeSceneEntityState(entity)
+    local key = entity:getSceneState():getName()
+    assert(hasSceneEntityState(key), "trying to remove a sceneEntityState that isn't there")
+
+    self.__sceneEntityStateTable[key] = nil
+end
+
+function EntityManager:removeWorldEntityState(entity)
+    local key = entity:getWorldState():getName()
+    assert(hasWorldEntityState(key), "trying to remove a worldEntitystate that isn't there")
+
+    self.__worldEntityStateTable[key] = nil
 end
 
 function EntityManager:hasNodeEntity(key)
-  return (self._nodeEntityTable[key] ~= nil)
+  return (self.__nodeEntityTable[key] ~= nil)
 end
 
 function EntityManager:hasSceneEntity(key)
-  return (self._sceneEntityTable[key] ~= nil)
+  return (self.__sceneEntityTable[key] ~= nil)
 end
 
 function EntityManager:hasWorldEntity(key)
-  return (self._worldEntityTable[key] ~= nil)
+  return (self.__worldEntityTable[key] ~= nil)
+end
+
+function EntityManager:hasNodeEntityState(key)
+  return (self.__nodeEntityStateTable[key] ~= nil)
+end
+
+function EntityManager:hasSceneEntityState(key)
+  return (self.__sceneEntityStateTable[key] ~= nil)
+end
+
+function EntityManager:hasWorldEntityState(key)
+  return (self.__worldEntityStateTable[key] ~= nil)
 end
 
 setmetatable(EntityManager, {
