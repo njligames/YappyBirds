@@ -40,5 +40,7 @@ clean:
 	@rm -rf $(OBJDIR)/*
 	@rm -r luac.log
 
-
+echo:
+	@echo "SRCFILES=$(SRCFILES)"
+	@echo "OBJFILES=$(OBJFILES)"
 
