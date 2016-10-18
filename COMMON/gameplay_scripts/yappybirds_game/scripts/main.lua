@@ -4,22 +4,22 @@ local MyGame = require "YAPPYBIRDS.YappyGame"
 
 local BalloonNodeEntity =
 {
-    name = "Balloon",
+    name = "YAPPYBIRDS.NODES.BALLOON.Balloon",
   class = require "YAPPYBIRDS.NODES.BALLOON.Balloon",
   --The first state is the start state.
   states =
   {
       {
           class = require "YAPPYBIRDS.NODES.BALLOON.STATES.Spawn",
-          name = "BalloonSpawn"
+          name = "YAPPYBIRDS.NODES.BALLOON.STATES.Spawn"
       },
       {
           class = require "YAPPYBIRDS.NODES.BALLOON.STATES.Lob",
-          name = "BalloonLob"
+          name = "YAPPYBIRDS.NODES.BALLOON.STATES.Lob"
       },
       {
           class = require "YAPPYBIRDS.NODES.BALLOON.STATES.Hit",
-          name = "BalloonHit"
+          name = "YAPPYBIRDS.NODES.BALLOON.STATES.Hit"
       },
   },
   nodes = {} --The childen Nodes for the Node.
@@ -27,26 +27,26 @@ local BalloonNodeEntity =
 
 local BirdBeakNodeEntity =
 {
-    name = "BirdBeak",
+    name = "YAPPYBIRDS.NODES.BIRDBEAK.BirdBeak",
   class = require "YAPPYBIRDS.NODES.BIRDBEAK.BirdBeak",
   --The first state is the start state.
   states =
   {
       {
           class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Idle",
-          name = "BirdBeakIdle"
+          name = "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Idle"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Grab",
-          name = "BirdBeakGrab"
+          name = "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Grab"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Hit",
-          name = "BirdBeakHit"
+          name = "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Hit"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Yap",
-          name = "BirdBeakYap"
+          name = "YAPPYBIRDS.NODES.BIRDBEAK.STATES.Yap"
       },
   },
   nodes = {} --The childen Nodes for the Node.
@@ -54,34 +54,34 @@ local BirdBeakNodeEntity =
 
 local BirdNodeEntity =
 {
-    name = "Bird",
+    name = "YAPPYBIRDS.NODES.BIRD.Bird",
   class = require "YAPPYBIRDS.NODES.BIRD.Bird",
   --The first state is the start state.
   states =
   {
       {
           class = require "YAPPYBIRDS.NODES.BIRD.STATES.Spawn",
-          name = "BirdSpawn"
+          name = "YAPPYBIRDS.NODES.BIRD.STATES.Spawn"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRD.STATES.Fly",
-          name = "BirdFly",
+          name = "YAPPYBIRDS.NODES.BIRD.STATES.Fly",
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRD.STATES.Grabbed",
-          name = "BirdGrabbed"
+          name = "YAPPYBIRDS.NODES.BIRD.STATES.Grabbed"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRD.STATES.Grabbing",
-          name = "BirdGrabbing"
+          name = "YAPPYBIRDS.NODES.BIRD.STATES.Grabbing"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRD.STATES.Hit",
-          name = "BirdHit"
+          name = "YAPPYBIRDS.NODES.BIRD.STATES.Hit"
       },
       {
           class = require "YAPPYBIRDS.NODES.BIRD.STATES.Pursue",
-          name = "BirdPursue"
+          name = "YAPPYBIRDS.NODES.BIRD.STATES.Pursue"
       }
   },
   nodes = {
@@ -91,64 +91,64 @@ local BirdNodeEntity =
 
 local MenuScene =
 {
-    name = "MenuScene",
+    name = "YAPPYBIRDS.SCENES.MENU.Menu",
   entityOwner = nil,
   class = require "YAPPYBIRDS.SCENES.MENU.Menu",
   --The first state is the start state.
   states =
   {
     {
-        name = "MenuLoadingScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.Loading",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuAboutScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.About",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.About",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuAchievementsScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.Achievements",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuBoardSelectScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuCharactersScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuHighScoresScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.HighScores",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuLeaderboardsScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.Leaderboards",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuLevelSelectScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.LevelSelect",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuMainMenuScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.MainMenu",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuModeSelectScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.ModeSelect",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "MenuSettingsScene",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.Settings",
       nodes = {}, --The nodes for the SceneState.
     }
@@ -158,34 +158,34 @@ local MenuScene =
 
 local GameplayScene =
 {
-    name = "GameplayScene",
+    name = "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay",
   entityOwner = nil,
   class = require "YAPPYBIRDS.SCENES.GAMEPLAY.Gameplay",
   --The first state is the start state.
   states =
   {
     {
-        name = "GameplayLoadingScene",
+        name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
       nodes = {} --The nodes for the SceneState.
     },
     {
-        name = "GameplayLoseScene",
+        name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "GameplayPauseScene",
+        name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause",
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Pause",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "GameplayPlayingScene",
+        name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing",
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Playing",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "GameplayWinScene",
+        name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win",
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Win",
       nodes = {}, --The nodes for the SceneState.
     },
@@ -199,24 +199,24 @@ local GameplayScene =
 
 local ResultsScene =
 {
-    name = "ResultsScene",
+    name = "YAPPYBIRDS.SCENES.RESULTS.Results",
   entityOwner = nil,
   class = require "YAPPYBIRDS.SCENES.RESULTS.Results",
   --The first state is the start state.
   states =
   {
     {
-        name = "ResultsLoadingScene",
+        name = "YAPPYBIRDS.SCENES.RESULTS.STATES.Loading",
       class = require "YAPPYBIRDS.SCENES.RESULTS.STATES.Loading",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "ResultsLoseScene",
+        name = "YAPPYBIRDS.SCENES.RESULTS.STATES.Lose",
       class = require "YAPPYBIRDS.SCENES.RESULTS.STATES.Lose",
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "ResultsWinScene",
+        name = "YAPPYBIRDS.SCENES.RESULTS.STATES.Win",
       class = require "YAPPYBIRDS.SCENES.RESULTS.STATES.Win",
       nodes = {}, --The nodes for the SceneState.
     },
@@ -228,23 +228,23 @@ local Worlds =
 {
   yappygame =
   {
-      name = "YappyBirds",
+      name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity",
     class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.YappyBirdWorldEntity",
     states =
     {
       --The first state is the start state.
 --      {
---        name = "WorldMenu",
+--        name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
 --        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
 --        scene = MenuScene
 --      },
       {
-          name = "WorldGameplay",
+          name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         scene = GameplayScene
       },
       {
-          name = "WorldResults",
+          name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
         scene = ResultsScene
       },

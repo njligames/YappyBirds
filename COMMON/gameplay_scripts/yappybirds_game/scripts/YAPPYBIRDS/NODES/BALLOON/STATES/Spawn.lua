@@ -42,6 +42,7 @@ function Spawn:update(timeStep)
   BaseClass.update(self, timeStep)
 
   -- self:getNodeEntity():pushState("YAPPYBIRDS.NODES.BALLOON.STATES.Lob")
+--Interface:getStateMachine():pushNodeState("YAPPYBIRDS.NODES.BALLOON.STATES.Lob")
 end
 
 function Spawn:exit()

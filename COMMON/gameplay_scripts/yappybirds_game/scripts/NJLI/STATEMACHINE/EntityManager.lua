@@ -57,7 +57,7 @@ end
 
 function EntityManager:getNodeEntityState(key)
   if not self:hasNodeEntityState(key) then
-    error("There is no NodeEntityState with key " .. key, 2)
+    print("There is no NodeEntityState with key " .. key, 2)
   end
 
   return self.__nodeEntityStateTable[key]
@@ -65,7 +65,7 @@ end
 
 function EntityManager:getSceneEntityState(key)
   if not self:hasSceneEntityState(key) then
-    error("There is no SceneEntityState with key " .. key, 2)
+    print("There is no SceneEntityState with key " .. key, 2)
   end
 
   return self.__sceneEntityStateTable[key]
@@ -73,7 +73,7 @@ end
 
 function EntityManager:getWorldEntityState(key)
   if not self:hasWorldEntityState(key) then
-    error("There is no WorldEntityState with key " .. key)
+    print("There is no WorldEntityState with key " .. key)
   end
 
   return self.__worldEntityStateTable[key]
@@ -161,6 +161,10 @@ function EntityManager:removeNodeEntityState(entity)
     local key = entity:getNodeState():getName()
     assert(hasNodeEntityState(key), "trying to remove a nodeEntityState that isn't there")
 
+    local entityState = self.__nodeEntityStateTable[key]
+    local entity = entityState:getNodeEntity()
+    entity:__removeEntityState(entityState:getNodeState():getName())
+
     self.__nodeEntityStateTable[key] = nil
 end
 
@@ -168,12 +172,20 @@ function EntityManager:removeSceneEntityState(entity)
     local key = entity:getSceneState():getName()
     assert(hasSceneEntityState(key), "trying to remove a sceneEntityState that isn't there")
 
+    local entityState = self.__sceneEntityStateTable[key]
+    local entity = entityState:getSceneEntity()
+    entity:__removeEntityState(entityState:getSceneState():getName())
+
     self.__sceneEntityStateTable[key] = nil
 end
 
 function EntityManager:removeWorldEntityState(entity)
     local key = entity:getWorldState():getName()
     assert(hasWorldEntityState(key), "trying to remove a worldEntitystate that isn't there")
+
+    local entityState = self.__worldEntityStateTable[key]
+    local entity = entityState:getWorldEntity()
+    entity:__removeEntityState(entityState:getWorldState():getName())
 
     self.__worldEntityStateTable[key] = nil
 end

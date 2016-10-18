@@ -1,6 +1,6 @@
 CP=cp
 
-OBJDIR=../assets/scripts
+OBJDIR=../../assets/scripts
 SRCDIR=scripts
 
 STRUCTURE := $(shell find $(SRCDIR) -type d)

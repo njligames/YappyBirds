@@ -115,7 +115,7 @@ end
 
 function NodeEntity:hasEntityState(stateName)
     for index,value in ipairs(self._stateEntityTable) do 
-        if stateName == value:getNode():getName() then
+        if stateName == value:getNodeState():getName() then
             return true, index
         end
     end

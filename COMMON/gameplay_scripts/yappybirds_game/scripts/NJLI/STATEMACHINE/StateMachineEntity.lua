@@ -48,188 +48,188 @@ function StateMachineEntity:getEntityManager()
 end
 
 function StateMachineEntity:_worldEnterState()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:enter()
+  if entity and entity:hasState() then
+    entity:enter()
   end
 end
 
 function StateMachineEntity:_worldUpdateState(timeStep)
   assert(timeStep, "The timeStep is nil")
 
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:update(timeStep)
+  if entity and entity:hasState() then
+    entity:update(timeStep)
   end
 end
 
 function StateMachineEntity:_worldExitState()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:exit()
+  if entity and entity:hasState() then
+    entity:exit()
   end
 end
 
 function StateMachineEntity:_worldOnMessage(message)
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:onMessage(message)
+  if entity and entity:hasState() then
+    entity:onMessage(message)
   end
 end
 
 function StateMachineEntity:_worldRenderHUD()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:renderHUD()
+  if entity and entity:hasState() then
+    entity:renderHUD()
   end
 end
 
 function StateMachineEntity:_worldTouchDown(touches)
   assert(touches, "The touches is nil")
 
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:touchDown(touches)
+  if entity and entity:hasState() then
+    entity:touchDown(touches)
   end
 end
 
 function StateMachineEntity:_worldTouchUp(touches)
   assert(touches, "The touches is nil")
 
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:touchUp(touches)
+  if entity and entity:hasState() then
+    entity:touchUp(touches)
   end
 end
 
 function StateMachineEntity:_worldTouchMove(touches)
   assert(touches, "The touches is nil")
 
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:touchMove(touches)
+  if entity and entity:hasState() then
+    entity:touchMove(touches)
   end
 end
 
 function StateMachineEntity:_worldTouchCancelled(touches)
   assert(touches, "The touches is nil")
 
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:touchCancelled(touches)
+  if entity and entity:hasState() then
+    entity:touchCancelled(touches)
   end
 end
 
 function StateMachineEntity:_worldStateMachineEntityPause()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:pause()
+  if entity and entity:hasState() then
+    entity:pause()
   end
 end
 
 function StateMachineEntity:_worldStateMachineEntityUnPause()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:unPause()
+  if entity and entity:hasState() then
+    entity:unPause()
   end
 end
 
 function StateMachineEntity:_worldKeyboardShow()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:keyboardShow()
+  if entity and entity:hasState() then
+    entity:keyboardShow()
   end
 end
 
 function StateMachineEntity:_worldKeyboardCancel()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:keyboardCancel()
+  if entity and entity:hasState() then
+    entity:keyboardCancel()
   end
 end
 
 function StateMachineEntity:_worldKeyboardReturn(text)
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:keyboardReturn(text)
+  if entity and entity:hasState() then
+    entity:keyboardReturn(text)
   end
 end
 
 function StateMachineEntity:_worldWillResignActive()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:willResignActive()
+  if entity and entity:hasState() then
+    entity:willResignActive()
   end
 end
 
 function StateMachineEntity:_worldDidBecomeActive()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:didBecomeActive()
+  if entity and entity:hasState() then
+    entity:didBecomeActive()
   end
 end
 
 function StateMachineEntity:_worldDidEnterBackground()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:didEnterBackground()
+  if entity and entity:hasState() then
+    entity:didEnterBackground()
   end
 end
 
 function StateMachineEntity:_worldWillEnterForeground()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:willEnterForeground()
+  if entity and entity:hasState() then
+    entity:willEnterForeground()
   end
 end
 
 function StateMachineEntity:_worldWillTerminate()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:willTerminate()
+  if entity and entity:hasState() then
+    entity:willTerminate()
   end
 end
 
 function StateMachineEntity:_worldInterrupt()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:interrupt()
+  if entity and entity:hasState() then
+    entity:interrupt()
   end
 end
 
 function StateMachineEntity:_worldResumeInterrupt()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:resumeInterrupt()
+  if entity and entity:hasState() then
+    entity:resumeInterrupt()
   end
 end
 
 function StateMachineEntity:_worldReceivedMemoryWarning()
-  local worldEntity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
+  local entity = self:getEntityManager():getWorldEntity(njli.World.getInstance():getName())
 
-  if worldEntity and worldEntity:hasState() then
-    worldEntity:receivedMemoryWarning()
+  if entity and entity:hasState() then
+    entity:receivedMemoryWarning()
   end
 end
 
@@ -604,16 +604,49 @@ function StateMachineEntity:_nodeActionComplete(action)
   end
 end
 
-function StateMachineEntity:pushWorldState(worldEntityState)
-  error("todo")
+function StateMachineEntity:pushWorldState(stateName)
+    local entityState = self:getEntityManager():getWorldEntityState(stateName)
+    if entityState ~= nil then
+        local entity = entityState:getWorldEntity()
+        if entity ~= nil then
+            local has = entity:hasEntityState(stateName)
+            if has then
+                entity:pushState(stateName)
+                return true
+            end
+        end
+    end
+    return false
 end
 
-function StateMachineEntity:pushSceneState(worldEntityState)
-  error("todo")
+function StateMachineEntity:pushSceneState(stateName)
+    local entityState = self:getEntityManager():getSceneEntityState(stateName)
+    if entityState ~= nil then
+        local entity = entityState:getSceneEntity()
+        if entity ~= nil then
+            local has = entity:hasEntityState(stateName)
+            if has then
+                entity:pushState(stateName)
+                return true
+            end
+        end
+    end
+    return false
 end
 
-function StateMachineEntity:pushNodeState(worldEntityState)
-  error("todo")
+function StateMachineEntity:pushNodeState(stateName)
+    local entityState = self:getEntityManager():getNodeEntityState(stateName)
+    if entityState ~= nil then
+        local entity = entityState:getNodeEntity()
+        if entity ~= nil then
+            local has = entity:hasEntityState(stateName)
+            if has then
+                entity:pushState(stateName)
+                return true
+            end
+        end
+    end
+    return false
 end
 
 --#############################################################################
