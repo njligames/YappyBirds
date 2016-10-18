@@ -319,86 +319,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "scripts/YAPPYBIRDS/YappyGame.lua",
-			"settings":
-			{
-				"buffer_size": 3481,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/STATEMACHINE/EntityManager.lua",
-			"settings":
-			{
-				"buffer_size": 4070,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/Interface.lua",
-			"settings":
-			{
-				"buffer_size": 3101,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/YappyBirdWorldEntity.lua",
-			"settings":
-			{
-				"buffer_size": 5928,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/STATEMACHINE/WorldEntityState.lua",
-			"settings":
-			{
-				"buffer_size": 7002,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/STATEMACHINE/WorldEntity.lua",
-			"settings":
-			{
-				"buffer_size": 9835,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/STATEMACHINE/NodeEntity.lua",
-			"settings":
-			{
-				"buffer_size": 7694,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/main.lua",
-			"settings":
-			{
-				"buffer_size": 6460,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/STATEMACHINE/NodeEntityState.lua",
-			"settings":
-			{
-				"buffer_size": 4997,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/NJLI/STATEMACHINE/SceneEntityState.lua",
-			"settings":
-			{
-				"buffer_size": 7519,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/sublluanjligameengine/LuaNJLI.sublime-build",
 	"command_palette":
@@ -512,18 +432,41 @@
 	},
 	"file_history":
 	[
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BALLOON/STATES/Hit.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRD/STATES/Fly.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRD/Bird.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/NodeEntity.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/YappyGame.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/WorldEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/DeviceEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/Gameplay.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/YappyGame.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/InterfaceFunctions.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/Interface.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/main.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Loading.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRDBEAK/STATES/Yap.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRDBEAK/STATES/Idle.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRDBEAK/STATES/Hit.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRDBEAK/STATES/Grab.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRDBEAK/BirdBeak.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BIRD/STATES/Spawn.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BALLOON/STATES/Spawn.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BALLOON/STATES/Lob.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BALLOON/STATES/Hit.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/BALLOON/Balloon.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/StateMachineEntity.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/WorldEntityState.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntityState.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/SceneEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Lose.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/EntityManager.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/NodeEntityState.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/YappyBirdWorldEntity.lua",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/Menu.lua",
+		"/Users/jamesfolk/Dropbox/GameEngine/Source/lua/_lua-5.3.3/src/linit.c",
+		"/Users/jamesfolk/Dropbox/GameEngine/Source/lua/_lua-5.3.3/src/lualib.h",
+		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BALLOON/STATES/Hit.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/util.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/STATES/Loading.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/MENU/Menu.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/main.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRDBEAK/STATES/Yap.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRDBEAK/STATES/Idle.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/NODES/GAMEPLAY/BIRDBEAK/STATES/Hit.lua",
@@ -556,18 +499,12 @@
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Win.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Playing.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Pause.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/Gameplay.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Lose.lua",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/SCENES/GAMEPLAY/STATES/Loading.lua",
 		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine/Njli/worldEntityState.sublime-snippet",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/STATEMACHINE/StateMachineEntity.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/STATES/Gameplay.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/STATES/Menu.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/STATES/Results.lua",
 		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine/Njli/sceneEntity.sublime-snippet",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/YappyBirdWorldEntity.lua",
 		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine/Njli/worldEntity.sublime-snippet",
-		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/NJLI/InterfaceFunctions.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/WorldEntityState.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/WorldEntity.lua",
 		"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts/njli/statemachine/StateMachineEntity.lua",
@@ -622,24 +559,7 @@
 		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/Samsung SMART TV/Makefile",
 		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/MacOS/Makefile",
 		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/Linux/Makefile",
-		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/iOS/Makefile",
-		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/Android TV/Makefile",
-		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/Android/Makefile",
-		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/Makefile",
-		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Game/Makefile",
-		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Makefile",
-		"/Users/jamesfolk/Desktop/lovegame/main.lua",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/README.md",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/LuaLove.sublime-completions",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/Comments.tmPreferences",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/ParseLua.py",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/LuaNJLI/baseentityclass.sublime-snippet",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/LuaNJLI.tmLanguage",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/Main.sublime-menu",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/LuaNJLI.sublime-completions",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/package-metadata.json",
-		"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/Lua NJLI/LuaNJLI.sublime-build",
-		"/Users/jamesfolk/Desktop/test.lua"
+		"/Users/jamesfolk/NJLI/GameEngine/MakeNJLIGameEngine/Input/Editor/lua/iOS/Makefile"
 	],
 	"find":
 	{
@@ -650,6 +570,8 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts",
+			"/Users/jamesfolk/Dropbox/GameEngine/Source/lua/_lua-5.3.3",
 			"/Users/jamesfolk/Dropbox/YappyBirds/COMMON/gameplay_scripts/scripts",
 			"/Users/jamesfolk/Library/Application Support/Sublime Text 2/Packages/sublluanjligameengine",
 			"/Users/jamesfolk/NJLI/YappyBirds/COMMON/assets/scripts",
@@ -694,6 +616,97 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Interface",
+			"getStateMachine",
+			"pushState",
+			"hash",
+			"_getEntityState",
+			"InterfaceFunctions",
+			"InterfaceFunctions.lua",
+			"InterfaceFunctions",
+			"Interface",
+			"interface",
+			"Interface",
+			"_deviceEntity",
+			"DeviceEntity",
+			"interface",
+			"InterfaceFunctions",
+			"Interface",
+			"'NJLI.Interface'",
+			"InterfaceFunctions",
+			"interface",
+			"Interface",
+			"addNodeEntity",
+			"print",
+			"hash",
+			"self:hash()",
+			"hash",
+			"()()",
+			"self:hash()",
+			"hash",
+			"hash()",
+			"getNodeState",
+			"addWorldEntityState",
+			"__ctor",
+			"hash",
+			"__ctor",
+			"hash",
+			"__ctor",
+			"removeNodeEntity",
+			"removeWorldEntity",
+			"removeSceneEntity",
+			"removeNodeEntity",
+			"addWorldEntity",
+			"addSceneEntity",
+			"addNodeEntity",
+			"nodeEntitiyOwner",
+			"hash",
+			"addWorldEntity",
+			"addSceneEntity",
+			"addNodeEntity",
+			"GAMEPLAYSCRIPTS_ABSOLUTEPATH",
+			"addNodeEntity",
+			"getNodeEntity",
+			"_addEntityState",
+			"setName",
+			"_addEntityState",
+			"hash",
+			"addNodeEntities",
+			"self:hash()",
+			"self:hash",
+			"self:hash()",
+			"hash",
+			"YAPPYBIRDS.SCENES.MENU.Menu",
+			"__nodeEntities",
+			"_create",
+			"__ctor",
+			"BaseClass",
+			"MenuScene",
+			"__nodeEntities",
+			"update",
+			"James Folk",
+			"addNodeEntity",
+			"__nodeEntities",
+			"startStateMachine",
+			"_addNodeEntities",
+			"addNodeEntity",
+			"__ctor",
+			"addNodeEntities",
+			"addNodeEntity",
+			"addNodeEntities",
+			"addNodeEntity",
+			"startStateMachine",
+			"__nodeEntities",
+			"startStateMachine",
+			"__nodeEntities",
+			"addNodeEntity",
+			"__nodeEntities",
+			"startStateMachine",
+			"luaopen_bit",
+			"luaopen_bullet",
+			"njli",
+			"MENU",
+			"hasSceneEntity",
 			"className",
 			"node",
 			"_setupNodeTable",
@@ -730,98 +743,7 @@
 			"pushState",
 			"stopStateMachine",
 			"MenuScene",
-			"ResultNodeTable",
-			"GameplayNodeTable",
-			"MenuNodeTable",
-			"ResultsNodes",
-			"GameplayNodes",
-			"MenuNodes",
-			"MenuScene",
-			"GameplayNodes",
-			"_addEntityState",
-			"for",
-			"MenuScene",
-			"NodeEntityState",
-			"NodeEntity",
-			"YappyBirdWorldEntity",
-			"Gameplay",
-			"${1:WorldEntityState}",
-			"Gameplay",
-			"nodes",
-			"entityOwner",
-			"_stateEntityTable",
-			"_addEntityState",
-			"getInterface",
-			"_interface",
-			"_addEntityState",
-			"states",
-			"SceneEntityState",
-			"assert(self:hasState(), \"Gameplay must be in a state\")",
-			"\n  assert(self:hasState(), \"Gameplay must be in a state\")",
-			"SceneEntity",
-			"pushState",
-			"getStartStateName",
-			"startStateMachine",
-			"Gameplay",
-			"YappyBirdWorldEntity",
-			"WorldEntityState",
-			"startStateMachine",
-			"_getDeviceEntity",
-			"_getStateMachine",
-			"_getStateMachine()",
-			"_getDeviceEntity",
-			"interface",
-			"getInterface",
-			"setSceneEntity",
-			"WorldEntity",
-			"NJLIInterface",
-			"NJLI",
-			"device",
-			"Device",
-			"device",
-			"statemachine",
-			"getEntityOwner",
-			"_getEntityOwner",
-			"getEntityOwner",
-			"getStartSceneName",
-			"start",
-			"Scene",
-			"getScene",
-			"SceneEntity",
-			"_addEntityState",
-			"_scene",
-			"_getEntityState",
-			"getWorld",
-			"_startStateName",
-			"timeStep",
-			"hasState",
-			"getCurrentEntityState",
-			"__load",
-			"There is no WorldEntity with key",
-			"game",
-			"love",
-			"LuaLove",
-			"love",
-			"game",
-			"njligame",
-			"getEntityManager",
-			"_entityManager",
-			"hasNodeEntity",
-			"&&",
-			"getWorldEntity",
-			"hasWorldEntity",
-			"njliGameInstance",
-			"YappyBirdWorldEntity",
-			"--#############################################################################\n",
-			"getStartSceneName",
-			"getCurrentEntityState",
-			"hasState",
-			"_addEntityState",
-			"hasWorldEntity",
-			"scene",
-			"hasNodeEntity",
-			"set_nodeEntityTable",
-			"addWorldEntity"
+			"ResultNodeTable"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -829,6 +751,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Interface",
+			"self:getWorldState():getName()",
+			"self:getWorld():getName()",
+			"()",
+			"self:getSceneState():getName()",
+			"self:getScene():getName()",
+			"self:getNodeState():getName()",
+			"self:getNode():getName()",
+			"RESULTS",
 			"nodeEntity",
 			"nodeArray",
 			"ResultNodeEntityTable",
@@ -947,16 +878,7 @@
 			"NJLINodeEntity",
 			"NJLINodeEntityState",
 			"NJLISceneEntity",
-			"NJLISceneEntityState",
-			"NJLIWorldEntity",
-			"njliGameInstance",
-			"njligameInstance",
-			"getNodeEntity",
-			"worldEntity",
-			"sceneEntity",
-			"nodeEntity",
-			"Derived",
-			"Base"
+			"NJLISceneEntityState"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -967,295 +889,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "scripts/YAPPYBIRDS/YappyGame.lua",
-					"settings":
-					{
-						"buffer_size": 3481,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2326,
-								2326
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/sublluanjligameengine/LuaNJLI.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1006.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "scripts/NJLI/STATEMACHINE/EntityManager.lua",
-					"settings":
-					{
-						"buffer_size": 4070,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2016,
-								2016
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 365.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "scripts/NJLI/Interface.lua",
-					"settings":
-					{
-						"buffer_size": 3101,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "scripts/YAPPYBIRDS/WORLDS/YAPPYBIRDS/YappyBirdWorldEntity.lua",
-					"settings":
-					{
-						"buffer_size": 5928,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								777,
-								777
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 4,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "scripts/NJLI/STATEMACHINE/WorldEntityState.lua",
-					"settings":
-					{
-						"buffer_size": 7002,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1375,
-								1380
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 142.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "scripts/NJLI/STATEMACHINE/WorldEntity.lua",
-					"settings":
-					{
-						"buffer_size": 9835,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1268,
-								1268
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 166.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "scripts/NJLI/STATEMACHINE/NodeEntity.lua",
-					"settings":
-					{
-						"buffer_size": 7694,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3577,
-								3577
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1823.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "scripts/main.lua",
-					"settings":
-					{
-						"buffer_size": 6460,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4208,
-								4208
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1616.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "scripts/NJLI/STATEMACHINE/NodeEntityState.lua",
-					"settings":
-					{
-						"buffer_size": 4997,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								559,
-								559
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "scripts/NJLI/STATEMACHINE/SceneEntityState.lua",
-					"settings":
-					{
-						"buffer_size": 7519,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1545,
-								1545
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GMod Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 755.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1276,18 +911,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":

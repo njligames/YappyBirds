@@ -57,7 +57,7 @@ end
 
 function EntityManager:getNodeEntityState(key)
   if not self:hasNodeEntityState(key) then
-    print("There is no NodeEntityState with key " .. key, 2)
+    error("There is no NodeEntityState with key " .. key, 2)
   end
 
   return self.__nodeEntityStateTable[key]
@@ -65,7 +65,7 @@ end
 
 function EntityManager:getSceneEntityState(key)
   if not self:hasSceneEntityState(key) then
-    print("There is no SceneEntityState with key " .. key, 2)
+    error("There is no SceneEntityState with key " .. key, 2)
   end
 
   return self.__sceneEntityStateTable[key]
@@ -73,7 +73,7 @@ end
 
 function EntityManager:getWorldEntityState(key)
   if not self:hasWorldEntityState(key) then
-    print("There is no WorldEntityState with key " .. key)
+    error("There is no WorldEntityState with key " .. key)
   end
 
   return self.__worldEntityStateTable[key]
@@ -127,6 +127,7 @@ function EntityManager:addSceneEntityState(entity)
 
     self:__generateUniqueName(entity:getSceneState(), self.__sceneEntityStateTable)
     self.__sceneEntityStateTable[entity:getSceneState():getName()] = entity
+    print ("Added " .. entity:getSceneState():getName())
 end
 
 function EntityManager:addWorldEntityState(entity)

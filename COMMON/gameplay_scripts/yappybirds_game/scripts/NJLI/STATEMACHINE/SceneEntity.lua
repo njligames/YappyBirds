@@ -180,12 +180,6 @@ function SceneEntity:removeNodeEntity(name)
     self.__nodeEntities[name] = nil
 end
 
-function SceneEntity:getNodeEntity(name)
-    assert(self._nodeEntityTable[name], "There must be a node entity with name: " .. name)
-
-    return self._nodeEntityTable[name]
-end
-
 function SceneEntity:startNodeEntities()
    for k, v in pairs(self.__nodeEntities) do
        v:startStateMachine()
@@ -253,6 +247,10 @@ function SceneEntity:exit()
   print(self:getScene():getName() .. " :exit()")
   assert(self:hasState(), "SceneEntity must be in a state")
   self:_getCurrentEntityState():exit()
+
+  for k, v in pairs(self.__nodeEntities) do
+       v:getNode():getStateMachine():clear()
+   end
 end
 
 function SceneEntity:onMessage(message)
