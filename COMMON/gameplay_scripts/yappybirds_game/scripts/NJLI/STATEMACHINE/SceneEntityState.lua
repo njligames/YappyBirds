@@ -80,7 +80,7 @@ function SceneEntityState:pushState(stateName)
 end
 
 function SceneEntityState:push()
-    njli.World.getInstance():addScene(self:getSceneEntity():getScene())
+    njli.World.getInstance():setScene(self:getSceneEntity():getScene())
   self:getSceneEntity():getScene():getStateMachine():pushState(self:getSceneState())
   
 end
@@ -91,7 +91,7 @@ end
 
 function SceneEntityState:enter()
   print(self:getSceneState():getName() .. " :enter()")
-  
+
   self:getSceneEntity():startNodeEntities()
 end
 
