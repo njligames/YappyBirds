@@ -12,11 +12,9 @@ OBJFILES := $(subst $(SRCDIR), $(OBJDIR), $(SRCFILES:%.lua=%.lua))
 
 OUTDIRS := $(addprefix $(OBJDIR)/../, $(STRUCTURE))
 
-all: debug
+COMPILED_LUA := $(OBJDIR)/luac.out
 
-debug: dirs compile_debug export
-
-release: dirs compile_release export
+yappybirds_game: $(OUTDIRS) $(OBJFILES) $(COMPILED_LUA)
 
 $(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
 	@$(CP) $^ $@
@@ -24,20 +22,18 @@ $(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
 $(OUTDIRS):
 	@mkdir -p $@
 
-export: $(OBJFILES)
-
-dirs: $(OUTDIRS)
-
-compile_debug:
-	@luac $(SRCFILES)
-
-compile_release:
+$(COMPILED_LUA):
 	@luac -s $(SRCFILES)
+	@mv luac.out $(COMPILED_LUA)
 
 clean:
 	@rm -rf $(OBJDIR)/*
 
 echo:
-	@echo "SRCFILES=$(SRCFILES)"
-	@echo "OBJFILES=$(OBJFILES)"
+	@echo "SRCFILES=$(SRCFILES)\n"
+	@echo "OBJFILES=$(OBJFILES)\n"
+	@echo "OUTDIRS=$(OUTDIRS)\n"
+	@echo "OBJDIR=$(OBJDIR)\n"
+	@echo "COMPILED_LUA=$(COMPILED_LUA)\n"
 
+.PHONY: yappybirds_game clean echo

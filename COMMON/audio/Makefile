@@ -12,7 +12,7 @@ SRCFILES := $(filter-out $(wildcard ./_archive/*), $(SRCFILES))
 
 OBJFILES := $(subst $(SRCDIR)/, $(OBJDIR)/, $(SRCFILES:%.wav=%.$(OUT_FORMAT)))
 
-all: $(OBJFILES)
+audio: $(OBJFILES)
 
 $(OBJDIR)/%.$(OUT_FORMAT): $(addprefix $(SRCDIR)/, %.wav)
 	@$(BIN) $^ $@
@@ -24,3 +24,5 @@ echo:
 	@echo "OBJDIR/* = $(OBJDIR)/*"
 	@echo "SRCFILES=$(SRCFILES)\n"
 	@echo "OBJFILES=$(OBJFILES)\n"
+
+.PHONY: audio clean echo
