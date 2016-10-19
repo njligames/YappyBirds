@@ -1,18 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "01F8CC793E55B2075A6484E01AC9B387D922ACBF",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "59AA4CF7CBDEC1BBE4A0B70D72CA31ABFD30F995",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416" : 0,
-    "5A0A20EDDBCE1831D73D8F01C49116F958D71DA6" : 0,
-    "01F8CC793E55B2075A6484E01AC9B387D922ACBF" : 0
+    "59AA4CF7CBDEC1BBE4A0B70D72CA31ABFD30F995" : 9223372036854775807,
+    "5A0A20EDDBCE1831D73D8F01C49116F958D71DA6" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "01A16B78-37D4-4987-942A-CA38608BC64E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416" : "",
-    "5A0A20EDDBCE1831D73D8F01C49116F958D71DA6" : "..\/Dropbox\/GameDevelopment\/NJLIGames\/YappyBirds",
-    "01F8CC793E55B2075A6484E01AC9B387D922ACBF" : "YappyBirds\/"
+    "59AA4CF7CBDEC1BBE4A0B70D72CA31ABFD30F995" : "YappyBirds\/",
+    "5A0A20EDDBCE1831D73D8F01C49116F958D71DA6" : "..\/Dropbox\/GameDevelopment\/NJLIGames\/YappyBirds"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "YappyBirds",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -21,7 +21,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:jamesfolk\/yappy-birds.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01F8CC793E55B2075A6484E01AC9B387D922ACBF"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "59AA4CF7CBDEC1BBE4A0B70D72CA31ABFD30F995"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/jamesfolk\/yappy-birds.git",

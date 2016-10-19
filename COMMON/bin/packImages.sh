@@ -11,7 +11,7 @@ TRIM=${2}
 COMMON_DIR=..
 INPUT_IMAGE_FOLDER="${COMMON_DIR}/${ROOT_NAME}/TexturePacker"
 OUTPUT_SHEET_FOLDER="${COMMON_DIR}/assets/images"
-OUTPUT_DATA_FOLDER="${COMMON_DIR}/gameplay_scripts"
+OUTPUT_DATA_FOLDER="${COMMON_DIR}/gameplay_scripts/yappybirds_game/scripts/generated"
 
 FORMAT="corona-imagesheet"
 #TEXTURE_FORMAT="pvr3"

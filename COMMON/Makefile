@@ -1,28 +1,38 @@
+MAKEFILE_PATH := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
 all: 
-	mkdir -p ./assets
-	mkdir -p ./assets/cameras
-	mkdir -p ./assets/curves
-	mkdir -p ./assets/fonts
-	mkdir -p ./assets/images
-	mkdir -p ./assets/materials
-	mkdir -p ./assets/meshes
-	mkdir -p ./assets/particles
-	mkdir -p ./assets/scripts
-	mkdir -p ./assets/shaders
-	mkdir -p ./assets/sounds
-	mkdir -p ./assets/strings
-	cd ./countryLevel && make
-	cd ./gameplay && make
-	cd ./interface && make
-	cd ./gameplay_scripts && make
-	cd ./audio && make
+	@mkdir -p $(MAKEFILE_PATH)/assets
+	@mkdir -p $(MAKEFILE_PATH)/assets/cameras
+	@mkdir -p $(MAKEFILE_PATH)/assets/curves
+	@mkdir -p $(MAKEFILE_PATH)/assets/fonts
+	@mkdir -p $(MAKEFILE_PATH)/assets/images
+	@mkdir -p $(MAKEFILE_PATH)/assets/materials
+	@mkdir -p $(MAKEFILE_PATH)/assets/meshes
+	@mkdir -p $(MAKEFILE_PATH)/assets/particles
+	@mkdir -p $(MAKEFILE_PATH)/assets/scripts
+	@mkdir -p $(MAKEFILE_PATH)/assets/shaders
+	@mkdir -p $(MAKEFILE_PATH)/assets/sounds
+	@mkdir -p $(MAKEFILE_PATH)/assets/strings
+	@cd $(MAKEFILE_PATH)/countryLevel && make
+	@cd $(MAKEFILE_PATH)/gameplay && make
+	@cd $(MAKEFILE_PATH)/interface && make
+	@cd $(MAKEFILE_PATH)/audio && make
+	@cd $(MAKEFILE_PATH)/gameplay_scripts/yappybirds_game && make
 
 clean: 
-	cd ./countryLevel && make clean
-	rm -rf ./assets/cameras
-	rm -rf ./assets/curves
-	rm -rf ./assets/images
-	rm -rf ./assets/materials
-	rm -rf ./assets/meshes
-	rm -rf ./assets/scripts
-	rm -rf ./assets/sounds
+	@cd $(MAKEFILE_PATH)/gameplay_scripts/yappybirds_game && make clean
+	@cd $(MAKEFILE_PATH)/audio && make clean
+	@cd $(MAKEFILE_PATH)/interface && make clean
+	@cd $(MAKEFILE_PATH)/gameplay && make clean
+	@cd $(MAKEFILE_PATH)/countryLevel && make clean
+	@rm -rf ./assets/cameras
+	@rm -rf ./assets/curves
+	@rm -rf ./assets/fonts
+	@rm -rf ./assets/images
+	@rm -rf ./assets/materials
+	@rm -rf ./assets/meshes
+	@rm -rf ./assets/particles
+	@rm -rf ./assets/scripts
+	@rm -rf ./assets/shaders
+	@rm -rf ./assets/sounds
+	@rm -rf ./assets/strings

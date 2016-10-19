@@ -7,5 +7,5 @@
 *.ai
 .DS_Store
 
-COMMON/assets/scripts/*
+COMMON/assets/*
 COMMON/gameplay_scripts/yappybirds_game/luac.log

@@ -29,16 +29,13 @@ export: $(OBJFILES)
 dirs: $(OUTDIRS)
 
 compile_debug:
-	luac -l $(SRCFILES) > luac.log
-	mv luac.out $(OBJDIR)
+	@luac $(SRCFILES)
 
 compile_release:
-	luac -s $(SRCFILES)
-	mv luac.out $(OBJDIR)
+	@luac -s $(SRCFILES)
 
 clean:
 	@rm -rf $(OBJDIR)/*
-	@rm -r luac.log
 
 echo:
 	@echo "SRCFILES=$(SRCFILES)"

@@ -1,24 +1,58 @@
+MAKEFILE_PATH := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-SCRIPTDIR = ../gameplay_scripts/levels/country
-SCRIPTS = $(addprefix $(SCRIPTDIR)/, $(patsubst %.tmx, %.lua, $(wildcard *.tmx)))
-IMAGE_OBJECTS = ../assets/images/countryLevel*.png
+TILED := /Applications/Tiled.app/Contents/MacOS/Tiled
+TILED_SRCDIR              := .
+TILED_SRCFILES := $(addsuffix /*, $(TILED_SRCDIR))
+TILED_SRCFILES := $(wildcard $(TILED_SRCFILES))
+TILED_SRCFILES := $(filter %.tmx, $(TILED_SRCFILES))
+TILED_OBJDIR              := ../gameplay_scripts/yappybirds_game/scripts/generated/tiled/country
 
-.PHONY: all clean
+TILED_OBJFILES := $(subst $(TILED_SRCDIR)/, $(TILED_OBJDIR)/, $(TILED_SRCFILES:%.tmx=%.lua))
 
-all: $(SCRIPTDIR) scripts $(IMAGE_OBJECTS)
+$(TILED_OBJDIR)/%.lua: $(addprefix $(TILED_SRCDIR)/, %.tmx)
+	@$(TILED) --export-map $< $@
+	@echo "Generated: $@"
 
-$(SCRIPTDIR):
-	mkdir -p $(SCRIPTDIR)
 
-$(SCRIPTDIR)/%.lua: %.tmx
-	/Applications/Tiled.app/Contents/MacOS/Tiled --export-map $< $@
 
-scripts: $(SCRIPTS)
+TEXTUREPACKER := /Applications/TexturePacker.app/Contents/MacOS/TexturePacker
+TEXTUREPACKER_OPTIONS := --format corona-imagesheet --texture-format "png" --opt RGBA8888  --reduce-border-artifacts  --max-size 4096 --size-constraints POT --force-squared --multipack --disable-rotation --trim-mode None --force-publish
 
-$(IMAGE_OBJECTS):./TexturePacker/*/*.png
-	../bin/packImages.sh countryLevel None
+TEXTUREPACKER_SRCDIR              := ./TexturePacker
+TEXTUREPACKER_SRCFILES := $(addsuffix /*, $(TEXTUREPACKER_SRCDIR))
+TEXTUREPACKER_SRCFILES := $(wildcard $(TEXTUREPACKER_SRCFILES))
+
+TEXTUREPACKER_LUA_OBJDIR   := ../gameplay_scripts/yappybirds_game/scripts/generated/texturepacker
+TEXTUREPACKER_PNG_OBJDIR   := ../assets/images/generated
+
+TEXTUREPACKER_OBJECTS := $(TEXTUREPACKER_PNG_OBJDIR)/country0.png
+
+all: $(TILED_DIR) $(TEXTUREPACKER_PNG_OBJDIR) $(TEXTUREPACKER_PNG_OBJDIR) $(TILED_OBJFILES) $(TEXTUREPACKER_OBJECTS)
+
+$(TEXTUREPACKER_OBJECTS): $(TEXTUREPACKER_SRCFILES)
+	@$(TEXTUREPACKER) $(TEXTUREPACKER_OPTIONS) --data $(TEXTUREPACKER_LUA_OBJDIR)/country{n}.lua --sheet $(TEXTUREPACKER_PNG_OBJDIR)/country{n}.png $(TEXTUREPACKER_SRCDIR)
+
+$(TILED_DIR):
+	mkdir -p $(TILED_DIR)
+
+$(TEXTUREPACKER_LUA_OBJDIR):
+	mkdir -p $(TEXTUREPACKER_LUA_OBJDIR)
+
+$(TEXTUREPACKER_PNG_OBJDIR):
+	mkdir -p $(TEXTUREPACKER_PNG_OBJDIR)
 
 clean:
-	rm -f scripts $(wildcard *.lua)
-	rm -rf $(SCRIPTDIR)
-	rm -f $(IMAGE_OBJECTS)
+	@rm -rf $(TEXTUREPACKER_PNG_OBJDIR)
+	@rm -rf $(TEXTUREPACKER_LUA_OBJDIR)
+	@rm -rf $(TILED_DIR)
+	@rm -f $(TILED_OBJFILES)
+	@rm -f $(TEXTUREPACKER_PNG_OBJDIR)/country*.png
+	@rm -f $(TEXTUREPACKER_LUA_OBJDIR)/country*.lua
+
+echo:
+	@echo "TILED_SRCFILES=$(TILED_SRCFILES)\n"
+	@echo "TILED_OBJFILES=$(TILED_OBJFILES)\n"
+	@echo "TEXTUREPACKER_SRCFILES=$(TEXTUREPACKER_SRCFILES)\n"
+	@echo "TEXTUREPACKER_OBJECTS=$(TEXTUREPACKER_OBJECTS)"
+
+.PHONY: all clean echo
