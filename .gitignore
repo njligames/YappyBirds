@@ -9,3 +9,5 @@
 
 COMMON/assets/*
 COMMON/gameplay_scripts/yappybirds_game/luac.log
+
+gameplay_scripts/yappybirds_game/scripts/generated/*
