@@ -27,10 +27,12 @@ local __ctor = function(self, init)
   else
       self:getNode():setName("NJLI.STATEMACHINE.NodeEntity")
   end
+  self._entityName = self:getNode():getName()
 
   local startState = nil
 
   self._stateEntityTable = {}
+  self._localStateEntityTable = {}
 
   for k,v in pairs(init.states) do
 
@@ -39,6 +41,10 @@ local __ctor = function(self, init)
         name = v.name,
         entityOwner = self
     })
+  
+    local key = stateEntity:getEntityName()
+    assert(self._localStateEntityTable[key] == nil, "Cannot have duplicate stateEntity names.")
+    self._localStateEntityTable[key] = stateEntity
 
     if nil == startState then
       startState = stateEntity
@@ -59,6 +65,7 @@ end
 local __dtor = function(self)
   Interface:getStateMachine():getEntityManager():removeNodeEntity(self)
 
+  self._localStateEntityTable = nil
   self._stateEntityTable = nil
 
   njli.Node.destroy(self:getNode())
@@ -87,14 +94,21 @@ function NodeEntity:__addEntityState(entityState)
 end
 
 function NodeEntity:__removeEntityState(stateName)
-    local has, index = self:hasEntityState(stateName)
+    local has, index, entityState = self:hasEntityState(stateName)
     if has then
-        table.remove(self._stateEntityTable, index)
+      self._localStateEntityTable[entityState:getEntityName()] = nil
+      table.remove(self._stateEntityTable, index)
     end
 end
 
 function NodeEntity:__getEntityState(stateName)
-  return Interface:getStateMachine():getEntityManager():getNodeEntityState(stateName)
+  local nodeEntityState = self._localStateEntityTable[stateName]
+  
+  if nil == nodeEntityState then
+    return Interface:getStateMachine():getEntityManager():getNodeEntityState(stateName)
+  end
+  
+  return nodeEntityState
 end
 
 function NodeEntity:_getCurrentEntityState()
@@ -109,6 +123,10 @@ end
 --General
 --#############################################################################
 
+function NodeEntity:getEntityName()
+  return self._entityName
+end
+
 function NodeEntity:getNode()
   return self._node
 end
@@ -116,7 +134,7 @@ end
 function NodeEntity:hasEntityState(stateName)
     for index,value in ipairs(self._stateEntityTable) do 
         if stateName == value:getNodeState():getName() then
-            return true, index
+            return true, index, value
         end
     end
     return false
@@ -143,13 +161,13 @@ function NodeEntity:getStartStateEntity()
 end
 
 function NodeEntity:startStateMachine()
-  print(self:getNode():getName() .. " :startStateMachine()")
+  --print(self:getNode():getName() .. " :startStateMachine()")
 
   self:pushState(self._startStateName)
 end
 
 function NodeEntity:enter()
-  print(self:getNode():getName() .. " :enter()")
+  --print(self:getNode():getName() .. " :enter()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
@@ -161,61 +179,61 @@ function NodeEntity:update(timeStep)
 end
 
 function NodeEntity:exit()
-  print(self:getNode():getName() .. " :exit()")
+  --print(self:getNode():getName() .. " :exit()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():exit()
 end
 
 function NodeEntity:onMessage()
-  print(self:getNode():getName() .. " :onMessage()")
+  --print(self:getNode():getName() .. " :onMessage()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():onMessage()
 end
 
 function NodeEntity:rayTouchDown(rayContact)
-  print(self:getNode():getName() .. " :rayTouchDown()")
+  --print(self:getNode():getName() .. " :rayTouchDown()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchUp(rayContact)
-  print(self:getNode():getName() .. " :rayTouchUp()")
+  --print(self:getNode():getName() .. " :rayTouchUp()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchMove(rayContact)
-  print(self:getNode():getName() .. " :rayTouchMove()")
+  --print(self:getNode():getName() .. " :rayTouchMove()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:rayTouchCancelled(rayContact)
-  print(self:getNode():getName() .. " :rayTouchCancelled()")
+  --print(self:getNode():getName() .. " :rayTouchCancelled()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:collide(otherNode, collisionPoint)
-  print(self:getNode():getName() .. " :collide()")
+  --print(self:getNode():getName() .. " :collide()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:near(otherNode)
-  print(self:getNode():getName() .. " :near()")
+  --print(self:getNode():getName() .. " :near()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:actionUpdate(action, timeStep)
-  print(self:getNode():getName() .. " :actionUpdate()")
+  --print(self:getNode():getName() .. " :actionUpdate()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end
 
 function NodeEntity:actionComplete(action)
-  print(self:getNode():getName() .. " :actionComplete()")
+  --print(self:getNode():getName() .. " :actionComplete()")
   assert(self:hasState(), "NodeEntity must be in a state")
   self:_getCurrentEntityState():enter()
 end

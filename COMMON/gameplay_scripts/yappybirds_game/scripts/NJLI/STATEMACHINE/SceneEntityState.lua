@@ -28,6 +28,8 @@ local __ctor = function(self, init)
     else
         self:getSceneState():setName("NJLI.STATEMACHINE.SceneEntityState")
     end
+    
+    self._entityName = self:getSceneState():getName()
 
     --Create the NodeEntities for this SceneEntityState
     self:getSceneEntity():addNodeEntities(init.nodes, self)
@@ -63,6 +65,10 @@ end
 --General
 --#############################################################################
 
+function SceneEntityState:getEntityName()
+  return self._entityName
+end
+
 function SceneEntityState:getSceneState()
   return self._sceneState
 end
@@ -90,7 +96,7 @@ function SceneEntityState:isIn()
 end
 
 function SceneEntityState:enter()
-  print(self:getSceneState():getName() .. " :enter()")
+  --print(self:getSceneState():getName() .. " :enter()")
 
   self:getSceneEntity():startNodeEntities()
 end
@@ -100,11 +106,11 @@ function SceneEntityState:update(timeStep)
 end
 
 function SceneEntityState:exit()
-  print(self:getSceneState():getName() .. " :exit()")
+  --print(self:getSceneState():getName() .. " :exit()")
 end
 
 function SceneEntityState:onMessage(message)
-  print(self:getSceneState():getName() .. " :onMessage(message)")
+  --print(self:getSceneState():getName() .. " :onMessage(message)")
 end
 
 function SceneEntityState:renderHUD()
@@ -112,71 +118,71 @@ function SceneEntityState:renderHUD()
 end
 
 function SceneEntityState:touchDown(touches)
-  print(self:getSceneState():getName() .. " :touchDown(" .. #touches .. ")")
+  --print(self:getSceneState():getName() .. " :touchDown(" .. #touches .. ")")
 end
 
 function SceneEntityState:touchUp(touches)
-  print(self:getSceneState():getName() .. " :touchUp(" .. #touches .. ")")
+  --print(self:getSceneState():getName() .. " :touchUp(" .. #touches .. ")")
 end
 
 function SceneEntityState:touchMove(touches)
-  print(self:getSceneState():getName() .. " :touchMove(" .. #touches .. ")")
+  --print(self:getSceneState():getName() .. " :touchMove(" .. #touches .. ")")
 end
 
 function SceneEntityState:touchCancelled(touches)
-  print(self:getSceneState():getName() .. " :touchCancelled(" .. #touches .. ")")
+  --print(self:getSceneState():getName() .. " :touchCancelled(" .. #touches .. ")")
 end
 
 function SceneEntityState:pause()
-  print(self:getSceneState():getName() .. " :pause()")
+  --print(self:getSceneState():getName() .. " :pause()")
 end
 
 function SceneEntityState:unPause()
-  print(self:getSceneState():getName() .. " :unPause()")
+  --print(self:getSceneState():getName() .. " :unPause()")
 end
 
 function SceneEntityState:keyboardShow()
-  print(self:getSceneState():getName() .. " :keyboardShow()")
+  --print(self:getSceneState():getName() .. " :keyboardShow()")
 end
 
 function SceneEntityState:keyboardCancel()
-  print(self:getSceneState():getName() .. " :keyboardCancel()")
+  --print(self:getSceneState():getName() .. " :keyboardCancel()")
 end
 
 function SceneEntityState:keyboardReturn(text)
-  print(self:getSceneState():getName() .. " :keyboardReturn(text)")
+  --print(self:getSceneState():getName() .. " :keyboardReturn(text)")
 end
 
 function SceneEntityState:willResignActive()
-  print(self:getSceneState():getName() .. " :willResignActive()")
+  --print(self:getSceneState():getName() .. " :willResignActive()")
 end
 
 function SceneEntityState:didBecomeActive()
-  print(self:getSceneState():getName() .. " :didBecomeActive()")
+  --print(self:getSceneState():getName() .. " :didBecomeActive()")
 end
 
 function SceneEntityState:didEnterBackground()
-  print(self:getSceneState():getName() .. " :didEnterBackground()")
+  --print(self:getSceneState():getName() .. " :didEnterBackground()")
 end
 
 function SceneEntityState:willEnterForeground()
-  print(self:getSceneState():getName() .. " :willEnterForeground()")
+  --print(self:getSceneState():getName() .. " :willEnterForeground()")
 end
 
 function SceneEntityState:willTerminate()
-  print(self:getSceneState():getName() .. " :willTerminate()")
+  --print(self:getSceneState():getName() .. " :willTerminate()")
 end
 
 function SceneEntityState:interrupt()
-  print(self:getSceneState():getName() .. " :interrupt()")
+  --print(self:getSceneState():getName() .. " :interrupt()")
 end
 
 function SceneEntityState:resumeInterrupt()
-  print(self:getSceneState():getName() .. " :resumeInterrupt()")
+  --print(self:getSceneState():getName() .. " :resumeInterrupt()")
 end
 
 function SceneEntityState:receivedMemoryWarning()
-  print(self:getSceneState():getName() .. " :receivedMemoryWarning()")
+  --print(self:getSceneState():getName() .. " :receivedMemoryWarning()")
 end
 
 --#############################################################################

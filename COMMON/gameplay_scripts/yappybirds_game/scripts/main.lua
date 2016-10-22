@@ -1,11 +1,39 @@
 Interface = require "NJLI.InterfaceFunctions"
+YappyGame = require "YAPPYBIRDS.YappyGame"
 
-local MyGame = require "YAPPYBIRDS.YappyGame"
+NJLIButton =
+{
+    class = require "NJLI.STATEMACHINE.UI.BUTTON.Button",
+    name = "NJLI.STATEMACHINE.UI.BUTTON.Button",
+    states =
+    {
+        {
+            class = require "NJLI.STATEMACHINE.UI.BUTTON.STATES.Default",
+            name = "NJLI.STATEMACHINE.UI.BUTTON.STATES.Default",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.BUTTON.STATES.Disabled",
+            name = "NJLI.STATEMACHINE.UI.BUTTON.STATES.Disabled",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.BUTTON.STATES.Focused",
+            name = "NJLI.STATEMACHINE.UI.BUTTON.STATES.Focused",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.BUTTON.STATES.Highlighted",
+            name = "NJLI.STATEMACHINE.UI.BUTTON.STATES.Highlighted",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected",
+            name = "NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected",
+        },
+    }
+}
 
 local BalloonNodeEntity =
 {
-    name = "YAPPYBIRDS.NODES.BALLOON.Balloon",
   class = require "YAPPYBIRDS.NODES.BALLOON.Balloon",
+  name = "YAPPYBIRDS.NODES.BALLOON.Balloon",
   --The first state is the start state.
   states =
   {
@@ -118,7 +146,7 @@ local MenuScene =
       nodes = {}, --The nodes for the SceneState.
     },
     {
-        name = "YAPPYBIRDS.SCENES.MENU.STATES.BoardSelect",
+        name = "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
       class = require "YAPPYBIRDS.SCENES.MENU.STATES.Characters",
       nodes = {}, --The nodes for the SceneState.
     },
@@ -153,7 +181,8 @@ local MenuScene =
       nodes = {}, --The nodes for the SceneState.
     }
   },
-  nodes = {} --The nodes for the Scene.
+  nodes = {
+    } --The nodes for the Scene.
 }
 
 local GameplayScene =
@@ -167,7 +196,10 @@ local GameplayScene =
     {
         name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
       class = require "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Loading",
-      nodes = {} --The nodes for the SceneState.
+      nodes = {
+        BalloonNodeEntity,
+        BirdNodeEntity,
+      } --The nodes for the SceneState.
     },
     {
         name = "YAPPYBIRDS.SCENES.GAMEPLAY.STATES.Lose",
@@ -233,11 +265,11 @@ local Worlds =
     states =
     {
       --The first state is the start state.
---      {
---        name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
---        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
---        scene = MenuScene
---      },
+      {
+       name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
+        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
+        scene = MenuScene
+      },
       {
           name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
@@ -252,6 +284,6 @@ local Worlds =
   }
 }
 
-mygame = MyGame(Worlds.yappygame)
-mygame:startStateMachine()
+MyGame = YappyGame(Worlds.yappygame)
+MyGame:startStateMachine()
 

@@ -17,7 +17,6 @@ Results.__index = Results
 --#############################################################################
 
 local __ctor = function(self, init)
-
   --TODO: construct this Entity
 end
 

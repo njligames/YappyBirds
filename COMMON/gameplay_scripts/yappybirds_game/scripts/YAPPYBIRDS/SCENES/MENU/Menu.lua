@@ -17,16 +17,31 @@ Menu.__index = Menu
 --#############################################################################
 
 local __ctor = function(self, init)
+    local spriteAtlasPath = njli.ASSET_PATH("scripts/generated/texturepacker/interface0.lua")
+    self._spriteAtlas = njli.build((loadfile(spriteAtlasPath))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
+    local geometry = MyGame:geometry()
 
-  --TODO: construct this Entity
+    local nodeEntity = NJLIButton.class({
+        name = "PlayButton",
+        states = NJLIButton.states,
+        entityOwner = self,
+        atlas = self._spriteAtlas,
+        geometry = geometry,
+      })
+      self:addNodeEntity(nodeEntity)
 end
 
 local __dtor = function(self)
-  --TODO: destruct this Entity
+    njli.SpriteFrameAtlas.destroy(self._spriteAtlas)
+    self._spriteAtlas = nil
 end
 
 local __load = function(self)
   --TODO: load this Entity
+    local image = njli.Image.create()
+    njli.World.getInstance():getWorldResourceLoader():load("images/generated/interface0.png", image)
+    self._material:getDiffuse():loadGPU(image)
+    njli.Image.destroy(image)
 end
 
 local __unLoad = function(self)

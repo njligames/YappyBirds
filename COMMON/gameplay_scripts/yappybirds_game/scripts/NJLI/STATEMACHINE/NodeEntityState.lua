@@ -26,6 +26,8 @@ local __ctor = function(self, init)
   else
       self:getNodeState():setName("NJLI.STATEMACHINE.NodeEntityState")
   end
+  
+  self._entityName = self:getNodeState():getName()
 
   Interface:getStateMachine():getEntityManager():addNodeEntityState(self)
 end
@@ -48,6 +50,10 @@ end
 --#############################################################################
 --General
 --#############################################################################
+
+function NodeEntityState:getEntityName()
+  return self._entityName
+end
 
 function NodeEntityState:getNodeState()
   return self._nodeState
@@ -78,7 +84,7 @@ function NodeEntityState:isIn()
 end
 
 function NodeEntityState:enter()
-  print(self:getNodeState():getName() .. " :enter()")
+  --print(self:getNodeState():getName() .. " :enter()")
 end
 
 function NodeEntityState:update(timeStep)
@@ -86,43 +92,43 @@ function NodeEntityState:update(timeStep)
 end
 
 function NodeEntityState:exit()
-  print(self:getNodeState():getName() .. " :exit()")
+  --print(self:getNodeState():getName() .. " :exit()")
 end
 
 function NodeEntityState:onMessage()
-  print(self:getNodeState():getName() .. " :onMessage()")
+  --print(self:getNodeState():getName() .. " :onMessage()")
 end
 
 function NodeEntityState:touchDown(rayContact)
-  print(self:getNodeState():getName() .. " :touchDown(rayContact)")
+  --print(self:getNodeState():getName() .. " :touchDown(rayContact)")
 end
 
 function NodeEntityState:touchUp(rayContact)
-  print(self:getNodeState():getName() .. " :touchUp(rayContact)")
+  --print(self:getNodeState():getName() .. " :touchUp(rayContact)")
 end
 
 function NodeEntityState:touchMove(rayContact)
-  print(self:getNodeState():getName() .. " :touchMove(rayContact)")
+  --print(self:getNodeState():getName() .. " :touchMove(rayContact)")
 end
 
 function NodeEntityState:touchCancelled(rayContact)
-  print(self:getNodeState():getName() .. " :touchCancelled(rayContact)")
+  --print(self:getNodeState():getName() .. " :touchCancelled(rayContact)")
 end
 
 function NodeEntityState:collide(otherNode, collisionPoint)
-  print(self:getNodeState():getName() .. " :collide(otherNode, collisionPoint)")
+  --print(self:getNodeState():getName() .. " :collide(otherNode, collisionPoint)")
 end
 
 function NodeEntityState:near(otherNode)
-  print(self:getNodeState():getName() .. " :near(otherNode)")
+  --print(self:getNodeState():getName() .. " :near(otherNode)")
 end
 
 function NodeEntityState:actionUpdate(action, timeStep)
-  print(self:getNodeState():getName() .. " :actionUpdate(action, timeStep)")
+  --print(self:getNodeState():getName() .. " :actionUpdate(action, timeStep)")
 end
 
 function NodeEntityState:actionComplete(action)
-  print(self:getNodeState():getName() .. " :actionComplete(action)")
+  --print(self:getNodeState():getName() .. " :actionComplete(action)")
 end
 
 --#############################################################################

@@ -127,7 +127,6 @@ function EntityManager:addSceneEntityState(entity)
 
     self:__generateUniqueName(entity:getSceneState(), self.__sceneEntityStateTable)
     self.__sceneEntityStateTable[entity:getSceneState():getName()] = entity
-    print ("Added " .. entity:getSceneState():getName())
 end
 
 function EntityManager:addWorldEntityState(entity)
