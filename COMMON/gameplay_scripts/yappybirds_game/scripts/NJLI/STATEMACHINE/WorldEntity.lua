@@ -151,6 +151,11 @@ function WorldEntity:getGameEntity()
   return self._entityOwner
 end
 
+function WorldEntity:getScene()
+    return self:_getCurrentEntityState():getSceneEntity():getScene()
+end
+
+
 --#############################################################################
 --Statemachine code...
 --#############################################################################

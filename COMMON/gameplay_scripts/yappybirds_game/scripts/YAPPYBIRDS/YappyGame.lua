@@ -20,27 +20,6 @@ local __ctor = function(self, init)
   assert(init.states, "init.states variable is expecting a states table")
   assert(type(init.states) == "table", "init.states variable is expecting a states table")
 
-    self._material = njli.Material.create()
-    self._shader = njli.ShaderProgram.create()
-    self._geometry = njli.Sprite2D.create()
-    self._perspectiveCamera = njli.Camera.create()
-    self._orthographicCamera = njli.Camera.create()
-
-    self:material():setName("YappyBird Material")
-    self:shader():setName("YappyBird Shader")
-    self:geometry():setName("YappyBird Geometry")
-
-    self:perspectiveCamera():enableOrthographic(false)
-    self:perspectiveCamera():setRenderCategory(RenderCategories.perspective)
-
-    self:orthographicCamera():enableOrthographic()
-    self:orthographicCamera():setRenderCategory(RenderCategories.orthographic)
-    
-    self:geometry():setMaterial(self:material())
-    --self:geometry():setShaderProgram(self:shader())
-    self:geometry():show(self:orthographicCamera())
-    self:geometry():hide(self:perspectiveCamera())
-
   --Create the WorldEntity
   self._worldEntity = init.class({
     name = init.name,
@@ -57,27 +36,10 @@ end
 
 local __dtor = function(self)
     self._worldEntity = nil
-
-    njli.Material.create(self._material)
-    self._material = nil
-    
-    njli.ShaderProgram.create(self._shader)
-    self._shader = nil
-
-    njli.Sprite2D.create(self._geometry)
-    self._geometry = nil
-
-    njli.Camera.create(self._perspectiveCamera)
-    self._perspectiveCamera = nil
-
-    njli.Camera.create(self._orthographicCamera)
-    self._orthographicCamera = nil
 end
 
 local __load = function(self)
   --TODO: load this Entity
-    njli.World.getInstance():getWorldResourceLoader():load("shaders/objectShader.vsh", "shaders/objectShader.fsh", self:shader())
-
 end
 
 local __unLoad = function(self)

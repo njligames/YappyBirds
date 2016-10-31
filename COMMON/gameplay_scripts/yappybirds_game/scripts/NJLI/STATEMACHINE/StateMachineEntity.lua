@@ -14,16 +14,16 @@ StateMachineEntity.__index = StateMachineEntity
 -- __unLoad()
 --#############################################################################
 
-local NodeEntity = require "njli.statemachine.NodeEntity"
-local NodeEntityState = require "njli.statemachine.NodeEntityState"
+local NodeEntity = require "NJLI.STATEMACHINE.NodeEntity"
+local NodeEntityState = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local SceneEntity = require "njli.statemachine.SceneEntity"
-local SceneEntityState = require "njli.statemachine.SceneEntityState"
+local SceneEntity = require "NJLI.STATEMACHINE.SceneEntity"
+local SceneEntityState = require "NJLI.STATEMACHINE.SceneEntityState"
 
-local WorldEntity = require "njli.statemachine.WorldEntity"
-local WorldEntityState = require "njli.statemachine.WorldEntityState"
+local WorldEntity = require "NJLI.STATEMACHINE.WorldEntity"
+local WorldEntityState = require "NJLI.STATEMACHINE.WorldEntityState"
 
-local EntityManager = require "njli.statemachine.EntityManager"
+local EntityManager = require "NJLI.STATEMACHINE.EntityManager"
 
 local __ctor = function(self, init)
   self._entityManager = EntityManager()

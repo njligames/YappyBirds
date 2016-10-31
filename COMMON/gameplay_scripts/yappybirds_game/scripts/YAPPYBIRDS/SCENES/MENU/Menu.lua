@@ -19,16 +19,29 @@ Menu.__index = Menu
 local __ctor = function(self, init)
     local spriteAtlasPath = njli.ASSET_PATH("scripts/generated/texturepacker/interface0.lua")
     self._spriteAtlas = njli.build((loadfile(spriteAtlasPath))():getSheet(), njli.JLI_OBJECT_TYPE_SpriteFrameAtlas)
-    local geometry = MyGame:geometry()
+
+    local image = njli.Image.create()
+    njli.World.getInstance():getWorldResourceLoader():load("images/generated/interface0.png", image)
+    Geometry2D:getMaterial():getDiffuse():loadGPU(image)
+    njli.Image.destroy(image)
+
+    self:getScene():getRootNode():addChildNode(OrthographicCameraNode)
+    self:getScene():getRootNode():addChildNode(PerspectiveCameraNode)
 
     local nodeEntity = NJLIButton.class({
-        name = "PlayButton",
+        name = "PLAY",
         states = NJLIButton.states,
         entityOwner = self,
         atlas = self._spriteAtlas,
-        geometry = geometry,
+        geometry = Geometry2D,
+        scale = 25,
       })
       self:addNodeEntity(nodeEntity)
+
+      nodeEntity:hide(PerspectiveCameraNode:getCamera())
+      nodeEntity:show(OrthographicCameraNode:getCamera())
+
+      nodeEntity:getNode():setOrigin(bullet.btVector3(400, 400, -1))
 end
 
 local __dtor = function(self)
@@ -38,10 +51,7 @@ end
 
 local __load = function(self)
   --TODO: load this Entity
-    local image = njli.Image.create()
-    njli.World.getInstance():getWorldResourceLoader():load("images/generated/interface0.png", image)
-    self._material:getDiffuse():loadGPU(image)
-    njli.Image.destroy(image)
+    
 end
 
 local __unLoad = function(self)

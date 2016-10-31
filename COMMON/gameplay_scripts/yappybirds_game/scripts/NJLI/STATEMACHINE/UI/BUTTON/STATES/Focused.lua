@@ -1,4 +1,4 @@
-local BaseClass = require "NJLI.STATEMACHINE.nodeEntityState"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
 local Focused = {}
 Focused.__index = Focused

@@ -1,4 +1,4 @@
-local BaseClass = require "NJLI.STATEMACHINE.nodeEntityState"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
 local Default = {}
 Default.__index = Default
@@ -36,6 +36,28 @@ end
 
 function Default:enter()
 	BaseClass.enter(self)
+
+  local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_off"
+  local scale = self:getNodeEntity():scale()
+
+  self:getNodeEntity():setSpriteAtlasFrame(frameName, true)
+  local dimSprite = self:getNodeEntity():getDimensions()
+  local d = bullet.btVector2( (dimSprite:x() * scale), (dimSprite:y() * scale) )
+  self:getNodeEntity():setDimensions(d)
+
+
+
+  -- local nodeStateName = self.node:getStateMachine():getState():getName()
+  -- self.node:getGeometry():setSpriteAtlasFrame(self.node, self.spriteAtlas, nodeStateName, true)
+  -- local dimSprite = self.node:getGeometry():getDimensions(self.node)
+  -- local d = bullet.btVector2( (dimSprite:x() * self.menuScale), (dimSprite:y() * self.menuScale) )
+  -- self.node:getGeometry():setDimensions(self.node, d)
+
+  -- self.node:hide(getPerspectiveCamera())
+
+
+  -- self.physicsShape:setHalfExtends(bullet.btVector3( (dimSprite:x() * self.menuScale) * .25, (dimSprite:y() * self.menuScale)* .25, 1 ))
+
 end
 
 function Default:update(timeStep)

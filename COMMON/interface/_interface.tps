@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.0.1</string>
         <key>fileName</key>
-        <string>/Users/jamesfolk/NJLI/YappyBirds/COMMON/interface/_interface.tps</string>
+        <string>/Users/jamesfolk/Dropbox/YappyBirds/COMMON/interface/_interface.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>corona-imagesheet</string>
         <key>textureFileName</key>
-        <filename>../assets/images/interface{n}.png</filename>
+        <filename>../assets/images/generated/interface{n}.png</filename>
         <key>flipPVR</key>
         <true/>
         <key>pvrCompressionQuality</key>
@@ -147,7 +147,7 @@
             <key>lua</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../gameplay_scripts/interface{n}.lua</filename>
+                <filename>../gameplay_scripts/yappybirds_game/scripts/generated/texturepacker/interface{n}.lua</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -182,7 +182,7 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">None</enum>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -192,7 +192,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../../../../Dropbox/GameDevelopment/mygames/games/jli_game_engine_test/COMMON/interface/TexturePacker</filename>
+            <filename>TexturePacker</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

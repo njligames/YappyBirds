@@ -1,4 +1,4 @@
-local BaseClass = require "NJLI.STATEMACHINE.nodeEntity"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
 
 local Button = {}
 Button.__index = Button
@@ -22,12 +22,14 @@ local __ctor = function(self, init)
     assert(init.atlas ~= nil, "init.atlas variable is nil")
     assert(init.geometry ~= nil, "init.geometry variable is nil")
 
-    self._scale = 1.0
-    self._disabled = false
+    self._scale = init.scale or 1.0
+    self._disabled = init.disabled or false
 
     local node = self:getNode()
 
     node:setGeometry(init.geometry)
+
+    self._spriteFrameAtlas = init.atlas
     
     self._physicsShape = njli.PhysicsShapeBox.create()
 
@@ -50,19 +52,25 @@ end
 local __dtor = function(self)
     njli.Sound.destroy(self._soundTouchCancel)
     self._soundTouchCancel = nil
+
     njli.Sound.destroy(self._soundTouchDrag)
     self._soundTouchDrag = nil
+
     njli.Sound.destroy(self._soundTouchUp)
     self._soundTouchUp = nil
+
     njli.Sound.destroy(self._soundTouchDown)
     self._soundTouchDown = nil
 
     njli.PhysicsBodyRigid.destroy(self._physicsBody)
-    njli.PhysicsShapeBox.destroy(self._physicsShape)
-
-    self._sound = nil
     self._physicsBody = nil
+
+    njli.PhysicsShapeBox.destroy(self._physicsShape)
     self._physicsShape = nil
+
+    self._spriteFrameAtlas = nil
+
+    self:getNode():removeGeometry()
 end
 
 local __load = function(self)
@@ -107,6 +115,30 @@ function Button:touchCancel(rayContact)
     print(self:getNode():getName() .. ":touchCancel")
 end
 
+function Button:setSpriteAtlasFrame(nodeStateName, match)
+    -- self.node:getGeometry():setSpriteAtlasFrame(self.node, self.spriteAtlas, nodeStateName, true)
+    self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, nodeStateName, match)
+end
+
+function Button:getDimensions()
+  return self:getNode():getGeometry():getDimensions(self:getNode())
+end
+
+function Button:setDimensions(dimension)
+  self:getNode():getGeometry():setDimensions(self:getNode(), dimension)
+  --self.physicsShape:setHalfExtends(bullet.btVector3( (dimSprite:x() * self.menuScale) * .25, (dimSprite:y() * self.menuScale)* .25, 1 ))
+  self._physicsShape:setHalfExtends(bullet.btVector3( dimension:x(), dimension:y(), 1.0 ))
+end
+
+function Button:show(camera)
+  self:getNode():show(camera)
+end
+
+function Button:hide(camera)
+  self:getNode():hide(camera)
+end
+
+
 --#############################################################################
 
 function Button:enter()
@@ -115,6 +147,11 @@ end
 
 function Button:update(timeStep)
   BaseClass.update(self, timeStep)
+  -- if(self:getNode():getGeometry()) then
+  --     print('yes')
+  -- else
+  --     print('no')
+  -- end
 end
 
 function Button:exit()

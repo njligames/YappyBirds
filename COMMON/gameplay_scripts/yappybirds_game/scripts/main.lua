@@ -270,20 +270,70 @@ local Worlds =
         class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Menu",
         scene = MenuScene
       },
-      {
-          name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
-        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
-        scene = GameplayScene
-      },
-      {
-          name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
-        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
-        scene = ResultsScene
-      },
+--      {
+--          name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
+--        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Gameplay",
+--        scene = GameplayScene
+--      },
+--      {
+--          name = "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
+--        class = require "YAPPYBIRDS.WORLDS.YAPPYBIRDS.STATES.Results",
+--        scene = ResultsScene
+--      },
     }
   }
 }
 
+local function CreatePerspectiveCameraNode(name)
+    local node = njli.Node.create()
+    node:setName(name)
+
+    local camera = njli.Camera.create()
+    camera:enableOrthographic(false)
+    camera:setRenderCategory(RenderCategories.perspective)
+    camera:setName("perspectiveCamera")
+
+    node:setCamera(camera)
+
+    return node
+end
+
+local function CreateOrthoCameraNode(name)
+    local node = njli.Node.create()
+    node:setName(name)
+
+    local camera = njli.Camera.create()
+    camera:enableOrthographic()
+    camera:setRenderCategory(RenderCategories.orthographic)
+    camera:setName("orthoCamera")
+
+    node:setCamera(camera)
+
+    return node
+end
+
+
+local material = njli.Material.create()
+local shader = njli.ShaderProgram.create()
+Geometry2D = njli.Sprite2D.create()
+
+OrthographicCameraNode = CreateOrthoCameraNode("orthoCamera")
+PerspectiveCameraNode = CreatePerspectiveCameraNode("perspectiveCamera")
+
+material:setName("YappyBird Material")
+shader:setName("YappyBird Shader")
+Geometry2D:setName("YappyBird Geometry")
+
+njli.World.getInstance():getWorldResourceLoader():load("shaders/objectShader.vsh", "shaders/objectShader.fsh", shader)
+
+
+Geometry2D:setMaterial(material)
+Geometry2D:setShaderProgram(shader)
+Geometry2D:show(OrthographicCameraNode:getCamera())
+Geometry2D:hide(PerspectiveCameraNode:getCamera())
+
 MyGame = YappyGame(Worlds.yappygame)
+
 MyGame:startStateMachine()
+
 

@@ -27,12 +27,17 @@ local __ctor = function(self, init)
 
     self._entityOwner = init.entityOwner
 
+    self._physicsWorld = njli.PhysicsWorld.create()
     self._scene = njli.Scene.create()
+    self:getScene():setPhysicsWorld(self._physicsWorld)
+
     if init.name ~= nil then
         self:getScene():setName(init.name)
     else
         self:getScene():setName("NJLI.STATEMACHINE.SceneEntity")
     end
+    
+    njli.World.getInstance():setScene(self:getScene())
     
     self._entityName = self:getScene():getName()
 
@@ -85,6 +90,9 @@ local __dtor = function(self)
 
   njli.Scene.destroy(self:getScene())
   self._scene = nil
+
+    njli.PhysicsWorld.destroy(self._physicsWorld)
+    self._physicsWorld = nil
 
   njli.Node.destroy(self._rootNode)
   self._rootNode = nil

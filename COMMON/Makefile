@@ -25,14 +25,3 @@ clean:
 	@cd $(MAKEFILE_PATH)/interface && make clean
 	@cd $(MAKEFILE_PATH)/gameplay && make clean
 	@cd $(MAKEFILE_PATH)/countryLevel && make clean
-	@rm -rf ./assets/cameras
-	@rm -rf ./assets/curves
-	@rm -rf ./assets/fonts
-	@rm -rf ./assets/images
-	@rm -rf ./assets/materials
-	@rm -rf ./assets/meshes
-	@rm -rf ./assets/particles
-	@rm -rf ./assets/scripts
-	@rm -rf ./assets/shaders
-	@rm -rf ./assets/sounds
-	@rm -rf ./assets/strings

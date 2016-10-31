@@ -1,4 +1,4 @@
-local BaseClass = require "NJLI.STATEMACHINE.nodeEntityState"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
 local Disabled = {}
 Disabled.__index = Disabled
