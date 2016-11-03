@@ -35,7 +35,14 @@ end
 --############################################################################# 
 
 function Selected:enter()
-	BaseClass.enter(self)
+    BaseClass.enter(self)
+
+    local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_on"
+    local scale = self:getNodeEntity():scale()
+
+    self:getNodeEntity():setSpriteAtlasFrame(frameName, true)
+    local dimSprite = self:getNodeEntity():getDimensions()
+    self:getNodeEntity():setDimensions(bullet.btVector2( (dimSprite:x() * scale), (dimSprite:y() * scale) ))
 end
 
 function Selected:update(timeStep)
@@ -50,20 +57,31 @@ function Selected:onMessage()
 	BaseClass.onMessage(self)
 end
 
-function Selected:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
+function Selected:rayTouchDown(rayContact)
+	BaseClass.rayTouchDown(self, rayContact)
 end
 
-function Selected:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
+function Selected:rayTouchUp(rayContact)
+	BaseClass.rayTouchUp(self, rayContact)
+    self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Default")
 end
 
-function Selected:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
+function Selected:rayTouchMove(rayContact)
+	BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Selected:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
+function Selected:rayTouchCancelled(rayContact)
+	BaseClass.rayTouchCancelled(self, rayContact)
+end
+
+function Selected:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
+
+    --self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Default")
+
+    if not self:getNodeEntity():disabled() then
+        self:getNodeEntity():touchDragOutside()
+    end
 end
 
 function Selected:collide(otherNode, collisionPoint)
@@ -80,6 +98,52 @@ end
 
 function Selected:actionComplete(action)
 	BaseClass.actionComplete(self, action)
+end
+
+function Selected:keyboardShow()
+  BaseClass.keyboardShow(self)
+end
+
+function Selected:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+end
+
+function Selected:keyboardReturn()
+    BaseClass.keyboardReturn(self)
+end
+
+function Selected:renderHUD()
+    BaseClass.renderHUD(self)
+end
+
+function Selected:gamePause()
+    BaseClass.gamePause(self)
+end
+
+function Selected:gameUnPause()
+    BaseClass.gameUnPause(self)
+end
+
+function Selected:touchDown(touches)
+    BaseClass.touchDown(self, touches)
+end
+
+function Selected:touchUp(touches)
+    BaseClass.touchUp(self, touches)
+
+    self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Default")
+
+    if not self:getNodeEntity():disabled() then
+        self:getNodeEntity():touchUpOutside(touches)
+    end
+end
+
+function Selected:touchMove(touches)
+    BaseClass.touchMove(self, touches)
+end
+
+function Selected:touchCancelled(touches)
+    BaseClass.touchCancelled(self, touches)
 end
 
 --#############################################################################

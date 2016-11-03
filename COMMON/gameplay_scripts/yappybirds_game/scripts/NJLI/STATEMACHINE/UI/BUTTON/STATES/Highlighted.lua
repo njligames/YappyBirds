@@ -50,20 +50,24 @@ function Highlighted:onMessage()
   BaseClass.onMessage(self)
 end
 
-function Highlighted:touchDown(rayContact)
-  BaseClass.touchDown(self, rayContact)
+function Highlighted:rayTouchDown(rayContact)
+  BaseClass.rayTouchDown(self, rayContact)
 end
 
-function Highlighted:touchUp(rayContact)
-  BaseClass.touchUp(self, rayContact)
+function Highlighted:rayTouchUp(rayContact)
+  BaseClass.rayTouchUp(self, rayContact)
 end
 
-function Highlighted:touchMove(rayContact)
-  BaseClass.touchMove(self, rayContact)
+function Highlighted:rayTouchMove(rayContact)
+  BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Highlighted:touchCancelled(rayContact)
-  BaseClass.touchCancelled(self, rayContact)
+function Highlighted:rayTouchCancelled(rayContact)
+  BaseClass.rayTouchCancelled(self, rayContact)
+end
+
+function Highlighted:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
 end
 
 function Highlighted:collide(otherNode, collisionPoint)
@@ -80,6 +84,46 @@ end
 
 function Highlighted:actionComplete(action)
   BaseClass.actionComplete(self, action)
+end
+
+function Highlighted:keyboardShow()
+  BaseClass.keyboardShow(self)
+end
+
+function Highlighted:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+end
+
+function Highlighted:keyboardReturn()
+    BaseClass.keyboardReturn(self)
+end
+
+function Highlighted:renderHUD()
+    BaseClass.renderHUD(self)
+end
+
+function Highlighted:gamePause()
+    BaseClass.gamePause(self)
+end
+
+function Highlighted:gameUnPause()
+    BaseClass.gameUnPause(self)
+end
+
+function Highlighted:touchDown(touches)
+    BaseClass.touchDown(self, touches)
+end
+
+function Highlighted:touchUp(touches)
+    BaseClass.touchUp(self, touches)
+end
+
+function Highlighted:touchMove(touches)
+    BaseClass.touchMove(self, touches)
+end
+
+function Highlighted:touchCancelled(touches)
+    BaseClass.touchCancelled(self, touches)
 end
 
 --#############################################################################

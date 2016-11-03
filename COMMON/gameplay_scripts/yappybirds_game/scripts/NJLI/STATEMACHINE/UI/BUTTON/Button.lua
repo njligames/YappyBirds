@@ -22,6 +22,13 @@ local __ctor = function(self, init)
     assert(init.atlas ~= nil, "init.atlas variable is nil")
     assert(init.geometry ~= nil, "init.geometry variable is nil")
 
+    self._touchUpOutside = init.touchUpOutside
+    self._touchUpInside = init.touchUpInside
+    self._touchDownInside = init.touchDownInside
+    self._touchDragOutside = init.touchDragOutside
+    self._touchDragInside = init.touchDragInside
+    self._touchCancelled = init.touchCancelled
+
     self._scale = init.scale or 1.0
     self._disabled = init.disabled or false
 
@@ -43,24 +50,82 @@ local __ctor = function(self, init)
         self._disabled = init.disabled
     end
 
-    self._soundTouchDown = njli.Sound.create()
-    self._soundTouchUp = njli.Sound.create()
-    self._soundTouchDrag = njli.Sound.create()
-    self._soundTouchCancel = njli.Sound.create()
+    self._soundTouchUpOutside = njli.Sound.create()
+    if init.soundTouchUpOutside and type(init.soundTouchUpOutside) == "string" then
+        njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchUpOutside, self._soundTouchUpOutside)
+    end
+
+    self._soundTouchUpInside = njli.Sound.create()
+    if init.soundTouchUpInside and type(init.soundTouchUpInside) == "string" then
+        njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchUpInside, self._soundTouchUpInside)
+    end
+
+    self._soundTouchDownInside = njli.Sound.create()
+    if init.soundTouchDownInside and type(init.soundTouchDownInside) == "string" then
+        njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchDownInside, self._soundTouchDownInside)
+    end
+
+    self._soundTouchDragOutside = njli.Sound.create()
+    if init.soundTouchDragOutside and type(init.soundTouchDragOutside) == "string" then
+        njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchDragOutside, self._soundTouchDragOutside)
+    end
+
+    self._soundTouchDragInside = njli.Sound.create()
+    if init.soundTouchDragInside and type(init.soundTouchDragInside) == "string" then
+        njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchDragInside, self._soundTouchDragInside)
+    end
+
+    self._soundTouchCancelled = njli.Sound.create()
+    if init.soundTouchCancelled and type(init.soundTouchCancelled) == "string" then
+        njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchCancelled, self._soundTouchCancelled)
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    self._soundTouchUpOutside:play()
+    self._soundTouchUpInside:play()
+    self._soundTouchDownInside:play()
+    self._soundTouchDragOutside:play()
+    self._soundTouchDragInside:play()
+    self._soundTouchCancelled:play()
 end
 
 local __dtor = function(self)
-    njli.Sound.destroy(self._soundTouchCancel)
-    self._soundTouchCancel = nil
 
-    njli.Sound.destroy(self._soundTouchDrag)
-    self._soundTouchDrag = nil
+    njli.Sound.destroy(self._soundTouchUpOutside)
+    self._soundTouchUpOutside = nil
 
-    njli.Sound.destroy(self._soundTouchUp)
-    self._soundTouchUp = nil
+    njli.Sound.destroy(self._soundTouchUpInside)
+    self._soundTouchUpInside = nil
 
-    njli.Sound.destroy(self._soundTouchDown)
-    self._soundTouchDown = nil
+    njli.Sound.destroy(self._soundTouchDownInside)
+    self._soundTouchDownInside = nil
+
+    njli.Sound.destroy(self._soundTouchDragOutside)
+    self._soundTouchDragOutside = nil
+
+    njli.Sound.destroy(self._soundTouchDragInside)
+    self._soundTouchDragInside = nil
+
+    njli.Sound.destroy(self._soundTouchCancelled)
+    self._soundTouchCancelled = nil
 
     njli.PhysicsBodyRigid.destroy(self._physicsBody)
     self._physicsBody = nil
@@ -99,34 +164,74 @@ function Button:disabled(b)
     return self._disabled
 end
 
+function Button:touchUpOutside(touches)
+    if not self._touchedUp then
+        if self._touchUpOutside then
+            self._touchUpOutside(touches)
+        else
+            print(self:getNode():getName() .. ":touchUpOutside")
+        end
+    end
+    self._soundTouchUpOutside:play()  
+end
+
 function Button:touchUpInside(rayContact)
-    print(self:getNode():getName() .. ":touchUpInside")
+    if self._touchUpInside then
+        self._touchUpInside(rayContact)
+    else
+        print(self:getNode():getName() .. ":touchUpInside")
+    end
+    self._touchedUp = true
+    self._soundTouchUpInside:play()   
 end
 
 function Button:touchDownInside(rayContact)
-    print(self:getNode():getName() .. ":touchDownInside")
+    if self._touchDownInside then
+        self._touchDownInside(rayContact)
+    else
+        print(self:getNode():getName() .. ":touchDownInside")
+    end
+    self._touchedUp = false
+    self._soundTouchDownInside:play()
+end
+
+function Button:touchDragOutside()
+    if self._touchDragOutside then
+        self._touchDragOutside()
+    else
+        print(self:getNode():getName() .. ":touchDragOutside")
+    end
+    self._soundTouchDragOutside:play()
 end
 
 function Button:touchDragInside(rayContact)
-    print(self:getNode():getName() .. ":touchDragInside")
+    if self._touchDragInside then
+        self._touchDragInside(rayContact)
+    else
+        print(self:getNode():getName() .. ":touchDragInside")
+    end
+    self._soundTouchDragInside:play()
 end
 
-function Button:touchCancel(rayContact)
-    print(self:getNode():getName() .. ":touchCancel")
+function Button:touchCancelled(rayContact)
+    if self._touchCancelled then
+        self._touchCancelled(rayContact)
+    else
+        print(self:getNode():getName() .. ":touchCancelled")
+    end
+    self._soundTouchCancelled:play()
 end
 
 function Button:setSpriteAtlasFrame(nodeStateName, match)
-    -- self.node:getGeometry():setSpriteAtlasFrame(self.node, self.spriteAtlas, nodeStateName, true)
     self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, nodeStateName, match)
 end
 
 function Button:getDimensions()
-  return self:getNode():getGeometry():getDimensions(self:getNode())
+    return self:getNode():getGeometry():getDimensions(self:getNode())
 end
 
 function Button:setDimensions(dimension)
   self:getNode():getGeometry():setDimensions(self:getNode(), dimension)
-  --self.physicsShape:setHalfExtends(bullet.btVector3( (dimSprite:x() * self.menuScale) * .25, (dimSprite:y() * self.menuScale)* .25, 1 ))
   self._physicsShape:setHalfExtends(bullet.btVector3( dimension:x(), dimension:y(), 1.0 ))
 end
 
@@ -147,11 +252,6 @@ end
 
 function Button:update(timeStep)
   BaseClass.update(self, timeStep)
-  -- if(self:getNode():getGeometry()) then
-  --     print('yes')
-  -- else
-  --     print('no')
-  -- end
 end
 
 function Button:exit()
@@ -194,6 +294,14 @@ function Button:rayTouchCancelled(rayContact)
   end
 end
 
+function Button:rayTouchMissed(node)
+  BaseClass.rayTouchMissed(self, node)
+
+--  if not self:disabled() then
+--      self:touchMissed(node)
+--  end
+end
+
 function Button:collide(otherNode, collisionPoint)
   BaseClass.collide(self, otherNode, collisionPoint)
 end
@@ -208,6 +316,46 @@ end
 
 function Button:actionComplete(action)
   BaseClass.actionComplete(self, action)
+end
+
+function Button:keyboardShow()
+  BaseClass.keyboardShow(self)
+end
+
+function Button:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+end
+
+function Button:keyboardReturn()
+    BaseClass.keyboardReturn(self)
+end
+
+function Button:renderHUD()
+    BaseClass.renderHUD(self)
+end
+
+function Button:gamePause()
+    BaseClass.gamePause(self)
+end
+
+function Button:gameUnPause()
+    BaseClass.gameUnPause(self)
+end
+
+function Button:touchDown(touches)
+    BaseClass.touchDown(self, touches)
+end
+
+function Button:touchUp(touches)
+    BaseClass.touchUp(self, touches)
+end
+
+function Button:touchMove(touches)
+    BaseClass.touchMove(self, touches)
+end
+
+function Button:touchCancelled(touches)
+    BaseClass.touchCancelled(self, touches)
 end
 
 --#############################################################################

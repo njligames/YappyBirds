@@ -50,20 +50,24 @@ function Focused:onMessage()
 	BaseClass.onMessage(self)
 end
 
-function Focused:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
+function Focused:rayTouchDown(rayContact)
+	BaseClass.rayTouchDown(self, rayContact)
 end
 
-function Focused:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
+function Focused:rayTouchUp(rayContact)
+	BaseClass.rayTouchUp(self, rayContact)
 end
 
-function Focused:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
+function Focused:rayTouchMove(rayContact)
+	BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Focused:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
+function Focused:rayTouchCancelled(rayContact)
+	BaseClass.rayTouchCancelled(self, rayContact)
+end
+
+function Focused:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
 end
 
 function Focused:collide(otherNode, collisionPoint)
@@ -80,6 +84,46 @@ end
 
 function Focused:actionComplete(action)
 	BaseClass.actionComplete(self, action)
+end
+
+function Focused:keyboardShow()
+  BaseClass.keyboardShow(self)
+end
+
+function Focused:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+end
+
+function Focused:keyboardReturn()
+    BaseClass.keyboardReturn(self)
+end
+
+function Focused:renderHUD()
+    BaseClass.renderHUD(self)
+end
+
+function Focused:gamePause()
+    BaseClass.gamePause(self)
+end
+
+function Focused:gameUnPause()
+    BaseClass.gameUnPause(self)
+end
+
+function Focused:touchDown(touches)
+    BaseClass.touchDown(self, touches)
+end
+
+function Focused:touchUp(touches)
+    BaseClass.touchUp(self, touches)
+end
+
+function Focused:touchMove(touches)
+    BaseClass.touchMove(self, touches)
+end
+
+function Focused:touchCancelled(touches)
+    BaseClass.touchCancelled(self, touches)
 end
 
 --#############################################################################

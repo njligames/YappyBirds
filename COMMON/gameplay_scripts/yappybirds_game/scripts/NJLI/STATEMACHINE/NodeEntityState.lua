@@ -99,20 +99,24 @@ function NodeEntityState:onMessage()
   --print(self:getNodeState():getName() .. " :onMessage()")
 end
 
-function NodeEntityState:touchDown(rayContact)
+function NodeEntityState:rayTouchDown(rayContact)
   --print(self:getNodeState():getName() .. " :touchDown(rayContact)")
 end
 
-function NodeEntityState:touchUp(rayContact)
+function NodeEntityState:rayTouchUp(rayContact)
   --print(self:getNodeState():getName() .. " :touchUp(rayContact)")
 end
 
-function NodeEntityState:touchMove(rayContact)
+function NodeEntityState:rayTouchMove(rayContact)
   --print(self:getNodeState():getName() .. " :touchMove(rayContact)")
 end
 
-function NodeEntityState:touchCancelled(rayContact)
+function NodeEntityState:rayTouchCancelled(rayContact)
   --print(self:getNodeState():getName() .. " :touchCancelled(rayContact)")
+end
+
+function NodeEntityState:rayTouchMissed(node)
+  --print(self:getNodeState():getName() .. " :rayTouchMissed(node)")
 end
 
 function NodeEntityState:collide(otherNode, collisionPoint)
@@ -129,6 +133,46 @@ end
 
 function NodeEntityState:actionComplete(action)
   --print(self:getNodeState():getName() .. " :actionComplete(action)")
+end
+
+function NodeEntityState:keyboardShow()
+  --print(self:getNodeState():getName() .. " :keyboardShow()")
+end
+
+function NodeEntityState:keyboardCancel()
+  --print(self:getNodeState():getName() .. " :keyboardCancel()")
+end
+
+function NodeEntityState:keyboardReturn()
+  --print(self:getNodeState():getName() .. " :keyboardReturn()")
+end
+
+function NodeEntityState:renderHUD()
+  --print(self:getNodeState():getName() .. " :renderHUD()")
+end
+
+function NodeEntityState:gamePause()
+  --print(self:getNodeState():getName() .. " :gamePause()")
+end
+
+function NodeEntityState:gameUnPause()
+  --print(self:getNodeState():getName() .. " :gameUnPause()")
+end
+
+function NodeEntityState:touchDown(touches)
+  --print(self:getNodeState():getName() .. " :actionComplete()")
+end
+
+function NodeEntityState:touchUp(touches)
+  --print(self:getNodeState():getName() .. " :touchUp()")
+end
+
+function NodeEntityState:touchMove(touches)
+  --print(self:getNodeState():getName() .. " :touchMove()")
+end
+
+function NodeEntityState:touchCancelled(touches)
+    --print(self:getNodeState():getName() .. " :touchCancelled()")
 end
 
 --#############################################################################

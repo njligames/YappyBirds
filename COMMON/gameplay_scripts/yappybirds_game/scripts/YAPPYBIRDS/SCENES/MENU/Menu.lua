@@ -25,8 +25,8 @@ local __ctor = function(self, init)
     Geometry2D:getMaterial():getDiffuse():loadGPU(image)
     njli.Image.destroy(image)
 
-    self:getScene():getRootNode():addChildNode(OrthographicCameraNode)
-    self:getScene():getRootNode():addChildNode(PerspectiveCameraNode)
+    self:getScene():addCameraNode(OrthographicCameraNode, true)
+    self:getScene():addCameraNode(PerspectiveCameraNode)
 
     local nodeEntity = NJLIButton.class({
         name = "PLAY",

@@ -511,7 +511,7 @@ function StateMachineEntity:_rayTouchDown(rayContact)
   local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
 
   if nodeEntity and nodeEntity:hasState() then
-    nodeEntity:touchDown(rayContact)
+    nodeEntity:rayTouchDown(rayContact)
   end
 end
 
@@ -524,7 +524,7 @@ function StateMachineEntity:_rayTouchUp(rayContact)
   local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
 
   if nodeEntity and nodeEntity:hasState() then
-    nodeEntity:touchUp(rayContact)
+    nodeEntity:rayTouchUp(rayContact)
   end
 end
 
@@ -537,7 +537,7 @@ function StateMachineEntity:_rayTouchMove(rayContact)
   local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
 
   if nodeEntity and nodeEntity:hasState() then
-    nodeEntity:touchMove(rayContact)
+    nodeEntity:rayTouchMove(rayContact)
   end
 end
 
@@ -550,8 +550,21 @@ function StateMachineEntity:_rayTouchCancelled(rayContact)
   local nodeEntity = self:getEntityManager():getNodeEntity(hitNode:getName())
 
   if nodeEntity and nodeEntity:hasState() then
-    nodeEntity:touchCancelled(rayContact)
+    nodeEntity:rayTouchCancelled(rayContact)
   end
+end
+
+function StateMachineEntity:_rayTouchMissed(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:rayTouchMissed(node)
+      end
+  end
+
 end
 
 function StateMachineEntity:_nodeCollide(node, otherNode, collisionPoint)
@@ -601,6 +614,126 @@ function StateMachineEntity:_nodeActionComplete(action)
 
   if nodeEntity and nodeEntity:hasState() then
     nodeEntity:actionComplete(action)
+  end
+end
+
+function StateMachineEntity:_nodeKeyboardShow(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:keyboardShow()
+      end
+  end
+end
+
+function StateMachineEntity:_nodeKeyboardCancel(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:keyboardCancel()
+      end
+  end
+end
+
+function StateMachineEntity:_nodeKeyboardReturn(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:keyboardReturn()
+      end
+  end
+end
+
+function StateMachineEntity:_nodeRenderHUD(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:renderHUD()
+      end
+  end
+end
+
+function StateMachineEntity:_nodeGamePause(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:gamePause()
+      end
+  end
+end
+
+function StateMachineEntity:_nodeGameUnPause(node)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:gameUnPause()
+      end
+  end
+end
+
+function StateMachineEntity:_nodeTouchDown(node, touches)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:touchDown(touches)
+      end
+  end
+end
+
+function StateMachineEntity:_nodeTouchUp(node, touches)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:touchUp(touches)
+      end
+  end
+end
+
+function StateMachineEntity:_nodeTouchMove(node, touches)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:touchMove(touches)
+      end
+  end
+end
+
+function StateMachineEntity:_nodeTouchCancelled(node, touches)
+  assert(node, "The node is nil")
+
+  if self:getEntityManager():hasNodeEntity(node:getName()) then
+      local nodeEntity = self:getEntityManager():getNodeEntity(node:getName())
+
+      if nodeEntity and nodeEntity:hasState() then
+        nodeEntity:touchCancelled(touches)
+      end
   end
 end
 

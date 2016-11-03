@@ -50,20 +50,24 @@ function Disabled:onMessage()
 	BaseClass.onMessage(self)
 end
 
-function Disabled:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
+function Disabled:rayTouchDown(rayContact)
+	BaseClass.rayTouchDown(self, rayContact)
 end
 
-function Disabled:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
+function Disabled:rayTouchUp(rayContact)
+	BaseClass.rayTouchUp(self, rayContact)
 end
 
-function Disabled:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
+function Disabled:rayTouchMove(rayContact)
+	BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Disabled:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
+function Disabled:rayTouchCancelled(rayContact)
+	BaseClass.rayTouchCancelled(self, rayContact)
+end
+
+function Disabled:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
 end
 
 function Disabled:collide(otherNode, collisionPoint)
@@ -80,6 +84,46 @@ end
 
 function Disabled:actionComplete(action)
 	BaseClass.actionComplete(self, action)
+end
+
+function Disabled:keyboardShow()
+  BaseClass.keyboardShow(self)
+end
+
+function Disabled:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+end
+
+function Disabled:keyboardReturn()
+    BaseClass.keyboardReturn(self)
+end
+
+function Disabled:renderHUD()
+    BaseClass.renderHUD(self)
+end
+
+function Disabled:gamePause()
+    BaseClass.gamePause(self)
+end
+
+function Disabled:gameUnPause()
+    BaseClass.gameUnPause(self)
+end
+
+function Disabled:touchDown(touches)
+    BaseClass.touchDown(self, touches)
+end
+
+function Disabled:touchUp(touches)
+    BaseClass.touchUp(self, touches)
+end
+
+function Disabled:touchMove(touches)
+    BaseClass.touchMove(self, touches)
+end
+
+function Disabled:touchCancelled(touches)
+    BaseClass.touchCancelled(self, touches)
 end
 
 --#############################################################################

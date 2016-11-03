@@ -171,11 +171,6 @@ function __NJLISceneGameUnPause(scene)
   __interface:getStateMachine():_sceneGameUnPause(scene)
 end
 
-function __NJLISceneReceivedMemoryWarning(scene)
-  --print("__NJLISceneReceivedMemoryWarning")
-  __interface:getStateMachine():_sceneReceivedMemoryWarning(scene)
-end
-
 function __NJLISceneTouchDown(scene, touches)
   --print("__NJLISceneTouchDown")
   __interface:getStateMachine():_sceneTouchDown(scene, touches)
@@ -194,6 +189,11 @@ end
 function __NJLISceneTouchCancelled(scene, touches)
   --print("__NJLISceneTouchCancelled")
   __interface:getStateMachine():_sceneTouchCancelled(scene, touches)
+end
+
+function __NJLISceneReceivedMemoryWarning(scene)
+  --print("__NJLISceneReceivedMemoryWarning")
+  __interface:getStateMachine():_sceneReceivedMemoryWarning(scene)
 end
 
 function __NJLISceneWillResignActive(scene)
@@ -293,6 +293,61 @@ end
 function __NJLINodeRayTouchCancelled(rayContact)
   --print("__NJLINodeRayTouchCancelled")
   __interface:getStateMachine():_rayTouchCancelled(rayContact)
+end
+
+function __NJLINodeRayTouchMissed(node)
+    --print("__NJLINodeRayTouchMissed")
+  __interface:getStateMachine():_rayTouchMissed(node)
+end
+
+function __NJLINodeKeyboardShow(node)
+  --print("__NJLINodeKeyboardShow")
+  __interface:getStateMachine():_nodeKeyboardShow(node)
+end
+
+function __NJLINodeKeyboardCancel(node)
+  --print("__NJLINodeKeyboardCancel")
+  __interface:getStateMachine():_nodeKeyboardCancel(node)
+end
+
+function __NJLINodeKeyboardReturn(node)
+  --print("__NJLINodeKeyboardReturn")
+  __interface:getStateMachine():_nodeKeyboardReturn(node)
+end
+
+function __NJLINodeRenderHUD(node)
+  --print("__NJLINodeRenderHUD")
+  __interface:getStateMachine():_nodeRenderHUD(node)
+end
+
+function __NJLINodeGamePause(node)
+  --print("__NJLINodeGamePause")
+  __interface:getStateMachine():_nodeGamePause(node)
+end
+
+function __NJLINodeGameUnPause(node)
+  --print("__NJLINodeGameUnPause")
+  __interface:getStateMachine():_nodeGameUnPause(node)
+end
+
+function __NJLINodeTouchDown(node, touches)
+  --print("__NJLINodeTouchDown")
+  __interface:getStateMachine():_nodeTouchDown(node, touches)
+end
+
+function __NJLINodeTouchUp(node, touches)
+  --print("__NJLINodeTouchUp")
+  __interface:getStateMachine():_nodeTouchUp(node, touches)
+end
+
+function __NJLINodeTouchMove(node, touches)
+  --print("__NJLINodeTouchMove")
+  __interface:getStateMachine():_nodeTouchMove(node, touches)
+end
+
+function __NJLINodeTouchCancelled(node, touches)
+  --print("__NJLINodeTouchCancelled")
+  __interface:getStateMachine():_nodeTouchCancelled(node, touches)
 end
 
 --#############################################################################

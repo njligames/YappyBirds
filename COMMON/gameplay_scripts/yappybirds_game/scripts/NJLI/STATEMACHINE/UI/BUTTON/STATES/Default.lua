@@ -35,29 +35,14 @@ end
 --############################################################################# 
 
 function Default:enter()
-	BaseClass.enter(self)
+    BaseClass.enter(self)
 
-  local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_off"
-  local scale = self:getNodeEntity():scale()
+    local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_off"
+    local scale = self:getNodeEntity():scale()
 
-  self:getNodeEntity():setSpriteAtlasFrame(frameName, true)
-  local dimSprite = self:getNodeEntity():getDimensions()
-  local d = bullet.btVector2( (dimSprite:x() * scale), (dimSprite:y() * scale) )
-  self:getNodeEntity():setDimensions(d)
-
-
-
-  -- local nodeStateName = self.node:getStateMachine():getState():getName()
-  -- self.node:getGeometry():setSpriteAtlasFrame(self.node, self.spriteAtlas, nodeStateName, true)
-  -- local dimSprite = self.node:getGeometry():getDimensions(self.node)
-  -- local d = bullet.btVector2( (dimSprite:x() * self.menuScale), (dimSprite:y() * self.menuScale) )
-  -- self.node:getGeometry():setDimensions(self.node, d)
-
-  -- self.node:hide(getPerspectiveCamera())
-
-
-  -- self.physicsShape:setHalfExtends(bullet.btVector3( (dimSprite:x() * self.menuScale) * .25, (dimSprite:y() * self.menuScale)* .25, 1 ))
-
+    self:getNodeEntity():setSpriteAtlasFrame(frameName, true)
+    local dimSprite = self:getNodeEntity():getDimensions()
+    self:getNodeEntity():setDimensions(bullet.btVector2( (dimSprite:x() * scale), (dimSprite:y() * scale) ))
 end
 
 function Default:update(timeStep)
@@ -72,20 +57,26 @@ function Default:onMessage()
 	BaseClass.onMessage(self)
 end
 
-function Default:touchDown(rayContact)
-	BaseClass.touchDown(self, rayContact)
+function Default:rayTouchDown(rayContact)
+	BaseClass.rayTouchDown(self, rayContact)
+    self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
 end
 
-function Default:touchUp(rayContact)
-	BaseClass.touchUp(self, rayContact)
+function Default:rayTouchUp(rayContact)
+	BaseClass.rayTouchUp(self, rayContact)
 end
 
-function Default:touchMove(rayContact)
-	BaseClass.touchMove(self, rayContact)
+function Default:rayTouchMove(rayContact)
+	BaseClass.rayTouchMove(self, rayContact)
+    self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
 end
 
-function Default:touchCancelled(rayContact)
-	BaseClass.touchCancelled(self, rayContact)
+function Default:rayTouchCancelled(rayContact)
+	BaseClass.rayTouchCancelled(self, rayContact)
+end
+
+function Default:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
 end
 
 function Default:collide(otherNode, collisionPoint)
@@ -102,6 +93,46 @@ end
 
 function Default:actionComplete(action)
 	BaseClass.actionComplete(self, action)
+end
+
+function Default:keyboardShow()
+  BaseClass.keyboardShow(self)
+end
+
+function Default:keyboardCancel()
+  BaseClass.keyboardCancel(self)
+end
+
+function Default:keyboardReturn()
+    BaseClass.keyboardReturn(self)
+end
+
+function Default:renderHUD()
+    BaseClass.renderHUD(self)
+end
+
+function Default:gamePause()
+    BaseClass.gamePause(self)
+end
+
+function Default:gameUnPause()
+    BaseClass.gameUnPause(self)
+end
+
+function Default:touchDown(touches)
+    BaseClass.touchDown(self, touches)
+end
+
+function Default:touchUp(touches)
+    BaseClass.touchUp(self, touches)
+end
+
+function Default:touchMove(touches)
+    BaseClass.touchMove(self, touches)
+end
+
+function Default:touchCancelled(touches)
+    BaseClass.touchCancelled(self, touches)
 end
 
 --#############################################################################
