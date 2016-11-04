@@ -79,32 +79,6 @@ local __ctor = function(self, init)
     if init.soundTouchCancelled and type(init.soundTouchCancelled) == "string" then
         njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchCancelled, self._soundTouchCancelled)
     end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    self._soundTouchUpOutside:play()
-    self._soundTouchUpInside:play()
-    self._soundTouchDownInside:play()
-    self._soundTouchDragOutside:play()
-    self._soundTouchDragInside:play()
-    self._soundTouchCancelled:play()
 end
 
 local __dtor = function(self)
@@ -159,8 +133,16 @@ end
 
 function Button:disabled(b)
     if b ~= nil then
+
         self._disabled = b
+
+        if self._disabled then
+            self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Disabled")
+        else
+            self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
+        end
     end
+
     return self._disabled
 end
 

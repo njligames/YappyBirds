@@ -59,7 +59,10 @@ end
 
 function Default:rayTouchDown(rayContact)
 	BaseClass.rayTouchDown(self, rayContact)
-    self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
+
+    if not self:getNodeEntity():disabled() then
+        self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
+    end
 end
 
 function Default:rayTouchUp(rayContact)
@@ -68,7 +71,10 @@ end
 
 function Default:rayTouchMove(rayContact)
 	BaseClass.rayTouchMove(self, rayContact)
-    self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
+
+    if not self:getNodeEntity():disabled() then
+        self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
+    end
 end
 
 function Default:rayTouchCancelled(rayContact)
