@@ -1,7 +1,7 @@
 local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Disabled = {}
-Disabled.__index = Disabled
+local On = {}
+On.__index = On
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -32,104 +32,118 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
+--On Specific
+--#############################################################################
 
-function Disabled:enter()
-	BaseClass.enter(self)
+--#############################################################################
+--NodeEntityState overwrite
+--#############################################################################
 
-    local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_dis"
+function On:enter()
+    BaseClass.enter(self)
+
+    local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_on"
     local scale = self:getNodeEntity():scale()
 
     self:getNodeEntity():setSpriteAtlasFrame(frameName, true)
     local dimSprite = self:getNodeEntity():getDimensions()
     self:getNodeEntity():setDimensions(bullet.btVector2( (dimSprite:x() * scale), (dimSprite:y() * scale) ))
+
+    self:getNodeEntity()._on = true
 end
 
-function Disabled:update(timeStep)
-	BaseClass.update(self, timeStep)
+function On:update(timeStep)
+  BaseClass.update(self, timeStep)
 end
 
-function Disabled:exit()
-	BaseClass.exit(self)
+function On:exit()
+  BaseClass.exit(self)
 end
 
-function Disabled:onMessage()
-	BaseClass.onMessage(self)
+function On:onMessage()
+  BaseClass.onMessage(self)
 end
 
-function Disabled:rayTouchDown(rayContact)
-	BaseClass.rayTouchDown(self, rayContact)
+function On:rayTouchDown(rayContact)
+  BaseClass.rayTouchDown(self, rayContact)
+  if not self:getNodeEntity():disabled() then
+      self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.SWITCH.STATES.Phasing")
+  end
 end
 
-function Disabled:rayTouchUp(rayContact)
-	BaseClass.rayTouchUp(self, rayContact)
+function On:rayTouchUp(rayContact)
+  BaseClass.rayTouchUp(self, rayContact)
+    -- if not self:getNodeEntity():disabled() then
+    --     self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.SWITCH.STATES.Off")
+    -- end
 end
 
-function Disabled:rayTouchMove(rayContact)
-	BaseClass.rayTouchMove(self, rayContact)
+function On:rayTouchMove(rayContact)
+  BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Disabled:rayTouchCancelled(rayContact)
-	BaseClass.rayTouchCancelled(self, rayContact)
+function On:rayTouchCancelled(rayContact)
+  BaseClass.rayTouchCancelled(self, rayContact)
 end
 
-function Disabled:rayTouchMissed(node)
+function On:rayTouchMissed(node)
     BaseClass.rayTouchMissed(self, node)
 end
 
-function Disabled:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
+function On:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, collisionPoint)
 end
 
-function Disabled:near(otherNode)
-	BaseClass.near(self, otherNode)
+function On:near(otherNode)
+  BaseClass.near(self, otherNode)
 end
 
-function Disabled:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
+function On:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, timeStep)
 end
 
-function Disabled:actionComplete(action)
-	BaseClass.actionComplete(self, action)
+function On:actionComplete(action)
+  BaseClass.actionComplete(self, action)
 end
 
-function Disabled:keyboardShow()
+function On:keyboardShow()
   BaseClass.keyboardShow(self)
 end
 
-function Disabled:keyboardCancel()
+function On:keyboardCancel()
   BaseClass.keyboardCancel(self)
 end
 
-function Disabled:keyboardReturn()
+function On:keyboardReturn()
     BaseClass.keyboardReturn(self)
 end
 
-function Disabled:renderHUD()
+function On:renderHUD()
     BaseClass.renderHUD(self)
 end
 
-function Disabled:gamePause()
+function On:gamePause()
     BaseClass.gamePause(self)
 end
 
-function Disabled:gameUnPause()
+function On:gameUnPause()
     BaseClass.gameUnPause(self)
 end
 
-function Disabled:touchDown(touches)
+function On:touchDown(touches)
     BaseClass.touchDown(self, touches)
 end
 
-function Disabled:touchUp(touches)
+function On:touchUp(touches)
     BaseClass.touchUp(self, touches)
 end
 
-function Disabled:touchMove(touches)
+function On:touchMove(touches)
     BaseClass.touchMove(self, touches)
 end
 
-function Disabled:touchCancelled(touches)
+function On:touchCancelled(touches)
     BaseClass.touchCancelled(self, touches)
 end
 
@@ -141,7 +155,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Disabled, {
+setmetatable(On, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -152,26 +166,26 @@ setmetatable(Disabled, {
     end,
   })
 
-function Disabled:className()
-  return "Disabled"
+function On:className()
+  return "On"
 end
 
-function Disabled:class()
+function On:class()
   return self
 end
 
-function Disabled:superClass()
+function On:superClass()
   return BaseClass
 end
 
-function Disabled:__gc()
+function On:__gc()
   --Destroy derived class first
-  Disabled._destroy(self)
+  On._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Disabled:__tostring()
+function On:__tostring()
   local ret = self:className() .. " =\n{\n"
   
   for pos,val in pairs(self) do 
@@ -182,35 +196,35 @@ function Disabled:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Disabled:_destroy()
-  assert(not self.__DisabledCalledLoad, "Must unload before you destroy")
+function On:_destroy()
+  assert(not self.__OnCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Disabled:_create(init)
-  self.__DisabledCalledLoad = false
+function On:_create(init)
+  self.__OnCalledLoad = false
   __ctor(self, init)
 end
 
-function Disabled:load()
+function On:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__DisabledCalledLoad = true
+  self.__OnCalledLoad = true
 end
 
-function Disabled:unLoad()
-  assert(self.__DisabledCalledLoad, "Must load before unloading")
+function On:unLoad()
+  assert(self.__OnCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__DisabledCalledLoad = false
+  self.__OnCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Disabled
+return On

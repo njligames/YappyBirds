@@ -133,9 +133,9 @@ function Button:disabled(b)
         self._disabled = b
 
         if self._disabled then
-            self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Disabled")
+            self:pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Disabled")
         else
-            self:getNodeEntity():pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected")
+            self:pushState("NJLI.STATEMACHINE.UI.BUTTON.STATES.Default")
         end
     end
 

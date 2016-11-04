@@ -43,6 +43,31 @@ NJLIImageControl =
     }
 }
 
+NJLISwitchControl =
+{
+    class = require "NJLI.STATEMACHINE.UI.SWITCH.Switch",
+    name = "NJLI.STATEMACHINE.UI.SWITCH.Switch",
+    states =
+    {
+        {
+            class = require "NJLI.STATEMACHINE.UI.SWITCH.STATES.On",
+            name = "NJLI.STATEMACHINE.UI.SWITCH.STATES.On",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.SWITCH.STATES.Off",
+            name = "NJLI.STATEMACHINE.UI.SWITCH.STATES.Off",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.SWITCH.STATES.Disabled",
+            name = "NJLI.STATEMACHINE.UI.SWITCH.STATES.Disabled",
+        },
+        {
+            class = require "NJLI.STATEMACHINE.UI.SWITCH.STATES.Phasing",
+            name = "NJLI.STATEMACHINE.UI.SWITCH.STATES.Phasing",
+        },
+    }
+}
+
 local BalloonNodeEntity =
 {
   class = require "YAPPYBIRDS.NODES.BALLOON.Balloon",

@@ -28,7 +28,8 @@ local __ctor = function(self, init)
     self:getScene():addCameraNode(OrthographicCameraNode, true)
     self:getScene():addCameraNode(PerspectiveCameraNode)
     
-    self:createButtonControl("PLAY", 400, 400, 25)
+    --self._button = self:createButtonControl("stage", 400, 400, 25)
+    self._button = self:createSwitchControl("stage", 400, 400, 25)
     self:createImageControl("ui_thanks", 0, 0, 1)
 end
 
@@ -64,10 +65,10 @@ function Menu:createButtonControl(buttonName, xPos, yPos, buttonScale)
         disabled = false,
         touchUpOutside = function(touches) print(#touches) end,
         touchUpInside = function(rayContact) print(rayContact) end,
-        touchDownInside = function(rayContact) print(#touches) end,
+        touchDownInside = function(rayContact) print(rayContact) end,
         touchDragOutside = function() print("drag") end,
-        touchDragInside = function(rayContact) print(#touches) end,
-        touchCancelled = function(rayContact) print(#touches) end,
+        touchDragInside = function(rayContact) print(rayContact) end,
+        touchCancelled = function(rayContact) print(rayContact) end,
         soundTouchUpOutside = nil, --path to the sound
         soundTouchUpInside = nil, --path to the sound
         soundTouchDownInside = nil, --path to the sound
@@ -84,6 +85,31 @@ function Menu:createButtonControl(buttonName, xPos, yPos, buttonScale)
       buttonNodeEntity:getNode():setOrigin(bullet.btVector3(x, y, -1))
 
       return buttonNodeEntity
+end
+
+function Menu:createSwitchControl(switchName, xPos, yPos, switchScale)
+    local n = switchName or "PLAY"
+    local x = xPos or 0
+    local y = yPos or 0
+    local s = switchScale or 25
+
+    local switchNodeEntity = NJLISwitchControl.class({
+        name = n,
+        states = NJLISwitchControl.states,
+        entityOwner = self,
+        atlas = self._spriteAtlas,
+        geometry = Geometry2D,
+        scale = s,
+        disabled = false,
+    })
+    self:addNodeEntity(switchNodeEntity)
+
+    switchNodeEntity:hide(PerspectiveCameraNode:getCamera())
+    switchNodeEntity:show(OrthographicCameraNode:getCamera())
+
+    switchNodeEntity:getNode():setOrigin(bullet.btVector3(x, y, -1))
+
+    return switchNodeEntity
 end
 
 function Menu:createImageControl(imageName, xPos, yPos, imageScale)
@@ -118,6 +144,7 @@ end
 
 function Menu:update(timeStep)
   BaseClass.update(self, timeStep)
+  print(self._button:on())
 end
 
 function Menu:exit()
@@ -130,6 +157,7 @@ end
 
 function Menu:touchDown(touches)
   BaseClass.touchDown(self, touches)
+    --self._button:disabled(not self._button:disabled())
 end
 
 function Menu:touchUp(touches)

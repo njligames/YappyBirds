@@ -32,10 +32,16 @@ local __unLoad = function(self)
   --TODO: unload this Entity
 end
 
---############################################################################# 
+--#############################################################################
+--Disabled Specific
+--#############################################################################
+
+--#############################################################################
+--NodeEntityState overwrite
+--#############################################################################
 
 function Disabled:enter()
-	BaseClass.enter(self)
+    BaseClass.enter(self)
 
     local frameName = "butn_" .. self:getNodeEntity():getNode():getName() .. "_dis"
     local scale = self:getNodeEntity():scale()
@@ -46,31 +52,31 @@ function Disabled:enter()
 end
 
 function Disabled:update(timeStep)
-	BaseClass.update(self, timeStep)
+  BaseClass.update(self, timeStep)
 end
 
 function Disabled:exit()
-	BaseClass.exit(self)
+  BaseClass.exit(self)
 end
 
 function Disabled:onMessage()
-	BaseClass.onMessage(self)
+  BaseClass.onMessage(self)
 end
 
 function Disabled:rayTouchDown(rayContact)
-	BaseClass.rayTouchDown(self, rayContact)
+  BaseClass.rayTouchDown(self, rayContact)
 end
 
 function Disabled:rayTouchUp(rayContact)
-	BaseClass.rayTouchUp(self, rayContact)
+  BaseClass.rayTouchUp(self, rayContact)
 end
 
 function Disabled:rayTouchMove(rayContact)
-	BaseClass.rayTouchMove(self, rayContact)
+  BaseClass.rayTouchMove(self, rayContact)
 end
 
 function Disabled:rayTouchCancelled(rayContact)
-	BaseClass.rayTouchCancelled(self, rayContact)
+  BaseClass.rayTouchCancelled(self, rayContact)
 end
 
 function Disabled:rayTouchMissed(node)
@@ -78,19 +84,19 @@ function Disabled:rayTouchMissed(node)
 end
 
 function Disabled:collide(otherNode, collisionPoint)
-	BaseClass.collide(self, collisionPoint)
+  BaseClass.collide(self, collisionPoint)
 end
 
 function Disabled:near(otherNode)
-	BaseClass.near(self, otherNode)
+  BaseClass.near(self, otherNode)
 end
 
 function Disabled:actionUpdate(action, timeStep)
-	BaseClass.actionUpdate(self, timeStep)
+  BaseClass.actionUpdate(self, timeStep)
 end
 
 function Disabled:actionComplete(action)
-	BaseClass.actionComplete(self, action)
+  BaseClass.actionComplete(self, action)
 end
 
 function Disabled:keyboardShow()
