@@ -1,7 +1,7 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Image = {}
-Image.__index = Image
+local Default = {}
+Default.__index = Default
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -17,22 +17,11 @@ Image.__index = Image
 --#############################################################################
 
 local __ctor = function(self, init)
-    assert(init, "init variable is nil.")
-    assert(type(init) == "table", "Init variable is expecting a states table")
-    assert(init.atlas ~= nil, "init.atlas variable is nil")
-    assert(init.geometry ~= nil, "init.geometry variable is nil")
-
-    self._scale = init.scale or 1.0
-
-    local node = self:getNode()
-
-    node:setGeometry(init.geometry)
-
-    self._spriteFrameAtlas = init.atlas
+  --TODO: construct this Entity
 end
 
 local __dtor = function(self)
-  self:getNode():removeGeometry()
+  --TODO: destruct this Entity
 end
 
 local __load = function(self)
@@ -44,129 +33,109 @@ local __unLoad = function(self)
 end
 
 --#############################################################################
---Image Specific
+--Default Specific
 --#############################################################################
 
-function Image:scale(s)
-    if s ~= nil then
-        self._scale = s
-    end
-    return self._scale
-end
-
-function Image:setSpriteAtlasFrame(nodeStateName, match)
-    self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, nodeStateName, match)
-end
-
-function Image:getDimensions()
-    return self:getNode():getGeometry():getDimensions(self:getNode())
-end
-
-function Image:setDimensions(dimension)
-  self:getNode():getGeometry():setDimensions(self:getNode(), dimension)
-end
-
-function Image:show(camera)
-  self:getNode():show(camera)
-end
-
-function Image:hide(camera)
-  self:getNode():hide(camera)
-end
-
 --#############################################################################
---NodeEntity overwrite
+--NodeEntityState overwrite
 --#############################################################################
 
-function Image:enter()
-  BaseClass.enter(self)
+function Default:enter()
+    BaseClass.enter(self)
+
+    local frameName = self:getNodeEntity():getNode():getName()
+    local scale = self:getNodeEntity():scale()
+
+    self:getNodeEntity():setSpriteAtlasFrame(frameName, true)
+    local dimSprite = self:getNodeEntity():getDimensions()
+    self:getNodeEntity():setDimensions(bullet.btVector2( (dimSprite:x() * scale), (dimSprite:y() * scale) ))
 end
 
-function Image:update(timeStep)
+function Default:update(timeStep)
   BaseClass.update(self, timeStep)
 end
 
-function Image:exit()
+function Default:exit()
   BaseClass.exit(self)
 end
 
-function Image:onMessage()
+function Default:onMessage()
   BaseClass.onMessage(self)
 end
 
-function Image:rayTouchDown(rayContact)
+function Default:rayTouchDown(rayContact)
   BaseClass.rayTouchDown(self, rayContact)
 end
 
-function Image:rayTouchUp(rayContact)
+function Default:rayTouchUp(rayContact)
   BaseClass.rayTouchUp(self, rayContact)
 end
 
-function Image:rayTouchMove(rayContact)
+function Default:rayTouchMove(rayContact)
   BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Image:rayTouchCancelled(rayContact)
+function Default:rayTouchCancelled(rayContact)
   BaseClass.rayTouchCancelled(self, rayContact)
 end
 
-function Image:rayTouchMissed(node)
-  BaseClass.rayTouchMissed(self, node)
+function Default:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
 end
 
-function Image:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, otherNode, collisionPoint)
+function Default:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, collisionPoint)
 end
 
-function Image:near(otherNode)
+function Default:near(otherNode)
   BaseClass.near(self, otherNode)
 end
 
-function Image:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, action, timeStep)
+function Default:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, timeStep)
 end
 
-function Image:actionComplete(action)
+function Default:actionComplete(action)
   BaseClass.actionComplete(self, action)
 end
 
-function Image:keyboardShow()
+function Default:keyboardShow()
   BaseClass.keyboardShow(self)
 end
 
-function Image:keyboardCancel()
+function Default:keyboardCancel()
   BaseClass.keyboardCancel(self)
 end
 
-function Image:keyboardReturn()
+function Default:keyboardReturn()
     BaseClass.keyboardReturn(self)
 end
 
-function Image:renderHUD()
+function Default:renderHUD()
     BaseClass.renderHUD(self)
 end
 
-function Image:gamePause()
+function Default:gamePause()
     BaseClass.gamePause(self)
 end
 
-function Image:gameUnPause()
+function Default:gameUnPause()
     BaseClass.gameUnPause(self)
 end
 
-function Image:touchDown(touches)
+function Default:touchDown(touches)
     BaseClass.touchDown(self, touches)
 end
 
-function Image:touchUp(touches)
+function Default:touchUp(touches)
     BaseClass.touchUp(self, touches)
 end
 
-function Image:touchMove(touches)
+function Default:touchMove(touches)
     BaseClass.touchMove(self, touches)
 end
 
-function Image:touchCancelled(touches)
+function Default:touchCancelled(touches)
     BaseClass.touchCancelled(self, touches)
 end
 
@@ -178,7 +147,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Image, {
+setmetatable(Default, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -189,29 +158,29 @@ setmetatable(Image, {
     end,
   })
 
-function Image:className()
-  return "Image"
+function Default:className()
+  return "Default"
 end
 
-function Image:class()
+function Default:class()
   return self
 end
 
-function Image:superClass()
+function Default:superClass()
   return BaseClass
 end
 
-function Image:__gc()
+function Default:__gc()
   --Destroy derived class first
-  Image._destroy(self)
+  Default._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Image:__tostring()
+function Default:__tostring()
   local ret = self:className() .. " =\n{\n"
-
-  for pos,val in pairs(self) do
+  
+  for pos,val in pairs(self) do 
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -219,35 +188,35 @@ function Image:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Image:_destroy()
-  assert(not self.__ImageCalledLoad, "Must unload before you destroy")
+function Default:_destroy()
+  assert(not self.__DefaultCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Image:_create(init)
-  self.__ImageCalledLoad = false
+function Default:_create(init)
+  self.__DefaultCalledLoad = false
   __ctor(self, init)
 end
 
-function Image:load()
+function Default:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__ImageCalledLoad = true
+  self.__DefaultCalledLoad = true
 end
 
-function Image:unLoad()
-  assert(self.__ImageCalledLoad, "Must load before unloading")
+function Default:unLoad()
+  assert(self.__DefaultCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__ImageCalledLoad = false
+  self.__DefaultCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Image
+return Default

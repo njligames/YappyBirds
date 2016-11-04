@@ -27,21 +27,9 @@ local __ctor = function(self, init)
 
     self:getScene():addCameraNode(OrthographicCameraNode, true)
     self:getScene():addCameraNode(PerspectiveCameraNode)
-
-    local nodeEntity = NJLIButton.class({
-        name = "PLAY",
-        states = NJLIButton.states,
-        entityOwner = self,
-        atlas = self._spriteAtlas,
-        geometry = Geometry2D,
-        scale = 25,
-      })
-      self:addNodeEntity(nodeEntity)
-
-      nodeEntity:hide(PerspectiveCameraNode:getCamera())
-      nodeEntity:show(OrthographicCameraNode:getCamera())
-
-      nodeEntity:getNode():setOrigin(bullet.btVector3(400, 400, -1))
+    
+    self:createButtonControl("PLAY", 400, 400, 25)
+    self:createImageControl("ui_thanks", 0, 0, 1)
 end
 
 local __dtor = function(self)
@@ -56,6 +44,70 @@ end
 
 local __unLoad = function(self)
   --TODO: unload this Entity
+end
+
+--#############################################################################
+
+function Menu:createButtonControl(buttonName, xPos, yPos, buttonScale)
+    local n = buttonName or "PLAY"
+    local x = xPos or 0
+    local y = yPos or 0
+    local s = buttonScale or 25
+
+    local buttonNodeEntity = NJLIButtonControl.class({
+        name = n,
+        states = NJLIButtonControl.states,
+        entityOwner = self,
+        atlas = self._spriteAtlas,
+        geometry = Geometry2D,
+        scale = s,
+        disabled = false,
+        touchUpOutside = function(touches) print(#touches) end,
+        touchUpInside = function(rayContact) print(rayContact) end,
+        touchDownInside = function(rayContact) print(#touches) end,
+        touchDragOutside = function() print("drag") end,
+        touchDragInside = function(rayContact) print(#touches) end,
+        touchCancelled = function(rayContact) print(#touches) end,
+        soundTouchUpOutside = nil, --path to the sound
+        soundTouchUpInside = nil, --path to the sound
+        soundTouchDownInside = nil, --path to the sound
+        soundTouchDragOutside = nil, --path to the sound
+        soundTouchDragInside = nil, --path to the sound
+        soundTouchCancelled = nil, --path to the sound
+
+      })
+      self:addNodeEntity(buttonNodeEntity)
+
+      buttonNodeEntity:hide(PerspectiveCameraNode:getCamera())
+      buttonNodeEntity:show(OrthographicCameraNode:getCamera())
+
+      buttonNodeEntity:getNode():setOrigin(bullet.btVector3(x, y, -1))
+
+      return buttonNodeEntity
+end
+
+function Menu:createImageControl(imageName, xPos, yPos, imageScale)
+    local n = imageName or "PLAY"
+    local x = xPos or 0
+    local y = yPos or 0
+    local s = imageScale or 25
+
+    local imageNodeEntity = NJLIImageControl.class({
+        name = n,
+        states = NJLIImageControl.states,
+        entityOwner = self,
+        atlas = self._spriteAtlas,
+        geometry = Geometry2D,
+        scale = s,
+      })
+      self:addNodeEntity(imageNodeEntity)
+
+      imageNodeEntity:hide(PerspectiveCameraNode:getCamera())
+      imageNodeEntity:show(OrthographicCameraNode:getCamera())
+
+      imageNodeEntity:getNode():setOrigin(bullet.btVector3(x, y, -1))
+
+      return imageNodeEntity
 end
 
 --#############################################################################

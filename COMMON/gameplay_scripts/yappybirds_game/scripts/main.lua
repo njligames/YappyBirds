@@ -1,7 +1,7 @@
 Interface = require "NJLI.InterfaceFunctions"
 YappyGame = require "YAPPYBIRDS.YappyGame"
 
-NJLIButton =
+NJLIButtonControl =
 {
     class = require "NJLI.STATEMACHINE.UI.BUTTON.Button",
     name = "NJLI.STATEMACHINE.UI.BUTTON.Button",
@@ -26,6 +26,19 @@ NJLIButton =
         {
             class = require "NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected",
             name = "NJLI.STATEMACHINE.UI.BUTTON.STATES.Selected",
+        },
+    }
+}
+
+NJLIImageControl =
+{
+    class = require "NJLI.STATEMACHINE.UI.IMAGE.Image",
+    name = "NJLI.STATEMACHINE.UI.IMAGE.Image",
+    states =
+    {
+        {
+            class = require "NJLI.STATEMACHINE.UI.IMAGE.STATES.Default",
+            name = "NJLI.STATEMACHINE.UI.IMAGE.STATES.Default",
         },
     }
 }

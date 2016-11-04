@@ -46,10 +46,6 @@ local __ctor = function(self, init)
 
     node:setPhysicsBody(self._physicsBody)
 
-    if nil ~= init.disabled then
-        self._disabled = init.disabled
-    end
-
     self._soundTouchUpOutside = njli.Sound.create()
     if init.soundTouchUpOutside and type(init.soundTouchUpOutside) == "string" then
         njli.World.getInstance():getWorldResourceLoader():load(init.soundTouchUpOutside, self._soundTouchUpOutside)
@@ -146,6 +142,27 @@ function Button:disabled(b)
     return self._disabled
 end
 
+function Button:setSpriteAtlasFrame(nodeStateName, match)
+    self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, nodeStateName, match)
+end
+
+function Button:getDimensions()
+    return self:getNode():getGeometry():getDimensions(self:getNode())
+end
+
+function Button:setDimensions(dimension)
+  self:getNode():getGeometry():setDimensions(self:getNode(), dimension)
+  self._physicsShape:setHalfExtends(bullet.btVector3( dimension:x(), dimension:y(), 1.0 ))
+end
+
+function Button:show(camera)
+  self:getNode():show(camera)
+end
+
+function Button:hide(camera)
+  self:getNode():hide(camera)
+end
+
 function Button:touchUpOutside(touches)
     if not self._touchedUp then
         if self._touchUpOutside then
@@ -203,28 +220,6 @@ function Button:touchCancelled(rayContact)
     end
     self._soundTouchCancelled:play()
 end
-
-function Button:setSpriteAtlasFrame(nodeStateName, match)
-    self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, nodeStateName, match)
-end
-
-function Button:getDimensions()
-    return self:getNode():getGeometry():getDimensions(self:getNode())
-end
-
-function Button:setDimensions(dimension)
-  self:getNode():getGeometry():setDimensions(self:getNode(), dimension)
-  self._physicsShape:setHalfExtends(bullet.btVector3( dimension:x(), dimension:y(), 1.0 ))
-end
-
-function Button:show(camera)
-  self:getNode():show(camera)
-end
-
-function Button:hide(camera)
-  self:getNode():hide(camera)
-end
-
 
 --#############################################################################
 
