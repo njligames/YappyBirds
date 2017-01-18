@@ -12,7 +12,7 @@ OBJFILES := $(subst $(SRCDIR), $(OBJDIR), $(SRCFILES:%.lua=%.lua))
 
 OUTDIRS := $(addprefix $(OBJDIR)/../, $(STRUCTURE))
 
-#COMPILED_LUA := $(OBJDIR)/luac.out
+COMPILED_LUA := $(OBJDIR)/luac.out
 
 yappybirds_game: $(OUTDIRS) $(OBJFILES) $(COMPILED_LUA)
 

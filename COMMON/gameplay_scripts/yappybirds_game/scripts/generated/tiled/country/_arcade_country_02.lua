@@ -1,7 +1,7 @@
 return {
   version = "1.1",
   luaversion = "5.1",
-  tiledversion = "0.17.0",
+  tiledversion = "0.17.1",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 64,
