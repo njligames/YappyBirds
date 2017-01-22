@@ -18,6 +18,7 @@ all:
 	@cd $(MAKEFILE_PATH)/interface && make
 	@cd $(MAKEFILE_PATH)/audio && make
 	@cd $(MAKEFILE_PATH)/gameplay_scripts/yappybirds_game && make
+	@cd $(MAKEFILE_PATH)/fonts && make
 
 clean: 
 	@cd $(MAKEFILE_PATH)/gameplay_scripts/yappybirds_game && make clean
@@ -25,3 +26,5 @@ clean:
 	@cd $(MAKEFILE_PATH)/interface && make clean
 	@cd $(MAKEFILE_PATH)/gameplay && make clean
 	@cd $(MAKEFILE_PATH)/countryLevel && make clean
+	@cd $(MAKEFILE_PATH)/fonts && make clean
+	@rm -rf $(MAKEFILE_PATH)/assets/images/generated

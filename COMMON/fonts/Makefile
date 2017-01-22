@@ -1,39 +1,37 @@
-CP=cp
+#GDCL RetroFont ./out/RetroFont -fo PlainText-fnt -v -ol
+FONT := GDCL
+OPT := -fo PlainText-fnt -v -ol
 
-OBJDIR=../../assets/scripts
-SRCDIR=scripts
+RM := rm
+MV := mv
+ECHO := echo
 
-STRUCTURE := $(shell find $(SRCDIR) -type d)
-CODEFILES := $(addsuffix /*, $(STRUCTURE))
-CODEFILES := $(wildcard $(CODEFILES))
 
-SRCFILES := $(filter %.lua, $(CODEFILES))
-OBJFILES := $(subst $(SRCDIR), $(OBJDIR), $(SRCFILES:%.lua=%.lua))
+OUT_FORMAT := fnt
 
-OUTDIRS := $(addprefix $(OBJDIR)/../, $(STRUCTURE))
+FNT_OBJDIR := ../assets/fonts
+FNT_SRCDIR := .
 
-COMPILED_LUA := $(OBJDIR)/luac.out
+FNT_SRCFILES := $(addsuffix /*, $(FNT_SRCDIR))
+FNT_SRCFILES := $(wildcard $(FNT_SRCFILES))
+FNT_SRCFILES := $(filter %.GlyphProject, $(FNT_SRCFILES))
 
-yappybirds_game: $(OUTDIRS) $(OBJFILES) $(COMPILED_LUA)
+FNT_OBJFILES := $(subst $(FNT_SRCDIR)/, $(FNT_OBJDIR)/, $(FNT_SRCFILES:%.GlyphProject=%.$(OUT_FORMAT)))
 
-$(OBJDIR)/%.lua: $(addprefix $(SRCDIR)/, %.lua)
-	@$(CP) $^ $@
+IMG_OBJDIR := ../assets/images/generated
 
-$(OUTDIRS):
-	@mkdir -p $@
+fonts: $(FNT_OBJFILES)
 
-$(COMPILED_LUA):
-	@luac -s $(SRCFILES)
-	@mv luac.out $(COMPILED_LUA)
+$(FNT_OBJDIR)/%.fnt: $(addprefix $(FNT_SRCDIR)/, %.GlyphProject)
+	$(FONT) $(basename $^) $(basename $@) $(OPT)
+	$(MV) $(basename $@)*.png $(IMG_OBJDIR)
 
 clean:
-	@rm -rf $(OBJDIR)/*
+	@$(RM) -rf $(FNT_OBJFILES)
 
 echo:
-	@echo "SRCFILES=$(SRCFILES)\n"
-	@echo "OBJFILES=$(OBJFILES)\n"
-	@echo "OUTDIRS=$(OUTDIRS)\n"
-	@echo "OBJDIR=$(OBJDIR)\n"
-	@echo "COMPILED_LUA=$(COMPILED_LUA)\n"
+	@$(ECHO) "FNT_SRCFILES=$(FNT_SRCFILES)\n"
+	@$(ECHO) "FNT_OBJFILES=$(FNT_OBJFILES)\n"
 
-.PHONY: yappybirds_game clean echo
+.PHONY: fonts clean echo
+

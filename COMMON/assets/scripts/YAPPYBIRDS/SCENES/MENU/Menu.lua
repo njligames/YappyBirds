@@ -31,6 +31,27 @@ local __ctor = function(self, init)
     self._button = self:createButtonControl("stage", 800, 400, 25)
 	self._switch = self:createSwitchControl("stage", 400, 400, 25)
     self:createImageControl("ui_thanks", 0, 0, 1)
+    
+  -- self._label = self:createLabelControl( 0, 0)
+  -- self._label:text("THE TEXT\nTHE TEXT")
+  -- self._label:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._label:bounds().width, 0, -1))
+  
+  -- self._topLeft = self:createLabelControl(0, 0)
+  -- self._topLeft:text("TOP LEFT")
+  -- self._topLeft:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._topLeft:bounds().width, 0, -1))
+  
+  -- self._topRight = self:createLabelControl(0, 0)
+  -- self._topRight:text("TOP RIGHT")
+  -- self._topRight:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._topRight:bounds().width, 0, -1))
+  
+  -- self._bottomLeft = self:createLabelControl(0, 0)
+  -- self._bottomLeft:text("BOTTOM LEFT")
+  -- self._bottomLeft:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._bottomLeft:bounds().width, 0, -1))
+  
+  -- self._bottomRight = self:createLabelControl(0, 0)
+  -- self._bottomRight:text("BOTTOM RIGHT")
+  -- self._bottomRight:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._bottomRight:bounds().width, 0, -1))
+
 end
 
 local __dtor = function(self)
@@ -66,7 +87,7 @@ function Menu:createButtonControl(buttonName, xPos, yPos, buttonScale)
         touchUpOutside = function(touches) print(#touches) end,
         touchUpInside = function(rayContact) print(rayContact) end,
         touchDownInside = function(rayContact) print(rayContact) end,
-        touchDragOutside = function() print("drag") end,
+        touchDragOutside = function() print("touchDragOutside") end,
         touchDragInside = function(rayContact) print(rayContact) end,
         touchCancelled = function(rayContact) print(rayContact) end,
         soundTouchUpOutside = nil, --path to the sound
@@ -135,6 +156,24 @@ function Menu:createImageControl(imageName, xPos, yPos, imageScale)
 
       return imageNodeEntity
 end
+
+function Menu:createLabelControl(xPos, yPos)
+    local x = xPos or 0
+    local y = yPos or 0
+
+    local labelNodeEntity = NJLILabelControl.class({
+        states = NJLILabelControl.states,
+        entityOwner = self,
+      })
+
+      labelNodeEntity:hide(PerspectiveCameraNode:getCamera())
+      labelNodeEntity:show(OrthographicCameraNode:getCamera())
+
+      labelNodeEntity:getNode():setOrigin(bullet.btVector3(x, y, -1))
+
+      return labelNodeEntity
+end
+
 
 --#############################################################################
 

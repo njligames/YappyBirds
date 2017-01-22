@@ -68,6 +68,20 @@ NJLISwitchControl =
     }
 }
 
+ NJLILabelControl =
+ {
+     class = require "NJLI.STATEMACHINE.UI.LABEL.Label",
+     name = "NJLI.STATEMACHINE.UI.LABEL.Label",
+     states =
+     {
+         {
+             class = require "NJLI.STATEMACHINE.UI.LABEL.STATES.Default",
+             name = "NJLI.STATEMACHINE.UI.LABEL.STATES.Default",
+         },
+     }
+ }
+
+
 local BalloonNodeEntity =
 {
   class = require "YAPPYBIRDS.NODES.BALLOON.Balloon",
@@ -350,6 +364,8 @@ local function CreateOrthoCameraNode(name)
     return node
 end
 
+local BitmapFont = require 'NJLI.BitmapFont'
+RanchersFont = BitmapFont({file='Ranchers_GlyphDesigner.fnt'})
 
 local material = njli.Material.create()
 local shader = njli.ShaderProgram.create()
@@ -369,6 +385,10 @@ Geometry2D:setMaterial(material)
 Geometry2D:setShaderProgram(shader)
 Geometry2D:show(OrthographicCameraNode:getCamera())
 Geometry2D:hide(PerspectiveCameraNode:getCamera())
+
+RanchersFont:load()
+RanchersFont:show(OrthographicCameraNode:getCamera())
+RanchersFont:hide(PerspectiveCameraNode:getCamera())
 
 MyGame = YappyGame(Worlds.yappygame)
 

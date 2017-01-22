@@ -1,7 +1,7 @@
-local BaseClass = require "NJLI.STATEMACHINE.NodeEntity"
+local BaseClass = require "NJLI.STATEMACHINE.NodeEntityState"
 
-local Label = {}
-Label.__index = Label
+local Default = {}
+Default.__index = Default
 
 --#############################################################################
 --DO NOT EDIT ABOVE
@@ -17,14 +17,11 @@ Label.__index = Label
 --#############################################################################
 
 local __ctor = function(self, init)
-    assert(init, "init variable is nil.")
-    assert(type(init) == "table", "Init variable is expecting a states table")
-
-    self:text("PLACEHOLDER")
+  --TODO: construct this Entity
 end
 
 local __dtor = function(self)
-  --TODO: __dtor this Entity
+  --TODO: destruct this Entity
 end
 
 local __load = function(self)
@@ -36,153 +33,102 @@ local __unLoad = function(self)
 end
 
 --#############################################################################
---Label Specific
+--Default Specific
 --#############################################################################
 
-function Label:text(t)
-
-    if t ~= nil then
-        self._text = t
-
-        Interface:getStateMachine():getEntityManager():removeNodeEntity(self)
-
-        local node, rect = RanchersFont:printf(self._text)
-        node:setOrigin(self:getNode():getOrigin())
-        node:setRenderCategory(self:getNode())
-        node:setCurrentScene(self:getNode())
-
-        njli.Node.destroy(self:getNode(), true)
-
-        self._node = node
-        self._rect = rect
-
-        Interface:getStateMachine():getEntityManager():addNodeEntity(self)
-    end
-
-    return self._text
-end
-
-function Label:bounds()
-    return self._rect
-end
-
-function Label:width()
-    return self:bounds().width
-end
-
-function Label:height()
-    return self:bounds().height
-end
-
-function Label:x()
-    return self:bounds().x
-end
-
-function Label:y()
-    return self:bounds().y
-end
-
-function Label:show(camera)
-  self:getNode():show(camera)
-end
-
-function Label:hide(camera)
-  self:getNode():hide(camera)
-end
-
 --#############################################################################
---NodeEntity overwrite
+--NodeEntityState overwrite
 --#############################################################################
 
-function Label:enter()
-  BaseClass.enter(self)
+function Default:enter()
+    BaseClass.enter(self)
 end
 
-function Label:update(timeStep)
+function Default:update(timeStep)
   BaseClass.update(self, timeStep)
 end
 
-function Label:exit()
+function Default:exit()
   BaseClass.exit(self)
 end
 
-function Label:onMessage()
+function Default:onMessage()
   BaseClass.onMessage(self)
 end
 
-function Label:rayTouchDown(rayContact)
+function Default:rayTouchDown(rayContact)
   BaseClass.rayTouchDown(self, rayContact)
 end
 
-function Label:rayTouchUp(rayContact)
+function Default:rayTouchUp(rayContact)
   BaseClass.rayTouchUp(self, rayContact)
 end
 
-function Label:rayTouchMove(rayContact)
+function Default:rayTouchMove(rayContact)
   BaseClass.rayTouchMove(self, rayContact)
 end
 
-function Label:rayTouchCancelled(rayContact)
+function Default:rayTouchCancelled(rayContact)
   BaseClass.rayTouchCancelled(self, rayContact)
 end
 
-function Label:rayTouchMissed(node)
-  BaseClass.rayTouchMissed(self, node)
+function Default:rayTouchMissed(node)
+    BaseClass.rayTouchMissed(self, node)
 end
 
-function Label:collide(otherNode, collisionPoint)
-  BaseClass.collide(self, otherNode, collisionPoint)
+function Default:collide(otherNode, collisionPoint)
+  BaseClass.collide(self, collisionPoint)
 end
 
-function Label:near(otherNode)
+function Default:near(otherNode)
   BaseClass.near(self, otherNode)
 end
 
-function Label:actionUpdate(action, timeStep)
-  BaseClass.actionUpdate(self, action, timeStep)
+function Default:actionUpdate(action, timeStep)
+  BaseClass.actionUpdate(self, timeStep)
 end
 
-function Label:actionComplete(action)
+function Default:actionComplete(action)
   BaseClass.actionComplete(self, action)
 end
 
-function Label:keyboardShow()
+function Default:keyboardShow()
   BaseClass.keyboardShow(self)
 end
 
-function Label:keyboardCancel()
+function Default:keyboardCancel()
   BaseClass.keyboardCancel(self)
 end
 
-function Label:keyboardReturn()
+function Default:keyboardReturn()
     BaseClass.keyboardReturn(self)
 end
 
-function Label:renderHUD()
+function Default:renderHUD()
     BaseClass.renderHUD(self)
 end
 
-function Label:gamePause()
+function Default:gamePause()
     BaseClass.gamePause(self)
 end
 
-function Label:gameUnPause()
+function Default:gameUnPause()
     BaseClass.gameUnPause(self)
 end
 
-function Label:touchDown(touches)
+function Default:touchDown(touches)
     BaseClass.touchDown(self, touches)
 end
 
-function Label:touchUp(touches)
+function Default:touchUp(touches)
     BaseClass.touchUp(self, touches)
 end
 
-function Label:touchMove(touches)
+function Default:touchMove(touches)
     BaseClass.touchMove(self, touches)
 end
 
-function Label:touchCancelled(touches)
+function Default:touchCancelled(touches)
     BaseClass.touchCancelled(self, touches)
 end
 
@@ -194,7 +140,7 @@ end
 --DO NOT EDIT BELOW
 --#############################################################################
 
-setmetatable(Label, {
+setmetatable(Default, {
     __index = BaseClass,
     __call = function (cls, ...)
       local self = setmetatable({}, cls)
@@ -205,29 +151,29 @@ setmetatable(Label, {
     end,
   })
 
-function Label:className()
-  return "Label"
+function Default:className()
+  return "Default"
 end
 
-function Label:class()
+function Default:class()
   return self
 end
 
-function Label:superClass()
+function Default:superClass()
   return BaseClass
 end
 
-function Label:__gc()
+function Default:__gc()
   --Destroy derived class first
-  Label._destroy(self)
+  Default._destroy(self)
   --Destroy base class after derived class
   BaseClass._destroy(self)
 end
 
-function Label:__tostring()
+function Default:__tostring()
   local ret = self:className() .. " =\n{\n"
-
-  for pos,val in pairs(self) do
+  
+  for pos,val in pairs(self) do 
     ret = ret .. "\t" .. "["..pos.."]" .. " => " .. type(val) .. " = " .. tostring(val) .. "\n"
   end
 
@@ -235,35 +181,35 @@ function Label:__tostring()
   return ret .. "\n\t" .. tostring_r(getmetatable(self)) .. "\n}"
 end
 
-function Label:_destroy()
-  assert(not self.__LabelCalledLoad, "Must unload before you destroy")
+function Default:_destroy()
+  assert(not self.__DefaultCalledLoad, "Must unload before you destroy")
   __dtor(self)
 end
 
-function Label:_create(init)
-  self.__LabelCalledLoad = false
+function Default:_create(init)
+  self.__DefaultCalledLoad = false
   __ctor(self, init)
 end
 
-function Label:load()
+function Default:load()
   --load base first
   BaseClass.load(self)
 
   --load derived last...
   __load(self)
 
-  self.__LabelCalledLoad = true
+  self.__DefaultCalledLoad = true
 end
 
-function Label:unLoad()
-  assert(self.__LabelCalledLoad, "Must load before unloading")
+function Default:unLoad()
+  assert(self.__DefaultCalledLoad, "Must load before unloading")
 
   --unload derived first...
   __unLoad(self)
-  self.__LabelCalledLoad = false
+  self.__DefaultCalledLoad = false
 
   --unload base last...
   BaseClass.unLoad(self)
 end
 
-return Label
+return Default
