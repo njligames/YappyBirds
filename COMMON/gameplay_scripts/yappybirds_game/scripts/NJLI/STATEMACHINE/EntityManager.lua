@@ -85,7 +85,7 @@ function EntityManager:__generateUniqueName(object, tbl)
     local instance = 1
     if tbl[name] ~= nil then
         repeat
-            name = baseName .. "." .. tostring(instance)
+            name = baseName .. ",." .. tostring(instance) .. ","
             instance = instance + 1
         until(tbl[name] == nil)
     end

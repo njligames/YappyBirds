@@ -28,8 +28,8 @@ local __ctor = function(self, init)
     self:getScene():addCameraNode(OrthographicCameraNode, true)
     self:getScene():addCameraNode(PerspectiveCameraNode)
     
-    --self._button = self:createButtonControl("stage", 400, 400, 25)
-    self._button = self:createSwitchControl("stage", 400, 400, 25)
+    self._button = self:createButtonControl("stage", 800, 400, 25)
+	self._switch = self:createSwitchControl("stage", 400, 400, 25)
     self:createImageControl("ui_thanks", 0, 0, 1)
 end
 
@@ -144,7 +144,6 @@ end
 
 function Menu:update(timeStep)
   BaseClass.update(self, timeStep)
-  print(self._button:on())
 end
 
 function Menu:exit()
@@ -157,7 +156,6 @@ end
 
 function Menu:touchDown(touches)
   BaseClass.touchDown(self, touches)
-    --self._button:disabled(not self._button:disabled())
 end
 
 function Menu:touchUp(touches)

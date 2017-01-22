@@ -163,7 +163,13 @@ function Switch:on(b)
 end
 
 function Switch:setSpriteAtlasFrame(nodeStateName, match)
-    self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, nodeStateName, match)
+	local parts = nodeStateName:split("[^,%s]+")
+
+	local name = nodeStateName
+	if #parts ~= 1 then
+		name = parts[1] .. parts[3]
+	end
+    self:getNode():getGeometry():setSpriteAtlasFrame(self:getNode(), self._spriteFrameAtlas, name, match)
 end
 
 function Switch:getDimensions()

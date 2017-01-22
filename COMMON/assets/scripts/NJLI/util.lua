@@ -751,3 +751,13 @@ function DeviceNameDownsizeAmount(name)
     function __FILE__() return debug.getinfo(2,'S').source end
     function __LINE__() return debug.getinfo(2, 'l').currentline end
 
+string.split = function(str, pattern)
+	pattern = pattern or "[^%s]+"
+	if pattern:len() == 0 then pattern = "[^%s]+" end
+	local parts = {__index = table.insert}
+	setmetatable(parts, parts)
+	str:gsub(pattern, parts)
+	setmetatable(parts, nil)
+	parts.__index = nil
+	return parts
+end
