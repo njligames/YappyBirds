@@ -1,5 +1,6 @@
 package.path = package.path .. ":/Applications/Developer/ZeroBraneStudio.app/Contents/ZeroBraneStudio/lualibs/mobdebug/?.lua"
-require('mobdebug').start("67.84.155.107")
+require('mobdebug').start()
+--http://notebook.kulchenko.com/zerobrane/debugging-wireshark-lua-scripts-with-zerobrane-studio
 
 Interface = require "NJLI.InterfaceFunctions"
 YappyGame = require "YAPPYBIRDS.YappyGame"
