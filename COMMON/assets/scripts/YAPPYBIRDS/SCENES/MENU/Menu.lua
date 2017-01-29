@@ -27,30 +27,31 @@ local __ctor = function(self, init)
 
     self:getScene():addCameraNode(OrthographicCameraNode, true)
     self:getScene():addCameraNode(PerspectiveCameraNode)
-    
+
     self._button = self:createButtonControl("stage", 800, 400, 25)
-	self._switch = self:createSwitchControl("stage", 400, 400, 25)
+    self._switch = self:createSwitchControl("stage", 400, 400, 25)
     self:createImageControl("ui_thanks", 0, 0, 1)
     
-  -- self._label = self:createLabelControl( 0, 0)
-  -- self._label:text("THE TEXT\nTHE TEXT")
-  -- self._label:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._label:bounds().width, 0, -1))
-  
-  -- self._topLeft = self:createLabelControl(0, 0)
-  -- self._topLeft:text("TOP LEFT")
-  -- self._topLeft:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._topLeft:bounds().width, 0, -1))
-  
-  -- self._topRight = self:createLabelControl(0, 0)
-  -- self._topRight:text("TOP RIGHT")
-  -- self._topRight:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._topRight:bounds().width, 0, -1))
-  
-  -- self._bottomLeft = self:createLabelControl(0, 0)
-  -- self._bottomLeft:text("BOTTOM LEFT")
-  -- self._bottomLeft:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._bottomLeft:bounds().width, 0, -1))
-  
-  -- self._bottomRight = self:createLabelControl(0, 0)
-  -- self._bottomRight:text("BOTTOM RIGHT")
-  -- self._bottomRight:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._bottomRight:bounds().width, 0, -1))
+    self._label = self:createLabelControl( 0, 0)
+    self._label:text("THE TEXT\nTHE TEXT")
+    self._label:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._label:bounds().width, 0, -1))
+
+    self._topLeft = self:createLabelControl(0, 0)
+    self._topLeft:text("TOP LEFT")
+    print_r(self._topLeft:bounds())
+    self._topLeft:getNode():setOrigin(bullet.btVector3( 0.0, njli.SCREEN():y() - self._topLeft:bounds().height, -1.0))
+    
+    self._topRight = self:createLabelControl(0, 0)
+    self._topRight:text("TOP RIGHT")
+    self._topRight:getNode():setOrigin(bullet.btVector3(njli.SCREEN():x() - self._topRight:bounds().width, njli.SCREEN():y() - self._topRight:bounds().height, -1.0))
+    
+    self._bottomLeft = self:createLabelControl(0, 0)
+    self._bottomLeft:text("BOTTOM LEFT")
+    self._bottomLeft:getNode():setOrigin(bullet.btVector3( 0.0, 0.0, -1.0 ))
+    
+    self._bottomRight = self:createLabelControl(0, 0)
+    self._bottomRight:text("BOTTOM RIGHT")
+    self._bottomRight:getNode():setOrigin(bullet.btVector3( njli.SCREEN():x() - self._bottomRight:bounds().width, 0.0, -1.0))
 
 end
 

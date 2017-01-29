@@ -20,7 +20,7 @@ local __ctor = function(self, init)
     assert(init, "init variable is nil.")
     assert(type(init) == "table", "Init variable is expecting a states table")
 
-    self:text("PLACEHOLDER")
+--    self:text("PLACEHOLDER")
 end
 
 local __dtor = function(self)

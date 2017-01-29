@@ -138,28 +138,29 @@ end
 
 function EntityManager:removeNodeEntity(entity)
     local key = entity:getNode():getName()
-    assert(hasNodeEntity(key), "trying to remove a nodeEntity that isn't there")
+
+    assert(self:hasNodeEntity(key), "trying to remove a nodeEntity that isn't there")
 
     self.__nodeEntityTable[key] = nil
 end
 
 function EntityManager:removeSceneEntity(entity)
     local key = entity:getScene():getName()
-    assert(hasSceneEntity(key), "trying to remove a sceneEntity that isn't there")
+    assert(self:hasSceneEntity(key), "trying to remove a sceneEntity that isn't there")
 
     self.__sceneEntityTable[key] = nil
 end
 
 function EntityManager:removeWorldEntity(entity)
     local key = entity:getWorld():getName()
-    assert(hasWorldEntity(key), "trying to remove a worldEntity that isn't there")
+    assert(self:hasWorldEntity(key), "trying to remove a worldEntity that isn't there")
 
     self.__worldEntityTable[key] = nil
 end
 
 function EntityManager:removeNodeEntityState(entity)
     local key = entity:getNodeState():getName()
-    assert(hasNodeEntityState(key), "trying to remove a nodeEntityState that isn't there")
+    assert(self:hasNodeEntityState(key), "trying to remove a nodeEntityState that isn't there")
 
     local entityState = self.__nodeEntityStateTable[key]
     local entity = entityState:getNodeEntity()
@@ -170,7 +171,7 @@ end
 
 function EntityManager:removeSceneEntityState(entity)
     local key = entity:getSceneState():getName()
-    assert(hasSceneEntityState(key), "trying to remove a sceneEntityState that isn't there")
+    assert(self:hasSceneEntityState(key), "trying to remove a sceneEntityState that isn't there")
 
     local entityState = self.__sceneEntityStateTable[key]
     local entity = entityState:getSceneEntity()
@@ -181,7 +182,7 @@ end
 
 function EntityManager:removeWorldEntityState(entity)
     local key = entity:getWorldState():getName()
-    assert(hasWorldEntityState(key), "trying to remove a worldEntitystate that isn't there")
+    assert(self:hasWorldEntityState(key), "trying to remove a worldEntitystate that isn't there")
 
     local entityState = self.__worldEntityStateTable[key]
     local entity = entityState:getWorldEntity()
